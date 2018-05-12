@@ -9,13 +9,14 @@ const PrivateRoute = ({component: Component, ...rest}): JSX.Element => {
             store.getState().app.user ? (
                 <Component {...props}/>
             ) : (
-                <Redirect to={{
-                    pathname: "/user/login",
-                    state: {from: props.location},
-                }}/>
+                <Component {...props}/>
             )
         )}/>
     );
 };
-
+ // TODO
+ /*<Redirect to={{
+    pathname: "/user/login",
+    state: {from: props.location},
+}}/>*/
 export default PrivateRoute;
