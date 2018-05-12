@@ -48,6 +48,23 @@ class Login extends React.Component<IProps, IState> {
             if (!err) {
                 console.log("Received values of form: ", values);
                 const api = API.getInstance();
+
+                // TODO remove
+                api.setAuthToken("zxcvbnm");
+                this.setCookie("token", "zxcvbnm", 365);
+                this.props.setUser(
+                    {
+                                  type: "users",
+                                  id: "1",
+                                  attributes: {
+                                        email: values.userName,
+                                        full_name: "Mikasa Ackerman",
+                                        role: "administrator",
+                                        status: "active",
+                                  },
+                              },
+                );
+
                 // api.create_toekn___login_post({
                 //     attributes: { email: values.userName, password: values.password, app_id: 1 },
                 //     include : "user",
