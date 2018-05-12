@@ -48,7 +48,7 @@ function getMenus() {
                 },
                 text: t.t("sysManage"),
                 visible: user.permission("sysManage").view,
-            }
+            },
         };
     return availableMenus;
 
