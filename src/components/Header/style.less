@@ -1,0 +1,65 @@
+@import "../../theme/mixins";
+@import "../../theme/variables";
+
+body{
+
+  // just for rtl
+  &[dir='rtl']{
+    .ant-layout-header{
+      .ant-input-affix-wrapper .ant-input:not(:last-child){
+        padding-right: 11px;
+        padding-left: 30px;
+      }
+      .ant-input-search:not(.ant-input-search-small) > .ant-input-suffix{
+        left: 12px;
+        right: auto;
+      }
+      .ant-input-search.ant-input-affix-wrapper, .anticon{
+        float: left !important;
+      }
+      i{
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &[dir='ltr']{
+    .ant-layout-header{
+      .ant-input-affix-wrapper .ant-input:not(:last-child){
+        padding-left: 11px;
+        padding-right: 30px;
+      }
+      .ant-input-search:not(.ant-input-search-small) > .ant-input-suffix{
+        right: 12px;
+        left: auto;
+      }
+      .ant-input-search.ant-input-affix-wrapper, .anticon{
+        float: right !important;
+      }
+      i{
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .ant-layout-header{
+     .anticon-logout
+     {
+          opacity: 1;
+     }
+    .ant-input-search.ant-input-affix-wrapper{
+      width: 180px;
+      line-height: 64px;
+    }
+    .ant-input-search.ant-input-affix-wrapper, .anticon{
+      float: right;
+    }
+    i{
+      font-size: 25px;
+      opacity: 0.4;
+      line-height: 64px;
+      cursor: pointer;
+    }
+  }
+
+}
