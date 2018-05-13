@@ -6,7 +6,6 @@ import { IRootState } from "../redux/reducers";
 import Layout from "./../components/Layout";
 import PrivateRoute from "./../components/PrivateRoute";
 
-import CustomersContainer from "./Customers";
 import DashboardContainer from "./Dashboard";
 import GroupsContainer from "./Groups";
 import UserContainer from "./User";
@@ -66,7 +65,6 @@ class AppContainer extends React.Component<IProps, IState> {
                     )}/>
                     <Route path={`/user`} component={UserContainer}/>
                     <PrivateRoute path={`/dashboard`} component={DashboardContainer}/>
-                    <PrivateRoute path={`/companies`} component={CustomersContainer}/>
                     <PrivateRoute path={`/groups`} component={GroupsContainer}/>
                     <PrivateRoute path={`/users`} component={UsersContainer}/>
 
