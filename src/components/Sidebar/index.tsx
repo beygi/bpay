@@ -75,7 +75,7 @@ class Sidebar extends React.Component<IProps, IState> {
                     size={200} className={"menuProfilePic"} />
                 </div>
                 <div id={"menuTextBox"}>
-                    <p className={"desc"}>{this.props.user.attributes["full_name"]}</p>
+                    <p className={"desc"}>{this.props.user.attributes.full_name}</p>
                     <p className={"desc"}>{this.props.user.attributes.role}</p>
                 </div>
                 <Menu theme="dark" inlineCollapsed={this.props.collapsed} mode="inline" defaultSelectedKeys={["1"]}>
