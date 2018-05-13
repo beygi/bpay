@@ -36,7 +36,7 @@ export default class USER {
         };
 
         // return full permissions for admins
-        if (this.user.role === "administrator") { return allTrue; }
+        if (this.user.attributes.role === "administrator") { return allTrue; }
         // return normal permissions
         if (this.user.permissions[resourceName]) { return this.user.permissions[resourceName].global; }
         // return falses if permissions does not defined
