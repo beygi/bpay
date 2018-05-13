@@ -1,0 +1,40 @@
+@import "../../theme/mixins";
+@import "../../theme/variables";
+
+body{
+
+  //// just for rtl
+  //&[dir='rtl']{
+  //  .layout.account-manager{
+  //    &.groups{
+  //      .addMetricBtn{
+  //        position: absolute;
+  //        right: 31px !important;
+  //        left: auto !important;
+  //        top: -55px;
+  //      }
+  //    }
+  //  }
+  //}
+  //
+  //&[dir='ltr']{
+  //  .layout.account-manager{
+  //    &.groups{
+  //      .addMetricBtn{
+  //        position: absolute;
+  //        left: 31px !important;
+  //        right: auto !important;
+  //        top: -55px;
+  //      }
+  //    }
+  //  }
+  //}
+
+  .layout.account-manager{
+    &.groups{
+      .ant-tabs-nav{
+        opacity: 0;
+      }
+    }
+  }
+}
