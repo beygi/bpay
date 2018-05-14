@@ -71,12 +71,12 @@ class Sidebar extends React.Component<IProps, IState> {
             <Sider>
                 <div id={"menuImageBox"}>
                     <img src={logo} id={"menuLogo"} />
-                    <Gravatar email={this.props.user.attributes.email} default="monsterid"
+                    <Gravatar email={this.props.user.email} default="monsterid"
                     size={200} className={"menuProfilePic"} />
                 </div>
                 <div id={"menuTextBox"}>
-                    <p className={"desc"}>{this.props.user.attributes.full_name}</p>
-                    <p className={"desc"}>{this.props.user.attributes.role}</p>
+                    <p className={"desc"}>{this.props.user.name}</p>
+                    {/* <p className={"desc"}>{this.props.user.attributes.role}</p> */}
                 </div>
                 <Menu theme="dark" inlineCollapsed={this.props.collapsed} mode="inline" defaultSelectedKeys={["1"]}>
                     {this.state.menuItems.map((item) => item)}

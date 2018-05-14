@@ -36,9 +36,9 @@ export default class USER {
         };
 
         // return full permissions for admins
-        if (this.user.attributes.role === "administrator") { return allTrue; }
+        if (this.user.realm_access.roles.indexOf("webapp-admin") !== -1 ) { return allTrue; }
         // return normal permissions
-        if (this.user.permissions[resourceName]) { return this.user.permissions[resourceName].global; }
+        // if (this.user.permissions[resourceName]) { return this.user.permissions[resourceName].global; }
         // return falses if permissions does not defined
         return allFalse;
     }
