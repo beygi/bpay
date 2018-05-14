@@ -19,7 +19,6 @@
     "change-case": "^3.0.2",
     "check-types": "^7.3.0",
     "eslint": "^4.17.0",
-    "fetch": "^1.1.0",
     "file-loader": "^1.1.11",
     "handlebars": "^4.0.11",
     "js-cookie": "^2.2.0",
