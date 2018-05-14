@@ -55,15 +55,15 @@ class AppContainer extends React.Component<IProps, IState> {
             <Layout private={LoggedIn}>
                 <Switch>
                     {/*<Route path={`/user`} component={PublicContainer}/>*/}
-                    {/*root page will be redirected to dashboard or login page based on login status*/}
+                    {/*root page will be redirected to dashboard or landing page based on login status*/}
                     <Route exact path="/" render={() => (
                       this.state.user ? (
                         <Redirect to="/dashboard"/>
                       ) : (
-                        <Redirect to="/user/login" />
+                        <Redirect to="/landing" />
                       )
                     )}/>
-                    <Route path={`/user`} component={UserContainer}/>
+                    <Route path={`/landing`} component={UserContainer}/>
                     <PrivateRoute path={`/dashboard`} component={DashboardContainer}/>
                     <PrivateRoute path={`/groups`} component={GroupsContainer}/>
                     <PrivateRoute path={`/users`} component={UsersContainer}/>
