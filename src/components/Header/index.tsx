@@ -5,10 +5,11 @@ const Search = Input.Search;
 import { connect } from "react-redux";
 import { logOut } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
-
+import USER from "./../../lib/user";
 import "./style.less";
 
 const {Header}: any = Layout;
+const userObject =  USER.getInstance();
 
 interface IProps {
     user: any;
@@ -27,6 +28,7 @@ class HeaderComponent extends React.Component<IProps, IState> {
     }
 
     public logOut() {
+        userObject.keycloak.logout();
         this.props.logOut();
     }
 

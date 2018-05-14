@@ -5,23 +5,24 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import {Provider} from "react-redux";
 import {Redirect, Route, Router, Switch} from "react-router";
-import Config from "./config";
+
 import AppContainer from "./containers/app";
+import USER from "./lib/user";
 import { setUser } from "./redux/app/actions";
 import {store} from "./redux/store";
 
 const history = createBrowserHistory();
-const keycloak = Keycloak(Config.keycloakConfig);
+const user =  USER.getInstance();
 
-keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
+user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
   if (authenticated) {
-      // console.log(keycloak.tokenParsed);
-      const userData = _.pick(keycloak.tokenParsed, ["email", "name", "realm_access"]);
+      // console.log(user.keycloak.tokenParsed);
+      const userData = _.pick(user.keycloak.tokenParsed, ["email", "name", "realm_access"]);
       // set user in store
       store.dispatch(setUser(userData));
 } else {
-    console.log(keycloak);
-    // keycloak.login();
+    console.log(user.keycloak);
+    // user.keycloak.login();
 }
   ReactDOM.render(
     <Provider store={store}>

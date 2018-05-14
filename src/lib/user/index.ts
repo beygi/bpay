@@ -1,5 +1,7 @@
 import * as jsCookie from "js-cookie";
+import * as Keycloak from "keycloak-js";
 import { store } from "../../redux/store";
+import Config from "./../../config";
 import API from "./../api";
 
 export default class USER {
@@ -11,11 +13,13 @@ export default class USER {
     }
 
     private static instance: USER;
+    public keycloak: any;
     private user: any | null;
 
     private constructor() {
         // get user object from redux if available
         this.user = store.getState().app.user;
+        this.keycloak = Keycloak(Config.keycloakConfig);
         API.getInstance().setAuthToken(jsCookie.get("token"));
     }
 
