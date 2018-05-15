@@ -14,11 +14,11 @@ export default class USER {
 
     private static instance: USER;
     public keycloak: any;
-    private user: any | null;
+    public user: any | null;
 
     private constructor() {
         // get user object from redux if available
-        this.user = store.getState().app.user;
+        this.user = store.getState().app.user || null;
         this.keycloak = Keycloak(Config.keycloakConfig);
         API.getInstance().setAuthToken(jsCookie.get("token"));
     }
