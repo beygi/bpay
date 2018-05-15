@@ -28,8 +28,8 @@ class HeaderComponent extends React.Component<IProps, IState> {
     }
 
     public logOut() {
-        userObject.keycloak.logout();
         this.props.logOut();
+        userObject.keycloak.logout();
     }
 
     public render() {
