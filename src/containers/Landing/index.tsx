@@ -1,5 +1,6 @@
 import { Button } from "antd";
 import * as React from "react";
+import { Redirect } from "react-router";
 import USER from "./../../lib/user";
 
 const user =  USER.getInstance();
@@ -17,6 +18,11 @@ class LandingContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
+        if (user.user) {
+            return (
+                <Redirect to="/dashboard" />
+            );
+        }
         return (
             <div>
                 <h1>Landing</h1>
