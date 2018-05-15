@@ -9,6 +9,7 @@ import PrivateRoute from "./../components/PrivateRoute";
 import DashboardContainer from "./Dashboard";
 import GroupsContainer from "./Groups";
 import LandingContainer from "./Landing";
+import NotFoundContainer from "./NotFound";
 import UserContainer from "./User";
 import UsersContainer from "./Users";
 
@@ -68,7 +69,7 @@ class AppContainer extends React.Component<IProps, IState> {
                     <PrivateRoute path={`/dashboard`} component={DashboardContainer}/>
                     <PrivateRoute path={`/groups`} component={GroupsContainer}/>
                     <PrivateRoute path={`/users`} component={UsersContainer}/>
-
+                    <Route component={NotFoundContainer}/>
                 </Switch>
             </Layout>
         );
