@@ -18,7 +18,7 @@ class LandingContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
-        if (user.user) {
+        if (user.getCurrent()) {
             return (
                 <Redirect to="/dashboard" />
             );
