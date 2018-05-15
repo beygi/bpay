@@ -33,6 +33,7 @@ class AppContainer extends React.Component<IProps, IState> {
         super(props);
         const stateObj = this.parseProps(props);
         this.state = stateObj;
+
     }
 
     public componentDidMount() {
@@ -51,27 +52,22 @@ class AppContainer extends React.Component<IProps, IState> {
         const stateObj = this.parseProps(nextProps);
         this.setState(stateObj);
     }
+
     public render() {
-        const LoggedIn: boolean = (this.state.user) ? true : false;
         return (
-            <Layout private={LoggedIn}>
-                <Switch>
-                    {/*<Route path={`/user`} component={PublicContainer}/>*/}
-                    {/*root page will be redirected to dashboard or landing page based on login status*/}
-                    <Route exact path="/" render={() => (
-                      this.state.user ? (
-                        <Redirect to="/dashboard"/>
-                      ) : (
-                        <Redirect to="/landing" />
-                      )
-                    )}/>
-                    <Route path={`/landing`} component={LandingContainer}/>
-                    <PrivateRoute path={`/dashboard`} component={DashboardContainer}/>
-                    <PrivateRoute path={`/groups`} component={GroupsContainer}/>
-                    <PrivateRoute path={`/users`} component={UsersContainer}/>
-                    <Route component={NotFoundContainer}/>
-                </Switch>
-            </Layout>
+            <Switch>
+
+                {/* Private routes */}
+                <PrivateRoute path={`/dashboard`} component={DashboardContainer} />
+                <PrivateRoute path={`/groups`} component={GroupsContainer} />
+                <PrivateRoute path={`/users`} component={UsersContainer} />
+
+                {/* Public routes */}
+                <Route exact path={`/`} render={() => <Layout private={false}><LandingContainer /></Layout>} />
+
+                {/* not Not Founded routes */}
+                <Route component={NotFoundContainer} />
+            </Switch>
         );
     }
 }
