@@ -2,7 +2,7 @@ import * as React from "react";
 import {Redirect, Route} from "react-router";
 import {store} from "../../redux/store";
 
-const PrivateRoute = ({component: Component, ...rest}): JSX.Element => {
+const   PrivateRoute = ({component: Component, ...rest}): JSX.Element => {
     // every private page will be redirect to login page when user does not exist in store
     return (
         <Route {...rest} render={(props) => (
@@ -10,7 +10,7 @@ const PrivateRoute = ({component: Component, ...rest}): JSX.Element => {
                 <Component {...props}/>
             ) : (
                 <Redirect to={{
-                   pathname: "/landing",
+                   pathname: "/",
                    state: {from: props.location},
                }}/>
             )
