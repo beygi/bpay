@@ -1,8 +1,5 @@
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-@import "~antd/lib/style/color/colors";
-
-@import "./assets/fonts/ant/font";
-@import "./assets/fonts/shabnam/font";
+//this is default ant variables, feel free to change them
+// original refrence : https://raw.githubusercontent.com/ant-design/ant-design/master/components/style/themes/default.less
 
 // The prefix to use on all css classes from ant.
 @ant-prefix             : ant;
@@ -70,12 +67,12 @@
 
 // ICONFONT
 @iconfont-css-prefix    : anticon;
-@icon-url               : "https://at.alicdn.com/t/font_148784_dky7e838xq4obt9";
+@icon-url               : "https://at.alicdn.com/t/font_148784_v4ggb6wrjmkotj4i";
 
 // LINK
 @link-color             : @primary-color;
-@link-hover-color       : @primary-5;
-@link-active-color      : @primary-7;
+@link-hover-color       : color(~`colorPalette("@{link-color}", 5)`);
+@link-active-color      : color(~`colorPalette("@{link-color}", 7)`);
 @link-decoration        : none;
 @link-hover-decoration  : none;
 
@@ -208,14 +205,13 @@
 @grid-gutter-width      : 0;
 
 // Layout
-@layout-body-background      : #eeeeee;
-@layout-header-background    : #ffffff;
+@layout-body-background      : #f0f2f5;
+@layout-header-background    : #001529;
 @layout-footer-background    : @layout-body-background;
-@layout-content-background    : #ffffff;
 @layout-header-height        : 64px;
 @layout-header-padding       : 0 50px;
 @layout-footer-padding       : 24px 50px;
-@layout-sider-background     : #3f3f3f;
+@layout-sider-background     : @layout-header-background;
 @layout-trigger-height       : 48px;
 @layout-trigger-background   : #002140;
 @layout-trigger-color        : #fff;
@@ -322,11 +318,11 @@
 @menu-item-group-title-color: @text-color-secondary;
 // dark theme
 @menu-dark-color: @text-color-secondary-dark;
-@menu-dark-bg: @layout-sider-background;
+@menu-dark-bg: @layout-header-background;
 @menu-dark-arrow-color: #fff;
 @menu-dark-submenu-bg: #000c17;
 @menu-dark-highlight-color: #fff;
-@menu-dark-item-selected-bg: #5b5b5b;
+@menu-dark-item-active-bg: @primary-color;
 
 // Spin
 // ---
@@ -340,6 +336,7 @@
 @table-header-sort-bg: @background-color-base;
 @table-row-hover-bg: @primary-1;
 @table-selected-row-bg: #fafafa;
+@table-expanded-row-bg: #fbfbfb;
 @table-padding-vertical: 16px;
 @table-padding-horizontal: 16px;
 
@@ -366,6 +363,7 @@
 @badge-height: 20px;
 @badge-dot-size: 6px;
 @badge-font-size: @font-size-sm;
+@badge-font-weight: normal;
 @badge-status-size: 6px;
 
 // Rate
@@ -388,7 +386,20 @@
 // ---
 @tabs-card-head-background: @background-color-light;
 @tabs-card-height: 40px;
+@tabs-card-active-color: @primary-color;
 @tabs-title-font-size: @font-size-base;
+@tabs-title-font-size-lg: @font-size-lg;
+@tabs-title-font-size-sm: @font-size-base;
+@tabs-ink-bar-color: @primary-color;
+@tabs-bar-margin: 0 0 16px 0;
+@tabs-horizontal-margin: 0 32px 0 0;
+@tabs-horizontal-padding: 12px 16px;
+@tabs-vertical-padding: 8px 24px;
+@tabs-vertical-margin: 0 0 16px 0;
+@tabs-scrolling-size: 32px;
+@tabs-highlight-color: @primary-color;
+@tabs-hover-color: @primary-5;
+@tabs-active-color: @primary-7;
 
 // BackTop
 // ---
@@ -412,6 +423,7 @@
 // ---
 @switch-height: 22px;
 @switch-sm-height: 16px;
+@switch-sm-checked-margin-left: -(@switch-sm-height - 3px);
 @switch-disabled-opacity: 0.4;
 @switch-color: @primary-color;
 
@@ -419,6 +431,8 @@
 // ---
 @pagination-item-size: 32px;
 @pagination-item-size-sm: 24px;
+@pagination-font-family: Arial;
+@pagination-font-weight-active: 500;
 
 // Breadcrumb
 // ---
@@ -448,6 +462,10 @@
 @slider-disabled-color:               @disabled-color;
 @slider-disabled-background-color:    @component-background;
 
-
-
-// Application Variables
+// Collapse
+// ---
+@collapse-header-padding:             12px 0 12px 40px;
+@collapse-header-bg:                  @background-color-light;
+@collapse-content-padding:            @padding-md;
+@collapse-content-bg:                 @component-background;
+ 
