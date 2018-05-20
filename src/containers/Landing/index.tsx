@@ -41,13 +41,13 @@ class LandingContainer extends React.Component<IProps, IState> {
                 <div className="landing-content">
                     <h1>B2B MARKET PLACE</h1>
                          <div className="login-signin">
-                              <Button onClick={this.login} className="startButton" type="primary" size="large">
+                              <Button onClick={this.register} className="startButton" type="primary" size="large">
                                    Get Started <Icon type="right" />
                               </Button>
                               <br />
                               <div className="already-memeber">
                                   already memeber?
-                                      <a className="signin" onClick={this.register}>sign in</a>
+                                      <a className="signin" onClick={this.login}>sign in</a>
                               </div>
                           </div>
                 </div>
