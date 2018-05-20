@@ -4,10 +4,76 @@
 {
     height: 100px;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom:  10px;
+    padding-top: 15px;
+    padding-bottom:  15px;
     img{
         height: 100%;
     }
-    
+    background-color: darken(@palette-high, 10%);
+}
+
+.top-menu
+{
+    height: 50px;
+    width: 100%;
+    background-color:darken(@palette-low, 20%);
+    color : @palette-alternate;
+    a{
+        height: 50px;
+        display: inline-block;
+        line-height: 50px;
+        color: @palette-alternate;
+        font-size : 20px;
+        padding: 0 10px;
+    }
+    a:HOVER
+    {
+        color: @palette-alternate;
+        background-color: darken(@palette-low, 25%);
+    }
+    text-align: center;
+}
+
+.landing-content
+{
+    background-color: lighten(@palette-high,10%);
+    color : @palette-light;
+    margin : 0;
+    padding: 30px;
+    text-align: center;
+    h1
+    {
+        font-size: 60px;
+        color : @palette-light;
+    }
+    .login-signin
+    {
+        width: 272px;
+       margin: auto;
+       .startButton
+       {
+           background-color: @palette-alternate;
+           border-color : @palette-alternate;
+           font-size : 20px;
+           padding: 25px 60px;
+           font-weight: bold;
+           height: auto;
+            &:hover , &:focus {
+               background-color: darken(@palette-high, 10%);
+               border-color : darken(@palette-high, 10%);
+           }
+       }
+       .already-memeber
+       {
+           text-align: right;
+           padding-right: 5px;
+           .signin
+           {
+               color : darken(@palette-high, 10%);
+               padding-left: 10px;
+               text-decoration: none;
+           }
+       }
+    }
+
 }

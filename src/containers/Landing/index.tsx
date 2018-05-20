@@ -1,4 +1,3 @@
-import { Button } from "antd";
 import * as React from "react";
 import { Redirect } from "react-router";
 import USER from "./../../lib/user";
@@ -6,7 +5,7 @@ import "./style.less";
 const logo = require("../../assets/images/logo.png");
 
 const user = USER.getInstance();
-import { Breadcrumb, Layout, Menu } from "antd";
+import { Breadcrumb, Button, Icon , Layout, Menu } from "antd";
 const { Header, Footer, Sider, Content } = Layout;
 
 interface IProps {
@@ -19,6 +18,7 @@ class LandingContainer extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
         this.login = this.login.bind(this);
+        this.register = this.register.bind(this);
     }
 
     public render() {
@@ -33,27 +33,45 @@ class LandingContainer extends React.Component<IProps, IState> {
                 <div className="header-logo">
                     <img src={logo} />
                 </div>
-                    <Header className="header">
-                        <Menu
-                            theme="dark"
-                            mode="horizontal"
-                            defaultSelectedKeys={["2"]}
-                            style={{ lineHeight: "64px" }}
-                        >
-                            <Menu.Item key="1">nav 1</Menu.Item>
-                            <Menu.Item key="2">nav 2</Menu.Item>
-                            <Menu.Item key="3">nav 3</Menu.Item>
-                        </Menu>
-                    </Header>
-                    <Content>Content</Content>
-                    <Footer>Footer</Footer>
-</Layout>
-                );
-                    }
+                <div className="top-menu">
+                    <a href="">FAQ</a>
+                    <a href="">SUPPORT</a>
+                    <a href="">ABOUT US</a>
+                </div>
+                <div className="landing-content">
+                    <h1>B2B MARKET PLACE</h1>
+                         <div className="login-signin">
+                              <Button onClick={this.login} className="startButton" type="primary" size="large">
+                                   Get Started <Icon type="right" />
+                              </Button>
+                              <br />
+                              <div className="already-memeber">
+                                  already memeber?
+                                      <a className="signin" onClick={this.register}>sign in</a>
+                              </div>
+                          </div>
+                </div>
+                <Footer>
+                    Hello, we are the worldwide stock exchange. A market where
+                     anyone from anywhere can invest in any business worldwide
+                      using cryptocurrencies (BTC, ETH, NXT, and others) or fiat money.
+                      Imagine you can invest in Chinese manufacturing or a Brazilian sawmill
+                       without papers in just minutes. Imagine anybody can invest in your business too.
+                        On this worldwide stock exchange market, businesses can issue their stocks, assets,
+                         or tokens on major established crypto platforms (NXT, ARDOR, ETH, etc.), sell them,
+                          do business, and pay dividends to stock holders in just one click.
+                </Footer>
+            </Layout>
+        );
+    }
 
     private login() {
-                    user.keycloak.login();
-                }
-            }
+        user.keycloak.login();
+    }
+
+    private register() {
+        user.keycloak.register();
+    }
+}
 
 export default LandingContainer;
