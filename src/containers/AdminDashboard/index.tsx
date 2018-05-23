@@ -11,7 +11,7 @@ interface IState {
     user: any;
 }
 
-class DashboardContainer extends React.Component<IProps, IState> {
+class AdminDashboardContainer extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
     }
@@ -33,4 +33,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DashboardContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(AdminDashboardContainer);

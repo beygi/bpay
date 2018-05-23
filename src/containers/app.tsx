@@ -6,7 +6,7 @@ import { IRootState } from "../redux/reducers";
 import Layout from "./../components/Layout";
 import PrivateRoute from "./../components/PrivateRoute";
 
-import DashboardContainer from "./Dashboard";
+import AdminDashboardContainer from "./AdminDashboard";
 import GroupsContainer from "./Groups";
 import LandingContainer from "./Landing";
 import NotFoundContainer from "./NotFound";
@@ -58,7 +58,7 @@ class AppContainer extends React.Component<IProps, IState> {
             <Switch>
 
                 {/* Private routes */}
-                <PrivateRoute path={`/dashboard`} component={DashboardContainer} />
+                <PrivateRoute path={`/dashboard`} component={AdminDashboardContainer} />
                 <PrivateRoute path={`/groups`} component={GroupsContainer} />
                 <PrivateRoute path={`/users`} component={UsersContainer} />
 
