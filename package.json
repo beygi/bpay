@@ -26,6 +26,7 @@
     "keycloak-js": "^4.0.0-beta.2",
     "lodash": "^4.17.4",
     "react": "^16.2.0",
+    "react-burger-menu": "^2.4.4",
     "react-core-loading-spinner": "^1.0.1",
     "react-dom": "^16.2.0",
     "react-gravatar": "^2.6.3",
