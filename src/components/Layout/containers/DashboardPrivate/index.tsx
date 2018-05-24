@@ -27,8 +27,8 @@ export default class DashboardPrivateLayout extends React.Component<IProps, ISta
 
     public render() {
         return (
-            <Layout style={{ minHeight: "100vh" }}>
-                <Layout>
+            <Layout  style={{ minHeight: "100vh" }}>
+                <Layout className="private-content">
                     <DashboardHeaderComponent />
                     <Content>
                         {this.props.children}
