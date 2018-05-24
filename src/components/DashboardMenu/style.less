@@ -1,49 +1,55 @@
 @import "../../theme/application";
-
 /* Position and sizing of burger button */
 .bm-burger-button {
-  position: fixed;
-  width: 36px;
-  height: 30px;
-  left: 30px;
-  top: 25px;
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 30px;
+    top: 25px;
 }
-
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background:  @palette-low;
+    background: @palette-low;
 }
-
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 30px;
-  width: 30px;
+    height: 30px;
+    width: 30px;
 }
-
 /* Color/shape of close button cross */
 .bm-cross {
-  background:  @palette-low;
+    background: @palette-low;
 }
-
 /* General sidebar styles */
 .bm-menu {
-  background: @palette-high;
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
+    background: @palette-high;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
 }
-
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
-  fill: #373a47;
+    fill: #373a47;
 }
-
 /* Wrapper for item list */
 .bm-item-list {
-  color: #b8b7ad;
-  padding: 0.8em;
-}
+    padding: 0.8em;
 
+    a {
+        color: @palette-low;
+        font-size: 1.4em;
+
+        &:hover {
+            color: @palette-alternate2;
+        }
+
+        i {
+            color: @palette-light;
+            margin-right: 10px;
+        }
+        transition: 0.5s;
+    }
+}
 /* Styling of overlay */
 .bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.3);
 }

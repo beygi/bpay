@@ -35,17 +35,15 @@ class DashboardMenuComponent extends React.Component<IProps, IState> {
         userObject.keycloak.logout();
     }
 
-    public showSettings(event) {
-        event.preventDefault();
-    }
-
     public render() {
         return (
             <Menu>
-                <a id="home" className="menu-item" href="/">Home</a>
-                <a id="about" className="menu-item" href="/about">About</a>
-                <a id="contact" className="menu-item" href="/contact">Contact</a>
-                <a onClick={this.showSettings} className="menu-item--small" href="">Settings</a>
+                <a id="home" className="menu-item" href="/"><Icon type="dashboard" />Dashboard</a>
+                <a id="about" className="menu-item" href="/about"><Icon type="calculator" />Balance</a>
+                <a id="contact" className="menu-item" href="/contact"><Icon type="line-chart" />Exchange</a>
+                <a id="contact" className="menu-item" href="/contact"><Icon type="export" />Deposite</a>
+                <a id="contact" className="menu-item" href="/contact"><Icon type="wallet" />Wallets</a>
+                <a  className="menu-item" href=""><Icon type="setting" />Settings</a>
             </Menu>
         );
     }
