@@ -2,7 +2,7 @@ import { Icon, Input, Layout, Tooltip } from "antd";
 import * as React from "react";
 
 const Search = Input.Search;
-import { slide as Menu } from "react-burger-menu";
+import { push as Menu } from "react-burger-menu";
 import * as Gravatar from "react-gravatar";
 import { connect } from "react-redux";
 import { logOut } from "../../redux/app/actions";
@@ -37,7 +37,7 @@ class DashboardMenuComponent extends React.Component<IProps, IState> {
 
     public render() {
         return (
-            <Menu>
+            <Menu pageWrapId={ "privateContent" } >
                 <a id="home" className="menu-item" href="/"><Icon type="dashboard" />Dashboard</a>
                 <a id="about" className="menu-item" href="/about"><Icon type="calculator" />Balance</a>
                 <a id="contact" className="menu-item" href="/contact"><Icon type="line-chart" />Exchange</a>

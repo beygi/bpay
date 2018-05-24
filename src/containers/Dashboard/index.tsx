@@ -19,9 +19,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
 
     public render() {
         return (
-            <Layout>
-
-            </Layout>
+                    <h1>Dashboard</h1>
         );
     }
 }
