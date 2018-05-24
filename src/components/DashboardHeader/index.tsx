@@ -1,4 +1,4 @@
-import {Icon, Input, Layout} from "antd";
+import { Icon, Input, Layout, Tooltip } from "antd";
 import * as React from "react";
 
 const Search = Input.Search;
@@ -10,8 +10,8 @@ import USER from "./../../lib/user";
 const logo = require("../../assets/images/logo-header.png");
 import "./style.less";
 
-const {Header}: any = Layout;
-const userObject =  USER.getInstance();
+const { Header }: any = Layout;
+const userObject = USER.getInstance();
 
 interface IProps {
     user: any;
@@ -39,12 +39,14 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
     public render() {
         return (
             <div className=" header-logo-user">
-                <Gravatar email={this.props.user.email} default="monsterid"
-                size={60} className={"ProfilePic"} />
-                <Icon type="logout" onClick={this.logOut} />
-
+                <Tooltip placement="bottom" title="View Profile Page">
+                    <Gravatar email={this.props.user.email} default="monsterid"
+                        size={60} className={"ProfilePic"} />
+                </Tooltip>
+                <Tooltip placement="bottom" title="Log Out">
+                    <Icon type="logout" onClick={this.logOut} />
+                </Tooltip>
                 <img className="user-dashboard-logo" src={logo} />
-
             </div>
         );
     }
