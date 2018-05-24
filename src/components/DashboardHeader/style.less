@@ -1,0 +1,56 @@
+@import "../../theme/application";
+
+body{
+
+  .ant-layout-header{
+     .anticon-logout
+     {
+          opacity: 1;
+     }
+    i{
+      font-size: 25px;
+      opacity: 0.4;
+      line-height: 64px;
+      cursor: pointer;
+    }
+  }
+
+}
+
+ .header-logo-user
+{
+    height: 80px;
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom:  10px;
+    .user-dashboard-logo{
+        height: 90%;
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+    .ProfilePic
+    {
+        border-radius: 100px;
+        border : 3px solid @palette-high;
+        margin-right: 10px;
+        transition: 0.5s;
+        &:hover
+        {
+            border : 3px solid @palette-low;
+            cursor: pointer;
+        }
+    }
+    .anticon-logout
+    {
+        color : @palette-high;
+        font-size: 40px;
+        vertical-align: middle;
+        transition: 0.5s;
+        &:hover
+        {
+            color : @palette-low;
+            cursor: pointer;
+        }
+    }
+    background-color: darken(@palette-high, 10%);
+}

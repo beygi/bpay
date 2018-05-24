@@ -1,9 +1,8 @@
 import { Layout } from "antd";
 import * as React from "react";
-import HeaderComponent from "./../../../Header";
-import Sidebar from "./../../../Sidebar";
+import DashboardHeaderComponent from "./../../../DashboardHeader";
+// import Sidebar from "./../../../Sidebar";
 import "./style.less";
-const logo = require("../../../../assets/images/logo.png");
 
 const { Sider, Content } = Layout;
 
@@ -30,9 +29,7 @@ export default class DashboardPrivateLayout extends React.Component<IProps, ISta
         return (
             <Layout style={{ minHeight: "100vh" }}>
                 <Layout>
-                    <div className="header-logo">
-                        <img src={logo} />
-                    </div>
+                    <DashboardHeaderComponent />
                     <Content>
                         {this.props.children}
                     </Content>
