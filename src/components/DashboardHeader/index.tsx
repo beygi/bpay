@@ -6,7 +6,9 @@ import * as Gravatar from "react-gravatar";
 import { connect } from "react-redux";
 import { logOut } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
+import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
+
 const logo = require("../../assets/images/logo-header.png");
 import "./style.less";
 
@@ -39,11 +41,11 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
     public render() {
         return (
             <div className=" header-logo-user">
-                <Tooltip placement="bottom" title="View Profile Page">
+                <Tooltip placement="bottom" title={ t.t("View Profile Page")}>
                     <Gravatar email={this.props.user.email} default="monsterid"
                         size={60} className={"ProfilePic"} />
                 </Tooltip>
-                <Tooltip placement="bottom" title="Log Out">
+                <Tooltip placement="bottom" title={ t.t("Logout")}>
                     <Icon type="logout" onClick={this.logOut} />
                 </Tooltip>
                 <img className="user-dashboard-logo" src={logo} />
