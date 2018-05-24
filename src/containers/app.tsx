@@ -7,6 +7,7 @@ import Layout from "./../components/Layout";
 import PrivateRoute from "./../components/PrivateRoute";
 
 import AdminDashboardContainer from "./AdminDashboard";
+import DashboardContainer from "./Dashboard";
 import GroupsContainer from "./Groups";
 import LandingContainer from "./Landing";
 import NotFoundContainer from "./NotFound";
@@ -55,15 +56,18 @@ class AppContainer extends React.Component<IProps, IState> {
 
     public render() {
         return (
-            <Switch>
+          <Switch>
 
                 {/* Private routes */}
-                <PrivateRoute path={`/dashboard`} component={AdminDashboardContainer} />
+
+                {/* <PrivateRoute path={`/dashboard`} component={AdminDashboardContainer} /> */}
+                <PrivateRoute path={`/dashboard`} component={DashboardContainer} />
                 <PrivateRoute path={`/groups`} component={GroupsContainer} />
                 <PrivateRoute path={`/users`} component={UsersContainer} />
 
                 {/* Public routes */}
                 <Route exact path={`/`} render={() => <Layout private={false}><LandingContainer /></Layout>} />
+                {/* <Route exact path={`/dashboard`} render={() => <Layout private={false}><DashboardContainer /></Layout>} /> */}
 
                 {/* not Not Founded routes */}
                 <Route component={NotFoundContainer} />

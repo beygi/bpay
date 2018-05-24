@@ -1,5 +1,5 @@
 import * as React from "react";
-import PrivateLayout from "./containers/Private";
+import DashboardPrivateLayout from "./containers/DashboardPrivate";
 import PublicLayout from "./containers/Public";
 
 export interface IProps {
@@ -15,7 +15,8 @@ export default class Layout extends React.Component<IProps> {
     public render() {
         return (
             this.props.private ?
-                <PrivateLayout>{this.props.children}</PrivateLayout>
+                // <PrivateLayout>{this.props.children}</PrivateLayout>
+                <DashboardPrivateLayout>{this.props.children}</DashboardPrivateLayout>
                 :
                 <PublicLayout>{this.props.children}</PublicLayout>
         );
