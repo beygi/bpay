@@ -2,6 +2,7 @@ import { Icon, Input, Layout, Tooltip } from "antd";
 import * as React from "react";
 
 const Search = Input.Search;
+import { slide as Menu } from "react-burger-menu";
 import * as Gravatar from "react-gravatar";
 import { connect } from "react-redux";
 import { logOut } from "../../redux/app/actions";
@@ -12,7 +13,6 @@ import USER from "./../../lib/user";
 const logo = require("../../assets/images/logo-header.png");
 import "./style.less";
 
-const { Header }: any = Layout;
 const userObject = USER.getInstance();
 
 interface IProps {
@@ -23,11 +23,10 @@ interface IProps {
 interface IState {
 }
 
-class DashboardHeaderComponent extends React.Component<IProps, IState> {
+class DashboardMenuComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
-
         this.logOut = this.logOut.bind(this);
     }
 
@@ -35,22 +34,19 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
         this.props.logOut();
         userObject.keycloak.logout();
     }
-    // <div className="header-logo">
-    //
-    // </div>
+
+    public showSettings(event) {
+        event.preventDefault();
+    }
 
     public render() {
         return (
-            <div className=" header-logo-user">
-                <Tooltip placement="bottom" title={t.t("View Profile Page")}>
-                    <Gravatar email={this.props.user.email} default="monsterid"
-                        size={60} className={"ProfilePic"} />
-                </Tooltip>
-                <Tooltip placement="bottom" title={t.t("Logout")}>
-                    <Icon type="logout" onClick={this.logOut} />
-                </Tooltip>
-                <img className="user-dashboard-logo" src={logo} />
-            </div>
+            <Menu>
+                <a id="home" className="menu-item" href="/">Home</a>
+                <a id="about" className="menu-item" href="/about">About</a>
+                <a id="contact" className="menu-item" href="/contact">Contact</a>
+                <a onClick={this.showSettings} className="menu-item--small" href="">Settings</a>
+            </Menu>
         );
     }
 
@@ -68,4 +64,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DashboardHeaderComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardMenuComponent);

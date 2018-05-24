@@ -1,6 +1,8 @@
 import { Layout } from "antd";
 import * as React from "react";
+
 import DashboardHeaderComponent from "./../../../DashboardHeader";
+import DashboardMenuComponent from "./../../../DashboardMenu";
 // import Sidebar from "./../../../Sidebar";
 import "./style.less";
 
@@ -29,6 +31,7 @@ export default class DashboardPrivateLayout extends React.Component<IProps, ISta
         return (
             <Layout  style={{ minHeight: "100vh" }}>
                 <Layout className="private-content">
+                    <DashboardMenuComponent />
                     <DashboardHeaderComponent />
                     <Content>
                         {this.props.children}
