@@ -42,6 +42,9 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
     public render() {
         return (
             <div className=" header-logo-user">
+                <div className="selected-menu">
+                    <Icon type="dashboard" />Dashboard
+                </div>
                 <Tooltip placement="bottom" title={t.t("View Profile Page")}>
                     <Gravatar email={this.props.user.email} default="monsterid"
                         size={60} className={"ProfilePic"} />
@@ -50,7 +53,7 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                     <Icon type="logout" onClick={this.logOut} />
                 </Tooltip>
                 <img className="user-dashboard-logo" src={logo} />
-            </div>
+            </div >
         );
     }
 
