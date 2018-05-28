@@ -10,6 +10,8 @@ import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 
+import { NavLink } from "react-router-dom";
+
 const logo = require("../../assets/images/logo-header.png");
 import "./style.less";
 
@@ -38,7 +40,10 @@ class DashboardMenuComponent extends React.Component<IProps, IState> {
     public render() {
         return (
             <Menu pageWrapId={ "privateContent" } >
-                <a id="home" className="menu-item" href="/"><Icon type="dashboard" />Dashboard</a>
+                 <NavLink to="/dashboard" exact activeClassName="active"><Icon type="dashboard" />Dashboard1</NavLink>
+                 <NavLink to="/balance" exact activeClassName="active"><Icon type="calculator" />Balance1</NavLink>
+                 <NavLink to="/exchange" exact activeClassName="active"><Icon type="calculator" />Exchange1</NavLink>
+
                 <a id="about" className="menu-item" href="/about"><Icon type="calculator" />Balance</a>
                 <a id="contact" className="menu-item" href="/contact"><Icon type="line-chart" />Exchange</a>
                 <a id="contact" className="menu-item" href="/contact"><Icon type="export" />Deposite</a>
