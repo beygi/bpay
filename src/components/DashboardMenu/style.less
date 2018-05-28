@@ -39,18 +39,22 @@
         font-size: 1.4em;
        margin: 10px 0px;
         &:hover {
-            color: @palette-alternate2;
+            color: lighten(@palette-alternate2,20%);
         }
 
         i {
-            color: @palette-light;
+            color: darken(@palette-light,40%);
             margin-right: 10px;
         }
         transition: 0.5s;
     }
     a.active
     {
-            color : yellow;
+            color : @palette-alternate2;
+            text-decoration: none;
+            i{
+                color: @palette-light;
+            }
     }
 }
 /* Styling of overlay */

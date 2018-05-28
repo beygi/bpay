@@ -19,6 +19,7 @@ const userObject = USER.getInstance();
 
 interface IProps {
     user: any;
+    path: any;
     logOut: () => void;
 }
 
@@ -64,6 +65,7 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state: IRootState) {
     return {
         user: state.app.user,
+        path : state.router.location.pathname,
     };
 }
 
