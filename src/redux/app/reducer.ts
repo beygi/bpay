@@ -1,7 +1,7 @@
-import {handleActions} from "redux-actions";
+import { handleActions } from "redux-actions";
 import IAction from "../IActions";
 import * as Actions from "./constants";
-import {IAppStoreState} from "./store";
+import { IAppStoreState } from "./store";
 
 const initialState: IAppStoreState = {
     company: null,
