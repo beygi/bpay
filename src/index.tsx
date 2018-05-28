@@ -4,7 +4,8 @@ import * as _ from "lodash";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import {Provider} from "react-redux";
-import {Redirect, Route, Router, Switch} from "react-router";
+import {Redirect, Route, Switch} from "react-router";
+import { ConnectedRouter} from "react-router-redux";
 
 import AppContainer from "./containers/app";
 import USER from "./lib/user";
@@ -29,11 +30,11 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
 }
   ReactDOM.render(
     <Provider store={store}>
-        <Router history={history}>
+         <ConnectedRouter history={history}>
             <Switch>
                 <Route path="/" component={AppContainer}/>
             </Switch>
-        </Router>
+        </ConnectedRouter>
     </Provider>,
     document.getElementById("root"),
 );

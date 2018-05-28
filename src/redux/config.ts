@@ -1,5 +1,10 @@
+import createHistory from "history/createBrowserHistory";
+import { routerMiddleware } from "react-router-redux";
 import {applyMiddleware, createStore, Store} from "redux";
 import rootReducer, {IRootState} from "./reducers";
+
+const history = createHistory();
+const middleware = routerMiddleware(history);
 
 declare var window: any;
 
@@ -23,7 +28,7 @@ export default function configureStore(initialState?: IRootState): Store<IRootSt
         : createStore;
 
     // Add middleware
-    const createStoreWithMiddleware = applyMiddleware(logger)(create);
+    const createStoreWithMiddleware = applyMiddleware(logger, middleware)(create);
 
     // Create store with initial object
     const store = createStoreWithMiddleware(rootReducer, initialState) as Store<IRootState>;
