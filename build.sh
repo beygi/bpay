@@ -8,6 +8,8 @@ cd /home/staging/web/dist
 pwd
 echo "###### pull master branch ... ######"
 git pull
+echo "###### last commit message ######"
+git log -1 | cat
 echo "###### install dependencies ######"
 yarn install
 echo "###### build ... ######"
