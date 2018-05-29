@@ -2,11 +2,13 @@ import { Icon, Input, Layout, Tooltip } from "antd";
 import * as React from "react";
 
 const Search = Input.Search;
+import * as  _ from "lodash";
 import * as Gravatar from "react-gravatar";
 import { connect } from "react-redux";
 import { logOut } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
+import menu from "../DashboardMenu/menu";
 import USER from "./../../lib/user";
 
 const logo = require("../../assets/images/logo-header.png");
@@ -17,6 +19,7 @@ const userObject = USER.getInstance();
 
 interface IProps {
     user: any;
+    path: any;
     logOut: () => void;
 }
 
@@ -40,10 +43,14 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
     // </div>
 
     public render() {
+        // finde selected menu name based on pathname
+        const Menus = menu();
+        const MenuItem = _.find(Menus, { path: this.props.path});
+
         return (
             <div className=" header-logo-user">
                 <div className="selected-menu">
-                    <Icon type="dashboard" />Dashboard
+                    <Icon type={MenuItem.icon} />{MenuItem.text}
                 </div>
                 <Tooltip placement="bottom" title={t.t("View Profile Page")}>
                     <Gravatar email={this.props.user.email} default="monsterid"
@@ -68,6 +75,7 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state: IRootState) {
     return {
         user: state.app.user,
+        path: state.router.location.pathname,
     };
 }
 
