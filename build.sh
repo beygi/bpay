@@ -10,7 +10,7 @@ echo "###### last commit message ######"
 git log -1 | cat
 echo "###### remove node modules and dist dir ######"
 rm -R node_modules dist
-echo "###### install dependencies ######"
+echo "###### install dev dependencies ######"
 yarn install
 echo "###### build ... ######"
 yarn build
