@@ -25,12 +25,17 @@ interface IProps {
 }
 
 interface IState {
+    isOpen: boolean;
 }
 
 class DashboardMenuComponent extends React.Component<IProps, IState> {
 
+    public static getDerivedStateFromProps(nextProps, prevState) {
+            return {isOpen : false};
+    }
     constructor(props: IProps) {
         super(props);
+        this.state = {isOpen : false};
         this.logOut = this.logOut.bind(this);
     }
 
@@ -43,13 +48,13 @@ class DashboardMenuComponent extends React.Component<IProps, IState> {
         // prepare menus
         const Menus = menu();
         const menuComponent = Object.keys(Menus).map((item) =>
-            <NavLink to={Menus[item].path} exact activeClassName="active">
+            <NavLink key={item} to={Menus[item].path} exact activeClassName="active">
                 <Icon type={Menus[item].icon} />
                 {Menus[item].text}
             </NavLink>,
         );
 
-        return (<Menu pageWrapId={"privateContent"} >
+        return (<Menu pageWrapId={"privateContent"} isOpen={this.state.isOpen} >
             {menuComponent}
         </Menu >);
     }
