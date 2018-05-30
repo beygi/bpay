@@ -14,4 +14,9 @@ echo "###### install dev dependencies ######"
 yarn install
 echo "###### build ... ######"
 yarn build
+echo "###### Replace old created files with new ones ######"
+mv out todelete
+mv dist out
+rm -R todelete
 echo "###### DONE ######"
+
