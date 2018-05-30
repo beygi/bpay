@@ -1,4 +1,4 @@
-import { Icon, Input, Layout, Tooltip } from "antd";
+import { Icon, Input, Layout, Popover , Tooltip} from "antd";
 import * as React from "react";
 
 const Search = Input.Search;
@@ -52,10 +52,10 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                 <div className="selected-menu">
                     <Icon type={MenuItem.icon} />{MenuItem.text}
                 </div>
-                <Tooltip placement="bottom" title={t.t("View Profile Page")}>
+                <Popover placement="bottom" title={t.t("Account information")} content={MenuItem.text} trigger="click">
                     <Gravatar email={this.props.user.email} default="monsterid"
                         size={60} className={"ProfilePic"} />
-                </Tooltip>
+                </Popover>
                 <Tooltip placement="bottom" title={t.t("Logout")}>
                     <Icon type="logout" onClick={this.logOut} />
                 </Tooltip>
