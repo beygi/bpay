@@ -1,4 +1,4 @@
-import { Button, Icon} from "antd";
+import { Button, Icon, Tag } from "antd";
 import * as React from "react";
 
 import { connect } from "react-redux";
@@ -33,7 +33,23 @@ class DashboardHeaderProfileComponent extends React.Component<IProps, IState> {
     public render() {
         return (
             <div className="header-user-profile">
-                    {this.props.user.email}
+                <div>
+                    <p><span className="caption">{t.t("Email:")} </span>{this.props.user.email}</p>
+                </div>
+                <div>
+                    <p>
+                        <span className="caption">{t.t("Verification level:")} </span><Tag className="verify">Verified</Tag>
+                    </p>
+                </div>
+                <div>
+                    <p><span className="caption">{t.t("Last login:")} </span>12 May 2017 23:32:12</p>
+                </div>
+                <div>
+                    <p>
+                         <Button type="primary">{t.t("Change Password")}</Button>
+                         <Button  type="primary">{t.t("Logout")}</Button>
+                    </p>
+                </div>
 
             </div >
         );
