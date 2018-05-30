@@ -9,6 +9,8 @@ import { logOut } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 import menu from "../DashboardMenu/menu";
+
+import HeaderProfile from "../DashboardHeaderProfile";
 import USER from "./../../lib/user";
 
 const logo = require("../../assets/images/logo-header.png");
@@ -48,11 +50,11 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
         const MenuItem = _.find(Menus, { path: this.props.path});
 
         return (
-            <div className=" header-logo-user">
+            <div className="header-logo-user">
                 <div className="selected-menu">
                     <Icon type={MenuItem.icon} />{MenuItem.text}
                 </div>
-                <Popover placement="bottom" title={t.t("Account information")} content={MenuItem.text} trigger="click">
+                <Popover placement="bottom" title={t.t("Account information")} content={<HeaderProfile></HeaderProfile>} trigger="click">
                     <Gravatar email={this.props.user.email} default="monsterid"
                         size={60} className={"ProfilePic"} />
                 </Popover>
