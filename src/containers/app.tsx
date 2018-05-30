@@ -49,13 +49,18 @@ class AppContainer extends React.Component<IProps, IState> {
         return stateObj;
     }
 
-    public componentWillReceiveProps(nextProps) {
+    public shouldComponentUpdate(nextProps) {
         const stateObj = this.parseProps(nextProps);
-        this.setState(stateObj);
-    }
+        if (nextProps.user !== this.state.user && nextProps.user === null) {
+            // this is a log out, just do nothing
+            return false;
+        } else {
+             return true;
+        }
+}
 
     public render() {
-        return (
+       return (
           <Switch>
 
                 {/* Private routes */}
