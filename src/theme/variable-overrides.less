@@ -1,3 +1,5 @@
+@import "./color-palette";   // our application color
+
 //this is default ant variables, feel free to change them
 // original refrence : https://raw.githubusercontent.com/ant-design/ant-design/master/components/style/themes/default.less
 
@@ -282,9 +284,9 @@
 // Popover
 // ---
 //** Popover body background color
-@popover-bg: #fff;
+@popover-bg: darken(@palette-high, 5%);
 //** Popover text color
-@popover-color: @text-color;
+@popover-color: darken(@palette-light,20%);
 //** Popover maximum width
 @popover-min-width: 177px;
 //** Popover arrow width
