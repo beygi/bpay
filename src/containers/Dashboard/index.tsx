@@ -3,6 +3,7 @@ import * as React from "react";
 import {connect} from "react-redux";
 import Profile from "../../components/DashboardHeaderProfile";
 import Block from "../../components/Holder";
+import Guide from "../../components/UserStatusGuide";
 import {setUser} from "../../redux/app/actions";
 import {IRootState} from "../../redux/reducers";
 
@@ -32,6 +33,9 @@ class DashboardContainer extends React.Component<IProps, IState> {
                   </Block>
               </Col>
               <Col md={18} >
+                   <Block>
+                       <Guide></Guide>
+                   </Block>
                     <Block>
                             <Profile></Profile>
                     </Block>

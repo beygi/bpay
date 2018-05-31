@@ -67,3 +67,31 @@
     border-bottom: 2px solid @palette-high;
     font-weight: bold;
 }
+
+.ant-steps-icon
+{
+    font-size: 30px !important;
+}
+.ant-steps-item-title
+{
+    color : @palette-light !important;
+}
+.ant-steps-item-description
+{
+    color : darken(@palette-low,10%) !important;
+}
+.ant-steps-item-wait
+{
+    .anticon
+    {
+        color : @palette-high !important;
+    }
+    .ant-steps-item-title
+    {
+        color : lighten( @palette-high , 20%) !important;
+    }
+    .ant-steps-item-description
+    {
+        color : lighten( @palette-high , 20%) !important;
+    }
+}
