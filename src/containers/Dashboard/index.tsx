@@ -24,10 +24,8 @@ class DashboardContainer extends React.Component<IProps, IState> {
             <Row gutter={8}>
               <Col md={6} >
                   <Block>
-                          <Profile></Profile>
-                  </Block>
-                  <Block>
-                          <Profile></Profile>
+                                <Profile></Profile>
+                                <Profile></Profile>
                   </Block>
                   <Block>
                           <Profile></Profile>

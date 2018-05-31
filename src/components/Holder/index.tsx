@@ -2,7 +2,7 @@ import * as React from "react";
 import "./style.less";
 
 interface IProps {
-    children: JSX.Element;
+    children: any;
 }
 
 interface IState {
