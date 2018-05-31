@@ -1,6 +1,8 @@
-import { Layout } from "antd";
+import { Col, Layout, Row } from "antd";
 import * as React from "react";
 import {connect} from "react-redux";
+import Profile from "../../components/DashboardHeaderProfile";
+import Block from "../../components/Holder";
 import {setUser} from "../../redux/app/actions";
 import {IRootState} from "../../redux/reducers";
 
@@ -19,7 +21,27 @@ class DashboardContainer extends React.Component<IProps, IState> {
 
     public render() {
         return (
-                    <h1>Dashboard</h1>
+            <Row gutter={8}>
+              <Col md={6} >
+                  <Block>
+                          <Profile></Profile>
+                  </Block>
+                  <Block>
+                          <Profile></Profile>
+                  </Block>
+                  <Block>
+                          <Profile></Profile>
+                  </Block>
+              </Col>
+              <Col md={18} >
+                    <Block>
+                            <Profile></Profile>
+                    </Block>
+                    <Block>
+                            <Profile></Profile>
+                    </Block>
+              </Col>
+            </Row>
         );
     }
 }

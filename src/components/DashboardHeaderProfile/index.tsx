@@ -47,7 +47,7 @@ class DashboardHeaderProfileComponent extends React.Component<IProps, IState> {
                 <div>
                     <p>
                          <Button type="primary">{t.t("Change Password")}</Button>
-                         <Button  type="primary">{t.t("Logout")}</Button>
+                         <Button  type="primary" className="logout">{t.t("Logout")}</Button>
                     </p>
                 </div>
 
