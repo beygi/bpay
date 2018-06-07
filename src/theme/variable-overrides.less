@@ -7,7 +7,7 @@
 @ant-prefix             : ant;
 
 // -------- Colors -----------
-@primary-color          : @blue-6;
+@primary-color          :  @palette-alternate2;
 @info-color             : @blue-6;
 @success-color          : @green-6;
 @processing-color       : @primary-color;
@@ -165,10 +165,10 @@
 @radio-dot-color        : @primary-color;
 
 // Radio buttons
-@radio-button-bg           : @btn-default-bg;
-@radio-button-color        : @btn-default-color;
+@radio-button-bg           :   darken(@palette-low,20%);
+@radio-button-color        :  @text-color;
 @radio-button-hover-color  : @primary-5;
-@radio-button-active-color : @primary-7;
+@radio-button-active-color : darken(@palette-high,40%);
 
 // Media queries breakpoints
 // Extra small screen / phone
@@ -240,7 +240,7 @@
 // Form
 // ---
 @label-required-color        : @highlight-color;
-@label-color                 : @heading-color;
+@label-color                 : @palette-light;
 @form-item-margin-bottom     : 24px;
 @form-item-trailing-colon    : true;
 @form-vertical-label-padding : 0 0 8px;
@@ -260,10 +260,10 @@
 @input-padding-vertical-lg   : 6px;
 @input-placeholder-color     : hsv(0, 0, 75%);
 @input-color                 : @text-color;
-@input-border-color          : @border-color-base;
-@input-bg                    : #fff;
-@input-addon-bg              : @background-color-light;
 @input-hover-border-color    : @primary-color;
+@input-border-color          : @palette-high;
+@input-bg                    :  darken(@palette-low,20%);
+@input-addon-bg              :  darken(@palette-low,20%);
 @input-disabled-bg           : @disabled-bg;
 
 // Tooltip

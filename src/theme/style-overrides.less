@@ -101,3 +101,24 @@
     color : @palette-light;
     background: lighten(@palette-high,10%);
 }
+.ant-radio-button-wrapper
+{
+    &:hover
+    {
+        color : darken(@palette-high,30%);
+        background-color: lighten(@palette-high,20%);
+    }
+}
+.ant-radio-button-wrapper,.ant-radio-button-wrapper:first-child
+{
+    border-color: @palette-high;
+}
+.ant-radio-button-wrapper-checked
+{
+    background-color:  @palette-high;
+    color : @palette-light;
+}
+.ant-radio-button-wrapper:not(:first-child)::before 
+{
+        background-color:  @palette-high;
+}

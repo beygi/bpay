@@ -37,7 +37,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
             wrapperCol: { md: 8 },
         };
 
-        const countries = CountryList.map((item, i) => <Option value={item.code}>{item.name}</Option>);
+        const countries = CountryList.map((item, i) => <Option key={i} value={item.code}>{item.name}</Option>);
 
         const { getFieldDecorator } = this.props.form;
         return (
@@ -54,7 +54,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
                 <Col md={18} >
                     <Block>
                         <h2>{t.t("Before you start")}</h2>
-                        <p>
+                        <div>
                             <ul>
                                 <li>to be replaced,  to be replaced,  to be replaced,  to be replaced,</li>
                                 <li>to be replaced,  to be replaced,  to be replaced,  to be replaced,</li>
@@ -63,7 +63,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
                                 <li>to be replaced,  to be replaced,  to be replaced,  to be replaced,</li>
                                 <li>to be replaced,  to be replaced,  to be replaced,  to be replaced,</li>
                             </ul>
-                        </p>
+                        </div>
                         <Form layout="horizontal" onSubmit={this.handleSubmit} className="login-form">
 
                             {/*  first name */}
@@ -120,8 +120,10 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
                                     {...formItemLayout}
                                     label={t.t("License Type")}
                                 >
-                                    {getFieldDecorator("type")(
-                                        <RadioGroup>
+                                    {getFieldDecorator("type", {
+                                        initialValue : "passport",
+                                    })(
+                                        <RadioGroup   >
                                             <RadioButton value="passport">{t.t("Passport")}</RadioButton>
                                             <RadioButton value="driving">{t.t("Driving license")}</RadioButton>
                                             <RadioButton value="idcard">{t.t(" National ID Card")}</RadioButton>
