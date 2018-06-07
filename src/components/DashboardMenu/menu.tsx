@@ -36,7 +36,7 @@ function getMenus() {
         },
         setting: {
             icon: "setting",
-            path: "/setting",
+            path: "/kyc",
             text: t.t("Setting"),
             visible: true,
         },
