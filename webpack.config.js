@@ -9,6 +9,9 @@ const isProduction = process.argv.indexOf("-p") >= 0;
 const sourcePath = path.join(__dirname, "./src");
 const outPath = path.join(__dirname, "./dist");
 
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
+
 // set env
 new webpack.DefinePlugin({
     'process.env': {
@@ -72,7 +75,7 @@ module.exports = {
 		options: {
 			configFile: "tslint.json"
 		}
-		
+
             },
             {
                 loader: "react-hot-loader/webpack!ts-loader",
@@ -86,32 +89,30 @@ module.exports = {
             {test: /\.(eot|ttf|woff|woff2)$/, loader: "file-loader"},
             {
                 test: /\.less$/,
-                use: [
-                    require.resolve("style-loader"),
-                    require.resolve("css-loader"),
-                    {
-                        loader: require.resolve("postcss-loader"),
-                        options: {
-                            ident: "postcss", // https://webpack.js.org/guides/migrating/#complex-options
-                            plugins: () => [
-                                require("postcss-flexbugs-fixes"),
-                                autoprefixer({
-                                    browsers: [
-                                        ">1%",
-                                        "last 4 versions",
-                                        "Firefox ESR",
-                                        "not ie < 9", // React doesn"t support IE8 anyway
-                                    ],
-                                    flexbox: "no-2009",
-                                }),
-                            ],
-                        },
-                    },
-                    {
-                        loader: require.resolve("less-loader"),
-                        options: {},
-                    }
-                ],
+                    use: ExtractTextPlugin.extract({
+                              fallback: 'style-loader',
+                              use: ['css-loader',
+
+                              {
+        loader: require.resolve("postcss-loader"),
+        options: {
+            ident: "postcss", // https://webpack.js.org/guides/migrating/#complex-options
+            plugins: () => [
+                require("postcss-flexbugs-fixes"),
+                autoprefixer({
+                    browsers: [
+                        ">1%",
+                        "last 4 versions",
+                        "Firefox ESR",
+                        "not ie < 9", // React doesn"t support IE8 anyway
+                    ],
+                    flexbox: "no-2009",
+                }),
+            ],
+        },
+    }, 'less-loader'
+                           ]
+                            }),
             },
             {
                 test: /\.png$/,
@@ -146,8 +147,13 @@ module.exports = {
         }),
         new webpack.optimize.AggressiveMergingPlugin(),
         new ExtractTextPlugin({
-            disable: !isProduction,
-            filename: "styles.css",
+            filename: "styles.optimize.css",
+        }),
+        new OptimizeCssAssetsPlugin({
+              assetNameRegExp: /\.css$/g,
+              cssProcessor: require('cssnano'),
+              cssProcessorOptions: { discardComments: { removeAll: true } },
+              canPrint: true
         }),
         new HtmlWebpackPlugin({
             template: "index.html",
