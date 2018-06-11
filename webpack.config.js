@@ -148,6 +148,7 @@ module.exports = {
         new webpack.optimize.AggressiveMergingPlugin(),
         new ExtractTextPlugin({
             filename: "styles.optimize.css",
+            disable: !isProduction
         }),
         new OptimizeCssAssetsPlugin({
               assetNameRegExp: /\.css$/g,
