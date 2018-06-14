@@ -1,9 +1,10 @@
-import { Col, Form, Icon, Input, Layout, Radio, Row , Select} from "antd";
+import { Button, Col, Form, Icon, Input, Layout, Modal , Radio, Row, Select, Upload} from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import * as React from "react";
 import { connect } from "react-redux";
 import Profile from "../../components/DashboardHeaderProfile";
 import Block from "../../components/Holder";
+import Uploader from "../../components/Uploader";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
@@ -13,6 +14,8 @@ const FormItem = Form.Item;
 const Option = Select.Option;
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
+
+const example1 = require("../../assets/images/example1.png");
 
 interface IUserFormProps extends FormComponentProps {
     user: any;
@@ -68,7 +71,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
 
                             {/*  first name */}
                             <FormItem label={t.t("First Name")}  {...formItemLayout} >
-                                {getFieldDecorator("FirstName", {
+                                {getFieldDecorator("first-name", {
                                     rules: [{ required: true, message: t.t("Please input your first name") }],
                                 })(
                                     <Input prefix={<Icon type={"user"} />} />,
@@ -77,7 +80,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
 
                             {/*  family */}
                             <FormItem label={t.t("Last Name")}  {...formItemLayout} >
-                                {getFieldDecorator("LastName", {
+                                {getFieldDecorator("last-name", {
                                     rules: [{ required: true, message: t.t("Please input your last name") }],
                                 })(
                                     <Input prefix={<Icon type={"user"} />} />,
@@ -120,7 +123,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
                                     {...formItemLayout}
                                     label={t.t("License Type")}
                                 >
-                                    {getFieldDecorator("type", {
+                                    {getFieldDecorator("license-type", {
                                         initialValue : "passport",
                                     })(
                                         <RadioGroup   >
@@ -128,6 +131,24 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
                                             <RadioButton value="driving">{t.t("Driving license")}</RadioButton>
                                             <RadioButton value="idcard">{t.t(" National ID Card")}</RadioButton>
                                         </RadioGroup>,
+                                    )}
+                                </FormItem>
+
+                                {/*  License ID */}
+                                <FormItem label={t.t("License ID")}  {...formItemLayout} >
+                                    {getFieldDecorator("license-id", {
+                                        rules: [{ required: true, message: t.t("Please input your license id ") }],
+                                    })(
+                                        <Input prefix={<Icon type="file-text" />} />,
+                                    )}
+                                </FormItem>
+
+                                {/*  Upload */}
+                                <FormItem label={t.t("License ID")}  {...formItemLayout} >
+                                    {getFieldDecorator("license-id", {
+                                        rules: [{ required: true, message: t.t("Please input your license id ") }],
+                                    })(
+                                        <Uploader example={example1} action="http://gnu.org"/>,
                                     )}
                                 </FormItem>
 
