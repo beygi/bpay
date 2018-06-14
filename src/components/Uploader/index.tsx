@@ -7,6 +7,8 @@ import "./style.less";
 interface IProps {
     example?: string;
     action: string;
+    name: string;
+    headers: {};
 }
 
 interface IState {
@@ -77,6 +79,8 @@ class UploaderComponent extends React.Component<IProps, IState> {
                     onPreview={this.handlePreview}
                     onChange={this.handleChange}
                     beforeUpload={beforeUpload}
+                    name={this.props.name}
+                    headers = {this.props.headers}
                 >
                     {this.state.fileList.length >= 1 ? null : uploadButton}
                 </Upload>
@@ -85,7 +89,7 @@ class UploaderComponent extends React.Component<IProps, IState> {
                 <Modal visible={this.state.previewVisible} footer={null} onCancel={this.handleCancel}>
                  <img alt="example" style={{ width: "100%" }} src={this.state.previewImage} />
                </Modal>
-            </div>
+            </div >
         );
     }
 
