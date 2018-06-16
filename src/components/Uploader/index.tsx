@@ -48,12 +48,12 @@ class UploaderComponent extends React.Component<IProps, IState> {
     }
 
     public handlePreview = (file) => {
-        if (file.url) {
-            this.setState({
-                previewImage: file.url ,
+        alert("here");
+        console.log(file);
+        this.setState({
+                previewImage: file.url  || file.thumbUrl,
                 previewVisible: true,
             });
-        }
     }
    public handleCancel = () => this.setState({ previewVisible: false });
     public handleChange = ({ fileList }) => this.setState({ fileList });
@@ -80,7 +80,7 @@ class UploaderComponent extends React.Component<IProps, IState> {
                     onChange={this.handleChange}
                     beforeUpload={beforeUpload}
                     name={this.props.name}
-                    headers = {this.props.headers}
+                    data = {this.props.headers}
                 >
                     {this.state.fileList.length >= 1 ? null : uploadButton}
                 </Upload>
