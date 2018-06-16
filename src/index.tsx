@@ -16,6 +16,7 @@ const history = createBrowserHistory();
 const user = USER.getInstance();
 
 user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
+    alert("authenticated");
     if (authenticated) {
         console.log(user.keycloak);
         // TODO: add token in store
