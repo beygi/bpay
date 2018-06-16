@@ -16,7 +16,6 @@ const history = createBrowserHistory();
 const user = USER.getInstance();
 
 user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
-    alert("authenticated");
     if (authenticated) {
         console.log(user.keycloak);
         // TODO: add token in store
@@ -27,6 +26,7 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         user.setUser(userData);
     } else {
         console.log(user.keycloak);
+        store.dispatch(setUser(null));
         // user.keycloak.login();
     }
     ReactDOM.render(
