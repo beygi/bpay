@@ -148,7 +148,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
                                     {getFieldDecorator("license-id", {
                                         rules: [{ required: true, message: t.t("Please input your license id ") }],
                                     })(
-                                        <Uploader example={example1} action="http://192.168.1.42:9092/kyc/img" name="file" headers={{imgtype: "cover"}} />,
+                                        <Uploader example={example1} action="http://87.98.188.77:9092/kyc/img" name="file" data={{imgtype: "cover"}} />,
                                     )}
                                 </FormItem>
 

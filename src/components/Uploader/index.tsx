@@ -1,20 +1,24 @@
 import { Icon, message, Modal, Upload } from "antd";
 import * as React from "react";
+import USER from "../../lib/user";
 import t from "../../services/trans/i18n";
 
 import "./style.less";
+
+const user = USER.getInstance();
 
 interface IProps {
     example?: string;
     action: string;
     name: string;
-    headers: {};
+    data: {};
 }
 
 interface IState {
     fileList: any[];
     previewImage: any;
     previewVisible: boolean;
+    headers: {};
 }
 
 function getBase64(img, callback) {
@@ -44,11 +48,11 @@ class UploaderComponent extends React.Component<IProps, IState> {
             previewVisible: false,
             previewImage: "",
             fileList: [],
+            headers : {token : user.keycloak.token},
         };
     }
 
     public handlePreview = (file) => {
-        alert("here");
         console.log(file);
         this.setState({
                 previewImage: file.url  || file.thumbUrl,
@@ -80,7 +84,8 @@ class UploaderComponent extends React.Component<IProps, IState> {
                     onChange={this.handleChange}
                     beforeUpload={beforeUpload}
                     name={this.props.name}
-                    data = {this.props.headers}
+                    data = {this.props.data}
+                    headers = {this.state.headers}
                 >
                     {this.state.fileList.length >= 1 ? null : uploadButton}
                 </Upload>
