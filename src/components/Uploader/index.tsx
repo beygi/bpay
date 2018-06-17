@@ -76,6 +76,7 @@ class UploaderComponent extends React.Component<IProps, IState> {
         );
         return (
             <div className="upload-container clearfix">
+                <div>
                 <Upload className="uploadButton"
                     action={this.props.action}
                     listType="picture-card"
@@ -90,10 +91,14 @@ class UploaderComponent extends React.Component<IProps, IState> {
                     {this.state.fileList.length >= 1 ? null : uploadButton}
                 </Upload>
                 <div className="example-img">{exampleImage}</div>
-                <h3>{t.t("Example Image")}</h3>
+                <div className="clearfix"></div>
                 <Modal visible={this.state.previewVisible} footer={null} onCancel={this.handleCancel}>
                  <img alt="example" style={{ width: "100%" }} src={this.state.previewImage} />
                </Modal>
+            </div>
+            <div>
+                   <h3>{t.t("Example Image")}</h3>
+            </div>
             </div >
         );
     }
