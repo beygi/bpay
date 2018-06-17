@@ -1,4 +1,4 @@
-import { Button, Col, Form, Icon, Input, Layout, Modal , Radio, Row, Select, Upload} from "antd";
+import { Button, Col, Form, Icon, Input, Layout, Modal, Radio, Row, Select, Upload } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import * as React from "react";
 import { connect } from "react-redux";
@@ -17,7 +17,7 @@ const RadioGroup = Radio.Group;
 
 const coverImg = require("../../assets/images/cover.png");
 const personalImg = require("../../assets/images/personal.png");
-const  selfieImg = require("../../assets/images/selfie.png");
+const selfieImg = require("../../assets/images/selfie.png");
 
 interface IUserFormProps extends FormComponentProps {
     user: any;
@@ -25,26 +25,55 @@ interface IUserFormProps extends FormComponentProps {
 
 interface IState {
     user: any;
+    cover: string;
+    passport: string;
+    passid: string;
 }
 
 class KycContainer extends React.Component<IUserFormProps, IState> {
     constructor(props: IUserFormProps) {
         super(props);
+        this.setImage = this.setImage.bind(this);
     }
 
-    public handleSubmit() {
-        return true;
+    public handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.form.validateFieldsAndScroll((err, values) => {
+            if (!err) {
+                console.log("Received values of form: ", values);
+            }
+        });
+    }
+
+    public setImage(file) {
+        console.log(this.state);
+        this.setState(file);
+        console.log(this.state);
     }
 
     public render() {
         const formItemLayout = {
-            labelCol: { lg: 4, md: 24},
-            wrapperCol: { lg : 14 , md: 24},
+            labelCol: { lg: 4, md: 24 },
+            wrapperCol: { lg: 14, md: 24 },
+        };
+
+        const tailFormItemLayout = {
+            wrapperCol: {
+                xs: {
+                    span: 24,
+                    offset: 0,
+                },
+                sm: {
+                    span: 16,
+                    offset: 4,
+                },
+            },
         };
 
         const countries = CountryList.map((item, i) => <Option key={i} value={item.code}>{item.name}</Option>);
 
         const { getFieldDecorator } = this.props.form;
+
         return (
             <Row gutter={8}>
                 <Col md={6} >
@@ -92,9 +121,12 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
                             {/* sex */}
                             <FormItem
                                 {...formItemLayout}
-                                label={t.t("Sex")}
+                                label={t.t("Sex")
+                            }
                             >
-                                {getFieldDecorator("sex")(
+                                {getFieldDecorator("sex", {
+                                    rules: [{ required: true, message: t.t("Please select your gender") }],
+                                })(
                                     <RadioGroup>
                                         <Radio value="male">{t.t("Male")}</Radio>
                                         <Radio value="female">{t.t("Female")}</Radio>
@@ -120,55 +152,59 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
                                 )}
                             </FormItem>
 
-                                {/* License Type */}
-                                <FormItem
-                                    {...formItemLayout}
-                                    label={t.t("License Type")}
-                                >
-                                    {getFieldDecorator("license-type", {
-                                        initialValue : "passport",
-                                    })(
-                                        <RadioGroup   >
-                                            <RadioButton value="passport">{t.t("Passport")}</RadioButton>
-                                            <RadioButton value="driving">{t.t("Driving license")}</RadioButton>
-                                            <RadioButton value="idcard">{t.t(" National ID Card")}</RadioButton>
-                                        </RadioGroup>,
-                                    )}
-                                </FormItem>
+                            {/* License Type */}
+                            <FormItem
+                                {...formItemLayout}
+                                label={t.t("License Type")}
+                            >
+                                {getFieldDecorator("license-type", {
+                                    initialValue: "passport",
+                                })(
+                                    <RadioGroup   >
+                                        <RadioButton value="passport">{t.t("Passport")}</RadioButton>
+                                        <RadioButton value="driving">{t.t("Driving license")}</RadioButton>
+                                        <RadioButton value="idcard">{t.t(" National ID Card")}</RadioButton>
+                                    </RadioGroup>,
+                                )}
+                            </FormItem>
 
-                                {/*  License ID */}
-                                <FormItem label={t.t("License ID")}  {...formItemLayout} >
-                                    {getFieldDecorator("license-id", {
-                                        rules: [{ required: true, message: t.t("Please input your license id ") }],
-                                    })(
-                                        <Input prefix={<Icon type="file-text" />} />,
-                                    )}
-                                </FormItem>
+                            {/*  License ID */}
+                            <FormItem label={t.t("License ID")}  {...formItemLayout} >
+                                {getFieldDecorator("license-id", {
+                                    rules: [{ required: true, message: t.t("Please input your license id ") }],
+                                })(
+                                    <Input prefix={<Icon type="file-text" />} />,
+                                )}
+                            </FormItem>
 
-                                {/*  Upload */}
-                                <FormItem label={t.t("Passport Cover")}  {...formItemLayout} >
-                                    {getFieldDecorator("cover", {
-                                        rules: [{ required: true, message: t.t("please upload your cover") }],
-                                    })(
-                                        <Uploader example={coverImg} action="http://87.98.188.77:9092/kyc/img" name="file" data={{imgtype: "cover"}} />,
-                                    )}
-                                </FormItem>
+                            {/*  Upload */}
+                            <FormItem label={t.t("Passport Cover")}  {...formItemLayout} >
+                                {getFieldDecorator("cover", {
+                                    rules: [{ required: false, message: t.t("please upload your cover") }],
+                                })(
+                                    <Uploader callback={this.setImage} example={coverImg} action="http://192.168.1.42:9092/kyc/img" name="file" data={{ imgtype: "cover" }} />,
+                                )}
+                            </FormItem>
 
-                                <FormItem label={t.t("Passport Personal Page")}  {...formItemLayout} >
-                                    {getFieldDecorator("passport", {
-                                        rules: [{ required: true, message: t.t("please upload your passport personal page") }],
-                                    })(
-                                        <Uploader example={personalImg} action="http://87.98.188.77:9092/kyc/img" name="file" data={{imgtype: "passport"}} />,
-                                    )}
-                                </FormItem>
+                            <FormItem label={t.t("Passport Personal Page")}  {...formItemLayout} >
+                                {getFieldDecorator("passport", {
+                                    rules: [{ required: false, message: t.t("please upload your passport personal page") }],
+                                })(
+                                    <Uploader callback={this.setImage} example={personalImg} action="http://192.168.1.42:9092/kyc/img" name="file" data={{ imgtype: "passport" }} />,
+                                )}
+                            </FormItem>
 
-                                <FormItem label={t.t("Selfie With ID And Note")}  {...formItemLayout} >
-                                    {getFieldDecorator("passid", {
-                                        rules: [{ required: true, message: t.t("please upload your slefie  image") }],
-                                    })(
-                                        <Uploader example={selfieImg} action="http://87.98.188.77:9092/kyc/img" name="file" data={{imgtype: "passid"}} />,
-                                    )}
-                                </FormItem>
+                            <FormItem label={t.t("Selfie With ID And Note")}  {...formItemLayout} >
+                                {getFieldDecorator("passid", {
+                                    rules: [{ required: false, message: t.t("please upload your slefie  image") }],
+                                })(
+                                    <Uploader callback={this.setImage} example={selfieImg} action="http://192.168.1.42:9092/kyc/img" name="file" data={{ imgtype: "passid" }} />,
+                                )}
+                            </FormItem>
+
+                            <FormItem {...tailFormItemLayout}>
+                                <Button type="primary" htmlType="submit" size="large">{t.t("Submit")}</Button>
+                            </FormItem>
 
                         </Form>
 
