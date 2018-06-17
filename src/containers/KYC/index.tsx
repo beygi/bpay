@@ -15,7 +15,9 @@ const Option = Select.Option;
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 
-const example1 = require("../../assets/images/example1.png");
+const coverImg = require("../../assets/images/cover.png");
+const personalImg = require("../../assets/images/personal.png");
+const  selfieImg = require("../../assets/images/selfie.png");
 
 interface IUserFormProps extends FormComponentProps {
     user: any;
@@ -144,11 +146,27 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
                                 </FormItem>
 
                                 {/*  Upload */}
-                                <FormItem label={t.t("License ID")}  {...formItemLayout} >
-                                    {getFieldDecorator("license-id", {
-                                        rules: [{ required: true, message: t.t("Please input your license id ") }],
+                                <FormItem label={t.t("Passport Cover")}  {...formItemLayout} >
+                                    {getFieldDecorator("cover", {
+                                        rules: [{ required: true, message: t.t("please upload your cover") }],
                                     })(
-                                        <Uploader example={example1} action="http://87.98.188.77:9092/kyc/img" name="file" data={{imgtype: "cover"}} />,
+                                        <Uploader example={coverImg} action="http://87.98.188.77:9092/kyc/img" name="file" data={{imgtype: "cover"}} />,
+                                    )}
+                                </FormItem>
+
+                                <FormItem label={t.t("Passport Personal Page")}  {...formItemLayout} >
+                                    {getFieldDecorator("passport", {
+                                        rules: [{ required: true, message: t.t("please upload your passport personal page") }],
+                                    })(
+                                        <Uploader example={personalImg} action="http://87.98.188.77:9092/kyc/img" name="file" data={{imgtype: "passport"}} />,
+                                    )}
+                                </FormItem>
+
+                                <FormItem label={t.t("Selfie With ID And Note")}  {...formItemLayout} >
+                                    {getFieldDecorator("passid", {
+                                        rules: [{ required: true, message: t.t("please upload your slefie  image") }],
+                                    })(
+                                        <Uploader example={selfieImg} action="http://87.98.188.77:9092/kyc/img" name="file" data={{imgtype: "passid"}} />,
                                     )}
                                 </FormItem>
 
