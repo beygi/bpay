@@ -11,7 +11,8 @@ interface IProps {
     example?: string;
     action: string;
     name: string;
-    data: {};
+    data: {imgtype: string};
+    callback: ({ }) => void;
 }
 
 interface IState {
@@ -28,7 +29,7 @@ function getBase64(img, callback) {
 }
 
 function beforeUpload(file) {
-    const isValid = file.type === "image/jpeg" ||  file.type === "image/png" ;
+    const isValid = file.type === "image/jpeg" || file.type === "image/png";
     if (!isValid) {
         message.error("You can only upload JPG or PNG file!");
     }
@@ -48,19 +49,28 @@ class UploaderComponent extends React.Component<IProps, IState> {
             previewVisible: false,
             previewImage: "",
             fileList: [],
-            headers : {token : user.keycloak.token},
+            headers: { Authorisation: "Token " + user.keycloak.token },
         };
     }
 
     public handlePreview = (file) => {
-        console.log(file);
+        // console.log(file)
         this.setState({
-                previewImage: file.url  || file.thumbUrl,
-                previewVisible: true,
-            });
+            previewImage: file.url || file.thumbUrl,
+            previewVisible: true,
+        });
     }
-   public handleCancel = () => this.setState({ previewVisible: false });
-    public handleChange = ({ fileList }) => this.setState({ fileList });
+    public handleCancel = () => this.setState({ previewVisible: false });
+    public handleChange = (fileList) => {
+          // console.log(fileList);
+          const newState = {};
+          newState[this.props.data.imgtype] = false;
+          if (fileList.file.status === "done") {
+              newState[this.props.data.imgtype] = true;
+              this.setState({fileList});
+            }
+          this.props.callback(newState);
+    }
 
     public render() {
         // const { previewVisible, previewImage, fileList } = this.state;
@@ -77,28 +87,28 @@ class UploaderComponent extends React.Component<IProps, IState> {
         return (
             <div className="upload-container clearfix">
                 <div>
-                <Upload className="uploadButton"
-                    action={this.props.action}
-                    listType="picture-card"
-                    fileList={this.state.fileList}
-                    onPreview={this.handlePreview}
-                    onChange={this.handleChange}
-                    beforeUpload={beforeUpload}
-                    name={this.props.name}
-                    data = {this.props.data}
-                    headers = {this.state.headers}
-                >
-                    {this.state.fileList.length >= 1 ? null : uploadButton}
-                </Upload>
-                <div className="example-img">{exampleImage}</div>
-                <div className="clearfix"></div>
-                <Modal visible={this.state.previewVisible} footer={null} onCancel={this.handleCancel}>
-                 <img alt="example" style={{ width: "100%" }} src={this.state.previewImage} />
-               </Modal>
-            </div>
-            <div>
-                   <h3>{t.t("Example Image")}</h3>
-            </div>
+                    <Upload className="uploadButton"
+                        action={this.props.action}
+                        listType="picture-card"
+                        fileList={this.state.fileList}
+                        onPreview={this.handlePreview}
+                        onChange={this.handleChange}
+                        beforeUpload={beforeUpload}
+                        name={this.props.name}
+                        data={this.props.data}
+                        headers={this.state.headers}
+                    >
+                        {this.state.fileList.length >= 1 ? null : uploadButton}
+                    </Upload>
+                    <div className="example-img">{exampleImage}</div>
+                    <div className="clearfix"></div>
+                    <Modal visible={this.state.previewVisible} footer={null} onCancel={this.handleCancel}>
+                        <img alt="example" style={{ width: "100%" }} src={this.state.previewImage} />
+                    </Modal>
+                </div>
+                <div>
+                    <h3>{t.t("Example Image")}</h3>
+                </div>
             </div >
         );
     }
