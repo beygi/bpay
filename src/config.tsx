@@ -5,7 +5,7 @@ const config = {
     keycloakConfig : {
         url: "https://51.38.197.75/auth",
         realm: "master",
-        clientId: "webapp",
+        clientId: "application",
         checkLoginIframe: false,
     },
 };
