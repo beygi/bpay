@@ -33,22 +33,20 @@ class DashboardHeaderProfileComponent extends React.Component<IProps, IState> {
     public render() {
         return (
             <div className="header-user-profile">
-                <div>
-                    <p><span className="caption">{t.t("Email:")} </span>{this.props.user.email}</p>
+                <div className="line">
+                    <span className="caption">{t.t("Email:")} </span>{this.props.user.email}
                 </div>
-                <div>
-                    <p>
-                        <span className="caption">{t.t("Verification level:")} </span><Tag className="verify">Verified</Tag>
-                    </p>
+                <div className="line">
+                    <span className="caption">{t.t("Verification level:")} </span><Tag className="verify">Verified</Tag>
                 </div>
-                <div>
-                    <p><span className="caption">{t.t("Last login:")} </span>12 May 2017 23:32:12</p>
+                <div className="line">
+                    <span className="caption">{t.t("Last login:")} </span>12 May 2017 23:32:12
                 </div>
-                <div>
-                    <p>
-                         <Button type="primary">{t.t("Change Password")}</Button>
-                         <Button  type="primary" className="logout">{t.t("Logout")}</Button>
-                    </p>
+                <div className="line">
+
+                    <Button type="primary">{t.t("Change Password")}</Button>
+                    <Button type="primary" className="logout">{t.t("Logout")}</Button>
+
                 </div>
 
             </div >
