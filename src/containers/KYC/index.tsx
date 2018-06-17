@@ -36,8 +36,8 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
 
     public render() {
         const formItemLayout = {
-            labelCol: { md: 4 },
-            wrapperCol: { md: 8 },
+            labelCol: { lg: 4, md: 24},
+            wrapperCol: { lg : 14 , md: 24},
         };
 
         const countries = CountryList.map((item, i) => <Option key={i} value={item.code}>{item.name}</Option>);
