@@ -24,7 +24,7 @@ interface IUserFormProps extends FormComponentProps {
 }
 
 interface IState {
-    user: any;
+    user?: any;
     cover: string;
     passport: string;
     passid: string;
@@ -34,10 +34,27 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
     constructor(props: IUserFormProps) {
         super(props);
         this.setImage = this.setImage.bind(this);
+        this.state = {
+            cover : null,
+            passport : null,
+            passid: null,
+        };
     }
 
     public handleSubmit = (e) => {
         e.preventDefault();
+        // check for validating image uploads
+        this.props.form.setFields({
+            cover: {
+                value: this.state.cover,
+            },
+            passport: {
+                value: this.state.passport,
+            },
+            passid: {
+                value: this.state.passid,
+            },
+        });
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 console.log("Received values of form: ", values);
@@ -71,7 +88,6 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
         };
 
         const countries = CountryList.map((item, i) => <Option key={i} value={item.code}>{item.name}</Option>);
-
         const { getFieldDecorator } = this.props.form;
 
         return (
@@ -122,7 +138,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
                             <FormItem
                                 {...formItemLayout}
                                 label={t.t("Sex")
-                            }
+                                }
                             >
                                 {getFieldDecorator("sex", {
                                     rules: [{ required: true, message: t.t("Please select your gender") }],
@@ -180,7 +196,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
                             {/*  Upload */}
                             <FormItem label={t.t("Passport Cover")}  {...formItemLayout} >
                                 {getFieldDecorator("cover", {
-                                    rules: [{ required: false, message: t.t("please upload your cover") }],
+                                    rules: [{ required: true, message: t.t("please upload your cover") }],
                                 })(
                                     <Uploader callback={this.setImage} example={coverImg} action="http://192.168.1.42:9092/kyc/img" name="file" data={{ imgtype: "cover" }} />,
                                 )}
@@ -188,7 +204,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
 
                             <FormItem label={t.t("Passport Personal Page")}  {...formItemLayout} >
                                 {getFieldDecorator("passport", {
-                                    rules: [{ required: false, message: t.t("please upload your passport personal page") }],
+                                    rules: [{ required: true, message: t.t("please upload your passport personal page") }],
                                 })(
                                     <Uploader callback={this.setImage} example={personalImg} action="http://192.168.1.42:9092/kyc/img" name="file" data={{ imgtype: "passport" }} />,
                                 )}
@@ -196,7 +212,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
 
                             <FormItem label={t.t("Selfie With ID And Note")}  {...formItemLayout} >
                                 {getFieldDecorator("passid", {
-                                    rules: [{ required: false, message: t.t("please upload your slefie  image") }],
+                                    rules: [{ required: true, message: t.t("please upload your slefie  image") }],
                                 })(
                                     <Uploader callback={this.setImage} example={selfieImg} action="http://192.168.1.42:9092/kyc/img" name="file" data={{ imgtype: "passid" }} />,
                                 )}
