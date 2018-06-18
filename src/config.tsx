@@ -11,4 +11,3 @@ const config = {
 };
 
 export default config;
-        // url: "https://51.38.197.75/auth",
