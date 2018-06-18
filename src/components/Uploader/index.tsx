@@ -55,7 +55,6 @@ class UploaderComponent extends React.Component<IProps, IState> {
     }
 
     public handlePreview = (file) => {
-        // console.log(file)
         this.setState({
             previewImage: file.url || file.thumbUrl,
             previewVisible: true,
@@ -63,14 +62,13 @@ class UploaderComponent extends React.Component<IProps, IState> {
     }
     public handleCancel = () => this.setState({ previewVisible: false });
     public handleChange = (fileList) => {
-          // console.log(fileList);
           const newState = {};
           newState[this.props.data.imgtype] = null;
           if (fileList.file.status === "done") {
               newState[this.props.data.imgtype] = true;
-              this.setState({fileList});
             }
           this.props.callback(newState);
+          this.setState({fileList : fileList.fileList});
     }
 
     public render() {
