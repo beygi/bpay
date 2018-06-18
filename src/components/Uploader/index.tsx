@@ -49,7 +49,8 @@ class UploaderComponent extends React.Component<IProps, IState> {
             previewVisible: false,
             previewImage: "",
             fileList: [],
-            headers: { Authorisation: "Token " + user.keycloak.token },
+            // TODO : add real token here
+            headers: { Authorisation: "Token " + JSON.stringify(user.keycloak.tokenParsed) },
         };
     }
 
