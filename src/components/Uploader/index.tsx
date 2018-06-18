@@ -64,7 +64,7 @@ class UploaderComponent extends React.Component<IProps, IState> {
     public handleChange = (fileList) => {
           // console.log(fileList);
           const newState = {};
-          newState[this.props.data.imgtype] = false;
+          newState[this.props.data.imgtype] = null;
           if (fileList.file.status === "done") {
               newState[this.props.data.imgtype] = true;
               this.setState({fileList});
