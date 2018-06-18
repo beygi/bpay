@@ -10,6 +10,7 @@ const { Sider, Content } = Layout;
 
 interface IProps {
     children: JSX.Element;
+    isAdmin: boolean;
 }
 
 interface IState {
@@ -30,9 +31,9 @@ export default class DashboardPrivateLayout extends React.Component<IProps, ISta
     public render() {
         return (
             <Layout style={{ minHeight: "100vh" }}>
-                <DashboardMenuComponent />
+                <DashboardMenuComponent  isAdmin={this.props.isAdmin} />
                 <Layout id="privateContent" className="private-content">
-                    <DashboardHeaderComponent />
+                    <DashboardHeaderComponent isAdmin={this.props.isAdmin}  />
                     <Content>
                         {this.props.children}
                     </Content>

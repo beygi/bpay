@@ -9,6 +9,7 @@ import { logOut } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
+import adminMenu from "./adminMenu";
 import menu from "./menu";
 
 import { NavLink } from "react-router-dom";
@@ -22,6 +23,7 @@ interface IProps {
     user: any;
     path: any;
     logOut: () => void;
+    isAdmin: boolean;
 }
 
 interface IState {
@@ -31,11 +33,11 @@ interface IState {
 class DashboardMenuComponent extends React.Component<IProps, IState> {
 
     public static getDerivedStateFromProps(nextProps, prevState) {
-            return {isOpen : false};
+        return { isOpen: false };
     }
     constructor(props: IProps) {
         super(props);
-        this.state = {isOpen : false};
+        this.state = { isOpen: false };
         this.logOut = this.logOut.bind(this);
     }
 
@@ -46,7 +48,13 @@ class DashboardMenuComponent extends React.Component<IProps, IState> {
 
     public render() {
         // prepare menus
-        const Menus = menu();
+        let Menus: any;
+        if (this.props.isAdmin) {
+            Menus = adminMenu();
+        } else {
+            Menus = menu();
+        }
+
         const menuComponent = Object.keys(Menus).map((item) =>
             <NavLink key={item} to={Menus[item].path} exact activeClassName="active">
                 <Icon type={Menus[item].icon} />

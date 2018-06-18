@@ -1,4 +1,4 @@
-import { Icon, Input, Layout, Popover , Tooltip} from "antd";
+import { Icon, Input, Layout, Popover, Tooltip } from "antd";
 import * as React from "react";
 
 const Search = Input.Search;
@@ -7,7 +7,9 @@ import * as Gravatar from "react-gravatar";
 import { connect } from "react-redux";
 import { logOut } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
+
 import t from "../../services/trans/i18n";
+import adminMenu from "../DashboardMenu/adminMenu";
 import menu from "../DashboardMenu/menu";
 
 import HeaderProfile from "../DashboardHeaderProfile";
@@ -23,6 +25,7 @@ interface IProps {
     user: any;
     path: any;
     logOut: () => void;
+    isAdmin: boolean;
 }
 
 interface IState {
@@ -46,9 +49,13 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
 
     public render() {
         // finde selected menu name based on pathname
-        const Menus = menu();
-        const MenuItem = _.find(Menus, { path: this.props.path});
-
+        let Menus: any;
+        if (this.props.isAdmin) {
+            Menus = adminMenu();
+        } else {
+            Menus = menu();
+        }
+        const MenuItem: any = _.find(Menus, { path: this.props.path });
         return (
             <div className="header-logo-user">
                 <div className="selected-menu">

@@ -1,8 +1,6 @@
-import USER from "../../lib/user";
 import t from "../../services/trans/i18n";
 
 function getMenus() {
-    const user = USER.getInstance();
     const availableMenus = {
         dashboard: {
             icon: "dashboard",
