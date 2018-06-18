@@ -8,22 +8,27 @@ import { Redirect, Route, Switch } from "react-router";
 import { ConnectedRouter } from "react-router-redux";
 
 import AppContainer from "./containers/app";
+import Api from "./lib/api";
 import USER from "./lib/user";
 import { setUser } from "./redux/app/actions";
 import { store } from "./redux/store";
 
 const history = createBrowserHistory();
 const user = USER.getInstance();
+const api = Api.getInstance();
 
 user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
     if (authenticated) {
         console.log(user.keycloak);
-        // TODO: add token in store
+        // token is in user.keycloak.token
         const userData = _.pick(user.keycloak.tokenParsed, ["email", "name", "realm_access"]);
         // set user in store
         store.dispatch(setUser(userData));
-        // set user in user object because it an instance now
+        // set user in user object because it has an instance now
         user.setUser(userData);
+        // set token in api lib
+        api.setAuthToken(user.keycloak.token);
+
     } else {
         console.log(user.keycloak);
         store.dispatch(setUser(null));
