@@ -53,6 +53,6 @@ export default class API {
 
     // Api Calls TODO : they will be generated from swagger
     public GetCountries() {
-        this.axios.get("/country");
+        return this.axios.get("/country");
     }
 }

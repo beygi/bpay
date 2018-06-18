@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import Profile from "../../components/DashboardHeaderProfile";
 import Block from "../../components/Holder";
 import Uploader from "../../components/Uploader";
+import Api from "../../lib/api";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
@@ -18,6 +19,8 @@ const RadioGroup = Radio.Group;
 const coverImg = require("../../assets/images/cover.png");
 const personalImg = require("../../assets/images/personal.png");
 const selfieImg = require("../../assets/images/selfie.png");
+
+const api = Api.getInstance();
 
 interface IUserFormProps extends FormComponentProps {
     user: any;
@@ -39,6 +42,10 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
             passport : null,
             passid: null,
         };
+
+        api.GetCountries().then( (response) => {
+            console.log(response.data);
+        } );
     }
 
     public handleSubmit = (e) => {
@@ -63,9 +70,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
     }
 
     public setImage(file) {
-        console.log(this.state);
         this.setState(file);
-        console.log(this.state);
     }
 
     public render() {
@@ -146,7 +151,6 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
                                     <RadioGroup>
                                         <Radio value="male">{t.t("Male")}</Radio>
                                         <Radio value="female">{t.t("Female")}</Radio>
-                                        <Radio value="other">{t.t("Other")}</Radio>
                                     </RadioGroup>,
                                 )}
                             </FormItem>
