@@ -55,4 +55,8 @@ export default class API {
     public GetCountries() {
         return this.axios.get("/country");
     }
+
+    public postKYC(data) {
+        return this.axios.post("/kyc", data);
+    }
 }
