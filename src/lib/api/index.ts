@@ -13,6 +13,7 @@ export default class API {
     private baseURL: string;
     private AuthToken: string | null;
     private axios: any;
+    private headers: { Authorisation?: string };
 
     private constructor() {
         // empty;
@@ -22,7 +23,7 @@ export default class API {
     public CreateAxiosInstance() {
         this.axios = axios.create({
             baseURL: this.baseURL,
-            timeout: 1000,
+            timeout: 100000,
             headers: this.getHeaders(),
         });
     }
@@ -41,13 +42,17 @@ export default class API {
         this.AuthToken = null;
     }
 
-    private getHeaders(): any {
-        const headers = new Headers();
-        headers.append("Content-Type", "application/json");
-        headers.append("Accept-Language", "fa_IR");
+    public getHeaders(): any {
+        this.headers = {};
+        this.headers["Accept-Language"] = "fa_IR";
         if (this.AuthToken) {
-            headers.append("Authorisation", "Token " + this.AuthToken);
+            this.headers.Authorisation = "Token " + this.AuthToken;
         }
-        return headers;
+        return this.headers;
+    }
+
+    // Api Calls TODO : they will be generated from swagger
+    public GetCountries() {
+        this.axios.get("/country");
     }
 }
