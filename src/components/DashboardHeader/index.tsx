@@ -5,6 +5,7 @@ const Search = Input.Search;
 import * as  _ from "lodash";
 import * as Gravatar from "react-gravatar";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { logOut } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 
@@ -51,12 +52,20 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
         // finde selected menu name based on pathname
         let Menus: any;
         let AdminClass: string;
+        let AdminButton: any;
         if (this.props.isAdmin) {
             Menus = adminMenu();
             AdminClass = "header-logo-user admin-menu";
+            AdminButton = <Tooltip placement="bottom" title={t.t("User Dashboard")}>
+                <Link to="/dashboard"><Icon type="user" /></Link>
+            </Tooltip>;
         } else {
             Menus = menu();
             AdminClass = "header-logo-user";
+            // todo check user permission
+            AdminButton = <Tooltip placement="bottom" title={t.t("System Administration")}>
+                <Link to="/admin/dashboard"><Icon type="setting" /></Link>
+            </Tooltip>;
         }
         const MenuItem: any = _.find(Menus, { path: this.props.path });
         return (
@@ -71,6 +80,7 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                 <Tooltip placement="bottom" title={t.t("Logout")}>
                     <Icon type="logout" onClick={this.logOut} />
                 </Tooltip>
+               {AdminButton}
                 <img className="user-dashboard-logo" src={logo} />
             </div >
         );
