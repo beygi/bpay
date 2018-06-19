@@ -5,12 +5,12 @@ function getMenus() {
         dashboard: {
             icon: "dashboard",
             path: "/admin/dashboard",
-            text: t.t("Dashboard"),
+            text: t.t("Admin Dashboard"),
             visible: true,
         },
         setting: {
             icon: "setting",
-            path: "/admin/settings",
+            path: "/dashboard",
             text: t.t("Setting"),
             visible: true,
         },

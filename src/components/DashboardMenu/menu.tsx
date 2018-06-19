@@ -38,6 +38,12 @@ function getMenus() {
             text: t.t("Setting"),
             visible: true,
         },
+        admin: {
+            icon: "setting",
+            path: "/admin/dashboard",
+            text: t.t("Admin Dashboard"),
+            visible: true,
+        },
     };
     return availableMenus;
 }
