@@ -50,14 +50,17 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
     public render() {
         // finde selected menu name based on pathname
         let Menus: any;
+        let AdminClass: string;
         if (this.props.isAdmin) {
             Menus = adminMenu();
+            AdminClass = "header-logo-user admin-menu";
         } else {
             Menus = menu();
+            AdminClass = "header-logo-user";
         }
         const MenuItem: any = _.find(Menus, { path: this.props.path });
         return (
-            <div className="header-logo-user">
+            <div className={AdminClass}>
                 <div className="selected-menu">
                     <Icon type={MenuItem.icon} />{MenuItem.text}
                 </div>
