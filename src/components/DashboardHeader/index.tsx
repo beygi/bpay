@@ -62,10 +62,12 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
         } else {
             Menus = menu();
             AdminClass = "header-logo-user";
-            // todo check user permission
-            AdminButton = <Tooltip placement="bottom" title={t.t("System Administration")}>
-                <Link to="/admin/dashboard"><Icon type="setting" /></Link>
-            </Tooltip>;
+            // check user permission
+            if (userObject.permission("admin").adminView) {
+                AdminButton = <Tooltip placement="bottom" title={t.t("System Administration")}>
+                    <Link to="/admin/dashboard"><Icon type="setting" /></Link>
+                </Tooltip>;
+            }
         }
         const MenuItem: any = _.find(Menus, { path: this.props.path });
         return (
