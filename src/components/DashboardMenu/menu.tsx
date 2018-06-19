@@ -33,15 +33,9 @@ function getMenus() {
             visible: true,
         },
         setting: {
-            icon: "setting",
+            icon: "solution",
             path: "/kyc",
-            text: t.t("Setting"),
-            visible: true,
-        },
-        admin: {
-            icon: "setting",
-            path: "/admin/dashboard",
-            text: t.t("Admin Dashboard"),
+            text: t.t("KYC"),
             visible: true,
         },
     };

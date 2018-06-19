@@ -75,15 +75,17 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                 <div className="selected-menu">
                     <Icon type={MenuItem.icon} />{MenuItem.text}
                 </div>
-                <Popover placement="bottom" title={t.t("Account information")} content={<HeaderProfile></HeaderProfile>} trigger="click">
-                    <Gravatar email={this.props.user.email} default="monsterid"
-                        size={60} className={"ProfilePic"} />
-                </Popover>
-                <Tooltip placement="bottom" title={t.t("Logout")}>
-                    <Icon type="logout" onClick={this.logOut} />
-                </Tooltip>
-               {AdminButton}
-                <img className="user-dashboard-logo" src={logo} />
+                <div className="header-icons">
+                    <Popover placement="bottom" title={t.t("Account information")} content={<HeaderProfile></HeaderProfile>} trigger="click">
+                        <Gravatar email={this.props.user.email} default="monsterid"
+                            size={60} className={"ProfilePic"} />
+                    </Popover>
+                    <Tooltip placement="bottom" title={t.t("Logout")}>
+                        <Icon type="logout" onClick={this.logOut} />
+                    </Tooltip>
+                    {AdminButton}
+                    <img className="user-dashboard-logo" src={logo} />
+                </div>
             </div >
         );
     }

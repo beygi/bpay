@@ -21,34 +21,37 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
 
-    .user-dashboard-logo {
-        height: 90%;
-        margin-right: 10px;
-        margin-left: 20px;
-    }
-
-    .ProfilePic {
-        border-radius: 100px;
-        border: 3px solid @palette-high;
-        margin-right: 10px;
-        transition: 0.5s;
-
-        &:hover {
-            border: 3px solid @palette-low;
-            cursor: pointer;
+    .header-icons {
+        height: 100%;
+        .user-dashboard-logo {
+            height: 90%;
+            margin-right: 10px;
+            margin-left: 20px;
         }
-    }
 
-    .anticon {
-        color: @palette-high;
-        font-size: 40px;
-        vertical-align: middle;
-        transition: 0.5s;
-        margin-right: 10px;
+        .ProfilePic {
+            border-radius: 100px;
+            border: 3px solid @palette-high;
+            margin-right: 10px;
+            transition: 0.5s;
 
-        &:hover {
-            color: @palette-low;
-            cursor: pointer;
+            &:hover {
+                border: 3px solid @palette-low;
+                cursor: pointer;
+            }
+        }
+
+        .anticon {
+            color: @palette-high;
+            font-size: 40px;
+            vertical-align: middle;
+            transition: 0.5s;
+            margin-right: 10px;
+
+            &:hover {
+                color: @palette-low;
+                cursor: pointer;
+            }
         }
     }
     background-color: darken(@palette-high, 10%);
@@ -63,13 +66,13 @@ body {
     line-height: 5px;
     height: 100%;
     margin-top: 15px;
-    color : @palette-low;
+    color: @palette-low;
+
     i {
         margin-right: 10px;
     }
 }
 
-.admin-menu
-{
-    background-color : lighten( @palette-crazy,10%); 
+.admin-menu {
+    background-color: lighten(@palette-crazy,10%);
 }

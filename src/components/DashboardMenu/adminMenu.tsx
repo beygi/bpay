@@ -5,13 +5,13 @@ function getMenus() {
         dashboard: {
             icon: "dashboard",
             path: "/admin/dashboard",
-            text: t.t("Admin Dashboard"),
+            text: t.t("Dashboard"),
             visible: true,
         },
         setting: {
-            icon: "setting",
-            path: "/dashboard",
-            text: t.t("Setting"),
+            icon: "solution",
+            path: "/admin/kyc",
+            text: t.t("KYC"),
             visible: true,
         },
     };
