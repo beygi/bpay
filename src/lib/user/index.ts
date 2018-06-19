@@ -24,7 +24,7 @@ export default class USER {
     }
     public getCurrent() {
         this.user = store.getState().app.user || null;
-        return  this.user;
+        return this.user;
     }
 
     public permission(resourceName) {
@@ -34,6 +34,7 @@ export default class USER {
             edit: false,
             index: false,
             view: false,
+            adminView: false,
         };
         const allTrue = {
             add: true,
@@ -41,10 +42,11 @@ export default class USER {
             edit: true,
             index: true,
             view: true,
+            adminView: true,
         };
 
         // return full permissions for admins
-        if (this.user.realm_access.roles.indexOf("webapp-admin") !== -1 ) { return allTrue; }
+        if (this.user.realm_access.roles.indexOf("webapp-admin") !== -1) { return allTrue; }
         // return normal permissions
         // if (this.user.permissions[resourceName]) { return this.user.permissions[resourceName].global; }
         // return falses if permissions does not defined
