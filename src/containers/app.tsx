@@ -6,7 +6,7 @@ import { IRootState } from "../redux/reducers";
 import Layout from "./../components/Layout";
 import PrivateRoute from "./../components/PrivateRoute";
 
-import AdminDashboardContainer from "./AdminDashboard";
+import AdminDashboardContainer from "./Admin/Dashboard";
 import DashboardContainer from "./Dashboard";
 import GroupsContainer from "./Groups";
 import KycContainer from "./KYC";

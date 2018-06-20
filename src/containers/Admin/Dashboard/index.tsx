@@ -1,11 +1,11 @@
 import { Col, Layout, Row } from "antd";
 import * as React from "react";
 import {connect} from "react-redux";
-import Profile from "../../components/DashboardHeaderProfile";
-import Block from "../../components/Holder";
-import Guide from "../../components/UserStatusGuide";
-import {setUser} from "../../redux/app/actions";
-import {IRootState} from "../../redux/reducers";
+import Profile from "../../../components/DashboardHeaderProfile";
+import Block from "../../../components/Holder";
+import Guide from "../../../components/UserStatusGuide";
+import {setUser} from "../../../redux/app/actions";
+import {IRootState} from "../../../redux/reducers";
 
 interface IProps {
     user: any;
