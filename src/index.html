@@ -4,10 +4,32 @@
 <head>
     <meta charset="UTF-8" />
     <title>Hello Market</title>
+
+
+    <!--[if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+<![endif]-->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
 </head>
 
 <body>
     <div id="root"></div>
+
+
+
+    <script src="http://support.b2mark.com/assets/chat/chat.min.js"></script>
+    <script>
+        $(function() {
+            new ZammadChat({
+                background: '#4b8cf5',
+                fontSize: '14px',
+                chatId: 1,
+                debug: true,
+                flat: true
+            });
+        });
+    </script>
 </body>
 
 </html>
