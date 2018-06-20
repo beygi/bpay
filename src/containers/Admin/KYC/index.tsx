@@ -7,6 +7,7 @@ import { setUser } from "../../../redux/app/actions";
 import { IRootState } from "../../../redux/reducers";
 
 import { Button, Input, Popover, Table } from "antd";
+import Api from "../../../lib/api";
 
 import t from "../../../services/trans/i18n";
 
@@ -22,6 +23,7 @@ interface IState {
     pagination: any;
 }
 
+const api = Api.getInstance();
 const columns = [
     {
         dataIndex: "vip", render: (record) => {
@@ -59,7 +61,7 @@ const columns = [
         dataIndex: "status", key: "status", render: (record) => {
             return {
                 children: <span><i className={"circle"} />
-                    </span>,
+                </span>,
                 props: {
                     className: record,
                 },
@@ -102,20 +104,24 @@ class KycAdminContainer extends React.Component<IProps, IState> {
                     </Block>
                 </Col>
                 <Col md={18} >
-                        <Table
-                            loading={this.state.loading}
-                            columns={columns}
-                            expandedRowRender={(record) => <p style={{ margin: 0 }}>{record.description}</p>}
-                            // rowClassName={(record, index) => record.status + index}
-                            dataSource={this.state.users}
-                            pagination={this.state.pagination}
-                        />
+                    <Table
+                        loading={this.state.loading}
+                        columns={columns}
+                        expandedRowRender={(record) => <p style={{ margin: 0 }}>{record.description}</p>}
+                        // rowClassName={(record, index) => record.status + index}
+                        dataSource={this.state.users}
+                        pagination={this.state.pagination}
+                    />
                 </Col>
             </Row>
         );
     }
 
     private loadData() {
+        api.getAllKYC().then((response) => {
+            console.log(response);
+        },
+        );
         return true;
     }
 
