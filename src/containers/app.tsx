@@ -7,6 +7,7 @@ import Layout from "./../components/Layout";
 import PrivateRoute from "./../components/PrivateRoute";
 
 import AdminDashboardContainer from "./Admin/Dashboard";
+import KycAdminContainer from "./Admin/KYC";
 import DashboardContainer from "./Dashboard";
 import GroupsContainer from "./Groups";
 import KycContainer from "./KYC";
@@ -76,7 +77,7 @@ class AppContainer extends React.Component<IProps, IState> {
 
                 {/* Private admin routes */}
                 <PrivateRoute path={`/admin/dashboard`} component={AdminDashboardContainer} />
-                <PrivateRoute path={`/admin/kyc`} component={UsersContainer} />
+                <PrivateRoute path={`/admin/kyc`} component={KycAdminContainer} />
 
                 {/* Public routes */}
                 <Route exact path={`/`} render={() => <Layout private={false}><LandingContainer /></Layout>} />
