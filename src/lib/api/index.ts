@@ -59,4 +59,9 @@ export default class API {
     public postKYC(data) {
         return this.axios.post("/kyc", data);
     }
+
+    public getAllKYC() {
+        return this.axios.get("/kyc");
+    }
+
 }
