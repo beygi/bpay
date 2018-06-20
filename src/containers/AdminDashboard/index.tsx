@@ -1,5 +1,9 @@
+import { Col, Layout, Row } from "antd";
 import * as React from "react";
 import {connect} from "react-redux";
+import Profile from "../../components/DashboardHeaderProfile";
+import Block from "../../components/Holder";
+import Guide from "../../components/UserStatusGuide";
 import {setUser} from "../../redux/app/actions";
 import {IRootState} from "../../redux/reducers";
 
@@ -17,7 +21,25 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
-        return (<div><h1>Dashboard</h1></div>);
+        return (
+            <Row gutter={8}>
+              <Col md={6} >
+                  <Block>
+                  </Block>
+                  <Block>
+                  </Block>
+              </Col>
+              <Col md={18} >
+                   <Block>
+                        Admin Dashboard
+                   </Block>
+                    <Block>
+                    </Block>
+                    <Block>
+                    </Block>
+              </Col>
+            </Row>
+        );
     }
 }
 
