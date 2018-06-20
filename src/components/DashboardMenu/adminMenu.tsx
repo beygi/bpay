@@ -14,6 +14,12 @@ function getMenus() {
             text: t.t("KYC"),
             visible: true,
         },
+        chat: {
+            icon: "team",
+            path: "/admin/chat",
+            text: t.t("Support"),
+            visible: true,
+        },
     };
     return availableMenus;
 }
