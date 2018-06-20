@@ -53,12 +53,14 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
         let Menus: any;
         let AdminClass: string;
         let AdminButton: any;
+        let HeaderLogo: any;
         if (this.props.isAdmin) {
             Menus = adminMenu();
             AdminClass = "header-logo-user admin-menu";
             AdminButton = <Tooltip placement="bottom" title={t.t("User Dashboard")}>
                 <Link to="/dashboard"><Icon type="user" /></Link>
             </Tooltip>;
+            HeaderLogo = <Link to="/admin/dashboard"><img className="user-dashboard-logo" src={logo} /></Link>;
         } else {
             Menus = menu();
             AdminClass = "header-logo-user";
@@ -67,6 +69,7 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                 AdminButton = <Tooltip placement="bottom" title={t.t("System Administration")}>
                     <Link to="/admin/dashboard"><Icon type="setting" /></Link>
                 </Tooltip>;
+                HeaderLogo = <Link to="/dashboard"><img className="user-dashboard-logo" src={logo} /></Link>;
             }
         }
         const MenuItem: any = _.find(Menus, { path: this.props.path });
@@ -84,7 +87,7 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                         <Icon type="logout" onClick={this.logOut} />
                     </Tooltip>
                     {AdminButton}
-                    <img className="user-dashboard-logo" src={logo} />
+                    {HeaderLogo}
                 </div>
             </div >
         );

@@ -15,7 +15,7 @@ function getMenus() {
             visible: true,
         },
         chat: {
-            icon: "team",
+            icon: "message",
             path: "/admin/chat",
             text: t.t("Support"),
             visible: true,
