@@ -6288,6 +6288,10 @@ react-spinners@^0.2.5:
     react-emotion "^8.0.6"
     recompose "0.26.0"
 
+react-tradingview-widget@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/react-tradingview-widget/-/react-tradingview-widget-1.2.5.tgz#76118a4e5586368f60135f4a17820ffd52111d1c"
+
 react@^16.2.0:
   version "16.3.2"
   resolved "https://registry.yarnpkg.com/react/-/react-16.3.2.tgz#fdc8420398533a1e58872f59091b272ce2f91ea9"

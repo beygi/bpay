@@ -10,6 +10,7 @@ import ChatAdminContainer from "./Admin/Chat";
 import AdminDashboardContainer from "./Admin/Dashboard";
 import KycAdminContainer from "./Admin/KYC";
 import DashboardContainer from "./Dashboard";
+import ExchangeContainer from "./Exchange";
 import GroupsContainer from "./Groups";
 import KycContainer from "./KYC";
 import LandingContainer from "./Landing";
@@ -72,7 +73,7 @@ class AppContainer extends React.Component<IProps, IState> {
                 <PrivateRoute path={`/dashboard`} component={DashboardContainer} />
                 <PrivateRoute path={`/kyc`} component={KycContainer} />
                 <PrivateRoute path={`/balance`} component={DashboardContainer} />
-                <PrivateRoute path={`/exchange`} component={DashboardContainer} />
+                <PrivateRoute path={`/exchange`} component={ExchangeContainer} />
                 <PrivateRoute path={`/groups`} component={GroupsContainer} />
                 <PrivateRoute path={`/users`} component={UsersContainer} />
 
