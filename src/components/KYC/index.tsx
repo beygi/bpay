@@ -17,11 +17,9 @@ class KycComponent extends React.Component<IProps, IState> {
     }
 
     public render() {
-        alert("render");
-        console.log(this.props);
         return (
             <div>
-                {this.props.record.country}
+                {this.props.record.countryName.name}
             </div >
         );
     }

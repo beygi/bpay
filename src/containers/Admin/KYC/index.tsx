@@ -57,7 +57,8 @@ class KycAdminContainer extends React.Component<IProps, IState> {
                         loading={this.state.loading}
                         columns={columns}
                         expandedRowRender={(record) => {
-                             record.country = _.find(this.state.countries, {id : record.country})[0].name;
+                             // record.country = _.find(this.state.countries, {id : record.country})[0].name;
+                             record.countryName = _.find(this.state.countries, {id : record.country});
                              return (<KYC record={record}></KYC>);
                         } }
                         // rowClassName={(record, index) => record.status + index}
@@ -70,17 +71,14 @@ class KycAdminContainer extends React.Component<IProps, IState> {
 
     private loadData() {
         api.getAllKYC().then((response) => {
-            console.log(response.data);
             response.data[1] = _.clone(response.data[0]);
             response.data[1].country = "IR";
             response.data[2] = _.clone(response.data[0]);
             response.data[2].country = "US";
-
-            this.setState({dataSource : response.data , loading : false});
-        },
-        );
-        api.GetCountries().then((response) => {
-            this.setState({countries : response.data });
+            api.GetCountries().then((countries) => {
+                this.setState({countries : countries.data , dataSource : response.data , loading : false});
+                console.log(this.state);
+            });
         },
         );
         return true;
