@@ -195,7 +195,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
                         {getFieldDecorator("cover", {
                             rules: [{ required: true, message: t.t("please upload your cover") }],
                         })(
-                            <Uploader callback={this.setImage} example={coverImg} action="http://192.168.1.42:9092/kyc/img" name="file" data={{ imgtype: "cover" }} />,
+                            <Uploader callback={this.setImage} example={coverImg} action="http://87.98.188.77:9092/kyc/img" name="file" data={{ imgtype: "cover" }} />,
                         )}
                     </FormItem>
 
@@ -203,7 +203,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
                         {getFieldDecorator("passport", {
                             rules: [{ required: true, message: t.t("please upload your passport personal page") }],
                         })(
-                            <Uploader callback={this.setImage} example={personalImg} action="http://192.168.1.42:9092/kyc/img" name="file" data={{ imgtype: "passport" }} />,
+                            <Uploader callback={this.setImage} example={personalImg} action="http://87.98.188.77:9092/kyc/img" name="file" data={{ imgtype: "passport" }} />,
                         )}
                     </FormItem>
 
@@ -211,7 +211,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
                         {getFieldDecorator("passid", {
                             rules: [{ required: true, message: t.t("please upload your slefie  image") }],
                         })(
-                            <Uploader callback={this.setImage} example={selfieImg} action="http://192.168.1.42:9092/kyc/img" name="file" data={{ imgtype: "passid" }} />,
+                            <Uploader callback={this.setImage} example={selfieImg} action="http://87.98.188.77:9092/kyc/img" name="file" data={{ imgtype: "passid" }} />,
                         )}
                     </FormItem>
 
