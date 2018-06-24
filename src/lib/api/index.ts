@@ -64,4 +64,8 @@ export default class API {
         return this.axios.get("/kyc");
     }
 
+    public changeKycStatus(uid, status) {
+        return this.axios.put("/kyc/" + uid + "/" + status);
+    }
+
 }

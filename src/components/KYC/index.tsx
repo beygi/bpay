@@ -1,40 +1,59 @@
 import { Button, Card, Col, Icon, List, notification, Row, Steps } from "antd";
 import * as React from "react";
 import config from "../../../src/config";
+import Api from "../../lib/api";
 import t from "../../services/trans/i18n";
 import "./style.less";
 
 interface IProps {
     record: any;
+    changeRecord: any;
 }
 
 interface IState {
-    pictures: any[] ;
+    pictures: any[];
+    record: any;
 }
+
+const api = Api.getInstance();
 
 class KycComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
         this.state = {
+            record: this.props.record,
             pictures: [
                 {
                     title: t.t("Passport cover"),
-                    image : config.apiUrl + "img/f6e3553c-021e-4e12-8ac3-e78a2538c8de/cover",
+                    image: config.apiUrl + "img/" + this.props.record.uid + "/cover",
                 },
                 {
                     title: t.t("Passport Personal Page"),
-                    image : config.apiUrl + "img/f6e3553c-021e-4e12-8ac3-e78a2538c8de/passid",
+                    image: config.apiUrl + "img/" + this.props.record.uid + "/passid",
                 },
                 {
                     title: t.t("Selfie With ID And Note"),
-                    image : config.apiUrl + "img/f6e3553c-021e-4e12-8ac3-e78a2538c8de/passport",
+                    image: config.apiUrl + "img/" + this.props.record.uid + "/passport",
                 },
             ],
         };
+        this.changeStatus = this.changeStatus.bind(this);
     }
-
+    public changeStatus(id, status) {
+        api.changeKycStatus(id, status).then((response) => {
+            if (response.status === 200) {
+                this.setState({ record: response.data });
+                this.props.changeRecord(this.state.record.uid, status);
+            }
+        });
+    }
     public render() {
+
+        const AcceptButton = <Button onClick={(e) => this.changeStatus(this.state.record.uid, "accepted")} size="large" type="primary">Accept</Button>;
+        const RejectButton = <Button onClick={(e) => this.changeStatus(this.state.record.uid, "pending")} size="large" >Pending</Button>;
+        const PendingButton = <Button onClick={(e) => this.changeStatus(this.state.record.uid, "rejected")} size="large" type="danger">Reject</Button>;
+
         return (
             <div>
                 <List
@@ -43,10 +62,15 @@ class KycComponent extends React.Component<IProps, IState> {
                     renderItem={(item) => (
                         <List.Item>
                             <Card
-                                 title={item.title}><a target="_blank" href={item.image}><img className="KYC-img" alt="" src={item.image} /></a></Card>
+                                title={item.title}><a target="_blank" href={item.image}><img className="KYC-img" alt="" src={item.image} /></a></Card>
                         </List.Item>
                     )}
                 />
+                <div className="kyc-buttons">
+                    {AcceptButton}
+                    {RejectButton}
+                    {PendingButton}
+                </div>
             </div >
         );
     }

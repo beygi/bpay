@@ -47,14 +47,22 @@ class KycAdminContainer extends React.Component<IProps, IState> {
             pagination: {},
             countries: [],
         };
+        this.changeStatus = this.changeStatus.bind(this);
     }
 
     public componentDidMount() {
         this.loadData();
     }
 
+   public changeStatus(uid, status) {
+       let index = 0;
+       const newDataSource = this.state.dataSource;
+       index = _.findIndex(newDataSource, {uid});
+       newDataSource[index].status = status;
+       this.setState({dataSource: newDataSource});
+   }
+
     public render() {
-        console.log(this.state);
         return (
             <Row gutter={8}>
                 <Col md={24} >
@@ -62,7 +70,7 @@ class KycAdminContainer extends React.Component<IProps, IState> {
                         loading={this.state.loading}
                         columns={columns}
                         expandedRowRender={(record) => {
-                             return (<KYC record={record}></KYC>);
+                            return (<KYC record={record} changeRecord={this.changeStatus}></KYC>);
                         } }
                         // rowClassName={(record, index) => record.status + index}
                         dataSource={this.state.dataSource}
@@ -79,23 +87,12 @@ class KycAdminContainer extends React.Component<IProps, IState> {
                 NI: "National ID Card",
         };
         api.getAllKYC().then((response) => {
-            response.data[1] = _.clone(response.data[0]);
-            response.data[1].country = "IR";
-            response.data[1].id = "123";
-            response.data[1].ltype = "NI";
-
-            response.data[2] = _.clone(response.data[0]);
-            response.data[2].id = "125";
-            response.data[2].country = "US";
-            response.data[2].ltype = "PS";
-
             api.GetCountries().then((countries) => {
                 response.data.forEach((obj) =>  {
                                                 obj.country =  _.find(countries.data, {id :  obj.country});
                                                 obj.ltype = types[obj.ltype];
                     });
                 this.setState({countries : countries.data , dataSource : response.data , loading : false});
-                console.log(this.state);
             });
         },
         );
