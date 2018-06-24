@@ -47,7 +47,6 @@ class KycComponent extends React.Component<IProps, IState> {
                         </List.Item>
                     )}
                 />
-                {this.props.record.countryName.name}
             </div >
         );
     }

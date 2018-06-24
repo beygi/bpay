@@ -27,9 +27,14 @@ interface IState {
 }
 
 const api = Api.getInstance();
+
 const columns = [
     { title: "Name", dataIndex: "fname", key: "fname" },
     { title: "Family", dataIndex: "lname", key: "lname" },
+    { title: "Gender", dataIndex: "gender", key: "gender" },
+    {title: "Country" , dataIndex: "country", key: "country", render: (record) => record.name },
+    { title: "License type", dataIndex: "ltype", key: "ltype" },
+    { title: "License id", dataIndex: "licenseid", key: "licenseid" },
     {dataIndex: "status", key: "status", render: (record) => <b>{record}</b> , title: "Status" },
 ];
 
@@ -53,12 +58,10 @@ class KycAdminContainer extends React.Component<IProps, IState> {
         return (
             <Row gutter={8}>
                 <Col md={24} >
-                    <Table
+                    <Table rowKey="id"
                         loading={this.state.loading}
                         columns={columns}
                         expandedRowRender={(record) => {
-                             // record.country = _.find(this.state.countries, {id : record.country})[0].name;
-                             record.countryName = _.find(this.state.countries, {id : record.country});
                              return (<KYC record={record}></KYC>);
                         } }
                         // rowClassName={(record, index) => record.status + index}
@@ -70,12 +73,27 @@ class KycAdminContainer extends React.Component<IProps, IState> {
     }
 
     private loadData() {
+        const  types = {
+                DL: "Driving License",
+                PS : "Passport",
+                NI: "National ID Card",
+        };
         api.getAllKYC().then((response) => {
             response.data[1] = _.clone(response.data[0]);
             response.data[1].country = "IR";
+            response.data[1].id = "123";
+            response.data[1].ltype = "NI";
+
             response.data[2] = _.clone(response.data[0]);
+            response.data[2].id = "125";
             response.data[2].country = "US";
+            response.data[2].ltype = "PS";
+
             api.GetCountries().then((countries) => {
+                response.data.forEach((obj) =>  {
+                                                obj.country =  _.find(countries.data, {id :  obj.country});
+                                                obj.ltype = types[obj.ltype];
+                    });
                 this.setState({countries : countries.data , dataSource : response.data , loading : false});
                 console.log(this.state);
             });
