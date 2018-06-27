@@ -31,13 +31,13 @@ export default class DashboardPrivateLayout extends React.Component<IProps, ISta
         };
     }
 
-    public componentDidMount() {
-        window.addEventListener("scroll", this.handleScroll);
-    }
-
-    public componentWillUnmount() {
-        window.removeEventListener("scroll", this.handleScroll);
-    }
+    // public componentDidMount() {
+    //     window.addEventListener("scroll", this.handleScroll);
+    // }
+    //
+    // public componentWillUnmount() {
+    //     window.removeEventListener("scroll", this.handleScroll);
+    // }
 
 public handleScroll(event) {
         console.log(event.pageY);

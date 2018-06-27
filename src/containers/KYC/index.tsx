@@ -235,11 +235,10 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
             <Row gutter={8}>
                 <Col md={6} >
                     <Block>
-                        <Profile></Profile>
-                        <Profile></Profile>
+                        <img src="https://dummyimage.com/600x400/4c4649/3ee6e0.png" alt=""/>
                     </Block>
                     <Block>
-                        <Profile></Profile>
+                            <img src="https://dummyimage.com/600x800/4c4649/3ee6e0.png" alt=""/>
                     </Block>
                 </Col>
                 <Col md={18} >

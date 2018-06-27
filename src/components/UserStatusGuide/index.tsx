@@ -2,6 +2,7 @@ import { Button, Col, Icon, notification, Row, Steps } from "antd";
 import * as React from "react";
 
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
@@ -31,12 +32,14 @@ class UserStatusGuideComponent extends React.Component<IProps, IState> {
                 <Steps>
                     <Step description={t.t("You are a member")} status="finish" title={t.t("Register")} icon={<Icon type="user" />} />
                     <Step description={t.t("Verify your email address")} status="finish" title={t.t("Verify email")} icon={<Icon type="mail" />} />
-                    <Step description={t.t("Checking documents")} status="process" title={t.t("Check")} icon={<Icon type="loading-3-quarters" />} />
-                    <Step description="This is a description." status="wait" title={t.t("Identity check")} icon={<Icon type="solution" />} />
+                    <Step description={t.t("Upload your documents")} status="process" title={t.t("Upload")} icon={<Icon type="loading-3-quarters" />} />
+                    <Step description="We are validating you" status="wait" title={t.t("Identity check")} icon={<Icon type="solution" />} />
                     <Step description={t.t("Happy Trading")} status="wait" title="Done" icon={<Icon type="check" />} />
                 </Steps>
                 <div>
-                    <Button onClick={() => this.action("success")}  className="action" icon="mail" type="primary" size="large">Verify Email Address </Button>
+                    <Link to="/kyc">
+                        <Button  className="action" icon="idcard" type="primary" size="large">Validate yourself</Button>
+                    </Link>
                 </div>
             </div >
         );
