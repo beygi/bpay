@@ -27,29 +27,35 @@ class ExchangeContainer extends React.Component<IProps, IState> {
             <Row gutter={8}>
                 <Col md={6} >
                     <Block>
-                        <Profile></Profile>
-                        <Profile></Profile>
+                        <img src="https://dummyimage.com/600x800/4c4649/3ee6e0.png" alt=""/>
                     </Block>
                     <Block>
-                        <Profile></Profile>
+                        <img src="https://dummyimage.com/600x200/4c4649/3ee6e0.png" alt=""/>
                     </Block>
                 </Col>
-                <Col md={12} className="trading-view">
+                <Col md={12} >
+                <Row gutter={8}>
+                        <Col md={24} className="trading-view">
+                                <TradingViewWidget
+                                    symbol="BITFINEX:BTCUSD"
+                                    theme={Themes.DARK}
+                                    autosize
+                                />
 
-                        <TradingViewWidget
-                            symbol="BITFINEX:BTCUSD"
-                            theme={Themes.DARK}
-                            autosize
-                        />
-
+                        </Col>
+                        <Col md={24} className="trading-view">
+                            <Block>
+                                <img src="https://dummyimage.com/1000x200/4c4649/3ee6e0.png" alt=""/>
+                            </Block>
+                        </Col>
+                    </Row>
                 </Col>
                 <Col md={6} >
                     <Block>
-                        <Profile></Profile>
-                        <Profile></Profile>
+                        <img src="https://dummyimage.com/600x800/4c4649/3ee6e0.png" alt=""/>
                     </Block>
                     <Block>
-                        <Profile></Profile>
+                        <img src="https://dummyimage.com/600x200/4c4649/3ee6e0.png" alt=""/>
                     </Block>
                 </Col>
             </Row>
@@ -59,13 +65,13 @@ class ExchangeContainer extends React.Component<IProps, IState> {
 
 function mapDispatchToProps(dispatch) {
     return {
-        user: (user) => dispatch(setUser({ user })),
+        user:    (user) => dispatch(setUser({ user })),
     };
 }
 
 function mapStateToProps(state: IRootState) {
     return {
-        user: state.app.user,
+        user:    state.app.user,
     };
 }
 

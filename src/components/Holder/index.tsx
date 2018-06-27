@@ -3,6 +3,7 @@ import "./style.less";
 
 interface IProps {
     children: any;
+    noPadding?: boolean;
 }
 
 interface IState {
@@ -15,9 +16,13 @@ class BlockComponent extends React.Component<IProps, IState> {
     }
 
     public render() {
+        let noPaddingClass = "block";
+        if (this.props.noPadding) {
+            noPaddingClass = "block no-padding";
+        }
         // finde selected menu name based on pathname
         return (
-            <div className="block">
+        <div className={noPaddingClass} >
                     {this.props.children}
             </div >
         );

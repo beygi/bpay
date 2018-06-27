@@ -25,17 +25,18 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
             <Row gutter={8}>
               <Col md={6} >
                   <Block>
+                      <img src="https://dummyimage.com/600x400/4c4649/3ee6e0.png" alt=""/>
                   </Block>
                   <Block>
+                          <img src="https://dummyimage.com/600x800/4c4649/3ee6e0.png" alt=""/>
                   </Block>
               </Col>
               <Col md={18} >
                    <Block>
-                        Admin Dashboard
+                       <img src="https://dummyimage.com/1000x300/4c4649/3ee6e0.png" alt=""/>
                    </Block>
                     <Block>
-                    </Block>
-                    <Block>
+                            <img src="https://dummyimage.com/1000x400/4c4649/3ee6e0.png" alt=""/>
                     </Block>
               </Col>
             </Row>
