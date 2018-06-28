@@ -1,4 +1,4 @@
-import { Alert, Button, Col, Form, Icon, Input, Layout, Modal, Radio, Row, Select, Upload } from "antd";
+import { Alert, Button, Col, Form, Icon, Input, Layout, Modal, notification, Radio, Row, Select, Upload } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import * as React from "react";
 import { connect } from "react-redux";
@@ -73,7 +73,17 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
         });
     }
 
-    public setImage(file) {
+    public setImage(file, type) {
+        // success info  warning error
+        console.log(file);
+        if (file[type] === true) {
+            notification.success({
+                message: type + " " + t.t("Image uploaded successfully"),
+                description: "Your " + type + " image uploaded to our servers, you can change it any time before our review" ,
+                placement : "bottomRight",
+                duration : 5,
+            });
+        }
         this.setState(file);
     }
 
@@ -135,7 +145,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
                     {/* sex */}
                     <FormItem
                         {...formItemLayout}
-                        label={t.t("Sex")
+                        label={t.t("Gender")
                         }
                     >
                         {getFieldDecorator("gender", {

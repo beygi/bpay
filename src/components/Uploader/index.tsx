@@ -12,7 +12,7 @@ interface IProps {
     action: string;
     name: string;
     data: {imgtype: string};
-    callback: ({ }) => void;
+    callback: (state: any  , type: any) => void;
 }
 
 interface IState {
@@ -67,7 +67,7 @@ class UploaderComponent extends React.Component<IProps, IState> {
           if (fileList.file.status === "done") {
               newState[this.props.data.imgtype] = true;
             }
-          this.props.callback(newState);
+          this.props.callback(newState, this.props.data.imgtype);
           this.setState({fileList : fileList.fileList});
     }
 
