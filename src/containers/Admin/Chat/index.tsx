@@ -37,11 +37,9 @@ class ChatAdminContainer extends React.Component<IProps, IState> {
 
     public render() {
         return (
-            <Row className="frame-container"   gutter={8}>
-                <Col className="frame-container" md={24} >
-                     <iframe className="frm" src="http://support.b2mark.com/"></iframe>
-                </Col>
-            </Row>
+            <div className="frame-container">
+                     <iframe className="frm" src="http://support.b2mark.com/" ></iframe>
+            </div>
         );
     }
 
