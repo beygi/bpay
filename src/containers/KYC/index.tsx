@@ -113,14 +113,9 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
         if (!this.state.submited) {
             block = <Block><h2>{t.t("Before you start")}</h2>
                 <div>
-                    <ul>
-                        <li>to be replaced,  to be replaced,  to be replaced,  to be replaced,</li>
-                        <li>to be replaced,  to be replaced,  to be replaced,  to be replaced,</li>
-                        <li>to be replaced,  to be replaced,  to be replaced,  to be replaced,</li>
-                        <li>to be replaced,  to be replaced,  to be replaced,  to be replaced,</li>
-                        <li>to be replaced,  to be replaced,  to be replaced,  to be replaced,</li>
-                        <li>to be replaced,  to be replaced,  to be replaced,  to be replaced,</li>
-                    </ul>
+KYC stands for (Know Your Customer) it is the process of a business <br /> verifying and identifying the identity
+ of its clients. It is required <br /> because the KYC its used to refer to the bank and anti-money laundering regulations.
+ <br /> <br />
                 </div>
                 <Form layout="horizontal" onSubmit={this.handleSubmit} className="login-form">
 
