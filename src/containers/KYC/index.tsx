@@ -160,7 +160,7 @@ KYC stands for (Know Your Customer) it is the process of a business <br /> verif
                     >
                         {getFieldDecorator("country", {
                             rules: [
-                                { required: true, message: t.t("Please select your country") },
+                                { required: true, message: t.t("Please select your  country") },
                             ],
                         })(
                             <Select placeholder={t.t("Please select a country")} showSearch={true}>
