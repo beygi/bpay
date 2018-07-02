@@ -7554,9 +7554,9 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
-swagger-typescript-codegen@^1.4.1:
+"swagger-typescript-codegen@https://github.com/beygi/swagger-typescript-axios-codegen":
   version "1.4.1"
-  resolved "https://registry.yarnpkg.com/swagger-typescript-codegen/-/swagger-typescript-codegen-1.4.1.tgz#c158bb643ece856d79e6eca8a2cc8f072a69b098"
+  resolved "https://github.com/beygi/swagger-typescript-axios-codegen#182bbc18902262a0dd755863b49ec0446b1bc183"
   dependencies:
     commander "^2.9.0"
     js-beautify "^1.5.1"
