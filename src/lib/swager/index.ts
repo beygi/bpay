@@ -199,7 +199,7 @@ export default class B2Mark {
         return this.instance;
     }
     private static instance: B2Mark;
-    private domain: string = config.apiUrl;
+    private domain: string = config.NewApiUrl;
     private errorHandlers: CallbackHandler[] = [];
 
     constructor(domain?: string, private logger?: Logger) {
