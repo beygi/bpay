@@ -21,7 +21,7 @@ const personalImg = require("../../assets/images/personal.png");
 const selfieImg = require("../../assets/images/selfie.png");
 
 const api = Api.getInstance();
-const newApi = new Swagger("http://87.98.188.77:9092");
+const newApi = Swagger.getInstance();
 
 interface IUserFormProps extends FormComponentProps {
     user: any;
