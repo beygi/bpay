@@ -1,6 +1,7 @@
 
 import * as request from "superagent";
 import {SuperAgentStatic} from "superagent";
+import config from "../../../src/config";
 
 type CallbackHandler = (err: any, res?: request.Response) => void;
 interface Country {
@@ -191,8 +192,14 @@ interface View {
 
 interface Logger { log: (line: string) => any }
 export default class B2Mark {
-
-    private domain: string = "";
+    public static getInstance() {
+        if (!this.instance) {
+            this.instance = new B2Mark();
+        }
+        return this.instance;
+    }
+    private static instance: B2Mark;
+    private domain: string = config.apiUrl;
     private errorHandlers: CallbackHandler[] = [];
 
     constructor(domain?: string, private logger?: Logger) {
