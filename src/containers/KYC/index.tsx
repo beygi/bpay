@@ -6,10 +6,10 @@ import Profile from "../../components/DashboardHeaderProfile";
 import Block from "../../components/Holder";
 import Uploader from "../../components/Uploader";
 import Api from "../../lib/api";
+import Swagger from "../../lib/swager";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
-import CountryList from "./countries";
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -21,6 +21,7 @@ const personalImg = require("../../assets/images/personal.png");
 const selfieImg = require("../../assets/images/selfie.png");
 
 const api = Api.getInstance();
+const newApi = new Swagger("http://87.98.188.77:9092");
 
 interface IUserFormProps extends FormComponentProps {
     user: any;
@@ -32,6 +33,7 @@ interface IState {
     passport: string;
     passid: string;
     submited: boolean;
+    countries?: [{id: string , name: string}];
 }
 
 class KycContainer extends React.Component<IUserFormProps, IState> {
@@ -43,8 +45,19 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
             passport: null,
             passid: null,
             submited: false,
+            countries: [{ id: "none", name: t.t("Please select your country")}],
         };
     }
+
+   public componentDidMount() {
+       this.getCountries();
+   }
+   public getCountries() {
+        newApi.allcountryUsingGET({}).then( (response) => {
+            console.log(response.body);
+            this.setState({countries : response.body });
+        } );
+   }
 
     public handleSubmit = (e) => {
         e.preventDefault();
@@ -106,7 +119,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
             },
         };
 
-        const countries = CountryList.map((item, i) => <Option key={i} value={item.code}>{item.name}</Option>);
+        const countries = this.state.countries.map((item, i) => <Option key={i} value={item.id}>{item.name}</Option>);
         const { getFieldDecorator } = this.props.form;
 
         let block = <div></div>;
