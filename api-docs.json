@@ -256,26 +256,6 @@
                 "operationId": "getAllKycesUsingGET",
                 "produces": ["application/json"],
                 "parameters": [{
-                    "name": "authenticated",
-                    "in": "query",
-                    "required": false,
-                    "type": "boolean"
-                }, {
-                    "name": "authorities[0].authority",
-                    "in": "query",
-                    "required": false,
-                    "type": "string"
-                }, {
-                    "name": "credentials",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
-                    "name": "details",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
                     "name": "dir",
                     "in": "query",
                     "description": "dir",
@@ -290,11 +270,6 @@
                     "type": "integer",
                     "default": 0,
                     "format": "int32"
-                }, {
-                    "name": "principal",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
                 }, {
                     "name": "size",
                     "in": "query",
@@ -349,26 +324,6 @@
                 "consumes": ["application/json"],
                 "produces": ["*/*"],
                 "parameters": [{
-                    "name": "authenticated",
-                    "in": "query",
-                    "required": false,
-                    "type": "boolean"
-                }, {
-                    "name": "authorities[0].authority",
-                    "in": "query",
-                    "required": false,
-                    "type": "string"
-                }, {
-                    "name": "credentials",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
-                    "name": "details",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
                     "in": "body",
                     "name": "input",
                     "description": "input",
@@ -376,11 +331,6 @@
                     "schema": {
                         "$ref": "#/definitions/Kycinfo"
                     }
-                }, {
-                    "name": "principal",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
                 }],
                 "responses": {
                     "200": {
@@ -605,26 +555,6 @@
                 "operationId": "getAllKycStatusesUsingGET",
                 "produces": ["application/json"],
                 "parameters": [{
-                    "name": "authenticated",
-                    "in": "query",
-                    "required": false,
-                    "type": "boolean"
-                }, {
-                    "name": "authorities[0].authority",
-                    "in": "query",
-                    "required": false,
-                    "type": "string"
-                }, {
-                    "name": "credentials",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
-                    "name": "details",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
                     "name": "dir",
                     "in": "query",
                     "description": "dir",
@@ -639,11 +569,6 @@
                     "type": "integer",
                     "default": 0,
                     "format": "int32"
-                }, {
-                    "name": "principal",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
                 }, {
                     "name": "size",
                     "in": "query",
@@ -699,31 +624,6 @@
                 "operationId": "getKycStatusByUidUsingGET",
                 "produces": ["application/json"],
                 "parameters": [{
-                    "name": "authenticated",
-                    "in": "query",
-                    "required": false,
-                    "type": "boolean"
-                }, {
-                    "name": "authorities[0].authority",
-                    "in": "query",
-                    "required": false,
-                    "type": "string"
-                }, {
-                    "name": "credentials",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
-                    "name": "details",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
-                    "name": "principal",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
                     "name": "uid",
                     "in": "path",
                     "description": "uid",
@@ -798,36 +698,11 @@
         "/kyc/{uid}/{status}": {
             "put": {
                 "tags": ["kyc-rest-controller"],
-                "summary": "editStatus",
-                "operationId": "editStatusUsingPUT",
+                "summary": "editKycStatus",
+                "operationId": "editKycStatusUsingPUT",
                 "consumes": ["application/json"],
                 "produces": ["*/*"],
                 "parameters": [{
-                    "name": "authenticated",
-                    "in": "query",
-                    "required": false,
-                    "type": "boolean"
-                }, {
-                    "name": "authorities[0].authority",
-                    "in": "query",
-                    "required": false,
-                    "type": "string"
-                }, {
-                    "name": "credentials",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
-                    "name": "details",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
-                    "name": "principal",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
                     "name": "status",
                     "in": "path",
                     "description": "status",
