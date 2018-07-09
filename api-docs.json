@@ -18,9 +18,6 @@
     "host": "87.98.188.77:9092",
     "basePath": "/",
     "tags": [{
-        "name": "basic-error-controller",
-        "description": "Basic Error Controller"
-    }, {
         "name": "country-rest-controller",
         "description": "Country Rest Controller"
     }, {
@@ -149,7 +146,7 @@
             "get": {
                 "tags": ["country-rest-controller"],
                 "summary": "list of country in the world",
-                "operationId": "allcountryUsingGET",
+                "operationId": "allcountriesUsingGET",
                 "produces": ["application/json"],
                 "responses": {
                     "200": {
@@ -178,7 +175,7 @@
             "get": {
                 "tags": ["country-rest-controller"],
                 "summary": "get country with cid (Country Identification)",
-                "operationId": "cidCountryUsingGET",
+                "operationId": "getCountryByCidUsingGET",
                 "produces": ["application/json"],
                 "parameters": [{
                     "name": "cid",
@@ -195,7 +192,7 @@
                         }
                     },
                     "204": {
-                        "description": "service and address is ok but content not found",
+                        "description": "content not found",
                         "schema": {
                             "$ref": "#/definitions/Country"
                         }
@@ -208,187 +205,6 @@
                     },
                     "404": {
                         "description": "Not Found"
-                    }
-                },
-                "deprecated": false
-            }
-        },
-        "/error": {
-            "get": {
-                "tags": ["basic-error-controller"],
-                "summary": "errorHtml",
-                "operationId": "errorHtmlUsingGET",
-                "produces": ["text/html"],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/ModelAndView"
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    },
-                    "404": {
-                        "description": "Not Found"
-                    }
-                },
-                "deprecated": false
-            },
-            "head": {
-                "tags": ["basic-error-controller"],
-                "summary": "errorHtml",
-                "operationId": "errorHtmlUsingHEAD",
-                "consumes": ["application/json"],
-                "produces": ["text/html"],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/ModelAndView"
-                        }
-                    },
-                    "204": {
-                        "description": "No Content"
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    }
-                },
-                "deprecated": false
-            },
-            "post": {
-                "tags": ["basic-error-controller"],
-                "summary": "errorHtml",
-                "operationId": "errorHtmlUsingPOST",
-                "consumes": ["application/json"],
-                "produces": ["text/html"],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/ModelAndView"
-                        }
-                    },
-                    "201": {
-                        "description": "Created"
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    },
-                    "404": {
-                        "description": "Not Found"
-                    }
-                },
-                "deprecated": false
-            },
-            "put": {
-                "tags": ["basic-error-controller"],
-                "summary": "errorHtml",
-                "operationId": "errorHtmlUsingPUT",
-                "consumes": ["application/json"],
-                "produces": ["text/html"],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/ModelAndView"
-                        }
-                    },
-                    "201": {
-                        "description": "Created"
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    },
-                    "404": {
-                        "description": "Not Found"
-                    }
-                },
-                "deprecated": false
-            },
-            "delete": {
-                "tags": ["basic-error-controller"],
-                "summary": "errorHtml",
-                "operationId": "errorHtmlUsingDELETE",
-                "produces": ["text/html"],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/ModelAndView"
-                        }
-                    },
-                    "204": {
-                        "description": "No Content"
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    }
-                },
-                "deprecated": false
-            },
-            "options": {
-                "tags": ["basic-error-controller"],
-                "summary": "errorHtml",
-                "operationId": "errorHtmlUsingOPTIONS",
-                "consumes": ["application/json"],
-                "produces": ["text/html"],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/ModelAndView"
-                        }
-                    },
-                    "204": {
-                        "description": "No Content"
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    }
-                },
-                "deprecated": false
-            },
-            "patch": {
-                "tags": ["basic-error-controller"],
-                "summary": "errorHtml",
-                "operationId": "errorHtmlUsingPATCH",
-                "consumes": ["application/json"],
-                "produces": ["text/html"],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/ModelAndView"
-                        }
-                    },
-                    "204": {
-                        "description": "No Content"
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
                     }
                 },
                 "deprecated": false
@@ -437,7 +253,7 @@
             "get": {
                 "tags": ["kyc-rest-controller"],
                 "summary": "return kyc paginatio if not found 204 content not found",
-                "operationId": "getAllKycUsingGET",
+                "operationId": "getAllKycesUsingGET",
                 "produces": ["application/json"],
                 "parameters": [{
                     "name": "authenticated",
@@ -785,9 +601,9 @@
         "/kyc/status": {
             "get": {
                 "tags": ["kyc-rest-controller"],
-                "summary": "getStatus",
-                "operationId": "getStatusUsingGET",
-                "produces": ["*/*"],
+                "summary": "return status kyc paginatio if not found 204 content not found",
+                "operationId": "getAllKycStatusesUsingGET",
+                "produces": ["application/json"],
                 "parameters": [{
                     "name": "authenticated",
                     "in": "query",
@@ -809,16 +625,58 @@
                     "required": false,
                     "type": "object"
                 }, {
+                    "name": "dir",
+                    "in": "query",
+                    "description": "dir",
+                    "required": false,
+                    "type": "string",
+                    "default": "asc"
+                }, {
+                    "name": "page",
+                    "in": "query",
+                    "description": "page",
+                    "required": false,
+                    "type": "integer",
+                    "default": 0,
+                    "format": "int32"
+                }, {
                     "name": "principal",
                     "in": "query",
                     "required": false,
                     "type": "object"
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "size",
+                    "required": false,
+                    "type": "integer",
+                    "default": 10,
+                    "format": "int32"
+                }, {
+                    "name": "status",
+                    "in": "query",
+                    "description": "status",
+                    "required": false,
+                    "type": "string",
+                    "default": "all"
                 }],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/KycStatus"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/KycStatus"
+                            }
+                        }
+                    },
+                    "204": {
+                        "description": "service and address is ok but content not found",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/KycStatus"
+                            }
                         }
                     },
                     "401": {
@@ -915,13 +773,13 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Optional"
+                            "$ref": "#/definitions/Kycinfo"
                         }
                     },
                     "204": {
                         "description": "service and address is ok but content not found",
                         "schema": {
-                            "$ref": "#/definitions/Optional"
+                            "$ref": "#/definitions/Kycinfo"
                         }
                     },
                     "401": {
@@ -1149,52 +1007,12 @@
             },
             "title": "Link"
         },
-        "Map": {
+        "MapstringLink": {
             "type": "object",
-            "title": "Map",
+            "title": "MapstringLink",
             "additionalProperties": {
                 "$ref": "#/definitions/Link"
             }
-        },
-        "ModelAndView": {
-            "type": "object",
-            "properties": {
-                "empty": {
-                    "type": "boolean"
-                },
-                "model": {
-                    "type": "object"
-                },
-                "modelMap": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "type": "object"
-                    }
-                },
-                "reference": {
-                    "type": "boolean"
-                },
-                "status": {
-                    "type": "string",
-                    "enum": ["100", "101", "102", "103", "200", "201", "202", "203", "204", "205", "206", "207", "208", "226", "300", "301", "302", "303", "304", "305", "307", "308", "400", "401", "402", "403", "404", "405", "406", "407", "408", "409", "410", "411", "412", "413", "414", "415", "416", "417", "418", "419", "420", "421", "422", "423", "424", "426", "428", "429", "431", "451", "500", "501", "502", "503", "504", "505", "506", "507", "508", "509", "510", "511"]
-                },
-                "view": {
-                    "$ref": "#/definitions/View"
-                },
-                "viewName": {
-                    "type": "string"
-                }
-            },
-            "title": "ModelAndView"
-        },
-        "Optional": {
-            "type": "object",
-            "properties": {
-                "present": {
-                    "type": "boolean"
-                }
-            },
-            "title": "Optional"
         },
         "Resource": {
             "type": "object",
@@ -1324,15 +1142,6 @@
                 }
             },
             "title": "URL"
-        },
-        "View": {
-            "type": "object",
-            "properties": {
-                "contentType": {
-                    "type": "string"
-                }
-            },
-            "title": "View"
         }
     }
 }
