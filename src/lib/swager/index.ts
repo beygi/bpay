@@ -4,7 +4,7 @@ import {
 } from "superagent";
 import config from "../../../src/config";
 
-type CallbackHandler = (err: any, res?: request.Response) => void;
+type CallbackHandler = (err: any, res ?: request.Response) => void;
 interface Country {
     "id": string;
     "name": string;
@@ -26,7 +26,7 @@ interface File {
     "totalSpace": number;
     "usableSpace": number;
 }
-interface InputStream { }
+interface InputStream {}
 interface KycStatus {
     "status": "pending" | "accepted" | "checking" | "rejected";
     "uid": string;
@@ -47,19 +47,7 @@ interface Link {
     "href": string;
     "templated": boolean;
 }
-interface Map { }
-interface ModelAndView {
-    "empty": boolean;
-    "model": {};
-    "modelMap": {};
-    "reference": boolean;
-    "status": "100" | "101" | "102" | "103" | "200" | "201" | "202" | "203" | "204" | "205" | "206" | "207" | "208" | "226" | "300" | "301" | "302" | "303" | "304" | "305" | "307" | "308" | "400" | "401" | "402" | "403" | "404" | "405" | "406" | "407" | "408" | "409" | "410" | "411" | "412" | "413" | "414" | "415" | "416" | "417" | "418" | "419" | "420" | "421" | "422" | "423" | "424" | "426" | "428" | "429" | "431" | "451" | "500" | "501" | "502" | "503" | "504" | "505" | "506" | "507" | "508" | "509" | "510" | "511";
-    "view": View;
-    "viewName": string;
-}
-interface Optional {
-    "present": boolean;
-}
+interface MapstringLink {}
 interface Resource {
     "description": string;
     "file": File;
@@ -102,9 +90,6 @@ interface URL {
     "ref": string;
     "userInfo": string;
 }
-interface View {
-    "contentType": string;
-}
 
 interface Logger {
     log: (line: string) => any
@@ -120,7 +105,7 @@ export default class B2Mark {
     private domain: string = config.NewApiUrl;
     private errorHandlers: CallbackHandler[] = [];
 
-    constructor(domain?: string, private logger?: Logger) {
+    constructor(domain ?: string, private logger ?: Logger) {
         if (domain) {
             this.domain = domain;
         }
@@ -149,7 +134,7 @@ export default class B2Mark {
             req.send(body);
         }
 
-        if (typeof (body) === "object" && !(body.constructor.name === "Buffer")) {
+        if (typeof(body) === "object" && !(body.constructor.name === "Buffer")) {
             req.set("Content-Type", "application/json");
         }
 
@@ -168,10 +153,28 @@ export default class B2Mark {
         });
     }
 
+    public linksUsingGETURL(parameters: {
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/actuator";
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
     public linksUsingGET(parameters: {
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): Promise < request.Response > {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         const path = "/actuator";
         let body: any;
@@ -191,11 +194,30 @@ export default class B2Mark {
         });
     }
 
+    public handleUsingGETURL(parameters: {
+        "body" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/actuator/health";
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
     public handleUsingGET(parameters: {
-        "body"?: {},
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
+        "body" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): Promise < request.Response > {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         const path = "/actuator/health";
         let body: any;
@@ -219,11 +241,30 @@ export default class B2Mark {
         });
     }
 
+    public handleUsingGET_1URL(parameters: {
+        "body" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/actuator/info";
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
     public handleUsingGET_1(parameters: {
-        "body"?: {},
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
+        "body" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): Promise < request.Response > {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         const path = "/actuator/info";
         let body: any;
@@ -247,10 +288,28 @@ export default class B2Mark {
         });
     }
 
-    public allcountryUsingGET(parameters: {
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
+    public allcountriesUsingGETURL(parameters: {
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/country";
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    public allcountriesUsingGET(parameters: {
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): Promise < request.Response > {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         const path = "/country";
         let body: any;
@@ -270,11 +329,32 @@ export default class B2Mark {
         });
     }
 
-    public cidCountryUsingGET(parameters: {
+    public getCountryByCidUsingGETURL(parameters: {
         "cid": string,
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        let path = "/country/{cid}";
+
+        path = path.replace("{cid}", `${parameters.cid}`);
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    public getCountryByCidUsingGET(parameters: {
+        "cid": string,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): Promise < request.Response > {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         let path = "/country/{cid}";
         let body: any;
@@ -301,181 +381,36 @@ export default class B2Mark {
         });
     }
 
-    public errorHtmlUsingGET(parameters: {
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
-        const domain = parameters.$domain ? parameters.$domain : this.domain;
-        const path = "/error";
-        let body: any;
+    public getKycImageByUidAndImgTypeUsingGETURL(parameters: {
+        "imgtype": string,
+        "uid": string,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
         const queryParameters: any = {};
-        const headers: any = {};
-        const form: any = {};
-        return new Promise((resolve, reject) => {
-            headers.Accept = "text/html";
-
-            if (parameters.$queryParameters) {
-                Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
-                    queryParameters[parameterName] = parameters.$queryParameters[parameterName];
-                });
-            }
-
-            this.request("GET", domain + path, body, headers, queryParameters, form, reject, resolve);
-        });
-    }
-
-    public errorHtmlUsingHEAD(parameters: {
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
-        const path = "/error";
-        let body: any;
-        const queryParameters: any = {};
-        const headers: any = {};
-        const form: any = {};
-        return new Promise((resolve, reject) => {
-            headers.Accept = "text/html";
-            headers["Content-Type"] = "application/json";
+        let path = "/img/{uid}/{imgtype}";
 
-            if (parameters.$queryParameters) {
-                Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
-                    queryParameters[parameterName] = parameters.$queryParameters[parameterName];
-                });
-            }
+        path = path.replace("{imgtype}", `${parameters.imgtype}`);
 
-            this.request("HEAD", domain + path, body, headers, queryParameters, form, reject, resolve);
-        });
-    }
+        path = path.replace("{uid}", `${parameters.uid}`);
 
-    public errorHtmlUsingPOST(parameters: {
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
-        const domain = parameters.$domain ? parameters.$domain : this.domain;
-        const path = "/error";
-        let body: any;
-        let queryParameters: any = {};
-        const headers: any = {};
-        let form: any = {};
-        return new Promise((resolve, reject) => {
-            headers.Accept = "text/html";
-            headers["Content-Type"] = "application/json";
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
 
-            if (parameters.$queryParameters) {
-                Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
-                    queryParameters[parameterName] = parameters.$queryParameters[parameterName];
-                });
-            }
-
-            form = queryParameters;
-            queryParameters = {};
-
-            this.request("POST", domain + path, body, headers, queryParameters, form, reject, resolve);
-        });
-    }
-
-    public errorHtmlUsingPUT(parameters: {
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
-        const domain = parameters.$domain ? parameters.$domain : this.domain;
-        const path = "/error";
-        let body: any;
-        const queryParameters: any = {};
-        const headers: any = {};
-        const form: any = {};
-        return new Promise((resolve, reject) => {
-            headers.Accept = "text/html";
-            headers["Content-Type"] = "application/json";
-
-            if (parameters.$queryParameters) {
-                Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
-                    queryParameters[parameterName] = parameters.$queryParameters[parameterName];
-                });
-            }
-
-            this.request("PUT", domain + path, body, headers, queryParameters, form, reject, resolve);
-        });
-    }
-
-    public errorHtmlUsingDELETE(parameters: {
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
-        const domain = parameters.$domain ? parameters.$domain : this.domain;
-        const path = "/error";
-        let body: any;
-        const queryParameters: any = {};
-        const headers: any = {};
-        const form: any = {};
-        return new Promise((resolve, reject) => {
-            headers.Accept = "text/html";
-
-            if (parameters.$queryParameters) {
-                Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
-                    queryParameters[parameterName] = parameters.$queryParameters[parameterName];
-                });
-            }
-
-            this.request("DELETE", domain + path, body, headers, queryParameters, form, reject, resolve);
-        });
-    }
-
-    public errorHtmlUsingOPTIONS(parameters: {
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
-        const domain = parameters.$domain ? parameters.$domain : this.domain;
-        const path = "/error";
-        let body: any;
-        const queryParameters: any = {};
-        const headers: any = {};
-        const form: any = {};
-        return new Promise((resolve, reject) => {
-            headers.Accept = "text/html";
-            headers["Content-Type"] = "application/json";
-
-            if (parameters.$queryParameters) {
-                Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
-                    queryParameters[parameterName] = parameters.$queryParameters[parameterName];
-                });
-            }
-
-            this.request("OPTIONS", domain + path, body, headers, queryParameters, form, reject, resolve);
-        });
-    }
-
-    public errorHtmlUsingPATCH(parameters: {
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
-        const domain = parameters.$domain ? parameters.$domain : this.domain;
-        const path = "/error";
-        let body: any;
-        const queryParameters: any = {};
-        const headers: any = {};
-        const form: any = {};
-        return new Promise((resolve, reject) => {
-            headers.Accept = "text/html";
-            headers["Content-Type"] = "application/json";
-
-            if (parameters.$queryParameters) {
-                Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
-                    queryParameters[parameterName] = parameters.$queryParameters[parameterName];
-                });
-            }
-
-            this.request("PATCH", domain + path, body, headers, queryParameters, form, reject, resolve);
-        });
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
     }
 
     public getKycImageByUidAndImgTypeUsingGET(parameters: {
         "imgtype": string,
         "uid": string,
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): Promise < request.Response > {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         let path = "/img/{uid}/{imgtype}";
         let body: any;
@@ -509,19 +444,81 @@ export default class B2Mark {
         });
     }
 
-    public getAllKycUsingGET(parameters: {
-        "authenticated"?: boolean,
-        "authorities0Authority"?: string,
-        "credentials"?: {},
-        "details"?: {},
-        "dir"?: string,
-        "page"?: number,
-        "principal"?: {},
-        "size"?: number,
-        "status"?: string,
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
+    public getAllKycesUsingGETURL(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
+        "dir" ?: string,
+        "page" ?: number,
+        "principal" ?: {},
+        "size" ?: number,
+        "status" ?: string,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/kyc";
+        if (parameters.authenticated !== undefined) {
+            queryParameters.authenticated = parameters.authenticated;
+        }
+
+        if (parameters.authorities0Authority !== undefined) {
+            queryParameters["authorities[0].authority"] = parameters.authorities0Authority;
+        }
+
+        if (parameters.credentials !== undefined) {
+            queryParameters.credentials = parameters.credentials;
+        }
+
+        if (parameters.details !== undefined) {
+            queryParameters.details = parameters.details;
+        }
+
+        if (parameters.dir !== undefined) {
+            queryParameters.dir = parameters.dir;
+        }
+
+        if (parameters.page !== undefined) {
+            queryParameters.page = parameters.page;
+        }
+
+        if (parameters.principal !== undefined) {
+            queryParameters.principal = parameters.principal;
+        }
+
+        if (parameters.size !== undefined) {
+            queryParameters.size = parameters.size;
+        }
+
+        if (parameters.status !== undefined) {
+            queryParameters.status = parameters.status;
+        }
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    public getAllKycesUsingGET(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
+        "dir" ?: string,
+        "page" ?: number,
+        "principal" ?: {},
+        "size" ?: number,
+        "status" ?: string,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): Promise < request.Response > {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         const path = "/kyc";
         let body: any;
@@ -577,16 +574,61 @@ export default class B2Mark {
         });
     }
 
-    public addKycUsingPOST(parameters: {
-        "authenticated"?: boolean,
-        "authorities0Authority"?: string,
-        "credentials"?: {},
-        "details"?: {},
+    public addKycUsingPOSTURL(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
         "input": Kycinfo,
-        "principal"?: {},
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
+        "principal" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        let queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/kyc";
+        if (parameters.authenticated !== undefined) {
+            queryParameters.authenticated = parameters.authenticated;
+        }
+
+        if (parameters.authorities0Authority !== undefined) {
+            queryParameters["authorities[0].authority"] = parameters.authorities0Authority;
+        }
+
+        if (parameters.credentials !== undefined) {
+            queryParameters.credentials = parameters.credentials;
+        }
+
+        if (parameters.details !== undefined) {
+            queryParameters.details = parameters.details;
+        }
+
+        if (parameters.principal !== undefined) {
+            queryParameters.principal = parameters.principal;
+        }
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        queryParameters = {};
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    public addKycUsingPOST(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
+        "input": Kycinfo,
+        "principal" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): Promise < request.Response > {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         const path = "/kyc";
         let body: any;
@@ -639,16 +681,59 @@ export default class B2Mark {
         });
     }
 
-    public updateKycUsingPUT(parameters: {
-        "authenticated"?: boolean,
-        "authorities0Authority"?: string,
-        "credentials"?: {},
-        "details"?: {},
+    public updateKycUsingPUTURL(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
         "kycInput": Kycinfo,
-        "principal"?: {},
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
+        "principal" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/kyc";
+        if (parameters.authenticated !== undefined) {
+            queryParameters.authenticated = parameters.authenticated;
+        }
+
+        if (parameters.authorities0Authority !== undefined) {
+            queryParameters["authorities[0].authority"] = parameters.authorities0Authority;
+        }
+
+        if (parameters.credentials !== undefined) {
+            queryParameters.credentials = parameters.credentials;
+        }
+
+        if (parameters.details !== undefined) {
+            queryParameters.details = parameters.details;
+        }
+
+        if (parameters.principal !== undefined) {
+            queryParameters.principal = parameters.principal;
+        }
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    public updateKycUsingPUT(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
+        "kycInput": Kycinfo,
+        "principal" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): Promise < request.Response > {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         const path = "/kyc";
         let body: any;
@@ -698,18 +783,73 @@ export default class B2Mark {
         });
     }
 
-    public addKycImageUsingPOST(parameters: {
-        "authenticated"?: boolean,
-        "authorities0Authority"?: string,
-        "credentials"?: {},
-        "details"?: {},
+    public addKycImageUsingPOSTURL(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
         "file": {},
-        "flashAttributes"?: {},
+        "flashAttributes" ?: {},
         "imgtype": string,
-        "principal"?: {},
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
+        "principal" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        let queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/kyc/img";
+        if (parameters.authenticated !== undefined) {
+            queryParameters.authenticated = parameters.authenticated;
+        }
+
+        if (parameters.authorities0Authority !== undefined) {
+            queryParameters["authorities[0].authority"] = parameters.authorities0Authority;
+        }
+
+        if (parameters.credentials !== undefined) {
+            queryParameters.credentials = parameters.credentials;
+        }
+
+        if (parameters.details !== undefined) {
+            queryParameters.details = parameters.details;
+        }
+
+        if (parameters.flashAttributes !== undefined) {
+            queryParameters.flashAttributes = parameters.flashAttributes;
+        }
+
+        if (parameters.imgtype !== undefined) {
+            queryParameters.imgtype = parameters.imgtype;
+        }
+
+        if (parameters.principal !== undefined) {
+            queryParameters.principal = parameters.principal;
+        }
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        queryParameters = {};
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    public addKycImageUsingPOST(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
+        "file": {},
+        "flashAttributes" ?: {},
+        "imgtype": string,
+        "principal" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): Promise < request.Response > {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         const path = "/kyc/img";
         let body: any;
@@ -775,16 +915,60 @@ export default class B2Mark {
         });
     }
 
-    public getKycImageUsingGET(parameters: {
-        "authenticated"?: boolean,
-        "authorities0Authority"?: string,
-        "credentials"?: {},
-        "details"?: {},
+    public getKycImageUsingGETURL(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
         "imgtype": string,
-        "principal"?: {},
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
+        "principal" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        let path = "/kyc/img/{imgtype}";
+        if (parameters.authenticated !== undefined) {
+            queryParameters.authenticated = parameters.authenticated;
+        }
+
+        if (parameters.authorities0Authority !== undefined) {
+            queryParameters["authorities[0].authority"] = parameters.authorities0Authority;
+        }
+
+        if (parameters.credentials !== undefined) {
+            queryParameters.credentials = parameters.credentials;
+        }
+
+        if (parameters.details !== undefined) {
+            queryParameters.details = parameters.details;
+        }
+
+        path = path.replace("{imgtype}", `${parameters.imgtype}`);
+        if (parameters.principal !== undefined) {
+            queryParameters.principal = parameters.principal;
+        }
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    public getKycImageUsingGET(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
+        "imgtype": string,
+        "principal" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): Promise < request.Response > {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         let path = "/kyc/img/{imgtype}";
         let body: any;
@@ -831,15 +1015,81 @@ export default class B2Mark {
         });
     }
 
-    public getStatusUsingGET(parameters: {
-        "authenticated"?: boolean,
-        "authorities0Authority"?: string,
-        "credentials"?: {},
-        "details"?: {},
-        "principal"?: {},
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
+    public getAllKycStatusesUsingGETURL(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
+        "dir" ?: string,
+        "page" ?: number,
+        "principal" ?: {},
+        "size" ?: number,
+        "status" ?: string,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/kyc/status";
+        if (parameters.authenticated !== undefined) {
+            queryParameters.authenticated = parameters.authenticated;
+        }
+
+        if (parameters.authorities0Authority !== undefined) {
+            queryParameters["authorities[0].authority"] = parameters.authorities0Authority;
+        }
+
+        if (parameters.credentials !== undefined) {
+            queryParameters.credentials = parameters.credentials;
+        }
+
+        if (parameters.details !== undefined) {
+            queryParameters.details = parameters.details;
+        }
+
+        if (parameters.dir !== undefined) {
+            queryParameters.dir = parameters.dir;
+        }
+
+        if (parameters.page !== undefined) {
+            queryParameters.page = parameters.page;
+        }
+
+        if (parameters.principal !== undefined) {
+            queryParameters.principal = parameters.principal;
+        }
+
+        if (parameters.size !== undefined) {
+            queryParameters.size = parameters.size;
+        }
+
+        if (parameters.status !== undefined) {
+            queryParameters.status = parameters.status;
+        }
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    public getAllKycStatusesUsingGET(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
+        "dir" ?: string,
+        "page" ?: number,
+        "principal" ?: {},
+        "size" ?: number,
+        "status" ?: string,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): Promise < request.Response > {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         const path = "/kyc/status";
         let body: any;
@@ -847,7 +1097,7 @@ export default class B2Mark {
         const headers: any = {};
         const form: any = {};
         return new Promise((resolve, reject) => {
-            headers.Accept = "*/*";
+            headers.Accept = "application/json";
 
             if (parameters.authenticated !== undefined) {
                 queryParameters.authenticated = parameters.authenticated;
@@ -865,8 +1115,24 @@ export default class B2Mark {
                 queryParameters.details = parameters.details;
             }
 
+            if (parameters.dir !== undefined) {
+                queryParameters.dir = parameters.dir;
+            }
+
+            if (parameters.page !== undefined) {
+                queryParameters.page = parameters.page;
+            }
+
             if (parameters.principal !== undefined) {
                 queryParameters.principal = parameters.principal;
+            }
+
+            if (parameters.size !== undefined) {
+                queryParameters.size = parameters.size;
+            }
+
+            if (parameters.status !== undefined) {
+                queryParameters.status = parameters.status;
             }
 
             if (parameters.$queryParameters) {
@@ -879,16 +1145,61 @@ export default class B2Mark {
         });
     }
 
-    public getKycStatusByUidUsingGET(parameters: {
-        "authenticated"?: boolean,
-        "authorities0Authority"?: string,
-        "credentials"?: {},
-        "details"?: {},
-        "principal"?: {},
+    public getKycStatusByUidUsingGETURL(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
+        "principal" ?: {},
         "uid": string,
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        let path = "/kyc/status/{uid}";
+        if (parameters.authenticated !== undefined) {
+            queryParameters.authenticated = parameters.authenticated;
+        }
+
+        if (parameters.authorities0Authority !== undefined) {
+            queryParameters["authorities[0].authority"] = parameters.authorities0Authority;
+        }
+
+        if (parameters.credentials !== undefined) {
+            queryParameters.credentials = parameters.credentials;
+        }
+
+        if (parameters.details !== undefined) {
+            queryParameters.details = parameters.details;
+        }
+
+        if (parameters.principal !== undefined) {
+            queryParameters.principal = parameters.principal;
+        }
+
+        path = path.replace("{uid}", `${parameters.uid}`);
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    public getKycStatusByUidUsingGET(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
+        "principal" ?: {},
+        "uid": string,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): Promise < request.Response > {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         let path = "/kyc/status/{uid}";
         let body: any;
@@ -935,11 +1246,32 @@ export default class B2Mark {
         });
     }
 
+    public getKycByUidUsingGETURL(parameters: {
+        "uid": string,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        let path = "/kyc/{uid}";
+
+        path = path.replace("{uid}", `${parameters.uid}`);
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
     public getKycByUidUsingGET(parameters: {
         "uid": string,
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): Promise < request.Response > {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         let path = "/kyc/{uid}";
         let body: any;
@@ -966,17 +1298,65 @@ export default class B2Mark {
         });
     }
 
-    public editStatusUsingPUT(parameters: {
-        "authenticated"?: boolean,
-        "authorities0Authority"?: string,
-        "credentials"?: {},
-        "details"?: {},
-        "principal"?: {},
+    public editStatusUsingPUTURL(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
+        "principal" ?: {},
         "status": string,
         "uid": string,
-        $queryParameters?: any,
-        $domain?: string,
-    }): Promise<request.Response> {
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        let path = "/kyc/{uid}/{status}";
+        if (parameters.authenticated !== undefined) {
+            queryParameters.authenticated = parameters.authenticated;
+        }
+
+        if (parameters.authorities0Authority !== undefined) {
+            queryParameters["authorities[0].authority"] = parameters.authorities0Authority;
+        }
+
+        if (parameters.credentials !== undefined) {
+            queryParameters.credentials = parameters.credentials;
+        }
+
+        if (parameters.details !== undefined) {
+            queryParameters.details = parameters.details;
+        }
+
+        if (parameters.principal !== undefined) {
+            queryParameters.principal = parameters.principal;
+        }
+
+        path = path.replace("{status}", `${parameters.status}`);
+
+        path = path.replace("{uid}", `${parameters.uid}`);
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    public editStatusUsingPUT(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
+        "principal" ?: {},
+        "status": string,
+        "uid": string,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): Promise < request.Response > {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         let path = "/kyc/{uid}/{status}";
         let body: any;
