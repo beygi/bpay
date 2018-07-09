@@ -53,7 +53,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
        this.getCountries();
    }
    public getCountries() {
-        newApi.allcountryUsingGET({}).then( (response) => {
+        newApi.allcountriesUsingGET({}).then( (response) => {
             console.log(response.body);
             this.setState({countries : response.body });
         } );
@@ -76,7 +76,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 console.log("Received values of form: ", values);
-                api.postKYC(values).then((response) => {
+                newApi.addKycUsingPOST( {input :  values } ).then((response) => {
                     this.setState({ submited: true });
                     console.log(response.data);
                 }).catch((error) => {
