@@ -8,7 +8,7 @@ import { IRootState } from "../../../redux/reducers";
 
 import { Button, Input, Popover, Table } from "antd";
 import KYC from "../../../components/KYC";
-import Api from "../../../lib/api";
+import Api from "../../../lib/swager";
 
 import * as _ from "lodash";
 import t from "../../../services/trans/i18n";
@@ -86,13 +86,13 @@ class KycAdminContainer extends React.Component<IProps, IState> {
                 PS : "Passport",
                 NI: "National ID Card",
         };
-        api.getAllKYC().then((response) => {
-            api.GetCountries().then((countries) => {
-                response.data.forEach((obj) =>  {
-                                                obj.country =  _.find(countries.data, {id :  obj.country});
+        api.getAllKycesUsingGET({}).then((response) => {
+            api.allcountriesUsingGET({}).then((countries) => {
+                response.body.forEach((obj) =>  {
+                                                obj.country =  _.find(countries.body, {id :  obj.country});
                                                 obj.ltype = types[obj.ltype];
                     });
-                this.setState({countries : countries.data , dataSource : response.data , loading : false});
+                this.setState({countries : countries.body , dataSource : response.body , loading : false});
             });
         },
         );

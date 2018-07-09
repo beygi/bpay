@@ -1,7 +1,7 @@
 import { Button, Card, Col, Icon, List, notification, Row, Steps } from "antd";
 import * as React from "react";
 import config from "../../../src/config";
-import Api from "../../lib/api";
+import Api from "../../lib/swager";
 import t from "../../services/trans/i18n";
 import "./style.less";
 
@@ -41,9 +41,9 @@ class KycComponent extends React.Component<IProps, IState> {
         this.changeStatus = this.changeStatus.bind(this);
     }
     public changeStatus(id, status) {
-        api.changeKycStatus(id, status).then((response) => {
+        api.editStatusUsingPUT({uid : id, status}).then((response) => {
             if (response.status === 200) {
-                this.setState({ record: response.data });
+                this.setState({ record: response.body });
                 this.props.changeRecord(this.state.record.uid, status);
             }
         });
