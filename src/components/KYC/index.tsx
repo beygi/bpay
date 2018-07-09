@@ -41,7 +41,7 @@ class KycComponent extends React.Component<IProps, IState> {
         this.changeStatus = this.changeStatus.bind(this);
     }
     public changeStatus(id, status) {
-        api.editStatusUsingPUT({uid : id, status}).then((response) => {
+        api.editKycStatusUsingPUT({uid : id, status}).then((response) => {
             if (response.status === 200) {
                 this.setState({ record: response.body });
                 this.props.changeRecord(this.state.record.uid, status);
