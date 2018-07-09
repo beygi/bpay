@@ -8,7 +8,7 @@ import { Redirect, Route, Switch } from "react-router";
 import { ConnectedRouter } from "react-router-redux";
 
 import AppContainer from "./containers/app";
-import Api from "./lib/api";
+import Api from "./lib/swager";
 import USER from "./lib/user";
 import { setUser } from "./redux/app/actions";
 import { store } from "./redux/store";
@@ -16,6 +16,7 @@ import { store } from "./redux/store";
 const history = createBrowserHistory();
 const user = USER.getInstance();
 const api = Api.getInstance();
+api.SetHeader("Accept-Language", "fa_IR") ;
 
 user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
     if (authenticated) {
@@ -26,8 +27,9 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         store.dispatch(setUser(userData));
         // set user in user object because it has an instance now
         user.setUser(userData);
-        // set token in api lib TODO : replace with real token
-        api.setAuthToken(JSON.stringify(user.keycloak.tokenParsed));
+        // set token in api lib
+        api.SetHeader("Authorisation" , "Token " + JSON.stringify(user.keycloak.tokenParsed)) ;
+        // api.setAuthToken(JSON.stringify(user.keycloak.tokenParsed));
 
     } else {
         console.log(user.keycloak);
