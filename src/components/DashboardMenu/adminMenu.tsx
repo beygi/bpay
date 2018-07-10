@@ -9,7 +9,7 @@ function getMenus() {
             visible: true,
         },
         users: {
-            icon: "message",
+            icon: "team",
             path: "/admin/users",
             text: t.t("Users"),
             visible: true,
