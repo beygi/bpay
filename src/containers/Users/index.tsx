@@ -1,6 +1,6 @@
 import * as React from "react";
 import {connect} from "react-redux";
-import API from "../../lib/api/index";
+import API from "../../lib/swager";
 import {setUser} from "../../redux/app/actions";
 import {IRootState} from "../../redux/reducers";
 

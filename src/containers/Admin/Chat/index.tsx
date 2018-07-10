@@ -2,12 +2,10 @@ import { Col, Layout, Row } from "antd";
 import * as React from "react";
 import { connect } from "react-redux";
 import Block from "../../../components/Holder";
-import API from "../../../lib/api/index";
 import { setUser } from "../../../redux/app/actions";
 import { IRootState } from "../../../redux/reducers";
 
 import { Button, Input, Popover, Table } from "antd";
-import Api from "../../../lib/api";
 
 import t from "../../../services/trans/i18n";
 
@@ -23,7 +21,6 @@ interface IState {
     pagination: any;
 }
 
-const api = Api.getInstance();
 
 class ChatAdminContainer extends React.Component<IProps, IState> {
     constructor(props: IProps) {

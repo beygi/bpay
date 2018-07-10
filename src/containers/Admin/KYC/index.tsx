@@ -2,7 +2,6 @@ import { Col, Layout, Row } from "antd";
 import * as React from "react";
 import { connect } from "react-redux";
 import Block from "../../../components/Holder";
-import API from "../../../lib/api/index";
 import { setUser } from "../../../redux/app/actions";
 import { IRootState } from "../../../redux/reducers";
 

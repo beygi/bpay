@@ -11,7 +11,7 @@ import { Button, Checkbox, Form, Input, message } from "antd";
 
 const FormItem = Form.Item;
 import { FormComponentProps } from "antd/lib/form";
-import API from "../../../../lib/api";
+import API from "../../../../lib/swager";
 
 const logo = require("../../../../assets/images/logo.png");
 
@@ -50,7 +50,7 @@ class Login extends React.Component<IProps, IState> {
                 const api = API.getInstance();
 
                 // TODO remove
-                api.setAuthToken("zxcvbnm");
+                // api.setAuthToken("zxcvbnm");
                 this.setCookie("token", "zxcvbnm", 365);
                 this.props.setUser(
                     {
