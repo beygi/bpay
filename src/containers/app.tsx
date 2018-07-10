@@ -15,8 +15,8 @@ import GroupsContainer from "./Groups";
 import KycContainer from "./KYC";
 import LandingContainer from "./Landing";
 import NotFoundContainer from "./NotFound";
-import UserContainer from "./User";
-import UsersContainer from "./Users";
+// import UserContainer from "./User";
+import UsersAdminContainer from "./Users";
 
 import { setUser } from "../redux/app/actions";
 import "./app.less";
@@ -75,12 +75,12 @@ class AppContainer extends React.Component<IProps, IState> {
                 {/* <PrivateRoute path={`/balance`} component={DashboardContainer} /> */}
                 <PrivateRoute path={`/exchange`} component={ExchangeContainer} />
                 <PrivateRoute path={`/groups`} component={GroupsContainer} />
-                <PrivateRoute path={`/users`} component={UsersContainer} />
 
                 {/* Private admin routes */}
                 <PrivateRoute path={`/admin/dashboard`} component={AdminDashboardContainer} />
                 <PrivateRoute path={`/admin/kyc`} component={KycAdminContainer} />
                 <PrivateRoute path={`/admin/chat`} component={ChatAdminContainer} />
+                <PrivateRoute path={`/admin/users`} component={UsersAdminContainer} />
 
                 {/* Public routes */}
                 <Route exact path={`/`} render={() => <Layout private={false}><LandingContainer /></Layout>} />

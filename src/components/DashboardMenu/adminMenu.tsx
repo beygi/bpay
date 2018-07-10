@@ -8,6 +8,12 @@ function getMenus() {
             text: t.t("Dashboard"),
             visible: true,
         },
+        users: {
+            icon: "message",
+            path: "/admin/users",
+            text: t.t("Users"),
+            visible: true,
+        },
         setting: {
             icon: "solution",
             path: "/admin/kyc",
