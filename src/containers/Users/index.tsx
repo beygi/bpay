@@ -27,8 +27,9 @@ interface IState {
 }
 
 const columns = [
-    { title: "Name", dataIndex: "fname", key: "fname" },
-    { title: "Family", dataIndex: "lname", key: "lname" },
+    { title: "Name", dataIndex: "firstName", key: "firstName" },
+    { title: "Family", dataIndex: "lastName", key: "lastName" },
+    { title: "Email", dataIndex: "email", key: "email" },
     { title: "Gender", dataIndex: "gender", key: "gender" },
     { dataIndex: "status", key: "status", render: (record) => <b>{record}</b>, title: "Status" },
 ];
@@ -59,19 +60,13 @@ class CustomersContainer extends React.Component<IProps, IState> {
 
     public loadData() {
         // make an ajax call to users
-        console.log("here");
-        this.setState({
-            users: [
-                {
-                    fname: "mahdy",
-                    lname: "beygi",
-                },
-                {
-                    fname: "NitrO",
-                    lname: "gen",
-                },
-            ],
-            loading: false,
+
+        api.GetUsers().then((res) => {
+
+            this.setState({
+                users: res.data,
+                loading: false,
+            });
         });
     }
 
@@ -82,9 +77,7 @@ class CustomersContainer extends React.Component<IProps, IState> {
                     <Search className="user-search"
                         placeholder="input search text"
                         onSearch={(value) => {
-                            api.GetUsers().then((res) => {
-                                console.log(res);
-                            });
+                            console.log(value);
                         }}
                     />
 
