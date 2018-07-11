@@ -1,6 +1,7 @@
+import { Col, Layout, Row } from "antd";
 import * as React from "react";
 import { connect } from "react-redux";
-import API from "../../lib/swager";
+import API from "../../lib/api-old";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 
@@ -9,6 +10,7 @@ import { Button, Input, Popover, Table, Tabs, Tag } from "antd";
 const Search = Input.Search;
 const TabPane = Tabs.TabPane;
 const { CheckableTag } = Tag;
+const api = API.getInstance();
 // import paginationElement from "../../components/Pagination";
 
 import t from "../../services/trans/i18n";
@@ -22,7 +24,6 @@ interface IProps {
 interface IState {
     users: any[];
     loading: boolean;
-    pagination: any;
 }
 
 const columns = [
@@ -49,7 +50,6 @@ class CustomersContainer extends React.Component<IProps, IState> {
         this.state = {
             loading: true,
             users: [],
-            pagination: {},
         };
     }
 
@@ -59,49 +59,45 @@ class CustomersContainer extends React.Component<IProps, IState> {
 
     public loadData() {
         // make an ajax call to users
+        console.log("here");
         this.setState({
             users: [
                 {
                     fname: "mahdy",
                     lname: "beygi",
                 },
+                {
+                    fname: "NitrO",
+                    lname: "gen",
+                },
             ],
-            loading : false,
+            loading: false,
         });
     }
 
     public render() {
         return (
-            <div className={"layout account-manager users"}>
+            <Row gutter={8}>
+                <Col md={24} >
+                    <Search className="user-search"
+                        placeholder="input search text"
+                        onSearch={(value) => {
+                            api.GetUsers().then((res) => {
+                                console.log(res);
+                            });
+                        }}
+                    />
 
-                <Search
-                    placeholder={t.t("search")}
-                    onSearch={
-                        (value) => {
-                            // console.log(value)
-                        }
-                    }
-                    enterButton
-                />
-
-                <Table
-                    loading={this.state.loading}
-                    columns={columns}
-                    expandedRowRender={(record) => <p style={{ margin: 0 }}>{record.description}</p>}
-                    // rowClassName={(record, index) => record.status + index}
-                    dataSource={this.state.users}
-                    pagination={this.state.pagination}
-                    onChange={this.tableChange}
-                />
-            </div>
+                    <Table rowKey="id"
+                        loading={this.state.loading}
+                        columns={columns}
+                        expandedRowRender={(record) => <p style={{ margin: 0 }}>{record.description}</p>}
+                        // rowClassName={(record, index) => record.status + index}
+                        dataSource={this.state.users}
+                    />
+                </Col>
+            </Row>
         );
-    }
-
-    private tableChange = (pagination, filters, sorter) => {
-        this.setState({
-            pagination,
-            loading: true,
-        });
     }
 
 }

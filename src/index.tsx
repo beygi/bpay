@@ -13,9 +13,12 @@ import USER from "./lib/user";
 import { setUser } from "./redux/app/actions";
 import { store } from "./redux/store";
 
+import KeyCloacksApi from "./lib/api-old";
+
 const history = createBrowserHistory();
 const user = USER.getInstance();
 const api = Api.getInstance();
+const keyCloak = KeyCloacksApi.getInstance();
 api.SetHeader("Accept-Language", "fa_IR") ;
 
 user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
@@ -29,7 +32,7 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         user.setUser(userData);
         // set token in api lib
         api.SetHeader("Authorisation" , "Token " + JSON.stringify(user.keycloak.tokenParsed)) ;
-        // api.setAuthToken(JSON.stringify(user.keycloak.tokenParsed));
+        keyCloak.setAuthToken(user.keycloak.token);
 
     } else {
         console.log(user.keycloak);

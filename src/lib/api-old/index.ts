@@ -13,11 +13,11 @@ export default class API {
     private baseURL: string;
     private AuthToken: string | null;
     private axios: any;
-    private headers: { Authorisation?: string };
+    private headers: { Authorization?: string };
 
     private constructor() {
         // empty;
-        this.setBaseURL(config.apiUrl);
+        this.setBaseURL("https://aas.avazcoin.com/auth");
     }
 
     public CreateAxiosInstance() {
@@ -46,7 +46,7 @@ export default class API {
         this.headers = {};
         this.headers["Accept-Language"] = "fa_IR";
         if (this.AuthToken) {
-            this.headers.Authorisation = "Token " + this.AuthToken;
+            this.headers.Authorization = "Bearer " + this.AuthToken;
         }
         return this.headers;
     }
@@ -66,6 +66,11 @@ export default class API {
 
     public changeKycStatus(uid, status) {
         return this.axios.put("/kyc/" + uid + "/" + status);
+    }
+
+    // keyCloaks
+    public GetUsers() {
+        return this.axios.get("/admin/realms/master/users");
     }
 
 }
