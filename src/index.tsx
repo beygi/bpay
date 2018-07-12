@@ -19,7 +19,7 @@ const history = createBrowserHistory();
 const user = USER.getInstance();
 const api = Api.getInstance();
 const keyCloak = KeyCloacksApi.getInstance();
-api.SetHeader("Accept-Language", "fa_IR") ;
+api.SetHeader("Accept-Language", "fa_IR");
 
 user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
     if (authenticated) {
@@ -31,8 +31,17 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         // set user in user object because it has an instance now
         user.setUser(userData);
         // set token in api lib
-        api.SetHeader("Authorisation" , "Token " + JSON.stringify(user.keycloak.tokenParsed)) ;
+        api.SetHeader("Authorisation", "Token " + JSON.stringify(user.keycloak.tokenParsed));
         keyCloak.setAuthToken(user.keycloak.token);
+
+        // token must be refreshed automatically
+        setInterval( () => {
+            user.keycloak.updateToken().success((refreshed) => {
+                if (refreshed) {
+                    keyCloak.setAuthToken(user.keycloak.token);
+                }
+            });
+        }, 30000);
 
     } else {
         console.log(user.keycloak);
