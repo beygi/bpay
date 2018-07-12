@@ -55,14 +55,12 @@ class CustomersContainer extends React.Component<IProps, IState> {
     }
 
     public componentDidMount() {
-        this.loadData();
+        this.loadData("");
     }
 
-    public loadData() {
+    public loadData(searchTerm) {
         // make an ajax call to users
-
-        api.GetUsers().then((res) => {
-
+        api.GetUsers(searchTerm).then((res) => {
             this.setState({
                 users: res.data,
                 loading: false,
@@ -77,7 +75,7 @@ class CustomersContainer extends React.Component<IProps, IState> {
                     <Search className="user-search"
                         placeholder="input search text"
                         onSearch={(value) => {
-                            console.log(value);
+                            this.loadData(value);
                         }}
                     />
 

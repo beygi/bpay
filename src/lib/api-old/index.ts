@@ -69,8 +69,16 @@ export default class API {
     }
 
     // keyCloaks
-    public GetUsers() {
-        return this.axios.get("/admin/realms/master/users");
+    public GetUsers(term) {
+        let params = {};
+        if (term !== "") {
+            params = {
+                params: {
+                    search: term,
+                },
+            };
+        }
+        return this.axios.get("/admin/realms/master/users", params);
     }
 
 }
