@@ -1,16 +1,17 @@
 import { Col, Layout, Row } from "antd";
+import { Button, Icon, Input, Popover, Table, Tabs, Tag } from "antd";
 import * as React from "react";
+import { JsonTable } from "react-json-to-html";
 import { connect } from "react-redux";
 import API from "../../lib/api-old";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 
-import { Button, Input, Popover, Table, Tabs, Tag } from "antd";
-
 const Search = Input.Search;
 const TabPane = Tabs.TabPane;
 const { CheckableTag } = Tag;
 const api = API.getInstance();
+
 // import paginationElement from "../../components/Pagination";
 
 import t from "../../services/trans/i18n";
@@ -30,8 +31,6 @@ const columns = [
     { title: "Name", dataIndex: "firstName", key: "firstName" },
     { title: "Family", dataIndex: "lastName", key: "lastName" },
     { title: "Email", dataIndex: "email", key: "email" },
-    { title: "Gender", dataIndex: "gender", key: "gender" },
-    { dataIndex: "status", key: "status", render: (record) => <b>{record}</b>, title: "Status" },
 ];
 
 const content = (
@@ -82,7 +81,15 @@ class CustomersContainer extends React.Component<IProps, IState> {
                     <Table rowKey="id"
                         loading={this.state.loading}
                         columns={columns}
-                        expandedRowRender={(record) => <p style={{ margin: 0 }}>{record.description}</p>}
+                        expandedRowRender={(record) =>
+                            <Tabs>
+                                <TabPane tab={<span><Icon type="idcard" />Detailed Information</span>} key="1">
+                                    <JsonTable json={record} />
+                                </TabPane>
+                                <TabPane tab={<span><Icon type="table" />Trade History</span>} key="2">
+                                    Tab 2
+                                </TabPane>
+                            </Tabs>}
                         // rowClassName={(record, index) => record.status + index}
                         dataSource={this.state.users}
                     />
