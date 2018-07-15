@@ -1,5 +1,6 @@
 import { Col, Layout, Row } from "antd";
-import { Button, Icon, Input, Popover, Table, Tabs, Tag } from "antd";
+import { Button, Icon, Input, Pagination, Popover, Table, Tabs, Tag } from "antd";
+import { PaginationProps } from "antd/lib/pagination";
 import * as React from "react";
 import { JsonTable } from "react-json-to-html";
 import { connect } from "react-redux";
@@ -11,6 +12,7 @@ const Search = Input.Search;
 const TabPane = Tabs.TabPane;
 const { CheckableTag } = Tag;
 const api = API.getInstance();
+const ButtonGroup = Button.Group;
 
 // import paginationElement from "../../components/Pagination";
 
@@ -25,6 +27,10 @@ interface IProps {
 interface IState {
     users: any[];
     loading: boolean;
+    perPage: number;
+    currentPage: number;
+    searchTerm: string;
+    hasNext: boolean;
 }
 
 const columns = [
@@ -50,37 +56,66 @@ class CustomersContainer extends React.Component<IProps, IState> {
         this.state = {
             loading: true,
             users: [],
+            perPage: 20,
+            currentPage: 1,
+            searchTerm: "",
+            hasNext: false,
         };
+        this.loadData = this.loadData.bind(this);
+        this.loadNext = this.loadNext.bind(this);
+        this.loadPrev = this.loadPrev.bind(this);
+        this.loadFirst = this.loadFirst.bind(this);
     }
 
     public componentDidMount() {
-        this.loadData("");
+        this.loadData(this.state.currentPage, this.state.perPage, "");
     }
 
-    public loadData(searchTerm) {
+    public loadFirst() {
+        this.loadData(1, this.state.perPage, this.state.searchTerm);
+    }
+
+        public loadNext() {
+            this.loadData(this.state.currentPage + 1, this.state.perPage, this.state.searchTerm);
+        }
+
+        public loadPrev() {
+            this.loadData(this.state.currentPage - 1, this.state.perPage, this.state.searchTerm);
+        }
+
+    public loadData(current: number, size: number, searchTerm?: string) {
+        // set loader image
+        this.setState({ loading: true });
         // make an ajax call to users
-        api.GetUsers(searchTerm).then((res) => {
+        api.GetUsers(searchTerm, current, size).then((res) => {
+            if (res.data.length >= this.state.perPage) {
+                this.setState({ hasNext: true });
+            } else {
+                this.setState({ hasNext: false });
+            }
             this.setState({
                 users: res.data,
                 loading: false,
+                currentPage : current,
             });
         });
     }
 
     public render() {
         return (
-            <Row gutter={8}>
+            < Row gutter={8} >
                 <Col md={24} >
                     <Search className="user-search"
                         placeholder="input search text"
                         onSearch={(value) => {
-                            this.loadData(value);
+                            this.setState({ searchTerm: value });
+                            this.loadData(1, this.state.perPage, value);
                         }}
                     />
-
                     <Table rowKey="id"
                         loading={this.state.loading}
                         columns={columns}
+                        pagination= {false}
                         expandedRowRender={(record) =>
                             <Tabs>
                                 <TabPane tab={<span><Icon type="idcard" />Detailed Information</span>} key="1">
@@ -94,8 +129,20 @@ class CustomersContainer extends React.Component<IProps, IState> {
                         dataSource={this.state.users}
                     />
                 </Col>
-            </Row>
-        );
+                <Col md={24} className="user-pagination">
+                    <ButtonGroup>
+                        <Button  onClick={this.loadFirst} disabled={this.state.currentPage === 1} type="primary">
+                           {t.t("First Page")}
+                        </Button>
+                        <Button onClick={this.loadPrev}  disabled={this.state.currentPage === 1} type="primary">
+                            <Icon type="left" />{t.t("Previous Page")}
+                        </Button>
+                        <Button onClick={this.loadNext} disabled={!this.state.hasNext} type="primary">
+                            {t.t("Next Page")}<Icon type="right" />
+                        </Button>
+                    </ButtonGroup>
+                </Col>
+            </Row >);
     }
 
 }
