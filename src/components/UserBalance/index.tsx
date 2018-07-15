@@ -14,19 +14,40 @@ interface IProps {
 }
 
 interface IState {
+    coins: Array<{ name: string, balance: number, symbol: string }>;
 }
 
 class UserBalanceComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
-
         // this.action = this.action.bind(this);
+        this.state = {
+            coins: [
+                {
+                    name: "Bit Coin",
+                    balance: 45,
+                    symbol: "btc",
+                },
+                {
+                    name: "USD",
+                    balance: 145,
+                    symbol: "usd",
+                },
+            ],
+        };
     }
 
     public render() {
+        const coins = this.state.coins.map((coin) =>
+            <div className="coin-balance">
+                <p className={"balance-icon coin-" + coin.symbol}></p>
+                <p className="balance-name">{coin.name}</p>
+                <p className="balance-number">{coin.balance}</p>
+            </div>,
+        );
         return (
-            <div>BALANCE</div>
+            <div className="user-balance">{coins}</div>
         );
     }
 }

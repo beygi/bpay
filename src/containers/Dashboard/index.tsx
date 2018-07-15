@@ -25,9 +25,8 @@ class DashboardContainer extends React.Component<IProps, IState> {
         return (
             <Row gutter={8}>
               <Col md={6} >
-                  <Block className="user-balance"collapse title="Balance" >
+                  <Block collapse title="Balance" >
                       <Balance />
-                      <img src="https://dummyimage.com/600x400/4c4649/3ee6e0.png" alt=""/>
                   </Block>
                   <Block>
                           <img src="https://dummyimage.com/600x800/4c4649/3ee6e0.png" alt=""/>

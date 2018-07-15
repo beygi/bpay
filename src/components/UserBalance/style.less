@@ -1,16 +1,45 @@
 @import "../../theme/application";
-
-.user-status-guide
+.user-balance
 {
-    padding: 30px;
-    color : @palette-low;
-    .action
-    {
-        background-color:lighten(@palette-alternate,15%);
-        border-color: lighten(@palette-alternate,15%);
-        color : @palette-light;
-        display: block;
-        margin : auto;
-        margin-top:30px;
+    p {
+        display: inline-block !important;
+        text-align: left;
+        margin-bottom: 0 !important;
     }
+    .balance-name
+    {
+        width: 60%;
+    }
+    .balance-number
+    {
+        width: 30%;
+    }
+    .balance-icon
+    {
+        margin-right : 10px;
+        width: 32px;
+        height: 32px;
+    }
+}
+.coin-balance
+{
+    display:flex;
+   align-items:center;
+   margin-bottom: 5px;
+   padding-bottom: 5px;
+   border-bottom: 1px solid @palette-high;
+   &:last-child
+   {
+       border-bottom: none;
+   }
+}
+
+
+.coin-btc
+{
+    background: url("../../assets/images/icons/btc.png");
+}
+.coin-usd
+{
+    background: url("../../assets/images/icons/usd.png") no-repeat;
 }
