@@ -3,6 +3,7 @@ import * as React from "react";
 import {connect} from "react-redux";
 import Profile from "../../components/DashboardHeaderProfile";
 import Block from "../../components/Holder";
+import Balance from "../../components/UserBalance";
 import Guide from "../../components/UserStatusGuide";
 import {setUser} from "../../redux/app/actions";
 import {IRootState} from "../../redux/reducers";
@@ -24,7 +25,8 @@ class DashboardContainer extends React.Component<IProps, IState> {
         return (
             <Row gutter={8}>
               <Col md={6} >
-                  <Block>
+                  <Block className="user-balance"collapse title="Balance" >
+                      <Balance />
                       <img src="https://dummyimage.com/600x400/4c4649/3ee6e0.png" alt=""/>
                   </Block>
                   <Block>
