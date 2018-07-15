@@ -22,7 +22,8 @@ class BlockComponent extends React.Component<IProps, IState> {
     }
 
     public render() {
-        let cssClass = this.props.className + " block";
+        let cssClass = this.props.className || "";
+        cssClass += " block";
         if (this.props.noPadding || this.props.collapse) {
             cssClass += " no-padding";
         }
