@@ -39,14 +39,6 @@ const columns = [
     { title: "Email", dataIndex: "email", key: "email" },
 ];
 
-const content = (
-    <div>
-        <Button type="primary">{t.t("active")}</Button>
-        <Button>{t.t("verify")}</Button>
-        <Button>{t.t("test")}</Button>
-    </div>
-);
-
 class CustomersContainer extends React.Component<IProps, IState> {
     private api = API.getInstance();
     private skills = [];
@@ -75,13 +67,13 @@ class CustomersContainer extends React.Component<IProps, IState> {
         this.loadData(1, this.state.perPage, this.state.searchTerm);
     }
 
-        public loadNext() {
-            this.loadData(this.state.currentPage + 1, this.state.perPage, this.state.searchTerm);
-        }
+    public loadNext() {
+        this.loadData(this.state.currentPage + 1, this.state.perPage, this.state.searchTerm);
+    }
 
-        public loadPrev() {
-            this.loadData(this.state.currentPage - 1, this.state.perPage, this.state.searchTerm);
-        }
+    public loadPrev() {
+        this.loadData(this.state.currentPage - 1, this.state.perPage, this.state.searchTerm);
+    }
 
     public loadData(current: number, size: number, searchTerm?: string) {
         // set loader image
@@ -96,7 +88,7 @@ class CustomersContainer extends React.Component<IProps, IState> {
             this.setState({
                 users: res.data,
                 loading: false,
-                currentPage : current,
+                currentPage: current,
             });
         });
     }
@@ -115,7 +107,7 @@ class CustomersContainer extends React.Component<IProps, IState> {
                     <Table rowKey="id"
                         loading={this.state.loading}
                         columns={columns}
-                        pagination= {false}
+                        pagination={false}
                         expandedRowRender={(record) =>
                             <Tabs>
                                 <TabPane tab={<span><Icon type="idcard" />Detailed Information</span>} key="1">
@@ -125,16 +117,15 @@ class CustomersContainer extends React.Component<IProps, IState> {
                                     Tab 2
                                 </TabPane>
                             </Tabs>}
-                        // rowClassName={(record, index) => record.status + index}
                         dataSource={this.state.users}
                     />
                 </Col>
                 <Col md={24} className="user-pagination">
                     <ButtonGroup>
-                        <Button  onClick={this.loadFirst} disabled={this.state.currentPage === 1} type="primary">
-                           {t.t("First Page")}
+                        <Button onClick={this.loadFirst} disabled={this.state.currentPage === 1} type="primary">
+                            {t.t("First Page")}
                         </Button>
-                        <Button onClick={this.loadPrev}  disabled={this.state.currentPage === 1} type="primary">
+                        <Button onClick={this.loadPrev} disabled={this.state.currentPage === 1} type="primary">
                             <Icon type="left" />{t.t("Previous Page")}
                         </Button>
                         <Button onClick={this.loadNext} disabled={!this.state.hasNext} type="primary">
