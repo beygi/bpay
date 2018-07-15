@@ -31,7 +31,7 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         // set user in user object because it has an instance now
         user.setUser(userData);
         // set token in api lib
-        api.SetHeader("Authorisation", "Token " + JSON.stringify(user.keycloak.tokenParsed));
+        api.SetHeader("Authorization", "Token " + JSON.stringify(user.keycloak.tokenParsed));
         keyCloak.setAuthToken(user.keycloak.token);
 
         // token must be refreshed automatically
