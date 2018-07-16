@@ -2,7 +2,6 @@ import * as jsCookie from "js-cookie";
 import * as Keycloak from "keycloak-js";
 import { store } from "../../redux/store";
 import Config from "./../../config";
-import API from "./../swager";
 
 export default class USER {
     public static getInstance() {
@@ -20,7 +19,7 @@ export default class USER {
         // get user object from redux if available
         this.user = store.getState().app.user || null;
         this.keycloak = Keycloak(Config.keycloakConfig);
-        API.getInstance().SetHeader("Authorization", "Token " + jsCookie.get("token"));
+        //API.getInstance().SetHeader("Authorization", "Token " + jsCookie.get("token"));
 
     }
     public getCurrent() {

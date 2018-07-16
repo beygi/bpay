@@ -7,7 +7,7 @@ import { IRootState } from "../../../redux/reducers";
 
 import { Button, Input, Popover, Table } from "antd";
 import KYC from "../../../components/KYC";
-import Api from "../../../lib/swager";
+import Api from "../../../lib/api/kyc";
 
 import * as _ from "lodash";
 import t from "../../../services/trans/i18n";

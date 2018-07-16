@@ -1,7 +1,7 @@
 import { Button, Card, Col, Icon, List, notification, Row, Steps } from "antd";
 import * as React from "react";
 import config from "../../../src/config";
-import Api from "../../lib/swager";
+import Api from "../../lib/api/kyc";
 import t from "../../services/trans/i18n";
 import "./style.less";
 

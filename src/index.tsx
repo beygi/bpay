@@ -8,7 +8,6 @@ import { Redirect, Route, Switch } from "react-router";
 import { ConnectedRouter } from "react-router-redux";
 
 import AppContainer from "./containers/app";
-import Api from "./lib/swager";
 import USER from "./lib/user";
 import { setUser } from "./redux/app/actions";
 import { store } from "./redux/store";
@@ -17,9 +16,9 @@ import KeyCloacksApi from "./lib/api-old";
 
 const history = createBrowserHistory();
 const user = USER.getInstance();
-const api = Api.getInstance();
+// const api = Api.getInstance();
 const keyCloak = KeyCloacksApi.getInstance();
-api.SetHeader("Accept-Language", "fa_IR");
+// api.SetHeader("Accept-Language", "fa_IR");
 
 user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
     if (authenticated) {
@@ -31,7 +30,7 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         // set user in user object because it has an instance now
         user.setUser(userData);
         // set token in api lib
-        api.SetHeader("Authorization", "Token " + JSON.stringify(user.keycloak.tokenParsed));
+        // api.SetHeader("Authorization", "Token " + JSON.stringify(user.keycloak.tokenParsed));
         keyCloak.setAuthToken(user.keycloak.token);
 
         // token must be refreshed automatically

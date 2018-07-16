@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import Profile from "../../components/DashboardHeaderProfile";
 import Block from "../../components/Holder";
 import Uploader from "../../components/Uploader";
-import Swagger from "../../lib/swager";
+import Api from "../../lib/api/kyc";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
@@ -19,7 +19,7 @@ const coverImg = require("../../assets/images/cover.png");
 const personalImg = require("../../assets/images/personal.png");
 const selfieImg = require("../../assets/images/selfie.png");
 
-const newApi = Swagger.getInstance();
+const newApi = Api.getInstance();
 
 interface IUserFormProps extends FormComponentProps {
     user: any;
