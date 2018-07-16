@@ -3,6 +3,8 @@ import * as React from "react";
 
 import { connect } from "react-redux";
 import { IRootState } from "../../redux/reducers";
+
+import { updateUserBalance } from "../../redux/app/actions";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
@@ -10,7 +12,8 @@ import "./style.less";
 const userObject = USER.getInstance();
 
 interface IProps {
-    user: any;
+    balance: any;
+    updateUserBalance: (symbol: string, balance: number) => void;
 }
 
 interface IState {
@@ -30,12 +33,28 @@ class UserBalanceComponent extends React.Component<IProps, IState> {
                     symbol: "btc",
                 },
                 {
-                    name: "USD",
+                    name: "US dollar",
                     balance: 145,
                     symbol: "usd",
                 },
             ],
         };
+        this.loadData = this.loadData.bind(this);
+    }
+
+    public componentDidMount() {
+        this.loadData();
+    }
+
+    public loadData() {
+        const coins = this.state.coins;
+        // call apis and add result to redux, prepare fundamentals for websocket
+        this.state.coins.forEach( (coin) =>
+            console.log(coin),
+        );
+        this.setState({ coins });
+        this.props.updateUserBalance("btc", 1200);
+        this.props.updateUserBalance("usd", 1800);
     }
 
     public render() {
@@ -54,12 +73,13 @@ class UserBalanceComponent extends React.Component<IProps, IState> {
 
 function mapDispatchToProps(dispatch) {
     return {
+        updateUserBalance : (symbol, balance) => dispatch(updateUserBalance({ symbol, balance })),
     };
 }
 
 function mapStateToProps(state: IRootState) {
     return {
-        user: state.app.user,
+        balance: state.app.user.balance,
     };
 }
 
