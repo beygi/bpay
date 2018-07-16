@@ -11,7 +11,7 @@ import { Button, Checkbox, Form, Input, message } from "antd";
 
 const FormItem = Form.Item;
 import { FormComponentProps } from "antd/lib/form";
-import API from "../../../../lib/swager";
+// import API from "../../../../lib/swager";
 
 const logo = require("../../../../assets/images/logo.png");
 
@@ -47,7 +47,7 @@ class Login extends React.Component<IProps, IState> {
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 console.log("Received values of form: ", values);
-                const api = API.getInstance();
+                // const api = API.getInstance();
 
                 // TODO remove
                 // api.setAuthToken("zxcvbnm");
