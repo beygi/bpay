@@ -1,0 +1,1022 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "kyc (know your customer)",
+        "version": "1.0",
+        "title": "kycinfo",
+        "termsOfService": "www.b2mark.com/terms",
+        "contact": {
+            "name": "b2mark",
+            "url": "http://www.b2mark.com",
+            "email": "info@b2mark.com"
+        },
+        "license": {
+            "name": "b2mark",
+            "url": "www.b2mark.com/license"
+        }
+    },
+    "host": "87.98.188.77:9092",
+    "basePath": "/",
+    "tags": [{
+        "name": "country-rest-controller",
+        "description": "Country Rest Controller"
+    }, {
+        "name": "image",
+        "description": "Image"
+    }, {
+        "name": "kyc-rest-controller",
+        "description": "Kyc Rest Controller"
+    }, {
+        "name": "operation-handler",
+        "description": "Operation Handler"
+    }, {
+        "name": "web-mvc-endpoint-handler-mapping",
+        "description": "Web Mvc Endpoint Handler Mapping"
+    }],
+    "paths": {
+        "/actuator": {
+            "get": {
+                "tags": ["web-mvc-endpoint-handler-mapping"],
+                "summary": "links",
+                "operationId": "linksUsingGET",
+                "produces": ["application/json", "application/vnd.spring-boot.actuator.v2+json"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "object",
+                                "additionalProperties": {
+                                    "$ref": "#/definitions/Link"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/actuator/health": {
+            "get": {
+                "tags": ["operation-handler"],
+                "summary": "handle",
+                "operationId": "handleUsingGET",
+                "produces": ["application/json", "application/vnd.spring-boot.actuator.v2+json"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "body",
+                    "required": false,
+                    "schema": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/actuator/info": {
+            "get": {
+                "tags": ["operation-handler"],
+                "summary": "handle",
+                "operationId": "handleUsingGET_1",
+                "produces": ["application/json", "application/vnd.spring-boot.actuator.v2+json"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "body",
+                    "required": false,
+                    "schema": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/country": {
+            "get": {
+                "tags": ["country-rest-controller"],
+                "summary": "list of country in the world",
+                "operationId": "allcountriesUsingGET",
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Country"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/country/{cid}": {
+            "get": {
+                "tags": ["country-rest-controller"],
+                "summary": "get country with cid (Country Identification)",
+                "operationId": "getCountryByCidUsingGET",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "cid",
+                    "in": "path",
+                    "description": "cid",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Country"
+                        }
+                    },
+                    "204": {
+                        "description": "content not found",
+                        "schema": {
+                            "$ref": "#/definitions/Country"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/img/{uid}/{imgtype}": {
+            "get": {
+                "tags": ["image"],
+                "summary": "getKycImageByUidAndImgType",
+                "operationId": "getKycImageByUidAndImgTypeUsingGET",
+                "produces": ["*/*"],
+                "parameters": [{
+                    "name": "imgtype",
+                    "in": "path",
+                    "description": "imgtype",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "uid",
+                    "in": "path",
+                    "description": "uid",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Resource"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/kyc": {
+            "get": {
+                "tags": ["kyc-rest-controller"],
+                "summary": "return kyc paginatio if not found 204 content not found",
+                "operationId": "getAllKycesUsingGET",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "dir",
+                    "in": "query",
+                    "description": "dir",
+                    "required": false,
+                    "type": "string",
+                    "default": "asc"
+                }, {
+                    "name": "page",
+                    "in": "query",
+                    "description": "page",
+                    "required": false,
+                    "type": "integer",
+                    "default": 0,
+                    "format": "int32"
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "size",
+                    "required": false,
+                    "type": "integer",
+                    "default": 10,
+                    "format": "int32"
+                }, {
+                    "name": "status",
+                    "in": "query",
+                    "description": "status",
+                    "required": false,
+                    "type": "string",
+                    "default": "all"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Kycinfo"
+                            }
+                        }
+                    },
+                    "204": {
+                        "description": "service and address is ok but content not found",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Kycinfo"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            },
+            "post": {
+                "tags": ["kyc-rest-controller"],
+                "summary": "addKyc",
+                "operationId": "addKycUsingPOST",
+                "consumes": ["application/json"],
+                "produces": ["*/*"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "input",
+                    "description": "input",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Kycinfo"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Kycinfo"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            },
+            "put": {
+                "tags": ["kyc-rest-controller"],
+                "summary": "updateKyc",
+                "operationId": "updateKycUsingPUT",
+                "consumes": ["application/json"],
+                "produces": ["*/*"],
+                "parameters": [{
+                    "name": "authenticated",
+                    "in": "query",
+                    "required": false,
+                    "type": "boolean"
+                }, {
+                    "name": "authorities[0].authority",
+                    "in": "query",
+                    "required": false,
+                    "type": "string"
+                }, {
+                    "name": "credentials",
+                    "in": "query",
+                    "required": false,
+                    "type": "object"
+                }, {
+                    "name": "details",
+                    "in": "query",
+                    "required": false,
+                    "type": "object"
+                }, {
+                    "in": "body",
+                    "name": "kycInput",
+                    "description": "kycInput",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Kycinfo"
+                    }
+                }, {
+                    "name": "principal",
+                    "in": "query",
+                    "required": false,
+                    "type": "object"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Kycinfo"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/kyc/img": {
+            "post": {
+                "tags": ["kyc-rest-controller"],
+                "summary": "addKycImage",
+                "operationId": "addKycImageUsingPOST",
+                "consumes": ["multipart/form-data"],
+                "produces": ["*/*"],
+                "parameters": [{
+                    "name": "authenticated",
+                    "in": "query",
+                    "required": false,
+                    "type": "boolean"
+                }, {
+                    "name": "authorities[0].authority",
+                    "in": "query",
+                    "required": false,
+                    "type": "string"
+                }, {
+                    "name": "credentials",
+                    "in": "query",
+                    "required": false,
+                    "type": "object"
+                }, {
+                    "name": "details",
+                    "in": "query",
+                    "required": false,
+                    "type": "object"
+                }, {
+                    "name": "file",
+                    "in": "formData",
+                    "description": "file",
+                    "required": true,
+                    "type": "file"
+                }, {
+                    "name": "flashAttributes",
+                    "in": "query",
+                    "required": false,
+                    "type": "object"
+                }, {
+                    "name": "imgtype",
+                    "in": "query",
+                    "description": "imgtype",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "principal",
+                    "in": "query",
+                    "required": false,
+                    "type": "object"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/kyc/img/{imgtype}": {
+            "get": {
+                "tags": ["kyc-rest-controller"],
+                "summary": "getKycImage",
+                "operationId": "getKycImageUsingGET",
+                "produces": ["*/*"],
+                "parameters": [{
+                    "name": "authenticated",
+                    "in": "query",
+                    "required": false,
+                    "type": "boolean"
+                }, {
+                    "name": "authorities[0].authority",
+                    "in": "query",
+                    "required": false,
+                    "type": "string"
+                }, {
+                    "name": "credentials",
+                    "in": "query",
+                    "required": false,
+                    "type": "object"
+                }, {
+                    "name": "details",
+                    "in": "query",
+                    "required": false,
+                    "type": "object"
+                }, {
+                    "name": "imgtype",
+                    "in": "path",
+                    "description": "imgtype",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "principal",
+                    "in": "query",
+                    "required": false,
+                    "type": "object"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Resource"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/kyc/status": {
+            "get": {
+                "tags": ["kyc-rest-controller"],
+                "summary": "return status kyc paginatio if not found 204 content not found",
+                "operationId": "getAllKycStatusesUsingGET",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "dir",
+                    "in": "query",
+                    "description": "dir",
+                    "required": false,
+                    "type": "string",
+                    "default": "asc"
+                }, {
+                    "name": "page",
+                    "in": "query",
+                    "description": "page",
+                    "required": false,
+                    "type": "integer",
+                    "default": 0,
+                    "format": "int32"
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "size",
+                    "required": false,
+                    "type": "integer",
+                    "default": 10,
+                    "format": "int32"
+                }, {
+                    "name": "status",
+                    "in": "query",
+                    "description": "status",
+                    "required": false,
+                    "type": "string",
+                    "default": "all"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/KycStatus"
+                            }
+                        }
+                    },
+                    "204": {
+                        "description": "service and address is ok but content not found",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/KycStatus"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/kyc/status/{uid}": {
+            "get": {
+                "tags": ["kyc-rest-controller"],
+                "summary": "list of status (know your customer) by uid (user identification)",
+                "operationId": "getKycStatusByUidUsingGET",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "uid",
+                    "in": "path",
+                    "description": "uid",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/KycStatus"
+                        }
+                    },
+                    "204": {
+                        "description": "service and address is ok but content not found",
+                        "schema": {
+                            "$ref": "#/definitions/KycStatus"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/kyc/{uid}": {
+            "get": {
+                "tags": ["kyc-rest-controller"],
+                "summary": "list of kyc (know your customer) by uid (user identification)",
+                "operationId": "getKycByUidUsingGET",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "uid",
+                    "in": "path",
+                    "description": "uid",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Kycinfo"
+                        }
+                    },
+                    "204": {
+                        "description": "service and address is ok but content not found",
+                        "schema": {
+                            "$ref": "#/definitions/Kycinfo"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/kyc/{uid}/{status}": {
+            "put": {
+                "tags": ["kyc-rest-controller"],
+                "summary": "editKycStatus",
+                "operationId": "editKycStatusUsingPUT",
+                "consumes": ["application/json"],
+                "produces": ["*/*"],
+                "parameters": [{
+                    "name": "status",
+                    "in": "path",
+                    "description": "status",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "uid",
+                    "in": "path",
+                    "description": "uid",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/KycStatus"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        }
+    },
+    "definitions": {
+        "Country": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "name": {
+                    "type": "string",
+                    "readOnly": true
+                }
+            },
+            "title": "Country"
+        },
+        "File": {
+            "type": "object",
+            "properties": {
+                "absolute": {
+                    "type": "boolean"
+                },
+                "absoluteFile": {
+                    "$ref": "#/definitions/File"
+                },
+                "absolutePath": {
+                    "type": "string"
+                },
+                "canonicalFile": {
+                    "$ref": "#/definitions/File"
+                },
+                "canonicalPath": {
+                    "type": "string"
+                },
+                "directory": {
+                    "type": "boolean"
+                },
+                "file": {
+                    "type": "boolean"
+                },
+                "freeSpace": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "hidden": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "parent": {
+                    "type": "string"
+                },
+                "parentFile": {
+                    "$ref": "#/definitions/File"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "totalSpace": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "usableSpace": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "title": "File"
+        },
+        "InputStream": {
+            "type": "object",
+            "title": "InputStream"
+        },
+        "KycStatus": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "enum": ["pending", "accepted", "checking", "rejected"]
+                },
+                "uid": {
+                    "type": "string"
+                }
+            },
+            "title": "KycStatus"
+        },
+        "Kycinfo": {
+            "type": "object",
+            "properties": {
+                "country": {
+                    "type": "string"
+                },
+                "fname": {
+                    "type": "string"
+                },
+                "gender": {
+                    "type": "string",
+                    "enum": ["male", "female", "other"]
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "readOnly": true
+                },
+                "lastupdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true
+                },
+                "licenseid": {
+                    "type": "string"
+                },
+                "lname": {
+                    "type": "string"
+                },
+                "ltype": {
+                    "type": "string",
+                    "enum": ["DL", "PS", "NI"]
+                },
+                "status": {
+                    "type": "string",
+                    "readOnly": true,
+                    "enum": ["pending", "accepted", "checking", "rejected"]
+                },
+                "uid": {
+                    "type": "string",
+                    "readOnly": true
+                }
+            },
+            "title": "Kycinfo"
+        },
+        "Link": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string"
+                },
+                "templated": {
+                    "type": "boolean"
+                }
+            },
+            "title": "Link"
+        },
+        "MapstringLink": {
+            "type": "object",
+            "title": "MapstringLink",
+            "additionalProperties": {
+                "$ref": "#/definitions/Link"
+            }
+        },
+        "Resource": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "file": {
+                    "$ref": "#/definitions/File"
+                },
+                "filename": {
+                    "type": "string"
+                },
+                "inputStream": {
+                    "$ref": "#/definitions/InputStream"
+                },
+                "open": {
+                    "type": "boolean"
+                },
+                "readable": {
+                    "type": "boolean"
+                },
+                "uri": {
+                    "$ref": "#/definitions/URI"
+                },
+                "url": {
+                    "$ref": "#/definitions/URL"
+                }
+            },
+            "title": "Resource"
+        },
+        "URI": {
+            "type": "object",
+            "properties": {
+                "absolute": {
+                    "type": "boolean"
+                },
+                "authority": {
+                    "type": "string"
+                },
+                "fragment": {
+                    "type": "string"
+                },
+                "host": {
+                    "type": "string"
+                },
+                "opaque": {
+                    "type": "boolean"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "port": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "query": {
+                    "type": "string"
+                },
+                "rawAuthority": {
+                    "type": "string"
+                },
+                "rawFragment": {
+                    "type": "string"
+                },
+                "rawPath": {
+                    "type": "string"
+                },
+                "rawQuery": {
+                    "type": "string"
+                },
+                "rawSchemeSpecificPart": {
+                    "type": "string"
+                },
+                "rawUserInfo": {
+                    "type": "string"
+                },
+                "scheme": {
+                    "type": "string"
+                },
+                "schemeSpecificPart": {
+                    "type": "string"
+                },
+                "userInfo": {
+                    "type": "string"
+                }
+            },
+            "title": "URI"
+        },
+        "URL": {
+            "type": "object",
+            "properties": {
+                "authority": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "object"
+                },
+                "defaultPort": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "file": {
+                    "type": "string"
+                },
+                "host": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "port": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "protocol": {
+                    "type": "string"
+                },
+                "query": {
+                    "type": "string"
+                },
+                "ref": {
+                    "type": "string"
+                },
+                "userInfo": {
+                    "type": "string"
+                }
+            },
+            "title": "URL"
+        }
+    }
+}
