@@ -20,7 +20,7 @@ interface Link {
     "href": string;
     "templated": boolean;
 }
-type Map;« string, Link;» = {}
+interface MapstringLink {}
 interface Withdraw {
     "amount": number;
     "date": string;
@@ -29,7 +29,7 @@ interface Withdraw {
 }
 
 interface Logger {
-    log: (line: string) => any;
+    log: (line: string) => any
 }
 export default class btcApi {
     public static getInstance() {
