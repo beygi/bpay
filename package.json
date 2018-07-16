@@ -9,7 +9,7 @@
     "build": "webpack --define process.env.NODE_ENV=\"production\" -p --progress --colors",
     "fast": "webpack-dev-server -d --devtool source-map --history-api-fallback --progress --colors --port 3000 --host b2b.loc",
     "apiGen": "tsc bin/apiGen.ts --skipLibCheck && node ./bin/apiGen.js --out=./src/lib/api/index.ts",
-    "gen": "node ./src/lib/swager/generate.js ./src/lib/swager/index.ts && tslint --fix ./src/lib/swager/index.ts"
+    "gen" : "ls swager-specs -1 | xargs -i node ./src/lib/swager/generate.js {} && ls swager-specs -1 | xargs -i tslint --fix ./src/lib/swager/{}.ts"
   },
   "dependencies": {
     "@babel/preset-env": "^7.0.0-beta.37",

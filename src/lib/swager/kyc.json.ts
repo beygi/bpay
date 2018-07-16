@@ -2,109 +2,174 @@ import * as request from "superagent";
 import {
     SuperAgentStatic,
 } from "superagent";
-import config from "../../../src/config";
 
 type CallbackHandler = (err: any, res ?: request.Response) => void;
 interface Country {
-    "id": string;
-    "name": string;
+    "id": string
+
+    "name": string
+
 }
 interface File {
-    "absolute": boolean;
-    "absoluteFile": File;
-    "absolutePath": string;
-    "canonicalFile": File;
-    "canonicalPath": string;
-    "directory": boolean;
-    "file": boolean;
-    "freeSpace": number;
-    "hidden": boolean;
-    "name": string;
-    "parent": string;
-    "parentFile": File;
-    "path": string;
-    "totalSpace": number;
-    "usableSpace": number;
+    "absolute": boolean
+
+    "absoluteFile": File
+
+    "absolutePath": string
+
+    "canonicalFile": File
+
+    "canonicalPath": string
+
+    "directory": boolean
+
+    "file": boolean
+
+    "freeSpace": number
+
+    "hidden": boolean
+
+    "name": string
+
+    "parent": string
+
+    "parentFile": File
+
+    "path": string
+
+    "totalSpace": number
+
+    "usableSpace": number
+
 }
 interface InputStream {}
 interface KycStatus {
-    "status": "pending" | "accepted" | "checking" | "rejected";
-    "uid": string;
+    "status": "pending" | "accepted" | "checking" | "rejected"
+
+    "uid": string
+
 }
 interface Kycinfo {
-    "country": string;
-    "fname": string;
-    "gender": "male" | "female" | "other";
-    "id": number;
-    "lastupdate": string;
-    "licenseid": string;
-    "lname": string;
-    "ltype": "DL" | "PS" | "NI";
-    "status": "pending" | "accepted" | "checking" | "rejected";
-    "uid": string;
+    "country": string
+
+    "fname": string
+
+    "gender": "male" | "female" | "other"
+
+    "id": number
+
+    "lastupdate": string
+
+    "licenseid": string
+
+    "lname": string
+
+    "ltype": "DL" | "PS" | "NI"
+
+    "status": "pending" | "accepted" | "checking" | "rejected"
+
+    "uid": string
+
 }
 interface Link {
-    "href": string;
-    "templated": boolean;
+    "href": string
+
+    "templated": boolean
+
 }
 interface MapstringLink {}
 interface Resource {
-    "description": string;
-    "file": File;
-    "filename": string;
-    "inputStream": InputStream;
-    "open": boolean;
-    "readable": boolean;
-    "uri": URI;
-    "url": URL;
+    "description": string
+
+    "file": File
+
+    "filename": string
+
+    "inputStream": InputStream
+
+    "open": boolean
+
+    "readable": boolean
+
+    "uri": URI
+
+    "url": URL
+
 }
 interface URI {
-    "absolute": boolean;
-    "authority": string;
-    "fragment": string;
-    "host": string;
-    "opaque": boolean;
-    "path": string;
-    "port": number;
-    "query": string;
-    "rawAuthority": string;
-    "rawFragment": string;
-    "rawPath": string;
-    "rawQuery": string;
-    "rawSchemeSpecificPart": string;
-    "rawUserInfo": string;
-    "scheme": string;
-    "schemeSpecificPart": string;
-    "userInfo": string;
+    "absolute": boolean
+
+    "authority": string
+
+    "fragment": string
+
+    "host": string
+
+    "opaque": boolean
+
+    "path": string
+
+    "port": number
+
+    "query": string
+
+    "rawAuthority": string
+
+    "rawFragment": string
+
+    "rawPath": string
+
+    "rawQuery": string
+
+    "rawSchemeSpecificPart": string
+
+    "rawUserInfo": string
+
+    "scheme": string
+
+    "schemeSpecificPart": string
+
+    "userInfo": string
+
 }
 interface URL {
-    "authority": string;
-    "content": {};
-    "defaultPort": number;
-    "file": string;
-    "host": string;
-    "path": string;
-    "port": number;
-    "protocol": string;
-    "query": string;
-    "ref": string;
-    "userInfo": string;
+    "authority": string
+
+    "content": {}
+
+    "defaultPort": number
+
+    "file": string
+
+    "host": string
+
+    "path": string
+
+    "port": number
+
+    "protocol": string
+
+    "query": string
+
+    "ref": string
+
+    "userInfo": string
+
 }
 
 interface Logger {
     log: (line: string) => any
 }
-export default class B2Mark {
-    public static getInstance() {
-        if (!this.instance) {
-            this.instance = new B2Mark();
-        }
-        return this.instance;
-    }
-    private static instance: B2Mark;
-    private domain: string = config.NewApiUrl;
+
+/**
+ * kyc (know your customer)
+ * @class kycApi
+ * @param {(string)} [domainOrOptions] - The project domain.
+ */
+export default class kycApi {
+
+    private domain: string = "";
     private errorHandlers: CallbackHandler[] = [];
-    private headers: any = {};
 
     constructor(domain ?: string, private logger ?: Logger) {
         if (domain) {
@@ -116,10 +181,6 @@ export default class B2Mark {
         return this.domain;
     }
 
-    public SetHeader(name: string, value: string) {
-        this.headers[name] = value;
-    }
-
     public addErrorHandler(handler: CallbackHandler) {
         this.errorHandlers.push(handler);
     }
@@ -129,15 +190,10 @@ export default class B2Mark {
             this.logger.log(`Call ${method} ${url}`);
         }
 
-        // merge class headers with request headers
-        const mergedHeaders = { ...this.headers,
-            ...headers,
-        };
-
         const req = (request as SuperAgentStatic)(method, url).query(queryParameters);
 
-        Object.keys(mergedHeaders).forEach((key) => {
-            req.set(key, mergedHeaders[key]);
+        Object.keys(headers).forEach((key) => {
+            req.set(key, headers[key]);
         });
 
         if (body) {
@@ -163,6 +219,29 @@ export default class B2Mark {
         });
     }
 
+    public linksUsingGETURL(parameters: {
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/actuator";
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    /**
+     * links
+     * @method
+     * @name kycApi#linksUsingGET
+     */
     public linksUsingGET(parameters: {
         $queryParameters ?: any,
         $domain ?: string,
@@ -186,6 +265,31 @@ export default class B2Mark {
         });
     }
 
+    public handleUsingGETURL(parameters: {
+        "body" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/actuator/health";
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    /**
+     * handle
+     * @method
+     * @name kycApi#handleUsingGET
+     * @param {} body - body
+     */
     public handleUsingGET(parameters: {
         "body" ?: {},
         $queryParameters ?: any,
@@ -214,6 +318,31 @@ export default class B2Mark {
         });
     }
 
+    public handleUsingGET_1URL(parameters: {
+        "body" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/actuator/info";
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    /**
+     * handle
+     * @method
+     * @name kycApi#handleUsingGET_1
+     * @param {} body - body
+     */
     public handleUsingGET_1(parameters: {
         "body" ?: {},
         $queryParameters ?: any,
@@ -242,6 +371,29 @@ export default class B2Mark {
         });
     }
 
+    public allcountriesUsingGETURL(parameters: {
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/country";
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    /**
+     * list of country in the world
+     * @method
+     * @name kycApi#allcountriesUsingGET
+     */
     public allcountriesUsingGET(parameters: {
         $queryParameters ?: any,
         $domain ?: string,
@@ -265,6 +417,33 @@ export default class B2Mark {
         });
     }
 
+    public getCountryByCidUsingGETURL(parameters: {
+        "cid": string,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        let path = "/country/{cid}";
+
+        path = path.replace("{cid}", `${parameters.cid}`);
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    /**
+     * get country with cid (Country Identification)
+     * @method
+     * @name kycApi#getCountryByCidUsingGET
+     * @param {string} cid - cid
+     */
     public getCountryByCidUsingGET(parameters: {
         "cid": string,
         $queryParameters ?: any,
@@ -296,6 +475,37 @@ export default class B2Mark {
         });
     }
 
+    public getKycImageByUidAndImgTypeUsingGETURL(parameters: {
+        "imgtype": string,
+        "uid": string,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        let path = "/img/{uid}/{imgtype}";
+
+        path = path.replace("{imgtype}", `${parameters.imgtype}`);
+
+        path = path.replace("{uid}", `${parameters.uid}`);
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    /**
+     * getKycImageByUidAndImgType
+     * @method
+     * @name kycApi#getKycImageByUidAndImgTypeUsingGET
+     * @param {string} imgtype - imgtype
+     * @param {string} uid - uid
+     */
     public getKycImageByUidAndImgTypeUsingGET(parameters: {
         "imgtype": string,
         "uid": string,
@@ -335,6 +545,52 @@ export default class B2Mark {
         });
     }
 
+    public getAllKycesUsingGETURL(parameters: {
+        "dir" ?: string,
+        "page" ?: number,
+        "size" ?: number,
+        "status" ?: string,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/kyc";
+        if (parameters.dir !== undefined) {
+            queryParameters.dir = parameters.dir;
+        }
+
+        if (parameters.page !== undefined) {
+            queryParameters.page = parameters.page;
+        }
+
+        if (parameters.size !== undefined) {
+            queryParameters.size = parameters.size;
+        }
+
+        if (parameters.status !== undefined) {
+            queryParameters.status = parameters.status;
+        }
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    /**
+     * return kyc paginatio if not found 204 content not found
+     * @method
+     * @name kycApi#getAllKycesUsingGET
+     * @param {string} dir - dir
+     * @param {integer} page - page
+     * @param {integer} size - size
+     * @param {string} status - status
+     */
     public getAllKycesUsingGET(parameters: {
         "dir" ?: string,
         "page" ?: number,
@@ -378,6 +634,33 @@ export default class B2Mark {
         });
     }
 
+    public addKycUsingPOSTURL(parameters: {
+        "input": Kycinfo,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        let queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/kyc";
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        queryParameters = {};
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    /**
+     * addKyc
+     * @method
+     * @name kycApi#addKycUsingPOST
+     * @param {} input - input
+     */
     public addKycUsingPOST(parameters: {
         "input": Kycinfo,
         $queryParameters ?: any,
@@ -415,6 +698,60 @@ export default class B2Mark {
         });
     }
 
+    public updateKycUsingPUTURL(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
+        "kycInput": Kycinfo,
+        "principal" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/kyc";
+        if (parameters.authenticated !== undefined) {
+            queryParameters.authenticated = parameters.authenticated;
+        }
+
+        if (parameters.authorities0Authority !== undefined) {
+            queryParameters["authorities[0].authority"] = parameters.authorities0Authority;
+        }
+
+        if (parameters.credentials !== undefined) {
+            queryParameters.credentials = parameters.credentials;
+        }
+
+        if (parameters.details !== undefined) {
+            queryParameters.details = parameters.details;
+        }
+
+        if (parameters.principal !== undefined) {
+            queryParameters.principal = parameters.principal;
+        }
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    /**
+     * updateKyc
+     * @method
+     * @name kycApi#updateKycUsingPUT
+     * @param {boolean} authenticated - kyc (know your customer)
+     * @param {string} authorities0Authority - kyc (know your customer)
+     * @param {object} credentials - kyc (know your customer)
+     * @param {object} details - kyc (know your customer)
+     * @param {} kycInput - kycInput
+     * @param {object} principal - kyc (know your customer)
+     */
     public updateKycUsingPUT(parameters: {
         "authenticated" ?: boolean,
         "authorities0Authority" ?: string,
@@ -474,6 +811,74 @@ export default class B2Mark {
         });
     }
 
+    public addKycImageUsingPOSTURL(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
+        "file": {},
+        "flashAttributes" ?: {},
+        "imgtype": string,
+        "principal" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        let queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/kyc/img";
+        if (parameters.authenticated !== undefined) {
+            queryParameters.authenticated = parameters.authenticated;
+        }
+
+        if (parameters.authorities0Authority !== undefined) {
+            queryParameters["authorities[0].authority"] = parameters.authorities0Authority;
+        }
+
+        if (parameters.credentials !== undefined) {
+            queryParameters.credentials = parameters.credentials;
+        }
+
+        if (parameters.details !== undefined) {
+            queryParameters.details = parameters.details;
+        }
+
+        if (parameters.flashAttributes !== undefined) {
+            queryParameters.flashAttributes = parameters.flashAttributes;
+        }
+
+        if (parameters.imgtype !== undefined) {
+            queryParameters.imgtype = parameters.imgtype;
+        }
+
+        if (parameters.principal !== undefined) {
+            queryParameters.principal = parameters.principal;
+        }
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        queryParameters = {};
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    /**
+     * addKycImage
+     * @method
+     * @name kycApi#addKycImageUsingPOST
+     * @param {boolean} authenticated - kyc (know your customer)
+     * @param {string} authorities0Authority - kyc (know your customer)
+     * @param {object} credentials - kyc (know your customer)
+     * @param {object} details - kyc (know your customer)
+     * @param {file} file - file
+     * @param {object} flashAttributes - kyc (know your customer)
+     * @param {string} imgtype - imgtype
+     * @param {object} principal - kyc (know your customer)
+     */
     public addKycImageUsingPOST(parameters: {
         "authenticated" ?: boolean,
         "authorities0Authority" ?: string,
@@ -551,6 +956,61 @@ export default class B2Mark {
         });
     }
 
+    public getKycImageUsingGETURL(parameters: {
+        "authenticated" ?: boolean,
+        "authorities0Authority" ?: string,
+        "credentials" ?: {},
+        "details" ?: {},
+        "imgtype": string,
+        "principal" ?: {},
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        let path = "/kyc/img/{imgtype}";
+        if (parameters.authenticated !== undefined) {
+            queryParameters.authenticated = parameters.authenticated;
+        }
+
+        if (parameters.authorities0Authority !== undefined) {
+            queryParameters["authorities[0].authority"] = parameters.authorities0Authority;
+        }
+
+        if (parameters.credentials !== undefined) {
+            queryParameters.credentials = parameters.credentials;
+        }
+
+        if (parameters.details !== undefined) {
+            queryParameters.details = parameters.details;
+        }
+
+        path = path.replace("{imgtype}", `${parameters.imgtype}`);
+        if (parameters.principal !== undefined) {
+            queryParameters.principal = parameters.principal;
+        }
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    /**
+     * getKycImage
+     * @method
+     * @name kycApi#getKycImageUsingGET
+     * @param {boolean} authenticated - kyc (know your customer)
+     * @param {string} authorities0Authority - kyc (know your customer)
+     * @param {object} credentials - kyc (know your customer)
+     * @param {object} details - kyc (know your customer)
+     * @param {string} imgtype - imgtype
+     * @param {object} principal - kyc (know your customer)
+     */
     public getKycImageUsingGET(parameters: {
         "authenticated" ?: boolean,
         "authorities0Authority" ?: string,
@@ -607,6 +1067,52 @@ export default class B2Mark {
         });
     }
 
+    public getAllKycStatusesUsingGETURL(parameters: {
+        "dir" ?: string,
+        "page" ?: number,
+        "size" ?: number,
+        "status" ?: string,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/kyc/status";
+        if (parameters.dir !== undefined) {
+            queryParameters.dir = parameters.dir;
+        }
+
+        if (parameters.page !== undefined) {
+            queryParameters.page = parameters.page;
+        }
+
+        if (parameters.size !== undefined) {
+            queryParameters.size = parameters.size;
+        }
+
+        if (parameters.status !== undefined) {
+            queryParameters.status = parameters.status;
+        }
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    /**
+     * return status kyc paginatio if not found 204 content not found
+     * @method
+     * @name kycApi#getAllKycStatusesUsingGET
+     * @param {string} dir - dir
+     * @param {integer} page - page
+     * @param {integer} size - size
+     * @param {string} status - status
+     */
     public getAllKycStatusesUsingGET(parameters: {
         "dir" ?: string,
         "page" ?: number,
@@ -650,6 +1156,33 @@ export default class B2Mark {
         });
     }
 
+    public getKycStatusByUidUsingGETURL(parameters: {
+        "uid": string,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        let path = "/kyc/status/{uid}";
+
+        path = path.replace("{uid}", `${parameters.uid}`);
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    /**
+     * list of status (know your customer) by uid (user identification)
+     * @method
+     * @name kycApi#getKycStatusByUidUsingGET
+     * @param {string} uid - uid
+     */
     public getKycStatusByUidUsingGET(parameters: {
         "uid": string,
         $queryParameters ?: any,
@@ -681,6 +1214,33 @@ export default class B2Mark {
         });
     }
 
+    public getKycByUidUsingGETURL(parameters: {
+        "uid": string,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        let path = "/kyc/{uid}";
+
+        path = path.replace("{uid}", `${parameters.uid}`);
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    /**
+     * list of kyc (know your customer) by uid (user identification)
+     * @method
+     * @name kycApi#getKycByUidUsingGET
+     * @param {string} uid - uid
+     */
     public getKycByUidUsingGET(parameters: {
         "uid": string,
         $queryParameters ?: any,
@@ -712,6 +1272,37 @@ export default class B2Mark {
         });
     }
 
+    public editKycStatusUsingPUTURL(parameters: {
+        "status": string,
+        "uid": string,
+        $queryParameters ?: any,
+        $domain ?: string,
+    }): string {
+        const queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        let path = "/kyc/{uid}/{status}";
+
+        path = path.replace("{status}", `${parameters.status}`);
+
+        path = path.replace("{uid}", `${parameters.uid}`);
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        const keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? "?" + (keys.map((key) => key + "=" + encodeURIComponent(queryParameters[key])).join("&")) : "");
+    }
+
+    /**
+     * editKycStatus
+     * @method
+     * @name kycApi#editKycStatusUsingPUT
+     * @param {string} status - status
+     * @param {string} uid - uid
+     */
     public editKycStatusUsingPUT(parameters: {
         "status": string,
         "uid": string,
