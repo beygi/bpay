@@ -28,7 +28,6 @@ export default handleActions<IAppStoreState, any>({
         };
     },
     [Actions.UPDATE_USER_BALANCE]: (state, action: IAction<any>) => {
-        console.log(state);
         if (!state.user.balance) {
             state.user.balance = {};
         }
