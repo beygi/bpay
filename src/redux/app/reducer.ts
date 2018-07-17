@@ -27,13 +27,6 @@ export default handleActions<IAppStoreState, any>({
             user: action.payload,
         };
     },
-    [Actions.UPDATE_USER_BALANCE]: (state, action: IAction<any>) => {
-        if (!state.user.balance) {
-            state.user.balance = {};
-        }
-        state.user.balance[action.payload.symbol] = action.payload.balance;
-        return state;
-    },
     [Actions.SET_COMPANY]: (state, action: IAction<any>) => {
         return {
             ...state,
