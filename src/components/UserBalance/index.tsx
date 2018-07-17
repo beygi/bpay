@@ -9,36 +9,47 @@ import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
 
+import btcApi from "../../lib/api/btc";
+const allApis = { btc: btcApi.getInstance(), usd: btcApi.getInstance() };
 const userObject = USER.getInstance();
 
 interface IProps {
-    balance: any;
-    updateUserBalance: (symbol: string, balance: number) => void;
+    updateUserBalance: (balance) => void;
+    balance: {};
 }
 
 interface IState {
-    coins: Array<{ name: string, balance: number, symbol: string }>;
+    balance: {};
 }
 
 class UserBalanceComponent extends React.Component<IProps, IState> {
 
+     public static getDerivedStateFromProps(props, state) {
+             // update state.balance when props changes by redux
+             if (props.balance !== null) {
+                  return {balance: {...state.balance, ...props.balance} };
+             }
+             return null;
+     }
+
     constructor(props: IProps) {
         super(props);
-        // this.action = this.action.bind(this);
+
+        // initial coin state. it must be available in config file
         this.state = {
-            coins: [
-                {
+            balance: {
+                btc: {
                     name: "Bit Coin",
-                    balance: 45,
-                    symbol: "btc",
+                    balance: 0,
                 },
-                {
+                usd: {
                     name: "US dollar",
-                    balance: 145,
-                    symbol: "usd",
+                    balance: 0,
                 },
-            ],
+            },
         };
+
+        // load balance data of each coin
         this.loadData = this.loadData.bind(this);
     }
 
@@ -47,22 +58,28 @@ class UserBalanceComponent extends React.Component<IProps, IState> {
     }
 
     public loadData() {
-        const coins = this.state.coins;
         // call apis and add result to redux, prepare fundamentals for websocket
-        this.state.coins.forEach( (coin) =>
-            console.log(coin),
+        Object.keys(this.state.balance).forEach((key) => {
+            allApis[key].allBalancesUsingGET({}).then((res) => {
+                // console.log(res.data);
+                // Parse data
+                // this.props.updateUserBalanceBalance(coin.symbol, 1200)"
+            },
+            ).catch((err) => {
+                setTimeout( () => { this.props.updateUserBalance({ eth: { name: "Etheriom", balance: 185 }}); }, 8000 );
+            });
+        },
         );
-        this.setState({ coins });
-        this.props.updateUserBalance("btc", 1200);
-        this.props.updateUserBalance("usd", 1800);
+        this.props.updateUserBalance({ usd: { name: "US Dollar", balance: 105 }} );
+        this.props.updateUserBalance({ btc: { name: "Bit Coin", balance: 1512 }} );
     }
 
     public render() {
-        const coins = this.state.coins.map((coin) =>
-            <div className="coin-balance">
-                <p className={"balance-icon coin-" + coin.symbol}></p>
-                <p className="balance-name">{coin.name}</p>
-                <p className="balance-number">{coin.balance}</p>
+        const coins = Object.keys(this.state.balance).map((key) =>
+            <div className="coin-balance" key={key}>
+                <p className={"balance-icon coin-" + key}></p>
+                <p className="balance-name">{this.state.balance[key].name}</p>
+                <p className="balance-number">{this.state.balance[key].balance}</p>
             </div>,
         );
         return (
@@ -73,13 +90,19 @@ class UserBalanceComponent extends React.Component<IProps, IState> {
 
 function mapDispatchToProps(dispatch) {
     return {
-        updateUserBalance : (symbol, balance) => dispatch(updateUserBalance({ symbol, balance })),
+        updateUserBalance: (balance) => dispatch(updateUserBalance(balance)),
     };
 }
 
 function mapStateToProps(state: IRootState) {
+    if ( state.app.user.balance !== undefined) {
+        return {
+            balance: state.app.user.balance,
+        };
+    }
+    // there is no balance from redux, state must not be updated in getDerivedStateFromProps
     return {
-        balance: state.app.user.balance,
+        balance :  null,
     };
 }
 

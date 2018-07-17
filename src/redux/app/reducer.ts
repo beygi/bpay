@@ -12,7 +12,7 @@ export default handleActions<IAppStoreState, any>({
     [Actions.SET_USER]: (state, action: IAction<any>) => {
         return {
             ...state,
-            user: action.payload,
+            user: { ...action.payload },
         };
     },
     [Actions.REMOVE_USER]: (state) => {
@@ -24,7 +24,13 @@ export default handleActions<IAppStoreState, any>({
     [Actions.UPDATE_USER]: (state, action: IAction<any>) => {
         return {
             ...state,
-            user: action.payload,
+            user: { ...action.payload },
+        };
+    },
+    [Actions.UPDATE_USER_BALANCE]: (state, action: IAction<any>) => {
+        return {
+            ...state,
+            user: { ...state.user, balance: { ...state.user.balance, ...action.payload } },
         };
     },
     [Actions.SET_COMPANY]: (state, action: IAction<any>) => {
