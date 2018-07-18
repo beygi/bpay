@@ -17,6 +17,7 @@
     },
     "host": "87.98.188.77:9092",
     "basePath": "/",
+    "schemes": ["https"],
     "tags": [{
         "name": "country-rest-controller",
         "description": "Country Rest Controller"

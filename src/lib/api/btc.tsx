@@ -38,7 +38,7 @@ export default class btcApi {
         return this.instance;
     }
     private static instance: btcApi;
-    private domain: string = "";
+    private domain: string = "https://192.168.1.100:9192/accounting/btc";
     private errorHandlers: CallbackHandler[] = [];
     private headers: any = {};
 
