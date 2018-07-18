@@ -14,11 +14,19 @@ const config = {
         btc: {
             name: "Bit Coin",
             balance: 0,
+            icon: ["fab", "btc"],
         },
         usd: {
             name: "US dollar",
             balance: 0,
+            icon: ["fas", "dollar-sign"],
         },
+        eth: {
+                name : "Ethereum",
+                balance: 0,
+                icon: ["fab", "ethereum"],
+        },
+
     },
 };
 
