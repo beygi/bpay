@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Collapse } from "antd";
 import * as React from "react";
 import { connect } from "react-redux";
@@ -45,32 +46,31 @@ class BalanceComponent extends React.Component<IProps, IState> {
 
     public componentDidMount() {
         this.loadData();
+        setInterval( () => { this.loadData(); }, 3000);
     }
 
     public loadData() {
         // call apis and add result to redux, prepare fundamentals for websocket
         Object.keys(this.state.balance).forEach((key) => {
-            allApis[key].allBalancesUsingGET({}).then((res) => {
-                // console.log(res.data);
-                // Parse data
-                // this.props.updateUserBalanceBalance(coin.symbol, 1200)"
-            },
-            ).catch((err) => {
-                console.log("err");
-            });
+            // allApis[key].allBalancesUsingGET({}).then((res) => {
+            //     // console.log(res.data);
+            //     // Parse data
+            //     // this.props.updateUserBalanceBalance(coin.symbol, 1200)"
+            // },
+            // ).catch((err) => {
+            //     console.log("err");
+            // });
+            const balance = {};
+            balance[key] = { ...this.state.balance[key] , ...{balance: Math.ceil (  (Math.random() * 1000) + 1 )    }    };
+            this.props.updateUserBalance(balance);
         },
         );
-        setTimeout( () => { this.props.updateUserBalance({ eth: { name: "Etheriom", balance: 185 }}); }, 7000 );
-        setTimeout( () => { this.props.updateUserBalance({ usd: { name: "US Dollar", balance: 3000 }}); }, 8000 );
-        setTimeout( () => { this.props.updateUserBalance({ btc: { name: "Bit Coin", balance: 323 }}); }, 9000 );
-        this.props.updateUserBalance({ usd: { name: "US Dollar", balance: 100 }});
-        this.props.updateUserBalance({ btc: { name: "Bit Coin", balance: 1512 }} );
     }
 
     public render() {
         const coins = Object.keys(this.state.balance).map((key) =>
             <div className="coin-balance" key={key}>
-                <p className={"balance-icon coin-" + key}></p>
+                <FontAwesomeIcon className="balance-icon" icon={this.state.balance[key].icon} />
                 <p className="balance-name">{this.state.balance[key].name}</p>
                 <p className="balance-number">{this.state.balance[key].balance}</p>
             </div>,
