@@ -46,7 +46,7 @@ class BalanceComponent extends React.Component<IProps, IState> {
 
     public componentDidMount() {
         this.loadData();
-        setInterval( () => { this.loadData(); }, 3000);
+        // setInterval( () => { this.loadData(); }, 3000);
     }
 
     public loadData() {

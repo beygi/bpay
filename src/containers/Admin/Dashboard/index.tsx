@@ -38,17 +38,17 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
               <Col md={18} >
                   <Row gutter={8}>
                         <Col md={6} >
-                            <Block title={t.t("Hot storage")} icon={<FontAwesomeIcon className="hot-storage" icon={ ["fas", "box"] } /> } iconPosition="right">
+                            <Block title={t.t("Hot storage")} icon={<FontAwesomeIcon className="hot-storage" icon={["fab", "gripfire"] } /> } iconPosition="right">
                                 <Balance />
                             </Block>
                         </Col>
                         <Col md={6} >
-                            <Block title={t.t("Cold storage")}  icon={<FontAwesomeIcon  className="cold-storage" icon={ ["fas", "box"] } /> } iconPosition="right">
+                            <Block title={t.t("Cold storage")}  icon={<FontAwesomeIcon  className="cold-storage" icon={ ["fas", "snowflake"] } /> } iconPosition="right">
                                 <Balance />
                             </Block>
                         </Col>
                         <Col md={6} >
-                            <Block title={t.t("Tax Cash Desk")}  icon={<FontAwesomeIcon  icon={ ["fas", "box"] } /> }  iconPosition="right">
+                            <Block title={t.t("Tax Cash Desk")}  icon={<FontAwesomeIcon  icon={ ["fas", "box"]  } /> }  iconPosition="right">
                                 <Balance />
                             </Block>
                         </Col>
