@@ -10,6 +10,7 @@ interface IProps {
     className?: string;
     collapse?: boolean;
     title?: string;
+    icon?: JSX.Element;
 }
 
 interface IState {
@@ -23,27 +24,27 @@ class BlockComponent extends React.Component<IProps, IState> {
 
     public render() {
         let cssClass = this.props.className || "";
+        let title: JSX.Element;
+
+        // handle no-padding block
         cssClass += " block";
         if (this.props.noPadding || this.props.collapse) {
             cssClass += " no-padding";
         }
 
         if (this.props.collapse && this.props.title) {
+            title = <div>{this.props.icon} {this.props.title}</div>;
             return (
             <div className={cssClass} >
                         <Collapse className="block-collapse" bordered={false} defaultActiveKey={["1"]}>
-                                  <Panel header={this.props.title} key="1">
+                                  <Panel header={title} key="1">
                                       {this.props.children}
                                   </Panel>
                         </Collapse>
             </div >
             );
         }
-        let title: JSX.Element;
-        title = <div></div>;
-        if  (this.props.title) {
-            title = <h2>{this.props.title}</h2>;
-        }
+        title = <h2>{this.props.icon} {this.props.title}</h2>;
         return (
         <div className={cssClass} >
                     {title}
