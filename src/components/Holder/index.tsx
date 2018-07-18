@@ -12,24 +12,26 @@ interface IProps {
     title?: string;
     icon?: JSX.Element;
     iconPosition?: string;
+    transparent?: boolean;
 }
 
 interface IState {
 }
 
 class BlockComponent extends React.Component<IProps, IState> {
-
     constructor(props: IProps) {
         super(props);
     }
 
     public render() {
         let cssClass = this.props.className || "";
+        const transparentClass = (this.props.transparent) ? "transparent" : "";
         let title: JSX.Element ;
         const icon: JSX.Element = <span className={this.props.iconPosition}>{this.props.icon}</span>;
 
         // handle no-padding block
         cssClass += " block";
+        cssClass += " " + transparentClass;
         if (this.props.noPadding || this.props.collapse) {
             cssClass += " no-padding";
         }
@@ -43,7 +45,7 @@ class BlockComponent extends React.Component<IProps, IState> {
                                       {this.props.children}
                                   </Panel>
                         </Collapse>
-            </div >
+            </div>
             );
         }
 

@@ -53,7 +53,7 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
                             </Block>
                         </Col>
                         <Col md={6} >
-                            <Block title={t.t("Fee Cash Desk")}   icon={<FontAwesomeIcon  icon={ ["fas", "box"] } /> }  iconPosition="right">
+                            <Block title={t.t("Fee Cash Desk")}   icon={<FontAwesomeIcon  icon={ ["fas", "box"] } /> }  iconPosition="right" transparent>
                                 <Balance />
                             </Block>
                         </Col>
