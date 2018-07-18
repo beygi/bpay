@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Layout, Row } from "antd";
 import * as React from "react";
 import {connect} from "react-redux";
@@ -8,6 +9,7 @@ import Guide from "../../../components/UserStatusGuide";
 import {setUser} from "../../../redux/app/actions";
 import {IRootState} from "../../../redux/reducers";
 import t from "../../../services/trans/i18n";
+import "./style.less";
 
 interface IProps {
     user: any;
@@ -36,22 +38,22 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
               <Col md={18} >
                   <Row gutter={8}>
                         <Col md={6} >
-                            <Block title={t.t("Hot storage")} >
+                            <Block title={t.t("Hot storage")} icon={<FontAwesomeIcon className="hot-storage" icon={ ["fas", "box"] } /> } >
                                 <Balance />
                             </Block>
                         </Col>
                         <Col md={6} >
-                            <Block collapse title={t.t("Cold storage")} >
+                            <Block title={t.t("Cold storage")}  icon={<FontAwesomeIcon  className="cold-storage" icon={ ["fas", "box"] } /> } >
                                 <Balance />
                             </Block>
                         </Col>
                         <Col md={6} >
-                            <Block collapse title={t.t("Tax Cash Desk")} >
+                            <Block title={t.t("Tax Cash Desk")}  icon={<FontAwesomeIcon  icon={ ["fas", "box"] } /> }  >
                                 <Balance />
                             </Block>
                         </Col>
                         <Col md={6} >
-                            <Block collapse title={t.t("Fee Cash Desk")} >
+                            <Block title={t.t("Fee Cash Desk")}   icon={<FontAwesomeIcon  icon={ ["fas", "box"] } /> } >
                                 <Balance />
                             </Block>
                         </Col>

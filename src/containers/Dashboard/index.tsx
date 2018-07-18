@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Layout, Row } from "antd";
 import * as React from "react";
 import {connect} from "react-redux";
@@ -25,7 +26,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
         return (
             <Row gutter={8}>
               <Col md={6} >
-                  <Block collapse title="Balance" >
+                  <Block title="Balance" icon={<FontAwesomeIcon  icon={ ["fas", "balance-scale"] } />} >
                       <Balance />
                   </Block>
                   <Block>
