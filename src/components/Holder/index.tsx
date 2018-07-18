@@ -39,9 +39,14 @@ class BlockComponent extends React.Component<IProps, IState> {
             </div >
             );
         }
-
+        let title: JSX.Element;
+        title = <div></div>;
+        if  (this.props.title) {
+            title = <h2>{this.props.title}</h2>;
+        }
         return (
         <div className={cssClass} >
+                    {title}
                     {this.props.children}
         </div >
         );
