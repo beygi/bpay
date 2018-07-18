@@ -11,6 +11,7 @@ interface IProps {
     collapse?: boolean;
     title?: string;
     icon?: JSX.Element;
+    iconPosition?: string;
 }
 
 interface IState {
@@ -25,6 +26,7 @@ class BlockComponent extends React.Component<IProps, IState> {
     public render() {
         let cssClass = this.props.className || "";
         let title: JSX.Element;
+        const icon: JSX.Element = <span className={this.props.iconPosition}>{this.props.icon}</span>;
 
         // handle no-padding block
         cssClass += " block";
@@ -33,7 +35,7 @@ class BlockComponent extends React.Component<IProps, IState> {
         }
 
         if (this.props.collapse && this.props.title) {
-            title = <div>{this.props.icon} {this.props.title}</div>;
+            title = <div>{icon} {this.props.title}</div>;
             return (
             <div className={cssClass} >
                         <Collapse className="block-collapse" bordered={false} defaultActiveKey={["1"]}>
@@ -44,7 +46,8 @@ class BlockComponent extends React.Component<IProps, IState> {
             </div >
             );
         }
-        title = <h2>{this.props.icon} {this.props.title}</h2>;
+
+        title = <h2>{icon} {this.props.title}</h2>;
         return (
         <div className={cssClass} >
                     {title}
