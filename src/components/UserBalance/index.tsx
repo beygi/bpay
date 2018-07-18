@@ -4,13 +4,14 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { IRootState } from "../../redux/reducers";
 
+import config from "../../config";
 import { updateUserBalance } from "../../redux/app/actions";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
 
 import btcApi from "../../lib/api/btc";
-const allApis = { btc: btcApi.getInstance(), usd: btcApi.getInstance() };
+const allApis = { btc: btcApi.getInstance(), usd: btcApi.getInstance() , eth: btcApi.getInstance() };
 const userObject = USER.getInstance();
 
 interface IProps {
@@ -37,16 +38,7 @@ class UserBalanceComponent extends React.Component<IProps, IState> {
 
         // initial coin state. it must be available in config file
         this.state = {
-            balance: {
-                btc: {
-                    name: "Bit Coin",
-                    balance: 0,
-                },
-                usd: {
-                    name: "US dollar",
-                    balance: 0,
-                },
-            },
+            balance: config.currencies,
         };
 
         // load balance data of each coin
@@ -66,11 +58,14 @@ class UserBalanceComponent extends React.Component<IProps, IState> {
                 // this.props.updateUserBalanceBalance(coin.symbol, 1200)"
             },
             ).catch((err) => {
-                setTimeout( () => { this.props.updateUserBalance({ eth: { name: "Etheriom", balance: 185 }}); }, 8000 );
+                console.log("err");
             });
         },
         );
-        this.props.updateUserBalance({ usd: { name: "US Dollar", balance: 105 }} );
+        setTimeout( () => { this.props.updateUserBalance({ eth: { name: "Etheriom", balance: 185 }}); }, 7000 );
+        setTimeout( () => { this.props.updateUserBalance({ usd: { name: "US Dollar", balance: 3000 }}); }, 8000 );
+        setTimeout( () => { this.props.updateUserBalance({ btc: { name: "Bit Coin", balance: 323 }}); }, 9000 );
+        this.props.updateUserBalance({ usd: { name: "US Dollar", balance: 100 }});
         this.props.updateUserBalance({ btc: { name: "Bit Coin", balance: 1512 }} );
     }
 
@@ -82,8 +77,8 @@ class UserBalanceComponent extends React.Component<IProps, IState> {
                 <p className="balance-number">{this.state.balance[key].balance}</p>
             </div>,
         );
-        return (
-            <div className="user-balance">{coins}</div>
+        return(
+            <   div className= "user-balance" > {coins}</div >
         );
     }
 }

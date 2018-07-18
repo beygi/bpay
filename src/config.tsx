@@ -4,11 +4,21 @@ const config = {
     apiUrl: "http://87.98.188.77:9092/",
     NewApiUrl: "http://87.98.188.77:9092",
     language: Languages.en,
-    keycloakConfig : {
+    keycloakConfig: {
         url: "https://aas.avazcoin.com/auth",
         realm: "master",
         clientId: "application",
         checkLoginIframe: false,
+    },
+    currencies: {
+        btc: {
+            name: "Bit Coin",
+            balance: 0,
+        },
+        usd: {
+            name: "US dollar",
+            balance: 0,
+        },
     },
 };
 
