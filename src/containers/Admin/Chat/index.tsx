@@ -21,7 +21,6 @@ interface IState {
     pagination: any;
 }
 
-
 class ChatAdminContainer extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);

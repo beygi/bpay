@@ -19,7 +19,7 @@ export default class USER {
         // get user object from redux if available
         this.user = store.getState().app.user || null;
         this.keycloak = Keycloak(Config.keycloakConfig);
-        //API.getInstance().SetHeader("Authorization", "Token " + jsCookie.get("token"));
+        // API.getInstance().SetHeader("Authorization", "Token " + jsCookie.get("token"));
 
     }
     public getCurrent() {

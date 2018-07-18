@@ -71,9 +71,10 @@ module.exports = {
                 enforce: "pre",
                 loader: "tslint-loader",
                 test: /\.tsx?$/,
-                exclude : path.resolve(__dirname, 'src/lib/api/*.tsx'),
+                exclude : path.resolve(__dirname, 'src/lib/api'),
 		options: {
-			configFile: "tslint.json"
+			configFile: "tslint.json",
+			emitErrors: true,
 		}
 
             },
