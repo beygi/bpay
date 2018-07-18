@@ -1,16 +1,14 @@
 import { Collapse } from "antd";
 import * as React from "react";
-
 import { connect } from "react-redux";
-import { IRootState } from "../../redux/reducers";
-
 import config from "../../config";
+import btcApi from "../../lib/api/btc";
 import { updateUserBalance } from "../../redux/app/actions";
+import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
 
-import btcApi from "../../lib/api/btc";
 const allApis = { btc: btcApi.getInstance(), usd: btcApi.getInstance() , eth: btcApi.getInstance() };
 const userObject = USER.getInstance();
 
@@ -23,7 +21,7 @@ interface IState {
     balance: {};
 }
 
-class UserBalanceComponent extends React.Component<IProps, IState> {
+class BalanceComponent extends React.Component<IProps, IState> {
 
      public static getDerivedStateFromProps(props, state) {
              // update state.balance when props changes by redux
@@ -101,4 +99,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserBalanceComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(BalanceComponent);
