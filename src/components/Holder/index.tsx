@@ -25,7 +25,7 @@ class BlockComponent extends React.Component<IProps, IState> {
 
     public render() {
         let cssClass = this.props.className || "";
-        let title: JSX.Element;
+        let title: JSX.Element ;
         const icon: JSX.Element = <span className={this.props.iconPosition}>{this.props.icon}</span>;
 
         // handle no-padding block
@@ -34,8 +34,8 @@ class BlockComponent extends React.Component<IProps, IState> {
             cssClass += " no-padding";
         }
 
-        if (this.props.collapse && this.props.title) {
-            title = <div>{icon} {this.props.title}</div>;
+        if (this.props.collapse) {
+            title = <div>{icon} {this.props.title || <span>&nbsp;</span>}</div>;
             return (
             <div className={cssClass} >
                         <Collapse className="block-collapse" bordered={false} defaultActiveKey={["1"]}>

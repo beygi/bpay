@@ -26,7 +26,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
         return (
             <Row gutter={8}>
               <Col md={6} >
-                  <Block title="Balance" icon={<FontAwesomeIcon  icon={ ["fas", "balance-scale"] }  />} iconPosition="right" >
+                  <Block collapse title="Balance" icon={<FontAwesomeIcon  icon={ ["fas", "balance-scale"] }  />} iconPosition="right" >
                       <Balance />
                   </Block>
                   <Block>

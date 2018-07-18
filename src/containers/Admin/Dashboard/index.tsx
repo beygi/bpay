@@ -31,8 +31,8 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
                   <Block>
                       <img src="https://dummyimage.com/600x400/4c4649/3ee6e0.png" alt=""/>
                   </Block>
-                  <Block>
-                          <img src="https://dummyimage.com/600x800/4c4649/3ee6e0.png" alt=""/>
+                  <Block collapse>
+                          <img src="https://dummyimage.com/600x600/4c4649/3ee6e0.png" alt=""/>
                   </Block>
               </Col>
               <Col md={18} >
@@ -59,7 +59,7 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
                         </Col>
                   </Row>
                    <Block>
-                       <img src="https://dummyimage.com/100x300/4c4649/3ee6e0.png" alt=""/>
+                       <img src="https://dummyimage.com/1000x300/4c4649/3ee6e0.png" alt=""/>
                    </Block>
               </Col>
             </Row>
