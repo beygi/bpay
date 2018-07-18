@@ -9,10 +9,15 @@
     "build": "webpack --define process.env.NODE_ENV=\"production\" -p --progress --colors",
     "fast": "webpack-dev-server -d --devtool source-map --history-api-fallback --progress --colors --port 3000 --host b2b.loc",
     "apiGen": "tsc bin/apiGen.ts --skipLibCheck && node ./bin/apiGen.js --out=./src/lib/api/index.ts",
-    "gen" : "ls swager-specs -1 | xargs -i node ./src/lib/api/generate.js {} && tslint --fix ./src/lib/api/*.tsx"
+    "gen": "ls swager-specs -1 | xargs -i node ./src/lib/api/generate.js {} && tslint --fix ./src/lib/api/*.tsx"
   },
   "dependencies": {
     "@babel/preset-env": "^7.0.0-beta.37",
+    "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
+    "@fortawesome/free-brands-svg-icons": "^5.1.0-11",
+    "@fortawesome/free-regular-svg-icons": "^5.1.0-11",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
+    "@fortawesome/react-fontawesome": "^0.1.0-11",
     "@types/i18next": "^8.4.3",
     "antd": "^3.1.5",
     "axios": "^0.18.0",

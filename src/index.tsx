@@ -11,6 +11,7 @@ import AppContainer from "./containers/app";
 import USER from "./lib/user";
 import { setUser } from "./redux/app/actions";
 import { store } from "./redux/store";
+require("./lib/icon");
 
 import KeyCloacksApi from "./lib/api-old";
 
