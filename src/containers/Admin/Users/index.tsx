@@ -1,12 +1,13 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Layout, Row } from "antd";
 import { Button, Icon, Input, Pagination, Popover, Table, Tabs, Tag } from "antd";
 import { PaginationProps } from "antd/lib/pagination";
 import * as React from "react";
 import { JsonTable } from "react-json-to-html";
 import { connect } from "react-redux";
-import API from "../../lib/api-old";
-import { setUser } from "../../redux/app/actions";
-import { IRootState } from "../../redux/reducers";
+import API from "../../../lib/api-old";
+import { setUser } from "../../../redux/app/actions";
+import { IRootState } from "../../../redux/reducers";
 
 const Search = Input.Search;
 const TabPane = Tabs.TabPane;
@@ -16,7 +17,7 @@ const ButtonGroup = Button.Group;
 
 // import paginationElement from "../../components/Pagination";
 
-import t from "../../services/trans/i18n";
+import t from "../../../services/trans/i18n";
 
 import "./style.less";
 
@@ -48,7 +49,7 @@ class CustomersContainer extends React.Component<IProps, IState> {
         this.state = {
             loading: true,
             users: [],
-            perPage: 20,
+            perPage: 10,
             currentPage: 1,
             searchTerm: "",
             hasNext: false,
@@ -110,10 +111,25 @@ class CustomersContainer extends React.Component<IProps, IState> {
                         pagination={false}
                         expandedRowRender={(record) =>
                             <Tabs>
-                                <TabPane tab={<span><Icon type="idcard" />Detailed Information</span>} key="1">
+                                <TabPane tab={<span><FontAwesomeIcon  icon={ ["fas", "address-card"] }  /> Detailed Information</span>} key="1">
                                     <JsonTable json={record} />
                                 </TabPane>
-                                <TabPane tab={<span><Icon type="table" />Trade History</span>} key="2">
+                                <TabPane tab={<span><FontAwesomeIcon  icon={ ["fas", "balance-scale"] }  /> Balance</span>} key="2">
+                                    Tab 2
+                                </TabPane>
+                                <TabPane tab={<span><FontAwesomeIcon  icon={ ["fas", "donate"] }  /> Deposites</span>} key="3">
+                                    Tab 2
+                                </TabPane>
+                                <TabPane tab={<span><FontAwesomeIcon  icon={ ["fas", "hand-holding-usd"] }  /> Withdraw</span>} key="4">
+                                    Tab 2
+                                </TabPane>
+                                <TabPane tab={<span><FontAwesomeIcon  icon={ ["fas", "money-check-alt"] }  /> Orders</span>} key="5">
+                                    Tab 2
+                                </TabPane>
+                                <TabPane tab={<span><FontAwesomeIcon  icon={ ["fas", "exchange-alt"] }  /> Transations</span>} key="6">
+                                    Tab 2
+                                </TabPane>
+                                <TabPane tab={<span><FontAwesomeIcon  icon={ ["fas", "handshake"] }  /> Trades</span>} key="6">
                                     Tab 2
                                 </TabPane>
                             </Tabs>}

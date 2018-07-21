@@ -9,14 +9,14 @@ import PrivateRoute from "./../components/PrivateRoute";
 import ChatAdminContainer from "./Admin/Chat";
 import AdminDashboardContainer from "./Admin/Dashboard";
 import KycAdminContainer from "./Admin/KYC";
+// import UserContainer from "./User";
+import UsersAdminContainer from "./Admin/Users";
 import DashboardContainer from "./Dashboard";
 import ExchangeContainer from "./Exchange";
 import GroupsContainer from "./Groups";
 import KycContainer from "./KYC";
 import LandingContainer from "./Landing";
 import NotFoundContainer from "./NotFound";
-// import UserContainer from "./User";
-import UsersAdminContainer from "./Users";
 
 import { setUser } from "../redux/app/actions";
 import "./app.less";
