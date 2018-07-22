@@ -3,7 +3,7 @@ import * as React from "react";
 
 import DashboardHeaderComponent from "./../../../DashboardHeader";
 import DashboardMenuComponent from "./../../../DashboardMenu";
-// import Sidebar from "./../../../Sidebar";
+
 import "./style.less";
 
 const { Sider, Content } = Layout;

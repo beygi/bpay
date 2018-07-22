@@ -24,6 +24,9 @@ const newApi = Api.getInstance();
 interface IUserFormProps extends FormComponentProps {
 }
 
+interface IUserFormProps extends FormComponentProps {
+}
+
 interface IState {
     cover: string;
     passport: string;
@@ -263,4 +266,4 @@ KYC stands for (Know Your Customer) it is the process of a business <br /> verif
     }
 }
 
-export default KycContainer;
+export default Form.create()(KycContainer);
