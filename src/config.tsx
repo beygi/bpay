@@ -28,6 +28,12 @@ const config = {
         },
 
     },
+    icons :
+    {
+        btc :  ["fab", "btc"],
+        usd : ["fas", "dollar-sign"],
+        eth : ["fab", "ethereum"],
+    },
 };
 
 export default config;
