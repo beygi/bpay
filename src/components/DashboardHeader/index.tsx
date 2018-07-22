@@ -48,7 +48,6 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
     // </div>
 
     public render() {
-        console.log("HEADER RENDER");
         // finde selected menu name based on pathname
         let Menus: any;
         let AdminClass: string;
