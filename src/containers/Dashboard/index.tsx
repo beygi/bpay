@@ -28,8 +28,8 @@ class DashboardContainer extends React.Component<IProps, IState> {
               <Col md={6} >
                   <Block className="user-balance" collapse title="Balance" icon={<FontAwesomeIcon  icon={ ["fas", "balance-scale"] }  />} iconPosition="right" >
                       <Balance />
-                      <Link to="/deposite">
-                          <Button  className="action"  type="primary" size="small">Deposite</Button>
+                      <Link to="/deposit">
+                          <Button  className="action"  type="primary" size="small">Deposit</Button>
                       </Link>
                   </Block>
                   <Block>

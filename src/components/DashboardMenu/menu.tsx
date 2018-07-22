@@ -20,10 +20,10 @@ function getMenus() {
             text: t.t("Exchange"),
             visible: true,
         },
-        deposite: {
+        deposit: {
             icon: "export",
-            path: "/deposite",
-            text: t.t("Deposite"),
+            path: "/deposit",
+            text: t.t("Deposit"),
             visible: true,
         },
         wallets: {

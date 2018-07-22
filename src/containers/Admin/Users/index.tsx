@@ -116,7 +116,7 @@ class CustomersContainer extends React.Component<IProps, IState> {
                                 <TabPane tab={<span><FontAwesomeIcon  icon={ ["fas", "balance-scale"] }  /> Balance</span>} key="2">
                                     Tab 2
                                 </TabPane>
-                                <TabPane tab={<span><FontAwesomeIcon  icon={ ["fas", "donate"] }  /> Deposites</span>} key="3">
+                                <TabPane tab={<span><FontAwesomeIcon  icon={ ["fas", "donate"] }  /> Deposits</span>} key="3">
                                     Tab 2
                                 </TabPane>
                                 <TabPane tab={<span><FontAwesomeIcon  icon={ ["fas", "hand-holding-usd"] }  /> Withdraw</span>} key="4">
