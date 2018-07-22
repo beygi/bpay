@@ -31,7 +31,7 @@ class BalanceComponent extends React.Component<IProps, IState> {
              }
              return null;
      }
-
+     public interval: any;
     constructor(props: IProps) {
         super(props);
 
@@ -46,7 +46,8 @@ class BalanceComponent extends React.Component<IProps, IState> {
 
     public componentDidMount() {
         this.loadData();
-        setInterval( () => { this.loadData(); }, 3000);
+        clearInterval(this.interval);
+        this.interval = setInterval( () => { this.loadData(); }, 5000);
     }
 
     public loadData() {
@@ -60,11 +61,16 @@ class BalanceComponent extends React.Component<IProps, IState> {
             // ).catch((err) => {
             //     console.log("err");
             // });
-            const balance = {};
-            balance[key] = { ...this.state.balance[key] , ...{balance: Math.ceil (  (Math.random() * 1000) + 1 )    }    };
-            this.props.updateUserBalance(balance);
         },
         );
+        const balance = {};
+        let name = "btc";
+        balance[name] = { ...this.state.balance[name] , ...{balance: Math.ceil (  (Math.random() * 3000) + 1 )    }    };
+        name = "usd";
+        balance[name] = { ...this.state.balance[name] , ...{balance: Math.ceil (  (Math.random() * 5000) + 1 )    }    };
+        name = "eth";
+        balance[name] = { ...this.state.balance[name] , ...{balance: Math.ceil (  (Math.random() * 7000) + 1 )    }    };
+        this.props.updateUserBalance(balance);
     }
 
     public render() {
