@@ -15,12 +15,12 @@ import { FormComponentProps } from "antd/lib/form";
 const logo = require("../../../../assets/images/logo.png");
 
 interface IProps extends FormComponentProps {
-    user: any;
+    email: any;
     setUser: (user: any) => void;
 }
 
 interface IState {
-    user?: any;
+    email?: any;
     loading: boolean;
 }
 
@@ -92,7 +92,7 @@ class Login extends React.Component<IProps, IState> {
     }
 
     public render() {
-        if (this.props.user) { return (<Redirect to="/dashboard" />); }
+        if (this.props.email) { return (<Redirect to="/dashboard" />); }
         const { getFieldDecorator } = this.props.form;
         return (
             <div id={"loginContainer"}>
@@ -143,7 +143,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state: IRootState) {
     return {
-        user: state.app.user,
+        email: state.app.user.email,
     };
 }
 

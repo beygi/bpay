@@ -11,7 +11,7 @@ import "./style.less";
 const userObject = USER.getInstance();
 
 interface IProps {
-    user: any;
+    email: any;
     logOut: () => void;
 }
 
@@ -34,7 +34,7 @@ class DashboardHeaderProfileComponent extends React.Component<IProps, IState> {
         return (
             <div className="header-user-profile">
                 <div className="line">
-                    <span className="caption">{t.t("Email:")} </span>{this.props.user.email}
+                    <span className="caption">{t.t("Email:")} </span>{this.props.email}
                 </div>
                 <div className="line">
                     <span className="caption">{t.t("Verification level:")} </span><Tag className="verify">Verified</Tag>
@@ -63,7 +63,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state: IRootState) {
     return {
-        user: state.app.user,
+        email: state.app.user.email,
     };
 }
 

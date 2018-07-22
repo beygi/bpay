@@ -1,3 +1,4 @@
+// TODO : fix redux state usage and functionality
 import { Button, Col, Icon, notification, Row, Steps } from "antd";
 import * as React from "react";
 

@@ -23,7 +23,7 @@ const { Header }: any = Layout;
 const userObject = USER.getInstance();
 
 interface IProps {
-    user: any;
+    userEmail: any;
     path: any;
     logOut: () => void;
     isAdmin: boolean;
@@ -36,7 +36,6 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
-
         this.logOut = this.logOut.bind(this);
     }
 
@@ -49,6 +48,7 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
     // </div>
 
     public render() {
+        alert("RENDER");
         // finde selected menu name based on pathname
         let Menus: any;
         let AdminClass: string;
@@ -84,7 +84,7 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                 </div>
                 <div className="header-icons">
                     <Popover placement="bottom" title={t.t("Account information")} content={<HeaderProfile></HeaderProfile>} trigger="click">
-                        <Gravatar email={this.props.user.email} default="monsterid"
+                        <Gravatar email={this.props.userEmail} default="monsterid"
                             size={60} className={"ProfilePic"} />
                     </Popover>
                     <Tooltip placement="bottom" title={t.t("Logout")}>
@@ -107,7 +107,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state: IRootState) {
     return {
-        user: state.app.user,
+        userEmail: state.app.user.email,
         path: state.router.location.pathname,
     };
 }

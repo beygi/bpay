@@ -22,7 +22,6 @@ import t from "../../../services/trans/i18n";
 import "./style.less";
 
 interface IProps {
-    user: any;
 }
 
 interface IState {
@@ -154,16 +153,4 @@ class CustomersContainer extends React.Component<IProps, IState> {
 
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        user: (user) => dispatch(setUser({ user })),
-    };
-}
-
-function mapStateToProps(state: IRootState) {
-    return {
-        user: state.app.user,
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CustomersContainer);
+export default CustomersContainer;

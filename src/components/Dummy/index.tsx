@@ -12,7 +12,7 @@ import "./style.less";
 const userObject = USER.getInstance();
 
 interface IProps {
-    user: any;
+    email: any;
 }
 
 interface IState {
@@ -38,7 +38,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state: IRootState) {
     return {
-        user: state.app.user,
+        email: state.app.user.email,
     };
 }
 

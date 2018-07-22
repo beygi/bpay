@@ -10,11 +10,9 @@ import { IRootState } from "../../redux/reducers";
 import "./style.less";
 
 interface IProps {
-    user: any;
 }
 
 interface IState {
-    user: any;
 }
 
 class ExchangeContainer extends React.Component<IProps, IState> {
@@ -63,16 +61,4 @@ class ExchangeContainer extends React.Component<IProps, IState> {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        user:    (user) => dispatch(setUser({ user })),
-    };
-}
-
-function mapStateToProps(state: IRootState) {
-    return {
-        user:    state.app.user,
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ExchangeContainer);
+export default ExchangeContainer;

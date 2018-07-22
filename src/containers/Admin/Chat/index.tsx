@@ -12,23 +12,14 @@ import t from "../../../services/trans/i18n";
 import "./style.less";
 
 interface IProps {
-    user: any;
 }
 
 interface IState {
-    users: any[];
-    loading: boolean;
-    pagination: any;
 }
 
 class ChatAdminContainer extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
-        this.state = {
-            loading: false,
-            users: [],
-            pagination: {},
-        };
     }
 
     public render() {
@@ -38,19 +29,6 @@ class ChatAdminContainer extends React.Component<IProps, IState> {
             </div>
         );
     }
-
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        user: (user) => dispatch(setUser({ user })),
-    };
-}
-
-function mapStateToProps(state: IRootState) {
-    return {
-        user: state.app.user,
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ChatAdminContainer);
+export default ChatAdminContainer;

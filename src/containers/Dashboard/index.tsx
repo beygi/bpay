@@ -10,11 +10,9 @@ import {setUser} from "../../redux/app/actions";
 import {IRootState} from "../../redux/reducers";
 
 interface IProps {
-    user: any;
 }
 
 interface IState {
-    user: any;
 }
 
 class DashboardContainer extends React.Component<IProps, IState> {
@@ -46,16 +44,4 @@ class DashboardContainer extends React.Component<IProps, IState> {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        user: (user) => dispatch(setUser({user})),
-    };
-}
-
-function mapStateToProps(state: IRootState) {
-    return {
-        user: state.app.user,
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DashboardContainer);
+export default DashboardContainer;

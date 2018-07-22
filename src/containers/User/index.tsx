@@ -10,11 +10,9 @@ const FormItem = Form.Item;
 import Login from "./components/Login";
 
 interface IProps {
-    user: any;
 }
 
 interface IState {
-    user?: any;
     loading: boolean;
 }
 
@@ -35,16 +33,4 @@ class UserContainer extends React.Component<IProps, IState> {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        user: (user) => dispatch(setUser({user})),
-    };
-}
-
-function mapStateToProps(state: IRootState) {
-    return {
-        user: state.app.user,
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserContainer);
+export default UserContainer;

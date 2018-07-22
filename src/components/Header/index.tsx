@@ -12,7 +12,6 @@ const {Header}: any = Layout;
 const userObject =  USER.getInstance();
 
 interface IProps {
-    user: any;
     logOut: () => void;
 }
 
@@ -52,10 +51,4 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-function mapStateToProps(state: IRootState) {
-    return {
-        user: state.app.user,
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderComponent);
+export default connect(mapDispatchToProps)(HeaderComponent);

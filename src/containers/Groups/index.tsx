@@ -13,7 +13,6 @@ const TabPane = Tabs.TabPane;
 import "./style.less";
 
 interface IProps {
-    user: any;
 }
 
 interface IState {
@@ -144,16 +143,4 @@ class GroupsContainer extends React.Component<IProps, IState> {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        user: (user) => dispatch(setUser({user})),
-    };
-}
-
-function mapStateToProps(state: IRootState) {
-    return {
-        user: state.app.user,
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(GroupsContainer);
+export default GroupsContainer;

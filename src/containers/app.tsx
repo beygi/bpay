@@ -24,13 +24,13 @@ import "./app.less";
 import Config from "./../config";
 
 interface IProps {
-    user: any;
+    email: any;
     setUser: (user: any) => void;
 }
 
 interface IState {
     collapsed?: boolean;
-    user?: any;
+    email?: any;
 }
 
 class AppContainer extends React.Component<IProps, IState> {
@@ -48,14 +48,14 @@ class AppContainer extends React.Component<IProps, IState> {
     public parseProps(props) {
         const stateObj: IState = {
         };
-        stateObj.user = props.user;
+        stateObj.email = props.email;
         stateObj.collapsed = false;
         return stateObj;
     }
 
     public shouldComponentUpdate(nextProps) {
         const stateObj = this.parseProps(nextProps);
-        if (nextProps.user !== this.state.user && nextProps.user === null) {
+        if (nextProps.email !== this.state.email && nextProps.email === null) {
             // this is a log out, just do nothing
             return false;
         } else {
@@ -100,9 +100,12 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state: IRootState) {
-    return {
-        user: state.app.user,
-    };
+    if (state.app.user) {
+        return {
+            email: state.app.user.email,
+        };
+    }
+    return {};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);

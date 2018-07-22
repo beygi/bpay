@@ -22,11 +22,9 @@ const selfieImg = require("../../assets/images/selfie.png");
 const newApi = Api.getInstance();
 
 interface IUserFormProps extends FormComponentProps {
-    user: any;
 }
 
 interface IState {
-    user?: any;
     cover: string;
     passport: string;
     passid: string;
@@ -265,16 +263,4 @@ KYC stands for (Know Your Customer) it is the process of a business <br /> verif
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        user: (user) => dispatch(setUser({ user })),
-    };
-}
-
-function mapStateToProps(state: IRootState) {
-    return {
-        user: state.app.user,
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Form.create()(KycContainer));
+export default KycContainer;
