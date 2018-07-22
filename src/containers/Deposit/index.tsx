@@ -29,16 +29,13 @@ class DepositContainer extends React.Component<IProps, IState> {
                 <Col md={6} >
                     <Block className="user-balance" collapse title="Balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
                         <Balance />
-                        <Link to="/deposit">
-                            <Button className="action" type="primary" size="small">Deposit</Button>
-                        </Link>
                     </Block>
                 </Col>
                 <Col md={12} >
                     <Row gutter={8}>
                         <Col md={24} className="">
                             <Block title={t.t("View wallet address")} icon={<FontAwesomeIcon icon={["fas", "wallet"]} />} >
-                                <img src="https://dummyimage.com/600x800/4c4649/3ee6e0.png" alt="" />
+                                <img src="https://dummyimage.com/1000x800/4c4649/3ee6e0.png" alt="" />
                             </Block>
                         </Col>
                     </Row>
