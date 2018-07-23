@@ -8,6 +8,7 @@ import Profile from "../../components/DashboardHeaderProfile";
 import Deposit from "../../components/Deposit";
 import History from "../../components/DepositHistory";
 import Block from "../../components/Holder";
+import config from "../../config";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
@@ -15,6 +16,7 @@ import t from "../../services/trans/i18n";
 import "./style.less";
 
 interface IProps {
+    match?: any;
 }
 
 interface IState {
@@ -26,6 +28,7 @@ class DepositContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
+        const selectedCoin = (this.props.match.params.coin && config.currencies[this.props.match.params.coin]) ? this.props.match.params.coin : null;
         return (
             <Row gutter={8}>
                 <Col md={6} >
@@ -37,7 +40,7 @@ class DepositContainer extends React.Component<IProps, IState> {
                     <Row gutter={8}>
                         <Col md={24} className="">
                             <Block title={t.t("View wallet address")} icon={<FontAwesomeIcon icon={["fas", "wallet"]} />} >
-                                <Deposit />
+                                <Deposit selectedDepositCurrency={selectedCoin} />
                             </Block>
                         </Col>
                     </Row>

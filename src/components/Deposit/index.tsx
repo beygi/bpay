@@ -29,39 +29,36 @@ class DepositComponent extends React.Component<IProps, IState> {
     }
 
     public render() {
+        let dropDownName = t.t("Please select a currency to deposit");
+        let dropDownIcon = <FontAwesomeIcon icon={["fas", "list-ul"]} />;
+        let DepositOrDescription = <Alert
+            message={t.t("Before you start")}
+            description="Additional description and informations about deposit"
+            type="info"
+            showIcon
+        />;
+        if (this.props.selectedDepositCurrency) {
+            dropDownName = config.currencies[this.props.selectedDepositCurrency].name;
+            dropDownIcon = <FontAwesomeIcon icon={config.currencies[this.props.selectedDepositCurrency].icon} />;
+            DepositOrDescription = <div>{config.currencies[this.props.selectedDepositCurrency].name}</div>;
+        }
         const coins = Object.keys(config.currencies).map((key) =>
-            <Link to={`/deposit/${key}/`} key={key}>
-            <h2>
-                <FontAwesomeIcon className="balance-icon" icon={config.currencies[key].icon} />
-                <span className="balance-name">{config.currencies[key].name}</span>
-            </h2>
-        </Link>,
+            <Link to={`/deposit/${key}`} key={key}>
+                <h2>
+                    <FontAwesomeIcon className="balance-icon" icon={config.currencies[key].icon} />
+                    <span className="balance-name">{config.currencies[key].name}</span>
+                </h2>
+            </Link>,
         );
         return (
             <div>
-            <Block className="deposit-coin-select" collapse title={t.t("Please select a currency to deposit")} icon={<FontAwesomeIcon icon={["fas", "list-ul"]} />} iconPosition="left" >
-                {coins}
-            </Block>
-            <Alert
-                message={t.t("Before you start")}
-                description="Additional description and informations about deposit"
-                type="info"
-                showIcon
-            />
-            </div>
+                <Block className="deposit-coin-select" collapse title={dropDownName} icon={dropDownIcon} iconPosition="left" >
+                    {coins}
+                </Block>
+                {DepositOrDescription}
+            </div >
         );
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-    };
-}
-
-function mapStateToProps(state: IRootState) {
-    return {
-        selectedDepositCurrency:   state.app.user.selectedDepositCurrency,
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DepositComponent);
+export default DepositComponent;
