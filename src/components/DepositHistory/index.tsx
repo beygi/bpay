@@ -42,31 +42,37 @@ class DespositHistoryComponent extends React.Component<IProps, IState> {
                     value : 2.0,
                     coin : "btc",
                     validation : 4,
+                    date: "Mon Jul 23 09:43:16",
                 },
                 {
                     value : 0.1,
                     coin : "btc",
                     validation : 0,
+                    date: "Mon Jul 23 09:48:34",
                 },
                 {
                     value : 3.0,
                     coin : "usd",
                     validation : 5,
+                    date: "Mon Jul 23 09:43:16",
                 },
                 {
                     value : 2.0,
                     coin : "eth",
                     validation : 4,
+                    date: "Mon Jul 23 09:43:16",
                 },
                 {
                     value : 1.5,
                     coin : "btc",
                     validation : 1,
+                    date: "Mon Jul 23 09:43:16",
                 },
                 {
                     value : 0.01,
                     coin : "btc",
                     validation : 5,
+                    date: "Mon Jul 23 09:43:16",
                 },
             ],
         };
@@ -95,7 +101,7 @@ class DespositHistoryComponent extends React.Component<IProps, IState> {
     public render() {
         return (
             <List
-                    className="demo-loadmore-list"
+                    className="deposite-history"
                     itemLayout="horizontal"
                     dataSource={this.state.history}
                     renderItem={(item) => {
@@ -103,10 +109,10 @@ class DespositHistoryComponent extends React.Component<IProps, IState> {
                         &nbsp;&nbsp; {item.value}
                     </span>;
                         const percent = item.validation * 20;
-                        const percentText = (item.validation === 5) ? "Done" :  ` ${item.validation} / 5`;
+                        const percentText = (item.validation === 5) ? "✔️" :  ` ${item.validation} / 5`;
 
-                        return (<List.Item>
-                            <List.Item.Meta  title={title}    />
+                        return (<List.Item className="deposit-item">
+                            <List.Item.Meta  title={title} description={item.date}   />
                              <Progress className="transaction-validate" strokeWidth={10} width={50} type="circle" percent={percent}  format={() => percentText} />
                           </List.Item>);
                     } }
