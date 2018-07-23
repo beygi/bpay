@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Alert } from "antd";
 import * as React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import config from "../../config";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 import Balance from "../Balance";
@@ -27,10 +29,18 @@ class DepositComponent extends React.Component<IProps, IState> {
     }
 
     public render() {
+        const coins = Object.keys(config.currencies).map((key) =>
+            <Link to={`/deposit/${key}/`} key={key}>
+            <h2>
+                <FontAwesomeIcon className="balance-icon" icon={config.currencies[key].icon} />
+                <span className="balance-name">{config.currencies[key].name}</span>
+            </h2>
+        </Link>,
+        );
         return (
             <div>
             <Block className="deposit-coin-select" collapse title={t.t("Please select a currency to deposit")} icon={<FontAwesomeIcon icon={["fas", "list-ul"]} />} iconPosition="left" >
-                <Balance />
+                {coins}
             </Block>
             <Alert
                 message={t.t("Before you start")}
@@ -50,7 +60,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state: IRootState) {
     return {
-        selectedDepositCurrency: state.app.user.selectedDepositCurrency,
+        selectedDepositCurrency:   state.app.user.selectedDepositCurrency,
     };
 }
 
