@@ -43,7 +43,7 @@ class DepositComponent extends React.Component<IProps, IState> {
             DepositOrDescription = <div>{config.currencies[this.props.selectedDepositCurrency].name}</div>;
         }
         const coins = Object.keys(config.currencies).map((key) =>
-            <Link to={`/deposit/${key}`} key={key}>
+            <Link replace={true} to={`/deposit/${key}`} key={key}>
                 <h2>
                     <FontAwesomeIcon className="balance-icon" icon={config.currencies[key].icon} />
                     <span className="balance-name">{config.currencies[key].name}</span>
