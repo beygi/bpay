@@ -12,7 +12,7 @@ const config = {
     },
     currencies: {
         btc: {
-            name: "Bit Coin",
+            name: "Bitcoin",
             balance: 0,
             icon: ["fab", "btc"],
         },

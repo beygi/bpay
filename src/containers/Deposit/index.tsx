@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Balance from "../../components/Balance";
 import Profile from "../../components/DashboardHeaderProfile";
+import Deposit from "../../components/Deposit";
 import History from "../../components/DepositHistory";
 import Block from "../../components/Holder";
 import { setUser } from "../../redux/app/actions";
@@ -36,7 +37,7 @@ class DepositContainer extends React.Component<IProps, IState> {
                     <Row gutter={8}>
                         <Col md={24} className="">
                             <Block title={t.t("View wallet address")} icon={<FontAwesomeIcon icon={["fas", "wallet"]} />} >
-                                <img src="https://dummyimage.com/1000x800/4c4649/3ee6e0.png" alt="" />
+                                <Deposit />
                             </Block>
                         </Col>
                     </Row>
