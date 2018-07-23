@@ -54,6 +54,7 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
         let AdminButton: any;
         let HeaderLogo: any;
         let isAdmin: boolean = false;
+        let MenuItem: any = "";
         if (this.props.path && this.props.path.startsWith("/admin/")) {
             isAdmin = true;
         }
@@ -64,6 +65,7 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                 <Link to="/dashboard"><Icon type="user" /></Link>
             </Tooltip>;
             HeaderLogo = <Link to="/admin/dashboard"><img className="user-dashboard-logo" src={logo} /></Link>;
+            MenuItem = _.find(Menus, { path: "/admin/" + this.props.path.split("/")[2]  });
         } else {
             Menus = menu();
             AdminClass = "header-logo-user";
@@ -74,8 +76,9 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                 </Tooltip>;
                 HeaderLogo = <Link to="/dashboard"><img className="user-dashboard-logo" src={logo} /></Link>;
             }
+            MenuItem = _.find(Menus, { path: "/" + this.props.path.split("/")[1]  });
         }
-        const MenuItem: any = _.find(Menus, { path: this.props.path });
+
         return (
             <div className={AdminClass}>
                 <div className="selected-menu">
