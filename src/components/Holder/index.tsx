@@ -15,6 +15,7 @@ interface IProps {
     iconPosition?: string;
     transparent?: boolean;
     showArrow?: boolean;
+    centerTitle?: boolean;
 }
 
 interface IState {
@@ -30,8 +31,9 @@ class BlockComponent extends React.Component<IProps, IState> {
         const transparentClass = (this.props.transparent) ? "transparent" : "";
         let title: JSX.Element ;
         const icon: JSX.Element = <span className={this.props.iconPosition}>{this.props.icon}</span>;
-        const disabled = (this.props.collapseClosed) ? "0" : "1";
+        const disabled = (this.props.collapseClosed) ? ["0"] : ["1"];
         const showArrow = (this.props.showArrow !== undefined) ?  this.props.showArrow : true;
+        const centerTitle = (this.props.centerTitle !== undefined && this.props.centerTitle) ?  "center-title" : "";
 
         // handle no-padding block
         cssClass += " block";
@@ -41,11 +43,11 @@ class BlockComponent extends React.Component<IProps, IState> {
         }
 
         if (this.props.collapse) {
-            title = <div>{icon} {this.props.title || <span>&nbsp;</span>}</div>;
+            title = <div className="block-title-collapse">{icon} {this.props.title || <span>&nbsp;</span>}</div>;
             return (
             <div className={cssClass} >
-                        <Collapse className= "block-collapse" bordered={false} activeKey={disabled} defaultActiveKey={null}   >
-                                  <Panel header={title} key="1"  showArrow={showArrow} >
+                        <Collapse key={disabled[0]} className= "block-collapse" bordered={false} defaultActiveKey={["1"]}   >
+                                  <Panel header={title}  key="1" showArrow={showArrow} >
                                       {this.props.children}
                                   </Panel>
                         </Collapse>
@@ -53,7 +55,7 @@ class BlockComponent extends React.Component<IProps, IState> {
             );
         }
 
-        title = <h2>{icon} {this.props.title}</h2>;
+        title = <div className="block-title">{icon}<span className={centerTitle}>{this.props.title}</span></div>;
         return (
         <div className={cssClass} >
                     {title}
