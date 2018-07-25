@@ -74,13 +74,11 @@ class DepositComponent extends React.Component<IProps, IState> {
 
         <Alert
             message={t.t("Warning")}
-            description={<div>Additional description and informations about deposit
+            description={<div>
             <ul>
-                    <li>Additional description and informations about deposit </li>
-                    <li>Additional description and informations about deposit </li>
-                    <li>Additional description and informations about deposit </li>
-                    <li>Additional description and informations about deposit </li>
-                    <li>Additional description and informations about deposit </li>
+                    <li>coins will be available after <span className="confirmation-num">{config.currencies[this.props.selectedDepositCurrency].confirmationNumber} </span> network confirmations</li>
+                    <li>send only {config.currencies[this.props.selectedDepositCurrency].name}
+                         (<span  className="confirmation-num">{this.props.selectedDepositCurrency}</span>) to this walelt sending anyother coin may result loss of your deposit</li>
                 </ul>
             </div>}
             type="warning"
