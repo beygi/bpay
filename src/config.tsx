@@ -15,16 +15,22 @@ const config = {
             name: "Bitcoin",
             balance: 0,
             icon: ["fab", "btc"],
+            depositeWallet: "asdxzasdfrwgsdfgsdfgsdfgdfsgsfdgdfg",
+            confirmationNumber : 5,
         },
         usd: {
             name: "US dollar",
             balance: 0,
             icon: ["fas", "dollar-sign"],
+            depositeWallet: "asdxzasdfrwgsdfgsdfgsdfgdfsgsfdgdfg",
+            confirmationNumber : 10,
         },
         eth: {
                 name : "Ethereum",
                 balance: 0,
                 icon: ["fab", "ethereum"],
+                depositeWallet: "asdxzasdfrwgsdfgsdfgsdfgdfsgsfdgdfg",
+                confirmationNumber : 20,
         },
 
     },
