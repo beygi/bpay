@@ -1,15 +1,50 @@
 @import "../../theme/application";
-.deposit-coin-select
-{
-    background-color:  darken(@palette-high,5%);
-    .balance-name
-    {
+
+.deposit-coin-select {
+    background-color: darken(@palette-high,5%);
+
+    .balance-name {
         margin-left: 10px;
     }
     margin-top: 10px;
-    a
-    {
+
+    a {
         text-decoration: none;
-        color : @palette-light;
+        color: @palette-light;
     }
+}
+
+.deposite-balance {
+    span {
+        width: 100px;
+        margin-right: 5px;
+        padding-left: 10px;
+    }
+
+    .ant-list-item {
+        background-color: darken(@palette-high,5%);
+        color: @palette-light;
+        border: 1px solid darken(@palette-high,10%) !important;
+    }
+    border: none;
+    width: 200px;
+}
+
+.wallet-group {
+    .wallet {
+        width: 70% !important;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px !important;
+    }
+
+    .copy,
+    .show-qr {
+        width: 15% !important;
+    }
+    margin-bottom: 20px;
+}
+
+.wallet-label {
+    margin-top: 20px;
 }
