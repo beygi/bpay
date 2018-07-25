@@ -109,7 +109,7 @@ class DespositHistoryComponent extends React.Component<IProps, IState> {
                         &nbsp;&nbsp; {item.value}
                     </span>;
                         const percent = item.validation * 20;
-                        const percentText = (item.validation === 5) ? "✔️" :  ` ${item.validation} / 5`;
+                        const percentText = (item.validation === 5) ? "Done" :  ` ${item.validation} / 5`;
 
                         return (<List.Item className="deposit-item">
                             <List.Item.Meta  title={title} description={item.date}   />
