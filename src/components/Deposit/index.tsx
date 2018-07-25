@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Alert, Button, Input, List, Tooltip } from "antd";
+import { Alert, Button, Input, List, Modal, notification, Tooltip } from "antd";
 import * as React from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import config from "../../config";
@@ -19,14 +20,29 @@ interface IProps {
 }
 
 interface IState {
+    qrModalVisible: boolean;
 }
 
 class DepositComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
+        this.state = {
+            qrModalVisible: false,
+        };
     }
-
+    public setQrModalStatus(qrModalVisible: boolean) {
+        this.setState({ qrModalVisible });
+    }
+    public showCopiedMessage() {
+        // success info  warning error
+        notification.success({
+            message: "Copy of wallet address",
+            description: `Our ${this.props.selectedDepositCurrency} Wallet Address Copied to clipboard successfully`,
+            placement: "bottomRight",
+            duration: 5,
+        });
+    }
     public render() {
         let dropDownName = t.t("Please select a currency to deposit");
         const dropDownIcon = <FontAwesomeIcon icon={["fas", "angle-down"]} />;
@@ -46,6 +62,7 @@ class DepositComponent extends React.Component<IProps, IState> {
         />;
         let collapseClosed = false;
         if (this.props.selectedDepositCurrency) {
+            collapseClosed = true;
             const data = [
                 t.t("Total"),
                 t.t("In order"),
@@ -63,29 +80,42 @@ class DepositComponent extends React.Component<IProps, IState> {
                 <div className="wallet-label">Our {config.currencies[this.props.selectedDepositCurrency].name} wallet address:</div>
                 <InputGroup className="wallet-group" compact>
                     <Input className="wallet" defaultValue={config.currencies[this.props.selectedDepositCurrency].depositeWallet} />
+                    <CopyToClipboard text={config.currencies[this.props.selectedDepositCurrency].depositeWallet}
+                        onCopy={() => this.showCopiedMessage() }>
                     <Tooltip placement="top" title="Copy wallet address to clipboard">
-                                <Button className="copy neat-btn" type="primary"><FontAwesomeIcon icon={["fas", "copy"]} />  Copy</Button>
+                            <Button className="copy neat-btn" type="primary"><FontAwesomeIcon icon={["fas", "copy"]} />  Copy</Button>
                     </Tooltip>
+                    </CopyToClipboard>
                     <Tooltip placement="top" title="Display Qr code of wallet">
-                                <Button className="show-qr neat-btn" type="primary"><FontAwesomeIcon icon={["fas", "qrcode"]} />  Qr code</Button>
+                        <Button onClick={() => this.setQrModalStatus(true)} className="show-qr neat-btn" type="primary"><FontAwesomeIcon icon={["fas", "qrcode"]} />  Qr code</Button>
                     </Tooltip>
+                    <Modal
+                        title="Vertically centered modal dialog"
+                        wrapClassName="vertical-center-modal"
+                        visible={this.state.qrModalVisible}
+                        onOk={() => this.setQrModalStatus(false)}
+                        onCancel={() => this.setQrModalStatus(false)}
+                    >
+                        <p>some contents...</p>
+                        <p>some contents...</p>
+                        <p>some contents...</p>
+                    </Modal>
+                </InputGroup>
 
-        </InputGroup>
-
-        <Alert
-            message={t.t("Warning")}
-            description={<div>
-            <ul>
-                    <li>coins will be available after <span className="confirmation-num">{config.currencies[this.props.selectedDepositCurrency].confirmationNumber} </span> network confirmations</li>
-                    <li>send only {config.currencies[this.props.selectedDepositCurrency].name}
-                         (<span  className="confirmation-num">{this.props.selectedDepositCurrency}</span>) to this walelt sending anyother coin may result loss of your deposit</li>
-                </ul>
-            </div>}
-            type="warning"
-            showIcon
-        />
+                <Alert
+                    message={t.t("Warning")}
+                    description={<div>
+                        <ul>
+                            <li>coins will be available after <span className="confirmation-num">
+                                {config.currencies[this.props.selectedDepositCurrency].confirmationNumber} </span> network confirmations</li>
+                            <li>send only {config.currencies[this.props.selectedDepositCurrency].name}
+                                (<span className="confirmation-num">{this.props.selectedDepositCurrency}</span>) to this walelt sending anyother coin may result loss of your deposit</li>
+                        </ul>
+                    </div>}
+                    type="warning"
+                    showIcon
+                />
             </div>;
-            collapseClosed = true;
         }
         const coins = Object.keys(config.currencies).map((key) =>
             <Link replace={true} to={`/deposit/${key}`} key={key}>
