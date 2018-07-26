@@ -1,3 +1,4 @@
+import axios from "axios";
 import config from "../../../src/config";
 import { updateUser } from "../../redux/app/actions";
 import { updateUserBalance } from "../../redux/app/actions";
@@ -11,12 +12,19 @@ export default class Seeder {
 
     public initialSeed() {
         this.setBalance();
+        this.setMarket();
+    }
+
+    public setMarket() {
+        return axios.get("https://api.coinmarketcap.com/v2/ticker/?limit=10").then((response) => {
+            console.log(response.data.data);
+        });
     }
 
     public setBalance() {
         // TODO: random value
         const balanceData = {
-            btc: {
+            BTC: {
                 name: "Bitcoin",
                 balance:
                     {
@@ -25,7 +33,7 @@ export default class Seeder {
                         total: 133,
                     },
             },
-            usd: {
+            USD: {
                 name: "US dollar",
                 balance: {
                     available: 12,
@@ -33,7 +41,7 @@ export default class Seeder {
                     total: 13,
                 },
             },
-            eth: {
+            ETH: {
                 name: "Ethereum",
                 balance: {
                     available: 16,

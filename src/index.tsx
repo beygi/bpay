@@ -26,11 +26,6 @@ const keyCloak = KeyCloacksApi.getInstance();
 
 user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
     if (authenticated) {
-        // if (store.getState().app.user && !store.getState().app.user.balance) {
-                    console.log("seeding user ... ");
-                    const seeder = new Seeder();
-                    seeder.initialSeed();
-        // }
                     console.log(user.keycloak);
         // token is in user.keycloak.token
                     const userData = _.pick(user.keycloak.tokenParsed, ["email", "name", "realm_access"]);
@@ -41,7 +36,11 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         // set token in api lib
         // api.SetHeader("Authorization", "Token " + JSON.stringify(user.keycloak.tokenParsed));
                     keyCloak.setAuthToken(user.keycloak.token);
-
+                    // if (store.getState().app.user && !store.getState().app.user.balance) {
+                    console.log("seeding user ... ");
+                    const seeder = new Seeder();
+                    seeder.initialSeed();
+                    // }
         // token must be refreshed automatically
                     setInterval( () => {
             user.keycloak.updateToken().success((refreshed) => {

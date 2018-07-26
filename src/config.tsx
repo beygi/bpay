@@ -11,19 +11,19 @@ const config = {
         checkLoginIframe: false,
     },
     currencies: {
-        btc: {
+        BTC: {
             name: "Bitcoin",
             balance: 0,
             depositeWallet: "asdxzasdfrwgsdfgsdfgsdfgdfsgsfdgdfg",
             confirmationNumber : 5,
         },
-        usd: {
+        USD: {
             name: "US dollar",
             balance: 0,
             depositeWallet: "asdxzasdfrwgsdfgsdfgsdfgdfsgsfdgdfg",
             confirmationNumber : 10,
         },
-        eth: {
+        ETH: {
                 name : "Ethereum",
                 balance: 0,
                 depositeWallet: "asdxzasdfrwgsdfgsdfgsdfgdfsgsfdgdfg",
@@ -33,9 +33,9 @@ const config = {
     },
     icons :
     {
-        btc :  ["fab", "btc"],
-        usd : ["fas", "dollar-sign"],
-        eth : ["fab", "ethereum"],
+        BTC :  ["fab", "btc"],
+        USD : ["fas", "dollar-sign"],
+        ETH : ["fab", "ethereum"],
     },
 };
 
