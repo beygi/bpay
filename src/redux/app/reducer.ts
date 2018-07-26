@@ -41,4 +41,11 @@ export default handleActions<IAppStoreState, any>({
             user: null,
         };
     },
+
+    [Actions.UPDATE_MARKET_CRYPTOS]: (state, action: IAction<any>) => {
+        return {
+            ...state,
+            market: { ...state.market, cryptos: action.payload },
+        };
+    },
 }, initialState);
