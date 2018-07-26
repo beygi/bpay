@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Alert, Button, Input, List, Modal, notification, Tooltip } from "antd";
+import { Alert, Button, Input, List, message, Modal, notification , Tooltip} from "antd";
 import * as React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { connect } from "react-redux";
@@ -35,13 +35,7 @@ class DepositComponent extends React.Component<IProps, IState> {
         this.setState({ qrModalVisible });
     }
     public showCopiedMessage() {
-        // success info  warning error
-        notification.success({
-            message: "Copy of wallet address",
-            description: `Our ${this.props.selectedDepositCurrency} Wallet Address Copied to clipboard successfully`,
-            placement: "bottomRight",
-            duration: 5,
-        });
+        message.success(`Our ${this.props.selectedDepositCurrency} deposit address copied to clipboard successfully`);
     }
     public render() {
         let dropDownName = t.t("Please select a currency to deposit");
@@ -64,9 +58,9 @@ class DepositComponent extends React.Component<IProps, IState> {
         if (this.props.selectedDepositCurrency) {
             collapseClosed = true;
             const data = [
-                t.t("Total"),
-                t.t("In order"),
-                t.t("Available"),
+                {name: t.t("Total") , value : 13.000},
+                {name: t.t("In order"), value : 7.000},
+                {name: t.t("Available"), value : 6.000},
             ];
             const CurrencydropDownIcon = <FontAwesomeIcon icon={config.currencies[this.props.selectedDepositCurrency].icon} />;
             dropDownName = <div> {CurrencydropDownIcon} {config.currencies[this.props.selectedDepositCurrency].name}</div>;
@@ -75,7 +69,7 @@ class DepositComponent extends React.Component<IProps, IState> {
                 <List className="deposite-balance" bordered={false}
                     size="small"
                     dataSource={data}
-                    renderItem={(item) => (<List.Item><span className="deposite-balance">{item}</span>20</List.Item>)}
+                    renderItem={(item) => (<List.Item><span className="deposite-balance">{item.name}</span>{item.value}</List.Item>)}
                 />
                 <div className="wallet-label">Our {config.currencies[this.props.selectedDepositCurrency].name} wallet address:</div>
                 <InputGroup className="wallet-group" compact>
@@ -90,15 +84,18 @@ class DepositComponent extends React.Component<IProps, IState> {
                         <Button onClick={() => this.setQrModalStatus(true)} className="show-qr neat-btn" type="primary"><FontAwesomeIcon icon={["fas", "qrcode"]} />  Qr code</Button>
                     </Tooltip>
                     <Modal
-                        title="Vertically centered modal dialog"
+                        title={`${config.currencies[this.props.selectedDepositCurrency].name} Deposite address`}
                         wrapClassName="vertical-center-modal"
                         visible={this.state.qrModalVisible}
                         onOk={() => this.setQrModalStatus(false)}
                         onCancel={() => this.setQrModalStatus(false)}
+                        footer={null}
                     >
-                        <p>some contents...</p>
-                        <p>some contents...</p>
-                        <p>some contents...</p>
+                        <p>
+                            <img className="qr-img"
+                        src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${config.currencies[this.props.selectedDepositCurrency].depositeWallet}`} alt=""/>
+                        </p>
+                        <h3 className="modal-wallet">{config.currencies[this.props.selectedDepositCurrency].depositeWallet}</h3>
                     </Modal>
                 </InputGroup>
 
