@@ -63,22 +63,23 @@ class BalanceComponent extends React.Component<IProps, IState> {
             // });
         },
         );
-        const balance = {};
-        let name = "btc";
-        balance[name] = { ...this.state.balance[name] , ...{balance: Math.ceil (  (Math.random() * 3000) + 1 )    }    };
-        name = "usd";
-        balance[name] = { ...this.state.balance[name] , ...{balance: Math.ceil (  (Math.random() * 5000) + 1 )    }    };
-        name = "eth";
-        balance[name] = { ...this.state.balance[name] , ...{balance: Math.ceil (  (Math.random() * 7000) + 1 )    }    };
-        this.props.updateUserBalance(balance);
+
+        // const balance = {};
+        // let name = "btc";
+        // balance[name] = { ...this.state.balance[name] , ...{balance: Math.ceil (  (Math.random() * 3000) + 1 )    }    };
+        // name = "usd";
+        // balance[name] = { ...this.state.balance[name] , ...{balance: Math.ceil (  (Math.random() * 5000) + 1 )    }    };
+        // name = "eth";
+        // balance[name] = { ...this.state.balance[name] , ...{balance: Math.ceil (  (Math.random() * 7000) + 1 )    }    };
+        // this.props.updateUserBalance(balance);
     }
 
     public render() {
         const coins = Object.keys(this.state.balance).map((key) =>
             <div className="coin-balance" key={key}>
-                <FontAwesomeIcon className="balance-icon" icon={this.state.balance[key].icon} />
+                <FontAwesomeIcon className="balance-icon" icon={config.icons[key]} />
                 <p className="balance-name">{this.state.balance[key].name}</p>
-                <p className="balance-number">{this.state.balance[key].balance}</p>
+                <p className="balance-number">{this.state.balance[key].balance.available || 0}</p>
             </div>,
         );
         return(

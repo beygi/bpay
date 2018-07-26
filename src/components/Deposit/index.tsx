@@ -62,7 +62,7 @@ class DepositComponent extends React.Component<IProps, IState> {
                 {name: t.t("In order"), value : 7.000},
                 {name: t.t("Available"), value : 6.000},
             ];
-            const CurrencydropDownIcon = <FontAwesomeIcon icon={config.currencies[this.props.selectedDepositCurrency].icon} />;
+            const CurrencydropDownIcon = <FontAwesomeIcon icon={config.icons[this.props.selectedDepositCurrency]} />;
             dropDownName = <div> {CurrencydropDownIcon} {config.currencies[this.props.selectedDepositCurrency].name}</div>;
             DepositOrDescription = <div>
                 <h3>your {this.props.selectedDepositCurrency} balance:</h3>
@@ -117,7 +117,7 @@ class DepositComponent extends React.Component<IProps, IState> {
         const coins = Object.keys(config.currencies).map((key) =>
             <Link replace={true} to={`/deposit/${key}`} key={key}>
                 <h2>
-                    <FontAwesomeIcon className="balance-icon" icon={config.currencies[key].icon} />
+                    <FontAwesomeIcon className="balance-icon" icon={config.icons[key]} />
                     <span className="balance-name">{config.currencies[key].name}</span>
                 </h2>
             </Link>,

@@ -1,7 +1,7 @@
 // store.app
 export interface IAppStoreState {
     user: any;
-    company: any;
+    market: any;
 }
 export interface IRouterStoreState {
     location: any;

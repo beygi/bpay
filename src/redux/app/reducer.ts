@@ -4,7 +4,7 @@ import * as Actions from "./constants";
 import { IAppStoreState } from "./store";
 
 const initialState: IAppStoreState = {
-    company: null,
+    market: null,
     user: null,
 };
 
@@ -31,18 +31,6 @@ export default handleActions<IAppStoreState, any>({
         return {
             ...state,
             user: { ...state.user, balance: { ...state.user.balance, ...action.payload } },
-        };
-    },
-    [Actions.SET_COMPANY]: (state, action: IAction<any>) => {
-        return {
-            ...state,
-            company: action.payload,
-        };
-    },
-    [Actions.REMOVE_COMPANY]: (state) => {
-        return {
-            ...state,
-            company: null,
         };
     },
     [Actions.LOG_OUT]: (state) => {
