@@ -2,6 +2,8 @@ import axios from "axios";
 import config from "../../../src/config";
 import { updateUser } from "../../redux/app/actions";
 import { updateUserBalance } from "../../redux/app/actions";
+
+import { updateMarketCryptos } from "../../redux/app/actions";
 import { store } from "../../redux/store";
 
 export default class Seeder {
@@ -17,7 +19,8 @@ export default class Seeder {
 
     public setMarket() {
         return axios.get("https://api.coinmarketcap.com/v2/ticker/?limit=10").then((response) => {
-            console.log(response.data.data);
+            // update redux store directly
+            store.dispatch(updateMarketCryptos(response.data.data));
         });
     }
 
