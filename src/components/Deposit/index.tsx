@@ -57,7 +57,6 @@ class DepositComponent extends React.Component<IProps, IState> {
         />;
         let collapseClosed = false;
         if (this.props.selectedDepositCurrency) {
-            console.log(this.props.balance[this.props.selectedDepositCurrency]);
             collapseClosed = true;
             const data = [
                 {name: t.t("Total") , value : this.props.balance[this.props.selectedDepositCurrency].balance.total || 0 },
