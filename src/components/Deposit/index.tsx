@@ -17,6 +17,7 @@ const InputGroup = Input.Group;
 
 interface IProps {
     selectedDepositCurrency: string;
+    balance: {};
 }
 
 interface IState {
@@ -56,11 +57,12 @@ class DepositComponent extends React.Component<IProps, IState> {
         />;
         let collapseClosed = false;
         if (this.props.selectedDepositCurrency) {
+            console.log(this.props.balance[this.props.selectedDepositCurrency]);
             collapseClosed = true;
             const data = [
-                {name: t.t("Total") , value : 13.000},
-                {name: t.t("In order"), value : 7.000},
-                {name: t.t("Available"), value : 6.000},
+                {name: t.t("Total") , value : this.props.balance[this.props.selectedDepositCurrency].balance.total || 0 },
+                {name: t.t("In order"), value : this.props.balance[this.props.selectedDepositCurrency].balance.inOrder || 0 },
+                {name: t.t("Available"), value : this.props.balance[this.props.selectedDepositCurrency].balance.available || 0},
             ];
             const CurrencydropDownIcon = <FontAwesomeIcon icon={config.icons[this.props.selectedDepositCurrency]} />;
             dropDownName = <div> {CurrencydropDownIcon} {config.currencies[this.props.selectedDepositCurrency].name}</div>;
@@ -140,4 +142,16 @@ class DepositComponent extends React.Component<IProps, IState> {
     }
 }
 
-export default DepositComponent;
+function mapStateToProps(state: IRootState) {
+    if ( state.app.user.balance !== undefined) {
+        return {
+            balance: state.app.user.balance,
+        };
+    }
+    // there is no balance from redux, state must not be updated in getDerivedStateFromProps
+    return {
+        balance :  null,
+    };
+}
+
+export default connect(mapStateToProps)(DepositComponent);

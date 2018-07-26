@@ -22,7 +22,7 @@ export default class Seeder {
                     {
                         available: 123,
                         inOrder: 10,
-                        total: 113,
+                        total: 133,
                     },
             },
             usd: {
@@ -30,7 +30,7 @@ export default class Seeder {
                 balance: {
                     available: 12,
                     inOrder: 1,
-                    total: 11,
+                    total: 13,
                 },
             },
             eth: {
