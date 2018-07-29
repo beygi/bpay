@@ -37,7 +37,7 @@ export default handleActions<IAppStoreState, any>({
         document.cookie = "token=; path=/";
         return {
             ...state,
-            company: null,
+            market: null,
             user: null,
         };
     },

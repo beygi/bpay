@@ -13,8 +13,8 @@ export default class Seeder {
 
     public initialSeed() {
         this.setBalance();
-        this.setMarket();
-        setInterval(() => { this.setMarket(); }, 10000);
+        /// this.setMarket();
+        setInterval(() => { this.setMarket(); }, 30000);
     }
 
     public setMarket() {
@@ -23,8 +23,8 @@ export default class Seeder {
             for (const currency of Object.keys(response.data.data)) {
                 cryptos[response.data.data[currency].symbol] = response.data.data[currency];
             }
-
             // update redux store directly
+            console.log(cryptos.BTC.quotes.USD.price);
             store.dispatch(updateMarketCryptos(cryptos));
         });
     }

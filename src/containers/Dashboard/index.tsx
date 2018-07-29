@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Balance from "../../components/Balance";
 import Profile from "../../components/DashboardHeaderProfile";
 import Block from "../../components/Holder";
+import Live from "../../components/Live";
 import Guide from "../../components/UserStatusGuide";
 import {setUser} from "../../redux/app/actions";
 import {IRootState} from "../../redux/reducers";
@@ -32,9 +33,9 @@ class DashboardContainer extends React.Component<IProps, IState> {
                           <Button  className="action"  type="primary" size="small">Deposit</Button>
                       </Link>
                   </Block>
-                  <Block>
-                          <img src="https://dummyimage.com/600x800/4c4649/3ee6e0.png" alt=""/>
-                  </Block>
+                      <Block collapse title="Live prices" icon={<FontAwesomeIcon  icon={ ["fas", "balance-scale"] }  />} iconPosition="right" >
+                         <Live />
+                     </Block>
               </Col>
               <Col md={18} >
                    <Block>
