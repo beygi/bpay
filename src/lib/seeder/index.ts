@@ -2,7 +2,6 @@ import axios from "axios";
 import config from "../../../src/config";
 import { updateUser } from "../../redux/app/actions";
 import { updateUserBalance } from "../../redux/app/actions";
-
 import { updateMarketCryptos } from "../../redux/app/actions";
 import { store } from "../../redux/store";
 
@@ -15,12 +14,18 @@ export default class Seeder {
     public initialSeed() {
         this.setBalance();
         this.setMarket();
+        setInterval(() => { this.setMarket(); }, 10000);
     }
 
     public setMarket() {
-        return axios.get("https://api.coinmarketcap.com/v2/ticker/?limit=10").then((response) => {
+        return axios.get("https://api.coinmarketcap.com/v2/ticker/?convert=BTC&limit=10").then((response) => {
+            const cryptos: any = {};
+            for (const currency of Object.keys(response.data.data)) {
+                cryptos[response.data.data[currency].symbol] = response.data.data[currency];
+            }
+
             // update redux store directly
-            store.dispatch(updateMarketCryptos(response.data.data));
+            store.dispatch(updateMarketCryptos(cryptos));
         });
     }
 
