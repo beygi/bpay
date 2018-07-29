@@ -8,6 +8,7 @@ import Profile from "../../components/DashboardHeaderProfile";
 import Deposit from "../../components/Deposit";
 import History from "../../components/DepositHistory";
 import Block from "../../components/Holder";
+import Live from "../../components/Live";
 import config from "../../config";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
@@ -35,6 +36,9 @@ class DepositContainer extends React.Component<IProps, IState> {
                     <Block className="user-balance" collapse title="Balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
                         <Balance />
                     </Block>
+                    <Block collapse title="Live prices" icon={<FontAwesomeIcon  icon={ ["fas", "chart-line"] }  />} iconPosition="right" >
+                       <Live />
+                   </Block>
                 </Col>
                 <Col md={12} >
                     <Row gutter={8}>
