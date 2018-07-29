@@ -1,5 +1,6 @@
 const autoprefixer = require("autoprefixer");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const webpack = require("webpack");
 const path = require("path");
@@ -159,8 +160,11 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: "index.html",
-        })
-    ],
+        }),
+        new CopyWebpackPlugin([
+                    { from: sourcePath+'/assets/images/SVG/*.svg', to: outPath+"/images/svg/" , flatten : true }
+                ])
+        ],
     resolve: {
         extensions: [".js", ".ts", ".tsx"],
         // Fix webpack"s default behavior to not load packages with jsnext:main module
