@@ -33,7 +33,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
                           <Button  className="action"  type="primary" size="small">Deposit</Button>
                       </Link>
                   </Block>
-                      <Block collapse title="Live prices" icon={<FontAwesomeIcon  icon={ ["fas", "balance-scale"] }  />} iconPosition="right" >
+                      <Block collapse title="Live prices" icon={<FontAwesomeIcon  icon={ ["fas", "chart-line"] }  />} iconPosition="right" >
                          <Live />
                      </Block>
               </Col>

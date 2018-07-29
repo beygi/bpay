@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Collapse } from "antd";
+import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
 import config from "../../config";
@@ -12,7 +13,7 @@ interface IProps {
 }
 
 interface IState {
-    cryptos: {};
+    cryptos: any[];
 }
 
 class LiveComponent extends React.Component<IProps, IState> {
@@ -20,7 +21,7 @@ class LiveComponent extends React.Component<IProps, IState> {
      public static getDerivedStateFromProps(props, state) {
              // update state.balance when props changes by redux4
              if (props.cryptos !== null) {
-                  return {cryptos: props.cryptos };
+                  return {  cryptos : _.sortBy(props.cryptos, ["rank"]) };
              }
              return null;
      }
@@ -38,13 +39,14 @@ class LiveComponent extends React.Component<IProps, IState> {
     }
 
     public render() {
+        console.log(this.state.cryptos);
         let coins: any = <div>Loading ...</div>;
         if (this.state.cryptos) {
-        coins = Object.keys(this.state.cryptos).map((key) =>
-                <div className="coin-balance" key={key}>
-                    <img  className="balance-icon" src={`img/${config.icons[key]}.svg`} alt={this.state.cryptos[key].name} />
-                    <p className="balance-name">{this.state.cryptos[key].name}</p>
-                    <p className="balance-number">{this.state.cryptos[key].quotes.USD.price || 0}</p>
+        coins = this.state.cryptos.map((coin) =>
+                <div className="coin-balance" key={coin.symbol}>
+                    <i className={`live-icon cc ${coin.symbol}`}></i>
+                    <p className="balance-name">{coin.name}</p>
+                    <p className="balance-number">$ {coin.quotes.USD.price || 0}</p>
                 </div>,
             );
          }
