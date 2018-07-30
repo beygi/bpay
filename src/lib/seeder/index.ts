@@ -28,9 +28,11 @@ export default class Seeder {
                 const usdPrice = cryptos[response.data.data[currency].symbol].quotes.USD.price;
                 const btcPrice = cryptos[response.data.data[currency].symbol].quotes.BTC.price;
                 const multipler = _.random(0.9995, 1.0005);
-                cryptos[response.data.data[currency].symbol].quotes.USD.price = multipler * usdPrice;
-                cryptos[response.data.data[currency].symbol].quotes.BTC.price = multipler * btcPrice;
 
+                cryptos[response.data.data[currency].symbol].quotes.USD.price = multipler * usdPrice;
+                if (response.data.data[currency].symbol !== "BTC") {
+                    cryptos[response.data.data[currency].symbol].quotes.BTC.price = multipler * btcPrice;
+                }
             }
             // update redux store directly
             store.dispatch(updateMarketCryptos(cryptos));
