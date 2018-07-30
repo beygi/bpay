@@ -1,4 +1,5 @@
 import axios from "axios";
+import * as _ from "lodash";
 import config from "../../../src/config";
 import { updateUser } from "../../redux/app/actions";
 import { updateUserBalance } from "../../redux/app/actions";
@@ -13,8 +14,8 @@ export default class Seeder {
 
     public initialSeed() {
         this.setBalance();
-        /// this.setMarket();
-        setInterval(() => { this.setMarket(); }, 30000);
+        this.setMarket();
+        setInterval(() => { this.setMarket(); }, 10000);
     }
 
     public setMarket() {
@@ -22,9 +23,16 @@ export default class Seeder {
             const cryptos: any = {};
             for (const currency of Object.keys(response.data.data)) {
                 cryptos[response.data.data[currency].symbol] = response.data.data[currency];
+
+                // add random value to prices
+                const usdPrice = cryptos[response.data.data[currency].symbol].quotes.USD.price;
+                const btcPrice = cryptos[response.data.data[currency].symbol].quotes.BTC.price;
+                const multipler = _.random(0.9995, 1.0005);
+                cryptos[response.data.data[currency].symbol].quotes.USD.price = multipler * usdPrice;
+                cryptos[response.data.data[currency].symbol].quotes.BTC.price = multipler * btcPrice;
+
             }
             // update redux store directly
-            console.log(cryptos.BTC.quotes.USD.price);
             store.dispatch(updateMarketCryptos(cryptos));
         });
     }

@@ -39,7 +39,6 @@ class LiveComponent extends React.Component<IProps, IState> {
     }
 
     public render() {
-        console.log(this.state.cryptos);
         let coins: any = <div>Loading ...</div>;
         if (this.state.cryptos) {
         coins = this.state.cryptos.map((coin) =>

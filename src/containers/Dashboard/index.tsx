@@ -39,7 +39,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
               </Col>
               <Col md={18} >
                    <Block>
-                       <Guide></Guide>
+                       <Guide />
                    </Block>
                     <Block>
                             <img src="https://dummyimage.com/1000x500/4c4649/3ee6e0.png" alt=""/>
