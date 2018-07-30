@@ -7,3 +7,4 @@ export const logOut = createAction(Actions.LOG_OUT);
 export const updateUser = createAction<any>(Actions.UPDATE_USER);
 export const updateUserBalance = createAction<any>(Actions.UPDATE_USER_BALANCE);
 export const updateMarketCryptos = createAction<any>(Actions.UPDATE_MARKET_CRYPTOS);
+export const updateMarketForex = createAction<any>(Actions.UPDATE_MARKET_FOREX);

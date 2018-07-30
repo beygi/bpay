@@ -2,8 +2,7 @@ import axios from "axios";
 import * as _ from "lodash";
 import config from "../../../src/config";
 import { updateUser } from "../../redux/app/actions";
-import { updateUserBalance } from "../../redux/app/actions";
-import { updateMarketCryptos } from "../../redux/app/actions";
+import { updateMarketCryptos, updateMarketForex, updateUserBalance } from "../../redux/app/actions";
 import { store } from "../../redux/store";
 
 export default class Seeder {
@@ -15,7 +14,9 @@ export default class Seeder {
     public initialSeed() {
         this.setBalance();
         this.setMarket();
+        this.setForex();
         setInterval(() => { this.setMarket(); }, 10000);
+        setInterval(() => { this.setForex(); }, 60000);
     }
 
     public setMarket() {
@@ -36,6 +37,14 @@ export default class Seeder {
             }
             // update redux store directly
             store.dispatch(updateMarketCryptos(cryptos));
+        });
+    }
+
+    public setForex() {
+        return axios.get("https://exchangeratesapi.io/api/latest?base=USD").then((response) => {
+            console.log(response.data.rates);
+            // update redux store directly
+            store.dispatch(updateMarketForex(response.data.rates));
         });
     }
 

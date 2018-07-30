@@ -48,4 +48,12 @@ export default handleActions<IAppStoreState, any>({
             market: { ...state.market, cryptos: action.payload },
         };
     },
+
+    [Actions.UPDATE_MARKET_FOREX]: (state, action: IAction<any>) => {
+        return {
+            ...state,
+            market: { ...state.market, forex: action.payload },
+        };
+    },
+
 }, initialState);
