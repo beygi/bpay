@@ -55,7 +55,7 @@ class BlockComponent extends React.Component<IProps, IState> {
             );
         }
 
-        title = <div className="block-title">{icon}<span className={centerTitle}>{this.props.title}</span></div>;
+        title = (this.props.title) ? <div className="block-title">{icon}<span className={centerTitle}>{this.props.title}</span></div> : null;
         return (
         <div className={cssClass} >
                     {title}

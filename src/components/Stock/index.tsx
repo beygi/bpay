@@ -7,6 +7,7 @@ import config from "../../config";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 import "./style.less";
+const commaNumber = require("comma-number");
 
 interface IProps {
     symbol: string;
@@ -18,49 +19,78 @@ interface IState {
     exchangeRates: any[];
 }
 
+function calcExchangeRate(props) {
+    // calcucalte exchange rate from store
+    const exchange = [
+        { symbol: "EUR", rate: 0 },
+        { symbol: "USD", rate: 0 },
+        { symbol: "IRR", rate: 0 },
+    ];
+    if (!props.forex || !props.cryptos) {
+        return exchange;
+    }
+    // calc exchange rate
+    const calculated = exchange.map((fiat) => {
+        fiat.rate = _.round(props.cryptos[props.symbol].quotes.USD.price * props.forex[fiat.symbol], 2);
+        if (fiat.symbol === "IRR") { fiat.rate = _.round( fiat.rate, 0); }
+        fiat.rate = commaNumber(fiat.rate);
+        return fiat;
+    });
+    return calculated;
+}
+
 class StockComponent extends React.Component<IProps, IState> {
 
-     // public static getDerivedStateFromProps(props, state) {
-     //         // update state.balance when props changes by redux4
-     //         if (props.cryptos !== null) {
-     //              return {  cryptos : _.sortBy(props.cryptos, ["rank"]) };
-     //         }
-     //         return null;
-     // }
+    public static getDerivedStateFromProps(props, state) {
+            // update state.balance when props changes by redux4
+            if (props.cryptos !== null && props.forex !== null) {
+                 return {  exchangeRates : calcExchangeRate(props)};
+            }
+            return null;
+    }
 
     constructor(props: IProps) {
         super(props);
         // initial coin state. it must be available in config file
         this.state = {
-            exchangeRates : this.calcExchangeRate(),
+            exchangeRates: calcExchangeRate(this.props),
         };
     }
-    public calcExchangeRate() {
-            // calcucalte exchange rate from store
-            return [];
-    }
     public componentDidMount() {
-            //
+        //
     }
 
     public render() {
+        if (!this.props.cryptos || !this.props.forex) {
+            return (<div>Loading ...</div>);
+        }
+        const rates = this.state.exchangeRates.map( (rate) => {
+            return <div><span className="symbol">{rate.symbol}: </span><span className="rate">{rate.rate}</span></div>;
+        } );
         return (
-            <div className= "user-balance" ></div >
+            <div className="stock" >
+                <p className="balance-name">
+                    <i className={`live-icon cc ${this.props.symbol}`}></i>
+                    {this.props.cryptos[this.props.symbol].name}</p>
+                    <div className="rates">
+                        {rates}
+                    </div>
+            </div >
         );
     }
 }
 
 function mapStateToProps(state: IRootState) {
-    if     ( state.app.market && state.app.market.cryptos && state.app.market.forex) {
+    if (state.app.market && state.app.market.cryptos && state.app.market.forex) {
         return {
-            cryptos:     state.app.market.cryptos,
-            forex:     state.app.market.forex,
+            cryptos: state.app.market.cryptos,
+            forex: state.app.market.forex,
         };
     }
     // there is no balance from redux, state must not be updated in getDerivedStateFromProps
     return {
-        cryptos :      null,
-        forex :      null,
+        cryptos: null,
+        forex: null,
     };
 }
 
