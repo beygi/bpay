@@ -3,6 +3,7 @@ import { Collapse } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
+import Ex from "../../components/ExchangeValue";
 import config from "../../config";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
@@ -65,7 +66,7 @@ class StockComponent extends React.Component<IProps, IState> {
             return (<div>Loading ...</div>);
         }
         const rates = this.state.exchangeRates.map( (rate) => {
-            return <div><span className="symbol">{rate.symbol}: </span><span className="rate">{rate.rate}</span></div>;
+            return <div><span className="symbol">{rate.symbol}: </span><span className="rate"><Ex value={rate.rate} /></span></div>;
         } );
         return (
             <div className="stock" >
