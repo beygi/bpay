@@ -20,7 +20,7 @@ export default class Seeder {
     }
 
     public setMarket() {
-        return axios.get("https://api.coinmarketcap.com/v2/ticker/?convert=BTC&limit=10").then((response) => {
+        axios.get("https://api.coinmarketcap.com/v2/ticker/?convert=BTC&limit=10").then((response) => {
             const cryptos: any = {};
             for (const currency of Object.keys(response.data.data)) {
                 cryptos[response.data.data[currency].symbol] = response.data.data[currency];
@@ -41,10 +41,14 @@ export default class Seeder {
     }
 
     public setForex() {
-        return axios.get("https://exchangeratesapi.io/api/latest?base=USD").then((response) => {
-            console.log(response.data.rates);
-            // update redux store directly
-            store.dispatch(updateMarketForex(response.data.rates));
+        axios.get("https://exchangeratesapi.io/api/latest?base=USD").then((response) => {
+            const rates = response.data.rates;
+            // call for irr to usd
+            axios.get("http://staging1.b2mark.com/api/").then((irrResponse) => {
+                rates.IRR = parseFloat(irrResponse.data.reverse);
+                // update redux store directly
+                store.dispatch(updateMarketForex(rates));
+            });
         });
     }
 
