@@ -31,7 +31,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
         return (
             <Row gutter={8}>
                 <Col md={6} >
-                    <Block title="IRR" >
+                    <Block title="IRR"  >
                         <Forex symbol="IRR" />
                     </Block>
                     <Block className="user-balance" collapse title="Your balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
@@ -72,9 +72,9 @@ class DashboardContainer extends React.Component<IProps, IState> {
                             </Block>
                         </Col>
                         <Col md={12} >
-                                <Block>
-                                    <img src="https://dummyimage.com/1000x800/4c4649/3ee6e0.png" alt="" />
-                                </Block>
+                            <Block>
+                                <img src="https://dummyimage.com/1000x800/4c4649/3ee6e0.png" alt="" />
+                            </Block>
                         </Col>
                     </Row>
                 </Col>
