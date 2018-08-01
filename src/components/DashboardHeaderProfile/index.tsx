@@ -1,7 +1,7 @@
 import { Button, Icon, Tag } from "antd";
 import * as React from "react";
-
 import { connect } from "react-redux";
+import config from "../../config";
 import { logOut } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
@@ -44,7 +44,7 @@ class DashboardHeaderProfileComponent extends React.Component<IProps, IState> {
                 </div>
                 <div className="line">
 
-                    <Button type="primary">{t.t("Change Password")}</Button>
+                    <Button type="primary" href={`${config.keycloakConfig.url}/realms/master/account/password`}>{t.t("Change Password")}</Button>
                     <Button type="primary" className="logout">{t.t("Logout")}</Button>
 
                 </div>
