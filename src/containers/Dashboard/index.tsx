@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Balance from "../../components/Balance";
 import Profile from "../../components/DashboardHeaderProfile";
+import Forex from "../../components/Forex";
 import Block from "../../components/Holder";
 import Live from "../../components/Live";
 import Stock from "../../components/Stock";
@@ -28,6 +29,9 @@ class DashboardContainer extends React.Component<IProps, IState> {
         return (
             <Row gutter={8}>
                 <Col md={6} >
+                    <Block title="IRR" >
+                        <Forex symbol="IRR" />
+                    </Block>
                     <Block className="user-balance" collapse title="Your balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
                         <Balance />
                         <Link to="/deposit">
