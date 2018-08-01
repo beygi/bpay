@@ -68,9 +68,9 @@ class StockComponent extends React.Component<IProps, IState> {
         } );
         return (
             <div className="stock" >
-                <p className="balance-name">
+                <span className="balance-name">
                     <i className={`live-icon cc ${this.props.symbol}`}></i>
-                    {this.props.cryptos[this.props.symbol].name}</p>
+                    {this.props.cryptos[this.props.symbol].name}</span>
                     <div className="rates">
                         {rates}
                     </div>
