@@ -10,7 +10,7 @@ interface IProps {
 
 interface IState {
     value: number;
-    status?: "grow" | "fall";
+    status?: "grow" | "fall" | "normal";
 }
 
 class ExchangeValueComponent extends React.Component<IProps, IState> {
@@ -22,6 +22,9 @@ class ExchangeValueComponent extends React.Component<IProps, IState> {
         }
         if (props.value < state.value) {
             return { status: "fall", value: props.value };
+        }
+        if (props.value === state.value) {
+            return { status: "normal", value: props.value };
         }
         return null;
     }

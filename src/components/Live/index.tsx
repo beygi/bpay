@@ -43,8 +43,8 @@ class LiveComponent extends React.Component<IProps, IState> {
         let coins: any = <div>Loading ...</div>;
         if (this.state.cryptos) {
             coins = this.state.cryptos.map((coin) => {
-                const btcPrice: number = parseFloat(coin.quotes.BTC.price) || 0;
-                const usdPrice: number = parseFloat(coin.quotes.USD.price) || 0;
+                const btcPrice: number = _.round(parseFloat(coin.quotes.BTC.price), 6) || 0;
+                const usdPrice: number = _.round(parseFloat(coin.quotes.USD.price), 2) || 0;
                 return (
                     <div className="coin-balance" key={coin.symbol}>
                         <i className={`live-icon cc ${coin.symbol}`}></i>
