@@ -30,7 +30,7 @@ class BlockComponent extends React.Component<IProps, IState> {
         let cssClass = this.props.className || "";
         const transparentClass = (this.props.transparent) ? "transparent" : "";
         let title: JSX.Element ;
-        const icon: JSX.Element = (this.props.icon) ? <span className={`block-icon ${this.props.iconPosition}`}>{this.props.icon}</span> : null;
+        const icon: JSX.Element = (this.props.icon) ? <span className={`${this.props.iconPosition || "left"}`}>{this.props.icon}</span> : null;
         const disabled = (this.props.collapseClosed) ? ["0"] : ["1"];
         const showArrow = (this.props.showArrow !== undefined) ?  this.props.showArrow : true;
         const centerTitle = (this.props.centerTitle !== undefined && this.props.centerTitle) ?  "center-title" : "";
