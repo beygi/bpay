@@ -8,7 +8,6 @@ import config from "../../config";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 import "./style.less";
-const commaNumber = require("comma-number");
 
 interface IProps {
     symbol: string;
@@ -34,7 +33,6 @@ function calcExchangeRate(props) {
     const calculated = exchange.map((fiat) => {
         fiat.rate = _.round(props.cryptos[props.symbol].quotes.USD.price * props.forex[fiat.symbol], 2);
         if (fiat.symbol === "IRR") { fiat.rate = _.round( fiat.rate, 0); }
-        fiat.rate = commaNumber(fiat.rate);
         return fiat;
     });
     return calculated;
@@ -66,7 +64,7 @@ class StockComponent extends React.Component<IProps, IState> {
             return (<div>Loading ...</div>);
         }
         const rates = this.state.exchangeRates.map( (rate) => {
-            return <div><span className="symbol">{rate.symbol}: </span><span className="rate"><Ex value={rate.rate} /></span></div>;
+            return <div key={rate.symbol}><span className="symbol">{rate.symbol}: </span><span className="rate"><Ex value={rate.rate} seperateThousand /></span></div>;
         } );
         return (
             <div className="stock" >
