@@ -74,8 +74,8 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                 AdminButton = <Tooltip placement="bottom" title={t.t("System Administration")}>
                     <Link to="/admin/dashboard"><Icon type="setting" /></Link>
                 </Tooltip>;
-                HeaderLogo = <Link to="/dashboard"><img className="user-dashboard-logo" src={logo} /></Link>;
             }
+            HeaderLogo = <Link to="/dashboard"><img className="user-dashboard-logo" src={logo} /></Link>;
             MenuItem = _.find(Menus, { path: "/" + this.props.path.split("/")[1]  });
         }
 
