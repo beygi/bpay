@@ -1,5 +1,25 @@
 @import "../../theme/application";
 
-.sessions
-{
+.sessions {
+    .ant-table {
+        background-color: darken(@palette-high,2%);
+        color: @palette-light;
+        border-color: lighten(@palette-high,2%);
+
+        .ant-table-row {
+            td {
+                border-color: lighten(@palette-high,10%);
+            }
+            &:hover {
+                color: @palette-high;
+            }
+        }
+
+        .ant-table-thead > tr > th {
+            background: transparent !important;
+            color: @palette-light;
+            font-weight: bold !important;
+            border-bottom: 1px solid lighten(@palette-high,20%) !important;
+        }
+    }
 }
