@@ -10,6 +10,7 @@ import DepositHistory from "../../components/DepositHistory";
 import Forex from "../../components/Forex";
 import Block from "../../components/Holder";
 import Live from "../../components/Live";
+import ActieveSessions from "../../components/Sessions";
 import Stock from "../../components/Stock";
 import Guide from "../../components/UserStatusGuide";
 import { setUser } from "../../redux/app/actions";
@@ -41,6 +42,9 @@ class DashboardContainer extends React.Component<IProps, IState> {
                     <Block collapse title="Live prices" icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
                         <Live />
                     </Block>
+                    <Block iconPosition="right" collapse title={t.t("Deposit history")} icon={<FontAwesomeIcon icon={["fas", "history"]} />}  >
+                        <DepositHistory />
+                    </Block>
                 </Col>
                 <Col md={18} >
                     <Row gutter={8}>
@@ -59,7 +63,6 @@ class DashboardContainer extends React.Component<IProps, IState> {
                                 <Stock symbol="XRP" />
                             </Block>
                         </Col>
-
                         <Col md={8} >
                             <Block title="IRR"  >
                                 <Forex symbol="IRR" />
@@ -81,16 +84,21 @@ class DashboardContainer extends React.Component<IProps, IState> {
                     </Block>
                     <Row gutter={8}>
                         <Col md={12} >
-                            <Block iconPosition="right" collapse title={t.t("Deposit history")} icon={<FontAwesomeIcon icon={["fas", "history"]} />}  >
-                                <DepositHistory />
+                            <Block>
+                                <ChangePassword />
                             </Block>
                         </Col>
                         <Col md={12} >
                             <Block>
-                                <ChangePassword />
+                                    Google Authenticator
+                            </Block>
+                        </Col>
+                        <Col md={24} >
+                            <Block title={t.t("Action Sessions")} icon={<FontAwesomeIcon icon={["fas", "user-clock"]} />}  >
+                                <ActieveSessions />
                             </Block>
                             <Block>
-                                <img src="https://dummyimage.com/1000x800/4c4649/3ee6e0.png" alt="" />
+                                <img src="https://dummyimage.com/1000x200/4c4649/3ee6e0.png" alt="" />
                             </Block>
                         </Col>
                     </Row>
