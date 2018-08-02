@@ -62,18 +62,6 @@ class DespositHistoryComponent extends React.Component<IProps, IState> {
                     validation : 4,
                     date: "Mon Jul 23 09:43:16",
                 },
-                {
-                    value : 1.5,
-                    coin : "BTC",
-                    validation : 1,
-                    date: "Mon Jul 23 09:43:16",
-                },
-                {
-                    value : 0.01,
-                    coin : "BTC",
-                    validation : 5,
-                    date: "Mon Jul 23 09:43:16",
-                },
             ],
         };
 
