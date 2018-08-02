@@ -4,6 +4,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Balance from "../../components/Balance";
+import ChangePassword from "../../components/ChangePassword";
 import Profile from "../../components/DashboardHeaderProfile";
 import DepositHistory from "../../components/DepositHistory";
 import Forex from "../../components/Forex";
@@ -72,6 +73,9 @@ class DashboardContainer extends React.Component<IProps, IState> {
                             </Block>
                         </Col>
                         <Col md={12} >
+                            <Block>
+                                    <ChangePassword />
+                            </Block>
                             <Block>
                                 <img src="https://dummyimage.com/1000x800/4c4649/3ee6e0.png" alt="" />
                             </Block>
