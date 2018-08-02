@@ -8,6 +8,7 @@ import ChangePassword from "../../components/ChangePassword";
 import Profile from "../../components/DashboardHeaderProfile";
 import DepositHistory from "../../components/DepositHistory";
 import Forex from "../../components/Forex";
+import GoogleAuth from "../../components/GoogleAuth";
 import Block from "../../components/Holder";
 import Live from "../../components/Live";
 import ActieveSessions from "../../components/Sessions";
@@ -90,7 +91,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
                         </Col>
                         <Col md={12} >
                             <Block>
-                                    Google Authenticator
+                                    <GoogleAuth />
                             </Block>
                         </Col>
                         <Col md={24} >
