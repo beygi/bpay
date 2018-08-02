@@ -32,17 +32,14 @@ class DashboardContainer extends React.Component<IProps, IState> {
         return (
             <Row gutter={8}>
                 <Col md={6} >
-                    <Block title="IRR"  >
-                        <Forex symbol="IRR" />
-                    </Block>
                     <Block className="user-balance" collapse title="Your balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
                         <Balance />
                         <Link to="/deposit">
                             <Button className="action" type="primary" size="small">Deposit</Button>
                         </Link>
                     </Block>
-                    <Block iconPosition="right" collapse title={t.t("Deposit history")} icon={<FontAwesomeIcon icon={["fas", "history"]} />}  >
-                        <DepositHistory />
+                    <Block collapse title="Live prices" icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
+                        <Live />
                     </Block>
                 </Col>
                 <Col md={18} >
@@ -62,19 +59,35 @@ class DashboardContainer extends React.Component<IProps, IState> {
                                 <Stock symbol="XRP" />
                             </Block>
                         </Col>
+
+                        <Col md={8} >
+                            <Block title="IRR"  >
+                                <Forex symbol="IRR" />
+                            </Block>
+                        </Col>
+                        <Col md={8} >
+                            <Block title="EUR"  >
+                                <Forex symbol="EUR" />
+                            </Block>
+                        </Col>
+                        <Col md={8} >
+                            <Block title="USD"  >
+                                <Forex symbol="USD" />
+                            </Block>
+                        </Col>
                     </Row>
                     <Block>
                         <Guide />
                     </Block>
                     <Row gutter={8}>
                         <Col md={12} >
-                            <Block collapse title="Live prices" icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
-                                <Live />
+                            <Block iconPosition="right" collapse title={t.t("Deposit history")} icon={<FontAwesomeIcon icon={["fas", "history"]} />}  >
+                                <DepositHistory />
                             </Block>
                         </Col>
                         <Col md={12} >
                             <Block>
-                                    <ChangePassword />
+                                <ChangePassword />
                             </Block>
                             <Block>
                                 <img src="https://dummyimage.com/1000x800/4c4649/3ee6e0.png" alt="" />

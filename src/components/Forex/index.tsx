@@ -21,17 +21,18 @@ interface IState {
 function calcExchangeRate(props) {
     // calcucalte exchange rate from store
     const exchange = [
-        { symbol: "EUR", rate: 0 },
-        { symbol: "USD", rate: 0 },
+        { symbol: "EUR", rate: 0 , round : 2},
+        { symbol: "USD", rate: 0 , round : 2},
+        { symbol: "IRR", rate: 0 , round : 7},
     ];
     if (!props.forex) {
         return exchange;
     }
     // calc exchange rate
     const calculated = exchange.map((fiat) => {
-        fiat.rate = _.round((props.forex[props.symbol] * (1 / props.forex[fiat.symbol] )), 2);
+            fiat.rate = _.round((props.forex[props.symbol] * (1 / props.forex[fiat.symbol] )), fiat.round);
         // if (fiat.symbol === "IRR") { fiat.rate = _.round( fiat.rate, 0); }
-        return fiat;
+            return fiat;
     });
     return calculated;
 }
@@ -62,7 +63,10 @@ class ForexComponent extends React.Component<IProps, IState> {
             return (<div>Loading ...</div>);
         }
         const rates = this.state.exchangeRates.map( (rate) => {
-            return <div key={rate.symbol}><span className="symbol">{rate.symbol}: </span><span className="rate"><Ex value={rate.rate} seperateThousand /></span></div>;
+            if (rate.symbol !== this.props.symbol) {
+            return <div key={rate.symbol}><span className="symbol">{rate.symbol}: </span><span className="rate"><Ex value={rate.rate} fixFloatNum={rate.round} seperateThousand /></span></div>;
+            }
+            return null;
         } );
         return (
             <div className="stock" >
