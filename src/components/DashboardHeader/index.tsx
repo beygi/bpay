@@ -85,7 +85,7 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                     <Icon type={MenuItem.icon} />{MenuItem.text}
                 </div>
                 <div className="header-icons">
-                    <Popover placement="bottom" title={t.t("Account information")} content={<HeaderProfile></HeaderProfile>} trigger="click">
+                    <Popover placement="bottom" title={t.t("Account information")} content={<HeaderProfile />} trigger="click">
                         <Gravatar email={this.props.userEmail} default="monsterid"
                             size={60} className={"ProfilePic"} />
                     </Popover>

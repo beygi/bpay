@@ -45,7 +45,7 @@ class DashboardHeaderProfileComponent extends React.Component<IProps, IState> {
                 <div className="line">
 
                     <Button type="primary" href={`${config.keycloakConfig.url}/realms/master/account/password`}>{t.t("Change Password")}</Button>
-                    <Button type="primary" className="logout">{t.t("Logout")}</Button>
+                    <Button onClick={this.logOut} type="primary" className="logout">{t.t("Logout")}</Button>
 
                 </div>
 
