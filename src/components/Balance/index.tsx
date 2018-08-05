@@ -77,7 +77,7 @@ class BalanceComponent extends React.Component<IProps, IState> {
     public render() {
         const coins = Object.keys(this.state.balance).map((key) =>
             <div className="coin-balance" key={key}>
-                <FontAwesomeIcon className="balance-icon" icon={config.icons[key]} />
+                <span  className = "balance-icon" > {config.icons[key]}</span >
                 <p className="balance-name">{this.state.balance[key].name}</p>
                 <p className="balance-number">{this.state.balance[key].balance.available || 0}</p>
             </div>,

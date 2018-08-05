@@ -63,7 +63,7 @@ class DepositComponent extends React.Component<IProps, IState> {
                 {name: t.t("In order"), value : this.props.balance[this.props.selectedDepositCurrency].balance.inOrder || 0 },
                 {name: t.t("Available"), value : this.props.balance[this.props.selectedDepositCurrency].balance.available || 0},
             ];
-            const CurrencydropDownIcon = <FontAwesomeIcon icon={config.icons[this.props.selectedDepositCurrency]} />;
+            const CurrencydropDownIcon = config.icons[this.props.selectedDepositCurrency] ;
             dropDownName = <div> {CurrencydropDownIcon} {config.currencies[this.props.selectedDepositCurrency].name}</div>;
             DepositOrDescription = <div>
                 <h3>your {this.props.selectedDepositCurrency} balance:</h3>
@@ -118,13 +118,14 @@ class DepositComponent extends React.Component<IProps, IState> {
         const coins = Object.keys(config.currencies).map((key) =>
             <Link replace={true} to={`/deposit/${key}`} key={key}>
                 <h2>
-                    <FontAwesomeIcon className="balance-icon" icon={config.icons[key]} />
+                    <span className="balance-icon">{config.icons[key]}</span>
                     <span className="balance-name">{config.currencies[key].name}</span>
                 </h2>
             </Link>,
         );
         if (this.props.selectedDepositCurrency) {
-            return (<div><Block className="deposit-coin-select" centerTitle={true} title={dropDownName} icon={<Link replace={true} to={`/deposit/`} >{dropDownIcon}</Link>} >
+            return (<div><Block noTitleMargin
+                className="deposit-coin-select" centerTitle={true} title={dropDownName} icon={<Link replace={true} to={`/deposit/`} >{dropDownIcon}</Link>} >
             </Block>
                 {DepositOrDescription}
             </div>
@@ -132,7 +133,7 @@ class DepositComponent extends React.Component<IProps, IState> {
         }
         return (
             <div>
-                <Block showArrow={false} className="deposit-coin-select" collapseClosed={collapseClosed} collapse centerTitle={true} title={dropDownName} icon={dropDownIcon} iconPosition="left" >
+                <Block  showArrow={false}   className="deposit-coin-select" collapseClosed={collapseClosed} collapse centerTitle={true} title={dropDownName} icon={dropDownIcon} iconPosition="left" >
                     {coins}
                 </Block>
                 {DepositOrDescription}

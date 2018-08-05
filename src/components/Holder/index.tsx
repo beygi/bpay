@@ -16,6 +16,7 @@ interface IProps {
     transparent?: boolean;
     showArrow?: boolean;
     centerTitle?: boolean;
+    noTitleMargin?: boolean;
 }
 
 interface IState {
@@ -42,6 +43,11 @@ class BlockComponent extends React.Component<IProps, IState> {
             cssClass += " no-padding";
         }
 
+        let titleCssClass = "";
+        if (this.props.noTitleMargin) {
+            titleCssClass += " no-title-margin";
+        }
+
         if (this.props.collapse) {
             title = <div className="block-title-collapse">{icon} {this.props.title || <span>&nbsp;</span>}</div>;
             return (
@@ -55,7 +61,7 @@ class BlockComponent extends React.Component<IProps, IState> {
             );
         }
 
-        title = (this.props.title) ? <div className="block-title">{icon}<span className={centerTitle}>{this.props.title}</span></div> : null;
+        title = (this.props.title) ? <div className={`block-title${titleCssClass}`}>{icon}<span className={centerTitle}>{this.props.title}</span></div> : null;
         return (
         <div className={cssClass} >
                     {title}

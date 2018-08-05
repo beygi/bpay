@@ -80,6 +80,14 @@ export default class Seeder {
                     total: 30,
                 },
             },
+            LTC: {
+                name: "Litecoin",
+                balance: {
+                    available: 160,
+                    inOrder: 140,
+                    total: 300,
+                },
+            },
         };
         store.dispatch(updateUserBalance(balanceData));
     }

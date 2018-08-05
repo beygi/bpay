@@ -93,9 +93,7 @@ class DespositHistoryComponent extends React.Component<IProps, IState> {
                     itemLayout="horizontal"
                     dataSource={this.state.history}
                     renderItem={(item) => {
-                        const title = <span><FontAwesomeIcon className="balance-icon" icon={config.icons[item.coin]} />
-                        &nbsp;&nbsp; {item.value}
-                    </span>;
+                        const title = <span>{config.icons[item.coin]}&nbsp;{item.value}</span> ;
                         const percent = item.validation * 20;
                         const percentText = (item.validation === 5) ? "Done" :  ` ${item.validation} / 5`;
 
