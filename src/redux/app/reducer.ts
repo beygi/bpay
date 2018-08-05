@@ -6,6 +6,7 @@ import { IAppStoreState } from "./store";
 const initialState: IAppStoreState = {
     market: null,
     user: null,
+    office: null,
 };
 
 export default handleActions<IAppStoreState, any>({
@@ -39,6 +40,7 @@ export default handleActions<IAppStoreState, any>({
             ...state,
             market: null,
             user: null,
+            office: null,
         };
     },
 
