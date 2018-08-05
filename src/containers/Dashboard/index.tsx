@@ -99,7 +99,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
                                 <ActieveSessions />
                             </Block>
                             <Block>
-                                <img src="https://dummyimage.com/1000x160/4c4649/3ee6e0.png" alt="" />
+                                <img src="https://dummyimage.com/1000x100/4c4649/3ee6e0.png" alt="" />
                             </Block>
                         </Col>
                     </Row>
