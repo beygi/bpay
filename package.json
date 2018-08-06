@@ -26,6 +26,8 @@
     "check-types": "^7.3.0",
     "comma-number": "^2.0.0",
     "copy-webpack-plugin": "^4.5.2",
+    "echarts": "^4.1.0",
+    "echarts-for-react": "^2.0.13",
     "eslint": "^4.17.0",
     "file-loader": "^1.1.11",
     "handlebars": "^4.0.11",
