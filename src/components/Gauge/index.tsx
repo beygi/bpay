@@ -1,4 +1,5 @@
 // import the core library.
+import { Button } from "antd";
 import ReactEcharts from "echarts-for-react";
 import * as _ from "lodash";
 import * as React from "react";
@@ -19,7 +20,7 @@ class GaugeComponent extends React.Component<IProps, IState> {
             options: {
                 series: [
                     {
-                        name: "BTC / ETH",
+                        name: "BTC > ETH",
                         type: "gauge",
                         z: 4,
                         min: 90,
@@ -68,7 +69,7 @@ class GaugeComponent extends React.Component<IProps, IState> {
                         pointer: {
                             width: 5,
                         },
-                        data: [{ value: 100, name: "BTC / ETH" }],
+                        data: [{ value: _.random(98, 102), name: "BTC > ETH" }],
                     },
                 ],
             },
@@ -87,11 +88,14 @@ class GaugeComponent extends React.Component<IProps, IState> {
     public render() {
         console.log("render");
         return (
+            <div className="gauge">
             <ReactEcharts
                 style={{ height: 170 }}
                 option={this.state.options}
                 opts={{renderer: "svg"}}
             />
+            <Button  size="small" className="neat-btn" type="primary">Exchange</Button>
+            </div>
         );
     }
 }
