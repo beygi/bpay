@@ -6,6 +6,7 @@ import * as React from "react";
 import "./style.less";
 
 interface IProps {
+    to: string;
 }
 
 interface IState {
@@ -20,7 +21,7 @@ class GaugeComponent extends React.Component<IProps, IState> {
             options: {
                 series: [
                     {
-                        name: "BTC > ETH",
+                        name:  this.props.to,
                         type: "gauge",
                         z: 4,
                         min: 90,
@@ -56,20 +57,20 @@ class GaugeComponent extends React.Component<IProps, IState> {
                             fontWeight: "bolder",
                             fontSize: 15,
                             offsetCenter: [0, "100%"],
-                            color : "white",
+                            color: "white",
                         },
                         detail: {
                             // 其余属性默认使用全局文本样式，详见TEXTSTYLE
                             formatter: (value) => {
-                                return  `%${value.toFixed(2)}`;
+                                return `%${value.toFixed(2)}`;
                             },
-                             fontSize: 15,
-                             offsetCenter: [0, "80%"],
+                            fontSize: 15,
+                            offsetCenter: [0, "80%"],
                         },
                         pointer: {
                             width: 5,
                         },
-                        data: [{ value: _.random(98, 102), name: "BTC > ETH" }],
+                        data: [{ value: _.random(98, 102), name: this.props.to }],
                     },
                 ],
             },
@@ -89,12 +90,12 @@ class GaugeComponent extends React.Component<IProps, IState> {
         console.log("render");
         return (
             <div className="gauge">
-            <ReactEcharts
-                style={{ height: 170 }}
-                option={this.state.options}
-                opts={{renderer: "svg"}}
-            />
-            <Button  size="small" className="neat-btn" type="primary">Exchange</Button>
+                <ReactEcharts
+                    style={{ height: 170 }}
+                    option={this.state.options}
+                    opts={{ renderer: "svg" }}
+                />
+                <Button size="small" className="neat-btn" type="primary">Exchange</Button>
             </div>
         );
     }

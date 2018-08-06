@@ -7,6 +7,7 @@ import Profile from "../../../components/DashboardHeaderProfile";
 import Gauge from "../../../components/Gauge";
 import Block from "../../../components/Holder";
 import Guide from "../../../components/UserStatusGuide";
+import config from "../../../config";
 import { setUser } from "../../../redux/app/actions";
 import { IRootState } from "../../../redux/reducers";
 import t from "../../../services/trans/i18n";
@@ -27,105 +28,37 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
         return (
             <Row gutter={8}>
                 <Col md={6} >
-                    <Block>
-                        <img src="https://dummyimage.com/600x400/4c4649/3ee6e0.png" alt="" />
+                    <Block title={t.t("Hot storage")} icon={<FontAwesomeIcon className="hot-storage" icon={["fab", "gripfire"]} />} >
+                        <Balance />
                     </Block>
-                    <Block collapse>
-                        <img src="https://dummyimage.com/600x600/4c4649/3ee6e0.png" alt="" />
+                    <Block title={t.t("Cold storage")} icon={<FontAwesomeIcon className="cold-storage" icon={["fas", "snowflake"]} />} >
+                        <Balance />
+                    </Block>
+                    <Block title={t.t("Tax Cash Desk")} icon={<FontAwesomeIcon icon={["fas", "box"]} />} >
+                        <Balance />
+                    </Block>
+                    <Block title={t.t("Fee Cash Desk")} icon={<FontAwesomeIcon icon={["fas", "box"]} />}  >
+                        <Balance />
                     </Block>
                 </Col>
                 <Col md={18} >
                     <Row gutter={8}>
                         <Col md={24}>
                             <Block>
-                            <Row gutter={8}>
-                                <Col md={6}>
+                                <Row gutter={8}>
+                                    <Col md={6}>
                                         BTC
                                 </Col>
-                                <Col md={6}>
-                                        <Gauge />
-                                </Col>
-                                <Col md={6}>
-                                        <Gauge />
-                                </Col>
-                                <Col md={6}>
-                                        <Gauge />
-                                </Col>
-                            </Row>
-                            </Block>
-                        </Col>
-                        <Col md={24}>
-                            <Block>
-                            <Row gutter={8}>
-                                <Col md={6}>
-                                        ETH
-                                </Col>
-                                <Col md={6}>
-                                        <Gauge />
-                                </Col>
-                                <Col md={6}>
-                                        <Gauge />
-                                </Col>
-                                <Col md={6}>
-                                        <Gauge />
-                                </Col>
-                            </Row>
-                            </Block>
-                        </Col>
-                        <Col md={24}>
-                            <Block>
-                            <Row gutter={8}>
-                                <Col md={6}>
-                                        LTC
-                                </Col>
-                                <Col md={6}>
-                                        <Gauge />
-                                </Col>
-                                <Col md={6}>
-                                        <Gauge />
-                                </Col>
-                                <Col md={6}>
-                                        <Gauge />
-                                </Col>
-                            </Row>
-                            </Block>
-                        </Col>
-                        <Col md={24}>
-                            <Block>
-                            <Row gutter={8}>
-                                <Col md={6}>
-                                        USD
-                                </Col>
-                                <Col md={6}>
-                                        <Gauge />
-                                </Col>
-                                <Col md={6}>
-                                        <Gauge />
-                                </Col>
-                                <Col md={6}>
-                                        <Gauge />
-                                </Col>
-                            </Row>
-                            </Block>
-                        </Col>
-                        <Col md={6} >
-                            <Block title={t.t("Hot storage")} icon={<FontAwesomeIcon className="hot-storage" icon={["fab", "gripfire"]} />} iconPosition="right">
-                                <Balance />
-                            </Block>
-                        </Col>
-                        <Col md={6} >
-                            <Block title={t.t("Cold storage")} icon={<FontAwesomeIcon className="cold-storage" icon={["fas", "snowflake"]} />} iconPosition="right">
-                                <Balance />
-                            </Block>
-                        </Col>
-                        <Col md={6} >
-                            <Block title={t.t("Tax Cash Desk")} icon={<FontAwesomeIcon icon={["fas", "box"]} />} iconPosition="right">
-                                <Balance />
-                            </Block>
-                        </Col>
-                        <Col md={6} >
-                            <Block title={t.t("Fee Cash Desk")} icon={<FontAwesomeIcon icon={["fas", "box"]} />} iconPosition="right" >
-                                <Balance />
+                                    <Col md={6}>
+                                        <Gauge to={config.currencies.ETH.name}  />
+                                    </Col>
+                                    <Col md={6}>
+                                        <Gauge to={config.currencies.LTC.name} />
+                                    </Col>
+                                    <Col md={6}>
+                                        <Gauge to={config.currencies.USD.name}  />
+                                    </Col>
+                                </Row>
                             </Block>
                         </Col>
                     </Row>
