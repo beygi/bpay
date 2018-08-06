@@ -4,6 +4,9 @@ import config from "../../../src/config";
 import { updateUser } from "../../redux/app/actions";
 import { updateMarketCryptos, updateMarketForex, updateUserBalance } from "../../redux/app/actions";
 import { store } from "../../redux/store";
+import USER from "../user";
+
+const user = USER.getInstance();
 
 export default class Seeder {
 
@@ -15,6 +18,7 @@ export default class Seeder {
         this.setBalance();
         this.setMarket();
         this.setForex();
+        this.setOffice();
         setInterval(() => { this.setMarket(); }, 10000);
         setInterval(() => { this.setForex(); }, 60000);
     }
@@ -90,6 +94,25 @@ export default class Seeder {
             },
         };
         store.dispatch(updateUserBalance(balanceData));
+    }
+
+    public setOffice() {
+        // fill state with back-office sample data
+
+        // check for user permission
+        if (user.permission("admin").adminView) {
+            // lets seed
+            // we need 4 cashDesk for every currency that we have
+            const cashDesks = [
+                {}, {}, {}, {},
+                {}, {}, {}, {},
+                {}, {}, {}, {},
+                {}, {}, {}, {},
+            ];
+        }
+        if (store.getState().app.office) {
+            // test
+        }
     }
 
 }
