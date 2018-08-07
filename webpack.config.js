@@ -11,6 +11,7 @@ const sourcePath = path.join(__dirname, "./src");
 const outPath = path.join(__dirname, "./dist");
 
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+var HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 
 // set env
@@ -163,7 +164,8 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
                     { from: sourcePath+'/assets/images/SVG/*.svg', to: outPath+"/images/svg/" , flatten : true }
-                ])
+                ]),
+	new HardSourceWebpackPlugin(),
         ],
     resolve: {
         extensions: [".js", ".ts", ".tsx"],
