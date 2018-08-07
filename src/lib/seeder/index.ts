@@ -11,6 +11,7 @@ const user = USER.getInstance();
 interface IcashDesk {
     symbol: string;
     value: number;
+    goalValue?: number;
     type: string;
 }
 export default class Seeder {
@@ -112,18 +113,37 @@ export default class Seeder {
 
     public generateCashDesks(symbol) {
         const owes = {};
+        let symbolRatetoUsd = 0;
+        if (config.currencies[symbol].type === "fiat") {
+            symbolRatetoUsd = _.get(store.getState(), `app.market.forex.${symbol}`, 0);
+        }
+        if (config.currencies[symbol].type === "crypto") {
+            symbolRatetoUsd = _.get(store.getState(), `app.market.cryptos.${symbol}.quotes.USD.price`, 0);
+        }
         let total: number = 0;
         // generate owe cashDesks
         Object.keys(config.currencies).map((currency) => {
             if (currency !== symbol) {
                 const cashDesk = {} as IcashDesk;
-
+                let currencyRatetoUsd = 0;
+                if (config.currencies[currency].type === "fiat") {
+                    currencyRatetoUsd = _.get(store.getState(), `app.market.forex.${currency}`, 0);
+                }
+                if (config.currencies[currency].type === "crypto") {
+                    currencyRatetoUsd = _.get(store.getState(), `app.market.cryptos.${currency}.quotes.USD.price`, 0);
+                }
                 // if value is exist in store, use it
-                let value = _.get(store.getState(), `app.office.cashDesks[${symbol}][` + "CSD_" + currency + "].value", _.random(50, 100));
+                let value = _.get(store.getState(), `app.office.cashDesks.${symbol}.CSD_${currency}.value`, _.random(50, 100));
                 value = _.random(value * 0.99999, value * 1.00002);
+
+                // assume goal value as equal as value in current exchange rate
+                let goalValue = (value * symbolRatetoUsd) / (1 / currencyRatetoUsd);
+                goalValue = _.random(goalValue * 0.9999, goalValue * 1.0001);
+
                 cashDesk.symbol = symbol;
                 cashDesk.type = `CSD_${currency}`;
                 cashDesk.value = value;
+                cashDesk.goalValue = goalValue;
                 total += cashDesk.value;
                 owes[cashDesk.type] = cashDesk;
             }

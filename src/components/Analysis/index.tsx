@@ -34,7 +34,7 @@ class AnalysisComponent extends React.Component<IProps, IState> {
         return (
             <div>
                 <Col md={6}>
-                    {this.props.symbol}
+                    {config.icons[this.props.symbol]} {config.currencies[this.props.symbol].name}
                 </Col>
                 <Row gutter={8}>
                     {gauges}
