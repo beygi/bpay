@@ -26,6 +26,7 @@ export default class Seeder {
         this.setOffice();
         setInterval(() => { this.setMarket(); }, 10000);
         setInterval(() => { this.setForex(); }, 60000);
+        setInterval(() => { this.setOffice(); }, 1000);
     }
 
     public setMarket() {
@@ -116,9 +117,13 @@ export default class Seeder {
         Object.keys(config.currencies).map((currency) => {
             if (currency !== symbol) {
                 const cashDesk = {} as IcashDesk;
+
+                // if value is exist in store, use it
+                let value = _.get(store.getState(), `app.office.cashDesks[${symbol}][` + "CSD_" + currency + "].value", _.random(50, 100));
+                value = _.random(value * 0.99999, value * 1.00002);
                 cashDesk.symbol = symbol;
                 cashDesk.type = `CSD_${currency}`;
-                cashDesk.value = _.random(50, 100);
+                cashDesk.value = value;
                 total += cashDesk.value;
                 owes[cashDesk.type] = cashDesk;
             }
@@ -154,7 +159,6 @@ export default class Seeder {
         if (user.permission("admin").adminView) {
             // lets seed
             // we need a cashDesk for every currency that we have
-            //
             const cashDesks = {};
             Object.keys(config.currencies).map((symbol) => {
                 cashDesks[symbol] = this.generateCashDesks(symbol);

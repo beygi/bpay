@@ -52,9 +52,6 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
                             {AnalysisBlocks}
                         </Col>
                     </Row>
-                    <Block>
-                        <img src="https://dummyimage.com/1000x300/4c4649/3ee6e0.png" alt="" />
-                    </Block>
                 </Col>
             </Row>
         );
