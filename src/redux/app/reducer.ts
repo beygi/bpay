@@ -58,4 +58,11 @@ export default handleActions<IAppStoreState, any>({
         };
     },
 
+    [Actions.UPDATE_OFFICE_CASHDESKS]: (state, action: IAction<any>) => {
+        return {
+            ...state,
+            office: { ...state.office, cashDesks: action.payload },
+        };
+    },
+
 }, initialState);

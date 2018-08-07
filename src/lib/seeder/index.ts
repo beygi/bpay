@@ -2,7 +2,7 @@ import axios from "axios";
 import * as _ from "lodash";
 import config from "../../../src/config";
 import { updateUser } from "../../redux/app/actions";
-import { updateMarketCryptos, updateMarketForex, updateUserBalance } from "../../redux/app/actions";
+import { updateMarketCryptos, updateMarketForex, updateOfficeCashDesks, updateUserBalance } from "../../redux/app/actions";
 import { store } from "../../redux/store";
 import USER from "../user";
 
@@ -110,7 +110,7 @@ export default class Seeder {
     }
 
     public generateCashDesks(symbol) {
-        const owes = [];
+        const owes = {};
         let total: number = 0;
         // generate owe cashDesks
         Object.keys(config.currencies).map((currency) => {
@@ -120,7 +120,7 @@ export default class Seeder {
                 cashDesk.type = `CSD_${currency}`;
                 cashDesk.value = _.random(50, 100);
                 total += cashDesk.value;
-                owes.push(cashDesk);
+                owes[cashDesk.type] = cashDesk;
             }
         });
 
@@ -128,20 +128,21 @@ export default class Seeder {
         const Hot = {} as IcashDesk;
         const Cold = {} as IcashDesk;
         const Master = {} as IcashDesk;
+
         Hot.symbol = symbol;
         Hot.type = "CSD_HOT";
         Hot.value = 0.2 * total;
-        owes.push(Hot);
+        owes[Hot.type] = Hot;
 
         Cold.symbol = symbol;
         Cold.type = "CSD_COLD";
         Cold.value = 1.8 * total;
-        owes.push(Cold);
+        owes[Cold.type] = Cold;
 
         Master.symbol = symbol;
         Master.type = "CSD_MASTER";
         Master.value = 2.1 * total;
-        owes.push(Master);
+        owes[Master.type] = Master;
 
         return owes;
     }
@@ -154,11 +155,11 @@ export default class Seeder {
             // lets seed
             // we need a cashDesk for every currency that we have
             //
-            let cashDesks = [];
+            const cashDesks = {};
             Object.keys(config.currencies).map((symbol) => {
-                cashDesks = cashDesks.concat(this.generateCashDesks(symbol));
+                cashDesks[symbol] = this.generateCashDesks(symbol);
             });
-            console.log(cashDesks);
+            store.dispatch(updateOfficeCashDesks(cashDesks));
         }
 
         if (store.getState().app.office) {
