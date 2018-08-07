@@ -2,9 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Layout, Row } from "antd";
 import * as React from "react";
 import { connect } from "react-redux";
+import Analysis from "../../../components/Analysis";
 import Balance from "../../../components/Balance";
 import Profile from "../../../components/DashboardHeaderProfile";
-import Gauge from "../../../components/Gauge";
 import Block from "../../../components/Holder";
 import Guide from "../../../components/UserStatusGuide";
 import config from "../../../config";
@@ -25,6 +25,11 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
+        const AnalysisBlocks =  Object.keys(config.currencies).map((symbol) =>
+                    <Block>
+                        <Analysis symbol={symbol} />
+                    </Block>);
+
         return (
             <Row gutter={8}>
                 <Col md={6} >
@@ -44,22 +49,7 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
                 <Col md={18} >
                     <Row gutter={8}>
                         <Col md={24}>
-                            <Block>
-                                <Row gutter={8}>
-                                    <Col md={6}>
-                                        BTC
-                                </Col>
-                                    <Col md={6}>
-                                        <Gauge to={config.currencies.ETH.name}  />
-                                    </Col>
-                                    <Col md={6}>
-                                        <Gauge to={config.currencies.LTC.name} />
-                                    </Col>
-                                    <Col md={6}>
-                                        <Gauge to={config.currencies.USD.name}  />
-                                    </Col>
-                                </Row>
-                            </Block>
+                            {AnalysisBlocks}
                         </Col>
                     </Row>
                     <Block>
