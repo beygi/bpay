@@ -8,6 +8,11 @@ import USER from "../user";
 
 const user = USER.getInstance();
 
+interface IcashDesk {
+    symbol: string;
+    value: number;
+    type: string;
+}
 export default class Seeder {
 
     public constructor() {
@@ -104,20 +109,58 @@ export default class Seeder {
         store.dispatch(updateUserBalance(balanceData));
     }
 
+    public generateCashDesks(symbol) {
+        const owes = [];
+        let total: number = 0;
+        // generate owe cashDesks
+        Object.keys(config.currencies).map((currency) => {
+            if (currency !== symbol) {
+                const cashDesk = {} as IcashDesk;
+                cashDesk.symbol = symbol;
+                cashDesk.type = `CSD_${currency}`;
+                cashDesk.value = _.random(50, 100);
+                total += cashDesk.value;
+                owes.push(cashDesk);
+            }
+        });
+
+        // generate hot, cold and master CashDesks
+        const Hot = {} as IcashDesk;
+        const Cold = {} as IcashDesk;
+        const Master = {} as IcashDesk;
+        Hot.symbol = symbol;
+        Hot.type = "CSD_HOT";
+        Hot.value = 0.2 * total;
+        owes.push(Hot);
+
+        Cold.symbol = symbol;
+        Cold.type = "CSD_COLD";
+        Cold.value = 1.8 * total;
+        owes.push(Cold);
+
+        Master.symbol = symbol;
+        Master.type = "CSD_MASTER";
+        Master.value = 2.1 * total;
+        owes.push(Master);
+
+        return owes;
+    }
+
     public setOffice() {
         // fill state with back-office sample data
 
         // check for user permission
         if (user.permission("admin").adminView) {
             // lets seed
-            // we need 4 cashDesk for every currency that we have
-            const cashDesks = [
-                {}, {}, {}, {},
-                {}, {}, {}, {},
-                {}, {}, {}, {},
-                {}, {}, {}, {},
-            ];
+            // we need a cashDesk for every currency that we have
+            //
+            let cashDesks = [];
+            Object.keys(config.currencies).map((symbol) => {
+                cashDesks = cashDesks.concat(this.generateCashDesks(symbol));
+            });
+            console.log(cashDesks);
         }
+
         if (store.getState().app.office) {
             // test
         }
