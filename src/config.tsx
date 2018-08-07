@@ -31,6 +31,12 @@ const config = {
                 depositeWallet: "litecoin1weasrtasdf4rtsadfsdfsd4s54sddfdf",
                 confirmationNumber : 16,
         },
+        IRR: {
+            name: "IR Rial",
+            balance: 0,
+            depositeWallet: "asdxzasdfrwgsdfgsdfgsdfgdfsgsfdgdfg",
+            confirmationNumber : 10,
+        },
         USD: {
             name: "US dollar",
             balance: 0,
@@ -41,7 +47,8 @@ const config = {
     icons :
     {
         BTC :  <i className="cc BTC-alt"></i>,
-        USD : <i>$</i>,
+        USD : <span>$</span>,
+        IRR : <span>﷼</span>,
         ETH : <i className="cc ETH-alt"></i>,
         LTC : <i className="cc LTC-alt"></i>,
     },

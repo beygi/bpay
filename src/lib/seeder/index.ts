@@ -76,6 +76,14 @@ export default class Seeder {
                     total: 13,
                 },
             },
+            IRR: {
+                name: "IR Rial",
+                balance: {
+                    available: 1200,
+                    inOrder: 100,
+                    total: 1300,
+                },
+            },
             ETH: {
                 name: "Ethereum",
                 balance: {
