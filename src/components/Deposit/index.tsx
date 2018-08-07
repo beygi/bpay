@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Alert, Button, Input, List, message, Modal, notification , Tooltip} from "antd";
+import { Alert, Button, Input, List, message, Modal, notification, Tooltip } from "antd";
 import * as React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { connect } from "react-redux";
@@ -59,11 +59,11 @@ class DepositComponent extends React.Component<IProps, IState> {
         if (this.props.selectedDepositCurrency) {
             collapseClosed = true;
             const data = [
-                {name: t.t("Total") , value : this.props.balance[this.props.selectedDepositCurrency].balance.total || 0 },
-                {name: t.t("In order"), value : this.props.balance[this.props.selectedDepositCurrency].balance.inOrder || 0 },
-                {name: t.t("Available"), value : this.props.balance[this.props.selectedDepositCurrency].balance.available || 0},
+                { name: t.t("Total"), value: this.props.balance[this.props.selectedDepositCurrency].balance.total || 0 },
+                { name: t.t("In order"), value: this.props.balance[this.props.selectedDepositCurrency].balance.inOrder || 0 },
+                { name: t.t("Available"), value: this.props.balance[this.props.selectedDepositCurrency].balance.available || 0 },
             ];
-            const CurrencydropDownIcon = config.icons[this.props.selectedDepositCurrency] ;
+            const CurrencydropDownIcon = config.icons[this.props.selectedDepositCurrency];
             dropDownName = <div> {CurrencydropDownIcon} {config.currencies[this.props.selectedDepositCurrency].name}</div>;
             DepositOrDescription = <div>
                 <h3>your {this.props.selectedDepositCurrency} balance:</h3>
@@ -76,10 +76,10 @@ class DepositComponent extends React.Component<IProps, IState> {
                 <InputGroup className="wallet-group" compact>
                     <Input className="wallet" defaultValue={config.currencies[this.props.selectedDepositCurrency].depositeWallet} />
                     <CopyToClipboard text={config.currencies[this.props.selectedDepositCurrency].depositeWallet}
-                        onCopy={() => this.showCopiedMessage() }>
-                    <Tooltip placement="top" title="Copy wallet address to clipboard">
+                        onCopy={() => this.showCopiedMessage()}>
+                        <Tooltip placement="top" title="Copy wallet address to clipboard">
                             <Button className="copy neat-btn" type="primary"><FontAwesomeIcon icon={["fas", "copy"]} />  Copy</Button>
-                    </Tooltip>
+                        </Tooltip>
                     </CopyToClipboard>
                     <Tooltip placement="top" title="Display Qr code of wallet">
                         <Button onClick={() => this.setQrModalStatus(true)} className="show-qr neat-btn" type="primary"><FontAwesomeIcon icon={["fas", "qrcode"]} />  Qr code</Button>
@@ -94,7 +94,7 @@ class DepositComponent extends React.Component<IProps, IState> {
                     >
                         <p>
                             <img className="qr-img"
-                        src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${config.currencies[this.props.selectedDepositCurrency].depositeWallet}`} alt=""/>
+                                src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${config.currencies[this.props.selectedDepositCurrency].depositeWallet}`} alt="" />
                         </p>
                         <h3 className="modal-wallet">{config.currencies[this.props.selectedDepositCurrency].depositeWallet}</h3>
                     </Modal>
@@ -115,13 +115,16 @@ class DepositComponent extends React.Component<IProps, IState> {
                 />
             </div>;
         }
-        const coins = Object.keys(config.currencies).map((key) =>
-            <Link replace={true} to={`/deposit/${key}`} key={key}>
-                <h2>
-                    <span className="balance-icon">{config.icons[key]}</span>
-                    <span className="balance-name">{config.currencies[key].name}</span>
-                </h2>
-            </Link>,
+        const coins = Object.keys(config.currencies).map((key) => {
+            if (config.currencies[key].type !== "fiat") {
+                return (<Link replace={true} to={`/deposit/${key}`} key={key}>
+                    <h2>
+                        <span className="balance-icon">{config.icons[key]}</span>
+                        <span className="balance-name">{config.currencies[key].name}</span>
+                    </h2>
+                </Link>);
+            }
+        },
         );
         if (this.props.selectedDepositCurrency) {
             return (<div><Block noTitleMargin
@@ -133,7 +136,7 @@ class DepositComponent extends React.Component<IProps, IState> {
         }
         return (
             <div>
-                <Block  showArrow={false}   className="deposit-coin-select" collapseClosed={collapseClosed} collapse centerTitle={true} title={dropDownName} icon={dropDownIcon} iconPosition="left" >
+                <Block showArrow={false} className="deposit-coin-select" collapseClosed={collapseClosed} collapse centerTitle={true} title={dropDownName} icon={dropDownIcon} iconPosition="left" >
                     {coins}
                 </Block>
                 {DepositOrDescription}
@@ -143,14 +146,14 @@ class DepositComponent extends React.Component<IProps, IState> {
 }
 
 function mapStateToProps(state: IRootState) {
-    if ( state.app.user.balance !== undefined) {
+    if (state.app.user.balance !== undefined) {
         return {
             balance: state.app.user.balance,
         };
     }
     // there is no balance from redux, state must not be updated in getDerivedStateFromProps
     return {
-        balance :  null,
+        balance: null,
     };
 }
 
