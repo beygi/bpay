@@ -26,7 +26,7 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
 
     public render() {
         const AnalysisBlocks =  Object.keys(config.currencies).map((symbol) =>
-                    <Block>
+                    <Block key={symbol}>
                         <Analysis symbol={symbol} />
                     </Block>);
 

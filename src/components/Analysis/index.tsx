@@ -25,7 +25,7 @@ class AnalysisComponent extends React.Component<IProps, IState> {
         const gauges = Object.keys(config.currencies).map((symbol) => {
             if (symbol !== this.props.symbol) {
                 return (
-                <Col md={4}>
+                <Col md={4} key={symbol}>
                     <Gauge to={symbol} />
                 </Col>);
             }

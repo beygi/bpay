@@ -65,7 +65,7 @@ class GaugeComponent extends React.Component<IProps, IState> {
                                 return `%${value.toFixed(2)}`;
                             },
                             fontSize: 15,
-                            offsetCenter: [0, "80%"],
+                            offsetCenter: [0, "75%"],
                         },
                         pointer: {
                             width: 5,
@@ -87,7 +87,6 @@ class GaugeComponent extends React.Component<IProps, IState> {
     }
 
     public render() {
-        console.log("render");
         return (
             <div className="gauge">
                 <ReactEcharts
