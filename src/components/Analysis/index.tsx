@@ -90,7 +90,7 @@ class AnalysisComponent extends React.Component<IProps, IState> {
                     <h3>{config.icons[this.props.symbol]} {config.currencies[this.props.symbol].name}</h3>
                     <div className="user-balance">
                         {cashDesksRows}
-                        <Battery percent={totalPercent} to="test" />
+                        <Battery percent={totalPercent} title="" />
                     </div>
                 </Col>
                 <Row gutter={8}>
