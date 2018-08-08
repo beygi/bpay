@@ -6,6 +6,9 @@ export default class Tools {
     public static getUsdRate(symbol) {
         let symbolRatetoUsd = 0;
         if (config.currencies[symbol].type === "fiat") {
+            if (!_.get(store.getState(), `app.market.forex.${symbol}`, false)) {
+                return 0;
+            }
             symbolRatetoUsd = (1 / _.get(store.getState(), `app.market.forex.${symbol}`, 0));
         }
         if (config.currencies[symbol].type === "crypto") {
