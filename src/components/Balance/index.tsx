@@ -83,7 +83,7 @@ class BalanceComponent extends React.Component<IProps, IState> {
             </div>,
         );
         return(
-            <   div className= "user-balance" > {coins}</div >
+            <div className= "user-balance" > {coins}</div >
         );
     }
 }

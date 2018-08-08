@@ -149,10 +149,11 @@ export default class Seeder {
             }
         });
 
-        // generate hot, cold and master CashDesks
+        // generate hot, cold , master and owes CashDesks
         const Hot = {} as IcashDesk;
         const Cold = {} as IcashDesk;
         const Master = {} as IcashDesk;
+        const TotalOwes = {} as IcashDesk;
 
         Hot.symbol = symbol;
         Hot.type = "CSD_HOT";
@@ -168,6 +169,11 @@ export default class Seeder {
         Master.type = "CSD_MASTER";
         Master.value = 2.1 * total;
         owes[Master.type] = Master;
+
+        TotalOwes.symbol = symbol;
+        TotalOwes.type = "CSD_OWES";
+        TotalOwes.value = total;
+        owes[TotalOwes.type] = TotalOwes;
 
         return owes;
     }
