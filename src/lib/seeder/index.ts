@@ -4,6 +4,7 @@ import config from "../../../src/config";
 import { updateUser } from "../../redux/app/actions";
 import { updateMarketCryptos, updateMarketForex, updateOfficeCashDesks, updateUserBalance } from "../../redux/app/actions";
 import { store } from "../../redux/store";
+import tools from "../../services/tools";
 import USER from "../user";
 
 const user = USER.getInstance();
@@ -40,7 +41,7 @@ export default class Seeder {
                 const usdPrice = cryptos[response.data.data[currency].symbol].quotes.USD.price;
                 const btcPrice = cryptos[response.data.data[currency].symbol].quotes.BTC.price;
                 const multipler = _.random(0.9995, 1.0005);
-
+                // TODO : remove random multipler
                 cryptos[response.data.data[currency].symbol].quotes.USD.price = multipler * usdPrice;
                 if (response.data.data[currency].symbol !== "BTC") {
                     cryptos[response.data.data[currency].symbol].quotes.BTC.price = multipler * btcPrice;
@@ -113,32 +114,26 @@ export default class Seeder {
 
     public generateCashDesks(symbol) {
         const owes = {};
-        let symbolRatetoUsd = 0;
-        if (config.currencies[symbol].type === "fiat") {
-            symbolRatetoUsd = _.get(store.getState(), `app.market.forex.${symbol}`, 0);
-        }
-        if (config.currencies[symbol].type === "crypto") {
-            symbolRatetoUsd = _.get(store.getState(), `app.market.cryptos.${symbol}.quotes.USD.price`, 0);
-        }
+        const symbolRatetoUsd = tools.getUsdRate(symbol);
         let total: number = 0;
         // generate owe cashDesks
         Object.keys(config.currencies).map((currency) => {
             if (currency !== symbol) {
                 const cashDesk = {} as IcashDesk;
-                let currencyRatetoUsd = 0;
-                if (config.currencies[currency].type === "fiat") {
-                    currencyRatetoUsd = _.get(store.getState(), `app.market.forex.${currency}`, 0);
-                }
-                if (config.currencies[currency].type === "crypto") {
-                    currencyRatetoUsd = _.get(store.getState(), `app.market.cryptos.${currency}.quotes.USD.price`, 0);
-                }
+                const currencyRatetoUsd = tools.getUsdRate(currency);
                 // if value is exist in store, use it
                 let value = _.get(store.getState(), `app.office.cashDesks.${symbol}.CSD_${currency}.value`, _.random(50, 100));
-                value = _.random(value * 0.99999, value * 1.00002);
-
-                // assume goal value as equal as value in current exchange rate
-                let goalValue = (value * symbolRatetoUsd) / (1 / currencyRatetoUsd);
-                goalValue = _.random(goalValue * 0.9999, goalValue * 1.0001);
+                let goalValue = _.get(store.getState(), `app.office.cashDesks.${symbol}.CSD_${currency}.goalValue`, 0);
+                // grow values slowly
+                value = _.random(value * 0.999, value * 1.002);
+                if (goalValue) {
+                    goalValue = _.random(goalValue * 0.999, goalValue * 1.002);
+                } else {
+                    // assume goal value as equal as value in current exchange rate
+                    goalValue = (value * symbolRatetoUsd) / (currencyRatetoUsd);
+                    // add random salt to goal value
+                    goalValue = _.random(goalValue * 0.99, goalValue * 1.01);
+                }
 
                 cashDesk.symbol = symbol;
                 cashDesk.type = `CSD_${currency}`;
