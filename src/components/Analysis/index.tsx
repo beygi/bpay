@@ -3,6 +3,7 @@ import { Col, Row } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
+import Battery from "../../components/Battery";
 import Gauge from "../../components/Gauge";
 import config from "../../config";
 import { IRootState } from "../../redux/reducers";
@@ -89,6 +90,7 @@ class AnalysisComponent extends React.Component<IProps, IState> {
                     <h3>{config.icons[this.props.symbol]} {config.currencies[this.props.symbol].name}</h3>
                     <div className="user-balance">
                         {cashDesksRows}
+                        <Battery percent={totalPercent} to="test" />
                     </div>
                 </Col>
                 <Row gutter={8}>
