@@ -1,18 +1,20 @@
-import * as React from "react";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Row } from "antd";
 import * as _ from "lodash";
+import * as React from "react";
 import { connect } from "react-redux";
 import Gauge from "../../components/Gauge";
 import config from "../../config";
 import { IRootState } from "../../redux/reducers";
+import tools from "../../services/tools";
 import t from "../../services/trans/i18n";
 import "./style.less";
 
 interface IProps {
     symbol: string;
     cashDesks: any;
+    forex: any;
+    cryptos: any;
 }
 
 interface IState {
@@ -25,14 +27,29 @@ class AnalysisComponent extends React.Component<IProps, IState> {
     }
 
     public render() {
+        let symbolTotalValue = 0;
+        let goalTotalValue = 0;
         const gauges = Object.keys(config.currencies).map((symbol) => {
             if (symbol !== this.props.symbol) {
+                const symbolToUsd = tools.getUsdPrice(this.props.symbol, _.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.value`, 0)  );
+                const childToUsd =  tools.getUsdPrice(symbol, _.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.goalValue`, 0));
+
+                symbolTotalValue += symbolToUsd;
+                goalTotalValue += childToUsd;
+
+                const percent = (symbolToUsd / childToUsd ) * 100;
                 return (
                     <Col md={4} key={symbol}>
-                        <Gauge to={symbol} />
+                        {/* <div>{_.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.value`, 0)}</div>
+                        <div>{_.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.goalValue`, 0)}</div>
+                        <div>{symbolToUsd}</div>
+                        <div>{childToUsd}</div>
+                        <div>{percent}</div> */}
+                        <Gauge to={symbol} percent={percent} />
                     </Col>);
             }
         });
+        const totalPercent = (symbolTotalValue / goalTotalValue ) * 100;
 
         const cashDesks = [
             {
@@ -90,6 +107,8 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state: IRootState) {
     return {
         cashDesks: state.app.office.cashDesks || null,
+        forex: state.app.market.forex || null,
+        cryptos: state.app.market.cryptos || null,
     };
 }
 
