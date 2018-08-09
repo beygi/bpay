@@ -22,8 +22,8 @@ class BatteryComponent extends React.Component<IProps, IState> {
                 grid: {
                     top: 30,
                     bottom: 0,
-                    left: "10%",
-                    right: "10%",
+                    left: "5%",
+                    right: "5%",
                 },
                 tooltip: {
                     trigger: "axis",

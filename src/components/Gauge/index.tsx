@@ -74,7 +74,7 @@ class GaugeComponent extends React.Component<IProps, IState> {
                                 return `%${value.toFixed(2)}`;
                             },
                             fontSize: 10,
-                            offsetCenter: ["-90%", "-90%"],
+                            offsetCenter: ["-90%", "-85%"],
                         },
                         pointer: {
                             width: 5,
