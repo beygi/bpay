@@ -123,10 +123,10 @@ export default class Seeder {
                 const currencyRatetoUsd = tools.getUsdRate(currency);
                 // if value is exist in store, use it
                 let value = _.get(store.getState(), `app.office.cashDesks.${symbol}.CSD_${currency}.value`, _.random(50, 100));
-                let goalValue = _.get(store.getState(), `app.office.cashDesks.${symbol}.CSD_${currency}.goalValue`, 0);
+                let goalValue = _.get(store.getState(), `app.office.cashDesks.${symbol}.CSD_${currency}.goalValue`, false);
                 // grow values slowly
                 value = _.random(value * 0.999, value * 1.002);
-                if (goalValue) {
+                if (goalValue !== false) {
                     goalValue = _.random(goalValue * 0.999, goalValue * 1.002);
                 } else {
                     // assume goal value as equal as value in current exchange rate
