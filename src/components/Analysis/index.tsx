@@ -45,7 +45,7 @@ class AnalysisComponent extends React.Component<IProps, IState> {
                 }
 
                 return (
-                    <Col className="symbol-gauge" md={4} key={symbol}>
+                    <Col className="symbol-gauge" md={6} key={symbol}>
                         {/* <div>{_.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.value`, 0)}</div>
                         <div>{_.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.goalValue`, 0)}</div>
                         <div>{symbolToUsd}</div>
@@ -79,19 +79,19 @@ class AnalysisComponent extends React.Component<IProps, IState> {
                 value: _.get(this.props, `cashDesks.${this.props.symbol}.CSD_COLD.value`, 0).toFixed(2),
             },
             {
-                name: t.t("Owes"),
+                name: t.t("Promised owes"),
                 icon: <FontAwesomeIcon icon={["fas", "hand-holding"]} />,
                 value: _.get(this.props, `cashDesks.${this.props.symbol}.CSD_OWES.value`, 0).toFixed(2),
             },
             {
-                name: t.t("Current Owes"),
+                name: t.t("Current owes"),
                 icon: <FontAwesomeIcon icon={["fas", "hand-holding"]} />,
                 value: count.toFixed(2),
             },
             {
                 name: t.t("Balance"),
                 icon: <FontAwesomeIcon icon={["fas", "balance-scale"]} />,
-                value: <div> $<Rate value={diffInUsd} fixFloatNum={0} /></div>,
+                value: <div> $<Rate value={diffInUsd} fixFloatNum={0} seperateThousand /></div>,
             },
         ];
 
@@ -105,19 +105,23 @@ class AnalysisComponent extends React.Component<IProps, IState> {
         );
 
         return (
-            <div>
+            <Row gutter={8}>
                 <Col md={6}>
                     <h3>{config.icons[this.props.symbol]} {config.currencies[this.props.symbol].name}</h3>
                     <div className="user-balance">
                         {cashDesksRows}
                         <br />
-                        <Battery percent={totalPercent} title="" />
                     </div>
                 </Col>
-                <Row gutter={8}>
-                    {gauges}
-                </Row>
-            </div>
+                <Col md={18}>
+                    <Row gutter={8}>
+                        {gauges}
+                        <Col md={24}>
+                            <Battery percent={totalPercent} title="" />
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
         );
     }
 }

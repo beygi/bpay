@@ -29,7 +29,7 @@ class BatteryComponent extends React.Component<IProps, IState> {
                     type: "value",
                     min: 90,
                     max: 110,
-                    splitNumber: 5,
+                    splitNumber: 10,
                     axisLabel: {
                         formatter: "%{value}",
                         color: "#ffffff",
@@ -81,6 +81,7 @@ class BatteryComponent extends React.Component<IProps, IState> {
                                     {
                                         name: "",
                                         xAxis: 100,
+                                        itemStyle: { color: "#90EE90" },
                                     },
                                     {
                                         xAxis: 110,
