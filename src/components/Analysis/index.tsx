@@ -4,6 +4,7 @@ import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
 import Battery from "../../components/Battery";
+import Rate from "../../components/ExchangeValue";
 import Gauge from "../../components/Gauge";
 import config from "../../config";
 import { IRootState } from "../../redux/reducers";
@@ -54,28 +55,42 @@ class AnalysisComponent extends React.Component<IProps, IState> {
                     </Col>);
             }
         });
+
         const totalPercent = (symbolTotalValue / goalTotalValue ) * 100;
+
+        const count = goalTotalValue / tools.getUsdRate(this.props.symbol);
+        const diffInUsd = symbolTotalValue - goalTotalValue;
 
         const cashDesks = [
             {
                 name: t.t("Master"),
                 icon: <FontAwesomeIcon icon={["fas", "archive"]} />,
-                value: _.get(this.props, `cashDesks.${this.props.symbol}.CSD_MASTER.value`, 0),
+                value: _.get(this.props, `cashDesks.${this.props.symbol}.CSD_MASTER.value`, 0).toFixed(2),
             },
             {
                 name: t.t("Hot"),
                 icon: <FontAwesomeIcon className="hot-storage" icon={["fab", "gripfire"]} />,
-                value: _.get(this.props, `cashDesks.${this.props.symbol}.CSD_HOT.value`, 0),
+                value: _.get(this.props, `cashDesks.${this.props.symbol}.CSD_HOT.value`, 0).toFixed(2),
             },
             {
                 name: t.t("Cold"),
                 icon: <FontAwesomeIcon className="cold-storage" icon={["fas", "snowflake"]} />,
-                value: _.get(this.props, `cashDesks.${this.props.symbol}.CSD_COLD.value`, 0),
+                value: _.get(this.props, `cashDesks.${this.props.symbol}.CSD_COLD.value`, 0).toFixed(2),
             },
             {
                 name: t.t("Owes"),
                 icon: <FontAwesomeIcon icon={["fas", "hand-holding"]} />,
-                value: _.get(this.props, `cashDesks.${this.props.symbol}.CSD_OWES.value`, 0),
+                value: _.get(this.props, `cashDesks.${this.props.symbol}.CSD_OWES.value`, 0).toFixed(2),
+            },
+            {
+                name: t.t("Current Owes"),
+                icon: <FontAwesomeIcon icon={["fas", "hand-holding"]} />,
+                value: count.toFixed(2),
+            },
+            {
+                name: t.t("Balance"),
+                icon: <FontAwesomeIcon icon={["fas", "balance-scale"]} />,
+                value: <div> $<Rate value={diffInUsd} fixFloatNum={0} / ></div> ,
             },
         ];
 
@@ -84,7 +99,7 @@ class AnalysisComponent extends React.Component<IProps, IState> {
                 <span className="balance-icon" >
                     {desk.icon}</span >
                 <p className="balance-name">{desk.name}</p>
-                <p className="balance-number">{desk.value.toFixed(2) || 0}</p>
+                <p className="balance-number">{desk.value}</p>
             </div>,
         );
 
@@ -94,7 +109,8 @@ class AnalysisComponent extends React.Component<IProps, IState> {
                     <h3>{config.icons[this.props.symbol]} {config.currencies[this.props.symbol].name}</h3>
                     <div className="user-balance">
                         {cashDesksRows}
-                        <Battery percent={totalPercent} title="" />
+                        <br/>
+                        <Battery percent={totalPercent}  title=""/>
                     </div>
                 </Col>
                 <Row gutter={8}>
