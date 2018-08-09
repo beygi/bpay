@@ -98,7 +98,7 @@ class BatteryComponent extends React.Component<IProps, IState> {
         return (
         <div className="gauge">
             <ReactEcharts
-                style={{ height: 170 }}
+                style={{ height: 100 }}
                 option={options}
             />
         </div>
