@@ -19,10 +19,21 @@ class GaugeComponent extends React.Component<IProps, IState> {
         super(props);
         this.state = {
             options: {
+                grid: {
+                          top:    0,
+                          bottom: -50,
+                          left:   0,
+                          right:  0,
+                          show: false,
+                          backgroundColor : "#000000",
+                          height : "50%",
+                        },
                 series: [
                     {
                         name: this.props.to,
                         type: "gauge",
+                        startAngle: 180,
+                        endAngle: 0,
                         z: 4,
                         min: 90,
                         max: 110,
@@ -55,15 +66,15 @@ class GaugeComponent extends React.Component<IProps, IState> {
                         title: {
                             fontWeight: "bolder",
                             fontSize: 15,
-                            offsetCenter: [0, "100%"],
+                            offsetCenter: ["0%", "-25%"],
                             color: "white",
                         },
                         detail: {
                             formatter: (value) => {
                                 return `%${value.toFixed(2)}`;
                             },
-                            fontSize: 15,
-                            offsetCenter: [0, "75%"],
+                            fontSize: 10,
+                            offsetCenter: ["-90%", "-90%"],
                         },
                         pointer: {
                             width: 5,
@@ -81,7 +92,7 @@ class GaugeComponent extends React.Component<IProps, IState> {
         return (
             <div className="gauge">
                 <ReactEcharts
-                    style={{ height: 170 }}
+                    style={{ height: 150 }}
                     option={options}
                     opts={{ renderer: "svg" }}
                 />

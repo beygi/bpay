@@ -19,6 +19,12 @@ class BatteryComponent extends React.Component<IProps, IState> {
         super(props);
         this.state = {
             options: {
+                grid: {
+                    top: 30,
+                    bottom: 0,
+                    left: "10%",
+                    right: "10%",
+                },
                 tooltip: {
                     trigger: "axis",
                     axisPointer: {
@@ -49,7 +55,7 @@ class BatteryComponent extends React.Component<IProps, IState> {
                                 {
                                     name: "",
                                     xAxis: this.props.percent,
-                                    itemStyle: { color: "#000000" },
+                                    itemStyle: { color: "#0ac3ff" },
                                     label: {
                                         formatter: `%{c}`,
                                     },
@@ -102,7 +108,7 @@ class BatteryComponent extends React.Component<IProps, IState> {
         return (
             <div className="battery">
                 <ReactEcharts
-                    style={{ height: 100 }}
+                    style={{ height: 80 }}
                     option={options}
                 />
             </div>

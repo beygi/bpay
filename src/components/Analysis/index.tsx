@@ -33,15 +33,21 @@ class AnalysisComponent extends React.Component<IProps, IState> {
         let goalTotalValue = 0;
         const gauges = Object.keys(config.currencies).map((symbol) => {
             if (symbol !== this.props.symbol) {
-                const symbolToUsd = tools.getUsdPrice(this.props.symbol, _.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.value`, 0));
-                const childToUsd = tools.getUsdPrice(symbol, _.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.goalValue`, 0));
+                const symbolPromiesd = _.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.value`, 0);
+                const currenyPromised = _.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.goalValue`, 0);
+                const symbolToUsd = tools.getUsdPrice(this.props.symbol, symbolPromiesd);
+                const promisedToUsd = tools.getUsdPrice(symbol, currenyPromised);
+                let symbolCurrent = 0;
+                let percent = 0;
+                let promisedDiffinUsd = 0;
 
                 symbolTotalValue += symbolToUsd;
-                goalTotalValue += childToUsd;
+                goalTotalValue += promisedToUsd;
 
-                let percent = 0;
-                if (childToUsd !== 0) {
-                    percent = (symbolToUsd / childToUsd) * 100;
+                if (promisedToUsd !== 0) {
+                    percent = (symbolToUsd / promisedToUsd) * 100;
+                    symbolCurrent = symbolPromiesd + (( (100 - percent) / 100) * symbolPromiesd);
+                    promisedDiffinUsd = symbolToUsd - promisedToUsd;
                 }
 
                 return (
@@ -49,11 +55,16 @@ class AnalysisComponent extends React.Component<IProps, IState> {
                         {/* <div>{_.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.value`, 0)}</div>
                         <div>{_.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.goalValue`, 0)}</div>
                         <div>{symbolToUsd}</div>
-                        <div>{childToUsd}</div>
+                        <div>{promisedToUsd}</div>
                         <div>{percent}</div> */}
                         <Gauge to={symbol} percent={percent} />
+                        <div className="owe-data">
+                            <span><FontAwesomeIcon icon={["fas", "handshake"]} /> {symbolPromiesd.toFixed(2)}</span>
+                            &nbsp;<span><FontAwesomeIcon icon={["fas", "hand-holding"]} /> {symbolCurrent.toFixed(2)}</span>
+                        </div>
+                        <div><FontAwesomeIcon icon={["fas", "balance-scale"]} /> $<Rate value={promisedDiffinUsd} fixFloatNum={1} seperateThousand /></div>
                         <Button size="small" className="neat-btn" type="primary">Exchange</Button>
-                    </Col>);
+                    </Col > );
             }
         });
 
@@ -80,7 +91,7 @@ class AnalysisComponent extends React.Component<IProps, IState> {
             },
             {
                 name: t.t("Promised owes"),
-                icon: <FontAwesomeIcon icon={["fas", "hand-holding"]} />,
+                icon: <FontAwesomeIcon icon={["fas", "handshake"]} />,
                 value: _.get(this.props, `cashDesks.${this.props.symbol}.CSD_OWES.value`, 0).toFixed(2),
             },
             {
@@ -91,7 +102,7 @@ class AnalysisComponent extends React.Component<IProps, IState> {
             {
                 name: t.t("Balance"),
                 icon: <FontAwesomeIcon icon={["fas", "balance-scale"]} />,
-                value: <div> $<Rate value={diffInUsd} fixFloatNum={0} seperateThousand /></div>,
+                value: <div> $<Rate value={diffInUsd} fixFloatNum={1} seperateThousand /></div>,
             },
         ];
 
