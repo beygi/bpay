@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Col, Row } from "antd";
+import { Button, Col, Row } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
@@ -33,30 +33,31 @@ class AnalysisComponent extends React.Component<IProps, IState> {
         let goalTotalValue = 0;
         const gauges = Object.keys(config.currencies).map((symbol) => {
             if (symbol !== this.props.symbol) {
-                const symbolToUsd = tools.getUsdPrice(this.props.symbol, _.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.value`, 0)  );
-                const childToUsd =  tools.getUsdPrice(symbol, _.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.goalValue`, 0));
+                const symbolToUsd = tools.getUsdPrice(this.props.symbol, _.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.value`, 0));
+                const childToUsd = tools.getUsdPrice(symbol, _.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.goalValue`, 0));
 
                 symbolTotalValue += symbolToUsd;
                 goalTotalValue += childToUsd;
 
                 let percent = 0;
                 if (childToUsd !== 0) {
-                    percent = (symbolToUsd / childToUsd ) * 100;
+                    percent = (symbolToUsd / childToUsd) * 100;
                 }
 
                 return (
-                    <Col md={4} key={symbol}>
+                    <Col className="symbol-gauge" md={4} key={symbol}>
                         {/* <div>{_.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.value`, 0)}</div>
                         <div>{_.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.goalValue`, 0)}</div>
                         <div>{symbolToUsd}</div>
                         <div>{childToUsd}</div>
                         <div>{percent}</div> */}
                         <Gauge to={symbol} percent={percent} />
+                        <Button size="small" className="neat-btn" type="primary">Exchange</Button>
                     </Col>);
             }
         });
 
-        const totalPercent = (symbolTotalValue / goalTotalValue ) * 100;
+        const totalPercent = (symbolTotalValue / goalTotalValue) * 100;
 
         const count = goalTotalValue / tools.getUsdRate(this.props.symbol);
         const diffInUsd = symbolTotalValue - goalTotalValue;
@@ -90,7 +91,7 @@ class AnalysisComponent extends React.Component<IProps, IState> {
             {
                 name: t.t("Balance"),
                 icon: <FontAwesomeIcon icon={["fas", "balance-scale"]} />,
-                value: <div> $<Rate value={diffInUsd} fixFloatNum={0} / ></div> ,
+                value: <div> $<Rate value={diffInUsd} fixFloatNum={0} /></div>,
             },
         ];
 
@@ -109,8 +110,8 @@ class AnalysisComponent extends React.Component<IProps, IState> {
                     <h3>{config.icons[this.props.symbol]} {config.currencies[this.props.symbol].name}</h3>
                     <div className="user-balance">
                         {cashDesksRows}
-                        <br/>
-                        <Battery percent={totalPercent}  title=""/>
+                        <br />
+                        <Battery percent={totalPercent} title="" />
                     </div>
                 </Col>
                 <Row gutter={8}>
