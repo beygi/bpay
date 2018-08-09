@@ -1,5 +1,4 @@
 // import the core library.
-import { Button } from "antd";
 import ReactEcharts from "echarts-for-react";
 import * as _ from "lodash";
 import * as React from "react";
@@ -16,82 +15,79 @@ interface IState {
 
 class GaugeComponent extends React.Component<IProps, IState> {
 
-constructor(props: IProps) {
-    super(props);
-    this.state = {
-        options: {
-            series: [
-                {
-                    name: this.props.to,
-                    type: "gauge",
-                    z: 4,
-                    min: 90,
-                    max: 110,
-                    splitNumber: 4,
-                    radius: "100%",
-                    axisLine: {            // 坐标轴线
-                        lineStyle: {       // 属性lineStyle控制线条样式
+    constructor(props: IProps) {
+        super(props);
+        this.state = {
+            options: {
+                series: [
+                    {
+                        name: this.props.to,
+                        type: "gauge",
+                        z: 4,
+                        min: 90,
+                        max: 110,
+                        splitNumber: 4,
+                        radius: "100%",
+                        axisLine: {
+                            lineStyle: {
+                                width: 5,
+                                color: [[0.4, "tomato"], [0.5, "orange"], [1, "lightgreen"]],
+                            },
+                        },
+                        axisTick: {
+                            length: 10,
+                            lineStyle: {
+                                color: "auto",
+                            },
+                        },
+                        splitLine: {
+                            length: 15,
+                            lineStyle: {
+                                color: "auto",
+                            },
+                        },
+                        axisLabel: {
+                            formatter: (value) => {
+                                return `%${value}`;
+                            },
+                            fontSize: 13,
+                        },
+                        title: {
+                            fontWeight: "bolder",
+                            fontSize: 15,
+                            offsetCenter: [0, "100%"],
+                            color: "white",
+                        },
+                        detail: {
+                            formatter: (value) => {
+                                return `%${value.toFixed(2)}`;
+                            },
+                            fontSize: 15,
+                            offsetCenter: [0, "75%"],
+                        },
+                        pointer: {
                             width: 5,
-                            color: [[0.4, "tomato"], [0.5, "orange"], [1, "lightgreen"]],
                         },
+                        data: [{ value: this.props.percent, name: this.props.to }],
                     },
-                    axisTick: {            // 坐标轴小标记
-                        length: 10,        // 属性length控制线长
-                        lineStyle: {       // 属性lineStyle控制线条样式
-                            color: "auto",
-                        },
-                    },
-                    splitLine: {           // 分隔线
-                        length: 15,         // 属性length控制线长
-                        lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
-                            color: "auto",
-                        },
-                    },
-                    axisLabel: {
-                        formatter: (value) => {
-                            return `%${value}`;
-                        },
-                        fontSize: 13,
-                    },
-                    title: {
-                        // 其余属性默认使用全局文本样式，详见TEXTSTYLE
-                        fontWeight: "bolder",
-                        fontSize: 15,
-                        offsetCenter: [0, "100%"],
-                        color: "white",
-                    },
-                    detail: {
-                        // 其余属性默认使用全局文本样式，详见TEXTSTYLE
-                        formatter: (value) => {
-                            return `%${value.toFixed(2)}`;
-                        },
-                        fontSize: 15,
-                        offsetCenter: [0, "75%"],
-                    },
-                    pointer: {
-                        width: 5,
-                    },
-                    data: [{ value: this.props.percent, name: this.props.to }],
-                },
-            ],
-        },
-    };
-}
+                ],
+            },
+        };
+    }
 
     public render() {
         const options = _.cloneDeep(this.state.options);
         options.series[0].data[0].value = this.props.percent;
         return (
-        <div className="gauge">
-            <ReactEcharts
-                style={{ height: 170 }}
-                option={options}
-                opts={{ renderer: "svg" }}
-            />
-            <Button size="small" className="neat-btn" type="primary">Exchange</Button>
-        </div>
-    );
-}
+            <div className="gauge">
+                <ReactEcharts
+                    style={{ height: 170 }}
+                    option={options}
+                    opts={{ renderer: "svg" }}
+                />
+            </div>
+        );
+    }
 }
 
 export default GaugeComponent;
