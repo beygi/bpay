@@ -38,7 +38,11 @@ class AnalysisComponent extends React.Component<IProps, IState> {
                 symbolTotalValue += symbolToUsd;
                 goalTotalValue += childToUsd;
 
-                const percent = (symbolToUsd / childToUsd ) * 100;
+                let percent = 0;
+                if (childToUsd !== 0) {
+                    percent = (symbolToUsd / childToUsd ) * 100;
+                }
+
                 return (
                     <Col md={4} key={symbol}>
                         {/* <div>{_.get(this.props, `cashDesks.${this.props.symbol}.CSD_${symbol}.value`, 0)}</div>
