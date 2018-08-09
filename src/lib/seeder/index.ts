@@ -122,7 +122,7 @@ export default class Seeder {
                 const cashDesk = {} as IcashDesk;
                 const currencyRatetoUsd = tools.getUsdRate(currency);
                 // if value is exist in store, use it
-                let value = _.get(store.getState(), `app.office.cashDesks.${symbol}.CSD_${currency}.value`, _.random(50, 100));
+                let value = _.get(store.getState(), `app.office.cashDesks.${symbol}.CSD_${currency}.value`, _.random(20, 100));
                 let goalValue = _.get(store.getState(), `app.office.cashDesks.${symbol}.CSD_${currency}.goalValue`, 0);
                 // grow values slowly
                 value = _.random(value * 0.999, value * 1.002);
