@@ -37,7 +37,7 @@ class ExchangeValueComponent extends React.Component<IProps, IState> {
     }
 
     public render() {
-        let value = this.props.value.toFixed(this.props.fixFloatNum || 2);
+        let value = this.props.value.toFixed( (this.props.fixFloatNum === 0) ? this.props.fixFloatNum : ( this.props.fixFloatNum || 2) );
         if (this.props.seperateThousand) {
             value = commaNumber(value);
         }
