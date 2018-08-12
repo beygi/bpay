@@ -1,11 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Col, Row } from "antd";
+import { Button, Col, Modal, Row } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
 import Battery from "../../components/Battery";
 import Rate from "../../components/ExchangeValue";
 import Gauge from "../../components/Gauge";
+import Internal from "../../components/InternalExchange";
 import config from "../../config";
 import { IRootState } from "../../redux/reducers";
 import tools from "../../services/tools";
@@ -20,12 +21,25 @@ interface IProps {
 }
 
 interface IState {
+        ModalVisible: boolean;
+        toSymbol?: string;
 }
 
 class AnalysisComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
+        this.state = {
+            ModalVisible: false,
+        };
+    }
+
+    public showModal(from, to) {
+        this.setState({ toSymbol: to , ModalVisible : true });
+    }
+
+    public setModalStatus(ModalVisible: boolean) {
+        this.setState({ ModalVisible });
     }
 
     public render() {
@@ -64,7 +78,7 @@ class AnalysisComponent extends React.Component<IProps, IState> {
                             &nbsp;<span><FontAwesomeIcon icon={["fas", "hand-holding"]} /> {symbolCurrent.toFixed(2)}</span>
                         </div>
                         <div><FontAwesomeIcon icon={["fas", "balance-scale"]} /> $<Rate value={promisedDiffinUsd} fixFloatNum={1} seperateThousand /></div>
-                        <Button size="small" className="neat-btn" type="primary">Exchange</Button>
+                        <Button onClick={() => this.showModal(this.props.symbol, symbol)} size="small" className="neat-btn" type="primary">Exchange</Button>
                     </Col > );
             }
         });
@@ -128,6 +142,16 @@ class AnalysisComponent extends React.Component<IProps, IState> {
                 <Col md={18}>
                     <Row gutter={8}>
                         {gauges}
+                        <Modal
+                            title={`${this.props.symbol} to ${this.state.toSymbol}`}
+                            wrapClassName="vertical-center-modal"
+                            visible={this.state.ModalVisible}
+                            onOk={() => this.setModalStatus(false)}
+                            onCancel={() => this.setModalStatus(false)}
+                            footer={null}
+                        >
+                            <Internal symbol={this.props.symbol} toSymbol={this.state.toSymbol} />
+                        </Modal>
                         <Col md={24}>
                             <Battery percent={totalPercent} title="" />
                         </Col>
@@ -145,7 +169,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state: IRootState) {
     return {
-        cashDesks: state.app.office.cashDesks || null,
+        cashDesks:    state.app.office.cashDesks || null,
         forex: state.app.market.forex || null,
         cryptos: state.app.market.cryptos || null,
     };
