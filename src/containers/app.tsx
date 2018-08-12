@@ -74,6 +74,7 @@ class AppContainer extends React.Component<IProps, IState> {
                 <PrivateRoute path={`/dashboard`} component={DashboardContainer} />
                 <PrivateRoute path={`/kyc`} component={KycContainer} />
                 {/* <PrivateRoute path={`/balance`} component={DashboardContainer} /> */}
+                <PrivateRoute path={`/exchange/:market`} component={ExchangeContainer} />
                 <PrivateRoute path={`/exchange`} component={ExchangeContainer} />
 
                 <PrivateRoute path={`/deposit/:coin`} component={DepositContainer} />

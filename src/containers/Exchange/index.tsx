@@ -19,14 +19,28 @@ import t from "../../services/trans/i18n";
 import "./style.less";
 
 interface IProps {
+        match?: any;
 }
 
 interface IState {
+    fromSymbol?: string;
+    toSymbol?: string;
 }
 
 class ExchangeContainer extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
+        if (this.props.match.params.market) {
+            this.state = {
+                fromSymbol : this.props.match.params.market.split(":")[0],
+                toSymbol: this.props.match.params.market.split(":")[1],
+            };
+        } else {
+            this.state = {
+                fromSymbol : "ETH",
+                toSymbol : "BTC",
+            };
+        }
     }
 
     public render() {
@@ -45,31 +59,26 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                 </Col>
                 <Col md={14} >
                     <Row gutter={8}>
-                        <Col md={8} >
-                            <Block collapse title={config.currencies.BTC.name} icon={config.icons.BTC}>
-                                <Stock symbol="BTC" hideTitle />
+                        <Col md={12} >
+                            <Block collapse title={config.currencies[this.state.fromSymbol].name} icon={config.icons[this.state.fromSymbol]}>
+                                <Stock symbol={this.state.fromSymbol} hideTitle />
                             </Block>
                         </Col>
-                        <Col md={8} >
-                            <Block collapse title={config.currencies.ETH.name} icon={config.icons.ETH}>
-                                <Stock symbol="ETH" hideTitle />
-                            </Block>
-                        </Col>
-                        <Col md={8} >
-                            <Block collapse title="XRP" icon={<i className="live-icon cc XRP-ALT"></i>} >
-                                <Stock symbol="XRP" hideTitle />
+                        <Col md={12} >
+                            <Block collapse title={config.currencies[this.state.toSymbol].name} icon={config.icons[this.state.toSymbol]}>
+                                <Stock symbol={this.state.toSymbol} hideTitle />
                             </Block>
                         </Col>
                     </Row>
                     <Block className="trading-view" transparent noPadding >
                         <TradingViewWidget
-    symbol="BITFINEX:BTCUSD"
+                                symbol={`BITFINEX:${this.state.fromSymbol}${this.state.toSymbol}`}
     theme={Themes.DARK}
     autosize
 />
                     </Block>
                     <Block>
-                        <PlaceOrder />
+                        <PlaceOrder fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
                     </Block>
                 </Col>
                 <Col md={5} >
