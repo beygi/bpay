@@ -8,12 +8,12 @@ function getMenus() {
             text: t.t("Dashboard"),
             visible: true,
         },
-        balance: {
-            icon: "calculator",
-            path: "/balance",
-            text: t.t("Balance"),
-            visible: true,
-        },
+        // balance: {
+        //     icon: "calculator",
+        //     path: "/balance",
+        //     text: t.t("Balance"),
+        //     visible: true,
+        // },
         exchange: {
             icon: "line-chart",
             path: "/exchange",
@@ -26,13 +26,13 @@ function getMenus() {
             text: t.t("Deposit"),
             visible: true,
         },
-        wallets: {
-            icon: "wallet",
-            path: "/wallets",
-            text: t.t("Wallets"),
-            visible: true,
-        },
-        setting: {
+        // wallets: {
+        //     icon: "wallet",
+        //     path: "/wallets",
+        //     text: t.t("Wallets"),
+        //     visible: true,
+        // },
+        kyc: {
             icon: "solution",
             path: "/kyc",
             text: t.t("KYC"),
