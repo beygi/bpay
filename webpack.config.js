@@ -161,9 +161,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "index.html",
         }),
-        new CopyWebpackPlugin([
-                    { from: sourcePath+'/assets/images/SVG/*.svg', to: outPath+"/images/svg/" , flatten : true }
-                ]),
+        //new CopyWebpackPlugin([
+        //            { from: sourcePath+'/assets/images/SVG/*.svg', to: outPath+"/images/svg/" , flatten : true }
+        //        ]),
         ],
     resolve: {
         extensions: [".js", ".ts", ".tsx"],
