@@ -9,8 +9,10 @@ import Profile from "../../components/DashboardHeaderProfile";
 import DepositHistory from "../../components/DepositHistory";
 import Block from "../../components/Holder";
 import Live from "../../components/Live";
+import PlaceOrder from "../../components/PlaceOrder";
 import ActieveSessions from "../../components/Sessions";
 import Stock from "../../components/Stock";
+import config from "../../config";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
@@ -44,18 +46,18 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                 <Col md={14} >
                     <Row gutter={8}>
                         <Col md={8} >
-                            <Block>
-                                <Stock symbol="BTC" />
+                            <Block collapse title={config.currencies.BTC.name} icon={config.icons.BTC}>
+                                <Stock symbol="BTC" hideTitle />
                             </Block>
                         </Col>
                         <Col md={8} >
-                            <Block>
-                                <Stock symbol="ETH" />
+                            <Block collapse title={config.currencies.ETH.name} icon={config.icons.ETH}>
+                                <Stock symbol="ETH" hideTitle />
                             </Block>
                         </Col>
                         <Col md={8} >
-                            <Block>
-                                <Stock symbol="XRP" />
+                            <Block collapse title="XRP" icon={<i className="live-icon cc XRP-ALT"></i>} >
+                                <Stock symbol="XRP" hideTitle />
                             </Block>
                         </Col>
                     </Row>
@@ -65,6 +67,9 @@ class ExchangeContainer extends React.Component<IProps, IState> {
     theme={Themes.DARK}
     autosize
 />
+                    </Block>
+                    <Block>
+                        <PlaceOrder />
                     </Block>
                 </Col>
                 <Col md={5} >

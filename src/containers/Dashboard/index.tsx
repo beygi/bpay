@@ -98,9 +98,6 @@ class DashboardContainer extends React.Component<IProps, IState> {
                             <Block title={t.t("Action Sessions")} icon={<FontAwesomeIcon icon={["fas", "user-clock"]} />}  >
                                 <ActieveSessions />
                             </Block>
-                            <Block>
-                                <img src="https://dummyimage.com/1000x100/4c4649/3ee6e0.png" alt="" />
-                            </Block>
                         </Col>
                     </Row>
                 </Col>

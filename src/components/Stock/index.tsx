@@ -13,6 +13,7 @@ interface IProps {
     symbol: string;
     cryptos: any[];
     forex: any[];
+    hideTitle?: boolean;
 }
 
 interface IState {
@@ -66,29 +67,28 @@ class StockComponent extends React.Component<IProps, IState> {
         const rates = this.state.exchangeRates.map( (rate) => {
             return <div key={rate.symbol}><span className="symbol">{rate.symbol}: </span><span className="rate"><Ex value={rate.rate} seperateThousand /></span></div>;
         } );
+        const title = (this.props.hideTitle) ? null : <span className="balance-name"><i className={`live-icon cc ${this.props.symbol}`}></i>{this.props.cryptos[this.props.symbol].name}</span> ;
         return (
             <div className="stock" >
-                <span className="balance-name">
-                    <i className={`live-icon cc ${this.props.symbol}`}></i>
-                    {this.props.cryptos[this.props.symbol].name}</span>
+                {title}
                     <div className="rates">
                         {rates}
                     </div>
-            </div >
+            </div>
         );
     }
 }
 
 function mapStateToProps(state: IRootState) {
-    if (state.app.market && state.app.market.cryptos && state.app.market.forex) {
+    if            (state.app.market && state.app.market.cryptos && state.app.market.forex) {
         return {
-            cryptos: state.app.market.cryptos,
+            cryptos:            state.app.market.cryptos,
             forex: state.app.market.forex,
         };
     }
     // there is no balance from redux, state must not be updated in getDerivedStateFromProps
     return {
-        cryptos: null,
+        cryptos:       null,
         forex: null,
     };
 }
