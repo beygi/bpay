@@ -1,3 +1,6 @@
+/**
+ * @module Components/Layout/DashboardPrivateLayout
+ */
 import { Layout } from "antd";
 import * as React from "react";
 
@@ -18,6 +21,9 @@ interface IState {
     menuClass: string; // normal or mini
 }
 
+/**
+ * private layout to represent pages that needs a loggined user
+ */
 export default class DashboardPrivateLayout extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);

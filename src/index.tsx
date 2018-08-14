@@ -1,3 +1,6 @@
+/**
+ * @module MainEntryPoint
+ */
 import { createBrowserHistory } from "history";
 import * as Keycloak from "keycloak-js";
 import * as _ from "lodash";
