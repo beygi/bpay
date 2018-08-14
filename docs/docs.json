@@ -29621,2085 +29621,7 @@
 			]
 		},
 		{
-			"id": 4501,
-			"name": "\"containers/app\"",
-			"kind": 1,
-			"kindString": "External module",
-			"flags": {
-				"isExported": true
-			},
-			"originalName": "/home/mahdy/Projects/b2b/src/containers/app.tsx",
-			"children": [
-				{
-					"id": 4511,
-					"name": "AppContainer",
-					"kind": 128,
-					"kindString": "Class",
-					"flags": {},
-					"typeParameter": [
-						{
-							"id": 4525,
-							"name": "SS",
-							"kind": 131072,
-							"kindString": "Type parameter",
-							"flags": {}
-						}
-					],
-					"children": [
-						{
-							"id": 4512,
-							"name": "constructor",
-							"kind": 512,
-							"kindString": "Constructor",
-							"flags": {},
-							"signatures": [
-								{
-									"id": 4513,
-									"name": "new AppContainer",
-									"kind": 16384,
-									"kindString": "Constructor signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 4514,
-											"name": "props",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "IProps",
-												"id": 4502
-											}
-										}
-									],
-									"type": {
-										"type": "reference",
-										"name": "AppContainer",
-										"id": 4511
-									},
-									"overwrites": {
-										"type": "reference",
-										"name": "Component.__constructor"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "containers/app.tsx",
-									"line": 37,
-									"character": 60
-								}
-							],
-							"overwrites": {
-								"type": "reference",
-								"name": "Component.__constructor"
-							}
-						},
-						{
-							"id": 4592,
-							"name": "context",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 302,
-									"character": 15
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "any"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "Component.context"
-							}
-						},
-						{
-							"id": 4588,
-							"name": "props",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 300,
-									"character": 13
-								}
-							],
-							"type": {
-								"type": "intersection",
-								"types": [
-									{
-										"type": "reference",
-										"name": "Readonly",
-										"typeArguments": [
-											{
-												"type": "reflection",
-												"declaration": {
-													"id": 4589,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {},
-													"children": [
-														{
-															"id": 4590,
-															"name": "children",
-															"kind": 32,
-															"kindString": "Variable",
-															"flags": {
-																"isOptional": true
-															},
-															"sources": [
-																{
-																	"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-																	"line": 300,
-																	"character": 34
-																}
-															],
-															"type": {
-																"type": "reference",
-																"name": "ReactNode"
-															}
-														}
-													],
-													"groups": [
-														{
-															"title": "Variables",
-															"kind": 32,
-															"children": [
-																4590
-															]
-														}
-													],
-													"sources": [
-														{
-															"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-															"line": 300,
-															"character": 24
-														}
-													]
-												}
-											}
-										]
-									},
-									{
-										"type": "reference",
-										"name": "Readonly",
-										"typeArguments": [
-											{
-												"type": "reference",
-												"name": "IProps",
-												"id": 4502
-											}
-										]
-									}
-								]
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "Component.props"
-							}
-						},
-						{
-							"id": 4593,
-							"name": "refs",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 303,
-									"character": 12
-								}
-							],
-							"type": {
-								"type": "reflection",
-								"declaration": {
-									"id": 4594,
-									"name": "__type",
-									"kind": 65536,
-									"kindString": "Type literal",
-									"flags": {},
-									"indexSignature": {
-										"id": 4595,
-										"name": "__index",
-										"kind": 8192,
-										"kindString": "Index signature",
-										"flags": {},
-										"parameters": [
-											{
-												"id": 4596,
-												"name": "key",
-												"kind": 32768,
-												"kindString": "Parameter",
-												"flags": {},
-												"type": {
-													"type": "intrinsic",
-													"name": "string"
-												}
-											}
-										],
-										"type": {
-											"type": "reference",
-											"name": "ReactInstance"
-										}
-									},
-									"sources": [
-										{
-											"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-											"line": 303,
-											"character": 13
-										}
-									]
-								}
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "Component.refs"
-							}
-						},
-						{
-							"id": 4591,
-							"name": "state",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 301,
-									"character": 13
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "Readonly",
-								"typeArguments": [
-									{
-										"type": "reference",
-										"name": "IState",
-										"id": 4508
-									}
-								]
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "Component.state"
-							}
-						},
-						{
-							"id": 4515,
-							"name": "componentDidMount",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isPublic": true
-							},
-							"signatures": [
-								{
-									"id": 4516,
-									"name": "componentDidMount",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "containers/app.tsx",
-									"line": 45,
-									"character": 28
-								}
-							]
-						},
-						{
-							"id": 4583,
-							"name": "forceUpdate",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {},
-							"signatures": [
-								{
-									"id": 4584,
-									"name": "forceUpdate",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 4585,
-											"name": "callBack",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {
-												"isOptional": true
-											},
-											"type": {
-												"type": "reflection",
-												"declaration": {
-													"id": 4586,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {},
-													"signatures": [
-														{
-															"id": 4587,
-															"name": "__call",
-															"kind": 4096,
-															"kindString": "Call signature",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "void"
-															}
-														}
-													],
-													"sources": [
-														{
-															"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-															"line": 292,
-															"character": 30
-														}
-													]
-												}
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "Component.forceUpdate"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 292,
-									"character": 19
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "Component.forceUpdate"
-							}
-						},
-						{
-							"id": 4517,
-							"name": "parseProps",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isPublic": true
-							},
-							"signatures": [
-								{
-									"id": 4518,
-									"name": "parseProps",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 4519,
-											"name": "props",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "reference",
-										"name": "IState",
-										"id": 4508
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "containers/app.tsx",
-									"line": 49,
-									"character": 21
-								}
-							]
-						},
-						{
-							"id": 4523,
-							"name": "render",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isPublic": true
-							},
-							"signatures": [
-								{
-									"id": 4524,
-									"name": "render",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"name": "Element"
-									},
-									"overwrites": {
-										"type": "reference",
-										"name": "Component.render"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "containers/app.tsx",
-									"line": 67,
-									"character": 17
-								}
-							],
-							"overwrites": {
-								"type": "reference",
-								"name": "Component.render"
-							}
-						},
-						{
-							"id": 4570,
-							"name": "setState",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {},
-							"signatures": [
-								{
-									"id": 4571,
-									"name": "setState",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"typeParameter": [
-										{
-											"id": 4572,
-											"name": "K",
-											"kind": 131072,
-											"kindString": "Type parameter",
-											"flags": {},
-											"type": {
-												"type": "typeOperator",
-												"operator": "keyof",
-												"target": {
-													"type": "reference",
-													"name": "IState"
-												}
-											}
-										}
-									],
-									"parameters": [
-										{
-											"id": 4573,
-											"name": "state",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "union",
-												"types": [
-													{
-														"type": "reflection",
-														"declaration": {
-															"id": 4574,
-															"name": "__type",
-															"kind": 65536,
-															"kindString": "Type literal",
-															"flags": {},
-															"signatures": [
-																{
-																	"id": 4575,
-																	"name": "__call",
-																	"kind": 4096,
-																	"kindString": "Call signature",
-																	"flags": {},
-																	"parameters": [
-																		{
-																			"id": 4576,
-																			"name": "prevState",
-																			"kind": 32768,
-																			"kindString": "Parameter",
-																			"flags": {},
-																			"type": {
-																				"type": "reference",
-																				"name": "Readonly",
-																				"typeArguments": [
-																					{
-																						"type": "reference",
-																						"name": "IState",
-																						"id": 4508
-																					}
-																				]
-																			}
-																		},
-																		{
-																			"id": 4577,
-																			"name": "props",
-																			"kind": 32768,
-																			"kindString": "Parameter",
-																			"flags": {},
-																			"type": {
-																				"type": "reference",
-																				"name": "IProps",
-																				"id": 4502
-																			}
-																		}
-																	],
-																	"type": {
-																		"type": "union",
-																		"types": [
-																			{
-																				"type": "unknown",
-																				"name": "S"
-																			},
-																			{
-																				"type": "reflection",
-																				"declaration": {
-																					"id": 4578,
-																					"name": "__type",
-																					"kind": 65536,
-																					"kindString": "Type literal",
-																					"flags": {}
-																				}
-																			}
-																		]
-																	}
-																}
-															],
-															"sources": [
-																{
-																	"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-																	"line": 288,
-																	"character": 18
-																}
-															]
-														}
-													},
-													{
-														"type": "union",
-														"types": [
-															{
-																"type": "unknown",
-																"name": "S"
-															},
-															{
-																"type": "reflection",
-																"declaration": {
-																	"id": 4579,
-																	"name": "__type",
-																	"kind": 65536,
-																	"kindString": "Type literal",
-																	"flags": {}
-																}
-															}
-														]
-													}
-												]
-											}
-										},
-										{
-											"id": 4580,
-											"name": "callback",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {
-												"isOptional": true
-											},
-											"type": {
-												"type": "reflection",
-												"declaration": {
-													"id": 4581,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {},
-													"signatures": [
-														{
-															"id": 4582,
-															"name": "__call",
-															"kind": 4096,
-															"kindString": "Call signature",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "void"
-															}
-														}
-													],
-													"sources": [
-														{
-															"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-															"line": 289,
-															"character": 22
-														}
-													]
-												}
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "Component.setState"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 287,
-									"character": 16
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "Component.setState"
-							}
-						},
-						{
-							"id": 4520,
-							"name": "shouldComponentUpdate",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isPublic": true
-							},
-							"signatures": [
-								{
-									"id": 4521,
-									"name": "shouldComponentUpdate",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 4522,
-											"name": "nextProps",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "boolean"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "containers/app.tsx",
-									"line": 57,
-									"character": 32
-								}
-							]
-						},
-						{
-							"id": 4550,
-							"name": "UNSAFE_componentWillMount",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 4551,
-									"name": "UNSAFE_componentWillMount",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
-										"text": "This method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
-										"tags": [
-											{
-												"tag": "deprecated",
-												"text": "16.3, use componentDidMount or the constructor instead"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
-											}
-										]
-									},
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 458,
-									"character": 33
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
-							}
-						},
-						{
-							"id": 4556,
-							"name": "UNSAFE_componentWillReceiveProps",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 4557,
-									"name": "UNSAFE_componentWillReceiveProps",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
-										"text": "Calling `Component#setState` generally does not trigger this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
-										"tags": [
-											{
-												"tag": "deprecated",
-												"text": "16.3, use static getDerivedStateFromProps instead"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
-											}
-										]
-									},
-									"parameters": [
-										{
-											"id": 4558,
-											"name": "nextProps",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "IProps",
-														"id": 4502
-													}
-												]
-											}
-										},
-										{
-											"id": 4559,
-											"name": "nextContext",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 490,
-									"character": 40
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
-							}
-						},
-						{
-							"id": 4565,
-							"name": "UNSAFE_componentWillUpdate",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 4566,
-									"name": "UNSAFE_componentWillUpdate",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
-										"text": "Note: You cannot call `Component#setState` here.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
-										"tags": [
-											{
-												"tag": "deprecated",
-												"text": "16.3, use getSnapshotBeforeUpdate instead"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
-											}
-										]
-									},
-									"parameters": [
-										{
-											"id": 4567,
-											"name": "nextProps",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "IProps",
-														"id": 4502
-													}
-												]
-											}
-										},
-										{
-											"id": 4568,
-											"name": "nextState",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "IState",
-														"id": 4508
-													}
-												]
-											}
-										},
-										{
-											"id": 4569,
-											"name": "nextContext",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 518,
-									"character": 34
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
-							}
-						},
-						{
-							"id": 4535,
-							"name": "componentDidCatch",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 4536,
-									"name": "componentDidCatch",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount."
-									},
-									"parameters": [
-										{
-											"id": 4537,
-											"name": "error",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Error"
-											}
-										},
-										{
-											"id": 4538,
-											"name": "errorInfo",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "ErrorInfo"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "ComponentLifecycle.componentDidCatch"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 397,
-									"character": 25
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "ComponentLifecycle.componentDidCatch"
-							}
-						},
-						{
-							"id": 4526,
-							"name": "componentDidMount",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 4527,
-									"name": "componentDidMount",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Called immediately after a compoment is mounted. Setting state here will trigger re-rendering."
-									},
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "ComponentLifecycle.componentDidMount"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 376,
-									"character": 25
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "ComponentLifecycle.componentDidMount"
-							}
-						},
-						{
-							"id": 4543,
-							"name": "componentDidUpdate",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 4544,
-									"name": "componentDidUpdate",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Called immediately after updating occurs. Not called for the initial render.",
-										"text": "The snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.\n"
-									},
-									"parameters": [
-										{
-											"id": 4545,
-											"name": "prevProps",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "IProps",
-														"id": 4502
-													}
-												]
-											}
-										},
-										{
-											"id": 4546,
-											"name": "prevState",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "IState",
-														"id": 4508
-													}
-												]
-											}
-										},
-										{
-											"id": 4547,
-											"name": "snapshot",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {
-												"isOptional": true
-											},
-											"type": {
-												"type": "typeParameter",
-												"name": "SS"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "NewLifecycle.componentDidUpdate"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 429,
-									"character": 26
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "NewLifecycle.componentDidUpdate"
-							}
-						},
-						{
-							"id": 4548,
-							"name": "componentWillMount",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 4549,
-									"name": "componentWillMount",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
-										"text": "Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
-										"tags": [
-											{
-												"tag": "deprecated",
-												"text": "16.3, use componentDidMount or the constructor instead; will stop working in React 17"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
-											}
-										]
-									},
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "DeprecatedLifecycle.componentWillMount"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 444,
-									"character": 26
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "DeprecatedLifecycle.componentWillMount"
-							}
-						},
-						{
-							"id": 4552,
-							"name": "componentWillReceiveProps",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 4553,
-									"name": "componentWillReceiveProps",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
-										"text": "Calling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
-										"tags": [
-											{
-												"tag": "deprecated",
-												"text": "16.3, use static getDerivedStateFromProps instead; will stop working in React 17"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
-											}
-										]
-									},
-									"parameters": [
-										{
-											"id": 4554,
-											"name": "nextProps",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "IProps",
-														"id": 4502
-													}
-												]
-											}
-										},
-										{
-											"id": 4555,
-											"name": "nextContext",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "DeprecatedLifecycle.componentWillReceiveProps"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 473,
-									"character": 33
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "DeprecatedLifecycle.componentWillReceiveProps"
-							}
-						},
-						{
-							"id": 4533,
-							"name": "componentWillUnmount",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 4534,
-									"name": "componentWillUnmount",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as\ncancelled network requests, or cleaning up any DOM elements created in `componentDidMount`."
-									},
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "ComponentLifecycle.componentWillUnmount"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 392,
-									"character": 28
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "ComponentLifecycle.componentWillUnmount"
-							}
-						},
-						{
-							"id": 4560,
-							"name": "componentWillUpdate",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 4561,
-									"name": "componentWillUpdate",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
-										"text": "Note: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
-										"tags": [
-											{
-												"tag": "deprecated",
-												"text": "16.3, use getSnapshotBeforeUpdate instead; will stop working in React 17"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
-											},
-											{
-												"tag": "see",
-												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
-											}
-										]
-									},
-									"parameters": [
-										{
-											"id": 4562,
-											"name": "nextProps",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "IProps",
-														"id": 4502
-													}
-												]
-											}
-										},
-										{
-											"id": 4563,
-											"name": "nextState",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "IState",
-														"id": 4508
-													}
-												]
-											}
-										},
-										{
-											"id": 4564,
-											"name": "nextContext",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "DeprecatedLifecycle.componentWillUpdate"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 503,
-									"character": 27
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "DeprecatedLifecycle.componentWillUpdate"
-							}
-						},
-						{
-							"id": 4539,
-							"name": "getSnapshotBeforeUpdate",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 4540,
-									"name": "getSnapshotBeforeUpdate",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Runs before React applies the result of `render` to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before `render` causes changes to it.",
-										"text": "Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.\n"
-									},
-									"parameters": [
-										{
-											"id": 4541,
-											"name": "prevProps",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "IProps",
-														"id": 4502
-													}
-												]
-											}
-										},
-										{
-											"id": 4542,
-											"name": "prevState",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "IState",
-														"id": 4508
-													}
-												]
-											}
-										}
-									],
-									"type": {
-										"type": "union",
-										"types": [
-											{
-												"type": "typeParameter",
-												"name": "SS"
-											},
-											{
-												"type": "intrinsic",
-												"name": "null"
-											}
-										]
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "NewLifecycle.getSnapshotBeforeUpdate"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 423,
-									"character": 31
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "NewLifecycle.getSnapshotBeforeUpdate"
-							}
-						},
-						{
-							"id": 4528,
-							"name": "shouldComponentUpdate",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isOptional": true
-							},
-							"signatures": [
-								{
-									"id": 4529,
-									"name": "shouldComponentUpdate",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Called to determine whether the change in props and state should trigger a re-render.",
-										"text": "`Component` always returns true.\n`PureComponent` implements a shallow comparison on props and state and returns true if any\nprops or states have changed.\n\nIf false is returned, `Component#render`, `componentWillUpdate`\nand `componentDidUpdate` will not be called.\n"
-									},
-									"parameters": [
-										{
-											"id": 4530,
-											"name": "nextProps",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "IProps",
-														"id": 4502
-													}
-												]
-											}
-										},
-										{
-											"id": 4531,
-											"name": "nextState",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"name": "Readonly",
-												"typeArguments": [
-													{
-														"type": "reference",
-														"name": "IState",
-														"id": 4508
-													}
-												]
-											}
-										},
-										{
-											"id": 4532,
-											"name": "nextContext",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "boolean"
-									},
-									"inheritedFrom": {
-										"type": "reference",
-										"name": "ComponentLifecycle.shouldComponentUpdate"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
-									"line": 387,
-									"character": 29
-								}
-							],
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "ComponentLifecycle.shouldComponentUpdate"
-							}
-						}
-					],
-					"groups": [
-						{
-							"title": "Constructors",
-							"kind": 512,
-							"children": [
-								4512
-							]
-						},
-						{
-							"title": "Properties",
-							"kind": 1024,
-							"children": [
-								4592,
-								4588,
-								4593,
-								4591
-							]
-						},
-						{
-							"title": "Methods",
-							"kind": 2048,
-							"children": [
-								4515,
-								4583,
-								4517,
-								4523,
-								4570,
-								4520,
-								4550,
-								4556,
-								4565,
-								4535,
-								4526,
-								4543,
-								4548,
-								4552,
-								4533,
-								4560,
-								4539,
-								4528
-							]
-						}
-					],
-					"sources": [
-						{
-							"fileName": "containers/app.tsx",
-							"line": 37,
-							"character": 18
-						}
-					],
-					"extendedTypes": [
-						{
-							"type": "reference",
-							"name": "Component",
-							"typeArguments": [
-								{
-									"type": "reference",
-									"name": "IProps",
-									"id": 4502
-								},
-								{
-									"type": "reference",
-									"name": "IState",
-									"id": 4508
-								}
-							]
-						}
-					]
-				},
-				{
-					"id": 4502,
-					"name": "IProps",
-					"kind": 256,
-					"kindString": "Interface",
-					"flags": {},
-					"children": [
-						{
-							"id": 4503,
-							"name": "email",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "containers/app.tsx",
-									"line": 28,
-									"character": 9
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "any"
-							}
-						},
-						{
-							"id": 4504,
-							"name": "setUser",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "containers/app.tsx",
-									"line": 29,
-									"character": 11
-								}
-							],
-							"type": {
-								"type": "reflection",
-								"declaration": {
-									"id": 4505,
-									"name": "__type",
-									"kind": 65536,
-									"kindString": "Type literal",
-									"flags": {},
-									"signatures": [
-										{
-											"id": 4506,
-											"name": "__call",
-											"kind": 4096,
-											"kindString": "Call signature",
-											"flags": {},
-											"parameters": [
-												{
-													"id": 4507,
-													"name": "user",
-													"kind": 32768,
-													"kindString": "Parameter",
-													"flags": {},
-													"type": {
-														"type": "intrinsic",
-														"name": "any"
-													}
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "void"
-											}
-										}
-									],
-									"sources": [
-										{
-											"fileName": "containers/app.tsx",
-											"line": 29,
-											"character": 12
-										}
-									]
-								}
-							}
-						}
-					],
-					"groups": [
-						{
-							"title": "Properties",
-							"kind": 1024,
-							"children": [
-								4503,
-								4504
-							]
-						}
-					],
-					"sources": [
-						{
-							"fileName": "containers/app.tsx",
-							"line": 27,
-							"character": 16
-						}
-					]
-				},
-				{
-					"id": 4508,
-					"name": "IState",
-					"kind": 256,
-					"kindString": "Interface",
-					"flags": {},
-					"children": [
-						{
-							"id": 4509,
-							"name": "collapsed",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isOptional": true
-							},
-							"sources": [
-								{
-									"fileName": "containers/app.tsx",
-									"line": 33,
-									"character": 13
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "boolean"
-							}
-						},
-						{
-							"id": 4510,
-							"name": "email",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isOptional": true
-							},
-							"sources": [
-								{
-									"fileName": "containers/app.tsx",
-									"line": 34,
-									"character": 9
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "any"
-							}
-						}
-					],
-					"groups": [
-						{
-							"title": "Properties",
-							"kind": 1024,
-							"children": [
-								4509,
-								4510
-							]
-						}
-					],
-					"sources": [
-						{
-							"fileName": "containers/app.tsx",
-							"line": 32,
-							"character": 16
-						}
-					]
-				},
-				{
-					"id": 4597,
-					"name": "mapDispatchToProps",
-					"kind": 64,
-					"kindString": "Function",
-					"flags": {},
-					"signatures": [
-						{
-							"id": 4598,
-							"name": "mapDispatchToProps",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"parameters": [
-								{
-									"id": 4599,
-									"name": "dispatch",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"type": {
-								"type": "reflection",
-								"declaration": {
-									"id": 4600,
-									"name": "__type",
-									"kind": 65536,
-									"kindString": "Type literal",
-									"flags": {},
-									"children": [
-										{
-											"id": 4601,
-											"name": "setUser",
-											"kind": 64,
-											"kindString": "Function",
-											"flags": {},
-											"signatures": [
-												{
-													"id": 4602,
-													"name": "setUser",
-													"kind": 4096,
-													"kindString": "Call signature",
-													"flags": {},
-													"parameters": [
-														{
-															"id": 4603,
-															"name": "user",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "any"
-															}
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "any"
-													}
-												}
-											],
-											"sources": [
-												{
-													"fileName": "containers/app.tsx",
-													"line": 102,
-													"character": 15
-												}
-											]
-										}
-									],
-									"groups": [
-										{
-											"title": "Functions",
-											"kind": 64,
-											"children": [
-												4601
-											]
-										}
-									]
-								}
-							}
-						}
-					],
-					"sources": [
-						{
-							"fileName": "containers/app.tsx",
-							"line": 100,
-							"character": 27
-						}
-					]
-				},
-				{
-					"id": 4604,
-					"name": "mapStateToProps",
-					"kind": 64,
-					"kindString": "Function",
-					"flags": {},
-					"signatures": [
-						{
-							"id": 4605,
-							"name": "mapStateToProps",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"parameters": [
-								{
-									"id": 4606,
-									"name": "state",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"name": "IRootState",
-										"id": 436
-									}
-								}
-							],
-							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 4607,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"children": [
-												{
-													"id": 4608,
-													"name": "email",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {},
-													"sources": [
-														{
-															"fileName": "containers/app.tsx",
-															"line": 109,
-															"character": 17
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "any"
-													},
-													"defaultValue": " state.app.user.email"
-												}
-											],
-											"groups": [
-												{
-													"title": "Variables",
-													"kind": 32,
-													"children": [
-														4608
-													]
-												}
-											]
-										}
-									},
-									{
-										"type": "reflection",
-										"declaration": {
-											"id": 4609,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
-									}
-								]
-							}
-						}
-					],
-					"sources": [
-						{
-							"fileName": "containers/app.tsx",
-							"line": 106,
-							"character": 24
-						}
-					]
-				}
-			],
-			"groups": [
-				{
-					"title": "Classes",
-					"kind": 128,
-					"children": [
-						4511
-					]
-				},
-				{
-					"title": "Interfaces",
-					"kind": 256,
-					"children": [
-						4502,
-						4508
-					]
-				},
-				{
-					"title": "Functions",
-					"kind": 64,
-					"children": [
-						4597,
-						4604
-					]
-				}
-			],
-			"sources": [
-				{
-					"fileName": "containers/app.tsx",
-					"line": 1,
-					"character": 0
-				}
-			]
-		},
-		{
-			"id": 4634,
+			"id": 4622,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -31709,7 +29631,7 @@
 			"originalName": "/home/mahdy/Projects/b2b/src/index.tsx",
 			"children": [
 				{
-					"id": 4635,
+					"id": 4623,
 					"name": "history",
 					"kind": 32,
 					"kindString": "Variable",
@@ -31730,7 +29652,7 @@
 					"defaultValue": " createBrowserHistory()"
 				},
 				{
-					"id": 4637,
+					"id": 4625,
 					"name": "keyCloak",
 					"kind": 32,
 					"kindString": "Variable",
@@ -31752,7 +29674,7 @@
 					"defaultValue": " KeyCloacksApi.getInstance()"
 				},
 				{
-					"id": 4636,
+					"id": 4624,
 					"name": "user",
 					"kind": 32,
 					"kindString": "Variable",
@@ -31779,9 +29701,9 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						4635,
-						4637,
-						4636
+						4623,
+						4625,
+						4624
 					]
 				}
 			],
@@ -32498,7 +30420,7 @@
 			]
 		},
 		{
-			"id": 4638,
+			"id": 4626,
 			"name": "\"lib/api-old/interfaces\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -39976,7 +37898,7 @@
 			]
 		},
 		{
-			"id": 4639,
+			"id": 4627,
 			"name": "\"lib/icon/index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -39993,7 +37915,7 @@
 			]
 		},
 		{
-			"id": 4610,
+			"id": 4598,
 			"name": "\"lib/seeder/index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -40003,7 +37925,7 @@
 			"originalName": "/home/mahdy/Projects/b2b/src/lib/seeder/index.ts",
 			"children": [
 				{
-					"id": 4616,
+					"id": 4604,
 					"name": "Seeder",
 					"kind": 128,
 					"kindString": "Class",
@@ -40012,7 +37934,7 @@
 					},
 					"children": [
 						{
-							"id": 4617,
+							"id": 4605,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -40022,7 +37944,7 @@
 							},
 							"signatures": [
 								{
-									"id": 4618,
+									"id": 4606,
 									"name": "new Seeder",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -40030,7 +37952,7 @@
 									"type": {
 										"type": "reference",
 										"name": "Seeder",
-										"id": 4616
+										"id": 4604
 									}
 								}
 							],
@@ -40043,7 +37965,7 @@
 							]
 						},
 						{
-							"id": 4627,
+							"id": 4615,
 							"name": "generateCashDesks",
 							"kind": 2048,
 							"kindString": "Method",
@@ -40053,14 +37975,14 @@
 							},
 							"signatures": [
 								{
-									"id": 4628,
+									"id": 4616,
 									"name": "generateCashDesks",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 4629,
+											"id": 4617,
 											"name": "symbol",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -40074,7 +37996,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 4630,
+											"id": 4618,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -40092,7 +38014,7 @@
 							]
 						},
 						{
-							"id": 4619,
+							"id": 4607,
 							"name": "initialSeed",
 							"kind": 2048,
 							"kindString": "Method",
@@ -40102,7 +38024,7 @@
 							},
 							"signatures": [
 								{
-									"id": 4620,
+									"id": 4608,
 									"name": "initialSeed",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -40122,7 +38044,7 @@
 							]
 						},
 						{
-							"id": 4625,
+							"id": 4613,
 							"name": "setBalance",
 							"kind": 2048,
 							"kindString": "Method",
@@ -40132,7 +38054,7 @@
 							},
 							"signatures": [
 								{
-									"id": 4626,
+									"id": 4614,
 									"name": "setBalance",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -40152,7 +38074,7 @@
 							]
 						},
 						{
-							"id": 4623,
+							"id": 4611,
 							"name": "setForex",
 							"kind": 2048,
 							"kindString": "Method",
@@ -40162,7 +38084,7 @@
 							},
 							"signatures": [
 								{
-									"id": 4624,
+									"id": 4612,
 									"name": "setForex",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -40182,7 +38104,7 @@
 							]
 						},
 						{
-							"id": 4621,
+							"id": 4609,
 							"name": "setMarket",
 							"kind": 2048,
 							"kindString": "Method",
@@ -40192,7 +38114,7 @@
 							},
 							"signatures": [
 								{
-									"id": 4622,
+									"id": 4610,
 									"name": "setMarket",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -40212,7 +38134,7 @@
 							]
 						},
 						{
-							"id": 4631,
+							"id": 4619,
 							"name": "setOffice",
 							"kind": 2048,
 							"kindString": "Method",
@@ -40222,7 +38144,7 @@
 							},
 							"signatures": [
 								{
-									"id": 4632,
+									"id": 4620,
 									"name": "setOffice",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -40247,19 +38169,19 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								4617
+								4605
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								4627,
-								4619,
-								4625,
-								4623,
-								4621,
-								4631
+								4615,
+								4607,
+								4613,
+								4611,
+								4609,
+								4619
 							]
 						}
 					],
@@ -40272,14 +38194,14 @@
 					]
 				},
 				{
-					"id": 4611,
+					"id": 4599,
 					"name": "IcashDesk",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 4614,
+							"id": 4602,
 							"name": "goalValue",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40299,7 +38221,7 @@
 							}
 						},
 						{
-							"id": 4612,
+							"id": 4600,
 							"name": "symbol",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40317,7 +38239,7 @@
 							}
 						},
 						{
-							"id": 4615,
+							"id": 4603,
 							"name": "type",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40335,7 +38257,7 @@
 							}
 						},
 						{
-							"id": 4613,
+							"id": 4601,
 							"name": "value",
 							"kind": 1024,
 							"kindString": "Property",
@@ -40358,10 +38280,10 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								4614,
-								4612,
-								4615,
-								4613
+								4602,
+								4600,
+								4603,
+								4601
 							]
 						}
 					],
@@ -40374,7 +38296,7 @@
 					]
 				},
 				{
-					"id": 4633,
+					"id": 4621,
 					"name": "user",
 					"kind": 32,
 					"kindString": "Variable",
@@ -40401,521 +38323,27 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						4616
+						4604
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						4611
+						4599
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						4633
+						4621
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "lib/seeder/index.ts",
-					"line": 1,
-					"character": 0
-				}
-			]
-		},
-		{
-			"id": 848,
-			"name": "\"lib/user/index\"",
-			"kind": 1,
-			"kindString": "External module",
-			"flags": {
-				"isExported": true
-			},
-			"originalName": "/home/mahdy/Projects/b2b/src/lib/user/index.ts",
-			"children": [
-				{
-					"id": 849,
-					"name": "USER",
-					"kind": 128,
-					"kindString": "Class",
-					"flags": {
-						"isExported": true
-					},
-					"children": [
-						{
-							"id": 855,
-							"name": "constructor",
-							"kind": 512,
-							"kindString": "Constructor",
-							"flags": {
-								"isPrivate": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 856,
-									"name": "new USER",
-									"kind": 16384,
-									"kindString": "Constructor signature",
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"name": "USER",
-										"id": 849
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "lib/user/index.ts",
-									"line": 16,
-									"character": 29
-								}
-							]
-						},
-						{
-							"id": 853,
-							"name": "keycloak",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true,
-								"isPublic": true
-							},
-							"sources": [
-								{
-									"fileName": "lib/user/index.ts",
-									"line": 15,
-									"character": 19
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "any"
-							}
-						},
-						{
-							"id": 854,
-							"name": "user",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isPrivate": true,
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "lib/user/index.ts",
-									"line": 16,
-									"character": 16
-								}
-							],
-							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "intrinsic",
-										"name": "any"
-									},
-									{
-										"type": "intrinsic",
-										"name": "null"
-									}
-								]
-							}
-						},
-						{
-							"id": 852,
-							"name": "instance",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isStatic": true,
-								"isPrivate": true,
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "lib/user/index.ts",
-									"line": 14,
-									"character": 27
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "USER",
-								"id": 849
-							}
-						},
-						{
-							"id": 872,
-							"name": "destroy",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true,
-								"isPublic": true
-							},
-							"signatures": [
-								{
-									"id": 873,
-									"name": "destroy",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "lib/user/index.ts",
-									"line": 60,
-									"character": 18
-								}
-							]
-						},
-						{
-							"id": 857,
-							"name": "getCurrent",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true,
-								"isPublic": true
-							},
-							"signatures": [
-								{
-									"id": 858,
-									"name": "getCurrent",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "lib/user/index.ts",
-									"line": 25,
-									"character": 21
-								}
-							]
-						},
-						{
-							"id": 859,
-							"name": "permission",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true,
-								"isPublic": true
-							},
-							"signatures": [
-								{
-									"id": 860,
-									"name": "permission",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 861,
-											"name": "resourceName",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "reflection",
-										"declaration": {
-											"id": 862,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"children": [
-												{
-													"id": 863,
-													"name": "add",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {},
-													"sources": [
-														{
-															"fileName": "lib/user/index.ts",
-															"line": 40,
-															"character": 15
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "boolean"
-													},
-													"defaultValue": "true"
-												},
-												{
-													"id": 868,
-													"name": "adminView",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {},
-													"sources": [
-														{
-															"fileName": "lib/user/index.ts",
-															"line": 45,
-															"character": 21
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "boolean"
-													},
-													"defaultValue": "true"
-												},
-												{
-													"id": 864,
-													"name": "delete",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {},
-													"sources": [
-														{
-															"fileName": "lib/user/index.ts",
-															"line": 41,
-															"character": 18
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "boolean"
-													},
-													"defaultValue": "true"
-												},
-												{
-													"id": 865,
-													"name": "edit",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {},
-													"sources": [
-														{
-															"fileName": "lib/user/index.ts",
-															"line": 42,
-															"character": 16
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "boolean"
-													},
-													"defaultValue": "true"
-												},
-												{
-													"id": 866,
-													"name": "index",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {},
-													"sources": [
-														{
-															"fileName": "lib/user/index.ts",
-															"line": 43,
-															"character": 17
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "boolean"
-													},
-													"defaultValue": "true"
-												},
-												{
-													"id": 867,
-													"name": "view",
-													"kind": 32,
-													"kindString": "Variable",
-													"flags": {},
-													"sources": [
-														{
-															"fileName": "lib/user/index.ts",
-															"line": 44,
-															"character": 16
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "boolean"
-													},
-													"defaultValue": "true"
-												}
-											],
-											"groups": [
-												{
-													"title": "Variables",
-													"kind": 32,
-													"children": [
-														863,
-														868,
-														864,
-														865,
-														866,
-														867
-													]
-												}
-											]
-										}
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "lib/user/index.ts",
-									"line": 30,
-									"character": 21
-								}
-							]
-						},
-						{
-							"id": 869,
-							"name": "setUser",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isExported": true,
-								"isPublic": true
-							},
-							"signatures": [
-								{
-									"id": 870,
-									"name": "setUser",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 871,
-											"name": "user",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "lib/user/index.ts",
-									"line": 56,
-									"character": 18
-								}
-							]
-						},
-						{
-							"id": 850,
-							"name": "getInstance",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true,
-								"isPublic": true
-							},
-							"signatures": [
-								{
-									"id": 851,
-									"name": "getInstance",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"name": "USER",
-										"id": 849
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "lib/user/index.ts",
-									"line": 7,
-									"character": 29
-								}
-							]
-						}
-					],
-					"groups": [
-						{
-							"title": "Constructors",
-							"kind": 512,
-							"children": [
-								855
-							]
-						},
-						{
-							"title": "Properties",
-							"kind": 1024,
-							"children": [
-								853,
-								854,
-								852
-							]
-						},
-						{
-							"title": "Methods",
-							"kind": 2048,
-							"children": [
-								872,
-								857,
-								859,
-								869,
-								850
-							]
-						}
-					],
-					"sources": [
-						{
-							"fileName": "lib/user/index.ts",
-							"line": 6,
-							"character": 25
-						}
-					]
-				}
-			],
-			"groups": [
-				{
-					"title": "Classes",
-					"kind": 128,
-					"children": [
-						849
-					]
-				}
-			],
-			"sources": [
-				{
-					"fileName": "lib/user/index.ts",
 					"line": 1,
 					"character": 0
 				}
@@ -42491,199 +39919,6 @@
 			]
 		},
 		{
-			"id": 457,
-			"name": "\"services/tools/index\"",
-			"kind": 1,
-			"kindString": "External module",
-			"flags": {
-				"isExported": true
-			},
-			"originalName": "/home/mahdy/Projects/b2b/src/services/tools/index.ts",
-			"children": [
-				{
-					"id": 458,
-					"name": "Tools",
-					"kind": 128,
-					"kindString": "Class",
-					"flags": {
-						"isExported": true
-					},
-					"children": [
-						{
-							"id": 466,
-							"name": "constructor",
-							"kind": 512,
-							"kindString": "Constructor",
-							"flags": {
-								"isExported": true,
-								"isPublic": true
-							},
-							"signatures": [
-								{
-									"id": 467,
-									"name": "new Tools",
-									"kind": 16384,
-									"kindString": "Constructor signature",
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"name": "Tools",
-										"id": 458
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "services/tools/index.ts",
-									"line": 22,
-									"character": 5
-								}
-							]
-						},
-						{
-							"id": 462,
-							"name": "getUsdPrice",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true,
-								"isPublic": true
-							},
-							"signatures": [
-								{
-									"id": 463,
-									"name": "getUsdPrice",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 464,
-											"name": "symbol",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										},
-										{
-											"id": 465,
-											"name": "value",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "number"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "services/tools/index.ts",
-									"line": 19,
-									"character": 29
-								}
-							]
-						},
-						{
-							"id": 459,
-							"name": "getUsdRate",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true,
-								"isPublic": true
-							},
-							"signatures": [
-								{
-									"id": 460,
-									"name": "getUsdRate",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 461,
-											"name": "symbol",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "number"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "services/tools/index.ts",
-									"line": 6,
-									"character": 28
-								}
-							]
-						}
-					],
-					"groups": [
-						{
-							"title": "Constructors",
-							"kind": 512,
-							"children": [
-								466
-							]
-						},
-						{
-							"title": "Methods",
-							"kind": 2048,
-							"children": [
-								462,
-								459
-							]
-						}
-					],
-					"sources": [
-						{
-							"fileName": "services/tools/index.ts",
-							"line": 5,
-							"character": 26
-						}
-					]
-				}
-			],
-			"groups": [
-				{
-					"title": "Classes",
-					"kind": 128,
-					"children": [
-						458
-					]
-				}
-			],
-			"sources": [
-				{
-					"fileName": "services/tools/index.ts",
-					"line": 1,
-					"character": 0
-				}
-			]
-		},
-		{
 			"id": 468,
 			"name": "\"services/trans/i18n\"",
 			"kind": 1,
@@ -42948,6 +40183,1916 @@
 			"sources": [
 				{
 					"fileName": "services/trans/languages.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 4501,
+			"name": "AppContainer",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/mahdy/Projects/b2b/src/containers/app.tsx",
+			"children": [
+				{
+					"id": 4506,
+					"name": "AppContainer",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {},
+					"comment": {
+						"shortText": "this is our root component wich is route app to containers\nbased on browsers path"
+					},
+					"typeParameter": [
+						{
+							"id": 4520,
+							"name": "SS",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"children": [
+						{
+							"id": 4507,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 4508,
+									"name": "new AppContainer",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 4509,
+											"name": "props",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "IProps",
+												"id": 4502
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "AppContainer",
+										"id": 4506
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "Component.__constructor"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "containers/app.tsx",
+									"line": 38,
+									"character": 60
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "Component.__constructor"
+							}
+						},
+						{
+							"id": 4587,
+							"name": "context",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 302,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.context"
+							}
+						},
+						{
+							"id": 4583,
+							"name": "props",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 300,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reference",
+										"name": "Readonly",
+										"typeArguments": [
+											{
+												"type": "reflection",
+												"declaration": {
+													"id": 4584,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 4585,
+															"name": "children",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+																	"line": 300,
+																	"character": 34
+																}
+															],
+															"type": {
+																"type": "reference",
+																"name": "ReactNode"
+															}
+														}
+													],
+													"groups": [
+														{
+															"title": "Variables",
+															"kind": 32,
+															"children": [
+																4585
+															]
+														}
+													],
+													"sources": [
+														{
+															"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+															"line": 300,
+															"character": 24
+														}
+													]
+												}
+											}
+										]
+									},
+									{
+										"type": "reference",
+										"name": "Readonly",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "IProps",
+												"id": 4502
+											}
+										]
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.props"
+							}
+						},
+						{
+							"id": 4588,
+							"name": "refs",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 303,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 4589,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"indexSignature": {
+										"id": 4590,
+										"name": "__index",
+										"kind": 8192,
+										"kindString": "Index signature",
+										"flags": {},
+										"parameters": [
+											{
+												"id": 4591,
+												"name": "key",
+												"kind": 32768,
+												"kindString": "Parameter",
+												"flags": {},
+												"type": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											}
+										],
+										"type": {
+											"type": "reference",
+											"name": "ReactInstance"
+										}
+									},
+									"sources": [
+										{
+											"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+											"line": 303,
+											"character": 13
+										}
+									]
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.refs"
+							}
+						},
+						{
+							"id": 4586,
+							"name": "state",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 301,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Readonly",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "IState",
+										"id": 4504
+									}
+								]
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.state"
+							}
+						},
+						{
+							"id": 4510,
+							"name": "componentDidMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 4511,
+									"name": "componentDidMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "containers/app.tsx",
+									"line": 45,
+									"character": 28
+								}
+							]
+						},
+						{
+							"id": 4578,
+							"name": "forceUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 4579,
+									"name": "forceUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 4580,
+											"name": "callBack",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 4581,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 4582,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+															"line": 292,
+															"character": 30
+														}
+													]
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Component.forceUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 292,
+									"character": 19
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.forceUpdate"
+							}
+						},
+						{
+							"id": 4512,
+							"name": "parseProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 4513,
+									"name": "parseProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 4514,
+											"name": "props",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "IState",
+										"id": 4504
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "containers/app.tsx",
+									"line": 49,
+									"character": 21
+								}
+							]
+						},
+						{
+							"id": 4518,
+							"name": "render",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 4519,
+									"name": "render",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Element"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "Component.render"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "containers/app.tsx",
+									"line": 66,
+									"character": 17
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "Component.render"
+							}
+						},
+						{
+							"id": 4565,
+							"name": "setState",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 4566,
+									"name": "setState",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"typeParameter": [
+										{
+											"id": 4567,
+											"name": "K",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {},
+											"type": {
+												"type": "typeOperator",
+												"operator": "keyof",
+												"target": {
+													"type": "reference",
+													"name": "IState"
+												}
+											}
+										}
+									],
+									"parameters": [
+										{
+											"id": 4568,
+											"name": "state",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "reflection",
+														"declaration": {
+															"id": 4569,
+															"name": "__type",
+															"kind": 65536,
+															"kindString": "Type literal",
+															"flags": {},
+															"signatures": [
+																{
+																	"id": 4570,
+																	"name": "__call",
+																	"kind": 4096,
+																	"kindString": "Call signature",
+																	"flags": {},
+																	"parameters": [
+																		{
+																			"id": 4571,
+																			"name": "prevState",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"name": "Readonly",
+																				"typeArguments": [
+																					{
+																						"type": "reference",
+																						"name": "IState",
+																						"id": 4504
+																					}
+																				]
+																			}
+																		},
+																		{
+																			"id": 4572,
+																			"name": "props",
+																			"kind": 32768,
+																			"kindString": "Parameter",
+																			"flags": {},
+																			"type": {
+																				"type": "reference",
+																				"name": "IProps",
+																				"id": 4502
+																			}
+																		}
+																	],
+																	"type": {
+																		"type": "union",
+																		"types": [
+																			{
+																				"type": "unknown",
+																				"name": "S"
+																			},
+																			{
+																				"type": "reflection",
+																				"declaration": {
+																					"id": 4573,
+																					"name": "__type",
+																					"kind": 65536,
+																					"kindString": "Type literal",
+																					"flags": {}
+																				}
+																			}
+																		]
+																	}
+																}
+															],
+															"sources": [
+																{
+																	"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+																	"line": 288,
+																	"character": 18
+																}
+															]
+														}
+													},
+													{
+														"type": "union",
+														"types": [
+															{
+																"type": "unknown",
+																"name": "S"
+															},
+															{
+																"type": "reflection",
+																"declaration": {
+																	"id": 4574,
+																	"name": "__type",
+																	"kind": 65536,
+																	"kindString": "Type literal",
+																	"flags": {}
+																}
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"id": 4575,
+											"name": "callback",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 4576,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"signatures": [
+														{
+															"id": 4577,
+															"name": "__call",
+															"kind": 4096,
+															"kindString": "Call signature",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "void"
+															}
+														}
+													],
+													"sources": [
+														{
+															"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+															"line": 289,
+															"character": 22
+														}
+													]
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Component.setState"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 287,
+									"character": 16
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Component.setState"
+							}
+						},
+						{
+							"id": 4515,
+							"name": "shouldComponentUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 4516,
+									"name": "shouldComponentUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 4517,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "containers/app.tsx",
+									"line": 56,
+									"character": 32
+								}
+							]
+						},
+						{
+							"id": 4545,
+							"name": "UNSAFE_componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 4546,
+									"name": "UNSAFE_componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "This method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 458,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillMount"
+							}
+						},
+						{
+							"id": 4551,
+							"name": "UNSAFE_componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 4552,
+									"name": "UNSAFE_componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 4553,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "IProps",
+														"id": 4502
+													}
+												]
+											}
+										},
+										{
+											"id": 4554,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 490,
+									"character": 40
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 4560,
+							"name": "UNSAFE_componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 4561,
+									"name": "UNSAFE_componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nThis method will not stop working in React 17.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 4562,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "IProps",
+														"id": 4502
+													}
+												]
+											}
+										},
+										{
+											"id": 4563,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "IState",
+														"id": 4504
+													}
+												]
+											}
+										},
+										{
+											"id": 4564,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 518,
+									"character": 34
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.UNSAFE_componentWillUpdate"
+							}
+						},
+						{
+							"id": 4530,
+							"name": "componentDidCatch",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 4531,
+									"name": "componentDidCatch",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Catches exceptions generated in descendant components. Unhandled exceptions will cause\nthe entire component tree to unmount."
+									},
+									"parameters": [
+										{
+											"id": 4532,
+											"name": "error",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Error"
+											}
+										},
+										{
+											"id": 4533,
+											"name": "errorInfo",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ErrorInfo"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidCatch"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 397,
+									"character": 25
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidCatch"
+							}
+						},
+						{
+							"id": 4521,
+							"name": "componentDidMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 4522,
+									"name": "componentDidMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately after a compoment is mounted. Setting state here will trigger re-rendering."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentDidMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 376,
+									"character": 25
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentDidMount"
+							}
+						},
+						{
+							"id": 4538,
+							"name": "componentDidUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 4539,
+									"name": "componentDidUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately after updating occurs. Not called for the initial render.",
+										"text": "The snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.\n"
+									},
+									"parameters": [
+										{
+											"id": 4540,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "IProps",
+														"id": 4502
+													}
+												]
+											}
+										},
+										{
+											"id": 4541,
+											"name": "prevState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "IState",
+														"id": 4504
+													}
+												]
+											}
+										},
+										{
+											"id": 4542,
+											"name": "snapshot",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "typeParameter",
+												"name": "SS"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "NewLifecycle.componentDidUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 429,
+									"character": 26
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "NewLifecycle.componentDidUpdate"
+							}
+						},
+						{
+							"id": 4543,
+							"name": "componentWillMount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 4544,
+									"name": "componentWillMount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before mounting occurs, and before `Component#render`.\nAvoid introducing any side-effects or subscriptions in this method.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use componentDidMount or the constructor instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#initializing-state"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillMount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 444,
+									"character": 26
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillMount"
+							}
+						},
+						{
+							"id": 4547,
+							"name": "componentWillReceiveProps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 4548,
+									"name": "componentWillReceiveProps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called when the component may be receiving new props.\nReact may call this even if props have not changed, so be sure to compare new and existing\nprops if you only want to handle changes.",
+										"text": "Calling `Component#setState` generally does not trigger this method.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use static getDerivedStateFromProps instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#updating-state-based-on-props"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 4549,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "IProps",
+														"id": 4502
+													}
+												]
+											}
+										},
+										{
+											"id": 4550,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillReceiveProps"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 473,
+									"character": 33
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillReceiveProps"
+							}
+						},
+						{
+							"id": 4528,
+							"name": "componentWillUnmount",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 4529,
+									"name": "componentWillUnmount",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as\ncancelled network requests, or cleaning up any DOM elements created in `componentDidMount`."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.componentWillUnmount"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 392,
+									"character": 28
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.componentWillUnmount"
+							}
+						},
+						{
+							"id": 4555,
+							"name": "componentWillUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 4556,
+									"name": "componentWillUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called immediately before rendering when new props or state is received. Not called for the initial render.",
+										"text": "Note: You cannot call `Component#setState` here.\n\nNote: the presence of getSnapshotBeforeUpdate or getDerivedStateFromProps\nprevents this from being invoked.\n",
+										"tags": [
+											{
+												"tag": "deprecated",
+												"text": "16.3, use getSnapshotBeforeUpdate instead; will stop working in React 17"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#reading-dom-properties-before-an-update"
+											},
+											{
+												"tag": "see",
+												"text": "https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#gradual-migration-path\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 4557,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "IProps",
+														"id": 4502
+													}
+												]
+											}
+										},
+										{
+											"id": 4558,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "IState",
+														"id": 4504
+													}
+												]
+											}
+										},
+										{
+											"id": 4559,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "DeprecatedLifecycle.componentWillUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 503,
+									"character": 27
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "DeprecatedLifecycle.componentWillUpdate"
+							}
+						},
+						{
+							"id": 4534,
+							"name": "getSnapshotBeforeUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 4535,
+									"name": "getSnapshotBeforeUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Runs before React applies the result of `render` to the document, and\nreturns an object to be given to componentDidUpdate. Useful for saving\nthings such as scroll position before `render` causes changes to it.",
+										"text": "Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated\nlifecycle events from running.\n"
+									},
+									"parameters": [
+										{
+											"id": 4536,
+											"name": "prevProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "IProps",
+														"id": 4502
+													}
+												]
+											}
+										},
+										{
+											"id": 4537,
+											"name": "prevState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "IState",
+														"id": 4504
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "typeParameter",
+												"name": "SS"
+											},
+											{
+												"type": "intrinsic",
+												"name": "null"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "NewLifecycle.getSnapshotBeforeUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 423,
+									"character": 31
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "NewLifecycle.getSnapshotBeforeUpdate"
+							}
+						},
+						{
+							"id": 4523,
+							"name": "shouldComponentUpdate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isOptional": true
+							},
+							"signatures": [
+								{
+									"id": 4524,
+									"name": "shouldComponentUpdate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Called to determine whether the change in props and state should trigger a re-render.",
+										"text": "`Component` always returns true.\n`PureComponent` implements a shallow comparison on props and state and returns true if any\nprops or states have changed.\n\nIf false is returned, `Component#render`, `componentWillUpdate`\nand `componentDidUpdate` will not be called.\n"
+									},
+									"parameters": [
+										{
+											"id": 4525,
+											"name": "nextProps",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "IProps",
+														"id": 4502
+													}
+												]
+											}
+										},
+										{
+											"id": 4526,
+											"name": "nextState",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Readonly",
+												"typeArguments": [
+													{
+														"type": "reference",
+														"name": "IState",
+														"id": 4504
+													}
+												]
+											}
+										},
+										{
+											"id": 4527,
+											"name": "nextContext",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "ComponentLifecycle.shouldComponentUpdate"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "/home/mahdy/Projects/b2b/node_modules/@types/react/index.d.ts",
+									"line": 387,
+									"character": 29
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "ComponentLifecycle.shouldComponentUpdate"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								4507
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								4587,
+								4583,
+								4588,
+								4586
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								4510,
+								4578,
+								4512,
+								4518,
+								4565,
+								4515,
+								4545,
+								4551,
+								4560,
+								4530,
+								4521,
+								4538,
+								4543,
+								4547,
+								4528,
+								4555,
+								4534,
+								4523
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "containers/app.tsx",
+							"line": 38,
+							"character": 18
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "Component",
+							"typeArguments": [
+								{
+									"type": "reference",
+									"name": "IProps",
+									"id": 4502
+								},
+								{
+									"type": "reference",
+									"name": "IState",
+									"id": 4504
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": 4502,
+					"name": "IProps",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 4503,
+							"name": "email",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"comment": {
+								"shortText": "user's email from redux"
+							},
+							"sources": [
+								{
+									"fileName": "containers/app.tsx",
+									"line": 26,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								4503
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "containers/app.tsx",
+							"line": 24,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 4504,
+					"name": "IState",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 4505,
+							"name": "email",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "user's email, synced with email in props"
+							},
+							"sources": [
+								{
+									"fileName": "containers/app.tsx",
+									"line": 31,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								4505
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "containers/app.tsx",
+							"line": 29,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 4592,
+					"name": "mapStateToProps",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 4593,
+							"name": "mapStateToProps",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 4594,
+									"name": "state",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "IRootState",
+										"id": 436
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 4595,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 4596,
+													"name": "email",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "containers/app.tsx",
+															"line": 102,
+															"character": 17
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													},
+													"defaultValue": " state.app.user.email"
+												}
+											],
+											"groups": [
+												{
+													"title": "Variables",
+													"kind": 32,
+													"children": [
+														4596
+													]
+												}
+											]
+										}
+									},
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 4597,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "containers/app.tsx",
+							"line": 99,
+							"character": 24
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						4506
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						4502,
+						4504
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						4592
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "containers/app.tsx",
 					"line": 1,
 					"character": 0
 				}
@@ -92612,6 +91757,711 @@
 					"character": 0
 				}
 			]
+		},
+		{
+			"id": 457,
+			"name": "Tools",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/mahdy/Projects/b2b/src/services/tools/index.ts",
+			"children": [
+				{
+					"id": 458,
+					"name": "Tools",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "a tool class which is provie useful functions"
+					},
+					"children": [
+						{
+							"id": 466,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 467,
+									"name": "new Tools",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Tools",
+										"id": 458
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "services/tools/index.ts",
+									"line": 36,
+									"character": 5
+								}
+							]
+						},
+						{
+							"id": 462,
+							"name": "getUsdPrice",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 463,
+									"name": "getUsdPrice",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "returns usd price of any symbol value (fiat or crypto)\n   this function uses redux store to access informations"
+									},
+									"parameters": [
+										{
+											"id": 464,
+											"name": "symbol",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 465,
+											"name": "value",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "services/tools/index.ts",
+									"line": 33,
+									"character": 29
+								}
+							]
+						},
+						{
+							"id": 459,
+							"name": "getUsdRate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 460,
+									"name": "getUsdRate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "returns usd rate of any symbol (fiat or crypto)\n   this function uses redux store to access informations"
+									},
+									"parameters": [
+										{
+											"id": 461,
+											"name": "symbol",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "services/tools/index.ts",
+									"line": 16,
+									"character": 28
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								466
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								462,
+								459
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "services/tools/index.ts",
+							"line": 11,
+							"character": 26
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						458
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "services/tools/index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 848,
+			"name": "User",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/mahdy/Projects/b2b/src/lib/user/index.ts",
+			"children": [
+				{
+					"id": 849,
+					"name": "USER",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "singleton class for representing the current user"
+					},
+					"children": [
+						{
+							"id": 855,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 856,
+									"name": "new USER",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "USER",
+										"id": 849
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "lib/user/index.ts",
+									"line": 22,
+									"character": 29
+								}
+							]
+						},
+						{
+							"id": 853,
+							"name": "keycloak",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "lib/user/index.ts",
+									"line": 21,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 854,
+							"name": "user",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "lib/user/index.ts",
+									"line": 22,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							}
+						},
+						{
+							"id": 852,
+							"name": "instance",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isStatic": true,
+								"isPrivate": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "lib/user/index.ts",
+									"line": 20,
+									"character": 27
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "USER",
+								"id": 849
+							}
+						},
+						{
+							"id": 872,
+							"name": "destroy",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 873,
+									"name": "destroy",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "lib/user/index.ts",
+									"line": 69,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 857,
+							"name": "getCurrent",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 858,
+									"name": "getCurrent",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "lib/user/index.ts",
+									"line": 32,
+									"character": 21
+								}
+							]
+						},
+						{
+							"id": 859,
+							"name": "permission",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 860,
+									"name": "permission",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "return user permission for a speceific resource"
+									},
+									"parameters": [
+										{
+											"id": 861,
+											"name": "resourceName",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 862,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 863,
+													"name": "add",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "lib/user/index.ts",
+															"line": 48,
+															"character": 15
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													},
+													"defaultValue": "true"
+												},
+												{
+													"id": 868,
+													"name": "adminView",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "lib/user/index.ts",
+															"line": 53,
+															"character": 21
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													},
+													"defaultValue": "true"
+												},
+												{
+													"id": 864,
+													"name": "delete",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "lib/user/index.ts",
+															"line": 49,
+															"character": 18
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													},
+													"defaultValue": "true"
+												},
+												{
+													"id": 865,
+													"name": "edit",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "lib/user/index.ts",
+															"line": 50,
+															"character": 16
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													},
+													"defaultValue": "true"
+												},
+												{
+													"id": 866,
+													"name": "index",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "lib/user/index.ts",
+															"line": 51,
+															"character": 17
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													},
+													"defaultValue": "true"
+												},
+												{
+													"id": 867,
+													"name": "view",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "lib/user/index.ts",
+															"line": 52,
+															"character": 16
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													},
+													"defaultValue": "true"
+												}
+											],
+											"groups": [
+												{
+													"title": "Variables",
+													"kind": 32,
+													"children": [
+														863,
+														868,
+														864,
+														865,
+														866,
+														867
+													]
+												}
+											]
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "lib/user/index.ts",
+									"line": 38,
+									"character": 21
+								}
+							]
+						},
+						{
+							"id": 869,
+							"name": "setUser",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 870,
+									"name": "setUser",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "set user object"
+									},
+									"parameters": [
+										{
+											"id": 871,
+											"name": "user",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "lib/user/index.ts",
+									"line": 65,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 850,
+							"name": "getInstance",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 851,
+									"name": "getInstance",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "USER",
+										"id": 849
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "lib/user/index.ts",
+									"line": 13,
+									"character": 29
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								855
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								853,
+								854,
+								852
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								872,
+								857,
+								859,
+								869,
+								850
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "lib/user/index.ts",
+							"line": 12,
+							"character": 25
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						849
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "lib/user/index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
 		}
 	],
 	"groups": [
@@ -92636,15 +92486,13 @@
 				4224,
 				4305,
 				4418,
-				4501,
-				4634,
+				4622,
 				3498,
-				4638,
+				4626,
 				671,
 				2013,
-				4639,
-				4610,
-				848,
+				4627,
+				4598,
 				409,
 				815,
 				414,
@@ -92654,9 +92502,9 @@
 				448,
 				435,
 				454,
-				457,
 				468,
 				357,
+				4501,
 				566,
 				874,
 				1,
@@ -92683,7 +92531,9 @@
 				2913,
 				3022,
 				3134,
-				367
+				367,
+				457,
+				848
 			]
 		}
 	]
