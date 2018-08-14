@@ -4670,1019 +4670,6 @@
 			]
 		},
 		{
-			"id": 367,
-			"name": "\"config\"",
-			"kind": 1,
-			"kindString": "External module",
-			"flags": {
-				"isExported": true
-			},
-			"originalName": "/home/mahdy/Projects/b2b/src/config.tsx",
-			"children": [
-				{
-					"id": 368,
-					"name": "config",
-					"kind": 2097152,
-					"kindString": "Object literal",
-					"flags": {
-						"isExported": true,
-						"isConst": true
-					},
-					"children": [
-						{
-							"id": 370,
-							"name": "NewApiUrl",
-							"kind": 32,
-							"kindString": "Variable",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "config.tsx",
-									"line": 7,
-									"character": 13
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							},
-							"defaultValue": "\"http://87.98.188.77:9092\""
-						},
-						{
-							"id": 369,
-							"name": "apiUrl",
-							"kind": 32,
-							"kindString": "Variable",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "config.tsx",
-									"line": 6,
-									"character": 10
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							},
-							"defaultValue": "\"http://87.98.188.77:9092/\""
-						},
-						{
-							"id": 371,
-							"name": "language",
-							"kind": 32,
-							"kindString": "Variable",
-							"flags": {
-								"isExported": true
-							},
-							"sources": [
-								{
-									"fileName": "config.tsx",
-									"line": 8,
-									"character": 12
-								}
-							],
-							"type": {
-								"type": "reflection",
-								"declaration": {
-									"id": 372,
-									"name": "__type",
-									"kind": 65536,
-									"kindString": "Type literal",
-									"flags": {
-										"isExported": true
-									},
-									"children": [
-										{
-											"id": 373,
-											"name": "codeName",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "services/trans/languages.tsx",
-													"line": 3,
-													"character": 16
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"en\""
-										},
-										{
-											"id": 374,
-											"name": "dir",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "services/trans/languages.tsx",
-													"line": 4,
-													"character": 11
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"ltr\""
-										},
-										{
-											"id": 375,
-											"name": "name",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "services/trans/languages.tsx",
-													"line": 5,
-													"character": 12
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"english\""
-										}
-									],
-									"groups": [
-										{
-											"title": "Variables",
-											"kind": 32,
-											"children": [
-												373,
-												374,
-												375
-											]
-										}
-									]
-								}
-							},
-							"defaultValue": " Languages.en"
-						},
-						{
-							"id": 381,
-							"name": "currencies",
-							"kind": 2097152,
-							"kindString": "Object literal",
-							"flags": {
-								"isExported": true
-							},
-							"children": [
-								{
-									"id": 382,
-									"name": "BTC",
-									"kind": 2097152,
-									"kindString": "Object literal",
-									"flags": {
-										"isExported": true
-									},
-									"children": [
-										{
-											"id": 385,
-											"name": "confirmationNumber",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "config.tsx",
-													"line": 19,
-													"character": 30
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "number"
-											},
-											"defaultValue": "5"
-										},
-										{
-											"id": 384,
-											"name": "depositeWallet",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "config.tsx",
-													"line": 18,
-													"character": 26
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"btcbeygizasdfrwgsdfgsdfgsdfdfsgsfdgdfg\""
-										},
-										{
-											"id": 383,
-											"name": "name",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "config.tsx",
-													"line": 17,
-													"character": 16
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"Bitcoin\""
-										},
-										{
-											"id": 386,
-											"name": "type",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "config.tsx",
-													"line": 20,
-													"character": 16
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"crypto\""
-										}
-									],
-									"groups": [
-										{
-											"title": "Variables",
-											"kind": 32,
-											"children": [
-												385,
-												384,
-												383,
-												386
-											]
-										}
-									],
-									"sources": [
-										{
-											"fileName": "config.tsx",
-											"line": 16,
-											"character": 11
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "object"
-									}
-								},
-								{
-									"id": 387,
-									"name": "ETH",
-									"kind": 2097152,
-									"kindString": "Object literal",
-									"flags": {
-										"isExported": true
-									},
-									"children": [
-										{
-											"id": 390,
-											"name": "confirmationNumber",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "config.tsx",
-													"line": 25,
-													"character": 30
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "number"
-											},
-											"defaultValue": "20"
-										},
-										{
-											"id": 389,
-											"name": "depositeWallet",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "config.tsx",
-													"line": 24,
-													"character": 26
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"etherasdfrwgsdfgsdfgsdfgdfsgsfdgdfg\""
-										},
-										{
-											"id": 388,
-											"name": "name",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "config.tsx",
-													"line": 23,
-													"character": 16
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"Ethereum\""
-										},
-										{
-											"id": 391,
-											"name": "type",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "config.tsx",
-													"line": 26,
-													"character": 16
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"crypto\""
-										}
-									],
-									"groups": [
-										{
-											"title": "Variables",
-											"kind": 32,
-											"children": [
-												390,
-												389,
-												388,
-												391
-											]
-										}
-									],
-									"sources": [
-										{
-											"fileName": "config.tsx",
-											"line": 22,
-											"character": 11
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "object"
-									}
-								},
-								{
-									"id": 397,
-									"name": "IRR",
-									"kind": 2097152,
-									"kindString": "Object literal",
-									"flags": {
-										"isExported": true
-									},
-									"children": [
-										{
-											"id": 398,
-											"name": "name",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "config.tsx",
-													"line": 35,
-													"character": 16
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"IR Rial\""
-										},
-										{
-											"id": 399,
-											"name": "type",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "config.tsx",
-													"line": 36,
-													"character": 16
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"fiat\""
-										}
-									],
-									"groups": [
-										{
-											"title": "Variables",
-											"kind": 32,
-											"children": [
-												398,
-												399
-											]
-										}
-									],
-									"sources": [
-										{
-											"fileName": "config.tsx",
-											"line": 34,
-											"character": 11
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "object"
-									}
-								},
-								{
-									"id": 392,
-									"name": "LTC",
-									"kind": 2097152,
-									"kindString": "Object literal",
-									"flags": {
-										"isExported": true
-									},
-									"children": [
-										{
-											"id": 395,
-											"name": "confirmationNumber",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "config.tsx",
-													"line": 31,
-													"character": 30
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "number"
-											},
-											"defaultValue": "16"
-										},
-										{
-											"id": 394,
-											"name": "depositeWallet",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "config.tsx",
-													"line": 30,
-													"character": 26
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"litecoin1weasrtasdf4rtsadfsdfsd4s54sddfdf\""
-										},
-										{
-											"id": 393,
-											"name": "name",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "config.tsx",
-													"line": 29,
-													"character": 16
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"Litecoin\""
-										},
-										{
-											"id": 396,
-											"name": "type",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "config.tsx",
-													"line": 32,
-													"character": 16
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"crypto\""
-										}
-									],
-									"groups": [
-										{
-											"title": "Variables",
-											"kind": 32,
-											"children": [
-												395,
-												394,
-												393,
-												396
-											]
-										}
-									],
-									"sources": [
-										{
-											"fileName": "config.tsx",
-											"line": 28,
-											"character": 11
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "object"
-									}
-								},
-								{
-									"id": 400,
-									"name": "USD",
-									"kind": 2097152,
-									"kindString": "Object literal",
-									"flags": {
-										"isExported": true
-									},
-									"children": [
-										{
-											"id": 401,
-											"name": "name",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "config.tsx",
-													"line": 39,
-													"character": 16
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"US dollar\""
-										},
-										{
-											"id": 402,
-											"name": "type",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "config.tsx",
-													"line": 40,
-													"character": 16
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"fiat\""
-										}
-									],
-									"groups": [
-										{
-											"title": "Variables",
-											"kind": 32,
-											"children": [
-												401,
-												402
-											]
-										}
-									],
-									"sources": [
-										{
-											"fileName": "config.tsx",
-											"line": 38,
-											"character": 11
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "object"
-									}
-								}
-							],
-							"groups": [
-								{
-									"title": "Object literals",
-									"kind": 2097152,
-									"children": [
-										382,
-										387,
-										397,
-										392,
-										400
-									]
-								}
-							],
-							"sources": [
-								{
-									"fileName": "config.tsx",
-									"line": 15,
-									"character": 14
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "object"
-							}
-						},
-						{
-							"id": 403,
-							"name": "icons",
-							"kind": 2097152,
-							"kindString": "Object literal",
-							"flags": {
-								"isExported": true
-							},
-							"children": [
-								{
-									"id": 404,
-									"name": "BTC",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {
-										"isExported": true
-									},
-									"sources": [
-										{
-											"fileName": "config.tsx",
-											"line": 45,
-											"character": 15
-										}
-									],
-									"type": {
-										"type": "reference",
-										"name": "Element"
-									},
-									"defaultValue": " <i className=\"cc BTC-alt\"></i>"
-								},
-								{
-									"id": 407,
-									"name": "ETH",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {
-										"isExported": true
-									},
-									"sources": [
-										{
-											"fileName": "config.tsx",
-											"line": 48,
-											"character": 15
-										}
-									],
-									"type": {
-										"type": "reference",
-										"name": "Element"
-									},
-									"defaultValue": " <i className=\"cc ETH-alt\"></i>"
-								},
-								{
-									"id": 406,
-									"name": "IRR",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {
-										"isExported": true
-									},
-									"sources": [
-										{
-											"fileName": "config.tsx",
-											"line": 47,
-											"character": 15
-										}
-									],
-									"type": {
-										"type": "reference",
-										"name": "Element"
-									},
-									"defaultValue": " <span>﷼</span>"
-								},
-								{
-									"id": 408,
-									"name": "LTC",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {
-										"isExported": true
-									},
-									"sources": [
-										{
-											"fileName": "config.tsx",
-											"line": 49,
-											"character": 15
-										}
-									],
-									"type": {
-										"type": "reference",
-										"name": "Element"
-									},
-									"defaultValue": " <i className=\"cc LTC-alt\"></i>"
-								},
-								{
-									"id": 405,
-									"name": "USD",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {
-										"isExported": true
-									},
-									"sources": [
-										{
-											"fileName": "config.tsx",
-											"line": 46,
-											"character": 15
-										}
-									],
-									"type": {
-										"type": "reference",
-										"name": "Element"
-									},
-									"defaultValue": " <span>$</span>"
-								}
-							],
-							"groups": [
-								{
-									"title": "Variables",
-									"kind": 32,
-									"children": [
-										404,
-										407,
-										406,
-										408,
-										405
-									]
-								}
-							],
-							"sources": [
-								{
-									"fileName": "config.tsx",
-									"line": 43,
-									"character": 9
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "object"
-							}
-						},
-						{
-							"id": 376,
-							"name": "keycloakConfig",
-							"kind": 2097152,
-							"kindString": "Object literal",
-							"flags": {
-								"isExported": true
-							},
-							"children": [
-								{
-									"id": 380,
-									"name": "checkLoginIframe",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {
-										"isExported": true
-									},
-									"sources": [
-										{
-											"fileName": "config.tsx",
-											"line": 13,
-											"character": 24
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "boolean"
-									},
-									"defaultValue": "false"
-								},
-								{
-									"id": 379,
-									"name": "clientId",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {
-										"isExported": true
-									},
-									"sources": [
-										{
-											"fileName": "config.tsx",
-											"line": 12,
-											"character": 16
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									},
-									"defaultValue": "\"application\""
-								},
-								{
-									"id": 378,
-									"name": "realm",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {
-										"isExported": true
-									},
-									"sources": [
-										{
-											"fileName": "config.tsx",
-											"line": 11,
-											"character": 13
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									},
-									"defaultValue": "\"master\""
-								},
-								{
-									"id": 377,
-									"name": "url",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {
-										"isExported": true
-									},
-									"sources": [
-										{
-											"fileName": "config.tsx",
-											"line": 10,
-											"character": 11
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									},
-									"defaultValue": "\"https://aas.avazcoin.com/auth\""
-								}
-							],
-							"groups": [
-								{
-									"title": "Variables",
-									"kind": 32,
-									"children": [
-										380,
-										379,
-										378,
-										377
-									]
-								}
-							],
-							"sources": [
-								{
-									"fileName": "config.tsx",
-									"line": 9,
-									"character": 18
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "object"
-							}
-						}
-					],
-					"groups": [
-						{
-							"title": "Variables",
-							"kind": 32,
-							"children": [
-								370,
-								369,
-								371
-							]
-						},
-						{
-							"title": "Object literals",
-							"kind": 2097152,
-							"children": [
-								381,
-								403,
-								376
-							]
-						}
-					],
-					"sources": [
-						{
-							"fileName": "config.tsx",
-							"line": 4,
-							"character": 12
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "object"
-					}
-				}
-			],
-			"groups": [
-				{
-					"title": "Object literals",
-					"kind": 2097152,
-					"children": [
-						368
-					]
-				}
-			],
-			"sources": [
-				{
-					"fileName": "config.tsx",
-					"line": 1,
-					"character": 0
-				}
-			]
-		},
-		{
 			"id": 3230,
 			"name": "\"containers/Admin/Chat/index\"",
 			"kind": 1,
@@ -32732,7 +31719,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 20,
+							"line": 21,
 							"character": 13
 						}
 					],
@@ -32753,7 +31740,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 24,
+							"line": 25,
 							"character": 14
 						}
 					],
@@ -32775,7 +31762,7 @@
 					"sources": [
 						{
 							"fileName": "index.tsx",
-							"line": 21,
+							"line": 23,
 							"character": 10
 						}
 					],
@@ -92609,6 +91596,1022 @@
 					"character": 0
 				}
 			]
+		},
+		{
+			"id": 367,
+			"name": "Config",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/mahdy/Projects/b2b/src/config.tsx",
+			"children": [
+				{
+					"id": 368,
+					"name": "config",
+					"kind": 2097152,
+					"kindString": "Object literal",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "configuration object"
+					},
+					"children": [
+						{
+							"id": 370,
+							"name": "NewApiUrl",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "config.tsx",
+									"line": 13,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"http://87.98.188.77:9092\""
+						},
+						{
+							"id": 369,
+							"name": "apiUrl",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "config.tsx",
+									"line": 12,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"http://87.98.188.77:9092/\""
+						},
+						{
+							"id": 371,
+							"name": "language",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "config.tsx",
+									"line": 14,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 372,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"children": [
+										{
+											"id": 373,
+											"name": "codeName",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "services/trans/languages.tsx",
+													"line": 3,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"en\""
+										},
+										{
+											"id": 374,
+											"name": "dir",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "services/trans/languages.tsx",
+													"line": 4,
+													"character": 11
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"ltr\""
+										},
+										{
+											"id": 375,
+											"name": "name",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "services/trans/languages.tsx",
+													"line": 5,
+													"character": 12
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"english\""
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												373,
+												374,
+												375
+											]
+										}
+									]
+								}
+							},
+							"defaultValue": " Languages.en"
+						},
+						{
+							"id": 381,
+							"name": "currencies",
+							"kind": 2097152,
+							"kindString": "Object literal",
+							"flags": {
+								"isExported": true
+							},
+							"children": [
+								{
+									"id": 382,
+									"name": "BTC",
+									"kind": 2097152,
+									"kindString": "Object literal",
+									"flags": {
+										"isExported": true
+									},
+									"children": [
+										{
+											"id": 385,
+											"name": "confirmationNumber",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "config.tsx",
+													"line": 25,
+													"character": 30
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": "5"
+										},
+										{
+											"id": 384,
+											"name": "depositeWallet",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "config.tsx",
+													"line": 24,
+													"character": 26
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"btcbeygizasdfrwgsdfgsdfgsdfdfsgsfdgdfg\""
+										},
+										{
+											"id": 383,
+											"name": "name",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "config.tsx",
+													"line": 23,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"Bitcoin\""
+										},
+										{
+											"id": 386,
+											"name": "type",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "config.tsx",
+													"line": 26,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"crypto\""
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												385,
+												384,
+												383,
+												386
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "config.tsx",
+											"line": 22,
+											"character": 11
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								},
+								{
+									"id": 387,
+									"name": "ETH",
+									"kind": 2097152,
+									"kindString": "Object literal",
+									"flags": {
+										"isExported": true
+									},
+									"children": [
+										{
+											"id": 390,
+											"name": "confirmationNumber",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "config.tsx",
+													"line": 31,
+													"character": 30
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": "20"
+										},
+										{
+											"id": 389,
+											"name": "depositeWallet",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "config.tsx",
+													"line": 30,
+													"character": 26
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"etherasdfrwgsdfgsdfgsdfgdfsgsfdgdfg\""
+										},
+										{
+											"id": 388,
+											"name": "name",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "config.tsx",
+													"line": 29,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"Ethereum\""
+										},
+										{
+											"id": 391,
+											"name": "type",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "config.tsx",
+													"line": 32,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"crypto\""
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												390,
+												389,
+												388,
+												391
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "config.tsx",
+											"line": 28,
+											"character": 11
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								},
+								{
+									"id": 397,
+									"name": "IRR",
+									"kind": 2097152,
+									"kindString": "Object literal",
+									"flags": {
+										"isExported": true
+									},
+									"children": [
+										{
+											"id": 398,
+											"name": "name",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "config.tsx",
+													"line": 41,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"IR Rial\""
+										},
+										{
+											"id": 399,
+											"name": "type",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "config.tsx",
+													"line": 42,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"fiat\""
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												398,
+												399
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "config.tsx",
+											"line": 40,
+											"character": 11
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								},
+								{
+									"id": 392,
+									"name": "LTC",
+									"kind": 2097152,
+									"kindString": "Object literal",
+									"flags": {
+										"isExported": true
+									},
+									"children": [
+										{
+											"id": 395,
+											"name": "confirmationNumber",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "config.tsx",
+													"line": 37,
+													"character": 30
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": "16"
+										},
+										{
+											"id": 394,
+											"name": "depositeWallet",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "config.tsx",
+													"line": 36,
+													"character": 26
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"litecoin1weasrtasdf4rtsadfsdfsd4s54sddfdf\""
+										},
+										{
+											"id": 393,
+											"name": "name",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "config.tsx",
+													"line": 35,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"Litecoin\""
+										},
+										{
+											"id": 396,
+											"name": "type",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "config.tsx",
+													"line": 38,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"crypto\""
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												395,
+												394,
+												393,
+												396
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "config.tsx",
+											"line": 34,
+											"character": 11
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								},
+								{
+									"id": 400,
+									"name": "USD",
+									"kind": 2097152,
+									"kindString": "Object literal",
+									"flags": {
+										"isExported": true
+									},
+									"children": [
+										{
+											"id": 401,
+											"name": "name",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "config.tsx",
+													"line": 45,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"US dollar\""
+										},
+										{
+											"id": 402,
+											"name": "type",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "config.tsx",
+													"line": 46,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"fiat\""
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												401,
+												402
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "config.tsx",
+											"line": 44,
+											"character": 11
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Object literals",
+									"kind": 2097152,
+									"children": [
+										382,
+										387,
+										397,
+										392,
+										400
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "config.tsx",
+									"line": 21,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "object"
+							}
+						},
+						{
+							"id": 403,
+							"name": "icons",
+							"kind": 2097152,
+							"kindString": "Object literal",
+							"flags": {
+								"isExported": true
+							},
+							"children": [
+								{
+									"id": 404,
+									"name": "BTC",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"sources": [
+										{
+											"fileName": "config.tsx",
+											"line": 51,
+											"character": 15
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Element"
+									},
+									"defaultValue": " <i className=\"cc BTC-alt\"></i>"
+								},
+								{
+									"id": 407,
+									"name": "ETH",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"sources": [
+										{
+											"fileName": "config.tsx",
+											"line": 54,
+											"character": 15
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Element"
+									},
+									"defaultValue": " <i className=\"cc ETH-alt\"></i>"
+								},
+								{
+									"id": 406,
+									"name": "IRR",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"sources": [
+										{
+											"fileName": "config.tsx",
+											"line": 53,
+											"character": 15
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Element"
+									},
+									"defaultValue": " <span>﷼</span>"
+								},
+								{
+									"id": 408,
+									"name": "LTC",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"sources": [
+										{
+											"fileName": "config.tsx",
+											"line": 55,
+											"character": 15
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Element"
+									},
+									"defaultValue": " <i className=\"cc LTC-alt\"></i>"
+								},
+								{
+									"id": 405,
+									"name": "USD",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"sources": [
+										{
+											"fileName": "config.tsx",
+											"line": 52,
+											"character": 15
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Element"
+									},
+									"defaultValue": " <span>$</span>"
+								}
+							],
+							"groups": [
+								{
+									"title": "Variables",
+									"kind": 32,
+									"children": [
+										404,
+										407,
+										406,
+										408,
+										405
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "config.tsx",
+									"line": 49,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "object"
+							}
+						},
+						{
+							"id": 376,
+							"name": "keycloakConfig",
+							"kind": 2097152,
+							"kindString": "Object literal",
+							"flags": {
+								"isExported": true
+							},
+							"children": [
+								{
+									"id": 380,
+									"name": "checkLoginIframe",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"sources": [
+										{
+											"fileName": "config.tsx",
+											"line": 19,
+											"character": 24
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"defaultValue": "false"
+								},
+								{
+									"id": 379,
+									"name": "clientId",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"sources": [
+										{
+											"fileName": "config.tsx",
+											"line": 18,
+											"character": 16
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"application\""
+								},
+								{
+									"id": 378,
+									"name": "realm",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"sources": [
+										{
+											"fileName": "config.tsx",
+											"line": 17,
+											"character": 13
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"master\""
+								},
+								{
+									"id": 377,
+									"name": "url",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"sources": [
+										{
+											"fileName": "config.tsx",
+											"line": 16,
+											"character": 11
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"https://aas.avazcoin.com/auth\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Variables",
+									"kind": 32,
+									"children": [
+										380,
+										379,
+										378,
+										377
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "config.tsx",
+									"line": 15,
+									"character": 18
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "object"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								370,
+								369,
+								371
+							]
+						},
+						{
+							"title": "Object literals",
+							"kind": 2097152,
+							"children": [
+								381,
+								403,
+								376
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "config.tsx",
+							"line": 10,
+							"character": 12
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "object"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Object literals",
+					"kind": 2097152,
+					"children": [
+						368
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "config.tsx",
+					"line": 1,
+					"character": 0
+				}
+			]
 		}
 	],
 	"groups": [
@@ -92620,7 +92623,6 @@
 				1094,
 				2353,
 				2445,
-				367,
 				3230,
 				3311,
 				3392,
@@ -92680,7 +92682,8 @@
 				2821,
 				2913,
 				3022,
-				3134
+				3134,
+				367
 			]
 		}
 	]
