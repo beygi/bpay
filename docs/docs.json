@@ -37638,6 +37638,9 @@
 					"kind": 128,
 					"kindString": "Class",
 					"flags": {},
+					"comment": {
+						"shortText": "represent couple of charts and values for a symbol analysis"
+					},
 					"typeParameter": [
 						{
 							"id": 588,
@@ -37689,7 +37692,7 @@
 							"sources": [
 								{
 									"fileName": "components/Analysis/index.tsx",
-									"line": 31,
+									"line": 40,
 									"character": 65
 								}
 							],
@@ -38000,7 +38003,7 @@
 							"sources": [
 								{
 									"fileName": "components/Analysis/index.tsx",
-									"line": 48,
+									"line": 57,
 									"character": 17
 								}
 							],
@@ -38046,7 +38049,7 @@
 							"sources": [
 								{
 									"fileName": "components/Analysis/index.tsx",
-									"line": 44,
+									"line": 53,
 									"character": 25
 								}
 							]
@@ -38300,7 +38303,7 @@
 							"sources": [
 								{
 									"fileName": "components/Analysis/index.tsx",
-									"line": 40,
+									"line": 49,
 									"character": 20
 								}
 							]
@@ -39267,7 +39270,7 @@
 					"sources": [
 						{
 							"fileName": "components/Analysis/index.tsx",
-							"line": 31,
+							"line": 40,
 							"character": 23
 						}
 					],
@@ -39303,10 +39306,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "system cashDesks which is synced with redux store"
+							},
 							"sources": [
 								{
 									"fileName": "components/Analysis/index.tsx",
-									"line": 21,
+									"line": 23,
 									"character": 13
 								}
 							],
@@ -39321,10 +39327,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "cryptosCurrencies market data  which is synced with redux store"
+							},
 							"sources": [
 								{
 									"fileName": "components/Analysis/index.tsx",
-									"line": 23,
+									"line": 27,
 									"character": 11
 								}
 							],
@@ -39339,10 +39348,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "forex data  which is synced with redux store"
+							},
 							"sources": [
 								{
 									"fileName": "components/Analysis/index.tsx",
-									"line": 22,
+									"line": 25,
 									"character": 9
 								}
 							],
@@ -39357,10 +39369,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "main symbol which is analysed"
+							},
 							"sources": [
 								{
 									"fileName": "components/Analysis/index.tsx",
-									"line": 20,
+									"line": 21,
 									"character": 10
 								}
 							],
@@ -39403,11 +39418,14 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "visibility status of exchange modal"
+							},
 							"sources": [
 								{
 									"fileName": "components/Analysis/index.tsx",
-									"line": 27,
-									"character": 20
+									"line": 32,
+									"character": 16
 								}
 							],
 							"type": {
@@ -39423,11 +39441,14 @@
 							"flags": {
 								"isOptional": true
 							},
+							"comment": {
+								"shortText": "target symbol that we want to convert our symbol to it"
+							},
 							"sources": [
 								{
 									"fileName": "components/Analysis/index.tsx",
-									"line": 28,
-									"character": 16
+									"line": 34,
+									"character": 12
 								}
 							],
 							"type": {
@@ -39449,7 +39470,7 @@
 					"sources": [
 						{
 							"fileName": "components/Analysis/index.tsx",
-							"line": 26,
+							"line": 30,
 							"character": 16
 						}
 					]
@@ -39495,7 +39516,7 @@
 					"sources": [
 						{
 							"fileName": "components/Analysis/index.tsx",
-							"line": 168,
+							"line": 177,
 							"character": 27
 						}
 					]
@@ -39545,7 +39566,7 @@
 											"sources": [
 												{
 													"fileName": "components/Analysis/index.tsx",
-													"line": 175,
+													"line": 184,
 													"character": 17
 												}
 											],
@@ -39553,7 +39574,7 @@
 												"type": "intrinsic",
 												"name": "any"
 											},
-											"defaultValue": "    state.app.office.cashDesks || null"
+											"defaultValue": " state.app.office.cashDesks || null"
 										},
 										{
 											"id": 670,
@@ -39564,7 +39585,7 @@
 											"sources": [
 												{
 													"fileName": "components/Analysis/index.tsx",
-													"line": 177,
+													"line": 186,
 													"character": 15
 												}
 											],
@@ -39583,7 +39604,7 @@
 											"sources": [
 												{
 													"fileName": "components/Analysis/index.tsx",
-													"line": 176,
+													"line": 185,
 													"character": 13
 												}
 											],
@@ -39612,7 +39633,7 @@
 					"sources": [
 						{
 							"fileName": "components/Analysis/index.tsx",
-							"line": 173,
+							"line": 182,
 							"character": 24
 						}
 					]
@@ -39667,6 +39688,9 @@
 					"kind": 128,
 					"kindString": "Class",
 					"flags": {},
+					"comment": {
+						"shortText": "represent user balance status for all available symbols"
+					},
 					"typeParameter": [
 						{
 							"id": 900,
@@ -39718,7 +39742,7 @@
 							"sources": [
 								{
 									"fileName": "components/Balance/index.tsx",
-									"line": 37,
+									"line": 43,
 									"character": 26
 								}
 							],
@@ -39760,7 +39784,7 @@
 							"sources": [
 								{
 									"fileName": "components/Balance/index.tsx",
-									"line": 37,
+									"line": 43,
 									"character": 20
 								}
 							],
@@ -39969,7 +39993,7 @@
 							"sources": [
 								{
 									"fileName": "components/Balance/index.tsx",
-									"line": 50,
+									"line": 56,
 									"character": 28
 								}
 							]
@@ -40074,7 +40098,7 @@
 							"sources": [
 								{
 									"fileName": "components/Balance/index.tsx",
-									"line": 56,
+									"line": 62,
 									"character": 19
 								}
 							]
@@ -40107,7 +40131,7 @@
 							"sources": [
 								{
 									"fileName": "components/Balance/index.tsx",
-									"line": 80,
+									"line": 86,
 									"character": 17
 								}
 							],
@@ -41111,7 +41135,7 @@
 													"sources": [
 														{
 															"fileName": "components/Balance/index.tsx",
-															"line": 33,
+															"line": 39,
 															"character": 33
 														}
 													],
@@ -41137,7 +41161,7 @@
 							"sources": [
 								{
 									"fileName": "components/Balance/index.tsx",
-									"line": 30,
+									"line": 36,
 									"character": 43
 								}
 							]
@@ -41370,7 +41394,7 @@
 					"sources": [
 						{
 							"fileName": "components/Balance/index.tsx",
-							"line": 28,
+							"line": 34,
 							"character": 22
 						}
 					],
@@ -41406,10 +41430,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "holds user balance object"
+							},
 							"sources": [
 								{
 									"fileName": "components/Balance/index.tsx",
-									"line": 21,
+									"line": 23,
 									"character": 11
 								}
 							],
@@ -41507,10 +41534,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "holds user balance object"
+							},
 							"sources": [
 								{
 									"fileName": "components/Balance/index.tsx",
-									"line": 25,
+									"line": 28,
 									"character": 11
 								}
 							],
@@ -41532,7 +41562,7 @@
 					"sources": [
 						{
 							"fileName": "components/Balance/index.tsx",
-							"line": 24,
+							"line": 26,
 							"character": 16
 						}
 					]
@@ -41629,7 +41659,7 @@
 											"sources": [
 												{
 													"fileName": "components/Balance/index.tsx",
-													"line": 96,
+													"line": 102,
 													"character": 25
 												}
 											]
@@ -41651,7 +41681,7 @@
 					"sources": [
 						{
 							"fileName": "components/Balance/index.tsx",
-							"line": 94,
+							"line": 100,
 							"character": 27
 						}
 					]
@@ -41701,7 +41731,7 @@
 											"sources": [
 												{
 													"fileName": "components/Balance/index.tsx",
-													"line": 103,
+													"line": 109,
 													"character": 19
 												}
 											],
@@ -41728,7 +41758,7 @@
 					"sources": [
 						{
 							"fileName": "components/Balance/index.tsx",
-							"line": 100,
+							"line": 106,
 							"character": 24
 						}
 					]
@@ -45600,6 +45630,9 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "a simple component for redirecting user to change password page"
+					},
 					"typeParameter": [
 						{
 							"id": 998,
@@ -45653,7 +45686,7 @@
 							"sources": [
 								{
 									"fileName": "components/ChangePassword/index.tsx",
-									"line": 18,
+									"line": 21,
 									"character": 71
 								}
 							],
@@ -45979,7 +46012,7 @@
 							"sources": [
 								{
 									"fileName": "components/ChangePassword/index.tsx",
-									"line": 24,
+									"line": 27,
 									"character": 17
 								}
 							],
@@ -47165,7 +47198,7 @@
 					"sources": [
 						{
 							"fileName": "components/ChangePassword/index.tsx",
-							"line": 18,
+							"line": 21,
 							"character": 29
 						}
 					],
