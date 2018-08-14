@@ -1,3 +1,8 @@
+/**
+ * @module i18n/Languages
+ */
+
+ /** languages which is supported currently must be add here */
 const languages = {
     en : {
         codeName: "en",
