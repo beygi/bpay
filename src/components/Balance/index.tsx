@@ -18,13 +18,19 @@ const userObject = USER.getInstance();
 
 interface IProps {
     updateUserBalance: (balance) => void;
+
+    /**  holds user balance object */
     balance: {};
 }
 
 interface IState {
+    /**  holds user balance object */
     balance: {};
 }
 
+/**
+ * represent user balance status for all available symbols
+ */
 class BalanceComponent extends React.Component<IProps, IState> {
 
      public static getDerivedStateFromProps(props, state) {

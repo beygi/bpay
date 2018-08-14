@@ -35,7 +35,7 @@ interface IState {
 }
 
 /**
- * reoresent couple of charts and values for a symbol analysis
+ * represent couple of charts and values for a symbol analysis
  */
 class AnalysisComponent extends React.Component<IProps, IState> {
 
