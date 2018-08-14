@@ -17,32 +17,36 @@ require("./lib/icon");
 
 import KeyCloacksApi from "./lib/api-old";
 
+// we need a history object to hold browsers history
 const history = createBrowserHistory();
+// an unique user instance returned from an statc method in user class
 const user = USER.getInstance();
 
-// const api = Api.getInstance();
 const keyCloak = KeyCloacksApi.getInstance();
-// api.SetHeader("Accept-Language", "fa_IR");
 
+// Docs : `https://www.keycloak.org/docs/3.0/securing_apps/topics/oidc/javascript-adapter.html`
 user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
     if (authenticated) {
-                    console.log(user.keycloak);
-        // token is in user.keycloak.token
-                    const userData = _.pick(user.keycloak.tokenParsed, ["email", "name", "realm_access"]);
+        console.log(user.keycloak);
+
+        // token is in user.keycloak.token, pick and other useful information for saving in store
+        const userData = _.pick(user.keycloak.tokenParsed, ["email", "name", "realm_access"]);
         // set user in store
-                    store.dispatch(updateUser(userData));
+        store.dispatch(updateUser(userData));
         // set user in user object because it has an instance now
-                    user.setUser(userData);
+        user.setUser(userData);
         // set token in api lib
         // api.SetHeader("Authorization", "Token " + JSON.stringify(user.keycloak.tokenParsed));
-                    keyCloak.setAuthToken(user.keycloak.token);
-                    // if (store.getState().app.user && !store.getState().app.user.balance) {
-                    console.log("seeding user ... ");
-                    const seeder = new Seeder();
-                    seeder.initialSeed();
-                    // }
-        // token must be refreshed automatically
-                    setInterval( () => {
+        keyCloak.setAuthToken(user.keycloak.token);
+        // seeding user with defaults and random generated data
+        // if (store.getState().app.user && !store.getState().app.user.balance) {
+        console.log("seeding user ... ");
+        const seeder = new Seeder();
+        seeder.initialSeed();
+        // }
+
+        // refresh token automatically after 3000 seconds
+        setInterval(() => {
             user.keycloak.updateToken().success((refreshed) => {
                 if (refreshed) {
                     keyCloak.setAuthToken(user.keycloak.token);
@@ -51,9 +55,8 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         }, 30000);
 
     } else {
-        console.log(user.keycloak);
+        // user is not authenticated
         store.dispatch(setUser(null));
-        // user.keycloak.login();
     }
     ReactDOM.render(
         <Provider store={store}>
