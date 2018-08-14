@@ -47291,6 +47291,9 @@
 					"kind": 128,
 					"kindString": "Class",
 					"flags": {},
+					"comment": {
+						"shortText": "header of the users dashboard which contain user avatar, menus and buttons"
+					},
 					"typeParameter": [
 						{
 							"id": 1234,
@@ -47342,7 +47345,7 @@
 							"sources": [
 								{
 									"fileName": "components/DashboardHeader/index.tsx",
-									"line": 39,
+									"line": 49,
 									"character": 72
 								}
 							],
@@ -47640,6 +47643,9 @@
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
+									"comment": {
+										"shortText": "logout current user , it calls logOut from props which is binded to a redux function"
+									},
 									"type": {
 										"type": "intrinsic",
 										"name": "void"
@@ -47649,7 +47655,7 @@
 							"sources": [
 								{
 									"fileName": "components/DashboardHeader/index.tsx",
-									"line": 46,
+									"line": 57,
 									"character": 17
 								}
 							]
@@ -47682,7 +47688,7 @@
 							"sources": [
 								{
 									"fileName": "components/DashboardHeader/index.tsx",
-									"line": 54,
+									"line": 62,
 									"character": 17
 								}
 							],
@@ -48853,7 +48859,7 @@
 					"sources": [
 						{
 							"fileName": "components/DashboardHeader/index.tsx",
-							"line": 39,
+							"line": 49,
 							"character": 30
 						}
 					],
@@ -48889,10 +48895,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "holds current user's administration status"
+							},
 							"sources": [
 								{
 									"fileName": "components/DashboardHeader/index.tsx",
-									"line": 33,
+									"line": 40,
 									"character": 11
 								}
 							],
@@ -48907,10 +48916,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "logout function which is binded to a redux function"
+							},
 							"sources": [
 								{
 									"fileName": "components/DashboardHeader/index.tsx",
-									"line": 32,
+									"line": 37,
 									"character": 10
 								}
 							],
@@ -48938,7 +48950,7 @@
 									"sources": [
 										{
 											"fileName": "components/DashboardHeader/index.tsx",
-											"line": 32,
+											"line": 37,
 											"character": 11
 										}
 									]
@@ -48951,10 +48963,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "current browser path we use it to find proper icon and title of the page"
+							},
 							"sources": [
 								{
 									"fileName": "components/DashboardHeader/index.tsx",
-									"line": 31,
+									"line": 34,
 									"character": 8
 								}
 							],
@@ -48969,10 +48984,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "email address of curren user"
+							},
 							"sources": [
 								{
 									"fileName": "components/DashboardHeader/index.tsx",
-									"line": 30,
+									"line": 31,
 									"character": 13
 								}
 							],
@@ -49011,7 +49029,7 @@
 					"sources": [
 						{
 							"fileName": "components/DashboardHeader/index.tsx",
-							"line": 36,
+							"line": 43,
 							"character": 16
 						}
 					]
@@ -49155,7 +49173,7 @@
 											"sources": [
 												{
 													"fileName": "components/DashboardHeader/index.tsx",
-													"line": 110,
+													"line": 118,
 													"character": 14
 												}
 											]
@@ -49177,7 +49195,7 @@
 					"sources": [
 						{
 							"fileName": "components/DashboardHeader/index.tsx",
-							"line": 108,
+							"line": 116,
 							"character": 27
 						}
 					]
@@ -49227,7 +49245,7 @@
 											"sources": [
 												{
 													"fileName": "components/DashboardHeader/index.tsx",
-													"line": 117,
+													"line": 125,
 													"character": 12
 												}
 											],
@@ -49246,7 +49264,7 @@
 											"sources": [
 												{
 													"fileName": "components/DashboardHeader/index.tsx",
-													"line": 116,
+													"line": 124,
 													"character": 17
 												}
 											],
@@ -49274,7 +49292,7 @@
 					"sources": [
 						{
 							"fileName": "components/DashboardHeader/index.tsx",
-							"line": 114,
+							"line": 122,
 							"character": 24
 						}
 					]

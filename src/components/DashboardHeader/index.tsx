@@ -27,15 +27,25 @@ const { Header }: any = Layout;
 const userObject = USER.getInstance();
 
 interface IProps {
+     /** email address of curren user */
     userEmail: any;
+
+    /** current browser path we use it to find proper icon and title of the page */
     path: any;
+
+    /** logout function which is binded to a redux function */
     logOut: () => void;
+
+    /** holds current user's administration status */
     isAdmin: boolean;
 }
 
 interface IState {
 }
 
+/**
+ * header of the users dashboard which contain user avatar, menus and buttons
+ */
 class DashboardHeaderComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
@@ -43,13 +53,11 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
         this.logOut = this.logOut.bind(this);
     }
 
+   /** logout current user , it calls logOut from props which is binded to a redux function */
     public logOut() {
         this.props.logOut();
         userObject.keycloak.logout();
     }
-    // <div className="header-logo">
-    //
-    // </div>
 
     public render() {
         // finde selected menu name based on pathname
