@@ -19,7 +19,7 @@ const userObject = USER.getInstance();
 const InputGroup = Input.Group;
 
 interface IProps {
-     /** symbol selected by user for deposit */
+    /** symbol selected by user for deposit */
     selectedDepositCurrency: string;
 
     /** holds user's current balance, binded to redux store */

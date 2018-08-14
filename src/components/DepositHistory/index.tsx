@@ -6,25 +6,27 @@ import { Collapse, List , Progress } from "antd";
 import * as React from "react";
 import { connect } from "react-redux";
 import config from "../../config";
-// import btcApi from "../../lib/api/btc";
-import { updateUserBalance  as updateDepositeHistory} from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
 
-// const allApis = { btc: btcApi.getInstance(), usd: btcApi.getInstance() , eth: btcApi.getInstance() };
 const userObject = USER.getInstance();
 
 interface IProps {
-    updateDepositeHistory: (history) => void;
+    /**  deposite history object that is a available in redux store */
     history: {};
 }
 
 interface IState {
+    /**  holds deposite history of the user */
     history: any[];
 }
 
+/**
+ * a component to display recent deposite histories width
+ * confirmation count and status
+ */
 class DespositHistoryComponent extends React.Component<IProps, IState> {
 
     public static getDerivedStateFromProps(props, state) {
@@ -110,12 +112,6 @@ class DespositHistoryComponent extends React.Component<IProps, IState> {
 }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        updateDepositeHistory:  (history) => dispatch(updateDepositeHistory(history)),
-    };
-}
-
 function mapStateToProps(state: IRootState) {
     if  (state.app.user.history !== undefined) {
         return {
@@ -128,4 +124,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DespositHistoryComponent);
+export default connect(mapStateToProps)(DespositHistoryComponent);
