@@ -1,3 +1,4 @@
+// import all font awesome icons seperately
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBtc, faEthereum, faGoogle, faGripfire } from "@fortawesome/free-brands-svg-icons";
 // import { faHandshake } from "@fortawesome/free-regular-svg-icons";

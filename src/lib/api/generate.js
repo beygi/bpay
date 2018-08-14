@@ -1,3 +1,4 @@
+// generate api files using swagger spec file
 var fs = require('fs');
 var CodeGen = require('swagger-typescript-codegen').CodeGen;
 

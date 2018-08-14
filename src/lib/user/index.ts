@@ -1,8 +1,14 @@
+/**
+ * @module User
+ */
 import * as jsCookie from "js-cookie";
 import * as Keycloak from "keycloak-js";
 import { store } from "../../redux/store";
 import Config from "./../../config";
 
+/**
+ * singleton class for representing the current user
+ */
 export default class USER {
     public static getInstance() {
         if (!this.instance) {
@@ -18,15 +24,17 @@ export default class USER {
     private constructor() {
         // get user object from redux if available
         this.user = store.getState().app.user || null;
-        this.keycloak = Keycloak(Config.keycloakConfig);
-        // API.getInstance().SetHeader("Authorization", "Token " + jsCookie.get("token"));
 
+        // init keycloak with configurations from config file
+        this.keycloak = Keycloak(Config.keycloakConfig);
     }
+
     public getCurrent() {
         this.user = store.getState().app.user || null;
         return this.user;
     }
 
+    /** return user permission for a speceific resource */
     public permission(resourceName) {
         const allFalse = {
             add: false,
@@ -53,6 +61,7 @@ export default class USER {
         return allFalse;
     }
 
+    /** set user object */
     public setUser(user: any) {
         this.user = user;
     }
