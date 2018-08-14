@@ -5,6 +5,7 @@ node_modules
 *.log*
 build
 dist
+docs
 .idea
 .tmp
 .history
