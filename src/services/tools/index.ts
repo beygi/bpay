@@ -1,9 +1,19 @@
+/**
+ * @module Tools
+ */
 import * as _ from "lodash";
 import config from "../../../src/config";
 import { store } from "../../redux/store";
 
+/**
+ * a tool class which is provie useful functions
+ */
 export default class Tools {
-    public static getUsdRate(symbol) {
+
+    /** returns usd rate of any symbol (fiat or crypto)
+     *    this function uses redux store to access informations
+     */
+    public static getUsdRate(symbol: string) {
         let symbolRatetoUsd = 0;
         if (config.currencies[symbol].type === "fiat") {
             if (!_.get(store.getState(), `app.market.forex.${symbol}`, false)) {
@@ -16,7 +26,11 @@ export default class Tools {
         }
         return symbolRatetoUsd;
     }
-    public static getUsdPrice(symbol, value) {
+
+    /** returns usd price of any symbol value (fiat or crypto)
+     *    this function uses redux store to access informations
+     */
+    public static getUsdPrice(symbol: string, value: number) {
         const rate = this.getUsdRate(symbol);
         return rate * value;
     }
