@@ -14,13 +14,21 @@ import "./style.less";
 const userObject = USER.getInstance();
 
 interface IProps {
+     /** current user's email address */
     email: any;
+
+     /** logout current user (this function is binded to a redux funtion) */
     logOut: () => void;
 }
 
 interface IState {
 }
 
+/**
+ * user's menu that is visible after click to users avatar
+ * it shows some usefull information and includes logout
+ * and change password button
+ */
 class DashboardHeaderProfileComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
@@ -28,6 +36,7 @@ class DashboardHeaderProfileComponent extends React.Component<IProps, IState> {
         this.logOut = this.logOut.bind(this);
     }
 
+     /** logout current user using redux's logOut function available in props */
     public logOut() {
         this.props.logOut();
         userObject.keycloak.logout();
@@ -51,7 +60,6 @@ class DashboardHeaderProfileComponent extends React.Component<IProps, IState> {
                     <Button onClick={this.logOut} type="primary" className="logout">{t.t("Logout")}</Button>
 
                 </div>
-
             </div >
         );
     }

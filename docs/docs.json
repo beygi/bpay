@@ -49357,6 +49357,9 @@
 					"kind": 128,
 					"kindString": "Class",
 					"flags": {},
+					"comment": {
+						"shortText": "user's menu that is visible after click to users avatar\nit shows some usefull information and includes logout\nand change password button"
+					},
 					"typeParameter": [
 						{
 							"id": 1133,
@@ -49408,7 +49411,7 @@
 							"sources": [
 								{
 									"fileName": "components/DashboardHeaderProfile/index.tsx",
-									"line": 24,
+									"line": 32,
 									"character": 79
 								}
 							],
@@ -49706,6 +49709,9 @@
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
+									"comment": {
+										"shortText": "logout current user using redux's logOut function available in props"
+									},
 									"type": {
 										"type": "intrinsic",
 										"name": "void"
@@ -49715,7 +49721,7 @@
 							"sources": [
 								{
 									"fileName": "components/DashboardHeaderProfile/index.tsx",
-									"line": 31,
+									"line": 40,
 									"character": 17
 								}
 							]
@@ -49748,7 +49754,7 @@
 							"sources": [
 								{
 									"fileName": "components/DashboardHeaderProfile/index.tsx",
-									"line": 36,
+									"line": 45,
 									"character": 17
 								}
 							],
@@ -50919,7 +50925,7 @@
 					"sources": [
 						{
 							"fileName": "components/DashboardHeaderProfile/index.tsx",
-							"line": 24,
+							"line": 32,
 							"character": 37
 						}
 					],
@@ -50955,10 +50961,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "current user's email address"
+							},
 							"sources": [
 								{
 									"fileName": "components/DashboardHeaderProfile/index.tsx",
-									"line": 17,
+									"line": 18,
 									"character": 9
 								}
 							],
@@ -50973,10 +50982,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "logout current user (this function is binded to a redux funtion)"
+							},
 							"sources": [
 								{
 									"fileName": "components/DashboardHeaderProfile/index.tsx",
-									"line": 18,
+									"line": 21,
 									"character": 10
 								}
 							],
@@ -51004,7 +51016,7 @@
 									"sources": [
 										{
 											"fileName": "components/DashboardHeaderProfile/index.tsx",
-											"line": 18,
+											"line": 21,
 											"character": 11
 										}
 									]
@@ -51039,7 +51051,7 @@
 					"sources": [
 						{
 							"fileName": "components/DashboardHeaderProfile/index.tsx",
-							"line": 21,
+							"line": 24,
 							"character": 16
 						}
 					]
@@ -51123,7 +51135,7 @@
 											"sources": [
 												{
 													"fileName": "components/DashboardHeaderProfile/index.tsx",
-													"line": 63,
+													"line": 71,
 													"character": 14
 												}
 											]
@@ -51145,7 +51157,7 @@
 					"sources": [
 						{
 							"fileName": "components/DashboardHeaderProfile/index.tsx",
-							"line": 61,
+							"line": 69,
 							"character": 27
 						}
 					]
@@ -51195,7 +51207,7 @@
 											"sources": [
 												{
 													"fileName": "components/DashboardHeaderProfile/index.tsx",
-													"line": 69,
+													"line": 77,
 													"character": 13
 												}
 											],
@@ -51222,7 +51234,7 @@
 					"sources": [
 						{
 							"fileName": "components/DashboardHeaderProfile/index.tsx",
-							"line": 67,
+							"line": 75,
 							"character": 24
 						}
 					]
