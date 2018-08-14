@@ -1,4 +1,5 @@
 /**
+ * a component to hold things
  * @module Components/BlockComponent
  */
 import { Collapse } from "antd";
@@ -33,10 +34,10 @@ interface IProps {
 interface IState {
 }
 
-/*
-    thats a block component. it holds other component in page,
-    bocks can be collapsed or transparent
-*/
+/**
+ * thats a block component. it holds other components in page,
+ * bocks can be collapsed or transparent
+ */
 class BlockComponent extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
