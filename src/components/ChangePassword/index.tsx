@@ -15,6 +15,9 @@ interface IProps {
 interface IState {
 }
 
+/**
+ * a simple component for redirecting user to change password page
+ */
 class ChangePasswordComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
@@ -30,7 +33,7 @@ class ChangePasswordComponent extends React.Component<IProps, IState> {
                 </div>
                 <div className="action">
                     <Button href={`${config.keycloakConfig.url}/realms/master/account/password`}
-                     size="large" className="neat-btn" type="primary"><FontAwesomeIcon icon={["fas", "edit"]} />Change</Button>
+                     size="large" className="neat-btn" type="primary"><FontAwesomeIcon icon={["fas", "edit"]} />{t.t("Change")}</Button>
                 </div>
             </div >
         );
