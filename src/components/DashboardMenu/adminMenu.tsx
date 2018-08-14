@@ -1,5 +1,11 @@
+/**
+ * @module AdminMenu
+ */
 import t from "../../services/trans/i18n";
 
+/**
+ * return menu items for admin users
+ */
 function getMenus() {
     const availableMenus = {
         dashboard: {
@@ -14,7 +20,7 @@ function getMenus() {
             text: t.t("Users"),
             visible: true,
         },
-        setting: {
+        kyc: {
             icon: "solution",
             path: "/admin/kyc",
             text: t.t("KYC"),

@@ -1,5 +1,11 @@
+/**
+ * @module UserMenu
+ */
 import t from "../../services/trans/i18n";
 
+/**
+ * return menu items for normal users
+ */
 function getMenus() {
     const availableMenus = {
         dashboard: {
