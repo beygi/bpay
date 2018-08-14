@@ -19,14 +19,22 @@ const userObject = USER.getInstance();
 const InputGroup = Input.Group;
 
 interface IProps {
+     /** symbol selected by user for deposit */
     selectedDepositCurrency: string;
+
+    /** holds user's current balance, binded to redux store */
     balance: {};
 }
 
 interface IState {
+    /** qr code modal visibility status */
     qrModalVisible: boolean;
 }
 
+/**
+ * a full featured component for deposite currencies
+ * including qr code modal, copy wallet button and coin select dialog
+ */
 class DepositComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
@@ -35,9 +43,13 @@ class DepositComponent extends React.Component<IProps, IState> {
             qrModalVisible: false,
         };
     }
+
+    /** set qr code modal visibility status */
     public setQrModalStatus(qrModalVisible: boolean) {
         this.setState({ qrModalVisible });
     }
+
+    /** display a message to inform users about copied wallet address */
     public showCopiedMessage() {
         message.success(`Our ${this.props.selectedDepositCurrency} deposit address copied to clipboard successfully`);
     }

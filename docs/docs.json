@@ -53406,6 +53406,9 @@
 					"kind": 128,
 					"kindString": "Class",
 					"flags": {},
+					"comment": {
+						"shortText": "a full featured component for deposite currencies\nincluding qr code modal, copy wallet button and coin select dialog"
+					},
 					"typeParameter": [
 						{
 							"id": 1448,
@@ -53457,7 +53460,7 @@
 							"sources": [
 								{
 									"fileName": "components/Deposit/index.tsx",
-									"line": 30,
+									"line": 38,
 									"character": 64
 								}
 							],
@@ -53768,7 +53771,7 @@
 							"sources": [
 								{
 									"fileName": "components/Deposit/index.tsx",
-									"line": 44,
+									"line": 56,
 									"character": 17
 								}
 							],
@@ -53792,6 +53795,9 @@
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
+									"comment": {
+										"shortText": "set qr code modal visibility status"
+									},
 									"parameters": [
 										{
 											"id": 1443,
@@ -53814,7 +53820,7 @@
 							"sources": [
 								{
 									"fileName": "components/Deposit/index.tsx",
-									"line": 38,
+									"line": 48,
 									"character": 27
 								}
 							]
@@ -54035,6 +54041,9 @@
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
+									"comment": {
+										"shortText": "display a message to inform users about copied wallet address"
+									},
 									"type": {
 										"type": "intrinsic",
 										"name": "void"
@@ -54044,7 +54053,7 @@
 							"sources": [
 								{
 									"fileName": "components/Deposit/index.tsx",
-									"line": 41,
+									"line": 53,
 									"character": 28
 								}
 							]
@@ -55011,7 +55020,7 @@
 					"sources": [
 						{
 							"fileName": "components/Deposit/index.tsx",
-							"line": 30,
+							"line": 38,
 							"character": 22
 						}
 					],
@@ -55047,10 +55056,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "holds user's current balance, binded to redux store"
+							},
 							"sources": [
 								{
 									"fileName": "components/Deposit/index.tsx",
-									"line": 23,
+									"line": 26,
 									"character": 11
 								}
 							],
@@ -55065,10 +55077,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "symbol selected by user for deposit"
+							},
 							"sources": [
 								{
 									"fileName": "components/Deposit/index.tsx",
-									"line": 22,
+									"line": 23,
 									"character": 27
 								}
 							],
@@ -55109,10 +55124,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "qr code modal visibility status"
+							},
 							"sources": [
 								{
 									"fileName": "components/Deposit/index.tsx",
-									"line": 27,
+									"line": 31,
 									"character": 18
 								}
 							],
@@ -55134,7 +55152,7 @@
 					"sources": [
 						{
 							"fileName": "components/Deposit/index.tsx",
-							"line": 26,
+							"line": 29,
 							"character": 16
 						}
 					]
@@ -55233,7 +55251,7 @@
 											"sources": [
 												{
 													"fileName": "components/Deposit/index.tsx",
-													"line": 154,
+													"line": 166,
 													"character": 19
 												}
 											],
@@ -55260,7 +55278,7 @@
 					"sources": [
 						{
 							"fileName": "components/Deposit/index.tsx",
-							"line": 151,
+							"line": 163,
 							"character": 24
 						}
 					]
