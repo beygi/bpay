@@ -10,7 +10,7 @@
     "fast": "webpack-dev-server -d --devtool source-map --history-api-fallback --progress --colors --port 3000 --host b2b.loc",
     "apiGen": "tsc bin/apiGen.ts --skipLibCheck && node ./bin/apiGen.js --out=./src/lib/api/index.ts",
     "gen": "ls swager-specs -1 | xargs -i node ./src/lib/api/generate.js {} && tslint --fix ./src/lib/api/*.tsx",
-    "doc": "typedoc --tsconfig ./tsconfig.json --json docs/docs.json --out docs --mode modules ./src"
+    "doc": "typedoc --tsconfig ./tsconfig.json --readme ./README.md --json docs/docs.json --out docs --mode modules ./src"
   },
   "dependencies": {
     "@babel/preset-env": "^7.0.0-beta.37",
