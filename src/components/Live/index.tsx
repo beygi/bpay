@@ -1,3 +1,6 @@
+/**
+ * @module Components/LiveComponent
+ */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Collapse } from "antd";
 import * as _ from "lodash";

@@ -1,3 +1,6 @@
+/**
+ * @module Components/Layout
+ */
 import * as React from "react";
 import USER from "./../../lib/user";
 import DashboardPrivateLayout from "./containers/DashboardPrivate";

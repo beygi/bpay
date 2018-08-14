@@ -1,3 +1,6 @@
+/**
+ * @module Components/DespositHistoryComponent
+ */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Collapse, List , Progress } from "antd";
 import * as React from "react";

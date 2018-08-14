@@ -1,3 +1,6 @@
+/**
+ * @module Components/ExchangeValueComponent
+ */
 import * as React from "react";
 const commaNumber = require("comma-number");
 import "./style.less";

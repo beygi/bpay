@@ -1,3 +1,7 @@
+/**
+ * @module Components/DashboardHeaderComponent
+ */
+
 import { Icon, Input, Layout, Popover, Tooltip } from "antd";
 import * as React from "react";
 

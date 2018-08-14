@@ -1,3 +1,6 @@
+/**
+ * @module Components/HeaderComponent
+ */
 import {Icon, Input, Layout} from "antd";
 import * as React from "react";
 

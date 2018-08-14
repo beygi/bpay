@@ -1,3 +1,6 @@
+/**
+ * @module Components/BalanceComponent
+ */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Collapse } from "antd";
 import * as React from "react";

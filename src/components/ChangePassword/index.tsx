@@ -1,4 +1,6 @@
-// use this dummy component to create new components
+/**
+ * @module Components/ChangePasswordComponent
+ */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "antd";
 import * as React from "react";

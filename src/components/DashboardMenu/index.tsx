@@ -1,3 +1,6 @@
+/**
+ * @module Components/DashboardMenuComponent
+ */
 import { Icon, Input, Layout, Tooltip } from "antd";
 import * as React from "react";
 

@@ -1,3 +1,6 @@
+/**
+ * @module Components/DepositComponent
+ */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Alert, Button, Input, List, message, Modal, notification, Tooltip } from "antd";
 import * as React from "react";

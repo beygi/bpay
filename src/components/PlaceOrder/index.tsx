@@ -1,3 +1,6 @@
+/**
+ * @module Components/PlaceOrderComponent
+ */
 import { Button, Checkbox, Col, Form, Input, Row, Tabs } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import * as React from "react";

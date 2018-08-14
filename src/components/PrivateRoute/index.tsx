@@ -1,3 +1,6 @@
+/**
+ * @module Components/PrivateRoute
+ */
 import * as React from "react";
 import {Redirect, Route} from "react-router";
 import {store} from "../../redux/store";

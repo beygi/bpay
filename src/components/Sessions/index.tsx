@@ -1,4 +1,6 @@
-// use this dummy component to create new components
+/**
+ * @module Components/SessionsComponent
+ */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Table } from "antd";
 import * as React from "react";

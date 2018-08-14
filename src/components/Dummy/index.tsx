@@ -1,5 +1,6 @@
-// use this dummy component to create new components
-
+/**
+ * @module Components/DummyComponent
+ */
 import { Collapse } from "antd";
 import * as React from "react";
 

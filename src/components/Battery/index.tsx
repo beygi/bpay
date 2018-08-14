@@ -1,4 +1,6 @@
-// import the core library.
+/**
+ * @module Components/BatteryComponent
+ */
 import { Button } from "antd";
 import ReactEcharts from "echarts-for-react";
 import * as _ from "lodash";

@@ -1,3 +1,6 @@
+/**
+ * @module Components/InternalExchangeComponent
+ */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Col, Row } from "antd";
 import * as _ from "lodash";

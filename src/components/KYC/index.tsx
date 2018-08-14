@@ -1,3 +1,6 @@
+/**
+ * @module Components/KycComponent
+ */
 import { Button, Card, Col, Icon, List, notification, Row, Steps } from "antd";
 import * as React from "react";
 import config from "../../../src/config";

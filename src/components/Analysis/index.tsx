@@ -1,3 +1,6 @@
+/**
+ * @module Components/AnalysisComponent
+ */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Col, Modal, Row } from "antd";
 import * as _ from "lodash";

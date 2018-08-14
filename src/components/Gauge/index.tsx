@@ -1,3 +1,6 @@
+/**
+ * @module Components/GaugeComponent
+ */
 // import the core library.
 import ReactEcharts from "echarts-for-react";
 import * as _ from "lodash";

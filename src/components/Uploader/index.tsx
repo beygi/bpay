@@ -1,3 +1,6 @@
+/**
+ * @module Components/UploaderComponent
+ */
 import { Icon, message, Modal, Upload } from "antd";
 import * as React from "react";
 import USER from "../../lib/user";

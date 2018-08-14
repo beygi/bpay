@@ -1,3 +1,6 @@
+/**
+ * @module Components/DashboardHeaderProfileComponent
+ */
 import { Button, Icon, Tag } from "antd";
 import * as React from "react";
 import { connect } from "react-redux";

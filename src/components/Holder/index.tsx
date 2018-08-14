@@ -1,13 +1,24 @@
+/**
+ * @module Components/BlockComponent
+ */
 import { Collapse } from "antd";
 import * as React from "react";
 import "./style.less";
-
 const Panel = Collapse.Panel;
 
 interface IProps {
     children: any;
+    /**
+     * remove padding from block if sets to true
+     */
     noPadding?: boolean;
+    /**
+     * css class name of final div
+     */
     className?: string;
+    /**
+     * blocks will be render in collapsable manner if sets to true
+     */
     collapse?: boolean;
     collapseClosed?: boolean;
     title?: string | JSX.Element;
@@ -22,6 +33,10 @@ interface IProps {
 interface IState {
 }
 
+/*
+    thats a block component. it holds other component in page,
+    bocks can be collapsed or transparent
+*/
 class BlockComponent extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
