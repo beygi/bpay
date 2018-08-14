@@ -13,12 +13,16 @@ import "./style.less";
 const userObject = USER.getInstance();
 
 interface IProps {
+    /**  current user's email address that is synced with redux */
     email: any;
 }
 
 interface IState {
 }
 
+/**
+ * this is a Dummy component, you can copy this to start a new component
+ */
 class DummyComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
