@@ -17,17 +17,26 @@ import t from "../../services/trans/i18n";
 import "./style.less";
 
 interface IProps {
+    /** main symbol which is analysed */
     symbol: string;
+    /** system cashDesks which is synced with redux store */
     cashDesks: any;
+    /** forex data  which is synced with redux store */
     forex: any;
+    /** cryptosCurrencies market data  which is synced with redux store */
     cryptos: any;
 }
 
 interface IState {
-        ModalVisible: boolean;
-        toSymbol?: string;
+    /** visibility status of exchange modal */
+    ModalVisible: boolean;
+    /** target symbol that we want to convert our symbol to it */
+    toSymbol?: string;
 }
 
+/**
+ * reoresent couple of charts and values for a symbol analysis
+ */
 class AnalysisComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
@@ -38,7 +47,7 @@ class AnalysisComponent extends React.Component<IProps, IState> {
     }
 
     public showModal(from, to) {
-        this.setState({ toSymbol: to , ModalVisible : true });
+        this.setState({ toSymbol: to, ModalVisible: true });
     }
 
     public setModalStatus(ModalVisible: boolean) {
@@ -63,7 +72,7 @@ class AnalysisComponent extends React.Component<IProps, IState> {
 
                 if (promisedToUsd !== 0) {
                     percent = (symbolToUsd / promisedToUsd) * 100;
-                    symbolCurrent = symbolPromiesd + (( (100 - percent) / 100) * symbolPromiesd);
+                    symbolCurrent = symbolPromiesd + (((100 - percent) / 100) * symbolPromiesd);
                     promisedDiffinUsd = symbolToUsd - promisedToUsd;
                 }
 
@@ -82,7 +91,7 @@ class AnalysisComponent extends React.Component<IProps, IState> {
                         </div>
                         <div><FontAwesomeIcon icon={["fas", "balance-scale"]} /> $<Rate value={promisedDiffinUsd} fixFloatNum={1} seperateThousand /></div>
                         <Button onClick={() => this.showModal(this.props.symbol, symbol)} size="small" className="neat-btn" type="primary">Exchange</Button>
-                    </Col > );
+                    </Col >);
             }
         });
 
@@ -172,7 +181,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state: IRootState) {
     return {
-        cashDesks:    state.app.office.cashDesks || null,
+        cashDesks: state.app.office.cashDesks || null,
         forex: state.app.market.forex || null,
         cryptos: state.app.market.cryptos || null,
     };
