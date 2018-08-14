@@ -1,45 +1,45 @@
+/**
+ * @module AppContainer
+ */
 import * as React from "react";
 import { connect } from "react-redux";
 import { Redirect, Route, Switch } from "react-router";
+import { setUser } from "../redux/app/actions";
 import { IRootState } from "../redux/reducers";
-
 import Layout from "./../components/Layout";
 import PrivateRoute from "./../components/PrivateRoute";
-
+import Config from "./../config";
 import ChatAdminContainer from "./Admin/Chat";
 import AdminDashboardContainer from "./Admin/Dashboard";
 import KycAdminContainer from "./Admin/KYC";
-// import UserContainer from "./User";
 import UsersAdminContainer from "./Admin/Users";
+import "./app.less";
 import DashboardContainer from "./Dashboard";
 import DepositContainer from "./Deposit";
 import ExchangeContainer from "./Exchange";
-import GroupsContainer from "./Groups";
 import KycContainer from "./KYC";
 import LandingContainer from "./Landing";
 import NotFoundContainer from "./NotFound";
 
-import { setUser } from "../redux/app/actions";
-import "./app.less";
-
-import Config from "./../config";
-
 interface IProps {
+    /** user's email from redux */
     email: any;
-    setUser: (user: any) => void;
 }
 
 interface IState {
-    collapsed?: boolean;
+    /** user's email, synced with email in props */
     email?: any;
 }
 
+/**
+ * this is our root component wich is route app to containers
+ * based on browsers path
+ */
 class AppContainer extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
         const stateObj = this.parseProps(props);
         this.state = stateObj;
-
     }
 
     public componentDidMount() {
@@ -50,7 +50,6 @@ class AppContainer extends React.Component<IProps, IState> {
         const stateObj: IState = {
         };
         stateObj.email = props.email;
-        stateObj.collapsed = false;
         return stateObj;
     }
 
@@ -60,13 +59,13 @@ class AppContainer extends React.Component<IProps, IState> {
             // this is a log out, just do nothing
             return false;
         } else {
-             return true;
+            return true;
         }
-}
+    }
 
     public render() {
-       return (
-          <Switch>
+        return (
+            <Switch>
 
                 {/* Private routes */}
 
@@ -97,12 +96,6 @@ class AppContainer extends React.Component<IProps, IState> {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        setUser: (user) => dispatch(setUser(user)),
-    };
-}
-
 function mapStateToProps(state: IRootState) {
     if (state.app.user) {
         return {
@@ -112,4 +105,4 @@ function mapStateToProps(state: IRootState) {
     return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);
+export default connect(mapStateToProps)(AppContainer);
