@@ -17,18 +17,20 @@ const userObject = USER.getInstance();
 const Step = Steps.Step;
 
 interface IProps {
+    /**  user object from redux store */
     user: any;
 }
 
 interface IState {
 }
 
+/**
+ * a nice guideline for user to help him compelete kyc and registration verification
+ */
 class UserStatusGuideComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
-
-        // this.action = this.action.bind(this);
     }
 
     public render() {
@@ -62,15 +64,10 @@ class UserStatusGuideComponent extends React.Component<IProps, IState> {
 
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-    };
-}
-
 function mapStateToProps(state: IRootState) {
     return {
         user: state.app.user,
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserStatusGuideComponent);
+export default connect(mapStateToProps)(UserStatusGuideComponent);
