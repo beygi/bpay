@@ -43717,7 +43717,7 @@
 							"sources": [
 								{
 									"fileName": "components/Holder/index.tsx",
-									"line": 41,
+									"line": 43,
 									"character": 62
 								}
 							],
@@ -44043,7 +44043,7 @@
 							"sources": [
 								{
 									"fileName": "components/Holder/index.tsx",
-									"line": 46,
+									"line": 48,
 									"character": 17
 								}
 							],
@@ -45229,7 +45229,7 @@
 					"sources": [
 						{
 							"fileName": "components/Holder/index.tsx",
-							"line": 41,
+							"line": 43,
 							"character": 20
 						}
 					],
@@ -45267,10 +45267,13 @@
 							"flags": {
 								"isOptional": true
 							},
+							"comment": {
+								"shortText": "title will be rendered in center"
+							},
 							"sources": [
 								{
 									"fileName": "components/Holder/index.tsx",
-									"line": 30,
+									"line": 31,
 									"character": 15
 								}
 							],
@@ -45285,6 +45288,9 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "react element wich is rendered in block"
+							},
 							"sources": [
 								{
 									"fileName": "components/Holder/index.tsx",
@@ -45311,7 +45317,7 @@
 							"sources": [
 								{
 									"fileName": "components/Holder/index.tsx",
-									"line": 19,
+									"line": 15,
 									"character": 13
 								}
 							],
@@ -45329,12 +45335,12 @@
 								"isOptional": true
 							},
 							"comment": {
-								"shortText": "blocks will be render in collapsable manner if sets to true"
+								"shortText": "blocks will be render in collapsable mode if sets to true"
 							},
 							"sources": [
 								{
 									"fileName": "components/Holder/index.tsx",
-									"line": 23,
+									"line": 17,
 									"character": 12
 								}
 							],
@@ -45351,10 +45357,13 @@
 							"flags": {
 								"isOptional": true
 							},
+							"comment": {
+								"shortText": "collpase enabled block renders in collpassed mode if sets to true"
+							},
 							"sources": [
 								{
 									"fileName": "components/Holder/index.tsx",
-									"line": 24,
+									"line": 19,
 									"character": 18
 								}
 							],
@@ -45371,10 +45380,13 @@
 							"flags": {
 								"isOptional": true
 							},
+							"comment": {
+								"shortText": "icon of the block"
+							},
 							"sources": [
 								{
 									"fileName": "components/Holder/index.tsx",
-									"line": 26,
+									"line": 23,
 									"character": 8
 								}
 							],
@@ -45391,10 +45403,13 @@
 							"flags": {
 								"isOptional": true
 							},
+							"comment": {
+								"shortText": "icon position, default is left"
+							},
 							"sources": [
 								{
 									"fileName": "components/Holder/index.tsx",
-									"line": 27,
+									"line": 25,
 									"character": 16
 								}
 							],
@@ -45417,7 +45432,7 @@
 							"sources": [
 								{
 									"fileName": "components/Holder/index.tsx",
-									"line": 15,
+									"line": 13,
 									"character": 13
 								}
 							],
@@ -45434,10 +45449,13 @@
 							"flags": {
 								"isOptional": true
 							},
+							"comment": {
+								"shortText": "remove margin of the title"
+							},
 							"sources": [
 								{
 									"fileName": "components/Holder/index.tsx",
-									"line": 31,
+									"line": 33,
 									"character": 17
 								}
 							],
@@ -45453,6 +45471,9 @@
 							"kindString": "Property",
 							"flags": {
 								"isOptional": true
+							},
+							"comment": {
+								"shortText": "display arrow in collapsable mode"
 							},
 							"sources": [
 								{
@@ -45474,10 +45495,13 @@
 							"flags": {
 								"isOptional": true
 							},
+							"comment": {
+								"shortText": "title of the block"
+							},
 							"sources": [
 								{
 									"fileName": "components/Holder/index.tsx",
-									"line": 25,
+									"line": 21,
 									"character": 9
 								}
 							],
@@ -45503,10 +45527,13 @@
 							"flags": {
 								"isOptional": true
 							},
+							"comment": {
+								"shortText": "block renders transpoarent if true given"
+							},
 							"sources": [
 								{
 									"fileName": "components/Holder/index.tsx",
-									"line": 28,
+									"line": 27,
 									"character": 15
 								}
 							],
@@ -45539,7 +45566,7 @@
 					"sources": [
 						{
 							"fileName": "components/Holder/index.tsx",
-							"line": 10,
+							"line": 9,
 							"character": 16
 						}
 					]
@@ -45553,7 +45580,7 @@
 					"sources": [
 						{
 							"fileName": "components/Holder/index.tsx",
-							"line": 34,
+							"line": 36,
 							"character": 16
 						}
 					]
@@ -45569,7 +45596,7 @@
 					"sources": [
 						{
 							"fileName": "components/Holder/index.tsx",
-							"line": 8,
+							"line": 7,
 							"character": 11
 						}
 					],
@@ -59121,6 +59148,9 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "this component display numbers and support colorful display\nwhen number grows or falls, thousand seperator and fix floats\nare supported too"
+					},
 					"typeParameter": [
 						{
 							"id": 106,
@@ -59174,7 +59204,7 @@
 							"sources": [
 								{
 									"fileName": "components/ExchangeValue/index.tsx",
-									"line": 33,
+									"line": 43,
 									"character": 5
 								}
 							],
@@ -59500,7 +59530,7 @@
 							"sources": [
 								{
 									"fileName": "components/ExchangeValue/index.tsx",
-									"line": 42,
+									"line": 52,
 									"character": 17
 								}
 							],
@@ -60523,7 +60553,7 @@
 													"sources": [
 														{
 															"fileName": "components/ExchangeValue/index.tsx",
-															"line": 24,
+															"line": 34,
 															"character": 27
 														}
 													],
@@ -60544,7 +60574,7 @@
 													"sources": [
 														{
 															"fileName": "components/ExchangeValue/index.tsx",
-															"line": 24,
+															"line": 34,
 															"character": 42
 														}
 													],
@@ -60572,7 +60602,7 @@
 							"sources": [
 								{
 									"fileName": "components/ExchangeValue/index.tsx",
-									"line": 21,
+									"line": 31,
 									"character": 42
 								}
 							]
@@ -60804,7 +60834,7 @@
 					"sources": [
 						{
 							"fileName": "components/ExchangeValue/index.tsx",
-							"line": 19,
+							"line": 29,
 							"character": 28
 						}
 					],
@@ -60842,10 +60872,13 @@
 							"flags": {
 								"isOptional": true
 							},
+							"comment": {
+								"shortText": "number of floating point digits to display , default is 2"
+							},
 							"sources": [
 								{
 									"fileName": "components/ExchangeValue/index.tsx",
-									"line": 10,
+									"line": 12,
 									"character": 15
 								}
 							],
@@ -60862,10 +60895,13 @@
 							"flags": {
 								"isOptional": true
 							},
+							"comment": {
+								"shortText": "seperate thousands with comma"
+							},
 							"sources": [
 								{
 									"fileName": "components/ExchangeValue/index.tsx",
-									"line": 11,
+									"line": 14,
 									"character": 20
 								}
 							],
@@ -60880,10 +60916,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "input numer"
+							},
 							"sources": [
 								{
 									"fileName": "components/ExchangeValue/index.tsx",
-									"line": 9,
+									"line": 10,
 									"character": 9
 								}
 							],
@@ -60927,10 +60966,13 @@
 							"flags": {
 								"isOptional": true
 							},
+							"comment": {
+								"shortText": "growth status"
+							},
 							"sources": [
 								{
 									"fileName": "components/ExchangeValue/index.tsx",
-									"line": 16,
+									"line": 21,
 									"character": 10
 								}
 							],
@@ -60958,10 +61000,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "keeps value to compare with new one from props"
+							},
 							"sources": [
 								{
 									"fileName": "components/ExchangeValue/index.tsx",
-									"line": 15,
+									"line": 19,
 									"character": 9
 								}
 							],
@@ -60984,7 +61029,7 @@
 					"sources": [
 						{
 							"fileName": "components/ExchangeValue/index.tsx",
-							"line": 14,
+							"line": 17,
 							"character": 16
 						}
 					]
@@ -61110,7 +61155,7 @@
 							"sources": [
 								{
 									"fileName": "components/Forex/index.tsx",
-									"line": 51,
+									"line": 58,
 									"character": 5
 								}
 							],
@@ -61341,7 +61386,7 @@
 							"sources": [
 								{
 									"fileName": "components/Forex/index.tsx",
-									"line": 60,
+									"line": 67,
 									"character": 28
 								}
 							]
@@ -61450,7 +61495,7 @@
 							"sources": [
 								{
 									"fileName": "components/Forex/index.tsx",
-									"line": 64,
+									"line": 71,
 									"character": 17
 								}
 							],
@@ -62454,7 +62499,7 @@
 													"sources": [
 														{
 															"fileName": "components/Forex/index.tsx",
-															"line": 48,
+															"line": 55,
 															"character": 40
 														}
 													],
@@ -62478,7 +62523,7 @@
 																		"sources": [
 																			{
 																				"fileName": "components/Forex/index.tsx",
-																				"line": 27,
+																				"line": 34,
 																				"character": 29
 																			}
 																		],
@@ -62497,7 +62542,7 @@
 																		"sources": [
 																			{
 																				"fileName": "components/Forex/index.tsx",
-																				"line": 27,
+																				"line": 34,
 																				"character": 40
 																			}
 																		],
@@ -62516,7 +62561,7 @@
 																		"sources": [
 																			{
 																				"fileName": "components/Forex/index.tsx",
-																				"line": 27,
+																				"line": 34,
 																				"character": 16
 																			}
 																		],
@@ -62560,7 +62605,7 @@
 							"sources": [
 								{
 									"fileName": "components/Forex/index.tsx",
-									"line": 45,
+									"line": 52,
 									"character": 42
 								}
 							]
@@ -62791,7 +62836,7 @@
 					"sources": [
 						{
 							"fileName": "components/Forex/index.tsx",
-							"line": 43,
+							"line": 50,
 							"character": 20
 						}
 					],
@@ -62827,10 +62872,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "holds all exchange rates. synced from redux store"
+							},
 							"sources": [
 								{
 									"fileName": "components/Forex/index.tsx",
-									"line": 17,
+									"line": 19,
 									"character": 9
 								}
 							],
@@ -62848,10 +62896,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "input symbol"
+							},
 							"sources": [
 								{
 									"fileName": "components/Forex/index.tsx",
-									"line": 16,
+									"line": 17,
 									"character": 10
 								}
 							],
@@ -62892,10 +62943,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "holds calcucalted exchange rates"
+							},
 							"sources": [
 								{
 									"fileName": "components/Forex/index.tsx",
-									"line": 21,
+									"line": 24,
 									"character": 17
 								}
 							],
@@ -62920,7 +62974,7 @@
 					"sources": [
 						{
 							"fileName": "components/Forex/index.tsx",
-							"line": 20,
+							"line": 22,
 							"character": 16
 						}
 					]
@@ -62938,6 +62992,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "this component displays exchange rate off given price with\nother common fiats or given fiats"
+							},
 							"parameters": [
 								{
 									"id": 1816,
@@ -62971,7 +63028,7 @@
 												"sources": [
 													{
 														"fileName": "components/Forex/index.tsx",
-														"line": 27,
+														"line": 34,
 														"character": 29
 													}
 												],
@@ -62990,7 +63047,7 @@
 												"sources": [
 													{
 														"fileName": "components/Forex/index.tsx",
-														"line": 27,
+														"line": 34,
 														"character": 40
 													}
 												],
@@ -63009,7 +63066,7 @@
 												"sources": [
 													{
 														"fileName": "components/Forex/index.tsx",
-														"line": 27,
+														"line": 34,
 														"character": 16
 													}
 												],
@@ -63039,7 +63096,7 @@
 					"sources": [
 						{
 							"fileName": "components/Forex/index.tsx",
-							"line": 24,
+							"line": 31,
 							"character": 25
 						}
 					]
@@ -63089,7 +63146,7 @@
 											"sources": [
 												{
 													"fileName": "components/Forex/index.tsx",
-													"line": 87,
+													"line": 94,
 													"character": 17
 												}
 											],
@@ -63116,7 +63173,7 @@
 					"sources": [
 						{
 							"fileName": "components/Forex/index.tsx",
-							"line": 84,
+							"line": 91,
 							"character": 24
 						}
 					]
@@ -63173,6 +63230,9 @@
 					"flags": {
 						"isExported": true
 					},
+					"comment": {
+						"shortText": "a component for display a nice animated gauge\nfrom given props using echarts"
+					},
 					"typeParameter": [
 						{
 							"id": 191,
@@ -63226,7 +63286,7 @@
 							"sources": [
 								{
 									"fileName": "components/Gauge/index.tsx",
-									"line": 19,
+									"line": 25,
 									"character": 62
 								}
 							],
@@ -63552,7 +63612,7 @@
 							"sources": [
 								{
 									"fileName": "components/Gauge/index.tsx",
-									"line": 92,
+									"line": 100,
 									"character": 17
 								}
 							],
@@ -64738,7 +64798,7 @@
 					"sources": [
 						{
 							"fileName": "components/Gauge/index.tsx",
-							"line": 19,
+							"line": 25,
 							"character": 20
 						}
 					],
@@ -64774,10 +64834,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "given percent"
+							},
 							"sources": [
 								{
 									"fileName": "components/Gauge/index.tsx",
-									"line": 12,
+									"line": 13,
 									"character": 11
 								}
 							],
@@ -64788,15 +64851,18 @@
 						},
 						{
 							"id": 181,
-							"name": "to",
+							"name": "title",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "guage title with is displayed in center of guage"
+							},
 							"sources": [
 								{
 									"fileName": "components/Gauge/index.tsx",
 									"line": 11,
-									"character": 6
+									"character": 9
 								}
 							],
 							"type": {
@@ -64818,7 +64884,7 @@
 					"sources": [
 						{
 							"fileName": "components/Gauge/index.tsx",
-							"line": 10,
+							"line": 9,
 							"character": 16
 						}
 					]
@@ -64838,10 +64904,13 @@
 							"flags": {
 								"isOptional": true
 							},
+							"comment": {
+								"shortText": "holds echart's options object"
+							},
 							"sources": [
 								{
 									"fileName": "components/Gauge/index.tsx",
-									"line": 16,
+									"line": 18,
 									"character": 11
 								}
 							],
@@ -64863,7 +64932,7 @@
 					"sources": [
 						{
 							"fileName": "components/Gauge/index.tsx",
-							"line": 15,
+							"line": 16,
 							"character": 16
 						}
 					]
@@ -64911,6 +64980,9 @@
 					"kindString": "Class",
 					"flags": {
 						"isExported": true
+					},
+					"comment": {
+						"shortText": "a simple component for redirecting user to google auth setup page"
 					},
 					"typeParameter": [
 						{
@@ -64965,7 +65037,7 @@
 							"sources": [
 								{
 									"fileName": "components/GoogleAuth/index.tsx",
-									"line": 18,
+									"line": 21,
 									"character": 67
 								}
 							],
@@ -65291,7 +65363,7 @@
 							"sources": [
 								{
 									"fileName": "components/GoogleAuth/index.tsx",
-									"line": 24,
+									"line": 27,
 									"character": 17
 								}
 							],
@@ -66477,7 +66549,7 @@
 					"sources": [
 						{
 							"fileName": "components/GoogleAuth/index.tsx",
-							"line": 18,
+							"line": 21,
 							"character": 25
 						}
 					],
@@ -66570,6 +66642,9 @@
 					"kind": 128,
 					"kindString": "Class",
 					"flags": {},
+					"comment": {
+						"shortText": "dashboard's header"
+					},
 					"typeParameter": [
 						{
 							"id": 1921,
@@ -66621,7 +66696,7 @@
 							"sources": [
 								{
 									"fileName": "components/Header/index.tsx",
-									"line": 24,
+									"line": 27,
 									"character": 63
 								}
 							],
@@ -66928,7 +67003,7 @@
 							"sources": [
 								{
 									"fileName": "components/Header/index.tsx",
-									"line": 32,
+									"line": 35,
 									"character": 17
 								}
 							]
@@ -66961,7 +67036,7 @@
 							"sources": [
 								{
 									"fileName": "components/Header/index.tsx",
-									"line": 37,
+									"line": 40,
 									"character": 17
 								}
 							],
@@ -68132,7 +68207,7 @@
 					"sources": [
 						{
 							"fileName": "components/Header/index.tsx",
-							"line": 24,
+							"line": 27,
 							"character": 21
 						}
 					],
@@ -68356,7 +68431,7 @@
 											"sources": [
 												{
 													"fileName": "components/Header/index.tsx",
-													"line": 53,
+													"line": 55,
 													"character": 14
 												}
 											]
@@ -68378,7 +68453,7 @@
 					"sources": [
 						{
 							"fileName": "components/Header/index.tsx",
-							"line": 51,
+							"line": 53,
 							"character": 27
 						}
 					]
