@@ -5,15 +5,18 @@ import * as React from "react";
 import USER from "./../../lib/user";
 import DashboardPrivateLayout from "./containers/DashboardPrivate";
 import PublicLayout from "./containers/Public";
-
 const userObject = USER.getInstance();
 
 export interface IProps {
+    /** is this i private layout? default is false  */
     private: boolean;
-    admin?: boolean;
+    /** react component which is filled the layout  */
     children?: any;
 }
 
+/**
+ * basic parent layout component for public and private pages
+ */
 export default class Layout extends React.Component<IProps> {
     private admin: boolean = false;
 
@@ -36,7 +39,6 @@ export default class Layout extends React.Component<IProps> {
         }
         return (
             this.props.private ?
-                // <PrivateLayout>{this.props.children}</PrivateLayout>
                 <DashboardPrivateLayout isAdmin={this.admin}>{this.props.children}</DashboardPrivateLayout>
                 :
                 <PublicLayout>{this.props.children}</PublicLayout>

@@ -4,6 +4,7 @@
 import * as React from "react";
 
 interface IProp {
+    /** react element which is filled the layout */
     children?: JSX.Element;
 }
 

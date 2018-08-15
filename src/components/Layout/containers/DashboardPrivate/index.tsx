@@ -12,7 +12,9 @@ import "./style.less";
 const { Sider, Content } = Layout;
 
 interface IProps {
+    /** react element which is filled the layout */
     children: JSX.Element;
+    /** specify admin status */
     isAdmin: boolean;
 }
 
@@ -36,14 +38,6 @@ export default class DashboardPrivateLayout extends React.Component<IProps, ISta
             menuClass: "normal-menu",
         };
     }
-
-    // public componentDidMount() {
-    //     window.addEventListener("scroll", this.handleScroll);
-    // }
-    //
-    // public componentWillUnmount() {
-    //     window.removeEventListener("scroll", this.handleScroll);
-    // }
 
 public handleScroll(event) {
         console.log(event.pageY);
