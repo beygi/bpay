@@ -13,13 +13,18 @@ import t from "../../services/trans/i18n";
 import "./style.less";
 
 interface IProps {
+    /** crypto currencies exchange data from redux store */
     cryptos: {};
 }
 
 interface IState {
+    /** crypto currencies exchange data */
     cryptos: any[];
 }
 
+/**
+ * we have live currencies exchnage rate and price in this block
+ */
 class LiveComponent extends React.Component<IProps, IState> {
 
     public static getDerivedStateFromProps(props, state) {
@@ -36,10 +41,6 @@ class LiveComponent extends React.Component<IProps, IState> {
         this.state = {
             cryptos: null,
         };
-    }
-
-    public componentDidMount() {
-        //
     }
 
     public render() {
