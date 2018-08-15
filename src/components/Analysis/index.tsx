@@ -83,7 +83,7 @@ class AnalysisComponent extends React.Component<IProps, IState> {
                         <div>{symbolToUsd}</div>
                         <div>{promisedToUsd}</div>
                         <div>{percent}</div> */}
-                        <Gauge to={symbol} percent={percent} />
+                        <Gauge title={symbol} percent={percent} />
                         <div className="owe-data">
                             <div><FontAwesomeIcon icon={["fas", "handshake"]} /> {config.icons[symbol]}{currenyPromised.toFixed(2)}</div>
                             <span><FontAwesomeIcon icon={["fas", "handshake"]} /> {symbolPromiesd.toFixed(2)}</span>

@@ -1,39 +1,47 @@
 /**
  * @module Components/GaugeComponent
  */
-// import the core library.
 import ReactEcharts from "echarts-for-react";
 import * as _ from "lodash";
 import * as React from "react";
 import "./style.less";
 
 interface IProps {
-    to: string;
+    /** guage title with is displayed in center of guage */
+    title: string;
+    /** given percent */
     percent: number;
 }
 
 interface IState {
+    /** holds echart's options object */
     options?: any;
 }
 
+/**
+ * a component for display a nice animated gauge
+ * from given props using echarts
+ */
 class GaugeComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
+
+        // options for echart, you can find more on echart's website
         this.state = {
             options: {
                 grid: {
-                          top:    0,
-                          bottom: -50,
-                          left:   0,
-                          right:  0,
-                          show: false,
-                          backgroundColor : "#000000",
-                          height : "50%",
-                        },
+                    top: 0,
+                    bottom: -50,
+                    left: 0,
+                    right: 0,
+                    show: false,
+                    backgroundColor: "#000000",
+                    height: "50%",
+                },
                 series: [
                     {
-                        name: this.props.to,
+                        name: this.props.title,
                         type: "gauge",
                         startAngle: 180,
                         endAngle: 0,
@@ -82,7 +90,7 @@ class GaugeComponent extends React.Component<IProps, IState> {
                         pointer: {
                             width: 5,
                         },
-                        data: [{ value: this.props.percent, name: this.props.to }],
+                        data: [{ value: this.props.percent, name: this.props.title }],
                     },
                 ],
             },

@@ -58,7 +58,7 @@ class InternalExchangeComponent extends React.Component<IProps, IState> {
                 return (
                     <Col className="symbol-gauge" md={12} key={symbol}>
                         <Block>
-                            <Gauge to={symbol} percent={percent} />
+                            <Gauge title={symbol} percent={percent} />
                             <div className="owe-data">
                                 <div><FontAwesomeIcon icon={["fas", "handshake"]} /> {config.icons[symbol]}{currenyPromised.toFixed(2)}</div>
                                 <span><FontAwesomeIcon icon={["fas", "handshake"]} /> {symbolPromiesd.toFixed(2)}</span>
@@ -92,7 +92,7 @@ class InternalExchangeComponent extends React.Component<IProps, IState> {
                 return (
                     <Col className="symbol-gauge" md={12} key={symbol}>
                         <Block>
-                            <Gauge to={symbol} percent={percent} />
+                            <Gauge title={symbol} percent={percent} />
                             <div className="owe-data">
                                 <div><FontAwesomeIcon icon={["fas", "handshake"]} /> {config.icons[symbol]}{currenyPromised.toFixed(2)}</div>
                                 <span><FontAwesomeIcon icon={["fas", "handshake"]} /> {symbolPromiesd.toFixed(2)}</span>
