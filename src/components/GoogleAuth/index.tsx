@@ -15,6 +15,9 @@ interface IProps {
 interface IState {
 }
 
+/**
+ * a simple component for redirecting user to google auth setup page
+ */
 class GoogleAuthComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
