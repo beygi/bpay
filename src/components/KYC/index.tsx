@@ -7,19 +7,25 @@ import config from "../../../src/config";
 import Api from "../../lib/api/kyc";
 import t from "../../services/trans/i18n";
 import "./style.less";
+const api = Api.getInstance();
 
 interface IProps {
+    /** kyc record */
     record: any;
+    /** change record function from parent */
     changeRecord: any;
 }
 
 interface IState {
+    /** prepared pictures from record  */
     pictures: any[];
+    /** kyc record  */
     record: any;
 }
 
-const api = Api.getInstance();
-
+/**
+ * a component to show a user kyc and change functions
+ */
 class KycComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
@@ -44,7 +50,7 @@ class KycComponent extends React.Component<IProps, IState> {
         this.changeStatus = this.changeStatus.bind(this);
     }
     public changeStatus(id, status) {
-        api.editKycStatusUsingPUT({uid : id, status}).then((response) => {
+        api.editKycStatusUsingPUT({ uid: id, status }).then((response) => {
             if (response.status === 200) {
                 this.setState({ record: response.body });
                 this.props.changeRecord(this.state.record.uid, status);
