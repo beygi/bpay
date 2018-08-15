@@ -51,6 +51,9 @@ const data = [{
   expires: "Aug 2, 2018 1:48:30 PM",
 }];
 
+/**
+ * this component displays user's active sessions
+ */
 class SessionsComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
