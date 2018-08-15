@@ -17,16 +17,26 @@ import t from "../../services/trans/i18n";
 import "./style.less";
 
 interface IProps {
+    /** origin symbol */
     symbol: string;
+    /** target symbol */
     toSymbol: string;
+    /** all cashdesks from redux */
     cashDesks: any;
+    /** all forex rates from redux */
     forex: any;
+    /** all crypto rates from redux */
     cryptos: any;
 }
 
 interface IState {
 }
 
+/**
+ * this component display two side by side gauges to
+ * compare two diffrent symbol and choose between
+ * exchange options
+ */
 class InternalExchangeComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
@@ -149,11 +159,6 @@ class InternalExchangeComponent extends React.Component<IProps, IState> {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-    };
-}
-
 function mapStateToProps(state: IRootState) {
     return {
         cashDesks: state.app.office.cashDesks || null,
@@ -162,4 +167,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(InternalExchangeComponent);
+export default connect(mapStateToProps)(InternalExchangeComponent);
