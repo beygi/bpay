@@ -1,5 +1,4 @@
 /**
- * a component to hold things
  * @module Components/BlockComponent
  */
 import { Collapse } from "antd";
@@ -8,26 +7,29 @@ import "./style.less";
 const Panel = Collapse.Panel;
 
 interface IProps {
+    /** react element wich is rendered in block */
     children: any;
-    /**
-     * remove padding from block if sets to true
-     */
+    /** remove padding from block if sets to true */
     noPadding?: boolean;
-    /**
-     * css class name of final div
-     */
+    /** css class name of final div */
     className?: string;
-    /**
-     * blocks will be render in collapsable manner if sets to true
-     */
+    /** blocks will be render in collapsable mode if sets to true */
     collapse?: boolean;
+    /** collpase enabled block renders in collpassed mode if sets to true */
     collapseClosed?: boolean;
+    /** title of the block */
     title?: string | JSX.Element;
+    /** icon of the block */
     icon?: JSX.Element;
+    /** icon position, default is left */
     iconPosition?: string;
+    /** block renders transpoarent if true given */
     transparent?: boolean;
+    /** display arrow in collapsable mode */
     showArrow?: boolean;
+    /** title will be rendered in center */
     centerTitle?: boolean;
+    /** remove margin of the title */
     noTitleMargin?: boolean;
 }
 
