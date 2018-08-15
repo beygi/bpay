@@ -11,38 +11,52 @@ import "./style.less";
 const user = USER.getInstance();
 
 interface IProps {
+    /**  example image */
     example?: string;
+    /**  action url , endpoint for sending data */
     action: string;
+    /**  name of the image */
     name: string;
-    data: {imgtype: string};
-    callback: (state: any  , type: any) => void;
+    /** data object containing image type */
+    data: { imgtype: string };
+    /** callback function wich is call when upload is done */
+    callback: (state: any, type: any) => void;
 }
 
 interface IState {
+    /** list of uploaded files */
     fileList: any[];
+    /** preview  of uploaded file */
     previewImage: any;
+    /** visibility of the preview */
     previewVisible: boolean;
+    /** extra headers */
     headers: {};
 }
 
+/** return base64 data of a selected image  */
 function getBase64(img, callback) {
     const reader = new FileReader();
     reader.addEventListener("load", () => callback(reader.result));
     reader.readAsDataURL(img);
 }
 
+/** validate image size before upload  */
 function beforeUpload(file) {
     const isValid = file.type === "image/jpeg" || file.type === "image/png";
     if (!isValid) {
         message.error("You can only upload JPG or PNG file!");
     }
-    const isLt2M = file.size / 1024 / 1024 < 10 ;
+    const isLt2M = file.size / 1024 / 1024 < 10;
     if (!isLt2M) {
         message.error("Image must smaller than 10MB!");
     }
     return isValid && isLt2M;
 }
 
+/**
+ * image upload component with example and preview support
+ */
 class UploaderComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
@@ -52,7 +66,6 @@ class UploaderComponent extends React.Component<IProps, IState> {
             previewVisible: false,
             previewImage: "",
             fileList: [],
-            // TODO : add real token here
             headers: { Authorization: "Token " + JSON.stringify(user.keycloak.tokenParsed) },
         };
     }
@@ -65,13 +78,13 @@ class UploaderComponent extends React.Component<IProps, IState> {
     }
     public handleCancel = () => this.setState({ previewVisible: false });
     public handleChange = (fileList) => {
-          const newState = {};
-          newState[this.props.data.imgtype] = null;
-          if (fileList.file.status === "done") {
-              newState[this.props.data.imgtype] = true;
-            }
-          this.props.callback(newState, this.props.data.imgtype);
-          this.setState({fileList : fileList.fileList});
+        const newState = {};
+        newState[this.props.data.imgtype] = null;
+        if (fileList.file.status === "done") {
+            newState[this.props.data.imgtype] = true;
+        }
+        this.props.callback(newState, this.props.data.imgtype);
+        this.setState({ fileList: fileList.fileList });
     }
 
     public render() {
