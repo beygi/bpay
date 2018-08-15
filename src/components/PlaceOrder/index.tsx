@@ -14,24 +14,29 @@ const TabPane = Tabs.TabPane;
 const FormItem = Form.Item;
 
 const formItemLayout = {
-      labelCol: {
+    labelCol: {
         xs: { span: 24 },
         sm: { span: 8 },
-      },
-      wrapperCol: {
+    },
+    wrapperCol: {
         xs: { span: 24 },
         sm: { span: 16 },
-      },
-    };
+    },
+};
 
 interface IPlaceProps extends FormComponentProps {
+    /** origin symbol */
     fromSymbol: string;
+    /** target symbol */
     toSymbol: string;
 }
 
 interface IState {
 }
 
+/**
+ * place order component, users can set bids for buy or sell
+ */
 class PlaceOrderComponent extends React.Component<IPlaceProps, IState> {
 
     constructor(props: IPlaceProps) {
@@ -52,32 +57,32 @@ class PlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                             <Block className="place-order">
                                 <h3>{t.t("Buy ") + this.props.fromSymbol}</h3>
                                 <Form onSubmit={this.handleSubmit} className="login-form">
-                                  <FormItem {...formItemLayout}  label="Price">
-                                    {getFieldDecorator("price", {
-                                      rules: [{ required: true, message: "Please input price" }],
-                                    })(
-                                      <Input  />,
-                                    )}
-                                  </FormItem>
-                                  <FormItem {...formItemLayout}  label="Amount">
-                                    {getFieldDecorator("amount", {
-                                      rules: [{ required: true, message: "Please input amount" }],
-                                    })(
-                                      <Input  />,
-                                    )}
-                                  </FormItem>
-                                  <FormItem {...formItemLayout}  label="Total">
-                                    {getFieldDecorator("total", {
-                                      rules: [{ required: false, message: "Please input amount" }],
-                                    })(
-                                      <Input  />,
-                                    )}
-                                  </FormItem>
-                                  <FormItem>
-                                    <Button className="buy-btn" type="primary" htmlType="submit" >
-                                     {t.t("Buy ") + this.props.fromSymbol}
-                                    </Button>
-                                  </FormItem>
+                                    <FormItem {...formItemLayout} label="Price">
+                                        {getFieldDecorator("price", {
+                                            rules: [{ required: true, message: "Please input price" }],
+                                        })(
+                                            <Input />,
+                                        )}
+                                    </FormItem>
+                                    <FormItem {...formItemLayout} label="Amount">
+                                        {getFieldDecorator("amount", {
+                                            rules: [{ required: true, message: "Please input amount" }],
+                                        })(
+                                            <Input />,
+                                        )}
+                                    </FormItem>
+                                    <FormItem {...formItemLayout} label="Total">
+                                        {getFieldDecorator("total", {
+                                            rules: [{ required: false, message: "Please input amount" }],
+                                        })(
+                                            <Input />,
+                                        )}
+                                    </FormItem>
+                                    <FormItem>
+                                        <Button className="buy-btn" type="primary" htmlType="submit" >
+                                            {t.t("Buy ") + this.props.fromSymbol}
+                                        </Button>
+                                    </FormItem>
                                 </Form>
                             </Block>
                         </Col>
@@ -85,38 +90,38 @@ class PlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                             <Block className="place-order">
                                 <h3>{t.t("Sell ") + this.props.fromSymbol}</h3>
                                 <Form onSubmit={this.handleSubmit} className="login-form">
-                                  <FormItem {...formItemLayout}  label="Price">
-                                    {getFieldDecorator("price", {
-                                      rules: [{ required: true, message: "Please input price" }],
-                                    })(
-                                      <Input  />,
-                                    )}
-                                  </FormItem>
-                                  <FormItem {...formItemLayout}  label="Amount">
-                                    {getFieldDecorator("amount", {
-                                      rules: [{ required: true, message: "Please input amount" }],
-                                    })(
-                                      <Input  />,
-                                    )}
-                                  </FormItem>
-                                  <FormItem {...formItemLayout}  label="Total">
-                                    {getFieldDecorator("total", {
-                                      rules: [{ required: false, message: "Please input amount" }],
-                                    })(
-                                      <Input  />,
-                                    )}
-                                  </FormItem>
-                                  <FormItem>
-                                    <Button className="sell-btn" type="primary" htmlType="submit" >
-                                     {t.t("Sell ") + this.props.fromSymbol}
-                                    </Button>
-                                  </FormItem>
+                                    <FormItem {...formItemLayout} label="Price">
+                                        {getFieldDecorator("price", {
+                                            rules: [{ required: true, message: "Please input price" }],
+                                        })(
+                                            <Input />,
+                                        )}
+                                    </FormItem>
+                                    <FormItem {...formItemLayout} label="Amount">
+                                        {getFieldDecorator("amount", {
+                                            rules: [{ required: true, message: "Please input amount" }],
+                                        })(
+                                            <Input />,
+                                        )}
+                                    </FormItem>
+                                    <FormItem {...formItemLayout} label="Total">
+                                        {getFieldDecorator("total", {
+                                            rules: [{ required: false, message: "Please input amount" }],
+                                        })(
+                                            <Input />,
+                                        )}
+                                    </FormItem>
+                                    <FormItem>
+                                        <Button className="sell-btn" type="primary" htmlType="submit" >
+                                            {t.t("Sell ") + this.props.fromSymbol}
+                                        </Button>
+                                    </FormItem>
                                 </Form>
                             </Block>
                         </Col>
                     </Row>
                 </TabPane>
-              </Tabs>
+            </Tabs>
         );
     }
 }
