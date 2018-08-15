@@ -13,14 +13,21 @@ import t from "../../services/trans/i18n";
 import "./style.less";
 
 interface IProps {
+    /** input symbol */
     symbol: string;
+    /** holds all exchange rates. synced from redux store */
     forex: any[];
 }
 
 interface IState {
+    /** holds calcucalted exchange rates */
     exchangeRates: any[];
 }
 
+/**
+ * this component displays exchange rate off given price with
+ * other common fiats or given fiats
+ */
 function calcExchangeRate(props) {
     // calcucalte exchange rate from store
     const exchange = [
