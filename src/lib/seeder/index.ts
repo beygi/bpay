@@ -66,46 +66,57 @@ export default class Seeder {
 
     public setBalance() {
         // TODO: random value
+        // let balanceData = {
+        //     BTC: {
+        //         name: "Bitcoin",
+        //         balance:
+        //         {
+        //             available: 123,
+        //             inOrder: 10,
+        //             total: 133,
+        //         },
+        //     },
+        //     USD: {
+        //         name: "US dollar",
+        //         balance: {
+        //             available: 12,
+        //             inOrder: 1,
+        //             total: 13,
+        //         },
+        //     },
+        //     IRR: {
+        //         name: "IR Rial",
+        //         balance: {
+        //             available: 1200,
+        //             inOrder: 100,
+        //             total: 1300,
+        //         },
+        //     },
+        //     ETH: {
+        //         name: "Ethereum",
+        //         balance: {
+        //             available: 16,
+        //             inOrder: 14,
+        //             total: 30,
+        //         },
+        //     },
+        //     LTC: {
+        //         name: "Litecoin",
+        //         balance: {
+        //             available: 160,
+        //             inOrder: 140,
+        //             total: 300,
+        //         },
+        //     },
+        // };
+
         const balanceData = {
-            BTC: {
-                name: "Bitcoin",
-                balance:
-                    {
-                        available: 123,
-                        inOrder: 10,
-                        total: 133,
-                    },
-            },
             USD: {
                 name: "US dollar",
                 balance: {
-                    available: 12,
+                    available: 12000,
                     inOrder: 1,
                     total: 13,
-                },
-            },
-            IRR: {
-                name: "IR Rial",
-                balance: {
-                    available: 1200,
-                    inOrder: 100,
-                    total: 1300,
-                },
-            },
-            ETH: {
-                name: "Ethereum",
-                balance: {
-                    available: 16,
-                    inOrder: 14,
-                    total: 30,
-                },
-            },
-            LTC: {
-                name: "Litecoin",
-                balance: {
-                    available: 160,
-                    inOrder: 140,
-                    total: 300,
                 },
             },
         };
