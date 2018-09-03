@@ -20,30 +20,30 @@ function getMenus() {
         //     text: t.t("Balance"),
         //     visible: true,
         // },
-        exchange: {
-            icon: "line-chart",
-            path: "/exchange",
-            text: t.t("Exchange"),
-            visible: true,
-        },
-        deposit: {
-            icon: "export",
-            path: "/deposit",
-            text: t.t("Deposit"),
-            visible: true,
-        },
+        // exchange: {
+        //     icon: "line-chart",
+        //     path: "/exchange",
+        //     text: t.t("Exchange"),
+        //     visible: true,
+        // },
+        // deposit: {
+        //     icon: "export",
+        //     path: "/deposit",
+        //     text: t.t("Deposit"),
+        //     visible: true,
+        // },
         // wallets: {
         //     icon: "wallet",
         //     path: "/wallets",
         //     text: t.t("Wallets"),
         //     visible: true,
         // },
-        kyc: {
-            icon: "solution",
-            path: "/kyc",
-            text: t.t("KYC"),
-            visible: true,
-        },
+        // kyc: {
+        //     icon: "solution",
+        //     path: "/kyc",
+        //     text: t.t("KYC"),
+        //     visible: true,
+        // },
     };
     return availableMenus;
 }
