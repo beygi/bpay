@@ -70,7 +70,7 @@ class BlockComponent extends React.Component<IProps, IState> {
             title = <div className="block-title-collapse">{icon} {this.props.title || <span>&nbsp;</span>}</div>;
             return (
                 <div className={cssClass} >
-                    <Collapse key={disabled[0]} className="block-collapse" bordered={false} defaultActiveKey={["1"]}   >
+                    <Collapse key={disabled[0]} className="block-collapse" bordered={false}  >
                         <Panel header={title} key="1" showArrow={showArrow} >
                             {this.props.children}
                         </Panel>
