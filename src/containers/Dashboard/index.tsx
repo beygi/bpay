@@ -36,19 +36,19 @@ class DashboardContainer extends React.Component<IProps, IState> {
                 <Col md={6} >
                     <Block className="user-balance" collapse title="Your balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
                         <Balance />
-                        <Link to="/deposit">
+                        {/* <Link to="/deposit">
                             <Button className="action" type="primary" size="small">Deposit</Button>
-                        </Link>
+                        </Link> */}
                     </Block>
-                    <Block collapse title="Live prices" icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
+                    {/* <Block collapse title="Live prices" icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
                         <Live />
-                    </Block>
-                    <Block iconPosition="right" collapse title={t.t("Deposit history")} icon={<FontAwesomeIcon icon={["fas", "history"]} />}  >
+                    </Block> */}
+                    {/* <Block iconPosition="right" collapse title={t.t("Deposit history")} icon={<FontAwesomeIcon icon={["fas", "history"]} />}  >
                         <DepositHistory />
-                    </Block>
+                    </Block> */}
                 </Col>
                 <Col md={18} >
-                    <Row gutter={8}>
+                    {/* <Row gutter={8}>
                         <Col md={8} >
                             <Block>
                                 <Stock symbol="BTC" />
@@ -82,7 +82,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
                     </Row>
                     <Block>
                         <Guide />
-                    </Block>
+                    </Block> */}
                     <Row gutter={8}>
                         <Col md={12} >
                             <Block>
