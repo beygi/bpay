@@ -1,0 +1,17 @@
+@import "../../theme/application";
+.transaction-block
+{
+    background-color: darken(@palette-high,5%);
+    .success
+    {
+        color :@validation-done;
+    }
+    .waiting
+    {
+        color : @cold-storage;
+    }
+    .archived
+    {
+        @field_error;
+    }
+}

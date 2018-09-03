@@ -13,6 +13,7 @@ import Block from "../../components/Holder";
 import Live from "../../components/Live";
 import ActieveSessions from "../../components/Sessions";
 import Stock from "../../components/Stock";
+import Transactions from "../../components/Transactions";
 import Guide from "../../components/UserStatusGuide";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
@@ -34,7 +35,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
         return (
             <Row gutter={8}>
                 <Col md={6} >
-                    <Block className="user-balance" collapse title="Your balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
+                    <Block className="user-balance" title="Your balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
                         <Balance />
                         {/* <Link to="/deposit">
                             <Button className="action" type="primary" size="small">Deposit</Button>
@@ -83,6 +84,13 @@ class DashboardContainer extends React.Component<IProps, IState> {
                     <Block>
                         <Guide />
                     </Block> */}
+                    <Row gutter={8}>
+                        <Col md={24} >
+                            <Block title={t.t("Transactions")} icon={<FontAwesomeIcon icon={["fas", "money-check-alt"]} />}>
+                                    <Transactions />
+                           </Block>
+                       </Col>
+                    </Row>
                     <Row gutter={8}>
                         <Col md={12} >
                             <Block>
