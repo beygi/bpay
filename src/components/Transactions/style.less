@@ -12,6 +12,36 @@
     }
     .archived
     {
-        @field_error;
+        color : @hot-storage;
+    }
+    .success, .archived , .waiting
+    {
+        width: 50px;
+    }
+    
+    .ant-table {
+        background-color: darken(@palette-high,2%);
+        color: @palette-light;
+        border: none;
+        border-radius: 3px;
+        .ant-table-row {
+            td {
+                border-color: lighten(@palette-high,10%);
+            }
+            &:hover {
+                color: @palette-high;
+            }
+        }
+
+        .ant-table-thead > tr > th {
+            background: transparent !important;
+            color: @palette-light;
+            font-weight: bold !important;
+            border-bottom: 1px solid lighten(@palette-high,20%) !important;
+        }
+    }
+    .invoice-id
+    {
+        width: 70px;
     }
 }

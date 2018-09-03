@@ -34,21 +34,36 @@ class DashboardContainer extends React.Component<IProps, IState> {
     public render() {
         return (
             <Row gutter={8}>
-                <Col md={6} >
-                    <Block className="user-balance" title="Your balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
-                        <Balance />
-                        {/* <Link to="/deposit">
-                            <Button className="action" type="primary" size="small">Deposit</Button>
-                        </Link> */}
-                    </Block>
+                <Col md={8} >
+                    <Row gutter={8}>
+                    <Col md={24} >
+                        <Block className="user-balance" title="Your balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
+                            <Balance />
+                            {/* <Link to="/deposit">
+                                <Button className="action" type="primary" size="small">Deposit</Button>
+                            </Link> */}
+                        </Block>
+                    </Col>
+
                     {/* <Block collapse title="Live prices" icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
                         <Live />
                     </Block> */}
                     {/* <Block iconPosition="right" collapse title={t.t("Deposit history")} icon={<FontAwesomeIcon icon={["fas", "history"]} />}  >
                         <DepositHistory />
                     </Block> */}
+                    <Col md={24} >
+                        <Block>
+                            <ChangePassword />
+                        </Block>
+                    </Col>
+                    <Col md={24} >
+                        <Block>
+                                <GoogleAuth />
+                        </Block>
+                    </Col>
+                </Row>
                 </Col>
-                <Col md={18} >
+                <Col md={16} >
                     {/* <Row gutter={8}>
                         <Col md={8} >
                             <Block>
@@ -92,16 +107,6 @@ class DashboardContainer extends React.Component<IProps, IState> {
                        </Col>
                     </Row>
                     <Row gutter={8}>
-                        <Col md={12} >
-                            <Block>
-                                <ChangePassword />
-                            </Block>
-                        </Col>
-                        <Col md={12} >
-                            <Block>
-                                    <GoogleAuth />
-                            </Block>
-                        </Col>
                         <Col md={24} >
                             <Block title={t.t("Action Sessions")} icon={<FontAwesomeIcon icon={["fas", "user-clock"]} />}  >
                                 <ActieveSessions />

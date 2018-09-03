@@ -2,7 +2,7 @@
  * @module Components/Transactions
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Collapse } from "antd";
+import { Collapse, Table, Tag } from "antd";
 import axios from "axios";
 import * as React from "react";
 import { JsonTable } from "react-json-to-html";
@@ -31,6 +31,21 @@ const icons = {
     success : <FontAwesomeIcon   className="success" icon={["fas", "check"]} />,
 };
 
+const columns = [{
+  title: "Name",
+  dataIndex: "name",
+}, {
+  title: "Price",
+  dataIndex: "price",
+}, {
+  title: "Payment time",
+  dataIndex: "date",
+}, {
+  title: "Vendor",
+  dataIndex: "vendor",
+},
+];
+
 /**
  * this component shows all transactions of merchant
  */
@@ -49,9 +64,9 @@ class Transactions extends React.Component<IProps, IState> {
             invoices = this.state.invoices.map((invoice) => {
                 return (
                     <Block collapse className={"transaction-block"}
-                        title={<span>{invoice.symbol}<Ex  value={invoice.price} seperateThousand /></span>}
-                        iconPosition="right" icon={icons[invoice.status]}>
-                        <JsonTable json={invoice.products} />
+                        title={<span><Tag className="invoice-id" color="#453e41">#{invoice.id}</Tag> {invoice.symbol}<Ex  fixFloatNum={0} value={invoice.price} seperateThousand /></span>}
+                        iconPosition="right" icon={<span><Tag color="#453e41">{invoice.desc}</Tag> <Tag color="#898989">{invoice.date}</Tag> {icons[invoice.status]}</span> }>
+                        <Table pagination={false} columns={columns} dataSource={invoice.products} size="small" />
                     </Block>
                 );
             });
