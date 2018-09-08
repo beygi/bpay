@@ -53,7 +53,7 @@ export default class Seeder {
     }
 
     public setForex() {
-        axios.get("https://exchangeratesapi.io/api/latest?base=USD").then((response) => {
+        axios.get("https://api.exchangeratesapi.io/latest?base=USD").then((response) => {
             const rates = response.data.rates;
             // call for irr to usd
             axios.get("http://staging1.b2mark.com/api/").then((irrResponse) => {
@@ -66,60 +66,60 @@ export default class Seeder {
 
     public setBalance() {
         // TODO: random value
-        // let balanceData = {
-        //     BTC: {
-        //         name: "Bitcoin",
-        //         balance:
-        //         {
-        //             available: 123,
-        //             inOrder: 10,
-        //             total: 133,
-        //         },
-        //     },
-        //     USD: {
-        //         name: "US dollar",
-        //         balance: {
-        //             available: 12,
-        //             inOrder: 1,
-        //             total: 13,
-        //         },
-        //     },
-        //     IRR: {
-        //         name: "IR Rial",
-        //         balance: {
-        //             available: 1200,
-        //             inOrder: 100,
-        //             total: 1300,
-        //         },
-        //     },
-        //     ETH: {
-        //         name: "Ethereum",
-        //         balance: {
-        //             available: 16,
-        //             inOrder: 14,
-        //             total: 30,
-        //         },
-        //     },
-        //     LTC: {
-        //         name: "Litecoin",
-        //         balance: {
-        //             available: 160,
-        //             inOrder: 140,
-        //             total: 300,
-        //         },
-        //     },
-        // };
-
         const balanceData = {
+            BTC: {
+                name: "Bitcoin",
+                balance:
+                {
+                    available: 123,
+                    inOrder: 10,
+                    total: 133,
+                },
+            },
             USD: {
                 name: "US dollar",
                 balance: {
-                    available: 12000,
+                    available: 12,
                     inOrder: 1,
                     total: 13,
                 },
             },
+            IRR: {
+                name: "IR Rial",
+                balance: {
+                    available: 1200,
+                    inOrder: 100,
+                    total: 1300,
+                },
+            },
+            ETH: {
+                name: "Ethereum",
+                balance: {
+                    available: 16,
+                    inOrder: 14,
+                    total: 30,
+                },
+            },
+            LTC: {
+                name: "Litecoin",
+                balance: {
+                    available: 160,
+                    inOrder: 140,
+                    total: 300,
+                },
+            },
         };
+
+        // const balanceData = {
+        //     USD: {
+        //         name: "US dollar",
+        //         balance: {
+        //             available: 12000,
+        //             inOrder: 1,
+        //             total: 13,
+        //         },
+        //     },
+        // };
         store.dispatch(updateUserBalance(balanceData));
     }
 

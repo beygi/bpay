@@ -63,7 +63,7 @@ class Transactions extends React.Component<IProps, IState> {
             // map
             invoices = this.state.invoices.map((invoice) => {
                 return (
-                    <Block collapse className={"transaction-block"}
+                    <Block key={invoice.id} collapse className={"transaction-block"}
                         title={<span><Tag className="invoice-id" color="#453e41">#{invoice.id}</Tag> {invoice.symbol}<Ex  fixFloatNum={0} value={invoice.price} seperateThousand /></span>}
                         iconPosition="right" icon={<span><Tag color="#453e41">{invoice.desc}</Tag> <Tag color="#898989">{invoice.date}</Tag> {icons[invoice.status]}</span> }>
                         <Table pagination={false} columns={columns} dataSource={invoice.products} size="small" />

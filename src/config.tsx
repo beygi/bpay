@@ -19,28 +19,28 @@ const config = {
         checkLoginIframe: false,
     },
     currencies: {
-        // BTC: {
-        //     name: "Bitcoin",
-        //     depositeWallet: "btcbeygizasdfrwgsdfgsdfgsdfdfsgsfdgdfg",
-        //     confirmationNumber: 5,
-        //     type: "crypto",
-        // },
-        // ETH: {
-        //     name: "Ethereum",
-        //     depositeWallet: "etherasdfrwgsdfgsdfgsdfgdfsgsfdgdfg",
-        //     confirmationNumber: 20,
-        //     type: "crypto",
-        // },
-        // LTC: {
-        //     name: "Litecoin",
-        //     depositeWallet: "litecoin1weasrtasdf4rtsadfsdfsd4s54sddfdf",
-        //     confirmationNumber: 16,
-        //     type: "crypto",
-        // },
-        // IRR: {
-        //     name: "IR Rial",
-        //     type: "fiat",
-        // },
+        BTC: {
+               name: "Bitcoin",
+              depositeWallet: "btcbeygizasdfrwgsdfgsdfgsdfdfsgsfdgdfg",
+              confirmationNumber: 5,
+              type: "crypto",
+         },
+        ETH: {
+            name: "Ethereum",
+            depositeWallet: "etherasdfrwgsdfgsdfgsdfgdfsgsfdgdfg",
+            confirmationNumber: 20,
+            type: "crypto",
+        },
+        LTC: {
+            name: "Litecoin",
+            depositeWallet: "litecoin1weasrtasdf4rtsadfsdfsd4s54sddfdf",
+            confirmationNumber: 16,
+            type: "crypto",
+        },
+        IRR: {
+            name: "IR Rial",
+            type: "fiat",
+        },
         USD: {
             name: "US dollar",
             type: "fiat",

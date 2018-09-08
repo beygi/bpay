@@ -3,6 +3,7 @@
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Collapse } from "antd";
+import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
 import config from "../../config";
@@ -26,6 +27,7 @@ interface IProps {
 interface IState {
     /**  holds user balance object */
     balance: {};
+    fiats: {};
 }
 
 /**
@@ -45,9 +47,14 @@ class BalanceComponent extends React.Component<IProps, IState> {
         super(props);
 
         // initial coin state. it must be available in config file
-        this.state = {
-            balance: config.currencies,
-        };
+        const fiats = {};
+        Object.keys(config.currencies).map((key) => {
+            if (config.currencies[key].type === "fiat") {
+                fiats[key] = config.currencies[key];
+            }
+        } );
+
+        this.state = {fiats , balance : null};
 
         // load balance data of each coin
         this.loadData = this.loadData.bind(this);
@@ -84,7 +91,7 @@ class BalanceComponent extends React.Component<IProps, IState> {
     }
 
     public render() {
-        const coins = Object.keys(this.state.balance).map((key) =>
+        const coins = Object.keys(this.state.fiats).map((key) =>
             <div className="coin-balance" key={key}>
                 <span  className = "balance-icon" > {config.icons[key]}</span >
                 <p className="balance-name">{this.state.balance[key].name}</p>
