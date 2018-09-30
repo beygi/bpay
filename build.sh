@@ -4,7 +4,7 @@ date +%d\ %m\ %Y
 echo "###### whoami ######"
 whoami
 echo "###### cd to src dir ######"
-cd /home/staging/gateway
+cd /home/staging/web
 pwd
 echo "###### last commit message ######"
 git log -1 | cat
