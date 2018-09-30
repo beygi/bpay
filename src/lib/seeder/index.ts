@@ -191,7 +191,8 @@ export default class Seeder {
         // fill state with back-office sample data
 
         // check for user permission
-        if (user.permission("admin").adminView) {
+        // alert(user.hasRealmRole("webapp_admin"));
+        if (user.hasRealmRole("webapp_admin")) {
             // lets seed
             // we need a cashDesk for every currency that we have
             const cashDesks = {};

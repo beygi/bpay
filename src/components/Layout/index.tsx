@@ -32,7 +32,7 @@ export default class Layout extends React.Component<IProps> {
             this.admin = true;
         }
 
-        if (this.admin && !userObject.permission("admin").adminView) {
+        if (this.admin && !userObject.hasRealmRole("webapp_admin")) {
             // we have some rats here
             this.admin = false;
             return (<PublicLayout><h1>404. not found</h1></PublicLayout>);

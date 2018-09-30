@@ -27,7 +27,7 @@ const { Header }: any = Layout;
 const userObject = USER.getInstance();
 
 interface IProps {
-     /** email address of curren user */
+    /** email address of curren user */
     userEmail: any;
 
     /** current browser path we use it to find proper icon and title of the page */
@@ -53,7 +53,7 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
         this.logOut = this.logOut.bind(this);
     }
 
-   /** logout current user , it calls logOut from props which is binded to a redux function */
+    /** logout current user , it calls logOut from props which is binded to a redux function */
     public logOut() {
         this.props.logOut();
         userObject.keycloak.logout();
@@ -77,18 +77,18 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                 <Link to="/dashboard"><Icon type="user" /></Link>
             </Tooltip>;
             HeaderLogo = <Link to="/admin/dashboard"><img className="user-dashboard-logo" src={logo} /></Link>;
-            MenuItem = _.find(Menus, { path: "/admin/" + this.props.path.split("/")[2]  });
+            MenuItem = _.find(Menus, { path: "/admin/" + this.props.path.split("/")[2] });
         } else {
             Menus = menu();
             AdminClass = "header-logo-user";
             // check user permission
-            if (userObject.permission("admin").adminView) {
+            if (userObject.hasRealmRole("webapp_admin")) {
                 AdminButton = <Tooltip placement="bottom" title={t.t("System Administration")}>
                     <Link to="/admin/dashboard"><Icon type="setting" /></Link>
                 </Tooltip>;
             }
             HeaderLogo = <Link to="/dashboard"><img className="user-dashboard-logo" src={logo} /></Link>;
-            MenuItem = _.find(Menus, { path: "/" + this.props.path.split("/")[1]  });
+            MenuItem = _.find(Menus, { path: "/" + this.props.path.split("/")[1] });
         }
 
         return (

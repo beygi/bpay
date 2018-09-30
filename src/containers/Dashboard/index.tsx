@@ -18,7 +18,10 @@ import Guide from "../../components/UserStatusGuide";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
+import USER from "./../../lib/user";
 import "./style.less";
+
+const userObject = USER.getInstance();
 
 interface IProps {
 }
@@ -32,90 +35,148 @@ class DashboardContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
-        return (
-            <Row gutter={8}>
-                <Col md={8} >
-                    <Row gutter={8}>
-                    <Col md={24} >
-                        <Block className="user-balance" title="Your balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
-                            <Balance />
-                            {/* <Link to="/deposit">
-                                <Button className="action" type="primary" size="small">Deposit</Button>
-                            </Link> */}
-                        </Block>
+        if (userObject.keycloak.hasRealmRole("webapp_admin")) {
+            return (
+                <Row gutter={8}>
+                    <Col md={8} >
+                        <Row gutter={8}>
+                            <Col md={24} >
+                                <Block collapse className="user-balance" title="Your balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
+                                    <Balance />
+                                    <Link to="/deposit">
+                                        <Button className="action" type="primary" size="small">Deposit</Button>
+                                    </Link>
+                                </Block>
+                            </Col>
+                            <Col md={24} >
+                                <Block collapse title="Live prices" icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
+                                    <Live />
+                                </Block>
+                            </Col>
+                            <Col md={24} >
+                                <Block iconPosition="right" collapse title={t.t("Deposit history")} icon={<FontAwesomeIcon icon={["fas", "history"]} />}  >
+                                    <DepositHistory />
+                                </Block>
+                            </Col>
+                        </Row>
                     </Col>
+                    <Col md={16} >
+                        <Row gutter={8}>
+                            <Col md={8} >
+                                <Block>
+                                    <Stock symbol="BTC" />
+                                </Block>
+                            </Col>
+                            <Col md={8} >
+                                <Block>
+                                    <Stock symbol="ETH" />
+                                </Block>
+                            </Col>
+                            <Col md={8} >
+                                <Block>
+                                    <Stock symbol="XRP" />
+                                </Block>
+                            </Col>
+                            <Col md={8} >
+                                <Block title="IRR"  >
+                                    <Forex symbol="IRR" />
+                                </Block>
+                            </Col>
+                            <Col md={8} >
+                                <Block title="EUR"  >
+                                    <Forex symbol="EUR" />
+                                </Block>
+                            </Col>
+                            <Col md={8} >
+                                <Block title="USD"  >
+                                    <Forex symbol="USD" />
+                                </Block>
+                            </Col>
+                        </Row>
 
-                    {/* <Block collapse title="Live prices" icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
-                        <Live />
-                    </Block> */}
-                    {/* <Block iconPosition="right" collapse title={t.t("Deposit history")} icon={<FontAwesomeIcon icon={["fas", "history"]} />}  >
-                        <DepositHistory />
-                    </Block> */}
-                    <Col md={24} >
-                        <Block>
-                            <ChangePassword />
-                        </Block>
-                    </Col>
-                    <Col md={24} >
-                        <Block>
-                                <GoogleAuth />
-                        </Block>
+                        <Row gutter={8}>
+                            <Col md={24} >
+                                <Block>
+                                    <Guide />
+                                </Block>
+                            </Col>
+                            <Col md={12} >
+                                <Block>
+                                    <ChangePassword />
+                                </Block>
+                            </Col>
+                            <Col md={12} >
+                                <Block>
+                                    <GoogleAuth />
+                                </Block>
+                            </Col>
+                        </Row>
+
+                        <Row gutter={8}>
+                            <Col md={24} >
+                                <Block title={t.t("Transactions")} icon={<FontAwesomeIcon icon={["fas", "money-check-alt"]} />}>
+                                    <Transactions />
+                                </Block>
+                            </Col>
+                        </Row>
+                        <Row gutter={8}>
+                            <Col md={24} >
+                                <Block title={t.t("Action Sessions")} icon={<FontAwesomeIcon icon={["fas", "user-clock"]} />}  >
+                                    <ActieveSessions />
+                                </Block>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
-                </Col>
-                <Col md={16} >
-                    {/* <Row gutter={8}>
-                        <Col md={8} >
-                            <Block>
-                                <Stock symbol="BTC" />
-                            </Block>
-                        </Col>
-                        <Col md={8} >
-                            <Block>
-                                <Stock symbol="ETH" />
-                            </Block>
-                        </Col>
-                        <Col md={8} >
-                            <Block>
-                                <Stock symbol="XRP" />
-                            </Block>
-                        </Col>
-                        <Col md={8} >
-                            <Block title="IRR"  >
-                                <Forex symbol="IRR" />
-                            </Block>
-                        </Col>
-                        <Col md={8} >
-                            <Block title="EUR"  >
-                                <Forex symbol="EUR" />
-                            </Block>
-                        </Col>
-                        <Col md={8} >
-                            <Block title="USD"  >
-                                <Forex symbol="USD" />
-                            </Block>
-                        </Col>
-                    </Row>
-                    <Block>
-                        <Guide />
-                    </Block> */}
-                    <Row gutter={8}>
-                        <Col md={24} >
-                            <Block title={t.t("Transactions")} icon={<FontAwesomeIcon icon={["fas", "money-check-alt"]} />}>
+            );
+        }
+        if (userObject.keycloak.hasRealmRole("merchant")) {
+            return (
+                <Row gutter={8}>
+                    <Col md={8} >
+                        <Row gutter={8}>
+                            <Col md={24} >
+                                <Block className="user-balance" title="Your balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
+                                    <Balance />
+                                </Block>
+                            </Col>
+                            <Col md={24} >
+                                <Block>
+                                    <ChangePassword />
+                                </Block>
+                            </Col>
+                            <Col md={24} >
+                                <Block>
+                                    <GoogleAuth />
+                                </Block>
+                            </Col>
+                        </Row>
+                    </Col>
+                    <Col md={16} >
+                        <Row gutter={8}>
+                            <Col md={24} >
+                                <Block title={t.t("Transactions")} icon={<FontAwesomeIcon icon={["fas", "money-check-alt"]} />}>
                                     <Transactions />
-                           </Block>
-                       </Col>
-                    </Row>
-                    <Row gutter={8}>
-                        <Col md={24} >
-                            <Block title={t.t("Action Sessions")} icon={<FontAwesomeIcon icon={["fas", "user-clock"]} />}  >
-                                <ActieveSessions />
-                            </Block>
-                        </Col>
-                    </Row>
+                                </Block>
+                            </Col>
+                        </Row>
+                        <Row gutter={8}>
+                            <Col md={24} >
+                                <Block title={t.t("Action Sessions")} icon={<FontAwesomeIcon icon={["fas", "user-clock"]} />}  >
+                                    <ActieveSessions />
+                                </Block>
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
+            );
+        }
+        return (
+            <Row gutter={8}>
+                <Col md={24} >
+                    <Block><h3>{t.t("No Access")}</h3></Block>
                 </Col>
-            </Row>
-        );
+            </Row>);
     }
 }
 

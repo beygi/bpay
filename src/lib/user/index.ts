@@ -61,6 +61,10 @@ export default class USER {
         return allFalse;
     }
 
+    public hasRealmRole(name: string) {
+        return this.keycloak.hasRealmRole(name);
+    }
+
     /** set user object */
     public setUser(user: any) {
         this.user = user;
