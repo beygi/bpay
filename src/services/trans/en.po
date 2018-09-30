@@ -1,0 +1,79 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/components/Invoice/index.tsx:116
+msgid "Continue"
+msgstr ""
+
+#: src/components/Invoice/index.tsx:149
+msgid "Copy wallet address to clipboard"
+msgstr ""
+
+#: src/components/Invoice/index.tsx:181
+msgid "Date"
+msgstr ""
+
+#: src/components/Invoice/index.tsx:109
+msgid "email address"
+msgstr ""
+
+#: src/components/Invoice/index.tsx:100
+msgid "Email address"
+msgstr ""
+
+#: src/components/Invoice/index.tsx:83
+msgid "invalid invoice"
+msgstr "invoice is invalid"
+
+#: src/components/Invoice/index.tsx:180
+msgid "Invoice id"
+msgstr ""
+
+#: src/components/Invoice/index.tsx:191
+msgid "Loading"
+msgstr ""
+
+#: src/components/Invoice/index.tsx:163
+msgid "minutes"
+msgstr ""
+
+#: src/containers/Invoice/index.tsx:35
+msgid "New Payment"
+msgstr "New payment"
+
+#: src/components/Invoice/index.tsx:145
+msgid "Open in wallet"
+msgstr ""
+
+#: src/components/Invoice/index.tsx:75
+msgid "payment address copied to clipboard successfully"
+msgstr ""
+
+#: src/components/Invoice/index.tsx:107
+msgid "Please input your email address"
+msgstr ""
+
+#: src/components/Invoice/index.tsx:113
+msgid "Please select payment currency"
+msgstr ""
+
+#: src/components/Invoice/index.tsx:161
+msgid "remaining time"
+msgstr ""
+
+#: src/components/Invoice/index.tsx:102
+msgid ""
+"We need your email address to contact you about payment issues and send "
+"confirmations:"
+msgstr ""

@@ -1,4 +1,4 @@
-@import "../theme/application";
+@import (reference) "../theme/application";
 
 *{
   font-family: 'b2mark' ,sans-serif;
@@ -175,35 +175,12 @@ body{
       .ant-table-thead > tr > th, .ant-table-tbody > tr > td{
         &.vip{
           text-align: center;
-          color: @warning-color;
+          // color: @warning-color;
           font-weight: bold;
           font-size: 13px;
         }
         &.center{
           text-align: center;
-        }
-        &.active, &.inactive, &.warning{
-          cursor: pointer;
-          i.circle{
-            display: inline-block;
-            #box(8px, 8px);
-            #border-radius(100%)
-          }
-        }
-        &.active{
-          i.circle{
-            background-color: @success-color;
-          }
-        }
-        &.warning{
-          i.circle{
-            background-color: @error-color;
-          }
-        }
-        &.inactive{
-          i.circle{
-            background-color: @normal-color;
-          }
         }
       }
       .ant-table-row-collapsed:after{

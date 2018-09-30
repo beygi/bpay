@@ -10,7 +10,9 @@ import USER from "./../../lib/user";
 const userObject = USER.getInstance();
 
 function getMenus() {
-    let availableMenus = {
+    let availableMenus = {};
+
+    availableMenus = {
         dashboard: {
             icon: "dashboard",
             path: "/dashboard",

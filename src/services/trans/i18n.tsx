@@ -25,6 +25,7 @@ i18next.init({
     resources: {
         en: { translation: require("./en.po") },
         fa: { translation: require("./fa.po") },
+        ar: { translation: require("./ar.po") },
     },
 }, (err, t) => {
     // initialized and ready to go!

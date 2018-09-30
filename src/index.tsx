@@ -16,6 +16,8 @@ import USER from "./lib/user";
 import { updateUser } from "./redux/app/actions";
 import { setUser } from "./redux/app/actions";
 import { store } from "./redux/store";
+import "./theme/application.less";
+
 require("./lib/icon");
 
 import KeyCloacksApi from "./lib/api-old";

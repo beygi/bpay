@@ -7,12 +7,17 @@ const languages = {
     en : {
         codeName: "en",
         dir: "ltr",
-        name: "english",
+        name: "English",
     },
     fa : {
         codeName: "fa",
         dir: "rtl",
         name: "فارسی",
+    },
+    ar : {
+        codeName: "ar",
+        dir: "rtl",
+        name: "العربية",
     },
 };
 
