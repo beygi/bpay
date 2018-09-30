@@ -14,7 +14,8 @@
     "start-prod": "yarn run build && node express.js",
     "test": "jest --watch --coverage --config=configs/jest.json",
     "profile": "webpack -p --config=configs/webpack/prod.js --profile --json > webpack-stats.json",
-    "extract": "nodejs bin/extract.js"
+    "extract": "nodejs bin/extract.js",
+    "apiGen": "ls swager-specs -1 | xargs -i node ./src/lib/api/generate.js {} && ls swager-specs -1"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -84,6 +85,7 @@
   },
   "dependencies": {
     "connected-react-router": "^4.5.0",
-    "echarts": "^4.2.0-rc.1"
+    "echarts": "^4.2.0-rc.1",
+    "swagger-typescript-codegen": "https://github.com/beygi/swagger-typescript-axios-codegen"
   }
 }
