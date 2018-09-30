@@ -2,6 +2,7 @@
  * @module AppContainer
  */
 import * as React from "react";
+import { hot } from "react-hot-loader";
 import { connect } from "react-redux";
 import { Redirect, Route, Switch } from "react-router";
 import { setUser } from "../redux/app/actions";
@@ -22,13 +23,9 @@ import LandingContainer from "./Landing";
 import NotFoundContainer from "./NotFound";
 
 interface IProps {
-    /** user's email from redux */
-    email: any;
 }
 
 interface IState {
-    /** user's email, synced with email in props */
-    email?: any;
 }
 
 /**
@@ -38,29 +35,10 @@ interface IState {
 class AppContainer extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
-        const stateObj = this.parseProps(props);
-        this.state = stateObj;
     }
 
     public componentDidMount() {
         document.body.dir = Config.language.dir;
-    }
-
-    public parseProps(props) {
-        const stateObj: IState = {
-        };
-        stateObj.email = props.email;
-        return stateObj;
-    }
-
-    public shouldComponentUpdate(nextProps) {
-        const stateObj = this.parseProps(nextProps);
-        if (nextProps.email !== this.state.email && nextProps.email === null) {
-            // this is a log out, just do nothing
-            return false;
-        } else {
-            return true;
-        }
     }
 
     public render() {
@@ -96,13 +74,6 @@ class AppContainer extends React.Component<IProps, IState> {
     }
 }
 
-function mapStateToProps(state: IRootState) {
-    if (state.app.user) {
-        return {
-            email: state.app.user.email,
-        };
-    }
-    return {};
-}
-
-export default connect(mapStateToProps)(AppContainer);
+export default hot(module)(AppContainer);
+// export default connect(mapStateToProps)(AppContainer);hot(module);
+// export default AppContainer;

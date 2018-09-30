@@ -10,7 +10,14 @@ import USER from "./../../lib/user";
 const userObject = USER.getInstance();
 
 function getMenus() {
-    let availableMenus = {};
+    let availableMenus = {
+        dashboard: {
+            icon: "dashboard",
+            path: "/dashboard",
+            text: t.t("Dashboard"),
+            visible: true,
+        },
+    };
     if (userObject.keycloak.hasRealmRole("webapp_admin")) {
         availableMenus = {
             dashboard: {
@@ -67,14 +74,6 @@ function getMenus() {
             },
         };
     }
-    availableMenus = {
-        dashboard: {
-            icon: "dashboard",
-            path: "/dashboard",
-            text: t.t("Dashboard"),
-            visible: true,
-        },
-    };
     return availableMenus;
 }
 

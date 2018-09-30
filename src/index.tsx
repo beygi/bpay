@@ -1,6 +1,7 @@
 /**
  * @module MainEntryPoint
  */
+import { ConnectedRouter } from "connected-react-router";
 import { createBrowserHistory } from "history";
 import * as Keycloak from "keycloak-js";
 import * as _ from "lodash";
@@ -8,7 +9,6 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { Redirect, Route, Switch } from "react-router";
-import { ConnectedRouter } from "react-router-redux";
 
 import AppContainer from "./containers/app";
 import Seeder from "./lib/seeder";

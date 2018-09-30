@@ -4,12 +4,12 @@ date +%d\ %m\ %Y
 echo "###### whoami ######"
 whoami
 echo "###### cd to src dir ######"
-cd /home/staging/web
+cd /home/staging/gateway
 pwd
 echo "###### last commit message ######"
 git log -1 | cat
-echo "###### remove node modules and dist dir ######"
-rm -R node_modules dist
+echo "###### remove dist dir ######"
+rm -R dist
 echo "###### install dev dependencies ######"
 yarn install
 echo "###### build ... ######"

@@ -9,7 +9,7 @@
       "es2017.object"
     ],
     "target": "es5",
-    "module": "commonjs",
+    "module": "ESNext",
     "moduleResolution": "node",
     "sourceMap": true
   },
