@@ -7,7 +7,7 @@ yarn install
 ```
 ## Development Build with node server
 ```bash
-yarn fast
+yarn start-dev
 ```
 
 ## Production Build
@@ -17,7 +17,7 @@ yarn build
 
 ## generate api codes from swagger files
 ```bash
-yarn gen
+yarn apiGen
 ```
 
 ## generate documentation
@@ -31,7 +31,7 @@ server {
        listen 80;
        listen [::]:80;
 
-       server_name staging1.b2mark.com avazcoin.com;
+       server_name merchant.becopay.com;
 
        root /home/staging/web/dist;
        index index.html;
