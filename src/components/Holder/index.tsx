@@ -8,7 +8,7 @@ const Panel = Collapse.Panel;
 
 interface IProps {
     /** react element wich is rendered in block */
-    children: any;
+    children?: any;
     /** remove padding from block if sets to true */
     noPadding?: boolean;
     /** css class name of final div */
@@ -61,7 +61,7 @@ class BlockComponent extends React.Component<IProps, IState> {
             cssClass += " no-padding";
         }
 
-        let titleCssClass = "";
+        let titleCssClass = `block-title block-title-${this.props.className}`;
         if (this.props.noTitleMargin) {
             titleCssClass += " no-title-margin";
         }
@@ -79,7 +79,7 @@ class BlockComponent extends React.Component<IProps, IState> {
             );
         }
 
-        title = (this.props.title) ? <div className={`block-title${titleCssClass}`}>{icon}<span className={centerTitle}>{this.props.title}</span></div> : null;
+        title = (this.props.title) ? <div className={`${titleCssClass}`}>{icon}<span className={centerTitle}>{this.props.title}</span></div> : null;
         return (
             <div className={cssClass} >
                 {title}
