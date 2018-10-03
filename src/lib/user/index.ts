@@ -65,6 +65,13 @@ export default class USER {
         return this.keycloak.hasRealmRole(name);
     }
 
+    public getToken() {
+        return {
+            name: "Authorization",
+            value: `Bearer ${this.user.token}`,
+        };
+    }
+
     /** set user object */
     public setUser(user: any) {
         this.user = user;

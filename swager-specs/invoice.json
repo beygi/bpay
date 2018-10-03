@@ -1,0 +1,649 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Invoice Service",
+        "version": "1.0",
+        "title": "Invoice",
+        "termsOfService": "www.b2mark.com/terms",
+        "contact": {
+            "name": "b2mark",
+            "url": "http://www.b2mark.com",
+            "email": "info@b2mark.com"
+        },
+        "license": {
+            "name": "b2mark",
+            "url": "www.b2mark.com/license"
+        }
+    },
+    "host": "87.98.188.77:9193",
+    "basePath": "/",
+    "tags": [{
+        "name": "invoice-rest",
+        "description": "Invoice Rest"
+    }, {
+        "name": "merchant-rest",
+        "description": "Merchant Rest"
+    }, {
+        "name": "operation-handler",
+        "description": "Operation Handler"
+    }, {
+        "name": "web-mvc-endpoint-handler-mapping",
+        "description": "Web Mvc Endpoint Handler Mapping"
+    }],
+    "paths": {
+        "/actuator": {
+            "get": {
+                "tags": ["web-mvc-endpoint-handler-mapping"],
+                "summary": "links",
+                "operationId": "linksUsingGET",
+                "produces": ["application/json", "application/vnd.spring-boot.actuator.v2+json"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "object",
+                                "additionalProperties": {
+                                    "$ref": "#/definitions/Link"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/actuator/health": {
+            "get": {
+                "tags": ["operation-handler"],
+                "summary": "handle",
+                "operationId": "handleUsingGET",
+                "produces": ["application/json", "application/vnd.spring-boot.actuator.v2+json"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "body",
+                    "required": false,
+                    "schema": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/actuator/info": {
+            "get": {
+                "tags": ["operation-handler"],
+                "summary": "handle",
+                "operationId": "handleUsingGET_1",
+                "produces": ["application/json", "application/vnd.spring-boot.actuator.v2+json"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "body",
+                    "required": false,
+                    "schema": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/invoice": {
+            "get": {
+                "tags": ["invoice-rest"],
+                "summary": "getById",
+                "operationId": "getByIdUsingGET",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "id",
+                    "in": "query",
+                    "description": "id",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/InvoiceResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            },
+            "post": {
+                "tags": ["invoice-rest"],
+                "summary": "addInvoice",
+                "operationId": "addInvoiceUsingPOST",
+                "consumes": ["application/json"],
+                "produces": ["*/*"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "inv",
+                    "description": "inv",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/InvRequest"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/InvoiceResponse"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/invoice/all": {
+            "get": {
+                "tags": ["invoice-rest"],
+                "summary": "return invoices pagination if not found 204 content not found",
+                "operationId": "getAllInvoiceUsingGET",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "apiKey",
+                    "in": "query",
+                    "description": "apiKey",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "dir",
+                    "in": "query",
+                    "description": "dir",
+                    "required": false,
+                    "type": "string",
+                    "default": "asc"
+                }, {
+                    "name": "mob",
+                    "in": "query",
+                    "description": "mob",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "page",
+                    "in": "query",
+                    "description": "page",
+                    "required": false,
+                    "type": "integer",
+                    "default": 0,
+                    "format": "int32"
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "size",
+                    "required": false,
+                    "type": "integer",
+                    "default": 20,
+                    "format": "int32"
+                }, {
+                    "name": "status",
+                    "in": "query",
+                    "description": "status",
+                    "required": false,
+                    "type": "string",
+                    "default": "all"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/InvoiceResponse"
+                            }
+                        }
+                    },
+                    "204": {
+                        "description": "service and uri is ok but content not found",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/InvoiceResponse"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized to access to this service"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/invoice/anywherepay": {
+            "get": {
+                "tags": ["invoice-rest"],
+                "summary": "rialToBtc",
+                "operationId": "rialToBtcUsingGET",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "qrcode",
+                    "in": "query",
+                    "description": "qrcode",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/PaymentSuccess"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/invoice/changecoin": {
+            "put": {
+                "tags": ["invoice-rest"],
+                "summary": "change coin specific invoice ",
+                "operationId": "changeCoinUsingPUT",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "changeCode",
+                    "description": "changeCode",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/ChangeCoinRequest"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/InvoiceResponse"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/invoice/rialSat": {
+            "get": {
+                "tags": ["invoice-rest"],
+                "summary": "rialToBtc",
+                "operationId": "rialToBtcUsingGET_1",
+                "produces": ["*/*"],
+                "parameters": [{
+                    "name": "IRR",
+                    "in": "query",
+                    "description": "IRR",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/merchant": {
+            "get": {
+                "tags": ["merchant-rest"],
+                "summary": "getMerchantInfo",
+                "operationId": "getMerchantInfoUsingGET",
+                "produces": ["*/*"],
+                "parameters": [{
+                    "name": "mob",
+                    "in": "query",
+                    "description": "mob",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "token",
+                    "in": "query",
+                    "description": "token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Merchant"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            },
+            "post": {
+                "tags": ["merchant-rest"],
+                "summary": "addMerchant",
+                "operationId": "addMerchantUsingPOST",
+                "consumes": ["application/json"],
+                "produces": ["*/*"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "merchant",
+                    "description": "merchant",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Merchant"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Merchant"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/merchant/token": {
+            "get": {
+                "tags": ["merchant-rest"],
+                "summary": "getToken",
+                "operationId": "getTokenUsingGET",
+                "produces": ["*/*"],
+                "parameters": [{
+                    "name": "mob",
+                    "in": "query",
+                    "description": "mob",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Merchant"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        }
+    },
+    "definitions": {
+        "ChangeCoinRequest": {
+            "type": "object",
+            "properties": {
+                "coinSymbol": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "inform": {
+                    "type": "boolean"
+                },
+                "invoiceId": {
+                    "type": "string"
+                },
+                "mobileNum": {
+                    "type": "string"
+                }
+            },
+            "title": "ChangeCoinRequest"
+        },
+        "InvRequest": {
+            "type": "object",
+            "properties": {
+                "apiKey": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "mobile": {
+                    "type": "string"
+                },
+                "orderId": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "string"
+                }
+            },
+            "title": "InvRequest"
+        },
+        "InvoiceResponse": {
+            "type": "object",
+            "properties": {
+                "callback": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string",
+                    "example": "MM-dd hh:mm"
+                },
+                "desc": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "orderId": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "qr": {
+                    "type": "string"
+                },
+                "remaining": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "shopName": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "symbol": {
+                    "type": "string"
+                },
+                "timeout": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "title": "InvoiceResponse"
+        },
+        "Link": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string"
+                },
+                "templated": {
+                    "type": "boolean"
+                }
+            },
+            "title": "Link"
+        },
+        "Merchant": {
+            "type": "object",
+            "properties": {
+                "callback": {
+                    "type": "string"
+                },
+                "mobile": {
+                    "type": "string"
+                },
+                "pushToken": {
+                    "type": "string"
+                },
+                "shopName": {
+                    "type": "string"
+                },
+                "token": {
+                    "type": "string",
+                    "readOnly": true
+                }
+            },
+            "title": "Merchant"
+        },
+        "PaymentSuccess": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "shopName": {
+                    "type": "string"
+                }
+            },
+            "title": "PaymentSuccess"
+        }
+    }
+}
