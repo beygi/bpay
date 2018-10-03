@@ -6,4 +6,4 @@ git checkout .
 git pull
 echo "###### run project build file: ######"
 echo "###### path : /home/staging/web/build.sh ######"
-/home/staging/gateway/build.sh
+/home/staging/web/build.sh
