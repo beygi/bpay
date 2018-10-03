@@ -17,7 +17,7 @@ import "./style.less";
 
 const userObject = USER.getInstance();
 const api = API.getInstance();
-api.SetHeader(userObject.getToken().name, userObject.getToken().value);
+// api.SetHeader(userObject.getToken().name, userObject.getToken().value);
 
 interface IProps {
     /**  current user's email address that is synced with redux */

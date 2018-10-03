@@ -66,10 +66,13 @@ export default class USER {
     }
 
     public getToken() {
-        return {
-            name: "Authorization",
-            value: `Bearer ${this.user.token}`,
-        };
+        if (this.user) {
+            return {
+                name: "Authorization",
+                value: `Bearer ${this.user.token}`,
+            };
+        }
+
     }
 
     /** set user object */
