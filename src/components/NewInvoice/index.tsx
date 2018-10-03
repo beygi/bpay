@@ -96,7 +96,12 @@ class NewInvoice extends React.Component<IProps, IState> {
                             min={0}
                             max={10000000}
                             formatter={(value) => `IRR ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                            parser={(value): number => value.replace(/\IRR\s?|(,*)/g, "")}
+                            parser={(value): number => {
+
+                                // alert(parseInt(value.replace(/\IRR\s?|(,*)/g, ""), 10));
+                                const output = parseInt(value.replace(/\IRR\s?|(,*)/g, ""), 10) || 0;
+                                return output;
+                            }}
                         />,
                     )}
                 </FormItem>
