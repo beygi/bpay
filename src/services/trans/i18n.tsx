@@ -1,6 +1,7 @@
 /**
- * @module i18n
+ * @module Services/i18n
  */
+
 import * as i18next from "i18next";
 import config from "../../config";
 

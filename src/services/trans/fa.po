@@ -16,7 +16,7 @@ msgstr ""
 msgid " National ID Card"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:100
+#: src/components/DashboardHeader/index.tsx:102
 msgid "Account information"
 msgstr ""
 
@@ -79,7 +79,7 @@ msgstr ""
 #: src/components/DashboardMenu/menu.tsx:28
 #: src/components/DashboardMenu/menu.tsx:68
 msgid "Dashboard"
-msgstr ""
+msgstr "دشبورد"
 
 #: src/components/DashboardMenu/menu.tsx:46
 msgid "Deposit"
@@ -205,7 +205,7 @@ msgstr ""
 msgid "Login Password"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:104
+#: src/components/DashboardHeader/index.tsx:106
 #: src/components/DashboardHeaderProfile/index.tsx:60
 msgid "Logout"
 msgstr ""
@@ -362,7 +362,7 @@ msgstr "ارسال"
 msgid "Support"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:86
+#: src/components/DashboardHeader/index.tsx:88
 msgid "System Administration"
 msgstr ""
 
@@ -388,7 +388,7 @@ msgstr ""
 msgid "Upload your documents"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:76
+#: src/components/DashboardHeader/index.tsx:78
 msgid "User Dashboard"
 msgstr ""
 

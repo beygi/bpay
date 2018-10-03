@@ -135,11 +135,11 @@ class DashboardContainer extends React.Component<IProps, IState> {
                 <Row gutter={8}>
                     <Col md={8} >
                         <Row gutter={8}>
-                            <Col md={24} >
+                            {/* <Col md={24} >
                                 <Block className="user-balance" title="Your balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
                                     <Balance />
                                 </Block>
-                            </Col>
+                            </Col> */}
                             <Col md={24} >
                                 <Block>
                                     <ChangePassword />

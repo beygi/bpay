@@ -1,20 +1,20 @@
 /**
- * @module i18n/Languages
+ * @module Services/i18n/Languages
  */
 
- /** languages which is supported currently must be add here */
+/** languages which is supported currently must be add here */
 const languages = {
-    en : {
+    en: {
         codeName: "en",
         dir: "ltr",
         name: "English",
     },
-    fa : {
+    fa: {
         codeName: "fa",
         dir: "rtl",
         name: "فارسی",
     },
-    ar : {
+    ar: {
         codeName: "ar",
         dir: "rtl",
         name: "العربية",

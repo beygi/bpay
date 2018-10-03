@@ -7,6 +7,8 @@ import { connect } from "react-redux";
 import { Redirect, Route, Switch } from "react-router";
 import { setUser } from "../redux/app/actions";
 import { IRootState } from "../redux/reducers";
+import t from "../services/trans/i18n";
+import Languages from "../services/trans/languages";
 import Layout from "./../components/Layout";
 import PrivateRoute from "./../components/PrivateRoute";
 import Config from "./../config";
@@ -38,13 +40,27 @@ class AppContainer extends React.Component<IProps, IState> {
     }
 
     public componentDidMount() {
-        document.body.dir = Config.language.dir;
+        document.body.addEventListener("changeLanguage", (event: CustomEvent) => {
+            document.body.dir = Languages[event.detail.code].dir;
+            t.changeLanguage(event.detail.code, () => {
+                this.forceUpdate();
+            });
+        });
+    }
+
+    public componentWillUnmount() {
+        // Make sure to remove the DOM listener when the component is unmounted.
+        document.body.removeEventListener("changeLanguage", this.handleChangeLanguage);
+    }
+
+    public handleChangeLanguage = (event) => {
+        console.log("Lang :", event);
     }
 
     public render() {
+        console.log(t.default.language);
         return (
             <Switch>
-
                 {/* Private routes */}
 
                 {/* <PrivateRoute path={`/dashboard`} component={AdminDashboardContainer} /> */}
