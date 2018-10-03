@@ -11,6 +11,17 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const isProduction = process.argv.indexOf("-p") >= 0;
 
+//color overrides
+
+const tinycolor = require("tinycolor2");
+const paletteHigh = "#665f62"  ;
+const paletteLow =  "#d9d8da" ;
+const paletteCrazy = "#f03829" ;
+const paletteAlternate = "#645045";
+const paletteAlternate2 = "#5498a9" ; 
+const paletteLight = "#ffffff";
+
+
 module.exports = {
 
     resolve: {
@@ -48,7 +59,24 @@ module.exports = {
                     {
                         loader: 'less-loader',
                         options: {
-                            javascriptEnabled: true
+                            javascriptEnabled: true,
+			    modifyVars: {
+				    'primary-color'          :  paletteAlternate2,
+				    'processing-color'       : paletteAlternate2,
+				    'btn-primary-bg'         : paletteAlternate,
+				    'btn-default-color'      : paletteAlternate,
+				    'radio-dot-color'        :  paletteHigh,
+				    'label-color'                 : paletteLight,
+				    'collapse-header-bg':             paletteLow,
+				    'radio-button-bg'           :   tinycolor(paletteLow).darken(20).toString(),
+				    'radio-button-active-color' :  tinycolor(paletteHigh).darken(40).toString(),
+
+				    'input-border-color'          :  paletteHigh,
+				    'input-bg'                    :   tinycolor(paletteLow).darken(20).toString(),
+				    'input-addon-bg'              :   tinycolor(paletteLow).darken(20).toString(),
+				    'popover-bg':  tinycolor(paletteHigh).darken(20).toString(),
+				    'popover-color': tinycolor(paletteLight).darken(15).toString(),
+				},
                         }
                     }
                 ],

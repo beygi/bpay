@@ -160,13 +160,13 @@ class DashboardContainer extends React.Component<IProps, IState> {
                                 </Block>
                             </Col>
                         </Row>
-                        <Row gutter={8}>
+                        {/* <Row gutter={8}>
                             <Col md={24} >
                                 <Block title={t.t("Action Sessions")} icon={<FontAwesomeIcon icon={["fas", "user-clock"]} />}  >
                                     <ActieveSessions />
                                 </Block>
                             </Col>
-                        </Row>
+                        </Row> */}
                     </Col>
                 </Row>
             );
