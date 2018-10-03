@@ -96,7 +96,7 @@ class Transactions extends React.Component<IProps, IState> {
         api.getAllInvoiceUsingGET({
             apiKey: "B822BB93905A9BD8B3A0C08168C427696436CF8BF37ED4AB8EBF41A307642ED1",
             mob: "09355126588",
-            size: 300,
+            size: 12,
             dir: "desc",
             $domain: "http://87.98.188.77:9193",
         }).then((response) => {
