@@ -35,7 +35,7 @@ module.exports = merge(commonConfig, {
             exclude : resolve(__dirname, '../../src/lib/api'),
             options: {
                 configFile: "tslint.json",
-                emitErrors: false,
+                emitErrors: true,
             }
         }]
     }

@@ -11,6 +11,7 @@ import Forex from "../../components/Forex";
 import GoogleAuth from "../../components/GoogleAuth";
 import Block from "../../components/Holder";
 import Live from "../../components/Live";
+import NewInvoice from "../../components/NewInvoice";
 import ActieveSessions from "../../components/Sessions";
 import Stock from "../../components/Stock";
 import Transactions from "../../components/Transactions";
@@ -148,6 +149,11 @@ class DashboardContainer extends React.Component<IProps, IState> {
                             <Col md={24} >
                                 <Block>
                                     <GoogleAuth />
+                                </Block>
+                            </Col>
+                            <Col md={24} >
+                                <Block title={t.t("New Invoice")} icon={<FontAwesomeIcon icon={["fas", "edit"]} />}>
+                                    <NewInvoice />
                                 </Block>
                             </Col>
                         </Row>

@@ -2,7 +2,7 @@
  * @module Components/Transactions
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Collapse, Table, Tag } from "antd";
+import { Table, Tag } from "antd";
 import axios from "axios";
 import * as React from "react";
 import { JsonTable } from "react-json-to-html";
@@ -58,6 +58,7 @@ class Transactions extends React.Component<IProps, IState> {
         super(props);
         this.state = { invoices: null };
         this.getData();
+        const intervalId = setInterval(this.getData.bind(this), 5000);
     }
 
     public render() {
@@ -67,7 +68,8 @@ class Transactions extends React.Component<IProps, IState> {
             invoices = this.state.invoices.map((invoice) => {
                 return (
                     <Block key={invoice.id} collapse className={"transaction-block"}
-                        title={<span><Tag className="invoice-id" color="#453e41">#{invoice.id}</Tag> <Ex fixFloatNum={0} value={invoice.price} seperateThousand /> {invoice.symbol}</span>}
+                        title={<span><Tag className="invoice-id" color="#453e41">#{invoice.id}</Tag>  <span className="symbol">
+                            {invoice.symbol} </span> <Ex fixFloatNum={0} value={invoice.price} seperateThousand /></span>}
                         iconPosition="right" icon={<span><Tag color="#453e41">{invoice.desc}</Tag> <Tag color="#898989">{invoice.date}</Tag> {icons[invoice.status]}</span>}>
                         <Table pagination={false} columns={columns} dataSource={invoice.products} size="small" />
                     </Block>
@@ -98,7 +100,6 @@ class Transactions extends React.Component<IProps, IState> {
             dir: "desc",
             $domain: "http://87.98.188.77:9193",
         }).then((response) => {
-            console.log(response);
             this.setState({ invoices: response.body });
         });
     }
