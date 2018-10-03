@@ -42,6 +42,11 @@ class DashboardContainer extends React.Component<IProps, IState> {
                     <Col md={8} >
                         <Row gutter={8}>
                             <Col md={24} >
+                                <Block title={t.t("New Invoice")} icon={<FontAwesomeIcon icon={["fas", "edit"]} />}>
+                                    <NewInvoice />
+                                </Block>
+                            </Col>
+                            <Col md={24} >
                                 <Block collapse className="user-balance" title="Your balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
                                     <Balance />
                                     <Link to="/deposit">
