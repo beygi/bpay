@@ -7,6 +7,7 @@ import axios from "axios";
 import * as React from "react";
 import { JsonTable } from "react-json-to-html";
 import { connect } from "react-redux";
+import config from "../../config";
 import API from "../../lib/api/invoice";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
@@ -68,8 +69,12 @@ class Transactions extends React.Component<IProps, IState> {
             invoices = this.state.invoices.map((invoice) => {
                 return (
                     <Block key={invoice.id} collapse className={"transaction-block"}
-                        title={<span><Tag className="invoice-id" color="#453e41">#{invoice.id}</Tag>  <span className="symbol">
-                            {invoice.symbol} </span> <Ex fixFloatNum={0} value={invoice.price} seperateThousand /></span>}
+                        title={<span><Tag className="invoice-id" color="#453e41">
+                            <a target="blank" href={`${config.gateWayUrl}/invoice/${invoice.id}`}>
+                                #{invoice.id}
+                            </a>
+                        </Tag>  <span className="symbol">
+                                {invoice.symbol} </span> <Ex fixFloatNum={0} value={invoice.price} seperateThousand /></span>}
                         iconPosition="right" icon={<span><Tag color="#453e41">{invoice.desc}</Tag> <Tag color="#898989">{invoice.date}</Tag> {icons[invoice.status]}</span>}>
                         <Table pagination={false} columns={columns} dataSource={invoice.products} size="small" />
                     </Block>

@@ -11,6 +11,7 @@ const config = {
     // apiUrl: "http://192.168.1.42:9092/",
     apiUrl: "http://87.98.188.77:9092/",
     NewApiUrl: "http://87.98.188.77:9092",
+    gateWayUrl: "http://gateway.becopay.com",
     language: Languages.en,
     keycloakConfig: {
         url: "https://aas.avazcoin.com/auth",
@@ -20,11 +21,11 @@ const config = {
     },
     currencies: {
         BTC: {
-               name: "Bitcoin",
-              depositeWallet: "btcbeygizasdfrwgsdfgsdfgsdfdfsgsfdgdfg",
-              confirmationNumber: 5,
-              type: "crypto",
-         },
+            name: "Bitcoin",
+            depositeWallet: "btcbeygizasdfrwgsdfgsdfgsdfdfsgsfdgdfg",
+            confirmationNumber: 5,
+            type: "crypto",
+        },
         ETH: {
             name: "Ethereum",
             depositeWallet: "etherasdfrwgsdfgsdfgsdfgdfsgsfdgdfg",
@@ -47,13 +48,13 @@ const config = {
         },
     },
     icons:
-        {
-            BTC: <i className="cc BTC-alt"></i>,
-            USD: <span>$</span>,
-            IRR: <span>﷼</span>,
-            ETH: <i className="cc ETH-alt"></i>,
-            LTC: <i className="cc LTC-alt"></i>,
-        },
+    {
+        BTC: <i className="cc BTC-alt"></i>,
+        USD: <span>$</span>,
+        IRR: <span>﷼</span>,
+        ETH: <i className="cc ETH-alt"></i>,
+        LTC: <i className="cc LTC-alt"></i>,
+    },
 };
 
 export default config;

@@ -8,6 +8,7 @@ import axios from "axios";
 import * as React from "react";
 import { JsonTable } from "react-json-to-html";
 import { connect } from "react-redux";
+import config from "../../config";
 import API from "../../lib/api/invoice";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
@@ -62,7 +63,7 @@ class NewInvoice extends React.Component<IProps, IState> {
                         description: "click to open gateway",
                         placement: "bottomRight",
                         btn: <Button
-                            target="blank" href={`http://gateway.becopay.com/invoice/${response.body.id}`} size="small" type="primary">Open gateway</Button>,
+                            target="blank" href={`${config.gateWayUrl}/invoice/${response.body.id}`} size="small" type="primary">Open gateway</Button>,
                     });
                 }).catch((error) => {
                     // handle error
