@@ -98,7 +98,7 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                 </div>
                 <div className="header-icons">
                     <Popover placement="bottom" title={t.t("Account information")} content={<HeaderProfile />} trigger="click">
-                        <Gravatar email={this.props.userEmail} default="monsterid"
+                        <Gravatar email={this.props.userEmail} default="retro"
                             size={60} className={"ProfilePic"} />
                     </Popover>
                     <Tooltip placement="bottom" title={t.t("Logout")}>
