@@ -46,21 +46,21 @@
         font-size: 1.4em;
        margin: 10px 0px;
         &:hover {
-            color: lighten(@palette-alternate2,20%);
+            color: @primaryTextColor;
         }
 
         i {
-            color: darken(@palette-light,40%);
+            color: lighten(@palette-light,60%);
             margin-right: 10px;
         }
         transition: 0.5s;
     }
     a.active
     {
-            color : @palette-alternate2;
+            color : @primaryTextColor;
             text-decoration: none;
             i{
-                color: @palette-light;
+                color: @primaryTextColor;
             }
     }
 }

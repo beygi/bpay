@@ -14,12 +14,10 @@ const isProduction = process.argv.indexOf("-p") >= 0;
 //color overrides
 
 const tinycolor = require("tinycolor2");
-const paletteHigh = "#665f62"  ;
-const paletteLow =  "#d9d8da" ;
-const paletteCrazy = "#f03829" ;
-const paletteAlternate = "#645045";
-const paletteAlternate2 = "#5498a9" ; 
-const paletteLight = "#ffffff";
+const paletteHigh = "#069AE5"  ;
+const paletteLow =  "#FFFFFF" ;
+const paletteLight = "#FFFFFF";
+const buttonColor = "#04569B";
 
 
 module.exports = {
@@ -61,10 +59,10 @@ module.exports = {
                         options: {
                             javascriptEnabled: true,
 			    modifyVars: {
-				    'primary-color'          :  paletteAlternate2,
-				    'processing-color'       : paletteAlternate2,
-				    'btn-primary-bg'         : paletteAlternate,
-				    'btn-default-color'      : paletteAlternate,
+				    'primary-color'          :  '#80C683',
+				    'processing-color'       : '#80C683',
+				    'btn-primary-bg'         : buttonColor,
+				    'btn-default-color'      : buttonColor,
 				    'radio-dot-color'        :  paletteHigh,
 				    'label-color'                 : paletteLight,
 				    'collapse-header-bg':             paletteLow,
@@ -72,8 +70,8 @@ module.exports = {
 				    'radio-button-active-color' :  tinycolor(paletteHigh).darken(40).toString(),
 
 				    'input-border-color'          :  paletteHigh,
-				    'input-bg'                    :   tinycolor(paletteLow).darken(20).toString(),
-				    'input-addon-bg'              :   tinycolor(paletteLow).darken(20).toString(),
+				    'input-bg'                    :   paletteLow,
+				    'input-addon-bg'              :   paletteLow,
 				    'popover-bg':  tinycolor(paletteHigh).darken(20).toString(),
 				    'popover-color': tinycolor(paletteLight).darken(15).toString(),
 				},

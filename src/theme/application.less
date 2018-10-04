@@ -8,15 +8,60 @@
 @import "./assets/fonts/b2mark/font"; //our application custom fonts
 @import "./assets/fonts/cryptocoins/font"; //our application custom fonts
 
-@primary-color          :  @palette-alternate2;
-@processing-color       : @primary-color;
-
 .neat-btn {
-    background-color: @palette-high !important;
-    border-color: @palette-high !important;
-    color: @palette-light !important;
+}
+.ant-btn
+{
     svg
     {
-        margin-right: 10px;
+            margin-right:10px;
     }
+    .single-icon
+    {
+        margin-right:10px;
+        margin-left:10px;
+    }
+}
+
+.main-header
+{
+    color : @primaryTextColor;
+}
+body,.ant-layout
+{
+    background: @body-background ;
+}
+*
+{
+        font-family: b2mark , Shabnam;
+}
+
+&[dir='rtl'] {
+    *
+    {
+     font-family: Shabnam;
+    }
+     input
+     {
+        #rtl-placeholder()
+     }
+     .btn-icon
+     {
+         margin-left:10px;
+         margin-right:0px;
+     }
+     .ant-btn
+     {
+         svg
+         {
+                 margin-right:0px;
+                 margin-left:10px;
+         }
+         .single-icon
+         {
+             margin-right:10px;
+             margin-left:10px;
+         }
+     }
+     
 }

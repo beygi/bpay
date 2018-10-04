@@ -40,6 +40,7 @@
   -moz-box-shadow: @horizontal @vertical @blur @spread @color;
   box-shadow: @horizontal @vertical @blur @spread @color;
 }
+
 #placeholder(@color){
   &::-webkit-input-placeholder {
     color: @color;
@@ -60,5 +61,28 @@
     color: @color;
     font-family: 'b2mark' ,sans-serif;
     font-weight: normal;
+  }
+}
+
+#rtl-placeholder{
+  &::-webkit-input-placeholder {
+    font-family: 'shabnam' ,sans-serif;
+    text-align: right;
+    direction: rtl;
+  }
+  &::-moz-placeholder {
+    font-family: 'shabnam' ,sans-serif;
+    text-align: right;
+    direction: rtl;    
+  }
+  &:-ms-input-placeholder {
+    font-family: 'shabnam' ,sans-serif;
+    text-align: right;
+    direction: rtl;    
+  }
+  &:-moz-placeholder {
+    font-family: 'shabnam' ,sans-serif;
+    text-align: right;
+    direction: rtl;    
   }
 }

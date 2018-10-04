@@ -12,14 +12,15 @@
 }
 }
 .block{
-    background-color:  darken(@palette-high,10%);
+    background-color: @secondaryDarkColor;
     padding: 15px;
-    color : darken(@palette-light,15%);
+    color : @secondaryTextColor;
     margin-bottom: 8px;
-    box-shadow: 3px 4px 7px -7px darken(@palette-high,20%);
+    border-radius: 3px;
+    box-shadow: 0 2px 2px -2px #000;
     h1,h2,h3,h4
     {
-        color : darken(@palette-light,15%);
+        color : @secondaryTextColor;
     }
     img{
         max-width: 100%;
@@ -69,12 +70,12 @@
         background-color: transparent !important;
         .ant-collapse-header
         {
-            color : @palette-light !important;
+            color : @secondaryTextColor !important;
             padding-right: 15px !important; 
         }
         .ant-collapse-content
         {
-            color : @palette-light !important;
+            color : @secondaryTextColor !important;
         }
         .ant-collapse-item
         {
