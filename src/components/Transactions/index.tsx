@@ -3,7 +3,6 @@
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Table, Tag } from "antd";
-import axios from "axios";
 import * as React from "react";
 import { JsonTable } from "react-json-to-html";
 import { connect } from "react-redux";
@@ -15,10 +14,6 @@ import Ex from "../ExchangeValue";
 import Block from "../Holder";
 import USER from "./../../lib/user";
 import "./style.less";
-
-const userObject = USER.getInstance();
-const api = API.getInstance();
-// api.SetHeader(userObject.getToken().name, userObject.getToken().value);
 
 interface IProps {
     /**  current user's email address that is synced with redux */
@@ -55,11 +50,15 @@ const columns = [{
  */
 class Transactions extends React.Component<IProps, IState> {
 
+    public api = API.getInstance();
+    public userObject = USER.getInstance();
+
     constructor(props: IProps) {
         super(props);
         this.state = { invoices: null };
         this.getData();
         const intervalId = setInterval(this.getData.bind(this), 5000);
+        this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
     }
 
     public render() {
@@ -75,7 +74,9 @@ class Transactions extends React.Component<IProps, IState> {
                             </a>
                         </Tag>  <span className="symbol">
                                 {invoice.symbol} </span> <Ex fixFloatNum={0} value={invoice.price} seperateThousand /></span>}
-                        iconPosition="right" icon={<span><Tag color="#453e41">{invoice.desc}</Tag> <Tag color="#898989">{invoice.date}</Tag> {icons[invoice.status]}</span>}>
+                        iconPosition="right" icon={<span><Tag color="#453e41">{invoice.desc}</Tag> <Tag color="#898989">{invoice.date}</Tag> {icons[invoice.status]}
+                            <a className="waiting" target="blank" href={invoice.callback}><FontAwesomeIcon icon={["fas", "link"]} /></a>
+                        </span>}>
                         <Table pagination={false} columns={columns} dataSource={invoice.products} size="small" />
                     </Block>
                 );
@@ -98,7 +99,7 @@ class Transactions extends React.Component<IProps, IState> {
         // axios.get("http://staging1.b2mark.com:8090/?action=list").then((response) => {
         //     this.setState({ invoices: response.data });
         // });
-        api.getAllInvoiceUsingGET({
+        this.api.getAllInvoiceUsingGET({
             apiKey: "B822BB93905A9BD8B3A0C08168C427696436CF8BF37ED4AB8EBF41A307642ED1",
             mob: "09355126588",
             size: 12,

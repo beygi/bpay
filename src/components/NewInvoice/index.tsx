@@ -12,16 +12,9 @@ import config from "../../config";
 import API from "../../lib/api/invoice";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
-import Block from "../Holder";
 import USER from "./../../lib/user";
 import "./style.less";
-
 const FormItem = Form.Item;
-
-const userObject = USER.getInstance();
-const api = API.getInstance();
-// api.SetHeader(userObject.getToken().name, userObject.getToken().value);
-
 interface IProps extends FormComponentProps {
 }
 interface IState {
@@ -34,12 +27,16 @@ interface IState {
  */
 class NewInvoice extends React.Component<IProps, IState> {
 
+    public api = API.getInstance();
+    public userObject = USER.getInstance();
+
     constructor(props: IProps) {
         super(props);
         this.state = {
             invoiceId: null,
             loading: false,
         };
+        this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
     }
 
     public handleSubmit = (e) => {
@@ -47,7 +44,7 @@ class NewInvoice extends React.Component<IProps, IState> {
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 this.setState({ loading: true });
-                api.addInvoiceUsingPOST({
+                this.api.addInvoiceUsingPOST({
                     inv: {
                         apiKey: "B822BB93905A9BD8B3A0C08168C427696436CF8BF37ED4AB8EBF41A307642ED1",
                         description: values.description,

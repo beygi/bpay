@@ -146,19 +146,19 @@ class DashboardContainer extends React.Component<IProps, IState> {
                                     <Balance />
                                 </Block>
                             </Col> */}
-                            <Col md={24} >
-                                <Block>
-                                    <ChangePassword />
-                                </Block>
-                            </Col>
-                            <Col md={24} >
+                            {/* <Col md={24} >
                                 <Block>
                                     <GoogleAuth />
                                 </Block>
-                            </Col>
+                            </Col> */}
                             <Col md={24} >
                                 <Block title={t.t("New Invoice")} icon={<FontAwesomeIcon icon={["fas", "edit"]} />}>
                                     <NewInvoice />
+                                </Block>
+                            </Col>
+                            <Col md={24} >
+                                <Block>
+                                    <ChangePassword />
                                 </Block>
                             </Col>
                         </Row>

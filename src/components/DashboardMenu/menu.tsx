@@ -68,12 +68,12 @@ function getMenus() {
                 text: t.t("Dashboard"),
                 visible: true,
             },
-            kyc: {
-                icon: "solution",
-                path: "/kyc",
-                text: t.t("KYC"),
-                visible: true,
-            },
+            // kyc: {
+            //     icon: "solution",
+            //     path: "/kyc",
+            //     text: t.t("KYC"),
+            //     visible: true,
+            // },
         };
     }
     return availableMenus;
