@@ -37,6 +37,7 @@ class NewInvoice extends React.Component<IProps, IState> {
             loading: false,
         };
         this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
+        this.checkPrice = this.checkPrice.bind(this);
     }
 
     public handleSubmit = (e) => {
@@ -78,6 +79,13 @@ class NewInvoice extends React.Component<IProps, IState> {
         });
     }
     public uuid() { return "00000000".replace(/0/g, () => (Math.floor(Math.random() * 16)).toString(16)); }
+    public checkPrice = (rule, value, callback) => {
+        if (value > 0) {
+            callback();
+        }
+        callback(t.t("Please input price"));
+        return;
+    }
     public render() {
         const { getFieldDecorator } = this.props.form;
         return (
@@ -85,7 +93,8 @@ class NewInvoice extends React.Component<IProps, IState> {
                 <FormItem className="price">
                     {getFieldDecorator("price", {
                         rules: [{
-                            required: true, type: "number", message: t.t("Please input price"),
+                            required: true, type: "number",
+                            validator: this.checkPrice,
                         }],
                         initialValue: 20000,
                     })(
@@ -95,7 +104,6 @@ class NewInvoice extends React.Component<IProps, IState> {
                             max={10000000}
                             formatter={(value) => `IRR ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                             parser={(value): number => {
-
                                 // alert(parseInt(value.replace(/\IRR\s?|(,*)/g, ""), 10));
                                 const output = parseInt(value.replace(/\IRR\s?|(,*)/g, ""), 10) || 0;
                                 return output;
