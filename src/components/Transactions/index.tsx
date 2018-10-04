@@ -68,7 +68,7 @@ class Transactions extends React.Component<IProps, IState> {
             invoices = this.state.invoices.map((invoice) => {
                 return (
                     <Block key={invoice.id} collapse className={"transaction-block"}
-                        title={<span><Tag className="invoice-id" color="#453e41">
+                        title={<span><Tag className="invoice-id" color="#429F46">
                             <a target="blank" href={`${config.gateWayUrl}/invoice/${invoice.id}`}>
                                 #{invoice.id}
                             </a>
