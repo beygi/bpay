@@ -9,6 +9,6 @@ import {
     faWallet,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faHandHolding, faArchive, faGoogle, faLock, faUserClock, faLink, faExternalLinkAlt
+library.add(faHandHolding, faArchive, faGoogle, faLock, faUserClock, faLink, faExternalLinkAlt,
     faEdit, faKey, faSearch, faWallet, faHistory, faBtc, faDollarSign, faEthereum, faBox, faBalanceScale, faExchangeAlt, faGripfire, faSnowflake,
     faDonate, faHandHoldingUsd, faMoneyCheckAlt, faHandshake, faAddressCard, faAngleDown, faQrcode, faCopy, faChartLine, faCheck, faTimes, faHourglassHalf);
