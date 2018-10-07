@@ -73,13 +73,14 @@ class Transactions extends React.Component<IProps, IState> {
                 return (
                     <Block key={invoice.id} collapse className={"transaction-block"}
                         title={<span><Tag className="invoice-id" color="#453e41">
-                            <a target="blank" href={`${config.gateWayUrl}/invoice/${invoice.id}`}>
-                                #{invoice.id}
-                            </a>
+                            #{invoice.id}
                         </Tag>  <span className="symbol">
                                 {invoice.symbol} </span> <Ex fixFloatNum={0} value={invoice.price} seperateThousand /></span>}
-                        iconPosition="right" icon={<span><Tag color="#453e41">{invoice.desc}</Tag> <Tag color="#898989">{invoice.date}</Tag> {icons[invoice.status]}
-                            <a className="waiting" target="blank" href={invoice.callback}><FontAwesomeIcon icon={["fas", "link"]} /></a>
+                        iconPosition="right" icon={<span><Tag color="#453e41">{invoice.desc}</Tag> <Tag color="#898989">{invoice.date}</Tag>
+                            <a href="">{icons[invoice.status]}</a>
+                            <a className="callback" target="blank" href={invoice.callback}><FontAwesomeIcon icon={["fas", "link"]} /></a>
+                            &nbsp;
+                            <a className="waiting" target="blank" href={`${config.gateWayUrl}/invoice/${invoice.id}`}><FontAwesomeIcon icon={["fas", "external-link-alt"]} /></a>
                         </span>}>
                         <Table pagination={false} columns={columns} dataSource={[invoice]} size="small" />
                     </Block>
