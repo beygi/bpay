@@ -31,17 +31,21 @@ const icons = {
 };
 
 const columns = [{
-    title: "Name",
-    dataIndex: "name",
+    title: "Order id",
+    dataIndex: "orderId",
+},
+{
+    title: "Symbol",
+    dataIndex: "symbol",
 }, {
     title: "Price",
     dataIndex: "price",
 }, {
-    title: "Payment time",
+    title: "Create time",
     dataIndex: "date",
 }, {
-    title: "Vendor",
-    dataIndex: "vendor",
+    title: "Status",
+    dataIndex: "status",
 },
 ];
 
@@ -77,7 +81,7 @@ class Transactions extends React.Component<IProps, IState> {
                         iconPosition="right" icon={<span><Tag color="#453e41">{invoice.desc}</Tag> <Tag color="#898989">{invoice.date}</Tag> {icons[invoice.status]}
                             <a className="waiting" target="blank" href={invoice.callback}><FontAwesomeIcon icon={["fas", "link"]} /></a>
                         </span>}>
-                        <Table pagination={false} columns={columns} dataSource={invoice.products} size="small" />
+                        <Table pagination={false} columns={columns} dataSource={[invoice]} size="small" />
                     </Block>
                 );
             });
