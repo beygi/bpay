@@ -114,7 +114,8 @@ class NewInvoice extends React.Component<IProps, IState> {
                 <FormItem className="description">
                     {getFieldDecorator("description", {
                         rules: [{
-                            required: true, message: t.t("Please input description"),
+                            required: true, message: t.t("Please input description, max length is 30"),
+                            max: 30,
                         }],
                     })(
                         <Input id="description" placeholder={t.t("Description")} size="large" />,
