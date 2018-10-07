@@ -35,7 +35,7 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         console.log(user.keycloak);
 
         // token is in user.keycloak.token, pick and other useful information for saving in store
-        const userData = _.pick(user.keycloak.tokenParsed, ["email", "name", "realm_access"]);
+        const userData = _.pick(user.keycloak.tokenParsed, ["email", "name", "family_name", "realm_access", "auth_time"]);
         // set user in store
         store.dispatch(updateUser({ ...userData, token: user.keycloak.token }));
         // set user in user object because it has an instance now

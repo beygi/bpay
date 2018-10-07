@@ -4,6 +4,7 @@
 import { Button, Icon, Tag } from "antd";
 import * as React from "react";
 import { connect } from "react-redux";
+import strftime from "strftime";
 import config from "../../config";
 import { logOut } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
@@ -14,10 +15,11 @@ import "./style.less";
 const userObject = USER.getInstance();
 
 interface IProps {
-     /** current user's email address */
+    /** current user's email address */
     email: any;
+    auth_time: number;
 
-     /** logout current user (this function is binded to a redux funtion) */
+    /** logout current user (this function is binded to a redux funtion) */
     logOut: () => void;
 }
 
@@ -36,23 +38,22 @@ class DashboardHeaderProfileComponent extends React.Component<IProps, IState> {
         this.logOut = this.logOut.bind(this);
     }
 
-     /** logout current user using redux's logOut function available in props */
+    /** logout current user using redux's logOut function available in props */
     public logOut() {
         this.props.logOut();
         userObject.keycloak.logout();
     }
 
     public render() {
+        const date = strftime("%B %d, %Y %H:%M:%S", new Date(this.props.auth_time * 1000));
+
         return (
             <div className="header-user-profile">
                 <div className="line">
                     <span className="caption">{t.t("Email:")} </span>{this.props.email}
                 </div>
                 <div className="line">
-                    <span className="caption">{t.t("Verification level:")} </span><Tag className="verify">Verified</Tag>
-                </div>
-                <div className="line">
-                    <span className="caption">{t.t("Last login:")} </span>12 May 2017 23:32:12
+                    <span className="caption">{t.t("Last login:")} </span>{date}
                 </div>
                 <div className="line">
 
@@ -75,6 +76,7 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state: IRootState) {
     return {
         email: state.app.user.email,
+        auth_time: state.app.user.auth_time,
     };
 }
 
