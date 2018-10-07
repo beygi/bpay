@@ -39,7 +39,7 @@ class DashboardMenuComponent extends React.Component<IProps, IState> {
     }
     constructor(props: IProps) {
         super(props);
-        this.state = { isOpen: false};
+        this.state = { isOpen: false };
         this.logOut = this.logOut.bind(this);
     }
 
@@ -64,7 +64,9 @@ class DashboardMenuComponent extends React.Component<IProps, IState> {
             </NavLink>,
         );
 
-        return (<Menu pageWrapId={"privateContent"} outerContainerId={ "privateContent" }  isOpen={this.state.isOpen} >
+        const right = (t.dir() === "rtl") ? true : false;
+
+        return (<Menu right={right} pageWrapId={"privateContent"} outerContainerId={"privateContent"} isOpen={this.state.isOpen} >
             {menuComponent}
         </Menu >);
     }

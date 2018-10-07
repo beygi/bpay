@@ -1,5 +1,34 @@
 @import (reference) "../../theme/application";
+&[dir='rtl'] {
+    .header-logo-user {
+        text-align: left;
+        .header-icons {
+            .user-dashboard-logo {
+                margin-left: 10px;
+                margin-right: 20px;
+            }
+            .ProfilePic {
+                margin-left: 10px;
+            }
 
+            .anticon {
+                margin-right: auto;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .selected-menu {
+        float: right;
+        margin-left: auto;
+        margin-right: 80px;
+        i {
+            margin-left: 10px;
+            margin-right:  auto;
+        }
+    }
+
+}
 body {
     .ant-layout-header {
         .anticon-logout {

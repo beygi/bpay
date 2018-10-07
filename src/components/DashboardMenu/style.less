@@ -1,4 +1,10 @@
 @import (reference) "../../theme/application";
+&[dir='rtl'] {
+    .bm-burger-button {
+        right: 30px;
+        left: auto;
+    }
+}
 /* Position and sizing of burger button */
 .mini-menu
 {
@@ -51,7 +57,7 @@
 
         i {
             color: lighten(@palette-light,60%);
-            margin-right: 10px;
+            margin : 0px 10px;
         }
         transition: 0.5s;
     }

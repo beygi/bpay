@@ -40,6 +40,7 @@ class AppContainer extends React.Component<IProps, IState> {
     }
 
     public componentDidMount() {
+        document.body.dir = Config.language.dir;
         document.body.addEventListener("changeLanguage", (event: CustomEvent) => {
             document.body.dir = Languages[event.detail.code].dir;
             t.changeLanguage(event.detail.code, () => {
