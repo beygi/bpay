@@ -55,22 +55,24 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
             user.keycloak.updateToken().success((refreshed) => {
                 if (refreshed) {
                     keyCloak.setAuthToken(user.keycloak.token);
+                    store.dispatch(updateUser({ ...userData, token: user.keycloak.token }));
                 }
             });
         }, 30000);
-
+        ReactDOM.render(
+            <Provider store={store}>
+                <ConnectedRouter history={history}>
+                    <Switch>
+                        <Route path="/" component={AppContainer} />
+                    </Switch>
+                </ConnectedRouter>
+            </Provider>,
+            document.getElementById("root"),
+        );
     } else {
         // user is not authenticated
         store.dispatch(setUser(null));
+        // redirect to login/register page
+        user.keycloak.login();
     }
-    ReactDOM.render(
-        <Provider store={store}>
-            <ConnectedRouter history={history}>
-                <Switch>
-                    <Route path="/" component={AppContainer} />
-                </Switch>
-            </ConnectedRouter>
-        </Provider>,
-        document.getElementById("root"),
-    );
 });
