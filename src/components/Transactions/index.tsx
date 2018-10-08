@@ -70,6 +70,7 @@ class Transactions extends React.Component<IProps, IState> {
         if (this.state.invoices !== null) {
             // map
             invoices = this.state.invoices.map((invoice) => {
+                // const date = new pDate(invoice.date);
                 return (
                     <Block key={invoice.id} collapse className={"transaction-block"}
                         title={<span><Tag className="invoice-id" color="#453e41">

@@ -32,7 +32,7 @@ module.exports = merge(commonConfig, {
             enforce: "pre",
             loader: "tslint-loader",
             test: /\.tsx?$/,
-            exclude : resolve(__dirname, '../../src/lib/api'),
+            exclude : [resolve(__dirname, '../../src/lib/api') , resolve(__dirname, '../../src/services/trans/pdate')],
             options: {
                 configFile: "tslint.json",
                 emitErrors: true,

@@ -4,6 +4,7 @@
 
 import * as i18next from "i18next";
 import config from "../../config";
+import persianDate from "./pdate";
 
 /**
  * our translation class.
@@ -32,4 +33,13 @@ i18next.init({
     // initialized and ready to go!
 
 });
+
+let pDate: any;
+if (i18next.default.language === "fa") {
+    pDate = persianDate;
+} else {
+    pDate = Date;
+}
+
 export default i18next;
+export { pDate };

@@ -8,6 +8,7 @@ import { Redirect, Route, Switch } from "react-router";
 import { setUser } from "../redux/app/actions";
 import { IRootState } from "../redux/reducers";
 import t from "../services/trans/i18n";
+import { pDate } from "../services/trans/i18n";
 import Languages from "../services/trans/languages";
 import Layout from "./../components/Layout";
 import PrivateRoute from "./../components/PrivateRoute";
@@ -41,6 +42,7 @@ class AppContainer extends React.Component<IProps, IState> {
 
     public componentDidMount() {
         document.body.dir = Config.language.dir;
+        console.log(new pDate().toLocaleString());
         document.body.addEventListener("changeLanguage", (event: CustomEvent) => {
             document.body.dir = Languages[event.detail.code].dir;
             t.changeLanguage(event.detail.code, () => {
@@ -59,7 +61,7 @@ class AppContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
-        console.log(t.default.language);
+        // console.log(t.default.language);
         return (
             <Switch>
                 {/* Private routes */}
