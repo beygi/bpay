@@ -42,7 +42,6 @@ class AppContainer extends React.Component<IProps, IState> {
 
     public componentDidMount() {
         document.body.dir = Config.language.dir;
-        console.log(new pDate().toLocaleString());
         document.body.addEventListener("changeLanguage", (event: CustomEvent) => {
             document.body.dir = Languages[event.detail.code].dir;
             t.changeLanguage(event.detail.code, () => {
@@ -57,7 +56,7 @@ class AppContainer extends React.Component<IProps, IState> {
     }
 
     public handleChangeLanguage = (event) => {
-        console.log("Lang :", event);
+        // hande change
     }
 
     public render() {

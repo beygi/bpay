@@ -83,7 +83,7 @@ class Transactions extends React.Component<IProps, IState> {
                             &nbsp;
                             <a className="waiting" target="blank" href={`${config.gateWayUrl}/invoice/${invoice.id}`}><FontAwesomeIcon icon={["fas", "external-link-alt"]} /></a>
                         </span>}>
-                        <Table pagination={false} columns={columns} dataSource={[invoice]} size="small" />
+                        <Table pagination={false} columns={columns} rowKey="id" dataSource={[invoice]} size="small" />
                     </Block>
                 );
             });

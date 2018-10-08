@@ -32,7 +32,7 @@ const keyCloak = KeyCloacksApi.getInstance();
 // Docs : `https://www.keycloak.org/docs/3.0/securing_apps/topics/oidc/javascript-adapter.html`
 user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
     if (authenticated) {
-        console.log(user.keycloak);
+        // console.log(user.keycloak);
 
         // token is in user.keycloak.token, pick and other useful information for saving in store
         const userData = _.pick(user.keycloak.tokenParsed, ["email", "name", "family_name", "realm_access", "auth_time"]);
@@ -45,7 +45,7 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         keyCloak.setAuthToken(user.keycloak.token);
         // seeding user with defaults and random generated data
         // if (store.getState().app.user && !store.getState().app.user.balance) {
-        console.log("seeding user ... ");
+        // console.log("seeding user ... ");
         const seeder = new Seeder();
         seeder.initialSeed();
         // }

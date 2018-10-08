@@ -57,7 +57,7 @@ class NewInvoice extends React.Component<IProps, IState> {
                 }).then((response) => {
                     this.setState({ loading: false });
                     notification.success({
-                        duration: 0,
+                        duration: 10,
                         message: t.t("New Invoice Created"),
                         description: t.t("click to open gateway"),
                         placement: "bottomRight",
