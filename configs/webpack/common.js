@@ -14,8 +14,8 @@ const isProduction = process.argv.indexOf("-p") >= 0;
 //color overrides
 
 const tinycolor = require("tinycolor2");
-const paletteHigh = "#069AE5"  ;
-const paletteLow =  "#FFFFFF" ;
+const paletteHigh = "#069AE5";
+const paletteLow = "#FFFFFF";
 const paletteLight = "#FFFFFF";
 const buttonColor = "#04569B";
 
@@ -43,7 +43,12 @@ module.exports = {
                         }]],
                         presets: ['@babel/preset-react'],
                     }
-                }, 'awesome-typescript-loader'],
+                }, {
+                    loader: "awesome-typescript-loader",
+                    options: {
+                        errorsAsWarnings: true
+                    }
+                }],
             },
             {
                 test: /\.(le|c)ss$/,
@@ -58,23 +63,23 @@ module.exports = {
                         loader: 'less-loader',
                         options: {
                             javascriptEnabled: true,
-			    modifyVars: {
-				    'primary-color'          :  '#80C683',
-				    'processing-color'       : '#80C683',
-				    'btn-primary-bg'         : buttonColor,
-				    'btn-default-color'      : buttonColor,
-				    'radio-dot-color'        :  paletteHigh,
-				    'label-color'                 : paletteLight,
-				    'collapse-header-bg':             paletteLow,
-				    'radio-button-bg'           :   tinycolor(paletteLow).darken(20).toString(),
-				    'radio-button-active-color' :  tinycolor(paletteHigh).darken(40).toString(),
+                            modifyVars: {
+                                'primary-color': '#80C683',
+                                'processing-color': '#80C683',
+                                'btn-primary-bg': buttonColor,
+                                'btn-default-color': buttonColor,
+                                'radio-dot-color': paletteHigh,
+                                'label-color': paletteLight,
+                                'collapse-header-bg': paletteLow,
+                                'radio-button-bg': tinycolor(paletteLow).darken(20).toString(),
+                                'radio-button-active-color': tinycolor(paletteHigh).darken(40).toString(),
 
-				    'input-border-color'          :  paletteHigh,
-				    'input-bg'                    :   paletteLow,
-				    'input-addon-bg'              :   paletteLow,
-				    'popover-bg':  tinycolor(paletteHigh).darken(20).toString(),
-				    'popover-color': tinycolor(paletteLight).darken(15).toString(),
-				},
+                                'input-border-color': paletteHigh,
+                                'input-bg': paletteLow,
+                                'input-addon-bg': paletteLow,
+                                'popover-bg': tinycolor(paletteHigh).darken(20).toString(),
+                                'popover-color': tinycolor(paletteLight).darken(15).toString(),
+                            },
                         }
                     }
                 ],
