@@ -4,7 +4,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Table, Tag } from "antd";
 import * as React from "react";
-import { JsonTable } from "react-json-to-html";
+// import { JsonTable } from "react-json-to-html";
 import { connect } from "react-redux";
 import config from "../../config";
 import API from "../../lib/api/invoice";

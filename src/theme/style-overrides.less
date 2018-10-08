@@ -1,6 +1,41 @@
 // we override ant styles here
 &[dir='rtl'] {
-    
+    .ant-table table
+    {
+        text-align: right;
+    }
+    .ant-table-thead > tr > th
+    {
+        text-align: right;
+    }
+    .ant-btn > .anticon + span, .ant-btn > span + .anticon
+    {
+        margin-left: auto;
+        margin-right: 8px;
+    }
+    .ant-btn.ant-btn-loading:not(.ant-btn-circle):not(.ant-btn-circle-outline):not(.ant-btn-icon-only) .anticon
+    {
+        margin-right : -14px;
+        margin-left : auto;
+        padding-right : 10px;
+    }
+    .ant-notification-notice-closable .ant-notification-notice-message
+    {
+        margin-right: 48px;
+        padding-right: 0;
+        margin-left: auto;
+    }
+    .ant-notification-notice-with-icon .ant-notification-notice-description
+    {
+        margin-right: 48px;
+        padding-right: 0;
+        margin-left: auto;
+    }
+    .ant-notification-notice-close
+    {
+        right: auto;
+        left: 22px;
+    }
     .ant-col-md-1, .ant-col-md-2, .ant-col-md-3, .ant-col-md-4, .ant-col-md-5, .ant-col-md-6, .ant-col-md-7, .ant-col-md-8, .ant-col-md-9, .ant-col-md-10, .ant-col-md-11, .ant-col-md-12, .ant-col-md-13, .ant-col-md-14, .ant-col-md-15, .ant-col-md-16, .ant-col-md-17, .ant-col-md-18, .ant-col-md-19, .ant-col-md-20, .ant-col-md-21, .ant-col-md-22, .ant-col-md-23, .ant-col-md-24
     {
         float: right;
@@ -71,6 +106,8 @@
     }
 }
 
+
+//////////
 .ant-layout-content {
     height: calc(100% - 64px);
     margin: 20px;
