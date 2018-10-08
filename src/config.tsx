@@ -12,7 +12,7 @@ const config = {
     apiUrl: "http://87.98.188.77:9092/",
     NewApiUrl: "http://87.98.188.77:9092",
     gateWayUrl: "http://gateway.becopay.com",
-    language: Languages.en,
+    language: Languages.fa,
     keycloakConfig: {
         url: "https://aas.avazcoin.com/auth",
         realm: "master",
