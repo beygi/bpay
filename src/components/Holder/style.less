@@ -1,16 +1,36 @@
 @import (reference)  "../../theme/application";
 &[dir='rtl'] {
-.block{
-    .left
-    {
-        padding-left: 10px;
+    .block{
+        span.right {
+                float: left;
+        }
+        .block-title
+        {
+            .left
+            {
+                padding-right: auto;
+                padding-left: 10px;
+            }
+            .right
+            {
+                padding-left: auto;
+                padding-right: 10px;
+            }        
+        }
     }
-    .right
+    .block-collapse
     {
-        padding-right: 10px;
-    }       
+            .ant-collapse-header
+            {
+                padding-left: 15px !important; 
+                padding-right: 40px !important;
+            }  
+    }
 }
-}
+
+/////////
+
+
 .block{
     background-color: @secondaryDarkColor;
     padding: 15px;

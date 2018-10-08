@@ -31,20 +31,20 @@ const icons = {
 };
 
 const columns = [{
-    title: "Order id",
+    title: t.t("Order id"),
     dataIndex: "orderId",
 },
 {
-    title: "Symbol",
+    title: t.t("Symbol"),
     dataIndex: "symbol",
 }, {
-    title: "Price",
+    title: t.t("Price"),
     dataIndex: "price",
 }, {
-    title: "Create time",
+    title: t.t("Create time"),
     dataIndex: "date",
 }, {
-    title: "Status",
+    title: t.t("Status"),
     dataIndex: "status",
 },
 ];

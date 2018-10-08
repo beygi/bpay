@@ -57,11 +57,11 @@ class NewInvoice extends React.Component<IProps, IState> {
                 }).then((response) => {
                     this.setState({ loading: false });
                     notification.success({
-                        message: "New Invoice Created",
-                        description: "click to open gateway",
+                        message: t.t("New Invoice Created"),
+                        description: t.t("click to open gateway"),
                         placement: "bottomRight",
                         btn: <Button
-                            target="blank" href={`${config.gateWayUrl}/invoice/${response.body.id}`} size="small" type="primary">Open gateway</Button>,
+                            target="blank" href={`${config.gateWayUrl}/invoice/${response.body.id}`} size="small" type="primary">{t.t("Open gateway")}</Button>,
                     });
                 }).catch((error) => {
                     // handle error
@@ -69,7 +69,7 @@ class NewInvoice extends React.Component<IProps, IState> {
                     // console.log(error.toString());
                     const errorText = (error.response.body.message) ? error.response.body.message : error;
                     notification.error({
-                        message: "Failed to create invoice",
+                        message: t.t("Failed to create invoice"),
                         description: errorText,
                         placement: "bottomRight",
                     });
@@ -122,7 +122,7 @@ class NewInvoice extends React.Component<IProps, IState> {
                     )}
                 </FormItem>
                 <FormItem>
-                    <Button loading={this.state.loading} className="neat-btn" type="primary" htmlType="submit" size="large">Create</Button>
+                    <Button loading={this.state.loading} className="neat-btn" type="primary" htmlType="submit" size="large">{t.t("Create")}</Button>
                 </FormItem>
             </Form>
         );

@@ -16,12 +16,11 @@ msgstr ""
 msgid " National ID Card"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:102
+#: src/components/DashboardHeader/index.tsx:100
 msgid "Account information"
-msgstr ""
+msgstr "اطلاعات حساب"
 
-#: src/containers/Dashboard/index.tsx:124
-#: src/containers/Dashboard/index.tsx:165
+#: src/containers/Dashboard/index.tsx:130
 msgid "Action Sessions"
 msgstr ""
 
@@ -35,11 +34,11 @@ msgstr ""
 
 #: src/components/Deposit/index.tsx:79
 msgid "Available"
-msgstr ""
+msgstr "در دسترس"
 
 #: src/components/Analysis/index.tsx:130
 msgid "Balance"
-msgstr ""
+msgstr "بالانس"
 
 #: src/components/Deposit/index.tsx:60 src/containers/KYC/index.tsx:126
 msgid "Before you start"
@@ -48,15 +47,19 @@ msgstr ""
 #: src/components/PlaceOrder/index.tsx:58
 #: src/components/PlaceOrder/index.tsx:83
 msgid "Buy "
-msgstr ""
+msgstr "خرید "
 
 #: src/components/ChangePassword/index.tsx:36
 msgid "Change"
-msgstr ""
+msgstr "تغییر"
 
-#: src/components/DashboardHeaderProfile/index.tsx:59
+#: src/components/DashboardHeaderProfile/index.tsx:60
 msgid "Change Password"
-msgstr ""
+msgstr "تغییر رمز عبور"
+
+#: src/components/NewInvoice/index.tsx:61
+msgid "click to open gateway"
+msgstr "برای باز شدن درگاه کلیک کنید"
 
 #: src/components/Analysis/index.tsx:115
 msgid "Cold"
@@ -68,7 +71,15 @@ msgstr ""
 
 #: src/containers/KYC/index.tsx:171
 msgid "Country"
-msgstr ""
+msgstr "کشور"
+
+#: src/components/NewInvoice/index.tsx:125
+msgid "Create"
+msgstr "ایجاد"
+
+#: src/components/Transactions/index.tsx:44
+msgid "Create time"
+msgstr "تاریخ ایجاد"
 
 #: src/components/Analysis/index.tsx:125
 msgid "Current owes"
@@ -79,16 +90,20 @@ msgstr ""
 #: src/components/DashboardMenu/menu.tsx:28
 #: src/components/DashboardMenu/menu.tsx:68
 msgid "Dashboard"
-msgstr "دشبورد"
+msgstr "داشبورد"
 
 #: src/components/DashboardMenu/menu.tsx:46
 msgid "Deposit"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:57 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:63 src/containers/Deposit/index.tsx:53
 #: src/containers/Exchange/index.tsx:56
 msgid "Deposit history"
 msgstr ""
+
+#: src/components/NewInvoice/index.tsx:121
+msgid "Description"
+msgstr "توضیحات"
 
 #: src/containers/KYC/index.tsx:195
 msgid "Driving license"
@@ -96,7 +111,7 @@ msgstr ""
 
 #: src/containers/Groups/index.tsx:37
 msgid "edit"
-msgstr ""
+msgstr "ویرایش"
 
 #: src/containers/Groups/index.tsx:124
 msgid "edit group"
@@ -104,11 +119,11 @@ msgstr ""
 
 #: src/containers/User/components/Login/index.tsx:105
 msgid "Email"
-msgstr ""
+msgstr "ایمیل"
 
-#: src/components/DashboardHeaderProfile/index.tsx:49
+#: src/components/DashboardHeaderProfile/index.tsx:53
 msgid "Email:"
-msgstr ""
+msgstr "ایمیل:"
 
 #: src/components/Uploader/index.tsx:125
 msgid "Example Image"
@@ -116,7 +131,11 @@ msgstr ""
 
 #: src/components/DashboardMenu/menu.tsx:40
 msgid "Exchange"
-msgstr ""
+msgstr "خرید و فروش"
+
+#: src/components/NewInvoice/index.tsx:72
+msgid "Failed to create invoice"
+msgstr "عدم موفقیت در ایجاد فاکتور"
 
 #: src/containers/Admin/Dashboard/index.tsx:45
 msgid "Fee Cash Desk"
@@ -173,17 +192,16 @@ msgstr ""
 
 #: src/components/DashboardMenu/adminMenu.tsx:26
 #: src/components/DashboardMenu/menu.tsx:58
-#: src/components/DashboardMenu/menu.tsx:74
 msgid "KYC"
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:55
+#: src/components/DashboardHeaderProfile/index.tsx:56
 msgid "Last login:"
-msgstr ""
+msgstr "آخرین ورود:"
 
 #: src/containers/KYC/index.tsx:144
 msgid "Last Name"
-msgstr ""
+msgstr "نام خانوادگی"
 
 #: src/containers/KYC/index.tsx:202
 msgid "License ID"
@@ -199,16 +217,16 @@ msgstr ""
 
 #: src/containers/User/components/Login/index.tsx:116
 msgid "login"
-msgstr ""
+msgstr "ورود"
 
 #: src/components/ChangePassword/index.tsx:32
 msgid "Login Password"
-msgstr ""
+msgstr "رمز عبور"
 
-#: src/components/DashboardHeader/index.tsx:106
-#: src/components/DashboardHeaderProfile/index.tsx:60
+#: src/components/DashboardHeader/index.tsx:104
+#: src/components/DashboardHeaderProfile/index.tsx:61
 msgid "Logout"
-msgstr ""
+msgstr "خروج"
 
 #: src/containers/Groups/index.tsx:46 src/containers/Groups/index.tsx:48
 #: src/containers/Groups/index.tsx:50
@@ -223,13 +241,29 @@ msgstr ""
 msgid "Master"
 msgstr ""
 
+#: src/containers/Dashboard/index.tsx:155 src/containers/Dashboard/index.tsx:45
+msgid "New Invoice"
+msgstr "فاکتور جدید"
+
+#: src/components/NewInvoice/index.tsx:60
+msgid "New Invoice Created"
+msgstr "فاکتور جدید با موفقیت ایجاد شد"
+
 #: src/containers/Admin/Users/index.tsx:147
 msgid "Next Page"
-msgstr ""
+msgstr "صفحه بعد"
 
-#: src/containers/Dashboard/index.tsx:177
+#: src/containers/Dashboard/index.tsx:188
 msgid "No Access"
-msgstr ""
+msgstr "شما به این قسمت دسترسی ندارید"
+
+#: src/components/NewInvoice/index.tsx:64
+msgid "Open gateway"
+msgstr "باز کردن درگاه"
+
+#: src/components/Transactions/index.tsx:34
+msgid "Order id"
+msgstr "شماره سفارش"
 
 #: src/containers/KYC/index.tsx:194
 msgid "Passport"
@@ -249,11 +283,19 @@ msgstr ""
 
 #: src/containers/User/components/Login/index.tsx:112
 msgid "Password"
-msgstr ""
+msgstr "رمز عبور"
 
 #: src/containers/Groups/index.tsx:34
 msgid "Permission"
-msgstr ""
+msgstr "دسترسی"
+
+#: src/components/NewInvoice/index.tsx:117
+msgid "Please input description, max length is 30"
+msgstr "لطفا متن توضیحات را وارد کنید. حداکثر ۳۰ حرف"
+
+#: src/components/NewInvoice/index.tsx:86
+msgid "Please input price"
+msgstr "لطفا قیمت را وارد کنید"
 
 #: src/containers/User/components/Login/index.tsx:103
 #, fuzzy
@@ -325,13 +367,17 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
+#: src/components/Transactions/index.tsx:41
+msgid "Price"
+msgstr "قیمت"
+
 #: src/components/Analysis/index.tsx:120
 msgid "Promised owes"
 msgstr ""
 
 #: src/components/UserStatusGuide/index.tsx:40
 msgid "Register"
-msgstr ""
+msgstr "ثبت نام"
 
 #: src/containers/User/components/Login/index.tsx:123
 msgid "Remember Me"
@@ -339,7 +385,7 @@ msgstr ""
 
 #: src/containers/Groups/index.tsx:92
 msgid "search"
-msgstr ""
+msgstr "جستجو"
 
 #: src/components/KYC/index.tsx:45 src/containers/KYC/index.tsx:227
 msgid "Selfie With ID And Note"
@@ -349,6 +395,10 @@ msgstr ""
 #: src/components/PlaceOrder/index.tsx:91
 msgid "Sell "
 msgstr ""
+
+#: src/components/Transactions/index.tsx:47
+msgid "Status"
+msgstr "وضعیت"
 
 #: src/containers/Groups/index.tsx:96
 msgid "sth"
@@ -362,9 +412,13 @@ msgstr "ارسال"
 msgid "Support"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:88
+#: src/components/Transactions/index.tsx:38
+msgid "Symbol"
+msgstr "نماد"
+
+#: src/components/DashboardHeader/index.tsx:86
 msgid "System Administration"
-msgstr ""
+msgstr "مدیریت سیستم"
 
 #: src/containers/Admin/Dashboard/index.tsx:42
 msgid "Tax Cash Desk"
@@ -372,12 +426,12 @@ msgstr ""
 
 #: src/components/Deposit/index.tsx:77
 msgid "Total"
-msgstr ""
+msgstr "مجموع"
 
-#: src/containers/Dashboard/index.tsx:117
-#: src/containers/Dashboard/index.tsx:158
+#: src/containers/Dashboard/index.tsx:123
+#: src/containers/Dashboard/index.tsx:169
 msgid "Transactions"
-msgstr ""
+msgstr "تراکنش ها"
 
 #: src/components/Uploader/index.tsx:99
 #: src/components/UserStatusGuide/index.tsx:42
@@ -388,41 +442,33 @@ msgstr ""
 msgid "Upload your documents"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:78
+#: src/components/DashboardHeader/index.tsx:76
 msgid "User Dashboard"
-msgstr ""
+msgstr "داشبورد کاربر"
 
 #: src/components/DashboardMenu/adminMenu.tsx:20
 msgid "Users"
-msgstr ""
-
-#: src/components/DashboardHeaderProfile/index.tsx:52
-msgid "Verification level:"
-msgstr ""
+msgstr "کاربران"
 
 #: src/components/UserStatusGuide/index.tsx:41
 msgid "Verify email"
-msgstr ""
+msgstr "تایید ایمیل"
 
 #: src/components/UserStatusGuide/index.tsx:41
-#, fuzzy
-#| msgid "Please input your email address"
 msgid "Verify your email address"
-msgstr "لطفا آدرس ایمیل تان را وارد کنید"
+msgstr "ایمیل تان را تایید کنید"
 
 #: src/containers/Deposit/index.tsx:46
-#, fuzzy
-#| msgid "email address"
 msgid "View wallet address"
-msgstr "آدرس ایمیل"
+msgstr "مشاهده آدرس کیف پول"
 
 #: src/components/DashboardMenu/menu.tsx:52
 msgid "Wallets"
-msgstr ""
+msgstr "کیف پول ها"
 
 #: src/components/Deposit/index.tsx:119
 msgid "Warning"
-msgstr ""
+msgstr "هشدار"
 
 #: src/containers/KYC/index.tsx:244
 msgid "we will inform you about the progress in your profile page"
@@ -430,11 +476,11 @@ msgstr ""
 
 #: src/components/UserStatusGuide/index.tsx:40
 msgid "You are a member"
-msgstr ""
+msgstr "شما اکنون یک کاربر هستید"
 
 #: src/containers/KYC/index.tsx:243
 msgid "your information submitted successfully"
-msgstr ""
+msgstr "اطلاعات شما با موفقیت ارسال شد"
 
 #~ msgid "Continue"
 #~ msgstr "ادامه"
@@ -451,9 +497,6 @@ msgstr ""
 #~ msgid "invalid invoice"
 #~ msgstr "فاکتور نامعتبر است"
 
-#~ msgid "Invoice id"
-#~ msgstr "شماره فاکتور"
-
 #~ msgid "Loading"
 #~ msgstr "بارگزاری"
 
@@ -468,9 +511,6 @@ msgstr ""
 
 #~ msgid "payment address copied to clipboard successfully"
 #~ msgstr "آدرس پرداخت با موفقیت کپی شد"
-
-#~ msgid "remaining time"
-#~ msgstr "زمان باقیمانده"
 
 #~ msgid "We need your email address to contact you about payment issues and send confirmations:"
 #~ msgstr "ما برای ارسال تاییدیه پرداخت و تماس با شما در هنگام وقوع مشکل به آدرس ایمیلتان نیاز داریم:"
