@@ -10,7 +10,7 @@ import config from "../../config";
 import { logOut } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
-import { pDate } from "../../services/trans/i18n";
+import { localDate } from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
 
@@ -48,6 +48,7 @@ class DashboardHeaderProfileComponent extends React.Component<IProps, IState> {
 
     public render() {
         // const date = strftime("%B %d, %Y %H:%M:%S", new pDate(this.props.auth_time * 1000));
+        const pDate = localDate(t.default.language);
         const date = new pDate(this.props.auth_time * 1000).toLocaleString();
 
         return (

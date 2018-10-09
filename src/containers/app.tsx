@@ -8,7 +8,6 @@ import { Redirect, Route, Switch } from "react-router";
 import { setUser } from "../redux/app/actions";
 import { IRootState } from "../redux/reducers";
 import t from "../services/trans/i18n";
-import { pDate } from "../services/trans/i18n";
 import Languages from "../services/trans/languages";
 import Layout from "./../components/Layout";
 import PrivateRoute from "./../components/PrivateRoute";

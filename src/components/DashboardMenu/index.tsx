@@ -5,7 +5,7 @@ import { Icon, Input, Layout, Tooltip } from "antd";
 import * as React from "react";
 
 const Search = Input.Search;
-import { push as Menu } from "react-burger-menu";
+import Menu from "react-burger-menu/lib/menus/push";
 import * as Gravatar from "react-gravatar";
 import { connect } from "react-redux";
 import { logOut } from "../../redux/app/actions";
@@ -30,19 +30,31 @@ interface IProps {
 
 interface IState {
     isOpen: boolean;
+    position: string;
 }
 
 class DashboardMenuComponent extends React.Component<IProps, IState> {
 
     public static getDerivedStateFromProps(nextProps, prevState) {
-        return { isOpen: false };
+        return { isOpen: false, position: t.dir() };
     }
     constructor(props: IProps) {
         super(props);
-        this.state = { isOpen: false };
+        this.state = { isOpen: false, position: t.dir() };
         this.logOut = this.logOut.bind(this);
     }
-
+    public shouldComponentUpdate(nextProps, nextState) {
+        if (this.state.position !== nextState.position) {
+            return true;
+        }
+        if (
+            nextProps.path !== this.props.path ||
+            nextProps.isAdmin !== this.props.isAdmin
+        ) {
+            return true;
+        }
+        return false;
+    }
     public logOut() {
         this.props.logOut();
         userObject.keycloak.logout();
@@ -64,8 +76,7 @@ class DashboardMenuComponent extends React.Component<IProps, IState> {
             </NavLink>,
         );
 
-        const right = (t.dir() === "rtl") ? true : false;
-
+        const right = (this.state.position === "rtl") ? true : false;
         return (<Menu right={right} pageWrapId={"privateContent"} outerContainerId={"privateContent"} isOpen={this.state.isOpen} >
             {menuComponent}
         </Menu >);

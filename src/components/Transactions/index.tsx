@@ -30,25 +30,6 @@ const icons = {
     success: <FontAwesomeIcon className="success" icon={["fas", "check"]} />,
 };
 
-const columns = [{
-    title: t.t("Order id"),
-    dataIndex: "orderId",
-},
-{
-    title: t.t("Symbol"),
-    dataIndex: "symbol",
-}, {
-    title: t.t("Price"),
-    dataIndex: "price",
-}, {
-    title: t.t("Create time"),
-    dataIndex: "date",
-}, {
-    title: t.t("Status"),
-    dataIndex: "status",
-},
-];
-
 /**
  * this component shows all transactions of merchant
  */
@@ -66,6 +47,24 @@ class Transactions extends React.Component<IProps, IState> {
     }
 
     public render() {
+        const columns = [{
+            title: t.t("Order id"),
+            dataIndex: "orderId",
+        },
+        {
+            title: t.t("Symbol"),
+            dataIndex: "symbol",
+        }, {
+            title: t.t("Price"),
+            dataIndex: "price",
+        }, {
+            title: t.t("Create time"),
+            dataIndex: "date",
+        }, {
+            title: t.t("Status"),
+            dataIndex: "status",
+        },
+        ];
         let invoices = null;
         if (this.state.invoices !== null) {
             // map

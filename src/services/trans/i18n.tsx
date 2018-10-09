@@ -34,12 +34,16 @@ i18next.init({
 
 });
 
-let pDate: any;
-if (i18next.default.language === "fa") {
-    pDate = persianDate;
-} else {
-    pDate = Date;
-}
+// to get current lang : i18next.default.language
+const localDate = (langCode) => {
+    let pDate: any;
+    if (langCode === "fa") {
+        pDate = persianDate;
+    } else {
+        pDate = Date;
+    }
+    return pDate;
+};
 
 export default i18next;
-export { pDate };
+export { localDate };
