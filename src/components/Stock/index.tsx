@@ -104,4 +104,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps)(StockComponent);
+export default connect(mapStateToProps, null, null, { pure: false })(StockComponent);

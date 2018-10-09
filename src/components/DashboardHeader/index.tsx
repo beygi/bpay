@@ -126,4 +126,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DashboardHeaderComponent);
+export default connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(DashboardHeaderComponent);

@@ -167,4 +167,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps)(InternalExchangeComponent);
+export default connect(mapStateToProps, null, null, { pure: false })(InternalExchangeComponent);

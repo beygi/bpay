@@ -45,7 +45,7 @@ class UserStatusGuideComponent extends React.Component<IProps, IState> {
                 </Steps>
                 <div>
                     <Link to="/kyc">
-                        <Button  className="action" icon="idcard" type="primary" size="large">Validate yourself</Button>
+                        <Button className="action" icon="idcard" type="primary" size="large">Validate yourself</Button>
                     </Link>
                 </div>
             </div >
@@ -57,8 +57,8 @@ class UserStatusGuideComponent extends React.Component<IProps, IState> {
         notification.success({
             message: "Notification Title",
             description: "This is the content of the notification. This is the content of the notification. This is the content of the notification.",
-            placement : "bottomRight",
-            duration : 0,
+            placement: "bottomRight",
+            duration: 0,
         });
     }
 
@@ -70,4 +70,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps)(UserStatusGuideComponent);
+export default connect(mapStateToProps, null, null, { pure: false })(UserStatusGuideComponent);

@@ -15,6 +15,7 @@ import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
 const FormItem = Form.Item;
+
 interface IProps extends FormComponentProps {
 }
 interface IState {
@@ -131,14 +132,4 @@ class NewInvoice extends React.Component<IProps, IState> {
 
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-    };
-}
-
-function mapStateToProps(state: IRootState) {
-    return {
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Form.create()(NewInvoice));
+export default Form.create()(NewInvoice);

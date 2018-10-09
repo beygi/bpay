@@ -172,4 +172,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps)(DepositComponent);
+export default connect(mapStateToProps, null, null, { pure: false })(DepositComponent);

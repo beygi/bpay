@@ -14,7 +14,7 @@ import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
 
-const allApis = { btc: btcApi.getInstance(), usd: btcApi.getInstance() , eth: btcApi.getInstance() };
+const allApis = { btc: btcApi.getInstance(), usd: btcApi.getInstance(), eth: btcApi.getInstance() };
 const userObject = USER.getInstance();
 
 interface IProps {
@@ -35,14 +35,14 @@ interface IState {
  */
 class BalanceComponent extends React.Component<IProps, IState> {
 
-     public static getDerivedStateFromProps(props, state) {
-             // update state.balance when props changes by redux
-             if (props.balance !== null) {
-                  return {balance: {...state.balance, ...props.balance} };
-             }
-             return null;
-     }
-     public interval: any;
+    public static getDerivedStateFromProps(props, state) {
+        // update state.balance when props changes by redux
+        if (props.balance !== null) {
+            return { balance: { ...state.balance, ...props.balance } };
+        }
+        return null;
+    }
+    public interval: any;
     constructor(props: IProps) {
         super(props);
 
@@ -52,9 +52,9 @@ class BalanceComponent extends React.Component<IProps, IState> {
             if (config.currencies[key].type === "fiat") {
                 fiats[key] = config.currencies[key];
             }
-        } );
+        });
 
-        this.state = {fiats , balance : null};
+        this.state = { fiats, balance: null };
 
         // load balance data of each coin
         this.loadData = this.loadData.bind(this);
@@ -63,7 +63,7 @@ class BalanceComponent extends React.Component<IProps, IState> {
     public componentDidMount() {
         this.loadData();
         clearInterval(this.interval);
-        this.interval = setInterval( () => { this.loadData(); }, 5000);
+        this.interval = setInterval(() => { this.loadData(); }, 5000);
     }
 
     public loadData() {
@@ -93,13 +93,13 @@ class BalanceComponent extends React.Component<IProps, IState> {
     public render() {
         const coins = Object.keys(this.state.fiats).map((key) =>
             <div className="coin-balance" key={key}>
-                <span  className = "balance-icon" > {config.icons[key]}</span >
+                <span className="balance-icon" > {config.icons[key]}</span >
                 <p className="balance-name">{this.state.balance[key].name}</p>
                 <p className="balance-number">{this.state.balance[key].balance.available || 0}</p>
             </div>,
         );
-        return(
-            <div className= "user-balance" > {coins}</div >
+        return (
+            <div className="user-balance" > {coins}</div >
         );
     }
 }
@@ -111,15 +111,15 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state: IRootState) {
-    if ( state.app.user.balance !== undefined) {
+    if (state.app.user.balance !== undefined) {
         return {
             balance: state.app.user.balance,
         };
     }
     // there is no balance from redux, state must not be updated in getDerivedStateFromProps
     return {
-        balance :  null,
+        balance: null,
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BalanceComponent);
+export default connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(BalanceComponent);

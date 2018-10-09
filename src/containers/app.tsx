@@ -41,8 +41,10 @@ class AppContainer extends React.Component<IProps, IState> {
     }
 
     public componentDidMount() {
+        // add body direction at first run
         document.body.dir = Config.language.dir;
         document.body.addEventListener("changeLanguage", (event: CustomEvent) => {
+            // change body direction on language change
             document.body.dir = Languages[event.detail.code].dir;
             t.changeLanguage(event.detail.code, () => {
                 this.forceUpdate();

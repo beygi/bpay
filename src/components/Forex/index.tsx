@@ -31,18 +31,18 @@ interface IState {
 function calcExchangeRate(props) {
     // calcucalte exchange rate from store
     const exchange = [
-        { symbol: "EUR", rate: 0 , round : 2},
-        { symbol: "USD", rate: 0 , round : 2},
-        { symbol: "IRR", rate: 0 , round : 7},
+        { symbol: "EUR", rate: 0, round: 2 },
+        { symbol: "USD", rate: 0, round: 2 },
+        { symbol: "IRR", rate: 0, round: 7 },
     ];
     if (!props.forex) {
         return exchange;
     }
     // calc exchange rate
     const calculated = exchange.map((fiat) => {
-            fiat.rate = _.round((props.forex[props.symbol] * (1 / props.forex[fiat.symbol] )), fiat.round);
+        fiat.rate = _.round((props.forex[props.symbol] * (1 / props.forex[fiat.symbol])), fiat.round);
         // if (fiat.symbol === "IRR") { fiat.rate = _.round( fiat.rate, 0); }
-            return fiat;
+        return fiat;
     });
     return calculated;
 }
@@ -50,11 +50,11 @@ function calcExchangeRate(props) {
 class ForexComponent extends React.Component<IProps, IState> {
 
     public static getDerivedStateFromProps(props, state) {
-            // update state.balance when props changes by redux4
-            if (props.forex !== null) {
-                 return {  exchangeRates : calcExchangeRate(props)};
-            }
-            return null;
+        // update state.balance when props changes by redux4
+        if (props.forex !== null) {
+            return { exchangeRates: calcExchangeRate(props) };
+        }
+        return null;
     }
 
     constructor(props: IProps) {
@@ -72,17 +72,17 @@ class ForexComponent extends React.Component<IProps, IState> {
         if (!this.props.forex) {
             return (<div>Loading ...</div>);
         }
-        const rates = this.state.exchangeRates.map( (rate) => {
+        const rates = this.state.exchangeRates.map((rate) => {
             if (rate.symbol !== this.props.symbol) {
-            return <div key={rate.symbol}><span className="symbol">{rate.symbol}: </span><span className="rate"><Ex value={rate.rate} fixFloatNum={rate.round} seperateThousand /></span></div>;
+                return <div key={rate.symbol}><span className="symbol">{rate.symbol}: </span><span className="rate"><Ex value={rate.rate} fixFloatNum={rate.round} seperateThousand /></span></div>;
             }
             return null;
-        } );
+        });
         return (
             <div className="stock" >
-                    <div className="rates">
-                        {rates}
-                    </div>
+                <div className="rates">
+                    {rates}
+                </div>
             </div >
         );
     }
@@ -100,4 +100,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps)(ForexComponent);
+export default connect(mapStateToProps, null, null, { pure: false })(ForexComponent);
