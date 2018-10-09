@@ -44,11 +44,11 @@ msgstr ""
 msgid "Change"
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:60
+#: src/components/DashboardHeaderProfile/index.tsx:67
 msgid "Change Password"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:61
+#: src/components/NewInvoice/index.tsx:62
 msgid "click to open gateway"
 msgstr ""
 
@@ -64,7 +64,7 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:125
+#: src/components/NewInvoice/index.tsx:126
 msgid "Create"
 msgstr ""
 
@@ -93,7 +93,7 @@ msgstr ""
 msgid "Deposit history"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:121
+#: src/components/NewInvoice/index.tsx:122
 msgid "Description"
 msgstr ""
 
@@ -113,7 +113,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:53
+#: src/components/DashboardHeaderProfile/index.tsx:56
 msgid "Email:"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgstr ""
 msgid "Exchange"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:72
+#: src/components/NewInvoice/index.tsx:73
 msgid "Failed to create invoice"
 msgstr ""
 
@@ -188,7 +188,7 @@ msgstr ""
 msgid "KYC"
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:56
+#: src/components/DashboardHeaderProfile/index.tsx:59
 msgid "Last login:"
 msgstr ""
 
@@ -217,7 +217,7 @@ msgid "Login Password"
 msgstr ""
 
 #: src/components/DashboardHeader/index.tsx:104
-#: src/components/DashboardHeaderProfile/index.tsx:61
+#: src/components/DashboardHeaderProfile/index.tsx:68
 msgid "Logout"
 msgstr ""
 
@@ -240,7 +240,7 @@ msgstr ""
 msgid "New Invoice"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:60
+#: src/components/NewInvoice/index.tsx:61
 msgid "New Invoice Created"
 msgstr ""
 
@@ -252,7 +252,7 @@ msgstr ""
 msgid "No Access"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:64
+#: src/components/NewInvoice/index.tsx:65
 msgid "Open gateway"
 msgstr ""
 
@@ -285,11 +285,11 @@ msgstr ""
 msgid "Permission"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:117
+#: src/components/NewInvoice/index.tsx:118
 msgid "Please input description, max length is 30"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:86
+#: src/components/NewInvoice/index.tsx:87
 msgid "Please input price"
 msgstr ""
 
@@ -398,6 +398,10 @@ msgstr ""
 
 #: src/components/DashboardHeader/index.tsx:86
 msgid "System Administration"
+msgstr ""
+
+#: src/components/DashboardHeaderProfile/index.tsx:62
+msgid "System language:"
 msgstr ""
 
 #: src/containers/Admin/Dashboard/index.tsx:42

@@ -5,6 +5,7 @@ import { Button, Icon, Tag } from "antd";
 import * as React from "react";
 import { connect } from "react-redux";
 import strftime from "strftime";
+import Translate from "../../components/Translate";
 import config from "../../config";
 import { logOut } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
@@ -56,6 +57,10 @@ class DashboardHeaderProfileComponent extends React.Component<IProps, IState> {
                 </div>
                 <div className="line">
                     <span className="caption">{t.t("Last login:")} </span>{date}
+                </div>
+                <div className="line">
+                    <span className="caption">{t.t("System language:")} </span>
+                    <Translate />
                 </div>
                 <div className="line">
 
