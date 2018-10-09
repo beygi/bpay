@@ -1,5 +1,15 @@
 // we override ant styles here
 &[dir='rtl'] {
+    .ant-collapse > .ant-collapse-item > .ant-collapse-header .arrow svg
+    {
+        transform: scaleX(-1);
+        transition: transform 0.2s;
+    }
+    .ant-collapse > .ant-collapse-item > .ant-collapse-header[aria-expanded="true"] .anticon-right svg
+    {
+        transform: rotate(90deg);
+        transition: transform 0.2s;
+    }
     .ant-popover
     {
         text-align: right;
