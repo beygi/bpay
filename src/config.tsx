@@ -11,10 +11,10 @@ const config = {
     // apiUrl: "http://192.168.1.42:9092/",
     apiUrl: "http://87.98.188.77:9092/",
     NewApiUrl: "http://87.98.188.77:9092",
-    gateWayUrl: "http://gateway.becopay.com",
+    gateWayUrl: "https://gateway.becopay.com",
     language: Languages.fa,
     keycloakConfig: {
-        url: "https://aas.avazcoin.com/auth",
+        url: "https://accounts.becopay.com/auth",
         realm: "master",
         clientId: "application",
         checkLoginIframe: false,
