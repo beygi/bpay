@@ -31,23 +31,32 @@ const keyCloak = KeyCloacksApi.getInstance();
 
 // Docs : `https://www.keycloak.org/docs/3.0/securing_apps/topics/oidc/javascript-adapter.html`
 user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
+
     if (authenticated) {
-        // console.log(user.keycloak);
 
         // token is in user.keycloak.token, pick and other useful information for saving in store
-        const userData = _.pick(user.keycloak.tokenParsed, ["email", "name", "family_name", "realm_access", "auth_time"]);
-        // set user in store
-        store.dispatch(updateUser({ ...userData, token: user.keycloak.token }));
-        // set user in user object because it has an instance now
-        user.setUser(userData);
+        // get user profile
+        const userData = _.pick(user.keycloak.tokenParsed, ["email", "given_name", "family_name", "realm_access", "auth_time"]);
+        user.keycloak.loadUserProfile().then(() => {
+            const apiKey = _.get(user.keycloak, "profile.attributes.apikey[0]", "");
+            const mobile = _.get(user.keycloak, "profile.attributes.mobile[0]", "");
+
+            // set user in store
+            store.dispatch(updateUser({ ...userData, token: user.keycloak.token, apiKey, mobile }));
+
+            // set user in user object because it has an instance now
+            user.setUser(userData);
+            // seeding user with defaults and random generated data
+            // if (store.getState().app.user && !store.getState().app.user.balance) {
+            // console.log("seeding user ... ");
+            const seeder = new Seeder();
+            seeder.initialSeed();
+        });
+
         // set token in api lib
         // api.SetHeader("Authorization", "Token " + JSON.stringify(user.keycloak.tokenParsed));
         keyCloak.setAuthToken(user.keycloak.token);
-        // seeding user with defaults and random generated data
-        // if (store.getState().app.user && !store.getState().app.user.balance) {
-        // console.log("seeding user ... ");
-        const seeder = new Seeder();
-        seeder.initialSeed();
+
         // }
 
         // refresh token automatically after 3000 seconds

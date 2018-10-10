@@ -17,7 +17,7 @@ import "./style.less";
 
 interface IProps {
     /**  current user's email address that is synced with redux */
-    email: any;
+    user: any;
 }
 
 interface IState {
@@ -105,8 +105,8 @@ class Transactions extends React.Component<IProps, IState> {
         //     this.setState({ invoices: response.data });
         // });
         this.api.getAllInvoiceUsingGET({
-            apiKey: "B822BB93905A9BD8B3A0C08168C427696436CF8BF37ED4AB8EBF41A307642ED1",
-            mob: "09355126588",
+            apiKey: this.props.user.apiKey,
+            mob: this.props.user.mobile,
             size: 12,
             dir: "desc",
             $domain: "http://87.98.188.77:9193",
@@ -123,7 +123,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state: IRootState) {
     return {
-        email: state.app.user.email,
+        user: state.app.user,
     };
 }
 

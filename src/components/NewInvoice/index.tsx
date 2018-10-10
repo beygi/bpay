@@ -17,6 +17,7 @@ import "./style.less";
 const FormItem = Form.Item;
 
 interface IProps extends FormComponentProps {
+    user: any;
 }
 interface IState {
     invoiceId: string;
@@ -48,10 +49,10 @@ class NewInvoice extends React.Component<IProps, IState> {
                 this.setState({ loading: true });
                 this.api.addInvoiceUsingPOST({
                     inv: {
-                        apiKey: "B822BB93905A9BD8B3A0C08168C427696436CF8BF37ED4AB8EBF41A307642ED1",
+                        apiKey: this.props.user.apiKey,
                         description: values.description,
                         price: values.price,
-                        mobile: "09355126588",
+                        mobile: this.props.user.mobile,
                         orderId: this.uuid(),
                     },
                     $domain: "http://87.98.188.77:9193",
@@ -132,4 +133,17 @@ class NewInvoice extends React.Component<IProps, IState> {
 
 }
 
-export default Form.create()(NewInvoice);
+function mapDispatchToProps(dispatch) {
+    return {
+    };
+}
+
+function mapStateToProps(state: IRootState) {
+    return {
+        user: state.app.user,
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(Form.create()(NewInvoice));
+
+// export default Form.create(); connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(Transactions);
