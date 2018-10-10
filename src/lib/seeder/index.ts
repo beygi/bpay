@@ -56,7 +56,7 @@ export default class Seeder {
         axios.get("https://api.exchangeratesapi.io/latest?base=USD").then((response) => {
             const rates = response.data.rates;
             // call for irr to usd
-            axios.get("http://staging1.b2mark.com/api/").then((irrResponse) => {
+            axios.get("https://my.becopay.com/api/").then((irrResponse) => {
                 rates.IRR = parseFloat(irrResponse.data.price);
                 // update redux store directly
                 store.dispatch(updateMarketForex(rates));
