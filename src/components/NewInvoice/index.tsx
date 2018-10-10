@@ -55,7 +55,7 @@ class NewInvoice extends React.Component<IProps, IState> {
                         mobile: this.props.user.mobile,
                         orderId: this.uuid(),
                     },
-                    $domain: "http://87.98.188.77:9193",
+                    $domain: "https://api.becopay.com",
                 }).then((response) => {
                     this.setState({ loading: false });
                     notification.success({

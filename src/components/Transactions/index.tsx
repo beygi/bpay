@@ -109,7 +109,7 @@ class Transactions extends React.Component<IProps, IState> {
             mob: this.props.user.mobile,
             size: 12,
             dir: "desc",
-            $domain: "http://87.98.188.77:9193",
+            $domain: "https://api.becopay.com",
         }).then((response) => {
             this.setState({ invoices: response.body });
         });
