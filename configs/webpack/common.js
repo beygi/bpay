@@ -107,7 +107,8 @@ module.exports = {
     plugins: [
         new CheckerPlugin(),
         new HtmlWebpackPlugin({
-            template: 'index.html'
+            template: 'index.html',
+	    favicon: 'logo.png',
         }),
         new MiniCssExtractPlugin({
             filename: "[name]-[chunkhash].min.css",
