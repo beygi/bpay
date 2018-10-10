@@ -51,6 +51,16 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
             // console.log("seeding user ... ");
             const seeder = new Seeder();
             seeder.initialSeed();
+            ReactDOM.render(
+                <Provider store={store}>
+                    <ConnectedRouter history={history}>
+                        <Switch>
+                            <Route path="/" component={AppContainer} />
+                        </Switch>
+                    </ConnectedRouter>
+                </Provider>,
+                document.getElementById("root"),
+            );
         });
 
         // set token in api lib
@@ -68,16 +78,6 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
                 }
             });
         }, 30000);
-        ReactDOM.render(
-            <Provider store={store}>
-                <ConnectedRouter history={history}>
-                    <Switch>
-                        <Route path="/" component={AppContainer} />
-                    </Switch>
-                </ConnectedRouter>
-            </Provider>,
-            document.getElementById("root"),
-        );
     } else {
         // user is not authenticated
         store.dispatch(setUser(null));
