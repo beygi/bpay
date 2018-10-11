@@ -80,8 +80,8 @@ class Transactions extends React.Component<IProps, IState> {
                             #{invoice.id}
                         </Tag>  <span className="symbol">
                                 {invoice.symbol} </span> <Ex fixFloatNum={0} value={invoice.price} seperateThousand /></span>}
-                        iconPosition="right" icon={<span><Tag color="#453e41">{invoice.desc}</Tag> <Tag color="#898989">{date}</Tag>
-                            <a href="">{icons[invoice.status]}</a>
+                        iconPosition="right" icon={<span><Tag color="#453e41">{invoice.description}</Tag> <Tag color="#898989">{date}</Tag>
+                            {icons[invoice.status]}
                             <a className="callback" target="blank" href={invoice.callback}><FontAwesomeIcon icon={["fas", "link"]} /></a>
                             &nbsp;
                             <a className="waiting" target="blank" href={`${config.gateWayUrl}/invoice/${invoice.id}`}><FontAwesomeIcon icon={["fas", "external-link-alt"]} /></a>
