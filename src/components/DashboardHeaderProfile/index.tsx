@@ -4,7 +4,7 @@
 import { Button, Icon, Tag } from "antd";
 import * as React from "react";
 import { connect } from "react-redux";
-import strftime from "strftime";
+// import strftime from "strftime";
 import Translate from "../../components/Translate";
 import config from "../../config";
 import { logOut } from "../../redux/app/actions";

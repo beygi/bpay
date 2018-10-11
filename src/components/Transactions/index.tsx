@@ -10,6 +10,7 @@ import config from "../../config";
 import API from "../../lib/api/invoice";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
+import { localDate } from "../../services/trans/i18n";
 import Ex from "../ExchangeValue";
 import Block from "../Holder";
 import USER from "./../../lib/user";
@@ -68,15 +69,18 @@ class Transactions extends React.Component<IProps, IState> {
         let invoices = null;
         if (this.state.invoices !== null) {
             // map
+            const pDate = localDate(t.default.language);
             invoices = this.state.invoices.map((invoice) => {
                 // const date = new pDate(invoice.date);
+                const date = new pDate(invoice.timestamp).toLocaleString();
+                invoice.date = date;
                 return (
                     <Block key={invoice.id} collapse className={"transaction-block"}
                         title={<span><Tag className="invoice-id" color="#453e41">
                             #{invoice.id}
                         </Tag>  <span className="symbol">
                                 {invoice.symbol} </span> <Ex fixFloatNum={0} value={invoice.price} seperateThousand /></span>}
-                        iconPosition="right" icon={<span><Tag color="#453e41">{invoice.desc}</Tag> <Tag color="#898989">{invoice.date}</Tag>
+                        iconPosition="right" icon={<span><Tag color="#453e41">{invoice.desc}</Tag> <Tag color="#898989">{date}</Tag>
                             <a href="">{icons[invoice.status]}</a>
                             <a className="callback" target="blank" href={invoice.callback}><FontAwesomeIcon icon={["fas", "link"]} /></a>
                             &nbsp;
