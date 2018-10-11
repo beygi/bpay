@@ -53,11 +53,11 @@ msgstr "خرید "
 msgid "Change"
 msgstr "تغییر"
 
-#: src/components/DashboardHeaderProfile/index.tsx:67
+#: src/components/DashboardHeaderProfile/index.tsx:68
 msgid "Change Password"
 msgstr "تغییر رمز عبور"
 
-#: src/components/NewInvoice/index.tsx:62
+#: src/components/NewInvoice/index.tsx:64
 msgid "click to open gateway"
 msgstr "برای باز شدن درگاه کلیک کنید"
 
@@ -73,13 +73,13 @@ msgstr ""
 msgid "Country"
 msgstr "کشور"
 
-#: src/components/NewInvoice/index.tsx:126
+#: src/components/NewInvoice/index.tsx:128
 msgid "Create"
 msgstr "ایجاد"
 
-#: src/components/Transactions/index.tsx:44
+#: src/components/Transactions/index.tsx:62
 msgid "Create time"
-msgstr "تاریخ ایجاد"
+msgstr "زمان ایجاد"
 
 #: src/components/Analysis/index.tsx:125
 msgid "Current owes"
@@ -101,7 +101,7 @@ msgstr ""
 msgid "Deposit history"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:122
+#: src/components/NewInvoice/index.tsx:124
 msgid "Description"
 msgstr "توضیحات"
 
@@ -121,7 +121,7 @@ msgstr ""
 msgid "Email"
 msgstr "ایمیل"
 
-#: src/components/DashboardHeaderProfile/index.tsx:56
+#: src/components/DashboardHeaderProfile/index.tsx:57
 msgid "Email:"
 msgstr "ایمیل:"
 
@@ -133,7 +133,7 @@ msgstr ""
 msgid "Exchange"
 msgstr "خرید و فروش"
 
-#: src/components/NewInvoice/index.tsx:73
+#: src/components/NewInvoice/index.tsx:75
 msgid "Failed to create invoice"
 msgstr "عدم موفقیت در ایجاد فاکتور"
 
@@ -195,7 +195,7 @@ msgstr ""
 msgid "KYC"
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:59
+#: src/components/DashboardHeaderProfile/index.tsx:60
 msgid "Last login:"
 msgstr "آخرین ورود:"
 
@@ -224,7 +224,7 @@ msgid "Login Password"
 msgstr "رمز عبور"
 
 #: src/components/DashboardHeader/index.tsx:104
-#: src/components/DashboardHeaderProfile/index.tsx:68
+#: src/components/DashboardHeaderProfile/index.tsx:69
 msgid "Logout"
 msgstr "خروج"
 
@@ -245,7 +245,7 @@ msgstr ""
 msgid "New Invoice"
 msgstr "فاکتور جدید"
 
-#: src/components/NewInvoice/index.tsx:61
+#: src/components/NewInvoice/index.tsx:63
 msgid "New Invoice Created"
 msgstr "فاکتور جدید با موفقیت ایجاد شد"
 
@@ -257,11 +257,11 @@ msgstr "صفحه بعد"
 msgid "No Access"
 msgstr "شما به این قسمت دسترسی ندارید"
 
-#: src/components/NewInvoice/index.tsx:65
+#: src/components/NewInvoice/index.tsx:67
 msgid "Open gateway"
 msgstr "باز کردن درگاه"
 
-#: src/components/Transactions/index.tsx:34
+#: src/components/Transactions/index.tsx:52
 msgid "Order id"
 msgstr "شماره سفارش"
 
@@ -289,11 +289,11 @@ msgstr "رمز عبور"
 msgid "Permission"
 msgstr "دسترسی"
 
-#: src/components/NewInvoice/index.tsx:118
+#: src/components/NewInvoice/index.tsx:120
 msgid "Please input description, max length is 30"
 msgstr "لطفا متن توضیحات را وارد کنید. حداکثر ۳۰ حرف"
 
-#: src/components/NewInvoice/index.tsx:87
+#: src/components/NewInvoice/index.tsx:89
 msgid "Please input price"
 msgstr "لطفا قیمت را وارد کنید"
 
@@ -367,7 +367,7 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:41
+#: src/components/Transactions/index.tsx:59
 msgid "Price"
 msgstr "قیمت"
 
@@ -396,7 +396,7 @@ msgstr ""
 msgid "Sell "
 msgstr ""
 
-#: src/components/Transactions/index.tsx:47
+#: src/components/Transactions/index.tsx:65
 msgid "Status"
 msgstr "وضعیت"
 
@@ -412,7 +412,7 @@ msgstr "ارسال"
 msgid "Support"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:38
+#: src/components/Transactions/index.tsx:56
 msgid "Symbol"
 msgstr "نماد"
 
@@ -420,7 +420,7 @@ msgstr "نماد"
 msgid "System Administration"
 msgstr "مدیریت سیستم"
 
-#: src/components/DashboardHeaderProfile/index.tsx:62
+#: src/components/DashboardHeaderProfile/index.tsx:63
 msgid "System language:"
 msgstr "زبان سیستم:"
 
