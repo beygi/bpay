@@ -323,55 +323,46 @@ msgstr "لطفا قیمت را وارد کنید"
 
 #: src/containers/User/components/Login/index.tsx:103
 #, fuzzy
-#| msgid "Please input your email address"
 msgid "Please input your Email"
 msgstr "لطفا آدرس ایمیل تان را وارد کنید"
 
 #: src/containers/KYC/index.tsx:137
 #, fuzzy
-#| msgid "Please input your email address"
 msgid "Please input your first name"
 msgstr "لطفا آدرس ایمیل تان را وارد کنید"
 
 #: src/containers/KYC/index.tsx:146
 #, fuzzy
-#| msgid "Please input your email address"
 msgid "Please input your last name"
 msgstr "لطفا آدرس ایمیل تان را وارد کنید"
 
 #: src/containers/KYC/index.tsx:204
 #, fuzzy
-#| msgid "Please input your email address"
 msgid "Please input your license id "
 msgstr "لطفا آدرس ایمیل تان را وارد کنید"
 
 #: src/containers/User/components/Login/index.tsx:110
 #, fuzzy
-#| msgid "Please input your email address"
 msgid "Please input your Password"
 msgstr "لطفا آدرس ایمیل تان را وارد کنید"
 
 #: src/containers/KYC/index.tsx:178
 #, fuzzy
-#| msgid "Please select payment currency"
 msgid "Please select a country"
 msgstr "لطفا ارز پرداختی را انتخاب کنید"
 
 #: src/components/Deposit/index.tsx:57
 #, fuzzy
-#| msgid "Please select payment currency"
 msgid "Please select a currency to deposit"
 msgstr "لطفا ارز پرداختی را انتخاب کنید"
 
 #: src/containers/KYC/index.tsx:175 src/containers/KYC/index.tsx:47
 #, fuzzy
-#| msgid "Please select payment currency"
 msgid "Please select your country"
 msgstr "لطفا ارز پرداختی را انتخاب کنید"
 
 #: src/containers/KYC/index.tsx:159
 #, fuzzy
-#| msgid "Please select payment currency"
 msgid "Please select your gender"
 msgstr "لطفا ارز پرداختی را انتخاب کنید"
 

@@ -12,68 +12,500 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/components/Invoice/index.tsx:116
-msgid "Continue"
+#: src/containers/KYC/index.tsx:196
+msgid " National ID Card"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:149
-msgid "Copy wallet address to clipboard"
+#: src/components/DashboardHeader/index.tsx:100
+msgid "Account information"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:181
-msgid "Date"
+#: src/containers/Dashboard/index.tsx:130
+msgid "Active Sessions"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:109
-msgid "email address"
+#: src/containers/Groups/index.tsx:109
+msgid "add group"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:100
-msgid "Email address"
+#: src/containers/Groups/index.tsx:100
+msgid "add new group"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:83
-msgid "invalid invoice"
-msgstr "invoice is invalid"
-
-#: src/components/Invoice/index.tsx:180
-msgid "Invoice id"
+#: src/components/Deposit/index.tsx:79
+msgid "Available"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:191
-msgid "Loading"
+#: src/components/Analysis/index.tsx:130
+msgid "Balance"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:163
-msgid "minutes"
+#: src/components/Deposit/index.tsx:60 src/containers/KYC/index.tsx:126
+msgid "Before you start"
 msgstr ""
 
-#: src/containers/Invoice/index.tsx:35
-msgid "New Payment"
-msgstr "New payment"
-
-#: src/components/Invoice/index.tsx:145
-msgid "Open in wallet"
+#: src/components/Transactions/index.tsx:18
+msgid "Bitcoin"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:75
-msgid "payment address copied to clipboard successfully"
+#: src/components/PlaceOrder/index.tsx:58
+#: src/components/PlaceOrder/index.tsx:83
+msgid "Buy "
 msgstr ""
 
-#: src/components/Invoice/index.tsx:107
-msgid "Please input your email address"
+#: src/components/ChangePassword/index.tsx:36
+msgid "Change"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:113
-msgid "Please select payment currency"
+#: src/components/DashboardHeaderProfile/index.tsx:68
+msgid "Change Password"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:161
-msgid "remaining time"
+#: src/components/NewInvoice/index.tsx:64
+msgid "click to open gateway"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:102
-msgid ""
-"We need your email address to contact you about payment issues and send "
-"confirmations:"
+#: src/components/Analysis/index.tsx:115
+msgid "Cold"
 msgstr ""
+
+#: src/containers/Admin/Dashboard/index.tsx:39
+msgid "Cold storage"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:171
+msgid "Country"
+msgstr ""
+
+#: src/components/NewInvoice/index.tsx:128
+msgid "Create"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:64
+msgid "Create time"
+msgstr ""
+
+#: src/components/Analysis/index.tsx:125
+msgid "Current owes"
+msgstr ""
+
+#: src/components/DashboardMenu/adminMenu.tsx:14
+#: src/components/DashboardMenu/menu.tsx:19
+#: src/components/DashboardMenu/menu.tsx:28
+#: src/components/DashboardMenu/menu.tsx:68
+msgid "Dashboard"
+msgstr ""
+
+#: src/components/DashboardMenu/menu.tsx:46
+msgid "Deposit"
+msgstr ""
+
+#: src/containers/Dashboard/index.tsx:63 src/containers/Deposit/index.tsx:53
+#: src/containers/Exchange/index.tsx:56
+msgid "Deposit history"
+msgstr ""
+
+#: src/components/NewInvoice/index.tsx:124
+msgid "Description"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:195
+msgid "Driving license"
+msgstr ""
+
+#: src/containers/Groups/index.tsx:37
+msgid "edit"
+msgstr ""
+
+#: src/containers/Groups/index.tsx:124
+msgid "edit group"
+msgstr ""
+
+#: src/containers/User/components/Login/index.tsx:105
+msgid "Email"
+msgstr ""
+
+#: src/components/DashboardHeaderProfile/index.tsx:57
+msgid "Email:"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:18
+msgid "Ethereum"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:18
+msgid "EUR"
+msgstr ""
+
+#: src/components/Uploader/index.tsx:125
+msgid "Example Image"
+msgstr ""
+
+#: src/components/DashboardMenu/menu.tsx:40
+msgid "Exchange"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:18
+msgid "failed"
+msgstr ""
+
+#: src/components/NewInvoice/index.tsx:75
+msgid "Failed to create invoice"
+msgstr ""
+
+#: src/containers/Admin/Dashboard/index.tsx:45
+msgid "Fee Cash Desk"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:163
+msgid "Female"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:135
+msgid "First Name"
+msgstr ""
+
+#: src/containers/Admin/Users/index.tsx:141
+msgid "First Page"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:155
+msgid "Gender"
+msgstr ""
+
+#: src/components/GoogleAuth/index.tsx:32
+msgid "Google Authenticator"
+msgstr ""
+
+#: src/containers/Groups/index.tsx:114 src/containers/Groups/index.tsx:129
+#: src/containers/Groups/index.tsx:26
+msgid "Group Name"
+msgstr ""
+
+#: src/components/UserStatusGuide/index.tsx:44
+msgid "Happy Trading"
+msgstr ""
+
+#: src/components/Analysis/index.tsx:110
+msgid "Hot"
+msgstr ""
+
+#: src/containers/Admin/Dashboard/index.tsx:36
+msgid "Hot storage"
+msgstr ""
+
+#: src/components/UserStatusGuide/index.tsx:43
+msgid "Identity check"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:93
+msgid "Image uploaded successfully"
+msgstr ""
+
+#: src/components/Deposit/index.tsx:78
+msgid "In order"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:18
+msgid "IRR"
+msgstr ""
+
+#: src/components/DashboardMenu/adminMenu.tsx:26
+#: src/components/DashboardMenu/menu.tsx:58
+msgid "KYC"
+msgstr ""
+
+#: src/components/DashboardHeaderProfile/index.tsx:60
+msgid "Last login:"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:144
+msgid "Last Name"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:202
+msgid "License ID"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:188
+msgid "License Type"
+msgstr ""
+
+#: src/components/PlaceOrder/index.tsx:54
+msgid "Limit"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:115
+msgid "Loading ..."
+msgstr ""
+
+#: src/containers/User/components/Login/index.tsx:116
+msgid "login"
+msgstr ""
+
+#: src/components/ChangePassword/index.tsx:32
+msgid "Login Password"
+msgstr ""
+
+#: src/components/DashboardHeader/index.tsx:104
+#: src/components/DashboardHeaderProfile/index.tsx:69
+msgid "Logout"
+msgstr ""
+
+#: src/containers/Groups/index.tsx:46 src/containers/Groups/index.tsx:48
+#: src/containers/Groups/index.tsx:50
+msgid "lorem ipsum"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:162
+msgid "Male"
+msgstr ""
+
+#: src/components/Analysis/index.tsx:105
+msgid "Master"
+msgstr ""
+
+#: src/containers/Dashboard/index.tsx:155 src/containers/Dashboard/index.tsx:45
+msgid "New Invoice"
+msgstr ""
+
+#: src/components/NewInvoice/index.tsx:63
+msgid "New Invoice Created"
+msgstr ""
+
+#: src/containers/Admin/Users/index.tsx:147
+msgid "Next Page"
+msgstr ""
+
+#: src/containers/Dashboard/index.tsx:188
+msgid "No Access"
+msgstr ""
+
+#: src/components/NewInvoice/index.tsx:67
+msgid "Open gateway"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:54
+msgid "Order id"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:194
+msgid "Passport"
+msgstr ""
+
+#: src/components/KYC/index.tsx:37
+msgid "Passport cover"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:211
+msgid "Passport Cover"
+msgstr ""
+
+#: src/components/KYC/index.tsx:41 src/containers/KYC/index.tsx:219
+msgid "Passport Personal Page"
+msgstr ""
+
+#: src/containers/User/components/Login/index.tsx:112
+msgid "Password"
+msgstr ""
+
+#: src/containers/Groups/index.tsx:34
+msgid "Permission"
+msgstr ""
+
+#: src/components/NewInvoice/index.tsx:120
+msgid "Please input description, max length is 30"
+msgstr ""
+
+#: src/components/NewInvoice/index.tsx:89
+msgid "Please input price"
+msgstr ""
+
+#: src/containers/User/components/Login/index.tsx:103
+msgid "Please input your Email"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:137
+msgid "Please input your first name"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:146
+msgid "Please input your last name"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:204
+msgid "Please input your license id "
+msgstr ""
+
+#: src/containers/User/components/Login/index.tsx:110
+msgid "Please input your Password"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:178
+msgid "Please select a country"
+msgstr ""
+
+#: src/components/Deposit/index.tsx:57
+msgid "Please select a currency to deposit"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:175 src/containers/KYC/index.tsx:47
+msgid "Please select your country"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:159
+msgid "Please select your gender"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:213
+msgid "please upload your cover"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:221
+msgid "please upload your passport personal page"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:229
+msgid "please upload your slefie  image"
+msgstr ""
+
+#: src/containers/Admin/Users/index.tsx:144
+msgid "Previous Page"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:61
+msgid "Price"
+msgstr ""
+
+#: src/components/Analysis/index.tsx:120
+msgid "Promised owes"
+msgstr ""
+
+#: src/components/UserStatusGuide/index.tsx:40
+msgid "Register"
+msgstr ""
+
+#: src/containers/User/components/Login/index.tsx:123
+msgid "Remember Me"
+msgstr ""
+
+#: src/containers/Groups/index.tsx:92
+msgid "search"
+msgstr ""
+
+#: src/components/KYC/index.tsx:45 src/containers/KYC/index.tsx:227
+msgid "Selfie With ID And Note"
+msgstr ""
+
+#: src/components/PlaceOrder/index.tsx:116
+#: src/components/PlaceOrder/index.tsx:91
+msgid "Sell "
+msgstr ""
+
+#: src/components/Transactions/index.tsx:67
+msgid "Status"
+msgstr ""
+
+#: src/containers/Groups/index.tsx:96
+msgid "sth"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:236
+msgid "Submit"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:18
+msgid "success"
+msgstr ""
+
+#: src/components/DashboardMenu/adminMenu.tsx:32
+msgid "Support"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:58
+msgid "Symbol"
+msgstr ""
+
+#: src/components/DashboardHeader/index.tsx:86
+msgid "System Administration"
+msgstr ""
+
+#: src/components/DashboardHeaderProfile/index.tsx:63
+msgid "System language:"
+msgstr ""
+
+#: src/containers/Admin/Dashboard/index.tsx:42
+msgid "Tax Cash Desk"
+msgstr ""
+
+#: src/components/Deposit/index.tsx:77
+msgid "Total"
+msgstr ""
+
+#: src/containers/Dashboard/index.tsx:123
+#: src/containers/Dashboard/index.tsx:169
+msgid "Transactions"
+msgstr ""
+
+#: src/components/Uploader/index.tsx:99
+#: src/components/UserStatusGuide/index.tsx:42
+msgid "Upload"
+msgstr ""
+
+#: src/components/UserStatusGuide/index.tsx:42
+msgid "Upload your documents"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:18
+msgid "USD"
+msgstr ""
+
+#: src/components/DashboardHeader/index.tsx:76
+msgid "User Dashboard"
+msgstr ""
+
+#: src/components/DashboardMenu/adminMenu.tsx:20
+msgid "Users"
+msgstr ""
+
+#: src/components/UserStatusGuide/index.tsx:41
+msgid "Verify email"
+msgstr ""
+
+#: src/components/UserStatusGuide/index.tsx:41
+msgid "Verify your email address"
+msgstr ""
+
+#: src/containers/Deposit/index.tsx:46
+msgid "View wallet address"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:18
+msgid "waiting"
+msgstr ""
+
+#: src/components/DashboardMenu/menu.tsx:52
+msgid "Wallets"
+msgstr ""
+
+#: src/components/Deposit/index.tsx:119
+msgid "Warning"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:244
+msgid "we will inform you about the progress in your profile page"
+msgstr ""
+
+#: src/components/UserStatusGuide/index.tsx:40
+msgid "You are a member"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:243
+msgid "your information submitted successfully"
+msgstr ""
+
+#~ msgid "invalid invoice"
+#~ msgstr "invoice is invalid"
+
+#~ msgid "New Payment"
+#~ msgstr "New payment"

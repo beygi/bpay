@@ -14,7 +14,7 @@
     "start-prod": "yarn run build && node express.js",
     "test": "jest --watch --coverage --config=configs/jest.json",
     "profile": "webpack -p --config=configs/webpack/prod.js --profile --json > webpack-stats.json",
-    "extract": "nodejs bin/extract.js",
+    "extract": "nodejs bin/extract.js && ls -1 src/services/trans/*.po | xargs -i msgmerge -U --backup=off --no-wrap {} src/services/trans/translation.pot",
     "apiGen": "ls swager-specs -1 | xargs -i node ./src/lib/api/generate.js {} && ls swager-specs -1",
     "doc": "typedoc --tsconfig ./tsconfig.json --readme ./README.md --json docs/docs.json --out docs --mode modules ./src"
   },
