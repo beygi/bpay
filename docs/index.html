@@ -77,19 +77,35 @@
 				<h2 id="generate-documentation">generate documentation</h2>
 				<pre><code class="language-bash">yarn doc</code></pre>
 				<h2 id="nginx-sample-config">Nginx sample config</h2>
-				<pre><code class="language-apache"><span class="hljs-attribute">server</span> {
-       <span class="hljs-attribute"><span class="hljs-nomarkup">listen</span></span> 80;
-       <span class="hljs-attribute"><span class="hljs-nomarkup">listen</span></span><span class="hljs-meta"> [::]:80;
+				<pre><code class="language-nginx"><span class="hljs-section">server</span> {
+   <span class="hljs-attribute">listen</span> <span class="hljs-number">80</span>;
+   <span class="hljs-attribute">server_name</span> my.becopay.com;
+   <span class="hljs-attribute">return</span> <span class="hljs-number">301</span> https://<span class="hljs-variable">$host</span><span class="hljs-variable">$request_uri</span>;
+}
 
-       server_name merchant.becopay.com;
 
-       root /home/staging/web/dist;
-       index index.html;
+<span class="hljs-section">server</span> {
+    <span class="hljs-attribute">listen</span> <span class="hljs-number">443</span>;
+    <span class="hljs-attribute">server_name</span> my.becopay.com;
 
-       location / {
-                try_files $uri $uri/ /index.html;
-       }
-}</span></code></pre>
+    <span class="hljs-attribute">ssl_certificate</span>           /etc/nginx/cert.crt;
+    <span class="hljs-attribute">ssl_certificate_key</span>       /etc/nginx/cert.key;
+
+    <span class="hljs-attribute">ssl</span> <span class="hljs-literal">on</span>;
+    <span class="hljs-attribute">ssl_session_cache</span>  builtin:<span class="hljs-number">1000</span>  shared:SSL:<span class="hljs-number">10m</span>;
+    <span class="hljs-attribute">ssl_protocols</span>  TLSv1 TLSv1.<span class="hljs-number">1</span> TLSv1.<span class="hljs-number">2</span>;
+    <span class="hljs-attribute">ssl_ciphers</span> HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4;
+    <span class="hljs-attribute">ssl_prefer_server_ciphers</span> <span class="hljs-literal">on</span>;
+
+    <span class="hljs-attribute">access_log</span>            /var/log/nginx/merchants.access.log;
+
+    <span class="hljs-attribute">root</span> /home/staging/web/out;
+    <span class="hljs-attribute">index</span> index.html;
+
+    <span class="hljs-attribute">location</span> / {
+        <span class="hljs-attribute">try_files</span> <span class="hljs-variable">$uri</span> <span class="hljs-variable">$uri</span>/ /index.html;
+    }
+}</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
