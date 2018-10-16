@@ -35,7 +35,7 @@ msgstr ""
 msgid "Before you start"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:19
+#: src/components/Transactions/index.tsx:18
 msgid "Bitcoin"
 msgstr ""
 
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:63
+#: src/components/Transactions/index.tsx:64
 msgid "Create time"
 msgstr ""
 
@@ -121,11 +121,11 @@ msgstr ""
 msgid "Email:"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:19
+#: src/components/Transactions/index.tsx:18
 msgid "Ethereum"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:19
+#: src/components/Transactions/index.tsx:18
 msgid "EUR"
 msgstr ""
 
@@ -137,7 +137,7 @@ msgstr ""
 msgid "Exchange"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:19
+#: src/components/Transactions/index.tsx:18
 msgid "failed"
 msgstr ""
 
@@ -199,7 +199,7 @@ msgstr ""
 msgid "In order"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:19
+#: src/components/Transactions/index.tsx:18
 msgid "IRR"
 msgstr ""
 
@@ -226,6 +226,10 @@ msgstr ""
 
 #: src/components/PlaceOrder/index.tsx:54
 msgid "Limit"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:115
+msgid "Loading ..."
 msgstr ""
 
 #: src/containers/User/components/Login/index.tsx:116
@@ -276,7 +280,7 @@ msgstr ""
 msgid "Open gateway"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:53
+#: src/components/Transactions/index.tsx:54
 msgid "Order id"
 msgstr ""
 
@@ -366,7 +370,7 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:60
+#: src/components/Transactions/index.tsx:61
 msgid "Price"
 msgstr ""
 
@@ -396,7 +400,7 @@ msgstr ""
 msgid "Sell "
 msgstr ""
 
-#: src/components/Transactions/index.tsx:66
+#: src/components/Transactions/index.tsx:67
 msgid "Status"
 msgstr ""
 
@@ -408,7 +412,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:19
+#: src/components/Transactions/index.tsx:18
 msgid "success"
 msgstr ""
 
@@ -416,7 +420,7 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:57
+#: src/components/Transactions/index.tsx:58
 msgid "Symbol"
 msgstr ""
 
@@ -450,7 +454,7 @@ msgstr ""
 msgid "Upload your documents"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:19
+#: src/components/Transactions/index.tsx:18
 msgid "USD"
 msgstr ""
 
@@ -474,7 +478,7 @@ msgstr ""
 msgid "View wallet address"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:19
+#: src/components/Transactions/index.tsx:18
 msgid "waiting"
 msgstr ""
 

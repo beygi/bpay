@@ -4,7 +4,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Table, Tag } from "antd";
 import * as React from "react";
-// import { JsonTable } from "react-json-to-html";
 import { connect } from "react-redux";
 import config from "../../config";
 import API from "../../lib/api/invoice";
@@ -23,6 +22,7 @@ interface IProps {
 }
 
 interface IState {
+    /**  list of all invoices */
     invoices: any[];
 }
 
@@ -45,6 +45,7 @@ class Transactions extends React.Component<IProps, IState> {
         this.state = { invoices: null };
         this.getData();
         const intervalId = setInterval(this.getData.bind(this), 5000);
+        // send token with all api requests
         this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
     }
 
@@ -69,10 +70,10 @@ class Transactions extends React.Component<IProps, IState> {
         ];
         let invoices = null;
         if (this.state.invoices !== null) {
-            // map
+            // local Date object
             const pDate = localDate(t.default.language);
+
             invoices = this.state.invoices.map((invoice) => {
-                // const date = new pDate(invoice.date);
                 const date = new pDate(invoice.timestamp).toLocaleString();
                 invoice.date = date;
                 invoice.statusName = t.t(invoice.status);
@@ -111,16 +112,14 @@ class Transactions extends React.Component<IProps, IState> {
         }
         return (
             <div>
-                Loading ...
+                {t.t("Loading ...")}
             </div >
         );
 
     }
 
+    // get invoices using api key
     public getData() {
-        // axios.get("http://staging1.b2mark.com:8090/?action=list").then((response) => {
-        //     this.setState({ invoices: response.data });
-        // });
         this.api.getAllInvoiceUsingGET({
             apiKey: this.props.user.apiKey,
             mob: this.props.user.mobile,

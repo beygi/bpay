@@ -44,7 +44,7 @@ msgstr "بالانس"
 msgid "Before you start"
 msgstr "قبل از اینکه شروع کنید"
 
-#: src/components/Transactions/index.tsx:19
+#: src/components/Transactions/index.tsx:18
 msgid "Bitcoin"
 msgstr "بیت کوین"
 
@@ -81,7 +81,7 @@ msgstr "کشور"
 msgid "Create"
 msgstr "ایجاد"
 
-#: src/components/Transactions/index.tsx:63
+#: src/components/Transactions/index.tsx:64
 msgid "Create time"
 msgstr "زمان ایجاد"
 
@@ -129,11 +129,11 @@ msgstr "ایمیل"
 msgid "Email:"
 msgstr "ایمیل:"
 
-#: src/components/Transactions/index.tsx:19
+#: src/components/Transactions/index.tsx:18
 msgid "Ethereum"
 msgstr "اتریوم"
 
-#: src/components/Transactions/index.tsx:19
+#: src/components/Transactions/index.tsx:18
 msgid "EUR"
 msgstr "یورو"
 
@@ -145,7 +145,7 @@ msgstr ""
 msgid "Exchange"
 msgstr "خرید و فروش"
 
-#: src/components/Transactions/index.tsx:19
+#: src/components/Transactions/index.tsx:18
 msgid "failed"
 msgstr "ناموفق"
 
@@ -206,7 +206,7 @@ msgstr ""
 msgid "In order"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:19
+#: src/components/Transactions/index.tsx:18
 msgid "IRR"
 msgstr "ریال ایران"
 
@@ -234,6 +234,10 @@ msgstr ""
 #: src/components/PlaceOrder/index.tsx:54
 msgid "Limit"
 msgstr ""
+
+#: src/components/Transactions/index.tsx:115
+msgid "Loading ..."
+msgstr "بارگزاری ..."
 
 #: src/containers/User/components/Login/index.tsx:116
 msgid "login"
@@ -281,7 +285,7 @@ msgstr "شما به این قسمت دسترسی ندارید"
 msgid "Open gateway"
 msgstr "باز کردن درگاه"
 
-#: src/components/Transactions/index.tsx:53
+#: src/components/Transactions/index.tsx:54
 msgid "Order id"
 msgstr "شماره سفارش"
 
@@ -387,7 +391,7 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:60
+#: src/components/Transactions/index.tsx:61
 msgid "Price"
 msgstr "قیمت"
 
@@ -416,7 +420,7 @@ msgstr ""
 msgid "Sell "
 msgstr ""
 
-#: src/components/Transactions/index.tsx:66
+#: src/components/Transactions/index.tsx:67
 msgid "Status"
 msgstr "وضعیت"
 
@@ -428,7 +432,7 @@ msgstr ""
 msgid "Submit"
 msgstr "ارسال"
 
-#: src/components/Transactions/index.tsx:19
+#: src/components/Transactions/index.tsx:18
 msgid "success"
 msgstr "پرداخت شده"
 
@@ -436,7 +440,7 @@ msgstr "پرداخت شده"
 msgid "Support"
 msgstr "پشتیبانی"
 
-#: src/components/Transactions/index.tsx:57
+#: src/components/Transactions/index.tsx:58
 msgid "Symbol"
 msgstr "نماد"
 
@@ -470,7 +474,7 @@ msgstr ""
 msgid "Upload your documents"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:19
+#: src/components/Transactions/index.tsx:18
 msgid "USD"
 msgstr "دلار آمریکا"
 
@@ -494,7 +498,7 @@ msgstr "ایمیل تان را تایید کنید"
 msgid "View wallet address"
 msgstr "مشاهده آدرس کیف پول"
 
-#: src/components/Transactions/index.tsx:19
+#: src/components/Transactions/index.tsx:18
 msgid "waiting"
 msgstr "در انتظار پرداخت"
 
@@ -532,9 +536,6 @@ msgstr "اطلاعات شما با موفقیت ارسال شد"
 
 #~ msgid "invalid invoice"
 #~ msgstr "فاکتور نامعتبر است"
-
-#~ msgid "Loading"
-#~ msgstr "بارگزاری"
 
 #~ msgid "minutes"
 #~ msgstr "دقیقه"
