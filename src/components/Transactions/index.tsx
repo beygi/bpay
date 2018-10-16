@@ -123,7 +123,7 @@ class Transactions extends React.Component<IProps, IState> {
         this.api.getAllInvoiceUsingGET({
             apiKey: this.props.user.apiKey,
             mob: this.props.user.mobile,
-            size: 12,
+            size: 200,
             dir: "desc",
             $domain: "https://api.becopay.com",
         }).then((response) => {
