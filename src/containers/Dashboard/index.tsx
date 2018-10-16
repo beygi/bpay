@@ -127,7 +127,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
                         </Row>
                         <Row gutter={8}>
                             <Col md={24} >
-                                <Block title={t.t("Action Sessions")} icon={<FontAwesomeIcon icon={["fas", "user-clock"]} />}  >
+                                <Block title={t.t("Active Sessions")} icon={<FontAwesomeIcon icon={["fas", "user-clock"]} />}  >
                                     <ActieveSessions />
                                 </Block>
                             </Col>
@@ -173,7 +173,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
                         </Row>
                         {/* <Row gutter={8}>
                             <Col md={24} >
-                                <Block title={t.t("Action Sessions")} icon={<FontAwesomeIcon icon={["fas", "user-clock"]} />}  >
+                                <Block title={t.t("Active Sessions")} icon={<FontAwesomeIcon icon={["fas", "user-clock"]} />}  >
                                     <ActieveSessions />
                                 </Block>
                             </Col>

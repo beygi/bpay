@@ -3,6 +3,8 @@
  */
 import * as React from "react";
 const commaNumber = require("comma-number");
+import t from "../../services/trans/i18n";
+import languages from "../../services/trans/languages";
 import "./style.less";
 
 interface IProps {
@@ -12,6 +14,8 @@ interface IProps {
     fixFloatNum?: number;
     /** seperate thousands with comma */
     seperateThousand?: boolean;
+    /** display local numbers */
+    localNumbers?: boolean;
 }
 
 interface IState {
@@ -31,13 +35,13 @@ class ExchangeValueComponent extends React.Component<IProps, IState> {
     public static getDerivedStateFromProps(props, state) {
         // check for grow or fall
         if (props.value > state.value) {
-            return { status: "grow", value: props.value };
+            return { status: "grow", value: parseFloat(props.value) };
         }
         if (props.value < state.value) {
-            return { status: "fall", value: props.value };
+            return { status: "fall", value: parseFloat(props.value) };
         }
         if (props.value === state.value) {
-            return { status: "normal", value: props.value };
+            return { status: "normal", value: parseFloat(props.value) };
         }
         return null;
     }
@@ -45,17 +49,27 @@ class ExchangeValueComponent extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
         this.state = {
-            value: this.props.value,
+            value: parseFloat(this.props.value + ""),
+            status: "normal",
         };
     }
 
     public render() {
-        let value = this.props.value.toFixed( (this.props.fixFloatNum === 0) ? this.props.fixFloatNum : ( this.props.fixFloatNum || 2) );
-        if (this.props.seperateThousand) {
-            value = commaNumber(value);
+        const floats = (this.props.fixFloatNum === 0) ? this.props.fixFloatNum : (this.props.fixFloatNum || 2);
+        let output = "";
+        const options = {
+            minimumFractionDigits: floats,
+            maximumFractionDigits: floats,
+            useGrouping: this.props.seperateThousand,
+        };
+
+        if (this.props.localNumbers == null || this.props.localNumbers) {
+            output = this.state.value.toLocaleString(t.default.language, options);
+        } else {
+            output = this.state.value.toLocaleString("en", options);
         }
         return (
-            <span className={`exchange-value ${this.state.status}`}>{value}</span>
+            <span className={`exchange-value ${this.state.status}`}>{output}</span>
         );
     }
 }

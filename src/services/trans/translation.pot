@@ -11,7 +11,7 @@ msgid "Account information"
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:130
-msgid "Action Sessions"
+msgid "Active Sessions"
 msgstr ""
 
 #: src/containers/Groups/index.tsx:109
@@ -33,6 +33,10 @@ msgstr ""
 #: src/components/Deposit/index.tsx:60
 #: src/containers/KYC/index.tsx:126
 msgid "Before you start"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:19
+msgid "Bitcoin"
 msgstr ""
 
 #: src/components/PlaceOrder/index.tsx:58
@@ -68,7 +72,7 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:62
+#: src/components/Transactions/index.tsx:63
 msgid "Create time"
 msgstr ""
 
@@ -117,12 +121,24 @@ msgstr ""
 msgid "Email:"
 msgstr ""
 
+#: src/components/Transactions/index.tsx:19
+msgid "Ethereum"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:19
+msgid "EUR"
+msgstr ""
+
 #: src/components/Uploader/index.tsx:125
 msgid "Example Image"
 msgstr ""
 
 #: src/components/DashboardMenu/menu.tsx:40
 msgid "Exchange"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:19
+msgid "failed"
 msgstr ""
 
 #: src/components/NewInvoice/index.tsx:75
@@ -181,6 +197,10 @@ msgstr ""
 
 #: src/components/Deposit/index.tsx:78
 msgid "In order"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:19
+msgid "IRR"
 msgstr ""
 
 #: src/components/DashboardMenu/adminMenu.tsx:26
@@ -256,7 +276,7 @@ msgstr ""
 msgid "Open gateway"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:52
+#: src/components/Transactions/index.tsx:53
 msgid "Order id"
 msgstr ""
 
@@ -346,7 +366,7 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:59
+#: src/components/Transactions/index.tsx:60
 msgid "Price"
 msgstr ""
 
@@ -376,7 +396,7 @@ msgstr ""
 msgid "Sell "
 msgstr ""
 
-#: src/components/Transactions/index.tsx:65
+#: src/components/Transactions/index.tsx:66
 msgid "Status"
 msgstr ""
 
@@ -388,11 +408,15 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
+#: src/components/Transactions/index.tsx:19
+msgid "success"
+msgstr ""
+
 #: src/components/DashboardMenu/adminMenu.tsx:32
 msgid "Support"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:56
+#: src/components/Transactions/index.tsx:57
 msgid "Symbol"
 msgstr ""
 
@@ -426,6 +450,10 @@ msgstr ""
 msgid "Upload your documents"
 msgstr ""
 
+#: src/components/Transactions/index.tsx:19
+msgid "USD"
+msgstr ""
+
 #: src/components/DashboardHeader/index.tsx:76
 msgid "User Dashboard"
 msgstr ""
@@ -444,6 +472,10 @@ msgstr ""
 
 #: src/containers/Deposit/index.tsx:46
 msgid "View wallet address"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:19
+msgid "waiting"
 msgstr ""
 
 #: src/components/DashboardMenu/menu.tsx:52

@@ -16,6 +16,7 @@ import Block from "../Holder";
 import USER from "./../../lib/user";
 import "./style.less";
 
+const fiats = [t.t("IRR"), t.t("USD"), t.t("EUR"), t.t("Bitcoin"), t.t("Ethereum"), t.t("failed"), t.t("waiting"), t.t("success")];
 interface IProps {
     /**  current user's email address that is synced with redux */
     user: any;
@@ -63,7 +64,7 @@ class Transactions extends React.Component<IProps, IState> {
             dataIndex: "date",
         }, {
             title: t.t("Status"),
-            dataIndex: "status",
+            dataIndex: "statusName",
         },
         ];
         let invoices = null;
@@ -74,13 +75,24 @@ class Transactions extends React.Component<IProps, IState> {
                 // const date = new pDate(invoice.date);
                 const date = new pDate(invoice.timestamp).toLocaleString();
                 invoice.date = date;
+                invoice.statusName = t.t(invoice.status);
                 return (
                     <Block key={invoice.id} collapse className={"transaction-block"}
-                        title={<span><Tag className="invoice-id" color="#453e41">
-                            #{invoice.id}
-                        </Tag>  <span className="symbol">
-                                {invoice.symbol} </span> <Ex fixFloatNum={0} value={invoice.price} seperateThousand /></span>}
-                        iconPosition="right" icon={<span><Tag color="#453e41">{invoice.description}</Tag> <Tag color="#898989">{date}</Tag>
+                        title={<span>
+                            <Tag className="invoice-id" color="#453e41">
+                                {invoice.id}
+                            </Tag>
+                            <span className="symbol">
+                                {t.t(invoice.symbol)}
+                            </span>
+                            <span className="price-value" >
+                                <Ex fixFloatNum={0} value={invoice.price} seperateThousand />
+                            </span>
+                        </span>}
+                        iconPosition="right" icon={<span><Tag color="#453e41">{invoice.description}</Tag>
+                            <Tag color="#898989">
+                                {date}
+                            </Tag>
                             {icons[invoice.status]}
                             <a className="callback" target="blank" href={invoice.callback}><FontAwesomeIcon icon={["fas", "link"]} /></a>
                             &nbsp;

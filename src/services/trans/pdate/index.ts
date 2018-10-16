@@ -114,6 +114,12 @@ function digits_fa2en(text) {
     });
 }
 
+function digits_en2fa(text) {
+    return text.replace(/\d/g, function(d) {
+        return String.fromCharCode(d.charCodeAt(0) + 1728);
+    });
+}
+
 function pad2(number) {
     return number < 10 ? "0" + number : number;
 }
@@ -300,8 +306,8 @@ JDate.prototype.setUTCMonth = function(monthValue, dayValue) {
  * so we change it to return date in Jalali calendar
  */
 JDate.prototype.toLocaleString = function() {
-    return this.getFullYear() + "/" + pad2(this.getMonth() + 1) + "/" + pad2(this.getDate()) + " " +
-        pad2(this.getHours()) + ":" + pad2(this.getMinutes()) + ":" + pad2(this.getSeconds());
+    return digits_en2fa(this.getFullYear() + "/" + pad2(this.getMonth() + 1) + "/" + pad2(this.getDate()) + " ساعت: " +
+        pad2(this.getHours()) + ":" + pad2(this.getMinutes()) + ":" + pad2(this.getSeconds()));
 };
 /**
  * The Date.now() method returns the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC.
