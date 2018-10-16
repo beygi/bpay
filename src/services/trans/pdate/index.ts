@@ -106,7 +106,7 @@ function jd_to_persian(jd) {
 // Cache original `Date` class. User may set window.Date = JDate
 
 // JDATE class from tahajahangir/jdate
-const Date = window.Date;
+const Date = (window as any).Date;
 
 function digits_fa2en(text) {
     return text.replace(/[۰-۹]/g, function(d) {
@@ -200,46 +200,69 @@ function parseDate(string, convertToPersian) {
     return date;
 }
 
-function JDate(a, month?, day?, hour?, minute?, second?, millisecond?) {
-    if (typeof a == "string") {
-        const convert = (month != undefined) ? month : true;
-        this._d = parseDate(digits_fa2en(a), convert);
-        if (!this._d) { throw new Error("Cannot parse date string"); }
-    } else if (arguments.length == 0) {
-        this._d = new Date();
-    } else if (arguments.length == 1) {
-        this._d = new Date((a instanceof JDate) ? a._d : a);
-    } else {
-        const persian = jd_to_gregorian(persian_to_jd_fixed(a, (month || 0) + 1, day || 1));
-        this._d = new Date(persian[0], persian[1] - 1, persian[2], hour || 0, minute || 0, second || 0, millisecond || 0);
-    }
-    this._date = this._d;
-    this._cached_date_ts = null;
-    this._cached_date = [0, 0, 0];
-    this._cached_utc_date_ts = null;
-    this._cached_utc_date = [0, 0, 0];
-}
+class JDate {
+    public static now: any;
+    public static parse: (string: any) => void;
+    public static UTC: (year: any, month: any, date: any, hours: any, minutes: any, seconds: any, milliseconds: any) => any;
+    public _d: any;
+    public _date: any;
+    public _cached_date: number[];
+    public _cached_utc_date: number[];
+    public _cached_utc_date_ts: any;
+    public _cached_date_ts: any;
+    public getDate: () => any;
+    public getMonth: () => number;
+    public getUTCDate: () => any;
+    public getUTCMonth: () => number;
+    public getUTCFullYear: () => any;
+    public setFullYear: (yearValue: any) => void;
+    public setMonth: (monthValue: any, dayValue: any) => void;
+    public setUTCFullYear: (yearValue: any) => void;
+    public setUTCDate: (dayValue: any) => void;
+    public setUTCMonth: (monthValue: any, dayValue: any) => void;
+    public setDate: (dayValue: any) => void;
+    public getFullYear: () => any;
+    public getTime: () => any;
 
-JDate.prototype = {
-    _persianDate() {
+    constructor(a: any, month?: any, day?: any, hour?: any, minute?: any, second?: any, millisecond?: any) {
+        if (typeof a == "string") {
+            const convert = (month != undefined) ? month : true;
+            this._d = parseDate(digits_fa2en(a), convert);
+            if (!this._d) { throw new Error("Cannot parse date string"); }
+        } else if (arguments.length == 0) {
+            this._d = new Date();
+        } else if (arguments.length == 1) {
+            this._d = new Date((a instanceof JDate) ? a._d : a);
+        } else {
+            const persian = jd_to_gregorian(persian_to_jd_fixed(a, (month || 0) + 1, day || 1));
+            this._d = new Date(persian[0], persian[1] - 1, persian[2], hour || 0, minute || 0, second || 0, millisecond || 0);
+        }
+        this._date = this._d;
+        this._cached_date_ts = null;
+        this._cached_date = [0, 0, 0];
+        this._cached_utc_date_ts = null;
+        this._cached_utc_date = [0, 0, 0];
+    }
+
+    public _persianDate() {
         if (this._cached_date_ts != +this._d) {
             this._cached_date_ts = +this._d;
             this._cached_date = jd_to_persian(gregorian_to_jd(this._d.getFullYear(), this._d.getMonth() + 1, this._d.getDate()));
         }
         return this._cached_date;
-    },
+    }
     /**
      * Exactly like `_persianDate` but for UTC value of date
      */
-    _persianUTCDate() {
+    public _persianUTCDate() {
         if (this._cached_utc_date_ts != +this._d) {
             this._cached_utc_date_ts = +this._d;
             this._cached_utc_date = jd_to_persian(gregorian_to_jd(this._d.getUTCFullYear(), this._d.getUTCMonth() + 1, this._d.getUTCDate()));
         }
         return this._cached_utc_date;
-    },
+    }
 
-    _setPersianDate(which, value, dayValue) {
+    public _setPersianDate(which, value, dayValue) {
         const persian = this._persianDate();
         persian[which] = value;
         if (dayValue !== undefined) {
@@ -248,11 +271,11 @@ JDate.prototype = {
         const new_date = jd_to_gregorian(persian_to_jd_fixed(persian[0], persian[1], persian[2]));
         this._d.setFullYear(new_date[0]);
         this._d.setMonth(new_date[1] - 1, new_date[2]);
-    },
+    }
     /**
      * Exactly like `_setPersianDate`, but operates UTC value
      */
-    _setUTCPersianDate(which, value, dayValue) {
+    public _setUTCPersianDate(which, value, dayValue) {
         const persian = this._persianUTCDate();
         if (dayValue !== undefined) {
             persian[2] = dayValue;
@@ -261,8 +284,9 @@ JDate.prototype = {
         const new_date = jd_to_gregorian(persian_to_jd_fixed(persian[0], persian[1], persian[2]));
         this._d.setUTCFullYear(new_date[0]);
         this._d.setUTCMonth(new_date[1] - 1, new_date[2]);
-    },
-};
+    }
+}
+
 // All date getter methods
 JDate.prototype.getDate = function() {
     return this._persianDate()[2];
@@ -317,7 +341,7 @@ JDate.now = Date.now;
  * parses a string representation of a date, and returns the number of milliseconds since January 1, 1970, 00:00:00 UTC.
  */
 JDate.parse = function(string) {
-    JDate(string).getTime();
+    new JDate(string).getTime();
 };
 /**
  * The Date.UTC() method accepts the same parameters as the longest form of the constructor, and returns the number of
