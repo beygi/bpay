@@ -58,7 +58,7 @@ class Transactions extends React.Component<IProps, IState> {
             dataIndex: "symbol",
         }, {
             title: t.t("Price"),
-            dataIndex: "price",
+            dataIndex: "priceComponent",
         }, {
             title: t.t("Create time"),
             dataIndex: "date",
@@ -76,6 +76,7 @@ class Transactions extends React.Component<IProps, IState> {
                 const date = new pDate(invoice.timestamp).toLocaleString();
                 invoice.date = date;
                 invoice.statusName = t.t(invoice.status);
+                invoice.priceComponent = <Ex fixFloatNum={0} value={invoice.price} seperateThousand />;
                 return (
                     <Block key={invoice.id} collapse className={"transaction-block"}
                         title={<span>
