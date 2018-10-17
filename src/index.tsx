@@ -16,6 +16,7 @@ import USER from "./lib/user";
 import { updateUser } from "./redux/app/actions";
 import { setUser } from "./redux/app/actions";
 import { store } from "./redux/store";
+import t from "./services/trans/i18n";
 import "./theme/application.less";
 
 require("./lib/icon");
@@ -30,7 +31,7 @@ const user = USER.getInstance();
 const keyCloak = KeyCloacksApi.getInstance();
 
 // Docs : `https://www.keycloak.org/docs/3.0/securing_apps/topics/oidc/javascript-adapter.html`
-user.keycloak.init({ onLoad: "login-required" }).success((authenticated) => {
+user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
 
     if (authenticated) {
 
@@ -78,9 +79,14 @@ user.keycloak.init({ onLoad: "login-required" }).success((authenticated) => {
                 }
             });
         }, 30000);
+    } else {
+        // user is not logged in
+        store.dispatch(setUser(null));
+        user.keycloak.login({ kcLocale: t.default.language });
     }
     user.keycloak.onAuthLogout = () => {
-        // user is not authenticated
+        // user is sso loged out
         store.dispatch(setUser(null));
+        user.keycloak.login({ kcLocale: t.default.language });
     };
 });
