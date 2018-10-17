@@ -30,7 +30,7 @@ const user = USER.getInstance();
 const keyCloak = KeyCloacksApi.getInstance();
 
 // Docs : `https://www.keycloak.org/docs/3.0/securing_apps/topics/oidc/javascript-adapter.html`
-user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
+user.keycloak.init({ onLoad: "login-required" }).success((authenticated) => {
 
     if (authenticated) {
 
@@ -78,10 +78,9 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
                 }
             });
         }, 30000);
-    } else {
+    }
+    user.keycloak.onAuthLogout = () => {
         // user is not authenticated
         store.dispatch(setUser(null));
-        // redirect to login/register page
-        user.keycloak.login();
-    }
+    };
 });
