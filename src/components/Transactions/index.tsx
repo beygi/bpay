@@ -51,7 +51,7 @@ class Transactions extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
-        this.state = { invoices: { count: 0 }, currentPage: 1, loading: true, statusFilters: { success: true, waiting: true, failed: true } };
+        this.state = { invoices: { count: 0 }, currentPage: 1, loading: true, statusFilters: { success: false, waiting: false, failed: false } };
         // send token with all api requests
         this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
     }
