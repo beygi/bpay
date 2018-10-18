@@ -58,7 +58,7 @@ class Transactions extends React.Component<IProps, IState> {
 
     public componentDidMount() {
         this.getData();
-        const intervalId = setInterval(this.getData.bind(this), 10000);
+        const intervalId = setInterval(this.getData.bind(this), 5000);
     }
 
     public render() {
