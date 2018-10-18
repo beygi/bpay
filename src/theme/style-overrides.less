@@ -124,10 +124,11 @@
         margin-right: auto;
         margin-left: 8px;
     }
-    .ant-pagination-item-link
+    .ant-pagination-item-link,.ant-pagination-item-link-icon
     {
-        transform: scaleX(-1);
+        transform: scaleX(-1) !important;
     }
+    
 }
 
 
@@ -143,6 +144,14 @@
 
 .ant-tabs:not(.ant-tabs-vertical) > .ant-tabs-content > .ant-tabs-tabpane-inactive {
     width: 0;
+}
+.ant-pagination-item-ellipsis , .ant-pagination-item-link-icon
+{
+    color: @secondaryTextColor !important;
+    &:hover , &:focus
+    {
+        color: @secondaryTextColor !important;
+    }
 }
 .ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link ,  .ant-pagination-prev
 {
