@@ -1,17 +1,37 @@
 @import (reference) "../../theme/application";
 &[dir='rtl'] {
-
+    .transaction-filters 
+    {
+        text-align: left;
+    }
 }
 
 
 /////////////////////////////////////////////////
 
+.transaction-filters    
+{
+    text-align: right;
+    margin-bottom: 10px;
+    .filter
+    {
+        width: 30px;
+        display: inline-block;
+        text-align: center;
+        font-size: 20px;            
+        cursor: pointer;
+    }
+    .false
+    {
+        opacity: 0.2;
+    }
+}                
 
 .transaction-block
 {
     background-color: @secondaryVariant9;
     box-shadow: none;
-    border-radius: 2px;    
+    border-radius: 2px;
     .price-value
     {
         display: inline-block;

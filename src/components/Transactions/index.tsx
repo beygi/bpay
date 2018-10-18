@@ -2,8 +2,9 @@
  * @module Components/Transactions
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Pagination, Spin } from "antd";
 import { Table, Tag } from "antd";
+import { Pagination, Spin } from "antd";
+import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
 import config from "../../config";
@@ -27,6 +28,11 @@ interface IState {
     invoices: any;
     currentPage: number;
     loading: boolean;
+    statusFilters: {
+        success?: boolean,
+        waiting?: boolean,
+        failed?: boolean,
+    };
 }
 
 const icons = {
@@ -45,7 +51,7 @@ class Transactions extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
-        this.state = { invoices: { count: 0 }, currentPage: 1, loading: true };
+        this.state = { invoices: { count: 0 }, currentPage: 1, loading: true, statusFilters: { success: true, waiting: true, failed: true } };
         // send token with all api requests
         this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
     }
@@ -74,6 +80,7 @@ class Transactions extends React.Component<IProps, IState> {
             dataIndex: "statusName",
         },
         ];
+
         let invoices = null;
         if (this.state.invoices && this.state.invoices.content !== undefined) {
             // local Date object
@@ -111,11 +118,27 @@ class Transactions extends React.Component<IProps, IState> {
                 );
             });
         }
+        // create filters.
+        const filters = Object.keys(this.state.statusFilters).map(
+            (status) => {
+                return (<span onClick={() => {
+                    const statusFilters = this.state.statusFilters;
+                    statusFilters[status] = !statusFilters[status];
+                    this.setState({ statusFilters, loading: true, currentPage: 1 }, () => { this.getData(); });
+                }} key={status} className={`filter ${this.state.statusFilters[status]}`
+                }>
+                    {icons[status]}</span >);
+            },
+        );
+
         return (
             <div>
-                <Spin spinning={this.state.loading} delay={500}>
+                <div className="transaction-filters">
+                    {filters}
+                </div>
+                < Spin spinning={this.state.loading} delay={500} >
                     {invoices}
-                </Spin>
+                </Spin >
                 <Pagination onChange={(page) => { this.setState({ currentPage: page, loading: true }, () => { this.getData(); }); }}
                     hideOnSinglePage pageSize={12} current={this.state.currentPage} total={this.state.invoices.count}
                     itemRender={this.itemRender}
@@ -127,11 +150,13 @@ class Transactions extends React.Component<IProps, IState> {
 
     // get invoices using api key
     public getData() {
+        const statusFilters = Object.keys(_.pickBy(this.state.statusFilters, (value) => value)).toString();
         this.api.getAllInvoicev2UsingGET({
             apiKey: this.props.user.apiKey,
             mob: this.props.user.mobile,
             size: 12,
             page: this.state.currentPage - 1,
+            status: statusFilters,
             dir: "desc",
             $domain: "https://api.becopay.com",
         }).then((response) => {
