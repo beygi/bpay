@@ -1,4 +1,5 @@
 {
+
     "swagger": "2.0",
     "info": {
         "description": "Invoice Service",
@@ -18,26 +19,37 @@
     "host": "87.98.188.77:9193",
     "basePath": "/",
     "tags": [{
-        "name": "invoice-rest",
-        "description": "Invoice Rest"
-    }, {
-        "name": "merchant-rest",
-        "description": "Merchant Rest"
-    }, {
-        "name": "operation-handler",
-        "description": "Operation Handler"
-    }, {
-        "name": "web-mvc-endpoint-handler-mapping",
-        "description": "Web Mvc Endpoint Handler Mapping"
-    }],
-    "schemes": ["https"],
+            "name": "invoice-rest",
+            "description": "Invoice Rest"
+        },
+        {
+            "name": "merchant-rest",
+            "description": "Merchant Rest"
+        },
+        {
+            "name": "operation-handler",
+            "description": "Operation Handler"
+        },
+        {
+            "name": "web-mvc-endpoint-handler-mapping",
+            "description": "Web Mvc Endpoint Handler Mapping"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "paths": {
         "/actuator": {
             "get": {
-                "tags": ["web-mvc-endpoint-handler-mapping"],
+                "tags": [
+                    "web-mvc-endpoint-handler-mapping"
+                ],
                 "summary": "links",
                 "operationId": "linksUsingGET",
-                "produces": ["application/json", "application/vnd.spring-boot.actuator.v2+json"],
+                "produces": [
+                    "application/json",
+                    "application/vnd.spring-boot.actuator.v2+json"
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -66,10 +78,15 @@
         },
         "/actuator/health": {
             "get": {
-                "tags": ["operation-handler"],
+                "tags": [
+                    "operation-handler"
+                ],
                 "summary": "handle",
                 "operationId": "handleUsingGET",
-                "produces": ["application/json", "application/vnd.spring-boot.actuator.v2+json"],
+                "produces": [
+                    "application/json",
+                    "application/vnd.spring-boot.actuator.v2+json"
+                ],
                 "parameters": [{
                     "in": "body",
                     "name": "body",
@@ -104,10 +121,15 @@
         },
         "/actuator/info": {
             "get": {
-                "tags": ["operation-handler"],
+                "tags": [
+                    "operation-handler"
+                ],
                 "summary": "handle",
                 "operationId": "handleUsingGET_1",
-                "produces": ["application/json", "application/vnd.spring-boot.actuator.v2+json"],
+                "produces": [
+                    "application/json",
+                    "application/vnd.spring-boot.actuator.v2+json"
+                ],
                 "parameters": [{
                     "in": "body",
                     "name": "body",
@@ -142,29 +164,36 @@
         },
         "/invoice": {
             "get": {
-                "tags": ["invoice-rest"],
+                "tags": [
+                    "invoice-rest"
+                ],
                 "summary": "getById",
                 "operationId": "getByIdUsingGET",
-                "produces": ["application/json"],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [{
-                    "name": "apiKey",
-                    "in": "query",
-                    "description": "apiKey",
-                    "required": false,
-                    "type": "string"
-                }, {
-                    "name": "id",
-                    "in": "query",
-                    "description": "id",
-                    "required": true,
-                    "type": "string"
-                }, {
-                    "name": "mob",
-                    "in": "query",
-                    "description": "mob",
-                    "required": false,
-                    "type": "string"
-                }],
+                        "name": "apiKey",
+                        "in": "query",
+                        "description": "apiKey",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "mob",
+                        "in": "query",
+                        "description": "mob",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -191,11 +220,17 @@
                 "deprecated": false
             },
             "post": {
-                "tags": ["invoice-rest"],
+                "tags": [
+                    "invoice-rest"
+                ],
                 "summary": "addInvoice",
                 "operationId": "addInvoiceUsingPOST",
-                "consumes": ["application/json"],
-                "produces": ["*/*"],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*"
+                ],
                 "parameters": [{
                     "in": "body",
                     "name": "inv",
@@ -236,53 +271,63 @@
         },
         "/invoice/all": {
             "get": {
-                "tags": ["invoice-rest"],
+                "tags": [
+                    "invoice-rest"
+                ],
                 "summary": "return invoices pagination if not found 204 content not found",
                 "operationId": "getAllInvoiceUsingGET",
-                "produces": ["application/json"],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [{
-                    "name": "apiKey",
-                    "in": "query",
-                    "description": "apiKey",
-                    "required": true,
-                    "type": "string"
-                }, {
-                    "name": "dir",
-                    "in": "query",
-                    "description": "dir",
-                    "required": false,
-                    "type": "string",
-                    "default": "asc"
-                }, {
-                    "name": "mob",
-                    "in": "query",
-                    "description": "mob",
-                    "required": true,
-                    "type": "string"
-                }, {
-                    "name": "page",
-                    "in": "query",
-                    "description": "page",
-                    "required": false,
-                    "type": "integer",
-                    "default": 0,
-                    "format": "int32"
-                }, {
-                    "name": "size",
-                    "in": "query",
-                    "description": "size",
-                    "required": false,
-                    "type": "integer",
-                    "default": 20,
-                    "format": "int32"
-                }, {
-                    "name": "status",
-                    "in": "query",
-                    "description": "status",
-                    "required": false,
-                    "type": "string",
-                    "default": "success,waiting,failed"
-                }],
+                        "name": "apiKey",
+                        "in": "query",
+                        "description": "apiKey",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "dir",
+                        "in": "query",
+                        "description": "dir",
+                        "required": false,
+                        "type": "string",
+                        "default": "asc"
+                    },
+                    {
+                        "name": "mob",
+                        "in": "query",
+                        "description": "mob",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "format": "int32"
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "size",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20,
+                        "format": "int32"
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "status",
+                        "required": false,
+                        "type": "string",
+                        "default": "success,waiting,failed"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -320,53 +365,63 @@
         },
         "/invoice/allv2": {
             "get": {
-                "tags": ["invoice-rest"],
+                "tags": [
+                    "invoice-rest"
+                ],
                 "summary": "return invoices pagination if not found 204 content not found",
                 "operationId": "getAllInvoicev2UsingGET",
-                "produces": ["application/json"],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [{
-                    "name": "apiKey",
-                    "in": "query",
-                    "description": "apiKey",
-                    "required": true,
-                    "type": "string"
-                }, {
-                    "name": "dir",
-                    "in": "query",
-                    "description": "dir",
-                    "required": false,
-                    "type": "string",
-                    "default": "asc"
-                }, {
-                    "name": "mob",
-                    "in": "query",
-                    "description": "mob",
-                    "required": true,
-                    "type": "string"
-                }, {
-                    "name": "page",
-                    "in": "query",
-                    "description": "page",
-                    "required": false,
-                    "type": "integer",
-                    "default": 0,
-                    "format": "int32"
-                }, {
-                    "name": "size",
-                    "in": "query",
-                    "description": "size",
-                    "required": false,
-                    "type": "integer",
-                    "default": 20,
-                    "format": "int32"
-                }, {
-                    "name": "status",
-                    "in": "query",
-                    "description": "status",
-                    "required": false,
-                    "type": "string",
-                    "default": "success,waiting,failed"
-                }],
+                        "name": "apiKey",
+                        "in": "query",
+                        "description": "apiKey",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "dir",
+                        "in": "query",
+                        "description": "dir",
+                        "required": false,
+                        "type": "string",
+                        "default": "asc"
+                    },
+                    {
+                        "name": "mob",
+                        "in": "query",
+                        "description": "mob",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "format": "int32"
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "size",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20,
+                        "format": "int32"
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "status",
+                        "required": false,
+                        "type": "string",
+                        "default": "success,waiting,failed"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -398,11 +453,17 @@
         },
         "/invoice/coinselection": {
             "put": {
-                "tags": ["invoice-rest"],
+                "tags": [
+                    "invoice-rest"
+                ],
                 "summary": "change coin specific invoice",
                 "operationId": "changeCoinUsingPUT",
-                "consumes": ["application/json"],
-                "produces": ["application/json"],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [{
                     "in": "body",
                     "name": "changeCode",
@@ -446,23 +507,29 @@
         },
         "/merchant": {
             "get": {
-                "tags": ["merchant-rest"],
+                "tags": [
+                    "merchant-rest"
+                ],
                 "summary": "getMerchantInfo",
                 "operationId": "getMerchantInfoUsingGET",
-                "produces": ["*/*"],
+                "produces": [
+                    "*/*"
+                ],
                 "parameters": [{
-                    "name": "mob",
-                    "in": "query",
-                    "description": "mob",
-                    "required": true,
-                    "type": "string"
-                }, {
-                    "name": "token",
-                    "in": "query",
-                    "description": "token",
-                    "required": true,
-                    "type": "string"
-                }],
+                        "name": "mob",
+                        "in": "query",
+                        "description": "mob",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -483,11 +550,17 @@
                 "deprecated": false
             },
             "post": {
-                "tags": ["merchant-rest"],
+                "tags": [
+                    "merchant-rest"
+                ],
                 "summary": "addMerchant",
                 "operationId": "addMerchantUsingPOST",
-                "consumes": ["application/json"],
-                "produces": ["*/*"],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*"
+                ],
                 "parameters": [{
                     "in": "body",
                     "name": "merchant",
@@ -522,10 +595,14 @@
         },
         "/merchant/token": {
             "get": {
-                "tags": ["merchant-rest"],
+                "tags": [
+                    "merchant-rest"
+                ],
                 "summary": "getToken",
                 "operationId": "getTokenUsingGET",
-                "produces": ["*/*"],
+                "produces": [
+                    "*/*"
+                ],
                 "parameters": [{
                     "name": "mob",
                     "in": "query",
@@ -732,4 +809,5 @@
             "title": "PaginationInvoiceResponse"
         }
     }
+
 }

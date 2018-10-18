@@ -18,23 +18,7 @@ interface InvRequest {
     "orderId": string;
     "price": string;
 }
-interface InvoiceResponse {
-    "callback": string;
-    "cryptoAmount": string;
-    "date": string;
-    "description": string;
-    "gatewayUrl": string;
-    "id": string;
-    "orderId": string;
-    "price": number;
-    "qr": string;
-    "remaining": number;
-    "shopName": string;
-    "status": string;
-    "symbol": string;
-    "timeout": number;
-    "timestamp": number;
-}
+
 interface Merchant {
     "callback": string;
     "mobile": string;
@@ -42,22 +26,9 @@ interface Merchant {
     "shopName": string;
     "token": string;
 }
-interface PaginationInvoiceResponse {
-    "content": InvoiceResponse[]
-    | InvoiceResponse
-
-    ;
-    "count": number;
-    "name": string;
-    "next": string;
-    "page": number;
-    "previous": string;
-    "size": number;
-    "status": number;
-}
 
 interface Logger {
-    log: (line: string) => any
+    log: (line: string) => any;
 }
 export default class invoiceApi {
     public static getInstance() {
