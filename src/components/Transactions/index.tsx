@@ -62,23 +62,28 @@ class Transactions extends React.Component<IProps, IState> {
     }
 
     public render() {
-        const columns = [{
-            title: t.t("Order id"),
-            dataIndex: "orderId",
-        },
-        {
-            title: t.t("Symbol"),
-            dataIndex: "symbol",
-        }, {
-            title: t.t("Price"),
-            dataIndex: "priceComponent",
-        }, {
-            title: t.t("Create time"),
-            dataIndex: "date",
-        }, {
-            title: t.t("Status"),
-            dataIndex: "statusName",
-        },
+        const columns = [
+            {
+                title: t.t("Shop Name"),
+                dataIndex: "shopName",
+            },
+            {
+                title: t.t("Order id"),
+                dataIndex: "orderId",
+            },
+            {
+                title: t.t("Symbol"),
+                dataIndex: "symbol",
+            }, {
+                title: t.t("Price"),
+                dataIndex: "priceComponent",
+            }, {
+                title: t.t("Create time"),
+                dataIndex: "date",
+            }, {
+                title: t.t("Status"),
+                dataIndex: "statusName",
+            },
         ];
 
         let invoices = null;

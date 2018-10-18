@@ -20,7 +20,7 @@ msgstr ""
 msgid "Account information"
 msgstr "اطلاعات حساب"
 
-#: src/containers/Dashboard/index.tsx:130
+#: src/containers/Dashboard/index.tsx:128
 msgid "Active Sessions"
 msgstr "نشست های فعال"
 
@@ -44,7 +44,7 @@ msgstr "بالانس"
 msgid "Before you start"
 msgstr "قبل از اینکه شروع کنید"
 
-#: src/components/Transactions/index.tsx:18
+#: src/components/Transactions/index.tsx:20
 msgid "Bitcoin"
 msgstr "بیت کوین"
 
@@ -81,7 +81,7 @@ msgstr "کشور"
 msgid "Create"
 msgstr "ایجاد"
 
-#: src/components/Transactions/index.tsx:64
+#: src/components/Transactions/index.tsx:81
 msgid "Create time"
 msgstr "زمان ایجاد"
 
@@ -129,11 +129,11 @@ msgstr "ایمیل"
 msgid "Email:"
 msgstr "ایمیل:"
 
-#: src/components/Transactions/index.tsx:18
+#: src/components/Transactions/index.tsx:20
 msgid "Ethereum"
 msgstr "اتریوم"
 
-#: src/components/Transactions/index.tsx:18
+#: src/components/Transactions/index.tsx:20
 msgid "EUR"
 msgstr "یورو"
 
@@ -145,7 +145,7 @@ msgstr ""
 msgid "Exchange"
 msgstr "خرید و فروش"
 
-#: src/components/Transactions/index.tsx:18
+#: src/components/Transactions/index.tsx:20
 msgid "failed"
 msgstr "ناموفق"
 
@@ -206,7 +206,7 @@ msgstr ""
 msgid "In order"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:18
+#: src/components/Transactions/index.tsx:20
 msgid "IRR"
 msgstr "ریال ایران"
 
@@ -235,10 +235,6 @@ msgstr ""
 msgid "Limit"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:115
-msgid "Loading ..."
-msgstr "بارگزاری ..."
-
 #: src/containers/User/components/Login/index.tsx:116
 msgid "login"
 msgstr "ورود"
@@ -265,7 +261,7 @@ msgstr ""
 msgid "Master"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:155 src/containers/Dashboard/index.tsx:45
+#: src/containers/Dashboard/index.tsx:153 src/containers/Dashboard/index.tsx:45
 msgid "New Invoice"
 msgstr "فاکتور جدید"
 
@@ -277,7 +273,7 @@ msgstr "فاکتور جدید با موفقیت ایجاد شد"
 msgid "Next Page"
 msgstr "صفحه بعد"
 
-#: src/containers/Dashboard/index.tsx:188
+#: src/containers/Dashboard/index.tsx:184
 msgid "No Access"
 msgstr "شما به این قسمت دسترسی ندارید"
 
@@ -285,7 +281,7 @@ msgstr "شما به این قسمت دسترسی ندارید"
 msgid "Open gateway"
 msgstr "باز کردن درگاه"
 
-#: src/components/Transactions/index.tsx:54
+#: src/components/Transactions/index.tsx:71
 msgid "Order id"
 msgstr "شماره سفارش"
 
@@ -382,7 +378,7 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:61
+#: src/components/Transactions/index.tsx:78
 msgid "Price"
 msgstr "قیمت"
 
@@ -412,6 +408,10 @@ msgid "Sell "
 msgstr ""
 
 #: src/components/Transactions/index.tsx:67
+msgid "Shop Name"
+msgstr "نام فروشگاه"
+
+#: src/components/Transactions/index.tsx:84
 msgid "Status"
 msgstr "وضعیت"
 
@@ -423,7 +423,7 @@ msgstr ""
 msgid "Submit"
 msgstr "ارسال"
 
-#: src/components/Transactions/index.tsx:18
+#: src/components/Transactions/index.tsx:20
 msgid "success"
 msgstr "پرداخت شده"
 
@@ -431,7 +431,7 @@ msgstr "پرداخت شده"
 msgid "Support"
 msgstr "پشتیبانی"
 
-#: src/components/Transactions/index.tsx:58
+#: src/components/Transactions/index.tsx:75
 msgid "Symbol"
 msgstr "نماد"
 
@@ -451,8 +451,7 @@ msgstr ""
 msgid "Total"
 msgstr "مجموع"
 
-#: src/containers/Dashboard/index.tsx:123
-#: src/containers/Dashboard/index.tsx:169
+#: src/components/Transactions/index.tsx:140
 msgid "Transactions"
 msgstr "تراکنش ها"
 
@@ -465,7 +464,7 @@ msgstr ""
 msgid "Upload your documents"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:18
+#: src/components/Transactions/index.tsx:20
 msgid "USD"
 msgstr "دلار آمریکا"
 
@@ -489,7 +488,7 @@ msgstr "ایمیل تان را تایید کنید"
 msgid "View wallet address"
 msgstr "مشاهده آدرس کیف پول"
 
-#: src/components/Transactions/index.tsx:18
+#: src/components/Transactions/index.tsx:20
 msgid "waiting"
 msgstr "در انتظار پرداخت"
 
@@ -512,6 +511,9 @@ msgstr "شما اکنون یک کاربر هستید"
 #: src/containers/KYC/index.tsx:243
 msgid "your information submitted successfully"
 msgstr "اطلاعات شما با موفقیت ارسال شد"
+
+#~ msgid "Loading ..."
+#~ msgstr "بارگزاری ..."
 
 #~ msgid "Continue"
 #~ msgstr "ادامه"

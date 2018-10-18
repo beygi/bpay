@@ -20,7 +20,7 @@ msgstr ""
 msgid "Account information"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:130
+#: src/containers/Dashboard/index.tsx:128
 msgid "Active Sessions"
 msgstr ""
 
@@ -44,7 +44,7 @@ msgstr ""
 msgid "Before you start"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:18
+#: src/components/Transactions/index.tsx:20
 msgid "Bitcoin"
 msgstr ""
 
@@ -81,7 +81,7 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:64
+#: src/components/Transactions/index.tsx:81
 msgid "Create time"
 msgstr ""
 
@@ -129,11 +129,11 @@ msgstr ""
 msgid "Email:"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:18
+#: src/components/Transactions/index.tsx:20
 msgid "Ethereum"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:18
+#: src/components/Transactions/index.tsx:20
 msgid "EUR"
 msgstr ""
 
@@ -145,7 +145,7 @@ msgstr ""
 msgid "Exchange"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:18
+#: src/components/Transactions/index.tsx:20
 msgid "failed"
 msgstr ""
 
@@ -206,7 +206,7 @@ msgstr ""
 msgid "In order"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:18
+#: src/components/Transactions/index.tsx:20
 msgid "IRR"
 msgstr ""
 
@@ -235,10 +235,6 @@ msgstr ""
 msgid "Limit"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:115
-msgid "Loading ..."
-msgstr ""
-
 #: src/containers/User/components/Login/index.tsx:116
 msgid "login"
 msgstr ""
@@ -265,7 +261,7 @@ msgstr ""
 msgid "Master"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:155 src/containers/Dashboard/index.tsx:45
+#: src/containers/Dashboard/index.tsx:153 src/containers/Dashboard/index.tsx:45
 msgid "New Invoice"
 msgstr ""
 
@@ -277,7 +273,7 @@ msgstr ""
 msgid "Next Page"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:188
+#: src/containers/Dashboard/index.tsx:184
 msgid "No Access"
 msgstr ""
 
@@ -285,7 +281,7 @@ msgstr ""
 msgid "Open gateway"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:54
+#: src/components/Transactions/index.tsx:71
 msgid "Order id"
 msgstr ""
 
@@ -373,7 +369,7 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:61
+#: src/components/Transactions/index.tsx:78
 msgid "Price"
 msgstr ""
 
@@ -403,6 +399,10 @@ msgid "Sell "
 msgstr ""
 
 #: src/components/Transactions/index.tsx:67
+msgid "Shop Name"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:84
 msgid "Status"
 msgstr ""
 
@@ -414,7 +414,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:18
+#: src/components/Transactions/index.tsx:20
 msgid "success"
 msgstr ""
 
@@ -422,7 +422,7 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:58
+#: src/components/Transactions/index.tsx:75
 msgid "Symbol"
 msgstr ""
 
@@ -442,8 +442,7 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:123
-#: src/containers/Dashboard/index.tsx:169
+#: src/components/Transactions/index.tsx:140
 msgid "Transactions"
 msgstr ""
 
@@ -456,7 +455,7 @@ msgstr ""
 msgid "Upload your documents"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:18
+#: src/components/Transactions/index.tsx:20
 msgid "USD"
 msgstr ""
 
@@ -480,7 +479,7 @@ msgstr ""
 msgid "View wallet address"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:18
+#: src/components/Transactions/index.tsx:20
 msgid "waiting"
 msgstr ""
 
