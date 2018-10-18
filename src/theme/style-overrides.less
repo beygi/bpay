@@ -134,7 +134,44 @@
 .ant-tabs:not(.ant-tabs-vertical) > .ant-tabs-content > .ant-tabs-tabpane-inactive {
     width: 0;
 }
-
+.ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link ,  .ant-pagination-prev
+{
+    background-color: @secondaryVariant9 !important;
+    border-color: @secondaryVariant9 !important;
+}
+.ant-pagination-item, .ant-pagination-next , .ant-pagination-prev
+{
+    background-color: @secondaryVariant9;
+    border-color: @secondaryVariant9;
+    a
+    {
+        color : @secondaryTextColor;
+        background-color: @secondaryVariant9;
+        border-color: @secondaryVariant9;
+    }
+    &:hover , &:focus
+    {
+        a 
+        {
+                color: @secondaryTextColor;
+        }
+        border-color:  @secondaryTextColor;
+        color: @secondaryTextColor;
+    }
+}
+.ant-pagination-item-active
+{
+    border-color:  @secondaryTextColor;
+    &:hover , &:focus
+    {
+        a 
+        {
+                color: @secondaryTextColor;
+        }
+        border-color:  @secondaryTextColor;
+        color: @secondaryTextColor;
+    }
+}
 .ant-popover-title {
     color: @palette-light;
     border-bottom: 2px solid @palette-high;

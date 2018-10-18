@@ -32,7 +32,7 @@ interface IState {
     passport: string;
     passid: string;
     submited: boolean;
-    countries?: [{id: string , name: string}];
+    countries?: [{ id: string, name: string }];
 }
 
 class KycContainer extends React.Component<IUserFormProps, IState> {
@@ -44,19 +44,19 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
             passport: null,
             passid: null,
             submited: false,
-            countries: [{ id: "none", name: t.t("Please select your country")}],
+            countries: [{ id: "none", name: t.t("Please select your country") }],
         };
     }
 
-   public componentDidMount() {
-       this.getCountries();
-   }
-   public getCountries() {
-        newApi.allcountriesUsingGET({}).then( (response) => {
+    public componentDidMount() {
+        this.getCountries();
+    }
+    public getCountries() {
+        newApi.allcountriesUsingGET({}).then((response) => {
             console.log(response.body);
-            this.setState({countries : response.body });
-        } );
-   }
+            this.setState({ countries: response.body });
+        });
+    }
 
     public handleSubmit = (e) => {
         e.preventDefault();
@@ -75,9 +75,9 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 console.log("Received values of form: ", values);
-                newApi.addKycUsingPOST( {input :  values } ).then((response) => {
+                newApi.addKycUsingPOST({ input: values }).then((response) => {
                     this.setState({ submited: true });
-                    console.log(response.data);
+                    console.log(response.body);
                 }).catch((error) => {
                     console.log(error);
                 });
@@ -91,9 +91,9 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
         if (file[type] === true) {
             notification.success({
                 message: type + " " + t.t("Image uploaded successfully"),
-                description: "Your " + type + " image uploaded to our servers, you can change it any time before our review" ,
-                placement : "bottomRight",
-                duration : 5,
+                description: "Your " + type + " image uploaded to our servers, you can change it any time before our review",
+                placement: "bottomRight",
+                duration: 5,
             });
         }
         this.setState(file);
@@ -125,7 +125,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
         if (!this.state.submited) {
             block = <Block><h2>{t.t("Before you start")}</h2>
                 <div>
-KYC stands for (Know Your Customer) it is the process of a business <br /> verifying and identifying the identity
+                    KYC stands for (Know Your Customer) it is the process of a business <br /> verifying and identifying the identity
  of its clients. It is required <br /> because the KYC its used to refer to the bank and anti-money laundering regulations.
  <br /> <br />
                 </div>
@@ -252,10 +252,10 @@ KYC stands for (Know Your Customer) it is the process of a business <br /> verif
             <Row gutter={8}>
                 <Col md={6} >
                     <Block>
-                        <img src="https://dummyimage.com/600x400/4c4649/3ee6e0.png" alt=""/>
+                        <img src="https://dummyimage.com/600x400/4c4649/3ee6e0.png" alt="" />
                     </Block>
                     <Block>
-                            <img src="https://dummyimage.com/600x800/4c4649/3ee6e0.png" alt=""/>
+                        <img src="https://dummyimage.com/600x800/4c4649/3ee6e0.png" alt="" />
                     </Block>
                 </Col>
                 <Col md={18} >

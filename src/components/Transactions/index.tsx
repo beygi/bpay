@@ -2,6 +2,7 @@
  * @module Components/Transactions
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Pagination, Spin } from "antd";
 import { Table, Tag } from "antd";
 import * as React from "react";
 import { connect } from "react-redux";
@@ -23,7 +24,9 @@ interface IProps {
 
 interface IState {
     /**  list of all invoices */
-    invoices: any[];
+    invoices: any;
+    currentPage: number;
+    loading: boolean;
 }
 
 const icons = {
@@ -42,11 +45,14 @@ class Transactions extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
-        this.state = { invoices: null };
-        this.getData();
-        const intervalId = setInterval(this.getData.bind(this), 5000);
+        this.state = { invoices: { count: 0 }, currentPage: 1, loading: true };
         // send token with all api requests
         this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
+    }
+
+    public componentDidMount() {
+        this.getData();
+        const intervalId = setInterval(this.getData.bind(this), 10000);
     }
 
     public render() {
@@ -69,11 +75,11 @@ class Transactions extends React.Component<IProps, IState> {
         },
         ];
         let invoices = null;
-        if (this.state.invoices !== null) {
+        if (this.state.invoices && this.state.invoices.content !== undefined) {
             // local Date object
             const pDate = localDate(t.default.language);
 
-            invoices = this.state.invoices.map((invoice) => {
+            invoices = this.state.invoices.content.map((invoice) => {
                 const date = new pDate(invoice.timestamp).toLocaleString();
                 invoice.date = date;
                 invoice.statusName = t.t(invoice.status);
@@ -104,30 +110,30 @@ class Transactions extends React.Component<IProps, IState> {
                     </Block>
                 );
             });
-            return (
-                <div>
-                    {invoices}
-                </div>
-            );
         }
         return (
             <div>
-                {t.t("Loading ...")}
-            </div >
+                <Spin spinning={this.state.loading} delay={500}>
+                    {invoices}
+                </Spin>
+                <Pagination onChange={(page) => { this.setState({ currentPage: page, loading: true }, () => { this.getData(); }); }}
+                    hideOnSinglePage pageSize={12} current={this.state.currentPage} total={this.state.invoices.count} />
+            </div>
         );
 
     }
 
     // get invoices using api key
     public getData() {
-        this.api.getAllInvoiceUsingGET({
+        this.api.getAllInvoicev2UsingGET({
             apiKey: this.props.user.apiKey,
             mob: this.props.user.mobile,
-            size: 199,
+            size: 12,
+            page: this.state.currentPage - 1,
             dir: "desc",
             $domain: "https://api.becopay.com",
         }).then((response) => {
-            this.setState({ invoices: response.body });
+            this.setState({ invoices: response.body, loading: false });
         });
     }
 }
