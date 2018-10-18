@@ -46,7 +46,7 @@ module.exports = {
                 }, {
                     loader: "awesome-typescript-loader",
                     options: {
-                        errorsAsWarnings: false
+                        errorsAsWarnings: true
                     }
                 }],
             },
