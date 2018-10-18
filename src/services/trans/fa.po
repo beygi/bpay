@@ -447,11 +447,15 @@ msgstr "زبان سیستم:"
 msgid "Tax Cash Desk"
 msgstr ""
 
+#: src/components/Transactions/index.tsx:125
+msgid "There is no data to display"
+msgstr "داده ای برای نمایش وجود ندارد"
+
 #: src/components/Deposit/index.tsx:77
 msgid "Total"
 msgstr "مجموع"
 
-#: src/components/Transactions/index.tsx:140
+#: src/components/Transactions/index.tsx:142
 msgid "Transactions"
 msgstr "تراکنش ها"
 

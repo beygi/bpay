@@ -90,7 +90,6 @@ class Transactions extends React.Component<IProps, IState> {
         if (this.state.invoices && this.state.invoices.content !== undefined) {
             // local Date object
             const pDate = localDate(t.default.language);
-
             invoices = this.state.invoices.content.map((invoice) => {
                 const date = new pDate(invoice.timestamp).toLocaleString();
                 invoice.date = date;
@@ -122,6 +121,9 @@ class Transactions extends React.Component<IProps, IState> {
                     </Block>
                 );
             });
+            if (invoices.length === 0) {
+                invoices = <h3 className="no-data">{t.t("There is no data to display")}</h3>;
+            }
         }
         // create filters.
         const filters = Object.keys(this.state.statusFilters).map(
