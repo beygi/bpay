@@ -139,7 +139,7 @@ class Transactions extends React.Component<IProps, IState> {
         });
     }
 
-    public itemRender(current: number, type: any, originalElement: any) {
+    public itemRender(current: number, type: any, originalElement?: any) {
         if (type === "page") {
             return <a> <Ex fixFloatNum={0} value={current} seperateThousand /></a>;
         }
