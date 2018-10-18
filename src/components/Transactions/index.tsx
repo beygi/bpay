@@ -117,7 +117,9 @@ class Transactions extends React.Component<IProps, IState> {
                     {invoices}
                 </Spin>
                 <Pagination onChange={(page) => { this.setState({ currentPage: page, loading: true }, () => { this.getData(); }); }}
-                    hideOnSinglePage pageSize={12} current={this.state.currentPage} total={this.state.invoices.count} />
+                    hideOnSinglePage pageSize={12} current={this.state.currentPage} total={this.state.invoices.count}
+                    itemRender={this.itemRender}
+                />
             </div>
         );
 
@@ -135,6 +137,13 @@ class Transactions extends React.Component<IProps, IState> {
         }).then((response) => {
             this.setState({ invoices: response.body, loading: false });
         });
+    }
+
+    public itemRender(current: number, type: any, originalElement: any) {
+        if (type === "page") {
+            return <a> <Ex fixFloatNum={0} value={current} seperateThousand /></a>;
+        }
+        return originalElement;
     }
 }
 
