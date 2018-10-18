@@ -132,10 +132,13 @@ class Transactions extends React.Component<IProps, IState> {
         );
 
         return (
-            <div>
-                <div className="transaction-filters">
-                    {filters}
-                </div>
+            <Block title={t.t("Transactions")} icon={
+                <span>
+                    <FontAwesomeIcon icon={["fas", "money-check-alt"]} />
+                    <span className="transaction-filters">{filters}</span>
+                </span>
+            }>
+
                 < Spin spinning={this.state.loading} delay={500} >
                     {invoices}
                 </Spin >
@@ -143,7 +146,7 @@ class Transactions extends React.Component<IProps, IState> {
                     hideOnSinglePage pageSize={12} current={this.state.currentPage} total={this.state.invoices.count}
                     itemRender={this.itemRender}
                 />
-            </div>
+            </Block>
         );
 
     }
