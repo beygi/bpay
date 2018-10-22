@@ -95,6 +95,14 @@ class Transactions extends React.Component<IProps, IState> {
             invoices = this.state.invoices.content.map((invoice) => {
                 const date = new pDate(invoice.timestamp).toLocaleString();
                 invoice.date = date;
+                const tablecolumns = [...columns];
+
+                if (invoice.status === "settled") {
+                    tablecolumns.push({
+                        title: t.t("Settle detail"),
+                        dataIndex: "settleDetail",
+                    });
+                }
                 invoice.statusName = t.t(invoice.status);
                 invoice.priceComponent = <Ex fixFloatNum={0} value={invoice.price} seperateThousand />;
                 return (
@@ -119,7 +127,7 @@ class Transactions extends React.Component<IProps, IState> {
                             &nbsp;
                             <a className="waiting" target="blank" href={`${config.gateWayUrl}/invoice/${invoice.id}`}><FontAwesomeIcon icon={["fas", "external-link-alt"]} /></a>
                         </span>}>
-                        <Table pagination={false} columns={columns} rowKey="id" dataSource={[invoice]} size="small" />
+                        <Table pagination={false} columns={tablecolumns} rowKey="id" dataSource={[invoice]} size="small" />
                     </Block>
                 );
             });

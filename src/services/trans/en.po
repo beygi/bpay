@@ -398,6 +398,10 @@ msgstr ""
 msgid "Sell "
 msgstr ""
 
+#: src/components/Transactions/index.tsx:102
+msgid "Settle detail"
+msgstr ""
+
 #: src/components/Transactions/index.tsx:20
 msgid "settled"
 msgstr ""
@@ -442,7 +446,7 @@ msgstr ""
 msgid "Tax Cash Desk"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:127
+#: src/components/Transactions/index.tsx:135
 msgid "There is no data to display"
 msgstr ""
 
@@ -450,7 +454,7 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:144
+#: src/components/Transactions/index.tsx:152
 msgid "Transactions"
 msgstr ""
 
