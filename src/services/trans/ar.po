@@ -81,7 +81,7 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:81
+#: src/components/Transactions/index.tsx:83
 #, fuzzy
 msgid "Create time"
 msgstr "الوقت الباقي"
@@ -284,7 +284,7 @@ msgstr ""
 msgid "Open gateway"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:71
+#: src/components/Transactions/index.tsx:73
 msgid "Order id"
 msgstr ""
 
@@ -381,7 +381,7 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:78
+#: src/components/Transactions/index.tsx:80
 msgid "Price"
 msgstr ""
 
@@ -410,11 +410,15 @@ msgstr ""
 msgid "Sell "
 msgstr ""
 
-#: src/components/Transactions/index.tsx:67
+#: src/components/Transactions/index.tsx:20
+msgid "settled"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:69
 msgid "Shop Name"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:84
+#: src/components/Transactions/index.tsx:86
 msgid "Status"
 msgstr ""
 
@@ -434,7 +438,7 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:75
+#: src/components/Transactions/index.tsx:77
 msgid "Symbol"
 msgstr ""
 
@@ -450,7 +454,7 @@ msgstr ""
 msgid "Tax Cash Desk"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:125
+#: src/components/Transactions/index.tsx:127
 msgid "There is no data to display"
 msgstr ""
 
@@ -458,7 +462,7 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:142
+#: src/components/Transactions/index.tsx:144
 msgid "Transactions"
 msgstr ""
 

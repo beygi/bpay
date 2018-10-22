@@ -17,7 +17,7 @@ import Block from "../Holder";
 import USER from "./../../lib/user";
 import "./style.less";
 
-const fiats = [t.t("IRR"), t.t("USD"), t.t("EUR"), t.t("Bitcoin"), t.t("Ethereum"), t.t("failed"), t.t("waiting"), t.t("success")];
+const fiats = [t.t("IRR"), t.t("USD"), t.t("EUR"), t.t("Bitcoin"), t.t("Ethereum"), t.t("failed"), t.t("waiting"), t.t("success"), t.t("settled")];
 interface IProps {
     /**  current user's email address that is synced with redux */
     user: any;
@@ -29,6 +29,7 @@ interface IState {
     currentPage: number;
     loading: boolean;
     statusFilters: {
+        settled?: boolean,
         success?: boolean,
         waiting?: boolean,
         failed?: boolean,
@@ -39,6 +40,7 @@ const icons = {
     failed: <FontAwesomeIcon className="archived" icon={["fas", "times"]} />,
     waiting: <FontAwesomeIcon className="waiting" icon={["fas", "hourglass-half"]} />,
     success: <FontAwesomeIcon className="success" icon={["fas", "check"]} />,
+    settled: <FontAwesomeIcon className="settled" icon={["fas", "check-double"]} />,
 };
 
 /**
@@ -51,7 +53,7 @@ class Transactions extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
-        this.state = { invoices: { count: 0 }, currentPage: 1, loading: true, statusFilters: { success: true, waiting: true, failed: false } };
+        this.state = { invoices: { count: 0 }, currentPage: 1, loading: true, statusFilters: { settled: false, success: true, waiting: true, failed: false } };
         // send token with all api requests
         this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
     }

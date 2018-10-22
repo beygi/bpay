@@ -81,7 +81,7 @@ msgstr "کشور"
 msgid "Create"
 msgstr "ایجاد"
 
-#: src/components/Transactions/index.tsx:81
+#: src/components/Transactions/index.tsx:83
 msgid "Create time"
 msgstr "زمان ایجاد"
 
@@ -281,7 +281,7 @@ msgstr "شما به این قسمت دسترسی ندارید"
 msgid "Open gateway"
 msgstr "باز کردن درگاه"
 
-#: src/components/Transactions/index.tsx:71
+#: src/components/Transactions/index.tsx:73
 msgid "Order id"
 msgstr "شماره سفارش"
 
@@ -378,7 +378,7 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:78
+#: src/components/Transactions/index.tsx:80
 msgid "Price"
 msgstr "قیمت"
 
@@ -407,11 +407,15 @@ msgstr ""
 msgid "Sell "
 msgstr ""
 
-#: src/components/Transactions/index.tsx:67
+#: src/components/Transactions/index.tsx:20
+msgid "settled"
+msgstr "تسویه شده"
+
+#: src/components/Transactions/index.tsx:69
 msgid "Shop Name"
 msgstr "نام فروشگاه"
 
-#: src/components/Transactions/index.tsx:84
+#: src/components/Transactions/index.tsx:86
 msgid "Status"
 msgstr "وضعیت"
 
@@ -431,7 +435,7 @@ msgstr "پرداخت شده"
 msgid "Support"
 msgstr "پشتیبانی"
 
-#: src/components/Transactions/index.tsx:75
+#: src/components/Transactions/index.tsx:77
 msgid "Symbol"
 msgstr "نماد"
 
@@ -447,7 +451,7 @@ msgstr "زبان سیستم:"
 msgid "Tax Cash Desk"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:125
+#: src/components/Transactions/index.tsx:127
 msgid "There is no data to display"
 msgstr "داده ای برای نمایش وجود ندارد"
 
@@ -455,7 +459,7 @@ msgstr "داده ای برای نمایش وجود ندارد"
 msgid "Total"
 msgstr "مجموع"
 
-#: src/components/Transactions/index.tsx:142
+#: src/components/Transactions/index.tsx:144
 msgid "Transactions"
 msgstr "تراکنش ها"
 
