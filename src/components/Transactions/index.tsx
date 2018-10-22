@@ -109,8 +109,6 @@ class Transactions extends React.Component<IProps, IState> {
                 const date = new pDate(invoice.timestamp).toLocaleString();
                 invoice.date = date;
                 const tablecolumns = [...columns];
-                if (invoice.status === "waiting") { invoice.status = "settled"; }
-
                 if (invoice.status === "settled") {
                     tablecolumns.push({
                         title: t.t("Settle detail"),
