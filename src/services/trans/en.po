@@ -44,7 +44,7 @@ msgstr ""
 msgid "Before you start"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "Bitcoin"
 msgstr ""
 
@@ -81,7 +81,7 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:83
+#: src/components/Transactions/index.tsx:96
 msgid "Create time"
 msgstr ""
 
@@ -129,11 +129,11 @@ msgstr ""
 msgid "Email:"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "Ethereum"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "EUR"
 msgstr ""
 
@@ -145,7 +145,7 @@ msgstr ""
 msgid "Exchange"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "failed"
 msgstr ""
 
@@ -206,7 +206,7 @@ msgstr ""
 msgid "In order"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "IRR"
 msgstr ""
 
@@ -281,7 +281,7 @@ msgstr ""
 msgid "Open gateway"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:73
+#: src/components/Transactions/index.tsx:86
 msgid "Order id"
 msgstr ""
 
@@ -369,7 +369,7 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:80
+#: src/components/Transactions/index.tsx:93
 msgid "Price"
 msgstr ""
 
@@ -389,6 +389,10 @@ msgstr ""
 msgid "search"
 msgstr ""
 
+#: src/components/Transactions/index.tsx:170
+msgid "Select merchant"
+msgstr ""
+
 #: src/components/KYC/index.tsx:45 src/containers/KYC/index.tsx:227
 msgid "Selfie With ID And Note"
 msgstr ""
@@ -398,19 +402,19 @@ msgstr ""
 msgid "Sell "
 msgstr ""
 
-#: src/components/Transactions/index.tsx:102
+#: src/components/Transactions/index.tsx:116
 msgid "Settle detail"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "settled"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:69
+#: src/components/Transactions/index.tsx:82
 msgid "Shop Name"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:86
+#: src/components/Transactions/index.tsx:99
 msgid "Status"
 msgstr ""
 
@@ -422,7 +426,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "success"
 msgstr ""
 
@@ -430,7 +434,7 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:77
+#: src/components/Transactions/index.tsx:90
 msgid "Symbol"
 msgstr ""
 
@@ -446,7 +450,7 @@ msgstr ""
 msgid "Tax Cash Desk"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:135
+#: src/components/Transactions/index.tsx:149
 msgid "There is no data to display"
 msgstr ""
 
@@ -454,7 +458,7 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:152
+#: src/components/Transactions/index.tsx:182
 msgid "Transactions"
 msgstr ""
 
@@ -467,7 +471,7 @@ msgstr ""
 msgid "Upload your documents"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "USD"
 msgstr ""
 
@@ -491,7 +495,7 @@ msgstr ""
 msgid "View wallet address"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "waiting"
 msgstr ""
 

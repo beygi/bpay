@@ -2,8 +2,9 @@
  * @module Components/Transactions
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Select, Spin } from "antd";
+import { Pagination } from "antd";
 import { Table, Tag } from "antd";
-import { Pagination, Spin } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
@@ -17,6 +18,7 @@ import Block from "../Holder";
 import USER from "./../../lib/user";
 import "./style.less";
 
+const Option = Select.Option;
 const fiats = [t.t("IRR"), t.t("USD"), t.t("EUR"), t.t("Bitcoin"), t.t("Ethereum"), t.t("failed"), t.t("waiting"), t.t("success"), t.t("settled")];
 interface IProps {
     /**  current user's email address that is synced with redux */
@@ -28,6 +30,9 @@ interface IState {
     invoices: any;
     currentPage: number;
     loading: boolean;
+    merchantsLoading: boolean;
+    merchantsResult: [];
+    merchantFilter: [];
     statusFilters: {
         settled?: boolean,
         success?: boolean,
@@ -50,12 +55,20 @@ class Transactions extends React.Component<IProps, IState> {
 
     public api = API.getInstance();
     public userObject = USER.getInstance();
+    public lastFetchId: number;
 
     constructor(props: IProps) {
         super(props);
-        this.state = { invoices: { count: 0 }, currentPage: 1, loading: true, statusFilters: { settled: false, success: true, waiting: true, failed: false } };
+        this.state = {
+            invoices: { count: 0 }, currentPage: 1, loading: true, statusFilters: { settled: false, success: true, waiting: true, failed: false }
+            , merchantsResult: [], merchantsLoading: false, merchantFilter: [],
+        };
         // send token with all api requests
         this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
+        this.searchMerchants = this.searchMerchants.bind(this);
+        this.selectMerchant = this.selectMerchant.bind(this);
+        this.searchMerchants = _.debounce(this.searchMerchants, 800);
+        this.lastFetchId = 0;
     }
 
     public componentDidMount() {
@@ -96,6 +109,7 @@ class Transactions extends React.Component<IProps, IState> {
                 const date = new pDate(invoice.timestamp).toLocaleString();
                 invoice.date = date;
                 const tablecolumns = [...columns];
+                if (invoice.status === "waiting") { invoice.status = "settled"; }
 
                 if (invoice.status === "settled") {
                     tablecolumns.push({
@@ -148,11 +162,30 @@ class Transactions extends React.Component<IProps, IState> {
             },
         );
 
+        const merchantsSearch = <Select
+            showSearch
+            showArrow={false}
+            labelInValue
+            value={this.state.merchantFilter}
+            placeholder={t.t("Select merchant")}
+            notFoundContent={this.state.merchantsLoading ? <Spin size="small" /> : null}
+            filterOption={false}
+            onSearch={this.searchMerchants}
+            onChange={this.selectMerchant}
+            style={{ width: "100%" }}
+            allowClear
+            open
+        >
+            {this.state.merchantsResult.map((d: any) => <Option key={d.value}>{d.text}</Option>)}
+        </Select >;
+
         return (
             <Block title={t.t("Transactions")} icon={
                 <span>
                     <FontAwesomeIcon icon={["fas", "money-check-alt"]} />
                     <span className="transaction-filters">{filters}</span>
+                    <span className="merchant-filter">{merchantsSearch}</span>
+
                 </span>
             }>
 
@@ -181,6 +214,35 @@ class Transactions extends React.Component<IProps, IState> {
             $domain: "https://api.becopay.com",
         }).then((response) => {
             this.setState({ invoices: response.body, loading: false });
+        });
+    }
+
+    // seach merchants
+    public searchMerchants(name: string) {
+        console.log("fetching merchant " + name);
+        this.lastFetchId += 1;
+        const fetchId = this.lastFetchId;
+        this.setState({ merchantsResult: [], merchantsLoading: true });
+        fetch("https://randomuser.me/api/?results=5")
+            .then((response) => response.json())
+            .then((body) => {
+                if (fetchId !== this.lastFetchId) { // for fetch callback order
+                    return;
+                }
+                console.log(body);
+                const data = body.results.map((user) => ({
+                    text: `${user.name.first} ${user.name.last}`,
+                    value: user.login.username,
+                }));
+                this.setState({ merchantsResult: data, merchantsLoading: false });
+            });
+    }
+
+    public selectMerchant(value) {
+        this.setState({
+            merchantFilter: value,
+            merchantsResult: [],
+            merchantsLoading: false,
         });
     }
 
