@@ -85,6 +85,7 @@ class Unsettled extends React.Component<IProps, IState> {
                         onCancel={() => this.setState({ showModal: false })}
                         destroyOnClose
                         footer={null}
+                        width={600}
                         title={t.t("Shop name") + `: ${this.state.selectedMerchant.name}`}
                     >
                         <Settle merchantId={this.state.selectedMerchant.id}>

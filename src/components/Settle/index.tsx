@@ -80,11 +80,11 @@ class Settle extends React.Component<IProps, IState> {
             return (
                 <div>
                     <Table className="unsettled-invoices" rowSelection={this.rowSelection} pagination={false}
-                        scroll={{ y: 300 }}
+                        scroll={{ y: 250 }}
                         columns={columns} rowKey="id" dataSource={this.state.invoices.settleUpInvoices} size="small" />
                     <div>
                         {t.t("Total:") + " "}
-                        <Ex fixFloatNum={0} value={this.state.sum} seperateThousand />
+                        <Ex stockStyle={false} fixFloatNum={0} value={this.state.sum} seperateThousand />
                     </div>
                 </div>
             );

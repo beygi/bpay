@@ -16,6 +16,8 @@ interface IProps {
     seperateThousand?: boolean;
     /** display local numbers */
     localNumbers?: boolean;
+    /** Will be displayed in red and green color when value is changed */
+    stockStyle?: boolean;
 }
 
 interface IState {
@@ -33,6 +35,7 @@ interface IState {
 class ExchangeValueComponent extends React.Component<IProps, IState> {
 
     public static getDerivedStateFromProps(props, state) {
+        if (props.stockStyle === false) { return { status: "normal", value: parseFloat(props.value) }; }
         // check for grow or fall
         if (props.value > state.value) {
             return { status: "grow", value: parseFloat(props.value) };
