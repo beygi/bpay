@@ -26,6 +26,12 @@ interface IState {
     selectedInvoices: any;
 }
 
+const rowSelection = {
+    onChange: (selectedRowKeys, selectedRows) => {
+        console.log(`selectedRowKeys: ${selectedRowKeys}`, "selectedRows: ", selectedRows);
+    },
+};
+
 /**
  * this component shows all merchants that have Unsettled invoices
  */
@@ -72,7 +78,7 @@ class Settle extends React.Component<IProps, IState> {
             // local Date object
             return (
                 <div>
-                    <Table pagination={false} columns={columns} rowKey="email" dataSource={this.state.invoices.settleUpInvoices} size="small" />
+                    <Table className="unsettled-invoices" rowSelection={rowSelection} pagination={false} columns={columns} rowKey="id" dataSource={this.state.invoices.settleUpInvoices} size="small" />
                 </div>
             );
         }
