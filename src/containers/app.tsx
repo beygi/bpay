@@ -1,6 +1,7 @@
 /**
  * @module AppContainer
  */
+import { LocaleProvider } from "antd";
 import * as React from "react";
 import { hot } from "react-hot-loader";
 import { connect } from "react-redux";
@@ -63,32 +64,34 @@ class AppContainer extends React.Component<IProps, IState> {
     public render() {
         // console.log(t.default.language);
         return (
-            <Switch>
-                {/* Private routes */}
+            <LocaleProvider locale={Config.languages[t.default.language].antLocale}>
+                <Switch>
+                    {/* Private routes */}
 
-                {/* <PrivateRoute path={`/dashboard`} component={AdminDashboardContainer} /> */}
-                <PrivateRoute path={`/dashboard`} component={DashboardContainer} />
-                <PrivateRoute path={`/kyc`} component={KycContainer} />
-                {/* <PrivateRoute path={`/balance`} component={DashboardContainer} /> */}
-                <PrivateRoute path={`/exchange/:market`} component={ExchangeContainer} />
-                <PrivateRoute path={`/exchange`} component={ExchangeContainer} />
+                    {/* <PrivateRoute path={`/dashboard`} component={AdminDashboardContainer} /> */}
+                    <PrivateRoute path={`/dashboard`} component={DashboardContainer} />
+                    <PrivateRoute path={`/kyc`} component={KycContainer} />
+                    {/* <PrivateRoute path={`/balance`} component={DashboardContainer} /> */}
+                    <PrivateRoute path={`/exchange/:market`} component={ExchangeContainer} />
+                    <PrivateRoute path={`/exchange`} component={ExchangeContainer} />
 
-                <PrivateRoute path={`/deposit/:coin`} component={DepositContainer} />
-                <PrivateRoute path={`/deposit`} component={DepositContainer} />
+                    <PrivateRoute path={`/deposit/:coin`} component={DepositContainer} />
+                    <PrivateRoute path={`/deposit`} component={DepositContainer} />
 
-                {/* Private admin routes */}
-                <PrivateRoute path={`/admin/dashboard`} component={AdminDashboardContainer} />
-                <PrivateRoute path={`/admin/kyc`} component={KycAdminContainer} />
-                <PrivateRoute path={`/admin/chat`} component={ChatAdminContainer} />
-                <PrivateRoute path={`/admin/users`} component={UsersAdminContainer} />
+                    {/* Private admin routes */}
+                    <PrivateRoute path={`/admin/dashboard`} component={AdminDashboardContainer} />
+                    <PrivateRoute path={`/admin/kyc`} component={KycAdminContainer} />
+                    <PrivateRoute path={`/admin/chat`} component={ChatAdminContainer} />
+                    <PrivateRoute path={`/admin/users`} component={UsersAdminContainer} />
 
-                {/* Public routes */}
-                <Route exact path={`/`} render={() => <Layout private={false}><LandingContainer /></Layout>} />
-                {/* <Route exact path={`/dashboard`} render={() => <Layout private={false}><DashboardContainer /></Layout>} /> */}
+                    {/* Public routes */}
+                    <Route exact path={`/`} render={() => <Layout private={false}><LandingContainer /></Layout>} />
+                    {/* <Route exact path={`/dashboard`} render={() => <Layout private={false}><DashboardContainer /></Layout>} /> */}
 
-                {/* not Not Founded routes */}
-                <Route component={NotFoundContainer} />
-            </Switch>
+                    {/* not Not Founded routes */}
+                    <Route component={NotFoundContainer} />
+                </Switch>
+            </LocaleProvider>
         );
     }
 }

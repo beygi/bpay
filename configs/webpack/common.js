@@ -24,6 +24,9 @@ module.exports = {
 
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
+	alias: {
+	      moment: 'antd-jalali-moment',
+	    },
     },
     context: resolve(__dirname, '../../src'),
     module: {

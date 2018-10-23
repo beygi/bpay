@@ -13,6 +13,7 @@ const config = {
     NewApiUrl: "https://api.becopay.com",
     gateWayUrl: "https://gateway.becopay.com",
     language: Languages.fa,
+    languages: Languages,
     keycloakConfig: {
         url: "https://accounts.becopay.com/auth",
         realm: "master",

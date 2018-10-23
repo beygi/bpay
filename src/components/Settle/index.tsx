@@ -2,7 +2,8 @@
  * @module Components/Settle
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Modal, Spin, Table } from "antd";
+import { Button, Spin, Table } from "antd";
+import { DatePicker } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
@@ -13,6 +14,7 @@ import { localDate } from "../../services/trans/i18n";
 import Ex from "../ExchangeValue";
 import USER from "./../../lib/user";
 import "./style.less";
+
 interface IProps {
     /**  current user's email address that is synced with redux */
     user: any;
@@ -35,7 +37,7 @@ class Settle extends React.Component<IProps, IState> {
     public userObject = USER.getInstance();
     public rowSelection = {
         onChange: (selectedRowKeys, selectedRows) => {
-            this.setState({ selectedInvoices: selectedRowKeys, sum: _.sumBy(selectedRows, "amount"); });
+            this.setState({ selectedInvoices: selectedRowKeys, sum: _.sumBy(selectedRows, "amount") });
             console.log(`selectedRowKeys: ${selectedRowKeys}`, "selectedRows: ", selectedRows);
         },
     };
@@ -86,6 +88,7 @@ class Settle extends React.Component<IProps, IState> {
                         {t.t("Total:") + " "}
                         <Ex stockStyle={false} fixFloatNum={0} value={this.state.sum} seperateThousand />
                     </div>
+                    <DatePicker />
                 </div>
             );
         }
