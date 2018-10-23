@@ -81,6 +81,18 @@ class Settle extends React.Component<IProps, IState> {
             // local Date object
             return (
                 <div>
+                    <DatePicker
+                        showTime
+                        format="YYYY-MM-DD HH:mm:ss"
+                        dateRender={(current) => {
+                            const style = { border: "", borderRadius: "" };
+                            return (
+                                <div className="ant-calendar-date" style={style}>
+                                    <Ex fixFloatNum={0} value={current.date()} stockStyle={false} />
+                                </div>
+                            );
+                        }}
+                    />
                     <Table className="unsettled-invoices" rowSelection={this.rowSelection} pagination={false}
                         scroll={{ y: 250 }}
                         columns={columns} rowKey="id" dataSource={this.state.invoices.settleUpInvoices} size="small" />
@@ -88,7 +100,6 @@ class Settle extends React.Component<IProps, IState> {
                         {t.t("Total:") + " "}
                         <Ex stockStyle={false} fixFloatNum={0} value={this.state.sum} seperateThousand />
                     </div>
-                    <DatePicker />
                 </div>
             );
         }
