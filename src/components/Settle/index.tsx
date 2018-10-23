@@ -24,13 +24,8 @@ interface IState {
     invoices: any;
     currentPage: number;
     selectedInvoices: any;
+    sum: number;
 }
-
-const rowSelection = {
-    onChange: (selectedRowKeys, selectedRows) => {
-        console.log(`selectedRowKeys: ${selectedRowKeys}`, "selectedRows: ", selectedRows);
-    },
-};
 
 /**
  * this component shows all merchants that have Unsettled invoices
@@ -38,10 +33,16 @@ const rowSelection = {
 class Settle extends React.Component<IProps, IState> {
     public api = API.getInstance();
     public userObject = USER.getInstance();
+    public rowSelection = {
+        onChange: (selectedRowKeys, selectedRows) => {
+            this.setState({ selectedInvoices: selectedRowKeys, sum: _.sumBy(selectedRows, "amount"); });
+            console.log(`selectedRowKeys: ${selectedRowKeys}`, "selectedRows: ", selectedRows);
+        },
+    };
     constructor(props: IProps) {
         super(props);
         this.state = {
-            currentPage: 1, selectedInvoices: [], invoices: null,
+            currentPage: 1, selectedInvoices: [], invoices: null, sum: 0,
         };
         // send token with all api requests
         this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
@@ -78,7 +79,12 @@ class Settle extends React.Component<IProps, IState> {
             // local Date object
             return (
                 <div>
-                    <Table className="unsettled-invoices" rowSelection={rowSelection} pagination={false} columns={columns} rowKey="id" dataSource={this.state.invoices.settleUpInvoices} size="small" />
+                    <Table className="unsettled-invoices" rowSelection={this.rowSelection} pagination={false}
+                        columns={columns} rowKey="id" dataSource={this.state.invoices.settleUpInvoices} size="small" />
+                    <div>
+                        {t.t("Total:") + " "}
+                        <Ex fixFloatNum={0} value={this.state.sum} seperateThousand />
+                    </div>
                 </div>
             );
         }

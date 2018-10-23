@@ -36,7 +36,7 @@ msgstr "اضافه کردن گرون"
 msgid "add new group"
 msgstr "اضافه کردن گروه جدید"
 
-#: src/components/Settle/index.tsx:55
+#: src/components/Settle/index.tsx:64
 msgid "Amount"
 msgstr "مقدار"
 
@@ -44,12 +44,12 @@ msgstr "مقدار"
 msgid "Available"
 msgstr "در دسترس"
 
-#: src/components/Unsettled/index.tsx:58
-msgid "‌Balance"
-msgstr "بالانس"
-
 #: src/components/Analysis/index.tsx:130
 msgid "Balance"
+msgstr "بالانس"
+
+#: src/components/Unsettled/index.tsx:58
+msgid "‌Balance"
 msgstr "بالانس"
 
 #: src/components/Deposit/index.tsx:60 src/containers/KYC/index.tsx:126
@@ -108,7 +108,7 @@ msgstr ""
 msgid "Dashboard"
 msgstr "داشبورد"
 
-#: src/components/Settle/index.tsx:62
+#: src/components/Settle/index.tsx:71
 msgid "Date"
 msgstr "تاریخ"
 
@@ -210,7 +210,7 @@ msgstr ""
 msgid "Hot storage"
 msgstr ""
 
-#: src/components/Settle/index.tsx:51
+#: src/components/Settle/index.tsx:60
 msgid "ID"
 msgstr "شناسه"
 
@@ -443,6 +443,10 @@ msgstr "جزییات تراکنش تسویه"
 msgid "settled"
 msgstr "تسویه شده"
 
+#: src/components/Unsettled/index.tsx:88
+msgid "Shop name"
+msgstr "نام فروشگاه"
+
 #: src/components/Transactions/index.tsx:83
 #: src/components/Unsettled/index.tsx:54
 msgid "Shop Name"
@@ -491,6 +495,10 @@ msgstr "داده ای برای نمایش وجود ندارد"
 #: src/components/Deposit/index.tsx:77
 msgid "Total"
 msgstr "مجموع"
+
+#: src/components/Settle/index.tsx:85
+msgid "Total:"
+msgstr "مجموع:"
 
 #: src/components/Transactions/index.tsx:184
 msgid "Transactions"

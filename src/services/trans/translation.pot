@@ -26,7 +26,7 @@ msgstr ""
 msgid "add new group"
 msgstr ""
 
-#: src/components/Settle/index.tsx:55
+#: src/components/Settle/index.tsx:64
 msgid "Amount"
 msgstr ""
 
@@ -34,12 +34,12 @@ msgstr ""
 msgid "Available"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:58
-msgid "‌Balance"
-msgstr ""
-
 #: src/components/Analysis/index.tsx:130
 msgid "Balance"
+msgstr ""
+
+#: src/components/Unsettled/index.tsx:58
+msgid "‌Balance"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:60
@@ -99,7 +99,7 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: src/components/Settle/index.tsx:62
+#: src/components/Settle/index.tsx:71
 msgid "Date"
 msgstr ""
 
@@ -203,7 +203,7 @@ msgstr ""
 msgid "Hot storage"
 msgstr ""
 
-#: src/components/Settle/index.tsx:51
+#: src/components/Settle/index.tsx:60
 msgid "ID"
 msgstr ""
 
@@ -433,6 +433,10 @@ msgstr ""
 msgid "settled"
 msgstr ""
 
+#: src/components/Unsettled/index.tsx:88
+msgid "Shop name"
+msgstr ""
+
 #: src/components/Transactions/index.tsx:83
 #: src/components/Unsettled/index.tsx:54
 msgid "Shop Name"
@@ -480,6 +484,10 @@ msgstr ""
 
 #: src/components/Deposit/index.tsx:77
 msgid "Total"
+msgstr ""
+
+#: src/components/Settle/index.tsx:85
+msgid "Total:"
 msgstr ""
 
 #: src/components/Transactions/index.tsx:184
