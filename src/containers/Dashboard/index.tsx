@@ -15,6 +15,7 @@ import NewInvoice from "../../components/NewInvoice";
 import ActieveSessions from "../../components/Sessions";
 import Stock from "../../components/Stock";
 import Transactions from "../../components/Transactions";
+import Unsettled from "../../components/Unsettled";
 import Guide from "../../components/UserStatusGuide";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
@@ -152,7 +153,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
                             {userObject.keycloak.hasRealmRole("merchants_admin") ?
                                 <Col md={24} >
                                     <Block title={t.t("Settle")} icon={<FontAwesomeIcon icon={["fas", "hand-holding-usd"]} />}>
-                                        <NewInvoice />
+                                        <Unsettled />
                                     </Block>
                                 </Col>
                                 : null

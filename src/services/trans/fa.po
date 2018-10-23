@@ -20,7 +20,11 @@ msgstr ""
 msgid "Account information"
 msgstr "اطلاعات حساب"
 
-#: src/containers/Dashboard/index.tsx:128
+#: src/components/Unsettled/index.tsx:39
+msgid "Actions"
+msgstr "عملیات"
+
+#: src/containers/Dashboard/index.tsx:129
 msgid "Active Sessions"
 msgstr "نشست های فعال"
 
@@ -40,11 +44,15 @@ msgstr "در دسترس"
 msgid "Balance"
 msgstr "بالانس"
 
+#: src/components/Unsettled/index.tsx:32
+msgid "‌Balance"
+msgstr "بالانس"
+
 #: src/components/Deposit/index.tsx:60 src/containers/KYC/index.tsx:126
 msgid "Before you start"
 msgstr "قبل از اینکه شروع کنید"
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "Bitcoin"
 msgstr "بیت کوین"
 
@@ -81,7 +89,7 @@ msgstr "کشور"
 msgid "Create"
 msgstr "ایجاد"
 
-#: src/components/Transactions/index.tsx:98
+#: src/components/Transactions/index.tsx:97
 msgid "Create time"
 msgstr "زمان ایجاد"
 
@@ -100,7 +108,7 @@ msgstr "داشبورد"
 msgid "Deposit"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:63 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:64 src/containers/Deposit/index.tsx:53
 #: src/containers/Exchange/index.tsx:56
 msgid "Deposit history"
 msgstr ""
@@ -129,11 +137,11 @@ msgstr "ایمیل"
 msgid "Email:"
 msgstr "ایمیل:"
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "Ethereum"
 msgstr "اتریوم"
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "EUR"
 msgstr "یورو"
 
@@ -145,7 +153,7 @@ msgstr ""
 msgid "Exchange"
 msgstr "خرید و فروش"
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "failed"
 msgstr "ناموفق"
 
@@ -206,7 +214,7 @@ msgstr ""
 msgid "In order"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "IRR"
 msgstr "ریال ایران"
 
@@ -261,7 +269,7 @@ msgstr ""
 msgid "Master"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:153 src/containers/Dashboard/index.tsx:45
+#: src/containers/Dashboard/index.tsx:162 src/containers/Dashboard/index.tsx:46
 msgid "New Invoice"
 msgstr "فاکتور جدید"
 
@@ -273,7 +281,7 @@ msgstr "فاکتور جدید با موفقیت ایجاد شد"
 msgid "Next Page"
 msgstr "صفحه بعد"
 
-#: src/containers/Dashboard/index.tsx:192
+#: src/containers/Dashboard/index.tsx:193
 msgid "No Access"
 msgstr "شما به این قسمت دسترسی ندارید"
 
@@ -281,7 +289,7 @@ msgstr "شما به این قسمت دسترسی ندارید"
 msgid "Open gateway"
 msgstr "باز کردن درگاه"
 
-#: src/components/Transactions/index.tsx:88
+#: src/components/Transactions/index.tsx:87
 msgid "Order id"
 msgstr "شماره سفارش"
 
@@ -378,7 +386,7 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:95
+#: src/components/Transactions/index.tsx:94
 msgid "Price"
 msgstr "قیمت"
 
@@ -398,7 +406,7 @@ msgstr ""
 msgid "search"
 msgstr "جستجو"
 
-#: src/components/Transactions/index.tsx:172
+#: src/components/Transactions/index.tsx:171
 msgid "Select merchant"
 msgstr "انتخاب فروشنده"
 
@@ -411,23 +419,24 @@ msgstr ""
 msgid "Sell "
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:164
+#: src/containers/Dashboard/index.tsx:155
 msgid "Settle"
 msgstr "تسویه حساب"
 
-#: src/components/Transactions/index.tsx:118
+#: src/components/Transactions/index.tsx:117
 msgid "Settle detail"
 msgstr "جزییات تراکنش تسویه"
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "settled"
 msgstr "تسویه شده"
 
-#: src/components/Transactions/index.tsx:84
+#: src/components/Transactions/index.tsx:83
+#: src/components/Unsettled/index.tsx:28
 msgid "Shop Name"
 msgstr "نام فروشگاه"
 
-#: src/components/Transactions/index.tsx:101
+#: src/components/Transactions/index.tsx:100
 msgid "Status"
 msgstr "وضعیت"
 
@@ -439,7 +448,7 @@ msgstr ""
 msgid "Submit"
 msgstr "ارسال"
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "success"
 msgstr "پرداخت شده"
 
@@ -447,7 +456,7 @@ msgstr "پرداخت شده"
 msgid "Support"
 msgstr "پشتیبانی"
 
-#: src/components/Transactions/index.tsx:92
+#: src/components/Transactions/index.tsx:91
 msgid "Symbol"
 msgstr "نماد"
 
@@ -463,7 +472,7 @@ msgstr "زبان سیستم:"
 msgid "Tax Cash Desk"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:151
+#: src/components/Transactions/index.tsx:150
 msgid "There is no data to display"
 msgstr "داده ای برای نمایش وجود ندارد"
 
@@ -471,9 +480,13 @@ msgstr "داده ای برای نمایش وجود ندارد"
 msgid "Total"
 msgstr "مجموع"
 
-#: src/components/Transactions/index.tsx:185
+#: src/components/Transactions/index.tsx:184
 msgid "Transactions"
 msgstr "تراکنش ها"
+
+#: src/components/Unsettled/index.tsx:36
+msgid "Unsettled invoices"
+msgstr "فاکتورهای تسویه نشده"
 
 #: src/components/Uploader/index.tsx:99
 #: src/components/UserStatusGuide/index.tsx:42
@@ -484,7 +497,7 @@ msgstr ""
 msgid "Upload your documents"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "USD"
 msgstr "دلار آمریکا"
 
@@ -508,7 +521,7 @@ msgstr "ایمیل تان را تایید کنید"
 msgid "View wallet address"
 msgstr "مشاهده آدرس کیف پول"
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "waiting"
 msgstr "در انتظار پرداخت"
 
@@ -546,9 +559,6 @@ msgstr "اطلاعات شما با موفقیت ارسال شد"
 
 #~ msgid "Email address"
 #~ msgstr "آدرس ایمیل"
-
-#~ msgid "invalid invoice"
-#~ msgstr "فاکتور نامعتبر است"
 
 #~ msgid "minutes"
 #~ msgstr "دقیقه"

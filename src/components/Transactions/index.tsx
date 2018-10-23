@@ -19,7 +19,6 @@ import USER from "./../../lib/user";
 import "./style.less";
 
 const Option = Select.Option;
-const userObject = USER.getInstance();
 const fiats = [t.t("IRR"), t.t("USD"), t.t("EUR"), t.t("Bitcoin"), t.t("Ethereum"), t.t("failed"), t.t("waiting"), t.t("success"), t.t("settled")];
 interface IProps {
     /**  current user's email address that is synced with redux */
@@ -164,7 +163,7 @@ class Transactions extends React.Component<IProps, IState> {
             },
         );
 
-        const merchantsSearch = (userObject.hasRealmRole("merchants_admin")) ? <Select
+        const merchantsSearch = (this.userObject.hasRealmRole("merchants_admin")) ? <Select
             showSearch
             showArrow={false}
             labelInValue

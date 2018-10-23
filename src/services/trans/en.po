@@ -20,7 +20,11 @@ msgstr ""
 msgid "Account information"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:128
+#: src/components/Unsettled/index.tsx:39
+msgid "Actions"
+msgstr ""
+
+#: src/containers/Dashboard/index.tsx:129
 msgid "Active Sessions"
 msgstr ""
 
@@ -40,11 +44,15 @@ msgstr ""
 msgid "Balance"
 msgstr ""
 
+#: src/components/Unsettled/index.tsx:32
+msgid "‌Balance"
+msgstr ""
+
 #: src/components/Deposit/index.tsx:60 src/containers/KYC/index.tsx:126
 msgid "Before you start"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "Bitcoin"
 msgstr ""
 
@@ -81,7 +89,7 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:98
+#: src/components/Transactions/index.tsx:97
 msgid "Create time"
 msgstr ""
 
@@ -100,7 +108,7 @@ msgstr ""
 msgid "Deposit"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:63 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:64 src/containers/Deposit/index.tsx:53
 #: src/containers/Exchange/index.tsx:56
 msgid "Deposit history"
 msgstr ""
@@ -129,11 +137,11 @@ msgstr ""
 msgid "Email:"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "Ethereum"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "EUR"
 msgstr ""
 
@@ -145,7 +153,7 @@ msgstr ""
 msgid "Exchange"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "failed"
 msgstr ""
 
@@ -206,7 +214,7 @@ msgstr ""
 msgid "In order"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "IRR"
 msgstr ""
 
@@ -261,7 +269,7 @@ msgstr ""
 msgid "Master"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:153 src/containers/Dashboard/index.tsx:45
+#: src/containers/Dashboard/index.tsx:162 src/containers/Dashboard/index.tsx:46
 msgid "New Invoice"
 msgstr ""
 
@@ -273,7 +281,7 @@ msgstr ""
 msgid "Next Page"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:192
+#: src/containers/Dashboard/index.tsx:193
 msgid "No Access"
 msgstr ""
 
@@ -281,7 +289,7 @@ msgstr ""
 msgid "Open gateway"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:88
+#: src/components/Transactions/index.tsx:87
 msgid "Order id"
 msgstr ""
 
@@ -369,7 +377,7 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:95
+#: src/components/Transactions/index.tsx:94
 msgid "Price"
 msgstr ""
 
@@ -389,7 +397,7 @@ msgstr ""
 msgid "search"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:172
+#: src/components/Transactions/index.tsx:171
 msgid "Select merchant"
 msgstr ""
 
@@ -402,23 +410,24 @@ msgstr ""
 msgid "Sell "
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:164
+#: src/containers/Dashboard/index.tsx:155
 msgid "Settle"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:118
+#: src/components/Transactions/index.tsx:117
 msgid "Settle detail"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "settled"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:84
+#: src/components/Transactions/index.tsx:83
+#: src/components/Unsettled/index.tsx:28
 msgid "Shop Name"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:101
+#: src/components/Transactions/index.tsx:100
 msgid "Status"
 msgstr ""
 
@@ -430,7 +439,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "success"
 msgstr ""
 
@@ -438,7 +447,7 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:92
+#: src/components/Transactions/index.tsx:91
 msgid "Symbol"
 msgstr ""
 
@@ -454,7 +463,7 @@ msgstr ""
 msgid "Tax Cash Desk"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:151
+#: src/components/Transactions/index.tsx:150
 msgid "There is no data to display"
 msgstr ""
 
@@ -462,9 +471,14 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:185
+#: src/components/Transactions/index.tsx:184
 msgid "Transactions"
 msgstr ""
+
+#: src/components/Unsettled/index.tsx:36
+#, fuzzy
+msgid "Unsettled invoices"
+msgstr "invoice is invalid"
 
 #: src/components/Uploader/index.tsx:99
 #: src/components/UserStatusGuide/index.tsx:42
@@ -475,7 +489,7 @@ msgstr ""
 msgid "Upload your documents"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "USD"
 msgstr ""
 
@@ -499,7 +513,7 @@ msgstr ""
 msgid "View wallet address"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:23
+#: src/components/Transactions/index.tsx:22
 msgid "waiting"
 msgstr ""
 
@@ -522,9 +536,6 @@ msgstr ""
 #: src/containers/KYC/index.tsx:243
 msgid "your information submitted successfully"
 msgstr ""
-
-#~ msgid "invalid invoice"
-#~ msgstr "invoice is invalid"
 
 #~ msgid "New Payment"
 #~ msgstr "New payment"
