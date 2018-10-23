@@ -80,6 +80,7 @@ class Settle extends React.Component<IProps, IState> {
             return (
                 <div>
                     <Table className="unsettled-invoices" rowSelection={this.rowSelection} pagination={false}
+                        scroll={{ y: 300 }}
                         columns={columns} rowKey="id" dataSource={this.state.invoices.settleUpInvoices} size="small" />
                     <div>
                         {t.t("Total:") + " "}
@@ -109,12 +110,37 @@ class Settle extends React.Component<IProps, IState> {
                         date: 1529519508757,
                     },
                     {
-                        id: "POS_11_5a9b",
+                        id: "POS_11_5a9db",
                         amount: 59000,
                         date: 1539579508457,
                     },
                     {
-                        id: "POS_11_511b",
+                        id: "PsOS_11_511ab",
+                        amount: 5000,
+                        date: 1539519102557,
+                    },
+                    {
+                        id: "POS_g11_51s1b",
+                        amount: 5000,
+                        date: 1539519102557,
+                    },
+                    {
+                        id: "POS_1as1_51s1b",
+                        amount: 5000,
+                        date: 1539519102557,
+                    },
+                    {
+                        id: "POS_11fdg_511b",
+                        amount: 5000,
+                        date: 1539519102557,
+                    },
+                    {
+                        id: "POS_11_sd511b",
+                        amount: 5000,
+                        date: 1539519102557,
+                    },
+                    {
+                        id: "POS_1sd1_511b",
                         amount: 5000,
                         date: 1539519102557,
                     },
