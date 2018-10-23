@@ -2,7 +2,7 @@
  * @module Components/Unsettled
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Modal, Table } from "antd";
+import { Button, Modal, Spin, Table } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
@@ -10,6 +10,7 @@ import API from "../../lib/api/invoice";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 import Ex from "../ExchangeValue";
+import Settle from "../Settle";
 import USER from "./../../lib/user";
 import "./style.less";
 interface IProps {
@@ -35,7 +36,7 @@ class Unsettled extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
         this.state = {
-            currentPage: 1, loading: true, merchants: [], showModal: false, selectedMerchant: {},
+            currentPage: 1, loading: true, merchants: null, showModal: false, selectedMerchant: {},
         };
         // send token with all api requests
         this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
@@ -73,8 +74,7 @@ class Unsettled extends React.Component<IProps, IState> {
                 ),
             },
         ];
-        console.log(this.state.merchants);
-        if (this.state.merchants) {
+        if (this.state.merchants !== null) {
             // local Date object
             return (
                 <div>
@@ -87,12 +87,13 @@ class Unsettled extends React.Component<IProps, IState> {
                         footer={null}
                         title={this.state.selectedMerchant.name}
                     >
-                        <p>{this.state.selectedMerchant.id}</p>
+                        <Settle merchantId={this.state.selectedMerchant.id}>
+                        </Settle>
                     </Modal>
                 </div>
             );
         }
-        return (<div>loading</div>);
+        return (<Spin delay={400} />);
     }
 
     // seach merchants

@@ -20,7 +20,7 @@ msgstr ""
 msgid "Account information"
 msgstr "اطلاعات حساب"
 
-#: src/components/Unsettled/index.tsx:39
+#: src/components/Unsettled/index.tsx:71
 msgid "Actions"
 msgstr "عملیات"
 
@@ -36,16 +36,20 @@ msgstr "اضافه کردن گرون"
 msgid "add new group"
 msgstr "اضافه کردن گروه جدید"
 
+#: src/components/Settle/index.tsx:55
+msgid "Amount"
+msgstr "مقدار"
+
 #: src/components/Deposit/index.tsx:79
 msgid "Available"
 msgstr "در دسترس"
 
-#: src/components/Analysis/index.tsx:130
-msgid "Balance"
+#: src/components/Unsettled/index.tsx:58
+msgid "‌Balance"
 msgstr "بالانس"
 
-#: src/components/Unsettled/index.tsx:32
-msgid "‌Balance"
+#: src/components/Analysis/index.tsx:130
+msgid "Balance"
 msgstr "بالانس"
 
 #: src/components/Deposit/index.tsx:60 src/containers/KYC/index.tsx:126
@@ -103,6 +107,10 @@ msgstr ""
 #: src/components/DashboardMenu/menu.tsx:68
 msgid "Dashboard"
 msgstr "داشبورد"
+
+#: src/components/Settle/index.tsx:62
+msgid "Date"
+msgstr "تاریخ"
 
 #: src/components/DashboardMenu/menu.tsx:46
 msgid "Deposit"
@@ -201,6 +209,10 @@ msgstr ""
 #: src/containers/Admin/Dashboard/index.tsx:36
 msgid "Hot storage"
 msgstr ""
+
+#: src/components/Settle/index.tsx:51
+msgid "ID"
+msgstr "شناسه"
 
 #: src/components/UserStatusGuide/index.tsx:43
 msgid "Identity check"
@@ -419,7 +431,7 @@ msgstr ""
 msgid "Sell "
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:155
+#: src/components/Unsettled/index.tsx:73 src/containers/Dashboard/index.tsx:155
 msgid "Settle"
 msgstr "تسویه حساب"
 
@@ -432,7 +444,7 @@ msgid "settled"
 msgstr "تسویه شده"
 
 #: src/components/Transactions/index.tsx:83
-#: src/components/Unsettled/index.tsx:28
+#: src/components/Unsettled/index.tsx:54
 msgid "Shop Name"
 msgstr "نام فروشگاه"
 
@@ -484,7 +496,7 @@ msgstr "مجموع"
 msgid "Transactions"
 msgstr "تراکنش ها"
 
-#: src/components/Unsettled/index.tsx:36
+#: src/components/Unsettled/index.tsx:65
 msgid "Unsettled invoices"
 msgstr "فاکتورهای تسویه نشده"
 
@@ -553,9 +565,6 @@ msgstr "اطلاعات شما با موفقیت ارسال شد"
 
 #~ msgid "Copy wallet address to clipboard"
 #~ msgstr "کپی کردن آدرس پرداخت"
-
-#~ msgid "Date"
-#~ msgstr "تاریخ"
 
 #~ msgid "Email address"
 #~ msgstr "آدرس ایمیل"

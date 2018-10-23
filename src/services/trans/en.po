@@ -20,7 +20,7 @@ msgstr ""
 msgid "Account information"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:39
+#: src/components/Unsettled/index.tsx:71
 msgid "Actions"
 msgstr ""
 
@@ -36,16 +36,20 @@ msgstr ""
 msgid "add new group"
 msgstr ""
 
+#: src/components/Settle/index.tsx:55
+msgid "Amount"
+msgstr ""
+
 #: src/components/Deposit/index.tsx:79
 msgid "Available"
 msgstr ""
 
-#: src/components/Analysis/index.tsx:130
-msgid "Balance"
+#: src/components/Unsettled/index.tsx:58
+msgid "‌Balance"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:32
-msgid "‌Balance"
+#: src/components/Analysis/index.tsx:130
+msgid "Balance"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:60 src/containers/KYC/index.tsx:126
@@ -102,6 +106,10 @@ msgstr ""
 #: src/components/DashboardMenu/menu.tsx:28
 #: src/components/DashboardMenu/menu.tsx:68
 msgid "Dashboard"
+msgstr ""
+
+#: src/components/Settle/index.tsx:62
+msgid "Date"
 msgstr ""
 
 #: src/components/DashboardMenu/menu.tsx:46
@@ -200,6 +208,10 @@ msgstr ""
 
 #: src/containers/Admin/Dashboard/index.tsx:36
 msgid "Hot storage"
+msgstr ""
+
+#: src/components/Settle/index.tsx:51
+msgid "ID"
 msgstr ""
 
 #: src/components/UserStatusGuide/index.tsx:43
@@ -410,7 +422,7 @@ msgstr ""
 msgid "Sell "
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:155
+#: src/components/Unsettled/index.tsx:73 src/containers/Dashboard/index.tsx:155
 msgid "Settle"
 msgstr ""
 
@@ -423,7 +435,7 @@ msgid "settled"
 msgstr ""
 
 #: src/components/Transactions/index.tsx:83
-#: src/components/Unsettled/index.tsx:28
+#: src/components/Unsettled/index.tsx:54
 msgid "Shop Name"
 msgstr ""
 
@@ -475,7 +487,7 @@ msgstr ""
 msgid "Transactions"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:36
+#: src/components/Unsettled/index.tsx:65
 #, fuzzy
 msgid "Unsettled invoices"
 msgstr "invoice is invalid"
