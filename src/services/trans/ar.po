@@ -36,7 +36,7 @@ msgstr ""
 msgid "add new group"
 msgstr ""
 
-#: src/components/Settle/index.tsx:64
+#: src/components/Settle/index.tsx:66
 msgid "Amount"
 msgstr ""
 
@@ -109,7 +109,7 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: src/components/Settle/index.tsx:71
+#: src/components/Settle/index.tsx:73
 msgid "Date"
 msgstr "التاريخ"
 
@@ -211,7 +211,7 @@ msgstr ""
 msgid "Hot storage"
 msgstr ""
 
-#: src/components/Settle/index.tsx:60
+#: src/components/Settle/index.tsx:62
 msgid "ID"
 msgstr ""
 
@@ -446,7 +446,7 @@ msgstr ""
 msgid "settled"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:88
+#: src/components/Unsettled/index.tsx:89
 msgid "Shop name"
 msgstr ""
 
@@ -499,7 +499,7 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-#: src/components/Settle/index.tsx:85
+#: src/components/Settle/index.tsx:100
 msgid "Total:"
 msgstr ""
 
