@@ -134,7 +134,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
                 </Row>
             );
         }
-        if (userObject.keycloak.hasRealmRole("merchant")) {
+        if (userObject.keycloak.hasRealmRole("merchant") || userObject.keycloak.hasRealmRole("merchants_admin")) {
             return (
                 <Row gutter={8}>
                     <Col md={8} >
@@ -149,6 +149,14 @@ class DashboardContainer extends React.Component<IProps, IState> {
                                     <GoogleAuth />
                                 </Block>
                             </Col> */}
+                            {userObject.keycloak.hasRealmRole("merchants_admin") ?
+                                <Col md={24} >
+                                    <Block title={t.t("Settle")} icon={<FontAwesomeIcon icon={["fas", "hand-holding-usd"]} />}>
+                                        <NewInvoice />
+                                    </Block>
+                                </Col>
+                                : null
+                            }
                             <Col md={24} >
                                 <Block title={t.t("New Invoice")} icon={<FontAwesomeIcon icon={["fas", "edit"]} />}>
                                     <NewInvoice />

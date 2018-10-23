@@ -19,6 +19,7 @@ import USER from "./../../lib/user";
 import "./style.less";
 
 const Option = Select.Option;
+const userObject = USER.getInstance();
 const fiats = [t.t("IRR"), t.t("USD"), t.t("EUR"), t.t("Bitcoin"), t.t("Ethereum"), t.t("failed"), t.t("waiting"), t.t("success"), t.t("settled")];
 interface IProps {
     /**  current user's email address that is synced with redux */
@@ -68,6 +69,7 @@ class Transactions extends React.Component<IProps, IState> {
         this.searchMerchants = this.searchMerchants.bind(this);
         this.selectMerchant = this.selectMerchant.bind(this);
         this.searchMerchants = _.debounce(this.searchMerchants, 800);
+        this.getData = _.debounce(this.getData, 800);
         this.lastFetchId = 0;
     }
 
@@ -109,6 +111,8 @@ class Transactions extends React.Component<IProps, IState> {
                 const date = new pDate(invoice.timestamp).toLocaleString();
                 invoice.date = date;
                 const tablecolumns = [...columns];
+                if (invoice.status === "waiting") { invoice.status = "settled"; }
+
                 if (invoice.status === "settled") {
                     tablecolumns.push({
                         title: t.t("Settle detail"),
@@ -160,7 +164,7 @@ class Transactions extends React.Component<IProps, IState> {
             },
         );
 
-        const merchantsSearch = <Select
+        const merchantsSearch = (userObject.hasRealmRole("merchants_admin")) ? <Select
             showSearch
             showArrow={false}
             labelInValue
@@ -175,7 +179,7 @@ class Transactions extends React.Component<IProps, IState> {
             open
         >
             {this.state.merchantsResult.map((d: any) => <Option key={d.value}>{d.text}</Option>)}
-        </Select >;
+        </Select > : null;
 
         return (
             <Block title={t.t("Transactions")} icon={
@@ -217,7 +221,6 @@ class Transactions extends React.Component<IProps, IState> {
 
     // seach merchants
     public searchMerchants(name: string) {
-        console.log("fetching merchant " + name);
         this.lastFetchId += 1;
         const fetchId = this.lastFetchId;
         this.setState({ merchantsResult: [], merchantsLoading: true });
@@ -227,7 +230,6 @@ class Transactions extends React.Component<IProps, IState> {
                 if (fetchId !== this.lastFetchId) { // for fetch callback order
                     return;
                 }
-                console.log(body);
                 const data = body.results.map((user) => ({
                     text: `${user.name.first} ${user.name.last}`,
                     value: user.login.username,
@@ -238,7 +240,7 @@ class Transactions extends React.Component<IProps, IState> {
 
     public selectMerchant(value) {
         this.setState({
-            merchantFilter: value,
+            merchantFilter: value || [],
             merchantsResult: [],
             merchantsLoading: false,
         });
