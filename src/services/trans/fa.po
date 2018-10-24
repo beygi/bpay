@@ -36,11 +36,11 @@ msgstr "اضافه کردن گرون"
 msgid "add new group"
 msgstr "اضافه کردن گروه جدید"
 
-#: src/components/Settle/index.tsx:111 src/components/Settle/index.tsx:91
+#: src/components/Settle/index.tsx:106 src/components/Settle/index.tsx:85
 msgid "Amount"
 msgstr "مقدار"
 
-#: src/components/Settle/index.tsx:66
+#: src/components/Settle/index.tsx:70
 msgid "amount is not equal to selected invoice sum"
 msgstr "مقدار وارد شده با مجموع مبلغ فاکتورهای انتخاب شده همخوانی ندارد"
 
@@ -48,12 +48,12 @@ msgstr "مقدار وارد شده با مجموع مبلغ فاکتورهای �
 msgid "Available"
 msgstr "در دسترس"
 
-#: src/components/Analysis/index.tsx:130
-msgid "Balance"
-msgstr "بالانس"
-
 #: src/components/Unsettled/index.tsx:58
 msgid "‌Balance"
+msgstr "بالانس"
+
+#: src/components/Analysis/index.tsx:130
+msgid "Balance"
 msgstr "بالانس"
 
 #: src/components/Deposit/index.tsx:60 src/containers/KYC/index.tsx:126
@@ -112,28 +112,28 @@ msgstr "بدهی کنونی"
 msgid "Dashboard"
 msgstr "داشبورد"
 
-#: src/components/Settle/index.tsx:98
+#: src/components/Settle/index.tsx:92
 msgid "Date"
 msgstr "تاریخ"
 
-#: src/components/Settle/index.tsx:133
+#: src/components/Settle/index.tsx:127
 msgid "Date and time"
 msgstr "تاریخ و زمان پرداخت"
 
 #: src/components/DashboardMenu/menu.tsx:46
 msgid "Deposit"
-msgstr ""
+msgstr "واریز"
 
 #: src/containers/Dashboard/index.tsx:64 src/containers/Deposit/index.tsx:53
 #: src/containers/Exchange/index.tsx:56
 msgid "Deposit history"
-msgstr ""
+msgstr "تاریخچهٔ مبالغ واریز"
 
 #: src/components/NewInvoice/index.tsx:124
 msgid "Description"
 msgstr "توضیحات"
 
-#: src/components/Settle/index.tsx:163
+#: src/components/Settle/index.tsx:157
 msgid "Destination Card number"
 msgstr "شماره کارت مقصد"
 
@@ -181,21 +181,25 @@ msgstr "ناموفق"
 msgid "Failed to create invoice"
 msgstr "عدم موفقیت در ایجاد فاکتور"
 
+#: src/components/Settle/index.tsx:224
+msgid "Failed to settle invoices"
+msgstr "عدم موفقیت در تسویه حساب فاکتورها"
+
 #: src/containers/Admin/Dashboard/index.tsx:45
 msgid "Fee Cash Desk"
-msgstr ""
+msgstr "میز حساب تعرفه ها"
 
 #: src/containers/KYC/index.tsx:163
 msgid "Female"
-msgstr ""
+msgstr "زن"
 
 #: src/containers/KYC/index.tsx:135
 msgid "First Name"
-msgstr ""
+msgstr "نام"
 
 #: src/containers/Admin/Users/index.tsx:141
 msgid "First Page"
-msgstr ""
+msgstr "صفحه اول"
 
 #: src/containers/KYC/index.tsx:155
 msgid "Gender"
@@ -208,35 +212,35 @@ msgstr "ورود دو مرحله ای توسط گوگل"
 #: src/containers/Groups/index.tsx:114 src/containers/Groups/index.tsx:129
 #: src/containers/Groups/index.tsx:26
 msgid "Group Name"
-msgstr ""
+msgstr "نام گروه"
 
 #: src/components/UserStatusGuide/index.tsx:44
 msgid "Happy Trading"
-msgstr ""
+msgstr "با خوشحالی معامله کنید"
 
 #: src/components/Analysis/index.tsx:110
 msgid "Hot"
-msgstr ""
+msgstr "گرم"
 
 #: src/containers/Admin/Dashboard/index.tsx:36
 msgid "Hot storage"
 msgstr "مخزن گرم"
 
-#: src/components/Settle/index.tsx:87
+#: src/components/Settle/index.tsx:81
 msgid "ID"
 msgstr "شناسه"
 
 #: src/components/UserStatusGuide/index.tsx:43
 msgid "Identity check"
-msgstr ""
+msgstr "بررسی مشخصات"
 
 #: src/containers/KYC/index.tsx:93
 msgid "Image uploaded successfully"
-msgstr ""
+msgstr "تصویر با موفقیت بارگذاری شد"
 
 #: src/components/Deposit/index.tsx:78
 msgid "In order"
-msgstr ""
+msgstr "در حال فروش"
 
 #: src/components/Transactions/index.tsx:22
 msgid "IRR"
@@ -245,7 +249,7 @@ msgstr "ریال ایران"
 #: src/components/DashboardMenu/adminMenu.tsx:26
 #: src/components/DashboardMenu/menu.tsx:58
 msgid "KYC"
-msgstr ""
+msgstr "اصالت مشتریان"
 
 #: src/components/DashboardHeaderProfile/index.tsx:60
 msgid "Last login:"
@@ -257,15 +261,15 @@ msgstr "نام خانوادگی"
 
 #: src/containers/KYC/index.tsx:202
 msgid "License ID"
-msgstr ""
+msgstr "شماره کارت مشخصات"
 
 #: src/containers/KYC/index.tsx:188
 msgid "License Type"
-msgstr ""
+msgstr "نوع کارت مشخصات"
 
 #: src/components/PlaceOrder/index.tsx:54
 msgid "Limit"
-msgstr ""
+msgstr "محدودیت"
 
 #: src/containers/User/components/Login/index.tsx:116
 msgid "login"
@@ -283,15 +287,15 @@ msgstr "خروج"
 #: src/containers/Groups/index.tsx:46 src/containers/Groups/index.tsx:48
 #: src/containers/Groups/index.tsx:50
 msgid "lorem ipsum"
-msgstr ""
+msgstr "متن تست"
 
 #: src/containers/KYC/index.tsx:162
 msgid "Male"
-msgstr ""
+msgstr "مرد"
 
 #: src/components/Analysis/index.tsx:105
 msgid "Master"
-msgstr ""
+msgstr "اصلی"
 
 #: src/containers/Dashboard/index.tsx:162 src/containers/Dashboard/index.tsx:46
 msgid "New Invoice"
@@ -317,25 +321,25 @@ msgstr "باز کردن درگاه"
 msgid "Order id"
 msgstr "شماره سفارش"
 
-#: src/components/Settle/index.tsx:154
+#: src/components/Settle/index.tsx:148
 msgid "Origin Card number"
 msgstr "شماره کارت مبدا"
 
 #: src/containers/KYC/index.tsx:194
 msgid "Passport"
-msgstr ""
+msgstr "گذرنامه"
 
 #: src/components/KYC/index.tsx:37
 msgid "Passport cover"
-msgstr ""
+msgstr "جلد گذرنامه"
 
 #: src/containers/KYC/index.tsx:211
 msgid "Passport Cover"
-msgstr ""
+msgstr "جلد گذرنامه"
 
 #: src/components/KYC/index.tsx:41 src/containers/KYC/index.tsx:219
 msgid "Passport Personal Page"
-msgstr ""
+msgstr "صفحه مشخصات گذرنامه"
 
 #: src/containers/User/components/Login/index.tsx:112
 msgid "Password"
@@ -345,11 +349,11 @@ msgstr "رمز عبور"
 msgid "Permission"
 msgstr "دسترسی"
 
-#: src/components/Settle/index.tsx:166
+#: src/components/Settle/index.tsx:161
 msgid "Please input 16 digits destination card number "
 msgstr "لطفا شماره کارت ۱۶ رقمی مقصد را وارد کنید"
 
-#: src/components/Settle/index.tsx:157
+#: src/components/Settle/index.tsx:151
 msgid "Please input 16 digits origin card number "
 msgstr "لطفا شماره کارت ۱۶ رقمی مبدا را وارد کنید"
 
@@ -361,7 +365,7 @@ msgstr "لطفا متن توضیحات را وارد کنید. حداکثر ۳۰
 msgid "Please input price"
 msgstr "لطفا قیمت را وارد کنید"
 
-#: src/components/Settle/index.tsx:175
+#: src/components/Settle/index.tsx:170
 msgid "Please input Tracking code "
 msgstr "لطفا کد پیگیری سیستم بانکی را وارد کنید"
 
@@ -393,11 +397,11 @@ msgstr "لطفا کشور خود را انتخاب کنید"
 msgid "Please select a currency to deposit"
 msgstr "لطفا ارز پرداختی را انتخاب کنید"
 
-#: src/components/Settle/index.tsx:68
+#: src/components/Settle/index.tsx:72
 msgid "Please select payment amount"
 msgstr "لطفا مبلغ را وارد کنید"
 
-#: src/components/Settle/index.tsx:136
+#: src/components/Settle/index.tsx:130
 msgid "Please select payment date and time"
 msgstr "لطفا تاریخ و ساعت پرداخت را وارد کنید"
 
@@ -411,19 +415,19 @@ msgstr "لطفا جنسیت خود را مشخص کنید"
 
 #: src/containers/KYC/index.tsx:213
 msgid "please upload your cover"
-msgstr ""
+msgstr "لطفا تصویر جلد را بارگذاری کنید"
 
 #: src/containers/KYC/index.tsx:221
 msgid "please upload your passport personal page"
-msgstr ""
+msgstr "لطفا تصویر صفحهٔ مشخصات گذرنامه تان را وارد کنید"
 
 #: src/containers/KYC/index.tsx:229
 msgid "please upload your slefie  image"
-msgstr ""
+msgstr "لطفا تصویر سلفی خودتان را وارد کنید"
 
 #: src/containers/Admin/Users/index.tsx:144
 msgid "Previous Page"
-msgstr ""
+msgstr "صفحه قبل"
 
 #: src/components/Transactions/index.tsx:94
 msgid "Price"
@@ -431,7 +435,7 @@ msgstr "قیمت"
 
 #: src/components/Analysis/index.tsx:120
 msgid "Promised owes"
-msgstr ""
+msgstr "بدهی های وعده داده شده"
 
 #: src/components/UserStatusGuide/index.tsx:40
 msgid "Register"
@@ -451,12 +455,12 @@ msgstr "انتخاب فروشنده"
 
 #: src/components/KYC/index.tsx:45 src/containers/KYC/index.tsx:227
 msgid "Selfie With ID And Note"
-msgstr ""
+msgstr "سلفی با شناسه و توضیحات"
 
 #: src/components/PlaceOrder/index.tsx:116
 #: src/components/PlaceOrder/index.tsx:91
 msgid "Sell "
-msgstr ""
+msgstr "فروش"
 
 #: src/components/Unsettled/index.tsx:73 src/containers/Dashboard/index.tsx:155
 msgid "Settle"
@@ -485,15 +489,19 @@ msgstr "وضعیت"
 
 #: src/containers/Groups/index.tsx:96
 msgid "sth"
-msgstr ""
+msgstr "چیزی"
 
-#: src/components/Settle/index.tsx:181 src/containers/KYC/index.tsx:236
+#: src/components/Settle/index.tsx:178 src/containers/KYC/index.tsx:236
 msgid "Submit"
 msgstr "ارسال"
 
 #: src/components/Transactions/index.tsx:22
 msgid "success"
 msgstr "پرداخت شده"
+
+#: src/components/Settle/index.tsx:214
+msgid "successfully settled"
+msgstr "تسویه حساب با موفقیت انجام شد"
 
 #: src/components/DashboardMenu/adminMenu.tsx:32
 msgid "Support"
@@ -513,7 +521,7 @@ msgstr "زبان سیستم:"
 
 #: src/containers/Admin/Dashboard/index.tsx:42
 msgid "Tax Cash Desk"
-msgstr ""
+msgstr "میز حساب مالیات"
 
 #: src/components/Transactions/index.tsx:150
 msgid "There is no data to display"
@@ -523,11 +531,11 @@ msgstr "داده ای برای نمایش وجود ندارد"
 msgid "Total"
 msgstr "مجموع"
 
-#: src/components/Settle/index.tsx:188
+#: src/components/Settle/index.tsx:186
 msgid "Total:"
 msgstr "مجموع:"
 
-#: src/components/Settle/index.tsx:172
+#: src/components/Settle/index.tsx:167
 msgid "Tracking code"
 msgstr "شماره رهگیری"
 
@@ -542,11 +550,11 @@ msgstr "فاکتورهای تسویه نشده"
 #: src/components/Uploader/index.tsx:99
 #: src/components/UserStatusGuide/index.tsx:42
 msgid "Upload"
-msgstr ""
+msgstr "بارگذاری"
 
 #: src/components/UserStatusGuide/index.tsx:42
 msgid "Upload your documents"
-msgstr ""
+msgstr "مستندات خود را بارگذاری کنید"
 
 #: src/components/Transactions/index.tsx:22
 msgid "USD"
@@ -586,7 +594,7 @@ msgstr "هشدار"
 
 #: src/containers/KYC/index.tsx:244
 msgid "we will inform you about the progress in your profile page"
-msgstr ""
+msgstr "ما وضعیت را در صفحهٔ کاربری تان به اطلاع خواهیم رساند‍"
 
 #: src/components/UserStatusGuide/index.tsx:40
 msgid "You are a member"
