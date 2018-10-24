@@ -255,7 +255,7 @@ class Settle extends React.Component<IProps, IState> {
         this.api.getPreSettleUsingGET({
             apikey: this.props.user.apiKey,
             mob: this.props.user.mobile,
-            mermob: this.props.user.mobile,
+            mermob: this.props.merchantId,
             $domain: "https://api.becopay.com",
         }).then((response) => {
             this.setState({ loading: false });
