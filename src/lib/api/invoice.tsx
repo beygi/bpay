@@ -23,7 +23,7 @@ interface Debt {
     "sum": number;
 }
 interface InvRequest {
-    "apiKey": string;
+    "apikey": string;
     "description": string;
     "mobile": string;
     "orderId": string;
@@ -90,6 +90,19 @@ interface PaginationInvoiceResponse {
     "size": number;
     "status": number;
 }
+interface PaginationVuMerchantdebt {
+    "content": VuMerchantdebt[]
+    | VuMerchantdebt
+
+    ;
+    "count": number;
+    "name": string;
+    "next": string;
+    "page": number;
+    "previous": string;
+    "size": number;
+    "status": number;
+}
 interface RequestSettle {
     "amount": number;
     "apikey": string;
@@ -113,6 +126,14 @@ interface Settleup {
     ;
     "originCard": string;
     "txid": string;
+}
+interface VuMerchantdebt {
+    "balance": number;
+    "count": number;
+    "id": number;
+    "merMobile": string;
+    "name": string;
+    "symbol": string;
 }
 interface settleUpInvoices {
     "amount": number;
@@ -233,7 +254,7 @@ export default class invoiceApi {
     }
 
     public getByIdUsingGET(parameters: {
-        "apiKey"?: string,
+        "apikey"?: string,
         "id": string,
         "mob"?: string,
         $queryParameters?: any,
@@ -248,8 +269,8 @@ export default class invoiceApi {
         return new Promise((resolve, reject) => {
             headers.Accept = "application/json";
 
-            if (parameters.apiKey !== undefined) {
-                queryParameters.apiKey = parameters.apiKey;
+            if (parameters.apikey !== undefined) {
+                queryParameters.apikey = parameters.apikey;
             }
 
             if (parameters.id !== undefined) {
@@ -313,7 +334,7 @@ export default class invoiceApi {
     }
 
     public getAllInvoicev2UsingGET(parameters: {
-        "apiKey": string,
+        "apikey": string,
         "dir"?: string,
         "mob": string,
         "page"?: number,
@@ -331,12 +352,12 @@ export default class invoiceApi {
         return new Promise((resolve, reject) => {
             headers.Accept = "application/json";
 
-            if (parameters.apiKey !== undefined) {
-                queryParameters.apiKey = parameters.apiKey;
+            if (parameters.apikey !== undefined) {
+                queryParameters.apikey = parameters.apikey;
             }
 
-            if (parameters.apiKey === undefined) {
-                reject(new Error("Missing required  parameter: apiKey"));
+            if (parameters.apikey === undefined) {
+                reject(new Error("Missing required  parameter: apikey"));
                 return;
             }
 
@@ -376,7 +397,7 @@ export default class invoiceApi {
     }
 
     public getByOrderIdUsingGET(parameters: {
-        "apiKey": string,
+        "apikey": string,
         "id": string,
         "mob": string,
         $queryParameters?: any,
@@ -391,12 +412,12 @@ export default class invoiceApi {
         return new Promise((resolve, reject) => {
             headers.Accept = "application/json";
 
-            if (parameters.apiKey !== undefined) {
-                queryParameters.apiKey = parameters.apiKey;
+            if (parameters.apikey !== undefined) {
+                queryParameters.apikey = parameters.apikey;
             }
 
-            if (parameters.apiKey === undefined) {
-                reject(new Error("Missing required  parameter: apiKey"));
+            if (parameters.apikey === undefined) {
+                reject(new Error("Missing required  parameter: apikey"));
                 return;
             }
 
@@ -539,6 +560,54 @@ export default class invoiceApi {
             queryParameters = {};
 
             this.request("POST", domain + path, body, headers, queryParameters, form, reject, resolve);
+        });
+    }
+
+    public getMerchantDebtUsingGET(parameters: {
+        "apikey"?: string,
+        "dir"?: string,
+        "mob"?: string,
+        "page"?: number,
+        "size"?: number,
+        $queryParameters?: any,
+        $domain?: string,
+    }): Promise<request.Response> {
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/merchant/debt";
+        let body: any;
+        const queryParameters: any = {};
+        const headers: any = {};
+        const form: any = {};
+        return new Promise((resolve, reject) => {
+            headers.Accept = "*/*";
+
+            if (parameters.apikey !== undefined) {
+                queryParameters.apikey = parameters.apikey;
+            }
+
+            if (parameters.dir !== undefined) {
+                queryParameters.dir = parameters.dir;
+            }
+
+            if (parameters.mob !== undefined) {
+                queryParameters.mob = parameters.mob;
+            }
+
+            if (parameters.page !== undefined) {
+                queryParameters.page = parameters.page;
+            }
+
+            if (parameters.size !== undefined) {
+                queryParameters.size = parameters.size;
+            }
+
+            if (parameters.$queryParameters) {
+                Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                    queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+                });
+            }
+
+            this.request("GET", domain + path, body, headers, queryParameters, form, reject, resolve);
         });
     }
 

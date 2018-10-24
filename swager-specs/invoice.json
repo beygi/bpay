@@ -177,9 +177,9 @@
                     "application/json"
                 ],
                 "parameters": [{
-                        "name": "apiKey",
+                        "name": "apikey",
                         "in": "query",
-                        "description": "apiKey",
+                        "description": "apikey",
                         "required": false,
                         "type": "string"
                     },
@@ -284,9 +284,9 @@
                     "application/json"
                 ],
                 "parameters": [{
-                        "name": "apiKey",
+                        "name": "apikey",
                         "in": "query",
-                        "description": "apiKey",
+                        "description": "apikey",
                         "required": true,
                         "type": "string"
                     },
@@ -372,9 +372,9 @@
                     "application/json"
                 ],
                 "parameters": [{
-                        "name": "apiKey",
+                        "name": "apikey",
                         "in": "query",
-                        "description": "apiKey",
+                        "description": "apikey",
                         "required": true,
                         "type": "string"
                     },
@@ -547,6 +547,77 @@
                     },
                     "201": {
                         "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/merchant/debt": {
+            "get": {
+                "tags": [
+                    "merchant-rest"
+                ],
+                "summary": "getMerchantDebt",
+                "operationId": "getMerchantDebtUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [{
+                        "name": "apikey",
+                        "in": "query",
+                        "description": "apikey",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "dir",
+                        "in": "query",
+                        "description": "dir",
+                        "required": false,
+                        "type": "string",
+                        "default": "asc"
+                    },
+                    {
+                        "name": "mob",
+                        "in": "query",
+                        "description": "mob",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "format": "int32"
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "size",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20,
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/PaginationVuMerchantdebt"
+                        }
                     },
                     "401": {
                         "description": "Unauthorized"
@@ -849,7 +920,7 @@
         "InvRequest": {
             "type": "object",
             "properties": {
-                "apiKey": {
+                "apikey": {
                     "type": "string"
                 },
                 "description": {
@@ -1075,6 +1146,43 @@
             },
             "title": "PaginationInvoiceResponse"
         },
+        "PaginationVuMerchantdebt": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/VuMerchantdebt"
+                    }
+                },
+                "count": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "next": {
+                    "type": "string"
+                },
+                "page": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "previous": {
+                    "type": "string"
+                },
+                "size": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "status": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "title": "PaginationVuMerchantdebt"
+        },
         "RequestSettle": {
             "type": "object",
             "properties": {
@@ -1137,6 +1245,33 @@
                 }
             },
             "title": "Settleup"
+        },
+        "VuMerchantdebt": {
+            "type": "object",
+            "properties": {
+                "balance": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "count": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "merMobile": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "symbol": {
+                    "type": "string"
+                }
+            },
+            "title": "VuMerchantdebt"
         },
         "settleUpInvoices": {
             "type": "object",
