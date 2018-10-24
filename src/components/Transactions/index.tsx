@@ -28,11 +28,17 @@ interface IProps {
 interface IState {
     /**  list of all invoices */
     invoices: any;
+    /**  current page */
     currentPage: number;
+    /** loading state */
     loading: boolean;
+    /**  search input's loadint state */
     merchantsLoading: boolean;
+    /**  result of merchant searchs */
     merchantsResult: [];
+    /**  merchant filter that must be applied in api */
     merchantFilter: [];
+    /**  invoice status filters */
     statusFilters: {
         settled?: boolean,
         success?: boolean,
@@ -41,6 +47,7 @@ interface IState {
     };
 }
 
+/**  holds icons and colors for all invoice statuses */
 const icons = {
     failed: <FontAwesomeIcon className="archived" icon={["fas", "times"]} />,
     waiting: <FontAwesomeIcon className="waiting" icon={["fas", "hourglass-half"]} />,
@@ -49,35 +56,49 @@ const icons = {
 };
 
 /**
- * this component shows all transactions of merchant
+ * this component shows all transactions of merchant or transactions of all merchants for admin
  */
 class Transactions extends React.Component<IProps, IState> {
 
+    /**  holds api instance */
     public api = API.getInstance();
+    /**  user object wich is represent current user */
     public userObject = USER.getInstance();
+    /**  holds last fetched id for merchant's search field */
     public lastFetchId: number;
 
     constructor(props: IProps) {
         super(props);
+
+        // initial state
         this.state = {
             invoices: { count: 0 }, currentPage: 1, loading: true, statusFilters: { settled: false, success: true, waiting: true, failed: false }
             , merchantsResult: [], merchantsLoading: false, merchantFilter: [],
         };
         // send token with all api requests
         this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
+
+        // bind this object's context to methods
         this.searchMerchants = this.searchMerchants.bind(this);
         this.selectMerchant = this.selectMerchant.bind(this);
+
+        // debounce seach merchant and get data for performance
         this.searchMerchants = _.debounce(this.searchMerchants, 800);
         this.getData = _.debounce(this.getData, 800);
+
+        // initial last fetch id
         this.lastFetchId = 0;
     }
 
     public componentDidMount() {
         this.getData();
+        // we fetch data every 5 seconds until our websocket is available
         const intervalId = setInterval(this.getData.bind(this), 5000);
     }
 
     public render() {
+
+        /**  holds detail table columns  */
         const columns = [
             {
                 title: t.t("Shop Name"),
@@ -102,6 +123,7 @@ class Transactions extends React.Component<IProps, IState> {
             },
         ];
 
+        // holds jsx of invoices as an array
         let invoices = null;
         if (this.state.invoices && this.state.invoices.content !== undefined) {
             // local Date object
@@ -110,8 +132,8 @@ class Transactions extends React.Component<IProps, IState> {
                 const date = new pDate(invoice.timestamp).toLocaleString();
                 invoice.date = date;
                 const tablecolumns = [...columns];
-                if (invoice.status === "waiting") { invoice.status = "settled"; }
 
+                // add an extra column to detail table for display detailed settle transaction
                 if (invoice.status === "settled") {
                     tablecolumns.push({
                         title: t.t("Settle detail"),
@@ -155,6 +177,7 @@ class Transactions extends React.Component<IProps, IState> {
             (status) => {
                 return (<span onClick={() => {
                     const statusFilters = this.state.statusFilters;
+                    // toggle clicked permission
                     statusFilters[status] = !statusFilters[status];
                     this.setState({ statusFilters, loading: true, currentPage: 1 }, () => { this.getData(); });
                 }} key={status} className={`filter ${this.state.statusFilters[status]}`
@@ -218,7 +241,7 @@ class Transactions extends React.Component<IProps, IState> {
         });
     }
 
-    // seach merchants
+    /**  search for merchant */
     public searchMerchants(name: string) {
         this.lastFetchId += 1;
         const fetchId = this.lastFetchId;
@@ -237,6 +260,7 @@ class Transactions extends React.Component<IProps, IState> {
             });
     }
 
+    /**  set selected merchant in state so we can use it in api  */
     public selectMerchant(value) {
         this.setState({
             merchantFilter: value || [],
