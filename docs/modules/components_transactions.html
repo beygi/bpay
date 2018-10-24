@@ -86,6 +86,7 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="components_transactions.html#option" class="tsd-kind-icon">Option</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="components_transactions.html#fiats" class="tsd-kind-icon">fiats</a></li>
 							</ul>
 						</section>
@@ -108,12 +109,22 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="fiats" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> fiats</h3>
-					<div class="tsd-signature tsd-kind-icon">fiats<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[t.t(&quot;IRR&quot;), t.t(&quot;USD&quot;), t.t(&quot;EUR&quot;), t.t(&quot;Bitcoin&quot;), t.t(&quot;Ethereum&quot;), t.t(&quot;failed&quot;), t.t(&quot;waiting&quot;), t.t(&quot;success&quot;)]</span></div>
+					<a name="option" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Option</h3>
+					<div class="tsd-signature tsd-kind-icon">Option<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ClassicComponentClass</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">OptionProps</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;Select.Option</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in components/Transactions/index.tsx:18</li>
+							<li>Defined in components/Transactions/index.tsx:21</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="fiats" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> fiats</h3>
+					<div class="tsd-signature tsd-kind-icon">fiats<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[t.t(&quot;IRR&quot;), t.t(&quot;USD&quot;), t.t(&quot;EUR&quot;), t.t(&quot;Bitcoin&quot;), t.t(&quot;Ethereum&quot;), t.t(&quot;failed&quot;), t.t(&quot;waiting&quot;), t.t(&quot;success&quot;), t.t(&quot;settled&quot;)]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in components/Transactions/index.tsx:22</li>
 						</ul>
 					</aside>
 				</section>
@@ -130,7 +141,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in components/Transactions/index.tsx:135</li>
+									<li>Defined in components/Transactions/index.tsx:256</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -155,7 +166,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in components/Transactions/index.tsx:140</li>
+									<li>Defined in components/Transactions/index.tsx:261</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -182,7 +193,7 @@
 					<div class="tsd-signature tsd-kind-icon">icons<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in components/Transactions/index.tsx:29</li>
+							<li>Defined in components/Transactions/index.tsx:44</li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -191,7 +202,17 @@
 						<div class="tsd-signature tsd-kind-icon">failed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol"> =&nbsp;&lt;FontAwesomeIcon className&#x3D;&quot;archived&quot; icon&#x3D;{[&quot;fas&quot;, &quot;times&quot;]} /&gt;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in components/Transactions/index.tsx:30</li>
+								<li>Defined in components/Transactions/index.tsx:45</li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
+						<a name="icons.settled" class="tsd-anchor"></a>
+						<h3>settled</h3>
+						<div class="tsd-signature tsd-kind-icon">settled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol"> =&nbsp;&lt;FontAwesomeIcon className&#x3D;&quot;settled&quot; icon&#x3D;{[&quot;fas&quot;, &quot;check-double&quot;]} /&gt;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in components/Transactions/index.tsx:48</li>
 							</ul>
 						</aside>
 					</section>
@@ -201,7 +222,7 @@
 						<div class="tsd-signature tsd-kind-icon">success<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol"> =&nbsp;&lt;FontAwesomeIcon className&#x3D;&quot;success&quot; icon&#x3D;{[&quot;fas&quot;, &quot;check&quot;]} /&gt;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in components/Transactions/index.tsx:32</li>
+								<li>Defined in components/Transactions/index.tsx:47</li>
 							</ul>
 						</aside>
 					</section>
@@ -211,7 +232,7 @@
 						<div class="tsd-signature tsd-kind-icon">waiting<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol"> =&nbsp;&lt;FontAwesomeIcon className&#x3D;&quot;waiting&quot; icon&#x3D;{[&quot;fas&quot;, &quot;hourglass-half&quot;]} /&gt;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in components/Transactions/index.tsx:31</li>
+								<li>Defined in components/Transactions/index.tsx:46</li>
 							</ul>
 						</aside>
 					</section>
@@ -239,6 +260,9 @@
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="../interfaces/components_transactions.istate.html" class="tsd-kind-icon">IState</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="components_transactions.html#option" class="tsd-kind-icon">Option</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="components_transactions.html#fiats" class="tsd-kind-icon">fiats</a>

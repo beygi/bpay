@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Transactions | BecopayMerchants</title>
+	<title>Settle | BecopayMerchants</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/components_transactions.html">Components/Transactions</a>
+					<a href="../modules/components_settle.html">Components/Settle</a>
 				</li>
 				<li>
-					<a href="components_transactions.transactions.html">Transactions</a>
+					<a href="components_settle.settle.html">Settle</a>
 				</li>
 			</ul>
-			<h1>Class Transactions&lt;SS&gt;</h1>
+			<h1>Class Settle&lt;SS&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>this component shows all transactions of merchant</p>
+						<p>shows list of unsettled invoices of a merchant to select and settle</p>
 					</div>
 				</div>
 			</section>
@@ -88,10 +88,10 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="tsd-signature-type">Component</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">, </span><a href="../interfaces/components_transactions.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span>
+						<span class="tsd-signature-type">Component</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">, </span><a href="../interfaces/components_settle.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">Transactions</span>
+								<span class="target">Settle</span>
 							</li>
 						</ul>
 					</li>
@@ -104,43 +104,47 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-not-exported"><a href="components_transactions.transactions.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-not-exported"><a href="components_settle.settle.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-not-exported"><a href="components_transactions.transactions.html#api" class="tsd-kind-icon">api</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#context" class="tsd-kind-icon">context</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-not-exported"><a href="components_transactions.transactions.html#lastfetchid" class="tsd-kind-icon">last<wbr>Fetch<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#props" class="tsd-kind-icon">props</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#refs" class="tsd-kind-icon">refs</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#state" class="tsd-kind-icon">state</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-not-exported"><a href="components_transactions.transactions.html#userobject" class="tsd-kind-icon">user<wbr>Object</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-not-exported"><a href="components_settle.settle.html#api" class="tsd-kind-icon">api</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#context" class="tsd-kind-icon">context</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#props" class="tsd-kind-icon">props</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#refs" class="tsd-kind-icon">refs</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#state" class="tsd-kind-icon">state</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-not-exported"><a href="components_settle.settle.html#userobject" class="tsd-kind-icon">user<wbr>Object</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#unsafe_componentwillmount" class="tsd-kind-icon">UNSAFE_<wbr>component<wbr>Will<wbr>Mount</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#unsafe_componentwillreceiveprops" class="tsd-kind-icon">UNSAFE_<wbr>component<wbr>Will<wbr>Receive<wbr>Props</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#unsafe_componentwillupdate" class="tsd-kind-icon">UNSAFE_<wbr>component<wbr>Will<wbr>Update</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#componentdidcatch" class="tsd-kind-icon">component<wbr>Did<wbr>Catch</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-not-exported"><a href="components_transactions.transactions.html#componentdidmount" class="tsd-kind-icon">component<wbr>Did<wbr>Mount</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#componentdidupdate" class="tsd-kind-icon">component<wbr>Did<wbr>Update</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#componentwillmount" class="tsd-kind-icon">component<wbr>Will<wbr>Mount</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#componentwillreceiveprops" class="tsd-kind-icon">component<wbr>Will<wbr>Receive<wbr>Props</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#componentwillunmount" class="tsd-kind-icon">component<wbr>Will<wbr>Unmount</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#componentwillupdate" class="tsd-kind-icon">component<wbr>Will<wbr>Update</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#forceupdate" class="tsd-kind-icon">force<wbr>Update</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="components_transactions.transactions.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#getsnapshotbeforeupdate" class="tsd-kind-icon">get<wbr>Snapshot<wbr>Before<wbr>Update</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="components_transactions.transactions.html#itemrender" class="tsd-kind-icon">item<wbr>Render</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-not-exported"><a href="components_transactions.transactions.html#render" class="tsd-kind-icon">render</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="components_transactions.transactions.html#searchmerchants" class="tsd-kind-icon">search<wbr>Merchants</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="components_transactions.transactions.html#selectmerchant" class="tsd-kind-icon">select<wbr>Merchant</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#setstate" class="tsd-kind-icon">set<wbr>State</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_transactions.transactions.html#shouldcomponentupdate" class="tsd-kind-icon">should<wbr>Component<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#unsafe_componentwillmount" class="tsd-kind-icon">UNSAFE_<wbr>component<wbr>Will<wbr>Mount</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#unsafe_componentwillreceiveprops" class="tsd-kind-icon">UNSAFE_<wbr>component<wbr>Will<wbr>Receive<wbr>Props</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#unsafe_componentwillupdate" class="tsd-kind-icon">UNSAFE_<wbr>component<wbr>Will<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="components_settle.settle.html#checkprice" class="tsd-kind-icon">check<wbr>Price</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#componentdidcatch" class="tsd-kind-icon">component<wbr>Did<wbr>Catch</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-not-exported"><a href="components_settle.settle.html#componentdidmount" class="tsd-kind-icon">component<wbr>Did<wbr>Mount</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#componentdidupdate" class="tsd-kind-icon">component<wbr>Did<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#componentwillmount" class="tsd-kind-icon">component<wbr>Will<wbr>Mount</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#componentwillreceiveprops" class="tsd-kind-icon">component<wbr>Will<wbr>Receive<wbr>Props</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#componentwillunmount" class="tsd-kind-icon">component<wbr>Will<wbr>Unmount</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#componentwillupdate" class="tsd-kind-icon">component<wbr>Will<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#forceupdate" class="tsd-kind-icon">force<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="components_settle.settle.html#getinvoices" class="tsd-kind-icon">get<wbr>Invoices</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#getsnapshotbeforeupdate" class="tsd-kind-icon">get<wbr>Snapshot<wbr>Before<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="components_settle.settle.html#handlesubmit" class="tsd-kind-icon">handle<wbr>Submit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-not-exported"><a href="components_settle.settle.html#render" class="tsd-kind-icon">render</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#setstate" class="tsd-kind-icon">set<wbr>State</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="components_settle.settle.html#shouldcomponentupdate" class="tsd-kind-icon">should<wbr>Component<wbr>Update</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-class tsd-is-not-exported"><a href="components_settle.settle.html#rowselection" class="tsd-kind-icon">row<wbr>Selection</a></li>
 							</ul>
 						</section>
 					</div>
@@ -152,23 +156,23 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Transactions<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="components_transactions.transactions.html" class="tsd-signature-type">Transactions</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Settle<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="components_settle.settle.html" class="tsd-signature-type">Settle</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides Component.__constructor</p>
 								<ul>
-									<li>Defined in components/Transactions/index.tsx:58</li>
+									<li>Defined in components/Settle/index.tsx:56</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>props: <a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a></h5>
+									<h5>props: <a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="components_transactions.transactions.html" class="tsd-signature-type">Transactions</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="components_settle.settle.html" class="tsd-signature-type">Settle</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -181,9 +185,14 @@
 					<div class="tsd-signature tsd-kind-icon">api<span class="tsd-signature-symbol">:</span> <a href="_lib_api_invoice_.invoiceapi.html" class="tsd-signature-type">invoiceApi</a><span class="tsd-signature-symbol"> =&nbsp;API.getInstance()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in components/Transactions/index.tsx:56</li>
+							<li>Defined in components/Settle/index.tsx:45</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>holds an instance of invoice api</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
 					<a name="context" class="tsd-anchor"></a>
@@ -203,20 +212,10 @@
 						</dl>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
-					<a name="lastfetchid" class="tsd-anchor"></a>
-					<h3>last<wbr>Fetch<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">last<wbr>Fetch<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in components/Transactions/index.tsx:58</li>
-						</ul>
-					</aside>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
 					<a name="props" class="tsd-anchor"></a>
 					<h3>props</h3>
-					<div class="tsd-signature tsd-kind-icon">props<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">props<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from Component.props</p>
 						<ul>
@@ -253,7 +252,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
 					<a name="state" class="tsd-anchor"></a>
 					<h3>state</h3>
-					<div class="tsd-signature tsd-kind-icon">state<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">state<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from Component.state</p>
 						<ul>
@@ -267,9 +266,14 @@
 					<div class="tsd-signature tsd-kind-icon">user<wbr>Object<span class="tsd-signature-symbol">:</span> <a href="user.user-1.html" class="tsd-signature-type">USER</a><span class="tsd-signature-symbol"> =&nbsp;USER.getInstance()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in components/Transactions/index.tsx:57</li>
+							<li>Defined in components/Settle/index.tsx:47</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>represent user object for the currently loggined user</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
@@ -316,7 +320,7 @@
 					<a name="unsafe_componentwillreceiveprops" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> UNSAFE_<wbr>component<wbr>Will<wbr>Receive<wbr>Props</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">UNSAFE_<wbr>component<wbr>Will<wbr>Receive<wbr>Props<span class="tsd-signature-symbol">(</span>nextProps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span>, nextContext<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">UNSAFE_<wbr>component<wbr>Will<wbr>Receive<wbr>Props<span class="tsd-signature-symbol">(</span>nextProps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span>, nextContext<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -351,7 +355,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>nextProps: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>nextProps: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>nextContext: <span class="tsd-signature-type">any</span></h5>
@@ -365,7 +369,7 @@
 					<a name="unsafe_componentwillupdate" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> UNSAFE_<wbr>component<wbr>Will<wbr>Update</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">UNSAFE_<wbr>component<wbr>Will<wbr>Update<span class="tsd-signature-symbol">(</span>nextProps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span>, nextState<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span>, nextContext<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">UNSAFE_<wbr>component<wbr>Will<wbr>Update<span class="tsd-signature-symbol">(</span>nextProps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span>, nextState<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span>, nextContext<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -398,13 +402,47 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>nextProps: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>nextProps: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
-									<h5>nextState: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>nextState: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>nextContext: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="checkprice" class="tsd-anchor"></a>
+					<h3>check<wbr>Price</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">check<wbr>Price<span class="tsd-signature-symbol">(</span>rule<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in components/Settle/index.tsx:77</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>amount field validator, it compare amount with total amount of seleced row and check their equality</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>rule: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -455,7 +493,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides ComponentLifecycle.componentDidMount</p>
 								<ul>
-									<li>Defined in components/Transactions/index.tsx:75</li>
+									<li>Defined in components/Settle/index.tsx:71</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -466,7 +504,7 @@
 					<a name="componentdidupdate" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> component<wbr>Did<wbr>Update</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">component<wbr>Did<wbr>Update<span class="tsd-signature-symbol">(</span>prevProps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span>, prevState<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span>, snapshot<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">SS</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">component<wbr>Did<wbr>Update<span class="tsd-signature-symbol">(</span>prevProps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span>, prevState<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span>, snapshot<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">SS</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -485,10 +523,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>prevProps: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>prevProps: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
-									<h5>prevState: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>prevState: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> snapshot: <span class="tsd-signature-type">SS</span></h5>
@@ -539,7 +577,7 @@
 					<a name="componentwillreceiveprops" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> component<wbr>Will<wbr>Receive<wbr>Props</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">component<wbr>Will<wbr>Receive<wbr>Props<span class="tsd-signature-symbol">(</span>nextProps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span>, nextContext<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">component<wbr>Will<wbr>Receive<wbr>Props<span class="tsd-signature-symbol">(</span>nextProps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span>, nextContext<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -573,7 +611,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>nextProps: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>nextProps: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>nextContext: <span class="tsd-signature-type">any</span></h5>
@@ -611,7 +649,7 @@
 					<a name="componentwillupdate" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> component<wbr>Will<wbr>Update</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">component<wbr>Will<wbr>Update<span class="tsd-signature-symbol">(</span>nextProps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span>, nextState<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span>, nextContext<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">component<wbr>Will<wbr>Update<span class="tsd-signature-symbol">(</span>nextProps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span>, nextState<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span>, nextContext<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -643,10 +681,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>nextProps: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>nextProps: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
-									<h5>nextState: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>nextState: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>nextContext: <span class="tsd-signature-type">any</span></h5>
@@ -693,18 +731,23 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-					<a name="getdata" class="tsd-anchor"></a>
-					<h3>get<wbr>Data</h3>
+					<a name="getinvoices" class="tsd-anchor"></a>
+					<h3>get<wbr>Invoices</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Invoices<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in components/Transactions/index.tsx:206</li>
+									<li>Defined in components/Settle/index.tsx:254</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>get merchant data and invouce</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -713,7 +756,7 @@
 					<a name="getsnapshotbeforeupdate" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> get<wbr>Snapshot<wbr>Before<wbr>Update</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Snapshot<wbr>Before<wbr>Update<span class="tsd-signature-symbol">(</span>prevProps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span>, prevState<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SS</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Snapshot<wbr>Before<wbr>Update<span class="tsd-signature-symbol">(</span>prevProps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span>, prevState<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SS</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -735,10 +778,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>prevProps: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>prevProps: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
-									<h5>prevState: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>prevState: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">SS</span>
@@ -749,31 +792,30 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-					<a name="itemrender" class="tsd-anchor"></a>
-					<h3>item<wbr>Render</h3>
+					<a name="handlesubmit" class="tsd-anchor"></a>
+					<h3>handle<wbr>Submit</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">item<wbr>Render<span class="tsd-signature-symbol">(</span>current<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, originalElement<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Submit<span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in components/Transactions/index.tsx:248</li>
+									<li>Defined in components/Settle/index.tsx:213</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>handles form submit routine</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>current: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5>type: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> originalElement: <span class="tsd-signature-type">any</span></h5>
+									<h5>e: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -788,56 +830,10 @@
 							<aside class="tsd-sources">
 								<p>Overrides Component.render</p>
 								<ul>
-									<li>Defined in components/Transactions/index.tsx:80</li>
+									<li>Defined in components/Settle/index.tsx:88</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-					<a name="searchmerchants" class="tsd-anchor"></a>
-					<h3>search<wbr>Merchants</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">search<wbr>Merchants<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in components/Transactions/index.tsx:222</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-					<a name="selectmerchant" class="tsd-anchor"></a>
-					<h3>select<wbr>Merchant</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">select<wbr>Merchant<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in components/Transactions/index.tsx:240</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -890,7 +886,7 @@
 					<a name="shouldcomponentupdate" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> should<wbr>Component<wbr>Update</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">should<wbr>Component<wbr>Update<span class="tsd-signature-symbol">(</span>nextProps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span>, nextState<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span>, nextContext<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">should<wbr>Component<wbr>Update<span class="tsd-signature-symbol">(</span>nextProps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span>, nextState<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span>, nextContext<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -913,10 +909,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>nextProps: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>nextProps: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.iprops.html" class="tsd-signature-type">IProps</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
-									<h5>nextState: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_transactions.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>nextState: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/components_settle.istate.html" class="tsd-signature-type">IState</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>nextContext: <span class="tsd-signature-type">any</span></h5>
@@ -927,6 +923,50 @@
 					</ul>
 				</section>
 			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class tsd-is-not-exported">
+					<a name="rowselection" class="tsd-anchor"></a>
+					<h3>row<wbr>Selection</h3>
+					<div class="tsd-signature tsd-kind-icon">row<wbr>Selection<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in components/Settle/index.tsx:49</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>handles row selection. this function set sum and seleced rows to the component state</p>
+						</div>
+					</div>
+					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal tsd-is-not-exported">
+						<a name="rowselection.onchange" class="tsd-anchor"></a>
+						<h3>on<wbr>Change</h3>
+						<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-object-literal tsd-is-not-exported">
+							<li class="tsd-signature tsd-kind-icon">on<wbr>Change<span class="tsd-signature-symbol">(</span>selectedRowKeys<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, selectedRows<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						</ul>
+						<ul class="tsd-descriptions">
+							<li class="tsd-description">
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in components/Settle/index.tsx:50</li>
+									</ul>
+								</aside>
+								<h4 class="tsd-parameters-title">Parameters</h4>
+								<ul class="tsd-parameters">
+									<li>
+										<h5>selectedRowKeys: <span class="tsd-signature-type">any</span></h5>
+									</li>
+									<li>
+										<h5>selectedRows: <span class="tsd-signature-type">any</span></h5>
+									</li>
+								</ul>
+								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							</li>
+						</ul>
+					</section>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
@@ -935,7 +975,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/components_transactions.html">Components/<wbr>Transactions</a>
+						<a href="../modules/components_settle.html">Components/<wbr>Settle</a>
 					</li>
 				</ul>
 			</nav>
@@ -944,113 +984,104 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="components_transactions.transactions.html" class="tsd-kind-icon">Transactions</a>
+						<a href="components_settle.settle.html" class="tsd-kind-icon">Settle</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="components_settle.settle.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#api" class="tsd-kind-icon">api</a>
+								<a href="components_settle.settle.html#api" class="tsd-kind-icon">api</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#context" class="tsd-kind-icon">context</a>
+								<a href="components_settle.settle.html#context" class="tsd-kind-icon">context</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
+								<a href="components_settle.settle.html#props" class="tsd-kind-icon">props</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
+								<a href="components_settle.settle.html#refs" class="tsd-kind-icon">refs</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
+								<a href="components_settle.settle.html#state" class="tsd-kind-icon">state</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#lastfetchid" class="tsd-kind-icon">last<wbr>Fetch<wbr>Id</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#props" class="tsd-kind-icon">props</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#refs" class="tsd-kind-icon">refs</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#state" class="tsd-kind-icon">state</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#userobject" class="tsd-kind-icon">user<wbr>Object</a>
+								<a href="components_settle.settle.html#userobject" class="tsd-kind-icon">user<wbr>Object</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#unsafe_componentwillmount" class="tsd-kind-icon">UNSAFE_<wbr>component<wbr>Will<wbr>Mount</a>
+								<a href="components_settle.settle.html#unsafe_componentwillmount" class="tsd-kind-icon">UNSAFE_<wbr>component<wbr>Will<wbr>Mount</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#unsafe_componentwillreceiveprops" class="tsd-kind-icon">UNSAFE_<wbr>component<wbr>Will<wbr>Receive<wbr>Props</a>
+								<a href="components_settle.settle.html#unsafe_componentwillreceiveprops" class="tsd-kind-icon">UNSAFE_<wbr>component<wbr>Will<wbr>Receive<wbr>Props</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#unsafe_componentwillupdate" class="tsd-kind-icon">UNSAFE_<wbr>component<wbr>Will<wbr>Update</a>
+								<a href="components_settle.settle.html#unsafe_componentwillupdate" class="tsd-kind-icon">UNSAFE_<wbr>component<wbr>Will<wbr>Update</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+								<a href="components_settle.settle.html#checkprice" class="tsd-kind-icon">check<wbr>Price</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#componentdidcatch" class="tsd-kind-icon">component<wbr>Did<wbr>Catch</a>
+								<a href="components_settle.settle.html#componentdidcatch" class="tsd-kind-icon">component<wbr>Did<wbr>Catch</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#componentdidmount" class="tsd-kind-icon">component<wbr>Did<wbr>Mount</a>
+								<a href="components_settle.settle.html#componentdidmount" class="tsd-kind-icon">component<wbr>Did<wbr>Mount</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#componentdidupdate" class="tsd-kind-icon">component<wbr>Did<wbr>Update</a>
+								<a href="components_settle.settle.html#componentdidupdate" class="tsd-kind-icon">component<wbr>Did<wbr>Update</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#componentwillmount" class="tsd-kind-icon">component<wbr>Will<wbr>Mount</a>
+								<a href="components_settle.settle.html#componentwillmount" class="tsd-kind-icon">component<wbr>Will<wbr>Mount</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#componentwillreceiveprops" class="tsd-kind-icon">component<wbr>Will<wbr>Receive<wbr>Props</a>
+								<a href="components_settle.settle.html#componentwillreceiveprops" class="tsd-kind-icon">component<wbr>Will<wbr>Receive<wbr>Props</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#componentwillunmount" class="tsd-kind-icon">component<wbr>Will<wbr>Unmount</a>
+								<a href="components_settle.settle.html#componentwillunmount" class="tsd-kind-icon">component<wbr>Will<wbr>Unmount</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#componentwillupdate" class="tsd-kind-icon">component<wbr>Will<wbr>Update</a>
+								<a href="components_settle.settle.html#componentwillupdate" class="tsd-kind-icon">component<wbr>Will<wbr>Update</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#forceupdate" class="tsd-kind-icon">force<wbr>Update</a>
+								<a href="components_settle.settle.html#forceupdate" class="tsd-kind-icon">force<wbr>Update</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#getdata" class="tsd-kind-icon">get<wbr>Data</a>
+								<a href="components_settle.settle.html#getinvoices" class="tsd-kind-icon">get<wbr>Invoices</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#getsnapshotbeforeupdate" class="tsd-kind-icon">get<wbr>Snapshot<wbr>Before<wbr>Update</a>
+								<a href="components_settle.settle.html#getsnapshotbeforeupdate" class="tsd-kind-icon">get<wbr>Snapshot<wbr>Before<wbr>Update</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#itemrender" class="tsd-kind-icon">item<wbr>Render</a>
+								<a href="components_settle.settle.html#handlesubmit" class="tsd-kind-icon">handle<wbr>Submit</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#render" class="tsd-kind-icon">render</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#searchmerchants" class="tsd-kind-icon">search<wbr>Merchants</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#selectmerchant" class="tsd-kind-icon">select<wbr>Merchant</a>
+								<a href="components_settle.settle.html#render" class="tsd-kind-icon">render</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#setstate" class="tsd-kind-icon">set<wbr>State</a>
+								<a href="components_settle.settle.html#setstate" class="tsd-kind-icon">set<wbr>State</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-								<a href="components_transactions.transactions.html#shouldcomponentupdate" class="tsd-kind-icon">should<wbr>Component<wbr>Update</a>
+								<a href="components_settle.settle.html#shouldcomponentupdate" class="tsd-kind-icon">should<wbr>Component<wbr>Update</a>
+							</li>
+							<li class=" tsd-kind-object-literal tsd-parent-kind-class tsd-is-not-exported">
+								<a href="components_settle.settle.html#rowselection" class="tsd-kind-icon">row<wbr>Selection</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../interfaces/components_transactions.iprops.html" class="tsd-kind-icon">IProps</a>
+						<a href="../interfaces/components_settle.iprops.html" class="tsd-kind-icon">IProps</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../interfaces/components_transactions.istate.html" class="tsd-kind-icon">IState</a>
+						<a href="../interfaces/components_settle.istate.html" class="tsd-kind-icon">IState</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/components_transactions.html#option" class="tsd-kind-icon">Option</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/components_transactions.html#fiats" class="tsd-kind-icon">fiats</a>
+						<a href="../modules/components_settle.html#formitem" class="tsd-kind-icon">Form<wbr>Item</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/components_transactions.html#mapdispatchtoprops" class="tsd-kind-icon">map<wbr>Dispatch<wbr>ToProps</a>
+						<a href="../modules/components_settle.html#mapdispatchtoprops" class="tsd-kind-icon">map<wbr>Dispatch<wbr>ToProps</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/components_transactions.html#mapstatetoprops" class="tsd-kind-icon">map<wbr>State<wbr>ToProps</a>
-					</li>
-					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/components_transactions.html#icons" class="tsd-kind-icon">icons</a>
+						<a href="../modules/components_settle.html#mapstatetoprops" class="tsd-kind-icon">map<wbr>State<wbr>ToProps</a>
 					</li>
 				</ul>
 			</nav>
