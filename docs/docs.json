@@ -95518,7 +95518,7 @@
 					"kindString": "Class",
 					"flags": {},
 					"comment": {
-						"shortText": "this component shows all transactions of merchant"
+						"shortText": "this component shows all transactions of merchant or transactions of all merchants for admin"
 					},
 					"typeParameter": [
 						{
@@ -95571,7 +95571,7 @@
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 58,
+									"line": 68,
 									"character": 31
 								}
 							],
@@ -95588,10 +95588,13 @@
 							"flags": {
 								"isPublic": true
 							},
+							"comment": {
+								"shortText": "holds api instance"
+							},
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 56,
+									"line": 64,
 									"character": 14
 								}
 							],
@@ -95640,10 +95643,13 @@
 							"flags": {
 								"isPublic": true
 							},
+							"comment": {
+								"shortText": "holds last fetched id for merchant's search field"
+							},
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 58,
+									"line": 68,
 									"character": 22
 								}
 							],
@@ -95844,10 +95850,13 @@
 							"flags": {
 								"isPublic": true
 							},
+							"comment": {
+								"shortText": "user object wich is represent current user"
+							},
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 57,
+									"line": 66,
 									"character": 21
 								}
 							],
@@ -96195,7 +96204,7 @@
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 75,
+									"line": 93,
 									"character": 28
 								}
 							],
@@ -96681,7 +96690,7 @@
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 206,
+									"line": 229,
 									"character": 18
 								}
 							]
@@ -96835,7 +96844,7 @@
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 248,
+									"line": 272,
 									"character": 21
 								}
 							]
@@ -96868,7 +96877,7 @@
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 80,
+									"line": 99,
 									"character": 17
 								}
 							],
@@ -96892,6 +96901,9 @@
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
+									"comment": {
+										"shortText": "search for merchant"
+									},
 									"parameters": [
 										{
 											"id": 3894,
@@ -96914,7 +96926,7 @@
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 222,
+									"line": 245,
 									"character": 26
 								}
 							]
@@ -96934,6 +96946,9 @@
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
+									"comment": {
+										"shortText": "set selected merchant in state so we can use it in api"
+									},
 									"parameters": [
 										{
 											"id": 3897,
@@ -96956,7 +96971,7 @@
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 240,
+									"line": 264,
 									"character": 25
 								}
 							]
@@ -97309,7 +97324,7 @@
 					"sources": [
 						{
 							"fileName": "components/Transactions/index.tsx",
-							"line": 54,
+							"line": 61,
 							"character": 18
 						}
 					],
@@ -97391,10 +97406,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "current page"
+							},
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 31,
+									"line": 32,
 									"character": 15
 								}
 							],
@@ -97430,10 +97448,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "loading state"
+							},
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 32,
+									"line": 34,
 									"character": 11
 								}
 							],
@@ -97448,10 +97469,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "merchant filter that must be applied in api"
+							},
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 35,
+									"line": 40,
 									"character": 18
 								}
 							],
@@ -97465,10 +97489,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "search input's loadint state"
+							},
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 33,
+									"line": 36,
 									"character": 20
 								}
 							],
@@ -97483,10 +97510,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "result of merchant searchs"
+							},
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 34,
+									"line": 38,
 									"character": 19
 								}
 							],
@@ -97500,10 +97530,13 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"comment": {
+								"shortText": "invoice status filters"
+							},
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 36,
+									"line": 42,
 									"character": 17
 								}
 							],
@@ -97527,7 +97560,7 @@
 											"sources": [
 												{
 													"fileName": "components/Transactions/index.tsx",
-													"line": 40,
+													"line": 46,
 													"character": 14
 												}
 											],
@@ -97547,7 +97580,7 @@
 											"sources": [
 												{
 													"fileName": "components/Transactions/index.tsx",
-													"line": 37,
+													"line": 43,
 													"character": 15
 												}
 											],
@@ -97567,7 +97600,7 @@
 											"sources": [
 												{
 													"fileName": "components/Transactions/index.tsx",
-													"line": 38,
+													"line": 44,
 													"character": 15
 												}
 											],
@@ -97587,7 +97620,7 @@
 											"sources": [
 												{
 													"fileName": "components/Transactions/index.tsx",
-													"line": 39,
+													"line": 45,
 													"character": 15
 												}
 											],
@@ -97612,7 +97645,7 @@
 									"sources": [
 										{
 											"fileName": "components/Transactions/index.tsx",
-											"line": 36,
+											"line": 42,
 											"character": 18
 										}
 									]
@@ -97735,7 +97768,7 @@
 					"sources": [
 						{
 							"fileName": "components/Transactions/index.tsx",
-							"line": 256,
+							"line": 280,
 							"character": 27
 						}
 					]
@@ -97785,7 +97818,7 @@
 											"sources": [
 												{
 													"fileName": "components/Transactions/index.tsx",
-													"line": 263,
+													"line": 287,
 													"character": 12
 												}
 											],
@@ -97812,7 +97845,7 @@
 					"sources": [
 						{
 							"fileName": "components/Transactions/index.tsx",
-							"line": 261,
+							"line": 285,
 							"character": 24
 						}
 					]
@@ -97825,6 +97858,9 @@
 					"flags": {
 						"isConst": true
 					},
+					"comment": {
+						"shortText": "holds icons and colors for all invoice statuses"
+					},
 					"children": [
 						{
 							"id": 3976,
@@ -97835,7 +97871,7 @@
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 45,
+									"line": 52,
 									"character": 10
 								}
 							],
@@ -97854,7 +97890,7 @@
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 48,
+									"line": 55,
 									"character": 11
 								}
 							],
@@ -97873,7 +97909,7 @@
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 47,
+									"line": 54,
 									"character": 11
 								}
 							],
@@ -97892,7 +97928,7 @@
 							"sources": [
 								{
 									"fileName": "components/Transactions/index.tsx",
-									"line": 46,
+									"line": 53,
 									"character": 11
 								}
 							],
@@ -97918,7 +97954,7 @@
 					"sources": [
 						{
 							"fileName": "components/Transactions/index.tsx",
-							"line": 44,
+							"line": 51,
 							"character": 11
 						}
 					],
