@@ -228,7 +228,7 @@ class Settle extends React.Component<IProps, IState> {
                 }).then(() => {
                     this.setState({ loading: false });
                     // notify user about successfull event and call successfull callback (probably to close modal)
-                    notification.error({
+                    notification.success({
                         message: t.t(this.state.invoices.shopName),
                         description: t.t("successfully settled"),
                         placement: "bottomRight",
