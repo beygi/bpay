@@ -1,6 +1,7 @@
 /**
  * @module Components/Unsettled
  */
+import { Pagination } from "antd";
 import { Button, Modal, Spin, Table } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
@@ -86,7 +87,11 @@ class Unsettled extends React.Component<IProps, IState> {
         if (this.state.merchants !== null) {
             return (
                 <div>
-                    <Table pagination={false} columns={columns} rowKey="email" dataSource={this.state.merchants} size="small" />
+                    <Table className="unsettled-merchants" loading={this.state.loading} pagination={false} columns={columns} rowKey="email" dataSource={this.state.merchants.results} size="small" />
+                    <Pagination onChange={(page) => { this.setState({ currentPage: page, loading: true }, () => { this.searchMerchants(); }); }}
+                        hideOnSinglePage pageSize={10} current={this.state.currentPage} total={this.state.merchants.info.results + 100}
+                        itemRender={this.itemRender}
+                    />
                     <Modal
                         maskClosable
                         visible={this.state.showModal}
@@ -109,11 +114,19 @@ class Unsettled extends React.Component<IProps, IState> {
 
     // seach merchants
     public searchMerchants() {
-        fetch("https://randomuser.me/api/?results=5")
+        fetch("https://randomuser.me/api/?results=10")
             .then((response) => response.json())
             .then((body) => {
-                this.setState({ merchants: body.results });
+                this.setState({ merchants: body, loading: false });
             });
+    }
+
+    /**  render paginations with local numbers */
+    public itemRender(current: number, type: any, originalElement?: any) {
+        if (type === "page") {
+            return <a> <Ex fixFloatNum={0} value={current} seperateThousand /></a>;
+        }
+        return originalElement;
     }
 }
 
