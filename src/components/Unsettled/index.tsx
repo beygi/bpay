@@ -48,12 +48,12 @@ class Unsettled extends React.Component<IProps, IState> {
         // send token with all api requests
         this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
         // bind current object to api call function
-        this.searchMerchants = this.searchMerchants.bind(this);
+        this.getUnsettledMerchants = this.getUnsettledMerchants.bind(this);
     }
 
     public componentDidMount() {
-        this.searchMerchants();
-        const intervalId = setInterval(this.searchMerchants, 10000);
+        this.getUnsettledMerchants();
+        const intervalId = setInterval(this.getUnsettledMerchants, 10000);
     }
 
     public render() {
@@ -61,35 +61,35 @@ class Unsettled extends React.Component<IProps, IState> {
         const columns = [
             {
                 title: t.t("Shop Name"),
-                dataIndex: "name.first",
+                dataIndex: "name",
             },
             {
                 title: t.t("‌Balance"),
-                dataIndex: "registered.age",
+                dataIndex: "balance",
                 render: (price) => (
-                    <Ex fixFloatNum={0} value={price * 1000} seperateThousand />
+                    <Ex fixFloatNum={0} value={price} seperateThousand stockStyle={false} />
                 ),
             },
             {
                 title: t.t("Unsettled invoices"),
-                dataIndex: "dob.age",
+                dataIndex: "count",
                 render: (age) => (
-                    <Ex fixFloatNum={0} value={age} seperateThousand />
+                    <Ex fixFloatNum={0} value={age} seperateThousand stockStyle={false} />
                 ),
             }, {
                 title: t.t("Actions"),
                 render: (text, record) => (
                     // set state for current mercant and modal visibility
-                    <Button onClick={() => { this.setState({ selectedMerchant: { id: "09192065634", name: record.name.first }, showModal: true }); }} type="primary" >{t.t("Settle")}</Button>
+                    <Button onClick={() => { this.setState({ selectedMerchant: { id: record.merMobile, name: record.name }, showModal: true }); }} type="primary" >{t.t("Settle")}</Button>
                 ),
             },
         ];
-        if (this.state.merchants !== null) {
+        if (this.state.merchants && this.state.merchants.content !== undefined) {
             return (
                 <div>
-                    <Table className="unsettled-merchants" loading={this.state.loading} pagination={false} columns={columns} rowKey="email" dataSource={this.state.merchants.results} size="small" />
-                    <Pagination onChange={(page) => { this.setState({ currentPage: page, loading: true }, () => { this.searchMerchants(); }); }}
-                        hideOnSinglePage pageSize={10} current={this.state.currentPage} total={this.state.merchants.info.results + 100}
+                    <Table className="unsettled-merchants" loading={this.state.loading} pagination={false} columns={columns} rowKey="email" dataSource={this.state.merchants.content} size="small" />
+                    <Pagination onChange={(page) => { this.setState({ currentPage: page, loading: true }, () => { this.getUnsettledMerchants(); }); }}
+                        hideOnSinglePage pageSize={10} current={this.state.currentPage} total={this.state.merchants.count}
                         itemRender={this.itemRender}
                     />
                     <Modal
@@ -102,7 +102,7 @@ class Unsettled extends React.Component<IProps, IState> {
                         title={t.t("Shop name") + `: ${this.state.selectedMerchant.name}`}
                     >
                         <Settle merchantId={this.state.selectedMerchant.id}
-                            success={() => this.setState({ showModal: false }, () => { this.searchMerchants(); })}
+                            success={() => this.setState({ showModal: false }, () => { this.getUnsettledMerchants(); })}
                         >
                         </Settle>
                     </Modal>
@@ -113,18 +113,23 @@ class Unsettled extends React.Component<IProps, IState> {
     }
 
     // seach merchants
-    public searchMerchants() {
-        fetch("https://randomuser.me/api/?results=10")
-            .then((response) => response.json())
-            .then((body) => {
-                this.setState({ merchants: body, loading: false });
-            });
+    public getUnsettledMerchants() {
+        this.api.getMerchantDebtUsingGET({
+            apikey: this.props.user.apiKey,
+            mob: this.props.user.mobile,
+            size: 10,
+            page: this.state.currentPage - 1,
+            dir: "desc",
+            $domain: "https://api.becopay.com",
+        }).then((response) => {
+            this.setState({ merchants: response.body, loading: false });
+        });
     }
 
     /**  render paginations with local numbers */
     public itemRender(current: number, type: any, originalElement?: any) {
         if (type === "page") {
-            return <a> <Ex fixFloatNum={0} value={current} seperateThousand /></a>;
+            return <a> <Ex fixFloatNum={0} value={current} seperateThousand stockStyle={false} /></a>;
         }
         return originalElement;
     }
