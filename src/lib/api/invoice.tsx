@@ -11,6 +11,17 @@ interface ChangeCoinRequest {
     "invoiceId": string;
     "mobileNum": string;
 }
+interface Debt {
+    "cardNumber": string;
+    "count": number;
+    "mobile": string;
+    "settleUpInvoices": settleUpInvoices[]
+    | settleUpInvoices
+
+    ;
+    "shopName": string;
+    "sum": number;
+}
 interface InvRequest {
     "apiKey": string;
     "description": string;
@@ -18,17 +29,99 @@ interface InvRequest {
     "orderId": string;
     "price": string;
 }
-
+interface Invoice {
+    "amount": number;
+    "blockchainCoin": "tbitcoin" | "bitcoin" | "ethereum" | "usdollar" | "iranrial" | "syrianpound" | "euro";
+    "category": string;
+    "cryptoAmount": string;
+    "currency": string;
+    "description": string;
+    "failed": boolean;
+    "id": string;
+    "orderid": string;
+    "qr": string;
+    "regdatetime": string;
+    "settleup": Settleup;
+    "status": string;
+    "success": boolean;
+    "timeout": number;
+    "userdatetime": string;
+    "waiting": boolean;
+}
+interface InvoiceResponse {
+    "callback": string;
+    "cryptoAmount": string;
+    "date": string;
+    "description": string;
+    "gatewayUrl": string;
+    "id": string;
+    "orderId": string;
+    "price": number;
+    "qr": string;
+    "remaining": number;
+    "shopName": string;
+    "status": string;
+    "symbol": string;
+    "timeout": number;
+    "timestamp": number;
+}
+interface Link {
+    "href": string;
+    "templated": boolean;
+}
 interface Merchant {
     "callback": string;
+    "cardNumber": string;
     "mobile": string;
     "pushToken": string;
     "shopName": string;
     "token": string;
 }
+interface PaginationInvoiceResponse {
+    "content": InvoiceResponse[]
+    | InvoiceResponse
+
+    ;
+    "count": number;
+    "name": string;
+    "next": string;
+    "page": number;
+    "previous": string;
+    "size": number;
+    "status": number;
+}
+interface RequestSettle {
+    "amount": number;
+    "apikey": string;
+    "datetime": string;
+    "destCard": string;
+    "invoiceIds": string[]
+    | string
+
+    ;
+    "merMobile": string;
+    "mob": string;
+    "originCard": string;
+    "txid": string;
+}
+interface Settleup {
+    "amount": number;
+    "destCard": string;
+    "invoices": Invoice[]
+    | Invoice
+
+    ;
+    "originCard": string;
+    "txid": string;
+}
+interface settleUpInvoices {
+    "amount": number;
+    "date": number;
+    "id": string;
+}
 
 interface Logger {
-    log: (line: string) => any;
+    log: (line: string) => any
 }
 export default class invoiceApi {
     public static getInstance() {
@@ -219,7 +312,7 @@ export default class invoiceApi {
         });
     }
 
-    public getAllInvoiceUsingGET(parameters: {
+    public getAllInvoicev2UsingGET(parameters: {
         "apiKey": string,
         "dir"?: string,
         "mob": string,
@@ -282,18 +375,15 @@ export default class invoiceApi {
         });
     }
 
-    public getAllInvoicev2UsingGET(parameters: {
+    public getByOrderIdUsingGET(parameters: {
         "apiKey": string,
-        "dir"?: string,
+        "id": string,
         "mob": string,
-        "page"?: number,
-        "size"?: number,
-        "status"?: string,
         $queryParameters?: any,
         $domain?: string,
     }): Promise<request.Response> {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
-        const path = "/invoice/allv2";
+        const path = "/invoice/byorderid";
         let body: any;
         const queryParameters: any = {};
         const headers: any = {};
@@ -310,8 +400,13 @@ export default class invoiceApi {
                 return;
             }
 
-            if (parameters.dir !== undefined) {
-                queryParameters.dir = parameters.dir;
+            if (parameters.id !== undefined) {
+                queryParameters.id = parameters.id;
+            }
+
+            if (parameters.id === undefined) {
+                reject(new Error("Missing required  parameter: id"));
+                return;
             }
 
             if (parameters.mob !== undefined) {
@@ -321,18 +416,6 @@ export default class invoiceApi {
             if (parameters.mob === undefined) {
                 reject(new Error("Missing required  parameter: mob"));
                 return;
-            }
-
-            if (parameters.page !== undefined) {
-                queryParameters.page = parameters.page;
-            }
-
-            if (parameters.size !== undefined) {
-                queryParameters.size = parameters.size;
-            }
-
-            if (parameters.status !== undefined) {
-                queryParameters.status = parameters.status;
             }
 
             if (parameters.$queryParameters) {
@@ -480,6 +563,144 @@ export default class invoiceApi {
             if (parameters.mob === undefined) {
                 reject(new Error("Missing required  parameter: mob"));
                 return;
+            }
+
+            if (parameters.$queryParameters) {
+                Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                    queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+                });
+            }
+
+            this.request("GET", domain + path, body, headers, queryParameters, form, reject, resolve);
+        });
+    }
+
+    public getAllUsingGET(parameters: {
+        "apikey": string,
+        "dir"?: string,
+        "mob": string,
+        "page"?: number,
+        "size"?: number,
+        $queryParameters?: any,
+        $domain?: string,
+    }): Promise<request.Response> {
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/settleup";
+        let body: any;
+        const queryParameters: any = {};
+        const headers: any = {};
+        const form: any = {};
+        return new Promise((resolve, reject) => {
+            headers.Accept = "*/*";
+
+            if (parameters.apikey !== undefined) {
+                queryParameters.apikey = parameters.apikey;
+            }
+
+            if (parameters.apikey === undefined) {
+                reject(new Error("Missing required  parameter: apikey"));
+                return;
+            }
+
+            if (parameters.dir !== undefined) {
+                queryParameters.dir = parameters.dir;
+            }
+
+            if (parameters.mob !== undefined) {
+                queryParameters.mob = parameters.mob;
+            }
+
+            if (parameters.mob === undefined) {
+                reject(new Error("Missing required  parameter: mob"));
+                return;
+            }
+
+            if (parameters.page !== undefined) {
+                queryParameters.page = parameters.page;
+            }
+
+            if (parameters.size !== undefined) {
+                queryParameters.size = parameters.size;
+            }
+
+            if (parameters.$queryParameters) {
+                Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                    queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+                });
+            }
+
+            this.request("GET", domain + path, body, headers, queryParameters, form, reject, resolve);
+        });
+    }
+
+    public settleUp1UsingPOST(parameters: {
+        "requestSettle": RequestSettle,
+        $queryParameters?: any,
+        $domain?: string,
+    }): Promise<request.Response> {
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/settleup/add";
+        let body: any;
+        let queryParameters: any = {};
+        const headers: any = {};
+        let form: any = {};
+        return new Promise((resolve, reject) => {
+            headers.Accept = "*/*";
+            headers["Content-Type"] = "application/json";
+
+            if (parameters.requestSettle !== undefined) {
+                body = parameters.requestSettle;
+            }
+
+            if (parameters.requestSettle === undefined) {
+                reject(new Error("Missing required  parameter: requestSettle"));
+                return;
+            }
+
+            if (parameters.$queryParameters) {
+                Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                    queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+                });
+            }
+
+            form = queryParameters;
+            queryParameters = {};
+
+            this.request("POST", domain + path, body, headers, queryParameters, form, reject, resolve);
+        });
+    }
+
+    public getPreSettleUsingGET(parameters: {
+        "apikey"?: string,
+        "invoices"?: string,
+        "mermob"?: string,
+        "mob"?: string,
+        $queryParameters?: any,
+        $domain?: string,
+    }): Promise<request.Response> {
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/settleup/presettle";
+        let body: any;
+        const queryParameters: any = {};
+        const headers: any = {};
+        const form: any = {};
+        return new Promise((resolve, reject) => {
+            headers.Accept = "*/*";
+
+            if (parameters.apikey !== undefined) {
+                queryParameters.apikey = parameters.apikey;
+            }
+
+            if (parameters.invoices !== undefined) {
+                queryParameters.invoices = parameters.invoices;
+            }
+
+            if (parameters.mermob !== undefined) {
+                queryParameters.mermob = parameters.mermob;
+            }
+
+            if (parameters.mob !== undefined) {
+                queryParameters.mob = parameters.mob;
             }
 
             if (parameters.$queryParameters) {

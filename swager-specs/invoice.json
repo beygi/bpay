@@ -31,6 +31,10 @@
             "description": "Operation Handler"
         },
         {
+            "name": "settleup-rest",
+            "description": "Settleup Rest"
+        },
+        {
             "name": "web-mvc-endpoint-handler-mapping",
             "description": "Web Mvc Endpoint Handler Mapping"
         }
@@ -275,100 +279,6 @@
                     "invoice-rest"
                 ],
                 "summary": "return invoices pagination if not found 204 content not found",
-                "operationId": "getAllInvoiceUsingGET",
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [{
-                        "name": "apiKey",
-                        "in": "query",
-                        "description": "apiKey",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "dir",
-                        "in": "query",
-                        "description": "dir",
-                        "required": false,
-                        "type": "string",
-                        "default": "asc"
-                    },
-                    {
-                        "name": "mob",
-                        "in": "query",
-                        "description": "mob",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "description": "page",
-                        "required": false,
-                        "type": "integer",
-                        "default": 0,
-                        "format": "int32"
-                    },
-                    {
-                        "name": "size",
-                        "in": "query",
-                        "description": "size",
-                        "required": false,
-                        "type": "integer",
-                        "default": 20,
-                        "format": "int32"
-                    },
-                    {
-                        "name": "status",
-                        "in": "query",
-                        "description": "status",
-                        "required": false,
-                        "type": "string",
-                        "default": "success,waiting,failed"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/InvoiceResponse"
-                            }
-                        }
-                    },
-                    "204": {
-                        "description": "service and uri is ok but content not found",
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/InvoiceResponse"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad request"
-                    },
-                    "401": {
-                        "description": "Unauthorized to access to this service"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    },
-                    "404": {
-                        "description": "Not Found"
-                    }
-                },
-                "deprecated": false
-            }
-        },
-        "/invoice/allv2": {
-            "get": {
-                "tags": [
-                    "invoice-rest"
-                ],
-                "summary": "return invoices pagination if not found 204 content not found",
                 "operationId": "getAllInvoicev2UsingGET",
                 "produces": [
                     "application/json"
@@ -434,6 +344,64 @@
                         "schema": {
                             "$ref": "#/definitions/PaginationInvoiceResponse"
                         }
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized to access to this service"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/invoice/byorderid": {
+            "get": {
+                "tags": [
+                    "invoice-rest"
+                ],
+                "summary": "getByOrderId",
+                "operationId": "getByOrderIdUsingGET",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "name": "apiKey",
+                        "in": "query",
+                        "description": "apiKey",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "mob",
+                        "in": "query",
+                        "description": "mob",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/InvoiceResponse"
+                        }
+                    },
+                    "204": {
+                        "description": "service and uri is ok but content not found"
                     },
                     "400": {
                         "description": "Bad request"
@@ -629,6 +597,202 @@
                 },
                 "deprecated": false
             }
+        },
+        "/settleup": {
+            "get": {
+                "tags": [
+                    "settleup-rest"
+                ],
+                "summary": "getAll",
+                "operationId": "getAllUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [{
+                        "name": "apikey",
+                        "in": "query",
+                        "description": "apikey",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "dir",
+                        "in": "query",
+                        "description": "dir",
+                        "required": false,
+                        "type": "string",
+                        "default": "asc"
+                    },
+                    {
+                        "name": "mob",
+                        "in": "query",
+                        "description": "mob",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "format": "int32"
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "size",
+                        "required": false,
+                        "type": "integer",
+                        "default": 20,
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Settleup"
+                            }
+                        }
+                    },
+                    "204": {
+                        "description": "service and uri is ok but content not found"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized to access to this service"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/settleup/add": {
+            "post": {
+                "tags": [
+                    "settleup-rest"
+                ],
+                "summary": "settleUp1",
+                "operationId": "settleUp1UsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "requestSettle",
+                    "description": "requestSettle",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/RequestSettle"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Settleup"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "204": {
+                        "description": "service and uri is ok but content not found"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized to access to this service"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/settleup/presettle": {
+            "get": {
+                "tags": [
+                    "settleup-rest"
+                ],
+                "summary": "getPreSettle",
+                "operationId": "getPreSettleUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [{
+                        "name": "apikey",
+                        "in": "query",
+                        "description": "apikey",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "invoices",
+                        "in": "query",
+                        "description": "invoices",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "mermob",
+                        "in": "query",
+                        "description": "mermob",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "mob",
+                        "in": "query",
+                        "description": "mob",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Debt"
+                        }
+                    },
+                    "204": {
+                        "description": "service and uri is ok but content not found"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized to access to this service"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
         }
     },
     "definitions": {
@@ -653,6 +817,35 @@
             },
             "title": "ChangeCoinRequest"
         },
+        "Debt": {
+            "type": "object",
+            "properties": {
+                "cardNumber": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "mobile": {
+                    "type": "string"
+                },
+                "settleUpInvoices": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/settleUpInvoices"
+                    }
+                },
+                "shopName": {
+                    "type": "string"
+                },
+                "sum": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "title": "Debt"
+        },
         "InvRequest": {
             "type": "object",
             "properties": {
@@ -673,6 +866,77 @@
                 }
             },
             "title": "InvRequest"
+        },
+        "Invoice": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "blockchainCoin": {
+                    "type": "string",
+                    "enum": [
+                        "tbitcoin",
+                        "bitcoin",
+                        "ethereum",
+                        "usdollar",
+                        "iranrial",
+                        "syrianpound",
+                        "euro"
+                    ]
+                },
+                "category": {
+                    "type": "string"
+                },
+                "cryptoAmount": {
+                    "type": "string"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "failed": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "orderid": {
+                    "type": "string"
+                },
+                "qr": {
+                    "type": "string"
+                },
+                "regdatetime": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "settleup": {
+                    "$ref": "#/definitions/Settleup"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "success": {
+                    "type": "boolean"
+                },
+                "timeout": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "userdatetime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "waiting": {
+                    "type": "boolean"
+                }
+            },
+            "title": "Invoice"
         },
         "InvoiceResponse": {
             "type": "object",
@@ -755,6 +1019,9 @@
                 "callback": {
                     "type": "string"
                 },
+                "cardNumber": {
+                    "type": "string"
+                },
                 "mobile": {
                     "type": "string"
                 },
@@ -807,6 +1074,86 @@
                 }
             },
             "title": "PaginationInvoiceResponse"
+        },
+        "RequestSettle": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "apikey": {
+                    "type": "string"
+                },
+                "datetime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "destCard": {
+                    "type": "string"
+                },
+                "invoiceIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "merMobile": {
+                    "type": "string"
+                },
+                "mob": {
+                    "type": "string"
+                },
+                "originCard": {
+                    "type": "string"
+                },
+                "txid": {
+                    "type": "string"
+                }
+            },
+            "title": "RequestSettle"
+        },
+        "Settleup": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "destCard": {
+                    "type": "string"
+                },
+                "invoices": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Invoice"
+                    }
+                },
+                "originCard": {
+                    "type": "string"
+                },
+                "txid": {
+                    "type": "string"
+                }
+            },
+            "title": "Settleup"
+        },
+        "settleUpInvoices": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "date": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "id": {
+                    "type": "string"
+                }
+            },
+            "title": "settleUpInvoices"
         }
     }
 

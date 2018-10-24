@@ -205,7 +205,7 @@ class Transactions extends React.Component<IProps, IState> {
     // get invoices using api key
     public getData() {
         const statusFilters = Object.keys(_.pickBy(this.state.statusFilters, (value) => value)).toString();
-        this.api.getAllInvoiceUsingGET({
+        this.api.getAllInvoicev2UsingGET({
             apiKey: this.props.user.apiKey,
             mob: this.props.user.mobile,
             size: 12,
