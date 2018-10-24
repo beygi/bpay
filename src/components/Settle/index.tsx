@@ -77,11 +77,11 @@ class Settle extends React.Component<IProps, IState> {
         const formItemLayout = {
             labelCol: {
                 xs: { span: 24 },
-                sm: { span: 24 },
+                sm: { span: 5 },
             },
             wrapperCol: {
                 xs: { span: 24 },
-                sm: { span: 24 },
+                sm: { span: 12 },
             },
         };
         const columns = [
@@ -120,7 +120,6 @@ class Settle extends React.Component<IProps, IState> {
                                 initialValue: 0,
                             })(
                                 <InputNumber
-                                    size="large"
                                     min={0}
                                     max={10000000}
                                     formatter={(value) => `IRR ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
@@ -178,6 +177,8 @@ class Settle extends React.Component<IProps, IState> {
                             })(
                                 <Input className="ltr" placeholder="" />,
                             )}
+                        </FormItem>
+                        <FormItem>
                         </FormItem>
                         <FormItem>
                             <Button type="primary" htmlType="submit">{t.t("Submit")}</Button>
