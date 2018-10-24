@@ -14,7 +14,7 @@ msgstr ""
 
 #: src/containers/KYC/index.tsx:196
 msgid " National ID Card"
-msgstr ""
+msgstr " کارت ملی"
 
 #: src/components/DashboardHeader/index.tsx:100
 msgid "Account information"
@@ -36,9 +36,13 @@ msgstr "اضافه کردن گرون"
 msgid "add new group"
 msgstr "اضافه کردن گروه جدید"
 
-#: src/components/Settle/index.tsx:66
+#: src/components/Settle/index.tsx:111 src/components/Settle/index.tsx:91
 msgid "Amount"
 msgstr "مقدار"
+
+#: src/components/Settle/index.tsx:66
+msgid "amount is not equal to selected invoice sum"
+msgstr "مقدار وارد شده با مجموع مبلغ فاکتورهای انتخاب شده همخوانی ندارد"
 
 #: src/components/Deposit/index.tsx:79
 msgid "Available"
@@ -79,11 +83,11 @@ msgstr "برای باز شدن درگاه کلیک کنید"
 
 #: src/components/Analysis/index.tsx:115
 msgid "Cold"
-msgstr ""
+msgstr "سرد"
 
 #: src/containers/Admin/Dashboard/index.tsx:39
 msgid "Cold storage"
-msgstr ""
+msgstr "مخزن سرد"
 
 #: src/containers/KYC/index.tsx:171
 msgid "Country"
@@ -99,7 +103,7 @@ msgstr "زمان ایجاد"
 
 #: src/components/Analysis/index.tsx:125
 msgid "Current owes"
-msgstr ""
+msgstr "بدهی کنونی"
 
 #: src/components/DashboardMenu/adminMenu.tsx:14
 #: src/components/DashboardMenu/menu.tsx:19
@@ -108,9 +112,13 @@ msgstr ""
 msgid "Dashboard"
 msgstr "داشبورد"
 
-#: src/components/Settle/index.tsx:73
+#: src/components/Settle/index.tsx:98
 msgid "Date"
 msgstr "تاریخ"
+
+#: src/components/Settle/index.tsx:133
+msgid "Date and time"
+msgstr "تاریخ و زمان پرداخت"
 
 #: src/components/DashboardMenu/menu.tsx:46
 msgid "Deposit"
@@ -125,9 +133,13 @@ msgstr ""
 msgid "Description"
 msgstr "توضیحات"
 
+#: src/components/Settle/index.tsx:163
+msgid "Destination Card number"
+msgstr "شماره کارت مقصد"
+
 #: src/containers/KYC/index.tsx:195
 msgid "Driving license"
-msgstr ""
+msgstr "گواهینامه رانندگی"
 
 #: src/containers/Groups/index.tsx:37
 msgid "edit"
@@ -135,7 +147,7 @@ msgstr "ویرایش"
 
 #: src/containers/Groups/index.tsx:124
 msgid "edit group"
-msgstr ""
+msgstr "ویرایش گروه"
 
 #: src/containers/User/components/Login/index.tsx:105
 msgid "Email"
@@ -155,7 +167,7 @@ msgstr "یورو"
 
 #: src/components/Uploader/index.tsx:125
 msgid "Example Image"
-msgstr ""
+msgstr "عکس نمونه"
 
 #: src/components/DashboardMenu/menu.tsx:40
 msgid "Exchange"
@@ -187,7 +199,7 @@ msgstr ""
 
 #: src/containers/KYC/index.tsx:155
 msgid "Gender"
-msgstr ""
+msgstr "جنسیت"
 
 #: src/components/GoogleAuth/index.tsx:32
 msgid "Google Authenticator"
@@ -208,9 +220,9 @@ msgstr ""
 
 #: src/containers/Admin/Dashboard/index.tsx:36
 msgid "Hot storage"
-msgstr ""
+msgstr "مخزن گرم"
 
-#: src/components/Settle/index.tsx:62
+#: src/components/Settle/index.tsx:87
 msgid "ID"
 msgstr "شناسه"
 
@@ -305,6 +317,10 @@ msgstr "باز کردن درگاه"
 msgid "Order id"
 msgstr "شماره سفارش"
 
+#: src/components/Settle/index.tsx:154
+msgid "Origin Card number"
+msgstr "شماره کارت مبدا"
+
 #: src/containers/KYC/index.tsx:194
 msgid "Passport"
 msgstr ""
@@ -329,6 +345,14 @@ msgstr "رمز عبور"
 msgid "Permission"
 msgstr "دسترسی"
 
+#: src/components/Settle/index.tsx:166
+msgid "Please input 16 digits destination card number "
+msgstr "لطفا شماره کارت ۱۶ رقمی مقصد را وارد کنید"
+
+#: src/components/Settle/index.tsx:157
+msgid "Please input 16 digits origin card number "
+msgstr "لطفا شماره کارت ۱۶ رقمی مبدا را وارد کنید"
+
 #: src/components/NewInvoice/index.tsx:120
 msgid "Please input description, max length is 30"
 msgstr "لطفا متن توضیحات را وارد کنید. حداکثر ۳۰ حرف"
@@ -337,50 +361,53 @@ msgstr "لطفا متن توضیحات را وارد کنید. حداکثر ۳۰
 msgid "Please input price"
 msgstr "لطفا قیمت را وارد کنید"
 
+#: src/components/Settle/index.tsx:175
+msgid "Please input Tracking code "
+msgstr "لطفا کد پیگیری سیستم بانکی را وارد کنید"
+
 #: src/containers/User/components/Login/index.tsx:103
-#, fuzzy
 msgid "Please input your Email"
 msgstr "لطفا آدرس ایمیل تان را وارد کنید"
 
 #: src/containers/KYC/index.tsx:137
-#, fuzzy
 msgid "Please input your first name"
-msgstr "لطفا آدرس ایمیل تان را وارد کنید"
+msgstr "لطفا نام تان را وارد کنید"
 
 #: src/containers/KYC/index.tsx:146
-#, fuzzy
 msgid "Please input your last name"
-msgstr "لطفا آدرس ایمیل تان را وارد کنید"
+msgstr "لطفا نام خانوادگی خود را وارد کنید"
 
 #: src/containers/KYC/index.tsx:204
-#, fuzzy
 msgid "Please input your license id "
-msgstr "لطفا آدرس ایمیل تان را وارد کنید"
+msgstr "لطفا شمارهٔ مدرک خود را وارد کنید "
 
 #: src/containers/User/components/Login/index.tsx:110
-#, fuzzy
 msgid "Please input your Password"
-msgstr "لطفا آدرس ایمیل تان را وارد کنید"
+msgstr "لطفا رمز عبور خود را وارد کنید"
 
 #: src/containers/KYC/index.tsx:178
-#, fuzzy
 msgid "Please select a country"
-msgstr "لطفا ارز پرداختی را انتخاب کنید"
+msgstr "لطفا کشور خود را انتخاب کنید"
 
 #: src/components/Deposit/index.tsx:57
-#, fuzzy
 msgid "Please select a currency to deposit"
 msgstr "لطفا ارز پرداختی را انتخاب کنید"
 
+#: src/components/Settle/index.tsx:68
+msgid "Please select payment amount"
+msgstr "لطفا مبلغ را وارد کنید"
+
+#: src/components/Settle/index.tsx:136
+msgid "Please select payment date and time"
+msgstr "لطفا تاریخ و ساعت پرداخت را وارد کنید"
+
 #: src/containers/KYC/index.tsx:175 src/containers/KYC/index.tsx:47
-#, fuzzy
 msgid "Please select your country"
-msgstr "لطفا ارز پرداختی را انتخاب کنید"
+msgstr "لطفا کشور خود را انتخاب کنید"
 
 #: src/containers/KYC/index.tsx:159
-#, fuzzy
 msgid "Please select your gender"
-msgstr "لطفا ارز پرداختی را انتخاب کنید"
+msgstr "لطفا جنسیت خود را مشخص کنید"
 
 #: src/containers/KYC/index.tsx:213
 msgid "please upload your cover"
@@ -412,7 +439,7 @@ msgstr "ثبت نام"
 
 #: src/containers/User/components/Login/index.tsx:123
 msgid "Remember Me"
-msgstr ""
+msgstr "مرا به خاطر بسپار"
 
 #: src/containers/Groups/index.tsx:92
 msgid "search"
@@ -460,7 +487,7 @@ msgstr "وضعیت"
 msgid "sth"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:236
+#: src/components/Settle/index.tsx:181 src/containers/KYC/index.tsx:236
 msgid "Submit"
 msgstr "ارسال"
 
@@ -496,9 +523,13 @@ msgstr "داده ای برای نمایش وجود ندارد"
 msgid "Total"
 msgstr "مجموع"
 
-#: src/components/Settle/index.tsx:100
+#: src/components/Settle/index.tsx:188
 msgid "Total:"
 msgstr "مجموع:"
+
+#: src/components/Settle/index.tsx:172
+msgid "Tracking code"
+msgstr "شماره رهگیری"
 
 #: src/components/Transactions/index.tsx:184
 msgid "Transactions"

@@ -26,8 +26,13 @@ msgstr ""
 msgid "add new group"
 msgstr ""
 
-#: src/components/Settle/index.tsx:66
+#: src/components/Settle/index.tsx:111
+#: src/components/Settle/index.tsx:91
 msgid "Amount"
+msgstr ""
+
+#: src/components/Settle/index.tsx:66
+msgid "amount is not equal to selected invoice sum"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:79
@@ -99,8 +104,12 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: src/components/Settle/index.tsx:73
+#: src/components/Settle/index.tsx:98
 msgid "Date"
+msgstr ""
+
+#: src/components/Settle/index.tsx:133
+msgid "Date and time"
 msgstr ""
 
 #: src/components/DashboardMenu/menu.tsx:46
@@ -115,6 +124,10 @@ msgstr ""
 
 #: src/components/NewInvoice/index.tsx:124
 msgid "Description"
+msgstr ""
+
+#: src/components/Settle/index.tsx:163
+msgid "Destination Card number"
 msgstr ""
 
 #: src/containers/KYC/index.tsx:195
@@ -203,7 +216,7 @@ msgstr ""
 msgid "Hot storage"
 msgstr ""
 
-#: src/components/Settle/index.tsx:62
+#: src/components/Settle/index.tsx:87
 msgid "ID"
 msgstr ""
 
@@ -300,6 +313,10 @@ msgstr ""
 msgid "Order id"
 msgstr ""
 
+#: src/components/Settle/index.tsx:154
+msgid "Origin Card number"
+msgstr ""
+
 #: src/containers/KYC/index.tsx:194
 msgid "Passport"
 msgstr ""
@@ -325,12 +342,24 @@ msgstr ""
 msgid "Permission"
 msgstr ""
 
+#: src/components/Settle/index.tsx:166
+msgid "Please input 16 digits destination card number "
+msgstr ""
+
+#: src/components/Settle/index.tsx:157
+msgid "Please input 16 digits origin card number "
+msgstr ""
+
 #: src/components/NewInvoice/index.tsx:120
 msgid "Please input description, max length is 30"
 msgstr ""
 
 #: src/components/NewInvoice/index.tsx:89
 msgid "Please input price"
+msgstr ""
+
+#: src/components/Settle/index.tsx:175
+msgid "Please input Tracking code "
 msgstr ""
 
 #: src/containers/User/components/Login/index.tsx:103
@@ -359,6 +388,14 @@ msgstr ""
 
 #: src/components/Deposit/index.tsx:57
 msgid "Please select a currency to deposit"
+msgstr ""
+
+#: src/components/Settle/index.tsx:68
+msgid "Please select payment amount"
+msgstr ""
+
+#: src/components/Settle/index.tsx:136
+msgid "Please select payment date and time"
 msgstr ""
 
 #: src/containers/KYC/index.tsx:175
@@ -450,6 +487,7 @@ msgstr ""
 msgid "sth"
 msgstr ""
 
+#: src/components/Settle/index.tsx:181
 #: src/containers/KYC/index.tsx:236
 msgid "Submit"
 msgstr ""
@@ -486,8 +524,12 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-#: src/components/Settle/index.tsx:100
+#: src/components/Settle/index.tsx:188
 msgid "Total:"
+msgstr ""
+
+#: src/components/Settle/index.tsx:172
+msgid "Tracking code"
 msgstr ""
 
 #: src/components/Transactions/index.tsx:184
