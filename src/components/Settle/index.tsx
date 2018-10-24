@@ -215,10 +215,11 @@ class Settle extends React.Component<IProps, IState> {
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 this.setState({ loading: true });
-                // prepare post data, format datea and append extra props to values
                 values.datetime = values.datetime.toISOString();
+                // prepare post data, format data and append extra props to values
                 values.apikey = this.props.user.apiKey;
                 values.mob = this.props.user.mobile;
+                // notice: i don't set merMobile as a property name normally, i named it to match with our api schema
                 values.merMobile = this.props.merchantId;
                 values.invoiceIds = this.state.selectedInvoices;
                 this.api.settleUp1UsingPOST({

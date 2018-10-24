@@ -79,7 +79,7 @@ class Unsettled extends React.Component<IProps, IState> {
                 title: t.t("Actions"),
                 render: (text, record) => (
                     // set state for current mercant and modal visibility
-                    <Button onClick={() => { this.setState({ selectedMerchant: { id: "09355126588", name: record.name.first }, showModal: true }); }} type="primary" >{t.t("Settle")}</Button>
+                    <Button onClick={() => { this.setState({ selectedMerchant: { id: "09192065634", name: record.name.first }, showModal: true }); }} type="primary" >{t.t("Settle")}</Button>
                 ),
             },
         ];
