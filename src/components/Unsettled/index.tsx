@@ -1,7 +1,6 @@
 /**
  * @module Components/Unsettled
  */
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Modal, Spin, Table } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
@@ -21,25 +20,33 @@ interface IProps {
 interface IState {
     /**  list of all invoices */
     merchants: any;
+    /**  current page */
     currentPage: number;
+    /**  loadin state */
     loading: boolean;
+    /**  modal status */
     showModal: boolean;
+    /**  holds selected mercant for modal and settle component */
     selectedMerchant: any;
 }
 
 /**
- * this component shows all merchants that have Unsettled invoices
+ * this component shows all merchants that have Unsettled invoices and shows a modal to settle using settle component
  */
 class Unsettled extends React.Component<IProps, IState> {
+    /**  holds an api instance */
     public api = API.getInstance();
+    /**  represent user object from currently logged in user */
     public userObject = USER.getInstance();
     constructor(props: IProps) {
         super(props);
+        // initial state
         this.state = {
             currentPage: 1, loading: true, merchants: null, showModal: false, selectedMerchant: {},
         };
         // send token with all api requests
         this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
+        // bind current object to api call function
         this.searchMerchants = this.searchMerchants.bind(this);
     }
 
@@ -49,6 +56,7 @@ class Unsettled extends React.Component<IProps, IState> {
     }
 
     public render() {
+        /**  table columns */
         const columns = [
             {
                 title: t.t("Shop Name"),
@@ -70,12 +78,12 @@ class Unsettled extends React.Component<IProps, IState> {
             }, {
                 title: t.t("Actions"),
                 render: (text, record) => (
+                    // set state for current mercant and modal visibility
                     <Button onClick={() => { this.setState({ selectedMerchant: { id: "09355126588", name: record.name.first }, showModal: true }); }} type="primary" >{t.t("Settle")}</Button>
                 ),
             },
         ];
         if (this.state.merchants !== null) {
-            // local Date object
             return (
                 <div>
                     <Table pagination={false} columns={columns} rowKey="email" dataSource={this.state.merchants} size="small" />
