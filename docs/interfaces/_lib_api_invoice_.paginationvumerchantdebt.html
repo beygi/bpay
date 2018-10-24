@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RequestSettle | BecopayMerchants</title>
+	<title>PaginationVuMerchantdebt | BecopayMerchants</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,10 +59,10 @@
 					<a href="../modules/_lib_api_invoice_.html">&quot;lib/api/invoice&quot;</a>
 				</li>
 				<li>
-					<a href="_lib_api_invoice_.requestsettle.html">RequestSettle</a>
+					<a href="_lib_api_invoice_.paginationvumerchantdebt.html">PaginationVuMerchantdebt</a>
 				</li>
 			</ul>
-			<h1>Interface RequestSettle</h1>
+			<h1>Interface PaginationVuMerchantdebt</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">RequestSettle</span>
+						<span class="target">PaginationVuMerchantdebt</span>
 					</li>
 				</ul>
 			</section>
@@ -84,15 +84,14 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.requestsettle.html#amount" class="tsd-kind-icon">amount</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.requestsettle.html#apikey" class="tsd-kind-icon">apikey</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.requestsettle.html#datetime" class="tsd-kind-icon">datetime</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.requestsettle.html#destcard" class="tsd-kind-icon">dest<wbr>Card</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.requestsettle.html#invoiceids" class="tsd-kind-icon">invoice<wbr>Ids</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.requestsettle.html#mermobile" class="tsd-kind-icon">mer<wbr>Mobile</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.requestsettle.html#mob" class="tsd-kind-icon">mob</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.requestsettle.html#origincard" class="tsd-kind-icon">origin<wbr>Card</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.requestsettle.html#txid" class="tsd-kind-icon">txid</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.paginationvumerchantdebt.html#content" class="tsd-kind-icon">content</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.paginationvumerchantdebt.html#count" class="tsd-kind-icon">count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.paginationvumerchantdebt.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.paginationvumerchantdebt.html#next" class="tsd-kind-icon">next</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.paginationvumerchantdebt.html#page" class="tsd-kind-icon">page</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.paginationvumerchantdebt.html#previous" class="tsd-kind-icon">previous</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.paginationvumerchantdebt.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_lib_api_invoice_.paginationvumerchantdebt.html#status" class="tsd-kind-icon">status</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,92 +100,82 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="amount" class="tsd-anchor"></a>
-					<h3>amount</h3>
-					<div class="tsd-signature tsd-kind-icon">amount<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="content" class="tsd-anchor"></a>
+					<h3>content</h3>
+					<div class="tsd-signature tsd-kind-icon">content<span class="tsd-signature-symbol">:</span> <a href="_lib_api_invoice_.vumerchantdebt.html" class="tsd-signature-type">VuMerchantdebt</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="_lib_api_invoice_.vumerchantdebt.html" class="tsd-signature-type">VuMerchantdebt</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lib/api/invoice.tsx:107</li>
+							<li>Defined in lib/api/invoice.tsx:94</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="apikey" class="tsd-anchor"></a>
-					<h3>apikey</h3>
-					<div class="tsd-signature tsd-kind-icon">apikey<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="count" class="tsd-anchor"></a>
+					<h3>count</h3>
+					<div class="tsd-signature tsd-kind-icon">count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lib/api/invoice.tsx:108</li>
+							<li>Defined in lib/api/invoice.tsx:98</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="datetime" class="tsd-anchor"></a>
-					<h3>datetime</h3>
-					<div class="tsd-signature tsd-kind-icon">datetime<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lib/api/invoice.tsx:109</li>
+							<li>Defined in lib/api/invoice.tsx:99</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="destcard" class="tsd-anchor"></a>
-					<h3>dest<wbr>Card</h3>
-					<div class="tsd-signature tsd-kind-icon">dest<wbr>Card<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="next" class="tsd-anchor"></a>
+					<h3>next</h3>
+					<div class="tsd-signature tsd-kind-icon">next<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lib/api/invoice.tsx:110</li>
+							<li>Defined in lib/api/invoice.tsx:100</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="invoiceids" class="tsd-anchor"></a>
-					<h3>invoice<wbr>Ids</h3>
-					<div class="tsd-signature tsd-kind-icon">invoice<wbr>Ids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<a name="page" class="tsd-anchor"></a>
+					<h3>page</h3>
+					<div class="tsd-signature tsd-kind-icon">page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lib/api/invoice.tsx:111</li>
+							<li>Defined in lib/api/invoice.tsx:101</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="mermobile" class="tsd-anchor"></a>
-					<h3>mer<wbr>Mobile</h3>
-					<div class="tsd-signature tsd-kind-icon">mer<wbr>Mobile<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="previous" class="tsd-anchor"></a>
+					<h3>previous</h3>
+					<div class="tsd-signature tsd-kind-icon">previous<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lib/api/invoice.tsx:115</li>
+							<li>Defined in lib/api/invoice.tsx:102</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="mob" class="tsd-anchor"></a>
-					<h3>mob</h3>
-					<div class="tsd-signature tsd-kind-icon">mob<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="size" class="tsd-anchor"></a>
+					<h3>size</h3>
+					<div class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lib/api/invoice.tsx:116</li>
+							<li>Defined in lib/api/invoice.tsx:103</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="origincard" class="tsd-anchor"></a>
-					<h3>origin<wbr>Card</h3>
-					<div class="tsd-signature tsd-kind-icon">origin<wbr>Card<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="status" class="tsd-anchor"></a>
+					<h3>status</h3>
+					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lib/api/invoice.tsx:117</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="txid" class="tsd-anchor"></a>
-					<h3>txid</h3>
-					<div class="tsd-signature tsd-kind-icon">txid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in lib/api/invoice.tsx:118</li>
+							<li>Defined in lib/api/invoice.tsx:104</li>
 						</ul>
 					</aside>
 				</section>
@@ -235,45 +224,42 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_lib_api_invoice_.paginationinvoiceresponse.html" class="tsd-kind-icon">Pagination<wbr>Invoice<wbr>Response</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_lib_api_invoice_.paginationvumerchantdebt.html" class="tsd-kind-icon">Pagination<wbr>VuMerchantdebt</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_lib_api_invoice_.requestsettle.html" class="tsd-kind-icon">Request<wbr>Settle</a>
+						<a href="_lib_api_invoice_.paginationvumerchantdebt.html" class="tsd-kind-icon">Pagination<wbr>VuMerchantdebt</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_lib_api_invoice_.requestsettle.html#amount" class="tsd-kind-icon">amount</a>
+								<a href="_lib_api_invoice_.paginationvumerchantdebt.html#content" class="tsd-kind-icon">content</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_lib_api_invoice_.requestsettle.html#apikey" class="tsd-kind-icon">apikey</a>
+								<a href="_lib_api_invoice_.paginationvumerchantdebt.html#count" class="tsd-kind-icon">count</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_lib_api_invoice_.requestsettle.html#datetime" class="tsd-kind-icon">datetime</a>
+								<a href="_lib_api_invoice_.paginationvumerchantdebt.html#name" class="tsd-kind-icon">name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_lib_api_invoice_.requestsettle.html#destcard" class="tsd-kind-icon">dest<wbr>Card</a>
+								<a href="_lib_api_invoice_.paginationvumerchantdebt.html#next" class="tsd-kind-icon">next</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_lib_api_invoice_.requestsettle.html#invoiceids" class="tsd-kind-icon">invoice<wbr>Ids</a>
+								<a href="_lib_api_invoice_.paginationvumerchantdebt.html#page" class="tsd-kind-icon">page</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_lib_api_invoice_.requestsettle.html#mermobile" class="tsd-kind-icon">mer<wbr>Mobile</a>
+								<a href="_lib_api_invoice_.paginationvumerchantdebt.html#previous" class="tsd-kind-icon">previous</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_lib_api_invoice_.requestsettle.html#mob" class="tsd-kind-icon">mob</a>
+								<a href="_lib_api_invoice_.paginationvumerchantdebt.html#size" class="tsd-kind-icon">size</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_lib_api_invoice_.requestsettle.html#origincard" class="tsd-kind-icon">origin<wbr>Card</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_lib_api_invoice_.requestsettle.html#txid" class="tsd-kind-icon">txid</a>
+								<a href="_lib_api_invoice_.paginationvumerchantdebt.html#status" class="tsd-kind-icon">status</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_lib_api_invoice_.requestsettle.html" class="tsd-kind-icon">Request<wbr>Settle</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_lib_api_invoice_.settleup.html" class="tsd-kind-icon">Settleup</a>
 					</li>
