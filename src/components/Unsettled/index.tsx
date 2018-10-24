@@ -88,7 +88,9 @@ class Unsettled extends React.Component<IProps, IState> {
                         width={600}
                         title={t.t("Shop name") + `: ${this.state.selectedMerchant.name}`}
                     >
-                        <Settle merchantId={this.state.selectedMerchant.id}>
+                        <Settle merchantId={this.state.selectedMerchant.id}
+                            success={() => this.setState({ showModal: false }, () => { this.searchMerchants(); })}
+                        >
                         </Settle>
                     </Modal>
                 </div>
