@@ -2,7 +2,7 @@
  * @module Components/Settle
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { DatePicker, InputNumber } from "antd";
+import { DatePicker, InputNumber, notification } from "antd";
 import { Button, Form, Input, Spin, Table } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import * as _ from "lodash";
@@ -28,6 +28,7 @@ interface IState {
     currentPage: number;
     selectedInvoices: any;
     sum: number;
+    loading: boolean;
 }
 
 const FormItem = Form.Item;
@@ -48,7 +49,7 @@ class Settle extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
         this.state = {
-            currentPage: 1, selectedInvoices: [], invoices: null, sum: 0,
+            currentPage: 1, selectedInvoices: [], invoices: null, sum: 0, loading: false,
         };
         // send token with all api requests
         this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
@@ -74,16 +75,6 @@ class Settle extends React.Component<IProps, IState> {
     public render() {
         const pDate = localDate(t.default.language);
         const { getFieldDecorator } = this.props.form;
-        const formItemLayout = {
-            labelCol: {
-                xs: { span: 24 },
-                sm: { span: 5 },
-            },
-            wrapperCol: {
-                xs: { span: 24 },
-                sm: { span: 12 },
-            },
-        };
         const columns = [
             {
                 title: t.t("ID"),
@@ -108,82 +99,84 @@ class Settle extends React.Component<IProps, IState> {
             // local Date object
             return (
                 <div className="settle-form">
-                    <Form layout="vertical" onSubmit={this.handleSubmit}>
-                        <FormItem
-                            label={t.t("Amount")}
-                        >
-                            {getFieldDecorator("amount", {
-                                rules: [{
-                                    required: true,
-                                    validator: this.checkPrice,
-                                }],
-                                initialValue: 0,
-                            })(
-                                <InputNumber
-                                    min={0}
-                                    max={10000000}
-                                    formatter={(value) => `IRR ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                                    parser={(value): number => {
-                                        const output = parseInt(value.replace(/\IRR\s?|(,*)/g, ""), 10) || 0;
-                                        return output;
-                                    }}
-                                />,
-                            )}
-                        </FormItem>
-                        <FormItem
-                            label={t.t("Date and time")}
-                        >
-                            {getFieldDecorator("datetime", {
-                                rules: [{ type: "object", required: true, message: t.t("Please select payment date and time") }],
-                            })(
-                                <DatePicker
-                                    style={{ width: "100%" }}
-                                    showTime
-                                    format="YYYY-MM-DD HH:mm:ss"
-                                    dateRender={(current) => {
-                                        const style = { border: "", borderRadius: "" };
-                                        return (
-                                            <div className="ant-calendar-date" style={style} >
-                                                <Ex fixFloatNum={0} value={current.date()} stockStyle={false} />
-                                            </div>
-                                        );
-                                    }}
-                                />,
-                            )}
-                        </FormItem>
-                        <FormItem
-                            label={t.t("Origin Card number")}
-                        >
-                            {getFieldDecorator("originCard", {
-                                rules: [{ required: true, pattern: /^\d{16}$/, message: t.t("Please input 16 digits origin card number ") }],
-                            })(
-                                <Input className="ltr" placeholder="" />,
-                            )}
-                        </FormItem>
-                        <FormItem
-                            label={t.t("Destination Card number")}
-                        >
-                            {getFieldDecorator("destCard", {
-                                rules: [{ required: true, pattern: /^\d{16}$/, message: t.t("Please input 16 digits destination card number ") }],
-                            })(
-                                <Input className="ltr" placeholder="" />,
-                            )}
-                        </FormItem>
-                        <FormItem
-                            label={t.t("Tracking code")}
-                        >
-                            {getFieldDecorator("txid", {
-                                rules: [{ required: true, message: t.t("Please input Tracking code ") }],
-                            })(
-                                <Input className="ltr" placeholder="" />,
-                            )}
-                        </FormItem>
-                        <FormItem>
-                        </FormItem>
-                        <FormItem>
-                            <Button type="primary" htmlType="submit">{t.t("Submit")}</Button>
-                        </FormItem>
-                    </Form>
+                    <Spin spinning={this.state.loading}>
+                        <Form layout="vertical" onSubmit={this.handleSubmit}>
+                            <FormItem
+                                label={t.t("Amount")}
+                            >
+                                {getFieldDecorator("amount", {
+                                    rules: [{
+                                        required: true,
+                                        validator: this.checkPrice,
+                                    }],
+                                    initialValue: 0,
+                                })(
+                                    <InputNumber
+                                        min={0}
+                                        max={10000000}
+                                        formatter={(value) => `IRR ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                                        parser={(value): number => {
+                                            const output = parseInt(value.replace(/\IRR\s?|(,*)/g, ""), 10) || 0;
+                                            return output;
+                                        }}
+                                    />,
+                                )}
+                            </FormItem>
+                            <FormItem
+                                label={t.t("Date and time")}
+                            >
+                                {getFieldDecorator("datetime", {
+                                    rules: [{ type: "object", required: true, message: t.t("Please select payment date and time") }],
+                                })(
+                                    <DatePicker
+                                        style={{ width: "100%" }}
+                                        showTime
+                                        format="YYYY-MM-DD HH:mm:ss"
+                                        dateRender={(current) => {
+                                            const style = { border: "", borderRadius: "" };
+                                            return (
+                                                <div className="ant-calendar-date" style={style} >
+                                                    <Ex fixFloatNum={0} value={current.date()} stockStyle={false} />
+                                                </div>
+                                            );
+                                        }}
+                                    />,
+                                )}
+                            </FormItem>
+                            <FormItem
+                                label={t.t("Origin Card number")}
+                            >
+                                {getFieldDecorator("originCard", {
+                                    rules: [{ required: true, pattern: /^\d{16}$/, message: t.t("Please input 16 digits origin card number ") }],
+                                })(
+                                    <Input className="ltr" placeholder="" />,
+                                )}
+                            </FormItem>
+                            <FormItem
+                                label={t.t("Destination Card number")}
+                            >
+                                {getFieldDecorator("destCard", {
+                                    rules: [{ required: true, pattern: /^\d{16}$/, message: t.t("Please input 16 digits destination card number ") }],
+                                })(
+                                    <Input className="ltr" placeholder="" />,
+                                )}
+                            </FormItem>
+                            <FormItem
+                                label={t.t("Tracking code")}
+                            >
+                                {getFieldDecorator("txid", {
+                                    rules: [{ required: true, message: t.t("Please input Tracking code ") }],
+                                })(
+                                    <Input className="ltr" placeholder="" />,
+                                )}
+                            </FormItem>
+                            <FormItem>
+                            </FormItem>
+                            <FormItem>
+                                <Button type="primary" htmlType="submit">{t.t("Submit")}</Button>
+                            </FormItem>
+                        </Form>
+                    </Spin>
                     <Table className="unsettled-invoices" rowSelection={this.rowSelection} pagination={false}
                         scroll={{ y: 250 }}
                         columns={columns} rowKey="id" dataSource={this.state.invoices.settleUpInvoices} size="small" />
@@ -203,43 +196,39 @@ class Settle extends React.Component<IProps, IState> {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
-                console.log(values.datetime.toISOString());
+                values.datetime = values.datetime.toISOString();
+                values.apikey = this.props.user.apiKey;
+                values.mob = this.props.user.mobile;
+                values.merMobile = this.props.merchantId;
+                values.invoiceIds = this.state.selectedInvoices;
+                console.log(values);
+                this.setState({ loading: true });
+                this.api.settleUp1UsingPOST({
+                    requestSettle: values,
+                    $domain: "https://api.becopay.com",
+                }).then((response) => {
+                    this.setState({ loading: false });
+                    // notification.success({
+                    //     duration: 10,
+                    //     message: t.t("New Invoice Created"),
+                    //     description: t.t("click to open gateway"),
+                    //     placement: "bottomRight",
+                    //     btn: <Button
+                    //         target="blank" href={`${config.gateWayUrl}/invoice/${response.body.id}`} size="small" type="primary">{t.t("Open gateway")}</Button>,
+                    // });
+                }).catch((error) => {
+                    // handle error
+                    this.setState({ loading: false });
+                    let errorText = (error.response.body.message) ? error.response.body.message : error;
+                    errorText = (error.response.body.description) ? error.response.body.description : errorText;
+                    notification.error({
+                        message: t.t("Failed to settle invoices"),
+                        description: errorText,
+                        placement: "bottomRight",
+                    });
+                });
             }
 
-            // if (!err) {
-            //     this.setState({ loading: true });
-            //     this.api.addInvoiceUsingPOST({
-            //         inv: {
-            //             apiKey: this.props.user.apiKey,
-            //             description: values.description,
-            //             price: values.price,
-            //             mobile: this.props.user.mobile,
-            //             orderId: this.uuid(),
-            //         },
-            //         $domain: "https://api.becopay.com",
-            //     }).then((response) => {
-            //         this.setState({ loading: false });
-            //         notification.success({
-            //             duration: 10,
-            //             message: t.t("New Invoice Created"),
-            //             description: t.t("click to open gateway"),
-            //             placement: "bottomRight",
-            //             btn: <Button
-            //                 target="blank" href={`${config.gateWayUrl}/invoice/${response.body.id}`} size="small" type="primary">{t.t("Open gateway")}</Button>,
-            //         });
-            //     }).catch((error) => {
-            //         // handle error
-            //         this.setState({ loading: false });
-            //         // console.log(error.toString());
-            //         const errorText = (error.response.body.message) ? error.response.body.message : error;
-            //         notification.error({
-            //             message: t.t("Failed to create invoice"),
-            //             description: errorText,
-            //             placement: "bottomRight",
-            //         });
-            //
-            //     });
-            // }
         });
     }
 
