@@ -1,7 +1,7 @@
 /**
  * @module Components/Settle
  */
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { DatePicker, InputNumber, notification } from "antd";
 import { Button, Form, Input, Spin, Table } from "antd";
 import { FormComponentProps } from "antd/lib/form";
@@ -19,40 +19,52 @@ import "./style.less";
 interface IProps extends FormComponentProps {
     /**  current user's email address that is synced with redux */
     user: any;
-    merchantId: number;
+    /**  the unique id of the merchnat. this is email address for now */
+    merchantId: string;
+    /** success callback. it can be used to close modal */
+    success: () => void;
 }
 
 interface IState {
-    /**  list of all invoices */
+    /**  merchant data with list of invoices  */
     invoices: any;
-    currentPage: number;
-    selectedInvoices: any;
+    /** holds lists of seleced invoices */
+    selectedInvoices: [];
+    /** total amount of selected invoices */
     sum: number;
+    /** loading state,  spinner used this value to spinning */
     loading: boolean;
 }
 
 const FormItem = Form.Item;
 /**
- * this component shows all merchants that have Unsettled invoices
+ * shows list of unsettled invoices of a merchant to select and settle
  */
 class Settle extends React.Component<IProps, IState> {
+    /** holds an instance of invoice api */
     public api = API.getInstance();
+    /** represent user object for the currently loggined user */
     public userObject = USER.getInstance();
+    /** handles row selection. this function set sum and seleced rows to the component state */
     public rowSelection = {
         onChange: (selectedRowKeys, selectedRows) => {
             this.setState({ selectedInvoices: selectedRowKeys, sum: _.sumBy(selectedRows, "amount") }, () => {
                 this.props.form.validateFieldsAndScroll(["amount"], { force: true });
             });
-            console.log(`selectedRowKeys: ${selectedRowKeys}`, "selectedRows: ", selectedRows);
+            // console.log(`selectedRowKeys: ${selectedRowKeys}`, "selectedRows: ", selectedRows);
         },
     };
     constructor(props: IProps) {
         super(props);
+
+        // initial state
         this.state = {
-            currentPage: 1, selectedInvoices: [], invoices: null, sum: 0, loading: false,
+            selectedInvoices: [], invoices: null, sum: 0, loading: false,
         };
+
         // send token with all api requests
         this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
+        // bind getInvoices to current object
         this.getInvoices = this.getInvoices.bind(this);
     }
 
@@ -61,6 +73,7 @@ class Settle extends React.Component<IProps, IState> {
         this.getInvoices();
     }
 
+    /** amount field validator, it compare amount with total amount of seleced row and check their equality */
     public checkPrice = (rule, value, callback) => {
         if (value > 0 && value === this.state.sum) {
             callback();
@@ -73,8 +86,11 @@ class Settle extends React.Component<IProps, IState> {
     }
 
     public render() {
+        /** date object for current locale */
         const pDate = localDate(t.default.language);
         const { getFieldDecorator } = this.props.form;
+
+        /** table columns */
         const columns = [
             {
                 title: t.t("ID"),
@@ -84,7 +100,7 @@ class Settle extends React.Component<IProps, IState> {
                 title: t.t("Amount"),
                 dataIndex: "amount",
                 render: (price) => (
-                    <Ex fixFloatNum={0} value={price * 1000} seperateThousand />
+                    <Ex fixFloatNum={0} value={price} seperateThousand />
                 ),
             },
             {
@@ -95,8 +111,8 @@ class Settle extends React.Component<IProps, IState> {
                 ),
             },
         ];
+
         if (this.state.invoices !== null) {
-            // local Date object
             return (
                 <div className="settle-form">
                     <Spin spinning={this.state.loading}>
@@ -113,7 +129,7 @@ class Settle extends React.Component<IProps, IState> {
                                 })(
                                     <InputNumber
                                         min={0}
-                                        max={10000000}
+                                        max={10000000000}
                                         formatter={(value) => `IRR ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                                         parser={(value): number => {
                                             const output = parseInt(value.replace(/\IRR\s?|(,*)/g, ""), 10) || 0;
@@ -156,6 +172,7 @@ class Settle extends React.Component<IProps, IState> {
                                 label={t.t("Destination Card number")}
                             >
                                 {getFieldDecorator("destCard", {
+                                    initialValue: this.state.invoices.cardNumber,
                                     rules: [{ required: true, pattern: /^\d{16}$/, message: t.t("Please input 16 digits destination card number ") }],
                                 })(
                                     <Input className="ltr" placeholder="" />,
@@ -192,35 +209,36 @@ class Settle extends React.Component<IProps, IState> {
         );
     }
 
+    /** handles form submit routine */
     public handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
+                this.setState({ loading: true });
+                // prepare post data, format datea and append extra props to values
                 values.datetime = values.datetime.toISOString();
                 values.apikey = this.props.user.apiKey;
                 values.mob = this.props.user.mobile;
                 values.merMobile = this.props.merchantId;
                 values.invoiceIds = this.state.selectedInvoices;
-                console.log(values);
-                this.setState({ loading: true });
                 this.api.settleUp1UsingPOST({
                     requestSettle: values,
                     $domain: "https://api.becopay.com",
-                }).then((response) => {
+                }).then(() => {
                     this.setState({ loading: false });
-                    // notification.success({
-                    //     duration: 10,
-                    //     message: t.t("New Invoice Created"),
-                    //     description: t.t("click to open gateway"),
-                    //     placement: "bottomRight",
-                    //     btn: <Button
-                    //         target="blank" href={`${config.gateWayUrl}/invoice/${response.body.id}`} size="small" type="primary">{t.t("Open gateway")}</Button>,
-                    // });
+                    // notify user about successfull event and call successfull callback (probably to close modal)
+                    notification.error({
+                        message: t.t(this.state.invoices.shopName),
+                        description: t.t("successfully settled"),
+                        placement: "bottomRight",
+                    });
+                    this.props.success();
                 }).catch((error) => {
                     // handle error
                     this.setState({ loading: false });
                     let errorText = (error.response.body.message) ? error.response.body.message : error;
                     errorText = (error.response.body.description) ? error.response.body.description : errorText;
+                    // inform user about error using error message provided by api
                     notification.error({
                         message: t.t("Failed to settle invoices"),
                         description: errorText,
@@ -232,59 +250,18 @@ class Settle extends React.Component<IProps, IState> {
         });
     }
 
-    // seach merchants
+    /** get merchant data and invouce */
     public getInvoices() {
-        this.setState({
-            invoices:
-            {
-                sum: 59000,
-                mobile: "09120453931",
-                shopName: "mehdi-berger",
-                cardNumber: "6104337645502681",
-                settleUpInvoices: [
-                    {
-                        id: "POS_11_5a7b",
-                        amount: 11000,
-                        date: 1529519508757,
-                    },
-                    {
-                        id: "POS_11_5a9db",
-                        amount: 59000,
-                        date: 1539579508457,
-                    },
-                    {
-                        id: "PsOS_11_511ab",
-                        amount: 5000,
-                        date: 1539519102557,
-                    },
-                    {
-                        id: "POS_g11_51s1b",
-                        amount: 5000,
-                        date: 1539519102557,
-                    },
-                    {
-                        id: "POS_1as1_51s1b",
-                        amount: 5000,
-                        date: 1539519102557,
-                    },
-                    {
-                        id: "POS_11fdg_511b",
-                        amount: 5000,
-                        date: 1539519102557,
-                    },
-                    {
-                        id: "POS_11_sd511b",
-                        amount: 5000,
-                        date: 1539519102557,
-                    },
-                    {
-                        id: "POS_1sd1_511b",
-                        amount: 5000,
-                        date: 1539519102557,
-                    },
-                ],
-                count: 1,
-            },
+        this.api.getPreSettleUsingGET({
+            apikey: this.props.user.apiKey,
+            mob: this.props.user.mobile,
+            mermob: this.props.user.mobile,
+            $domain: "https://api.becopay.com",
+        }).then((response) => {
+            this.setState({ loading: false });
+            this.setState({
+                invoices: response.body,
+            });
         });
     }
 }
