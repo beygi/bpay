@@ -71,7 +71,7 @@ class Unsettled extends React.Component<IProps, IState> {
                 ),
             },
             {
-                title: t.t("Unsettled invoices"),
+                title: t.t("Count"),
                 dataIndex: "count",
                 render: (age) => (
                     <Ex fixFloatNum={0} value={age} seperateThousand stockStyle={false} />

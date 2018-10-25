@@ -2,7 +2,7 @@
  * @module Components/Invoice
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Table, Tag } from "antd";
+import { Table, Tag, Tooltip } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
 import config from "../../config";
@@ -96,8 +96,11 @@ class Invoice extends React.Component<IProps, IState> {
                         {t.t(invoice.symbol)}
                     </span>
                 </span>}
-                iconPosition="right" icon={<span><Tag color="#453e41">{invoice.description}</Tag>
-                    <Tag color="#898989">
+                iconPosition="right" icon={<span>
+                    <Tooltip title={invoice.description}>
+                        <Tag className="tag-desc" color="#453e41">{invoice.description}</Tag>
+                    </Tooltip>
+                    <Tag className="tag-date" color="#898989">
                         {date}
                     </Tag>
                     {icons[invoice.status]}

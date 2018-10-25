@@ -89,6 +89,10 @@ msgstr "سرد"
 msgid "Cold storage"
 msgstr "مخزن سرد"
 
+#: src/components/Unsettled/index.tsx:74
+msgid "Count"
+msgstr "تعداد"
+
 #: src/containers/KYC/index.tsx:171
 msgid "Country"
 msgstr "کشور"
@@ -97,7 +101,7 @@ msgstr "کشور"
 msgid "Create"
 msgstr "ایجاد"
 
-#: src/components/Invoice/index.tsx:58
+#: src/components/Invoice/index.tsx:61
 msgid "Create time"
 msgstr "زمان ایجاد"
 
@@ -317,7 +321,7 @@ msgstr "شما به این قسمت دسترسی ندارید"
 msgid "Open gateway"
 msgstr "باز کردن درگاه"
 
-#: src/components/Invoice/index.tsx:48
+#: src/components/Invoice/index.tsx:51
 msgid "Order id"
 msgstr "شماره سفارش"
 
@@ -351,11 +355,11 @@ msgstr "دسترسی"
 
 #: src/components/Settle/index.tsx:176
 msgid "Please input 16 digits destination card number "
-msgstr "لطفا شماره کارت ۱۶ رقمی مقصد را وارد کنید"
+msgstr "لطفا شماره کارت ۱۶ رقمی مقصد را وارد کنید "
 
 #: src/components/Settle/index.tsx:166
 msgid "Please input 16 digits origin card number "
-msgstr "لطفا شماره کارت ۱۶ رقمی مبدا را وارد کنید"
+msgstr "لطفا شماره کارت ۱۶ رقمی مبدا را وارد کنید "
 
 #: src/components/NewInvoice/index.tsx:120
 msgid "Please input description, max length is 30"
@@ -367,7 +371,7 @@ msgstr "لطفا قیمت را وارد کنید"
 
 #: src/components/Settle/index.tsx:185
 msgid "Please input Tracking code "
-msgstr "لطفا کد پیگیری سیستم بانکی را وارد کنید"
+msgstr "لطفا کد پیگیری سیستم بانکی را وارد کنید "
 
 #: src/containers/User/components/Login/index.tsx:103
 msgid "Please input your Email"
@@ -429,7 +433,7 @@ msgstr "لطفا تصویر سلفی خودتان را وارد کنید"
 msgid "Previous Page"
 msgstr "صفحه قبل"
 
-#: src/components/Invoice/index.tsx:55
+#: src/components/Invoice/index.tsx:58
 msgid "Price"
 msgstr "قیمت"
 
@@ -460,13 +464,13 @@ msgstr "سلفی با شناسه و توضیحات"
 #: src/components/PlaceOrder/index.tsx:116
 #: src/components/PlaceOrder/index.tsx:91
 msgid "Sell "
-msgstr "فروش"
+msgstr "فروش "
 
 #: src/components/Unsettled/index.tsx:83 src/containers/Dashboard/index.tsx:155
 msgid "Settle"
-msgstr "تسویه حساب"
+msgstr "تسویه"
 
-#: src/components/Invoice/index.tsx:76
+#: src/components/Invoice/index.tsx:79
 msgid "Settle detail"
 msgstr "جزییات تراکنش تسویه"
 
@@ -478,11 +482,11 @@ msgstr "تسویه شده"
 msgid "Shop name"
 msgstr "نام فروشگاه"
 
-#: src/components/Invoice/index.tsx:44 src/components/Unsettled/index.tsx:63
+#: src/components/Invoice/index.tsx:47 src/components/Unsettled/index.tsx:63
 msgid "Shop Name"
 msgstr "نام فروشگاه"
 
-#: src/components/Invoice/index.tsx:61
+#: src/components/Invoice/index.tsx:64
 msgid "Status"
 msgstr "وضعیت"
 
@@ -510,7 +514,7 @@ msgstr "تسویه حساب با موفقیت انجام شد"
 msgid "Support"
 msgstr "پشتیبانی"
 
-#: src/components/Invoice/index.tsx:52
+#: src/components/Invoice/index.tsx:55
 msgid "Symbol"
 msgstr "نماد"
 
@@ -545,10 +549,6 @@ msgstr "شماره رهگیری"
 #: src/components/Transactions/index.tsx:142
 msgid "Transactions"
 msgstr "تراکنش ها"
-
-#: src/components/Unsettled/index.tsx:74
-msgid "Unsettled invoices"
-msgstr "فاکتورهای تسویه نشده"
 
 #: src/components/Uploader/index.tsx:99
 #: src/components/UserStatusGuide/index.tsx:42
@@ -606,6 +606,9 @@ msgstr "شما اکنون یک کاربر هستید"
 #: src/containers/KYC/index.tsx:243
 msgid "your information submitted successfully"
 msgstr "اطلاعات شما با موفقیت ارسال شد"
+
+#~ msgid "Unsettled invoices"
+#~ msgstr "فاکتورهای تسویه نشده"
 
 #~ msgid "Loading ..."
 #~ msgstr "بارگزاری ..."
