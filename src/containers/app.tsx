@@ -4,15 +4,13 @@
 import { LocaleProvider } from "antd";
 import * as React from "react";
 import { hot } from "react-hot-loader";
-import { connect } from "react-redux";
-import { Redirect, Route, Switch } from "react-router";
-import { setUser } from "../redux/app/actions";
-import { IRootState } from "../redux/reducers";
+import { Route, Switch } from "react-router";
 import t from "../services/trans/i18n";
 import Languages from "../services/trans/languages";
 import Layout from "./../components/Layout";
 import PrivateRoute from "./../components/PrivateRoute";
 import Config from "./../config";
+import AccountingContainer from "./Accounting";
 import ChatAdminContainer from "./Admin/Chat";
 import AdminDashboardContainer from "./Admin/Dashboard";
 import KycAdminContainer from "./Admin/KYC";
@@ -70,6 +68,7 @@ class AppContainer extends React.Component<IProps, IState> {
 
                     {/* <PrivateRoute path={`/dashboard`} component={AdminDashboardContainer} /> */}
                     <PrivateRoute path={`/dashboard`} component={DashboardContainer} />
+                    <PrivateRoute path={`/accounting`} component={AccountingContainer} />
                     <PrivateRoute path={`/kyc`} component={KycContainer} />
                     {/* <PrivateRoute path={`/balance`} component={DashboardContainer} /> */}
                     <PrivateRoute path={`/exchange/:market`} component={ExchangeContainer} />

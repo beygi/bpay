@@ -68,6 +68,12 @@ function getMenus() {
                 text: t.t("Dashboard"),
                 visible: true,
             },
+            balance: {
+                icon: "calculator",
+                path: "/accounting",
+                text: t.t("Accounting"),
+                visible: true,
+            },
             // kyc: {
             //     icon: "solution",
             //     path: "/kyc",
