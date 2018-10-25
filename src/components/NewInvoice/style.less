@@ -1,13 +1,43 @@
 @import (reference) "../../theme/application";
-.new-invoice
-{
-    .description
-    {
-        width: 40%;   
+
+&[dir='rtl'] {
+    .new-invoice {
+        .ant-btn {
+            float: left;
+        }
     }
-    .ant-input-number-lg
-    {
-        width: 110px
+}
+
+.new-invoice {
+    padding: 20px;
+
+    .ant-input-number-lg {
+        width: 100%;
     }
     padding-bottom: 10px;
+
+    #price {
+        #ltr-placeholder()
+    }
+
+    .price {
+        width: calc(30% - 16px) !important;
+    }
+
+    .description {
+        width: calc(40% - 16px);
+    }
+
+    .ant-form-item-control-wrapper,
+    input {
+        width: 100% !important;
+    }
+
+    .ant-form-item.submit {
+        width: calc(30% - 16px);
+    }
+
+    .ant-btn {
+        float: right;
+    }
 }

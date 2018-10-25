@@ -2,7 +2,7 @@
  * @module Components/Transactions
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Pagination } from "antd";
+import { Pagination, Tooltip } from "antd";
 import { Select, Spin } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
@@ -110,14 +110,18 @@ class Transactions extends React.Component<IProps, IState> {
         // create filters.
         const filters = Object.keys(this.state.statusFilters).map(
             (status) => {
-                return (<span onClick={() => {
-                    const statusFilters = this.state.statusFilters;
-                    // toggle clicked permission
-                    statusFilters[status] = !statusFilters[status];
-                    this.setState({ statusFilters, loading: true, currentPage: 1 }, () => { this.getData(); });
-                }} key={status} className={`filter ${this.state.statusFilters[status]}`
-                }>
-                    {icons[status]}</span >);
+                return (
+                    <Tooltip title={t.t(status)}>
+                        <span onClick={() => {
+                            const statusFilters = this.state.statusFilters;
+                            // toggle clicked permission
+                            statusFilters[status] = !statusFilters[status];
+                            this.setState({ statusFilters, loading: true, currentPage: 1 }, () => { this.getData(); });
+                        }} key={status} className={`filter ${this.state.statusFilters[status]}`
+                        }>
+                            {icons[status]}</span>
+                    </Tooltip>
+                );
             },
         );
 
