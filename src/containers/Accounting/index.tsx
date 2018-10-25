@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Row } from "antd";
 import * as React from "react";
 import Block from "../../components/Holder";
-import Transactions from "../../components/Transactions";
+import SettleUps from "../../components/SettleUps";
 import Unsettled from "../../components/Unsettled";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
@@ -40,7 +40,7 @@ class AccountingContainer extends React.Component<IProps, IState> {
                     <Col md={16} >
                         <Row gutter={8}>
                             <Col md={24} >
-                                <Transactions />
+                                <SettleUps />
                             </Col>
                         </Row>
                         {/* <Row gutter={8}>
