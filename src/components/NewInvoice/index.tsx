@@ -103,14 +103,10 @@ class NewInvoice extends React.Component<IProps, IState> {
                     })(
                         <InputNumber
                             size="large"
+                            placeholder="IRR"
                             min={0}
-                            max={10000000}
-                            formatter={(value) => `IRR ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                            parser={(value): number => {
-                                // alert(parseInt(value.replace(/\IRR\s?|(,*)/g, ""), 10));
-                                const output = parseInt(value.replace(/\IRR\s?|(,*)/g, ""), 10) || 0;
-                                return output;
-                            }}
+                            max={10000000000}
+                            formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                         />,
                     )}
                 </FormItem>
@@ -124,8 +120,13 @@ class NewInvoice extends React.Component<IProps, IState> {
                         <Input id="description" placeholder={t.t("Description")} size="large" />,
                     )}
                 </FormItem>
-                <FormItem>
-                    <Button loading={this.state.loading} className="neat-btn" type="primary" htmlType="submit" size="large">{t.t("Create")}</Button>
+                <FormItem
+                    className="submit"
+                >
+                    <Button loading={this.state.loading} className="neat-btn" type="primary" htmlType="submit" size="large">
+                        {(!this.state.loading) ? <FontAwesomeIcon icon={["fas", "edit"]} /> : null}
+                        {t.t("Create")}
+                    </Button>
                 </FormItem>
             </Form>
         );
