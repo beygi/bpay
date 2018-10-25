@@ -6,8 +6,9 @@ import { Table, Tag } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
 import config from "../../config";
-import t from "../../services/trans/i18n";
+import USER from "../../lib/user";
 import { localDate } from "../../services/trans/i18n";
+import t from "../../services/trans/i18n";
 import Ex from "../ExchangeValue";
 import Block from "../Holder";
 import "./style.less";
@@ -32,6 +33,8 @@ const icons = {
  * this component shows one invoice details in a block
  */
 class Invoice extends React.Component<IProps, IState> {
+    /**  user object wich is represent current user */
+    public userObject = USER.getInstance();
     constructor(props: IProps) {
         super(props);
     }
@@ -82,14 +85,15 @@ class Invoice extends React.Component<IProps, IState> {
         return (
             <Block key={invoice.id} collapse className={"transaction-block"}
                 title={<span>
+                    {this.userObject.hasRealmRole("merchants_admin") ? <Tag className="shop-name">{invoice.shopName}</Tag> : null}
                     <Tag className="invoice-id" color="#453e41">
                         {invoice.id}
                     </Tag>
-                    <span className="symbol">
-                        {t.t(invoice.symbol)}
-                    </span>
                     <span className="price-value" >
                         <Ex fixFloatNum={0} value={invoice.price} seperateThousand />
+                    </span>
+                    <span className="symbol">
+                        {t.t(invoice.symbol)}
                     </span>
                 </span>}
                 iconPosition="right" icon={<span><Tag color="#453e41">{invoice.description}</Tag>
