@@ -2,19 +2,17 @@
  * @module Components/Transactions
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Select, Spin } from "antd";
 import { Pagination } from "antd";
-import { Table, Tag } from "antd";
+import { Select, Spin } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
-import config from "../../config";
 import API from "../../lib/api/invoice";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
-import { localDate } from "../../services/trans/i18n";
 import Ex from "../ExchangeValue";
 import Block from "../Holder";
+import Invoice from "../Invoice";
 import USER from "./../../lib/user";
 import "./style.less";
 
@@ -97,75 +95,12 @@ class Transactions extends React.Component<IProps, IState> {
     }
 
     public render() {
-
-        /**  holds detail table columns  */
-        const columns = [
-            {
-                title: t.t("Shop Name"),
-                dataIndex: "shopName",
-            },
-            {
-                title: t.t("Order id"),
-                dataIndex: "orderId",
-            },
-            {
-                title: t.t("Symbol"),
-                dataIndex: "symbol",
-            }, {
-                title: t.t("Price"),
-                dataIndex: "priceComponent",
-            }, {
-                title: t.t("Create time"),
-                dataIndex: "date",
-            }, {
-                title: t.t("Status"),
-                dataIndex: "statusName",
-            },
-        ];
-
         // holds jsx of invoices as an array
         let invoices = null;
         if (this.state.invoices && this.state.invoices.content !== undefined) {
-            // local Date object
-            const pDate = localDate(t.default.language);
             invoices = this.state.invoices.content.map((invoice) => {
-                const date = new pDate(invoice.timestamp).toLocaleString();
-                invoice.date = date;
-                const tablecolumns = [...columns];
-
-                // add an extra column to detail table for display detailed settle transaction
-                if (invoice.status === "settled") {
-                    tablecolumns.push({
-                        title: t.t("Settle detail"),
-                        dataIndex: "settleDetail",
-                    });
-                }
-                invoice.statusName = t.t(invoice.status);
-                invoice.priceComponent = <Ex fixFloatNum={0} value={invoice.price} seperateThousand />;
                 return (
-                    <Block key={invoice.id} collapse className={"transaction-block"}
-                        title={<span>
-                            <Tag className="invoice-id" color="#453e41">
-                                {invoice.id}
-                            </Tag>
-                            <span className="symbol">
-                                {t.t(invoice.symbol)}
-                            </span>
-                            <span className="price-value" >
-                                <Ex fixFloatNum={0} value={invoice.price} seperateThousand />
-                            </span>
-                        </span>}
-                        iconPosition="right" icon={<span><Tag color="#453e41">{invoice.description}</Tag>
-                            <Tag color="#898989">
-                                {date}
-                            </Tag>
-                            {icons[invoice.status]}
-                            <a className="callback" target="blank" href={invoice.callback}><FontAwesomeIcon icon={["fas", "link"]} /></a>
-                            &nbsp;
-                            <a className="waiting" target="blank" href={`${config.gateWayUrl}/invoice/${invoice.id}`}><FontAwesomeIcon icon={["fas", "external-link-alt"]} /></a>
-                        </span>}>
-                        <Table pagination={false} columns={tablecolumns} rowKey="id" dataSource={[invoice]} size="small" />
-                    </Block>
+                    <Invoice key={invoice.id} invoice={invoice} />
                 );
             });
             if (invoices.length === 0) {
