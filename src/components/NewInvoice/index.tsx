@@ -124,7 +124,7 @@ class NewInvoice extends React.Component<IProps, IState> {
                     className="submit"
                 >
                     <Button loading={this.state.loading} className="neat-btn" type="primary" htmlType="submit" size="large">
-                        {(!this.state.loading) ? <FontAwesomeIcon icon={["fas", "edit"]} /> : null}
+                        {(!this.state.loading) ? <FontAwesomeIcon icon={["fas", "plus"]} /> : null}
                         {t.t("Create")}
                     </Button>
                 </FormItem>
