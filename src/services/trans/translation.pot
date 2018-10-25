@@ -44,12 +44,12 @@ msgstr ""
 msgid "Available"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:67
-msgid "‌Balance"
-msgstr ""
-
 #: src/components/Analysis/index.tsx:130
 msgid "Balance"
+msgstr ""
+
+#: src/components/Unsettled/index.tsx:67
+msgid "‌Balance"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:60
@@ -130,6 +130,10 @@ msgstr ""
 
 #: src/components/NewInvoice/index.tsx:124
 msgid "Description"
+msgstr ""
+
+#: src/components/SettleUps/index.tsx:112
+msgid "Destination card"
 msgstr ""
 
 #: src/components/Settle/index.tsx:172
@@ -325,6 +329,10 @@ msgstr ""
 msgid "Order id"
 msgstr ""
 
+#: src/components/SettleUps/index.tsx:108
+msgid "Origin card"
+msgstr ""
+
 #: src/components/Settle/index.tsx:163
 msgid "Origin Card number"
 msgstr ""
@@ -455,7 +463,7 @@ msgstr ""
 msgid "search"
 msgstr ""
 
-#: src/components/SettleUps/index.tsx:150
+#: src/components/SettleUps/index.tsx:158
 #: src/components/Transactions/index.tsx:129
 msgid "Select merchant"
 msgstr ""
@@ -480,7 +488,7 @@ msgstr ""
 msgid "Settle detail"
 msgstr ""
 
-#: src/components/SettleUps/index.tsx:163
+#: src/components/SettleUps/index.tsx:171
 msgid "Settle Ups"
 msgstr ""
 
@@ -539,7 +547,7 @@ msgstr ""
 msgid "Tax Cash Desk"
 msgstr ""
 
-#: src/components/SettleUps/index.tsx:142
+#: src/components/SettleUps/index.tsx:150
 #: src/components/Transactions/index.tsx:107
 msgid "There is no data to display"
 msgstr ""
@@ -553,7 +561,7 @@ msgid "Total:"
 msgstr ""
 
 #: src/components/Settle/index.tsx:182
-#: src/components/SettleUps/index.tsx:108
+#: src/components/SettleUps/index.tsx:116
 msgid "Tracking code"
 msgstr ""
 

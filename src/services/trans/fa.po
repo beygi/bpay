@@ -53,12 +53,12 @@ msgstr "مقدار وارد شده با مجموع مبلغ فاکتورهای �
 msgid "Available"
 msgstr "در دسترس"
 
-#: src/components/Unsettled/index.tsx:67
-msgid "‌Balance"
-msgstr "بالانس"
-
 #: src/components/Analysis/index.tsx:130
 msgid "Balance"
+msgstr "بالانس"
+
+#: src/components/Unsettled/index.tsx:67
+msgid "‌Balance"
 msgstr "بالانس"
 
 #: src/components/Deposit/index.tsx:60 src/containers/KYC/index.tsx:126
@@ -137,6 +137,10 @@ msgstr "تاریخچهٔ مبالغ واریز"
 #: src/components/NewInvoice/index.tsx:124
 msgid "Description"
 msgstr "توضیحات"
+
+#: src/components/SettleUps/index.tsx:112
+msgid "Destination card"
+msgstr "شماره کارت مقصد"
 
 #: src/components/Settle/index.tsx:172
 msgid "Destination Card number"
@@ -327,6 +331,10 @@ msgstr "باز کردن درگاه"
 msgid "Order id"
 msgstr "شماره سفارش"
 
+#: src/components/SettleUps/index.tsx:108
+msgid "Origin card"
+msgstr "شماره کارت مبدا"
+
 #: src/components/Settle/index.tsx:163
 msgid "Origin Card number"
 msgstr "شماره کارت مبدا"
@@ -455,7 +463,7 @@ msgstr "مرا به خاطر بسپار"
 msgid "search"
 msgstr "جستجو"
 
-#: src/components/SettleUps/index.tsx:150
+#: src/components/SettleUps/index.tsx:158
 #: src/components/Transactions/index.tsx:129
 msgid "Select merchant"
 msgstr "انتخاب فروشنده"
@@ -478,7 +486,7 @@ msgstr "تسویه حساب"
 msgid "Settle detail"
 msgstr "جزییات تراکنش تسویه"
 
-#: src/components/SettleUps/index.tsx:163
+#: src/components/SettleUps/index.tsx:171
 msgid "Settle Ups"
 msgstr "تسویه حساب ها"
 
@@ -535,7 +543,7 @@ msgstr "زبان سیستم:"
 msgid "Tax Cash Desk"
 msgstr "میز حساب مالیات"
 
-#: src/components/SettleUps/index.tsx:142
+#: src/components/SettleUps/index.tsx:150
 #: src/components/Transactions/index.tsx:107
 msgid "There is no data to display"
 msgstr "داده ای برای نمایش وجود ندارد"
@@ -548,7 +556,7 @@ msgstr "مجموع"
 msgid "Total:"
 msgstr "مجموع:"
 
-#: src/components/Settle/index.tsx:182 src/components/SettleUps/index.tsx:108
+#: src/components/Settle/index.tsx:182 src/components/SettleUps/index.tsx:116
 msgid "Tracking code"
 msgstr "شماره رهگیری"
 

@@ -105,6 +105,14 @@ class SettleUps extends React.Component<IProps, IState> {
                 dataIndex: "merchant.shopName",
             },
             {
+                title: t.t("Origin card"),
+                dataIndex: "originCard",
+            },
+            {
+                title: t.t("Destination card"),
+                dataIndex: "destCard",
+            },
+            {
                 title: t.t("Tracking code"),
                 dataIndex: "txid",
             },

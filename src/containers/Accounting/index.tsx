@@ -25,7 +25,7 @@ class AccountingContainer extends React.Component<IProps, IState> {
         if (userObject.keycloak.hasRealmRole("merchant") || userObject.keycloak.hasRealmRole("merchants_admin")) {
             return (
                 <Row gutter={8}>
-                    <Col md={8} >
+                    <Col md={7} >
                         <Row gutter={8}>
                             {userObject.keycloak.hasRealmRole("merchants_admin") ?
                                 <Col md={24} >
@@ -37,7 +37,7 @@ class AccountingContainer extends React.Component<IProps, IState> {
                             }
                         </Row>
                     </Col>
-                    <Col md={16} >
+                    <Col md={17} >
                         <Row gutter={8}>
                             <Col md={24} >
                                 <SettleUps />
