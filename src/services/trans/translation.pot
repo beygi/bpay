@@ -10,7 +10,7 @@ msgstr ""
 msgid "Account information"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:71
+#: src/components/Unsettled/index.tsx:80
 msgid "Actions"
 msgstr ""
 
@@ -26,12 +26,12 @@ msgstr ""
 msgid "add new group"
 msgstr ""
 
-#: src/components/Settle/index.tsx:106
-#: src/components/Settle/index.tsx:85
+#: src/components/Settle/index.tsx:100
+#: src/components/Settle/index.tsx:121
 msgid "Amount"
 msgstr ""
 
-#: src/components/Settle/index.tsx:70
+#: src/components/Settle/index.tsx:82
 msgid "amount is not equal to selected invoice sum"
 msgstr ""
 
@@ -39,7 +39,7 @@ msgstr ""
 msgid "Available"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:58
+#: src/components/Unsettled/index.tsx:67
 msgid "‌Balance"
 msgstr ""
 
@@ -52,7 +52,7 @@ msgstr ""
 msgid "Before you start"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:22
+#: src/components/Transactions/index.tsx:20
 msgid "Bitcoin"
 msgstr ""
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:97
+#: src/components/Invoice/index.tsx:58
 msgid "Create time"
 msgstr ""
 
@@ -104,11 +104,11 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: src/components/Settle/index.tsx:92
+#: src/components/Settle/index.tsx:107
 msgid "Date"
 msgstr ""
 
-#: src/components/Settle/index.tsx:127
+#: src/components/Settle/index.tsx:142
 msgid "Date and time"
 msgstr ""
 
@@ -126,7 +126,7 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: src/components/Settle/index.tsx:157
+#: src/components/Settle/index.tsx:172
 msgid "Destination Card number"
 msgstr ""
 
@@ -150,11 +150,11 @@ msgstr ""
 msgid "Email:"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:22
+#: src/components/Transactions/index.tsx:20
 msgid "Ethereum"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:22
+#: src/components/Transactions/index.tsx:20
 msgid "EUR"
 msgstr ""
 
@@ -166,7 +166,7 @@ msgstr ""
 msgid "Exchange"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:22
+#: src/components/Transactions/index.tsx:20
 msgid "failed"
 msgstr ""
 
@@ -174,7 +174,7 @@ msgstr ""
 msgid "Failed to create invoice"
 msgstr ""
 
-#: src/components/Settle/index.tsx:224
+#: src/components/Settle/index.tsx:242
 msgid "Failed to settle invoices"
 msgstr ""
 
@@ -220,7 +220,7 @@ msgstr ""
 msgid "Hot storage"
 msgstr ""
 
-#: src/components/Settle/index.tsx:81
+#: src/components/Settle/index.tsx:96
 msgid "ID"
 msgstr ""
 
@@ -236,7 +236,7 @@ msgstr ""
 msgid "In order"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:22
+#: src/components/Transactions/index.tsx:20
 msgid "IRR"
 msgstr ""
 
@@ -313,11 +313,11 @@ msgstr ""
 msgid "Open gateway"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:87
+#: src/components/Invoice/index.tsx:48
 msgid "Order id"
 msgstr ""
 
-#: src/components/Settle/index.tsx:148
+#: src/components/Settle/index.tsx:163
 msgid "Origin Card number"
 msgstr ""
 
@@ -346,11 +346,11 @@ msgstr ""
 msgid "Permission"
 msgstr ""
 
-#: src/components/Settle/index.tsx:161
+#: src/components/Settle/index.tsx:176
 msgid "Please input 16 digits destination card number "
 msgstr ""
 
-#: src/components/Settle/index.tsx:151
+#: src/components/Settle/index.tsx:166
 msgid "Please input 16 digits origin card number "
 msgstr ""
 
@@ -362,7 +362,7 @@ msgstr ""
 msgid "Please input price"
 msgstr ""
 
-#: src/components/Settle/index.tsx:170
+#: src/components/Settle/index.tsx:185
 msgid "Please input Tracking code "
 msgstr ""
 
@@ -394,11 +394,11 @@ msgstr ""
 msgid "Please select a currency to deposit"
 msgstr ""
 
-#: src/components/Settle/index.tsx:72
+#: src/components/Settle/index.tsx:84
 msgid "Please select payment amount"
 msgstr ""
 
-#: src/components/Settle/index.tsx:130
+#: src/components/Settle/index.tsx:145
 msgid "Please select payment date and time"
 msgstr ""
 
@@ -427,7 +427,7 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:94
+#: src/components/Invoice/index.tsx:55
 msgid "Price"
 msgstr ""
 
@@ -447,7 +447,7 @@ msgstr ""
 msgid "search"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:171
+#: src/components/Transactions/index.tsx:129
 msgid "Select merchant"
 msgstr ""
 
@@ -461,29 +461,29 @@ msgstr ""
 msgid "Sell "
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:73
+#: src/components/Unsettled/index.tsx:83
 #: src/containers/Dashboard/index.tsx:155
 msgid "Settle"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:117
+#: src/components/Invoice/index.tsx:76
 msgid "Settle detail"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:22
+#: src/components/Transactions/index.tsx:20
 msgid "settled"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:89
+#: src/components/Unsettled/index.tsx:102
 msgid "Shop name"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:83
-#: src/components/Unsettled/index.tsx:54
+#: src/components/Invoice/index.tsx:44
+#: src/components/Unsettled/index.tsx:63
 msgid "Shop Name"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:100
+#: src/components/Invoice/index.tsx:61
 msgid "Status"
 msgstr ""
 
@@ -491,16 +491,19 @@ msgstr ""
 msgid "sth"
 msgstr ""
 
-#: src/components/Settle/index.tsx:178
 #: src/containers/KYC/index.tsx:236
 msgid "Submit"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:22
+#: src/components/Settle/index.tsx:191
+msgid "Submit transaction"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:20
 msgid "success"
 msgstr ""
 
-#: src/components/Settle/index.tsx:214
+#: src/components/Settle/index.tsx:231
 msgid "successfully settled"
 msgstr ""
 
@@ -508,7 +511,7 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:91
+#: src/components/Invoice/index.tsx:52
 msgid "Symbol"
 msgstr ""
 
@@ -524,7 +527,7 @@ msgstr ""
 msgid "Tax Cash Desk"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:150
+#: src/components/Transactions/index.tsx:107
 msgid "There is no data to display"
 msgstr ""
 
@@ -532,19 +535,19 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-#: src/components/Settle/index.tsx:186
+#: src/components/Settle/index.tsx:199
 msgid "Total:"
 msgstr ""
 
-#: src/components/Settle/index.tsx:167
+#: src/components/Settle/index.tsx:182
 msgid "Tracking code"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:184
+#: src/components/Transactions/index.tsx:142
 msgid "Transactions"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:65
+#: src/components/Unsettled/index.tsx:74
 msgid "Unsettled invoices"
 msgstr ""
 
@@ -557,7 +560,7 @@ msgstr ""
 msgid "Upload your documents"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:22
+#: src/components/Transactions/index.tsx:20
 msgid "USD"
 msgstr ""
 
@@ -581,7 +584,7 @@ msgstr ""
 msgid "View wallet address"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:22
+#: src/components/Transactions/index.tsx:20
 msgid "waiting"
 msgstr ""
 
