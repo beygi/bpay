@@ -125,16 +125,12 @@ class Settle extends React.Component<IProps, IState> {
                                         required: true,
                                         validator: this.checkPrice,
                                     }],
-                                    initialValue: 0,
                                 })(
                                     <InputNumber
+                                        placeholder="IRR"
                                         min={0}
                                         max={10000000000}
-                                        formatter={(value) => `IRR ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                                        parser={(value): number => {
-                                            const output = parseInt(value.replace(/\IRR\s?|(,*)/g, ""), 10) || 0;
-                                            return output;
-                                        }}
+                                        formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                                     />,
                                 )}
                             </FormItem>
