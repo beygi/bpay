@@ -89,9 +89,10 @@ class SettleUps extends React.Component<IProps, IState> {
             {
                 title: t.t("Date and time"),
                 dataIndex: "datetime",
-                render: (date) => (
-                    <div>{new pDate(date).toLocaleString()}</div>
-                ),
+                render: (date) => {
+                    const TimeStamp = +new Date(date);
+                    return (<div>{new pDate(TimeStamp).toLocaleString()}</div>);
+                },
             },
             {
                 title: t.t("Amount"),
