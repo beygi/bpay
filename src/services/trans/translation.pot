@@ -86,6 +86,10 @@ msgstr ""
 msgid "Cold storage"
 msgstr ""
 
+#: src/components/Unsettled/index.tsx:74
+msgid "Count"
+msgstr ""
+
 #: src/containers/KYC/index.tsx:171
 msgid "Country"
 msgstr ""

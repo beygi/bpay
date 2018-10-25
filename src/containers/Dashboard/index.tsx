@@ -134,7 +134,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
         if (userObject.keycloak.hasRealmRole("merchant") || userObject.keycloak.hasRealmRole("merchants_admin")) {
             return (
                 <Row gutter={8}>
-                    <Col md={8} >
+                    <Col sm={24} md={24} lg={8} >
                         <Row gutter={8}>
                             {/* <Col md={24} >
                                 <Block className="user-balance" title="Your balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
@@ -166,7 +166,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
                             </Col>
                         </Row>
                     </Col>
-                    <Col md={16} >
+                    <Col sm={24} md={24} lg={16} >
                         <Row gutter={8}>
                             <Col md={24} >
                                 <Transactions />

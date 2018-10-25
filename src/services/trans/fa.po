@@ -94,6 +94,10 @@ msgstr "سرد"
 msgid "Cold storage"
 msgstr "مخزن سرد"
 
+#: src/components/Unsettled/index.tsx:74
+msgid "Count"
+msgstr "تعداد"
+
 #: src/containers/KYC/index.tsx:171
 msgid "Country"
 msgstr "کشور"
@@ -365,11 +369,11 @@ msgstr "دسترسی"
 
 #: src/components/Settle/index.tsx:176
 msgid "Please input 16 digits destination card number "
-msgstr "لطفا شماره کارت ۱۶ رقمی مقصد را وارد کنید"
+msgstr "لطفا شماره کارت ۱۶ رقمی مقصد را وارد کنید "
 
 #: src/components/Settle/index.tsx:166
 msgid "Please input 16 digits origin card number "
-msgstr "لطفا شماره کارت ۱۶ رقمی مبدا را وارد کنید"
+msgstr "لطفا شماره کارت ۱۶ رقمی مبدا را وارد کنید "
 
 #: src/components/NewInvoice/index.tsx:120
 msgid "Please input description, max length is 30"
@@ -381,7 +385,7 @@ msgstr "لطفا قیمت را وارد کنید"
 
 #: src/components/Settle/index.tsx:185
 msgid "Please input Tracking code "
-msgstr "لطفا کد پیگیری سیستم بانکی را وارد کنید"
+msgstr "لطفا کد پیگیری سیستم بانکی را وارد کنید "
 
 #: src/containers/User/components/Login/index.tsx:103
 msgid "Please input your Email"
@@ -475,12 +479,12 @@ msgstr "سلفی با شناسه و توضیحات"
 #: src/components/PlaceOrder/index.tsx:116
 #: src/components/PlaceOrder/index.tsx:91
 msgid "Sell "
-msgstr "فروش"
+msgstr "فروش "
 
 #: src/components/Unsettled/index.tsx:83 src/containers/Accounting/index.tsx:32
 #: src/containers/Dashboard/index.tsx:151
 msgid "Settle"
-msgstr "تسویه حساب"
+msgstr "تسویه"
 
 #: src/components/Invoice/index.tsx:76
 msgid "Settle detail"
@@ -624,6 +628,9 @@ msgstr "شما اکنون یک کاربر هستید"
 #: src/containers/KYC/index.tsx:243
 msgid "your information submitted successfully"
 msgstr "اطلاعات شما با موفقیت ارسال شد"
+
+#~ msgid "Unsettled invoices"
+#~ msgstr "فاکتورهای تسویه نشده"
 
 #~ msgid "Loading ..."
 #~ msgstr "بارگزاری ..."

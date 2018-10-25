@@ -188,9 +188,7 @@ class Settle extends React.Component<IProps, IState> {
                                 )}
                             </FormItem>
                             <FormItem>
-                            </FormItem>
-                            <FormItem>
-                                <Button type="primary" htmlType="submit">{t.t("Submit")}</Button>
+                                <Button type="primary" htmlType="submit">{t.t("Submit transaction")}</Button>
                             </FormItem>
                         </Form>
                     </Spin>
