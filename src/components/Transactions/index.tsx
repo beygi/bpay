@@ -27,7 +27,7 @@ interface IState {
     /**  list of all invoices */
     invoices: any;
     /**  current page */
-    // currentPage: number;
+    currentPage: number;
     /** loading state */
     loading: boolean;
     /**  search input's loadint state */
