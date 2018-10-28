@@ -87,7 +87,7 @@ class Unsettled extends React.Component<IProps, IState> {
         if (this.state.merchants && this.state.merchants.content !== undefined) {
             return (
                 <div>
-                    <Table className="unsettled-merchants" loading={this.state.loading} pagination={false} columns={columns} rowKey="email" dataSource={this.state.merchants.content} size="small" />
+                    <Table className="unsettled-merchants" loading={this.state.loading} pagination={false} columns={columns} rowKey="id" dataSource={this.state.merchants.content} size="small" />
                     <Pagination onChange={(page) => { this.setState({ currentPage: page, loading: true }, () => { this.getUnsettledMerchants(); }); }}
                         hideOnSinglePage pageSize={10} current={this.state.currentPage} total={this.state.merchants.count}
                         itemRender={this.itemRender}
