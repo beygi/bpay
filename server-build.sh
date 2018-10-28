@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "###### cd to project dir ######"
-cd cd "/home/my/${DEPLOY_TYPE}"
+cd "/home/my/${DEPLOY_TYPE}"
 echo "###### checkout and pull master branch ... ######"
 git checkout .
 git pull
