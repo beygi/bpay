@@ -3,8 +3,9 @@
 node_modules
 .module-cache
 *.log*
-build
-dist
+/build
+/out
+/dist
 .idea
 .tmp
 .history
