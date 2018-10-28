@@ -6,13 +6,10 @@ echo "###### date ######"
 date +%d\ %m\ %Y
 echo "###### whoami ######"
 whoami
-echo "###### cd to src dir ######"
-#cd /home/staging/web
 pwd
 echo "###### last commit message ######"
 comment="$(git log -1)"
-#echo "${comment}"
-printf "I ${BLUE}${comment}${NC}\n"
+printf "${BLUE}${comment}${NC}\n"
 echo "###### remove dist dir ######"
 rm -r -f dist
 echo "###### install dev dependencies ######"
