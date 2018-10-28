@@ -111,7 +111,7 @@ class Transactions extends React.Component<IProps, IState> {
         const filters = Object.keys(this.state.statusFilters).map(
             (status) => {
                 return (
-                    <Tooltip title={t.t(status)}>
+                    <Tooltip key={status} title={t.t(status)}>
                         <span onClick={() => {
                             const statusFilters = this.state.statusFilters;
                             // toggle clicked permission
