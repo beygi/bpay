@@ -73,7 +73,7 @@ class Settle extends React.Component<IProps, IState> {
         this.getInvoices();
     }
 
-    /** amount field validator, it compare amount with total amount of seleced row and check their equality */
+    /** amount field validator, it compares amount with total amount of seleced row and check their equality */
     public checkPrice = (rule, value, callback) => {
         if (value > 0 && value === this.state.sum) {
             callback();
@@ -82,6 +82,20 @@ class Settle extends React.Component<IProps, IState> {
             callback(t.t("amount is not equal to selected invoice sum"));
         }
         callback(t.t("Please select payment amount"));
+        return;
+    }
+
+    /** date field validator, it compares  selected date to currnte date and prevent is selected date is in the future */
+    public checkDate = (rule, value, callback) => {
+        if (!value) {
+            callback(t.t("Please select payment date and time"));
+            return;
+        }
+        if (value.isAfter()) {
+            callback(t.t("Selected time is in the future"));
+            return;
+        }
+
         return;
     }
 
@@ -138,7 +152,10 @@ class Settle extends React.Component<IProps, IState> {
                                 label={t.t("Date and time")}
                             >
                                 {getFieldDecorator("datetime", {
-                                    rules: [{ type: "object", required: true, message: t.t("Please select payment date and time") }],
+                                    rules: [{
+                                        type: "object", required: true,
+                                        validator: this.checkDate,
+                                    }],
                                 })(
                                     <DatePicker
                                         style={{ width: "100%" }}

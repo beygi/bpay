@@ -36,7 +36,7 @@ msgstr "اضافه کردن گرون"
 msgid "add new group"
 msgstr "اضافه کردن گروه جدید"
 
-#: src/components/Settle/index.tsx:100 src/components/Settle/index.tsx:121
+#: src/components/Settle/index.tsx:114 src/components/Settle/index.tsx:135
 msgid "Amount"
 msgstr "مقدار"
 
@@ -48,12 +48,12 @@ msgstr "مقدار وارد شده با مجموع مبلغ فاکتورهای �
 msgid "Available"
 msgstr "در دسترس"
 
-#: src/components/Unsettled/index.tsx:67
-msgid "‌Balance"
-msgstr "بالانس"
-
 #: src/components/Analysis/index.tsx:130
 msgid "Balance"
+msgstr "بالانس"
+
+#: src/components/Unsettled/index.tsx:67
+msgid "‌Balance"
 msgstr "بالانس"
 
 #: src/components/Deposit/index.tsx:60 src/containers/KYC/index.tsx:126
@@ -116,11 +116,11 @@ msgstr "بدهی کنونی"
 msgid "Dashboard"
 msgstr "داشبورد"
 
-#: src/components/Settle/index.tsx:107
+#: src/components/Settle/index.tsx:121
 msgid "Date"
 msgstr "تاریخ"
 
-#: src/components/Settle/index.tsx:142
+#: src/components/Settle/index.tsx:152
 msgid "Date and time"
 msgstr "تاریخ و زمان پرداخت"
 
@@ -133,11 +133,11 @@ msgstr "واریز"
 msgid "Deposit history"
 msgstr "تاریخچهٔ مبالغ واریز"
 
-#: src/components/NewInvoice/index.tsx:124
+#: src/components/NewInvoice/index.tsx:120
 msgid "Description"
 msgstr "توضیحات"
 
-#: src/components/Settle/index.tsx:172
+#: src/components/Settle/index.tsx:185
 msgid "Destination Card number"
 msgstr "شماره کارت مقصد"
 
@@ -185,7 +185,7 @@ msgstr "ناموفق"
 msgid "Failed to create invoice"
 msgstr "عدم موفقیت در ایجاد فاکتور"
 
-#: src/components/Settle/index.tsx:242
+#: src/components/Settle/index.tsx:255
 msgid "Failed to settle invoices"
 msgstr "عدم موفقیت در تسویه حساب فاکتورها"
 
@@ -230,7 +230,7 @@ msgstr "گرم"
 msgid "Hot storage"
 msgstr "مخزن گرم"
 
-#: src/components/Settle/index.tsx:96
+#: src/components/Settle/index.tsx:110
 msgid "ID"
 msgstr "شناسه"
 
@@ -325,7 +325,7 @@ msgstr "باز کردن درگاه"
 msgid "Order id"
 msgstr "شماره سفارش"
 
-#: src/components/Settle/index.tsx:163
+#: src/components/Settle/index.tsx:176
 msgid "Origin Card number"
 msgstr "شماره کارت مبدا"
 
@@ -353,15 +353,15 @@ msgstr "رمز عبور"
 msgid "Permission"
 msgstr "دسترسی"
 
-#: src/components/Settle/index.tsx:176
+#: src/components/Settle/index.tsx:189
 msgid "Please input 16 digits destination card number "
 msgstr "لطفا شماره کارت ۱۶ رقمی مقصد را وارد کنید "
 
-#: src/components/Settle/index.tsx:166
+#: src/components/Settle/index.tsx:179
 msgid "Please input 16 digits origin card number "
 msgstr "لطفا شماره کارت ۱۶ رقمی مبدا را وارد کنید "
 
-#: src/components/NewInvoice/index.tsx:120
+#: src/components/NewInvoice/index.tsx:116
 msgid "Please input description, max length is 30"
 msgstr "لطفا متن توضیحات را وارد کنید. حداکثر ۳۰ حرف"
 
@@ -369,7 +369,7 @@ msgstr "لطفا متن توضیحات را وارد کنید. حداکثر ۳۰
 msgid "Please input price"
 msgstr "لطفا قیمت را وارد کنید"
 
-#: src/components/Settle/index.tsx:185
+#: src/components/Settle/index.tsx:198
 msgid "Please input Tracking code "
 msgstr "لطفا کد پیگیری سیستم بانکی را وارد کنید "
 
@@ -405,7 +405,7 @@ msgstr "لطفا ارز پرداختی را انتخاب کنید"
 msgid "Please select payment amount"
 msgstr "لطفا مبلغ را وارد کنید"
 
-#: src/components/Settle/index.tsx:145
+#: src/components/Settle/index.tsx:91
 msgid "Please select payment date and time"
 msgstr "لطفا تاریخ و ساعت پرداخت را وارد کنید"
 
@@ -453,9 +453,13 @@ msgstr "مرا به خاطر بسپار"
 msgid "search"
 msgstr "جستجو"
 
-#: src/components/Transactions/index.tsx:129
+#: src/components/Transactions/index.tsx:133
 msgid "Select merchant"
 msgstr "انتخاب فروشنده"
+
+#: src/components/Settle/index.tsx:95
+msgid "Selected time is in the future"
+msgstr "زمان انتخاب شده مربوط به آینده است"
 
 #: src/components/KYC/index.tsx:45 src/containers/KYC/index.tsx:227
 msgid "Selfie With ID And Note"
@@ -498,7 +502,7 @@ msgstr "چیزی"
 msgid "Submit"
 msgstr "ارسال"
 
-#: src/components/Settle/index.tsx:191
+#: src/components/Settle/index.tsx:204
 msgid "Submit transaction"
 msgstr "ثبت تراکنش"
 
@@ -506,7 +510,7 @@ msgstr "ثبت تراکنش"
 msgid "success"
 msgstr "پرداخت شده"
 
-#: src/components/Settle/index.tsx:231
+#: src/components/Settle/index.tsx:244
 msgid "successfully settled"
 msgstr "تسویه حساب با موفقیت انجام شد"
 
@@ -538,15 +542,15 @@ msgstr "داده ای برای نمایش وجود ندارد"
 msgid "Total"
 msgstr "مجموع"
 
-#: src/components/Settle/index.tsx:199
+#: src/components/Settle/index.tsx:212
 msgid "Total:"
 msgstr "مجموع:"
 
-#: src/components/Settle/index.tsx:182
+#: src/components/Settle/index.tsx:195
 msgid "Tracking code"
 msgstr "شماره رهگیری"
 
-#: src/components/Transactions/index.tsx:142
+#: src/components/Transactions/index.tsx:146
 msgid "Transactions"
 msgstr "تراکنش ها"
 
