@@ -43,7 +43,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
             <Col md={24} >
                 <Block className="sandbox">
                     {t.t("this is the sandbox enviroment , you can test your payments here, \
-        all transactions will be done using bitcoin test network not real network")}
+all transactions will be done using bitcoin test network not real network.")}
                 </Block>
             </Col>
 

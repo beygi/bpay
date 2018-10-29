@@ -24,7 +24,7 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:139
+#: src/containers/Dashboard/index.tsx:142
 msgid "Active Sessions"
 msgstr ""
 
@@ -128,7 +128,7 @@ msgstr ""
 msgid "Deposit"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:74 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:77 src/containers/Deposit/index.tsx:53
 #: src/containers/Exchange/index.tsx:56
 msgid "Deposit history"
 msgstr ""
@@ -301,7 +301,7 @@ msgstr ""
 msgid "Master"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:173 src/containers/Dashboard/index.tsx:56
+#: src/containers/Dashboard/index.tsx:176 src/containers/Dashboard/index.tsx:59
 msgid "New Invoice"
 msgstr ""
 
@@ -313,7 +313,7 @@ msgstr ""
 msgid "Next Page"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:205
+#: src/containers/Dashboard/index.tsx:208
 msgid "No Access"
 msgstr ""
 
@@ -470,7 +470,7 @@ msgstr ""
 msgid "Sell "
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:83 src/containers/Dashboard/index.tsx:166
+#: src/components/Unsettled/index.tsx:83 src/containers/Dashboard/index.tsx:169
 msgid "Settle"
 msgstr ""
 
@@ -538,8 +538,8 @@ msgstr ""
 msgid "There is no data to display"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:44
-msgid "this is the sandbox enviroment , you can test your payments here,         all transactions will be done using bitcoin test network not real network"
+#: src/containers/Dashboard/index.tsx:45
+msgid "this is the sandbox enviroment , you can test your payments here, all transactions will be done using bitcoin test network not real network."
 msgstr ""
 
 #: src/components/Deposit/index.tsx:77
