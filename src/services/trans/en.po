@@ -451,6 +451,11 @@ msgid ""
 "transactions will be done using bitcoin test network not real network"
 msgstr ""
 
+msgid ""
+"this is the sandbox enviroment , you can test your payments here, all "
+"transactions will be done using bitcoin test network not real network."
+msgstr ""
+
 msgid "waiting"
 msgstr ""
 

@@ -455,6 +455,14 @@ msgstr ""
 "پرداخت ها در این محیط در بستر تست شبکه بلاکچین صورت میگیرد و رمز‌ارز واقعی "
 "تبادل نمیشود"
 
+msgid ""
+"this is the sandbox enviroment , you can test your payments here, all "
+"transactions will be done using bitcoin test network not real network."
+msgstr ""
+"این محیط تنها برای آزمایش پرداخت توسط توسعه دهندگان ایجاد شده است. تمامی "
+"پرداخت ها در این محیط در بستر تست شبکه بلاکچین صورت میگیرد و رمز‌ارز واقعی "
+"تبادل نمیشود."
+
 msgid "waiting"
 msgstr "در انتظار پرداخت"
 
