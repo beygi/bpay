@@ -24,7 +24,7 @@ msgstr "اطلاعات حساب"
 msgid "Actions"
 msgstr "عملیات"
 
-#: src/containers/Dashboard/index.tsx:129
+#: src/containers/Dashboard/index.tsx:139
 msgid "Active Sessions"
 msgstr "نشست های فعال"
 
@@ -128,7 +128,7 @@ msgstr "تاریخ و زمان پرداخت"
 msgid "Deposit"
 msgstr "واریز"
 
-#: src/containers/Dashboard/index.tsx:64 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:74 src/containers/Deposit/index.tsx:53
 #: src/containers/Exchange/index.tsx:56
 msgid "Deposit history"
 msgstr "تاریخچهٔ مبالغ واریز"
@@ -301,7 +301,7 @@ msgstr "مرد"
 msgid "Master"
 msgstr "اصلی"
 
-#: src/containers/Dashboard/index.tsx:162 src/containers/Dashboard/index.tsx:46
+#: src/containers/Dashboard/index.tsx:173 src/containers/Dashboard/index.tsx:56
 msgid "New Invoice"
 msgstr "فاکتور جدید"
 
@@ -313,7 +313,7 @@ msgstr "فاکتور جدید با موفقیت ایجاد شد"
 msgid "Next Page"
 msgstr "صفحه بعد"
 
-#: src/containers/Dashboard/index.tsx:193
+#: src/containers/Dashboard/index.tsx:205
 msgid "No Access"
 msgstr "شما به این قسمت دسترسی ندارید"
 
@@ -470,7 +470,7 @@ msgstr "سلفی با شناسه و توضیحات"
 msgid "Sell "
 msgstr "فروش "
 
-#: src/components/Unsettled/index.tsx:83 src/containers/Dashboard/index.tsx:155
+#: src/components/Unsettled/index.tsx:83 src/containers/Dashboard/index.tsx:166
 msgid "Settle"
 msgstr "تسویه"
 
@@ -537,6 +537,11 @@ msgstr "میز حساب مالیات"
 #: src/components/Transactions/index.tsx:107
 msgid "There is no data to display"
 msgstr "داده ای برای نمایش وجود ندارد"
+
+#: src/containers/Dashboard/index.tsx:44
+#, fuzzy
+msgid "this is the sandbox enviroment , you can test your payments here,         all transactions will be done using bitcoin test network not real network"
+msgstr "این محیط تنها برای آزمایش پرداخت توسط توسعه دهندگان ایجاد شده است. تمامی پرداخت ها در این محیط در بستر تست شبکه بلاکچین صورت میگیرد و رمز‌ارز واقعی تبادل نمیشود"
 
 #: src/components/Deposit/index.tsx:77
 msgid "Total"

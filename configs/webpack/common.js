@@ -10,6 +10,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const isProduction = process.argv.indexOf("-p") >= 0;
+const webpack = require('webpack');
+const GitRevisionPlugin = require('git-revision-webpack-plugin');
+const gitRevisionPlugin = new GitRevisionPlugin()
 
 //color overrides
 
@@ -115,7 +118,13 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: "[name]-[chunkhash].min.css",
-        })
+        }),
+        new webpack.DefinePlugin({
+            DEPLOY_TYPE: JSON.stringify(process.env.DEPLOY_TYPE || "production"),
+            VERSION: JSON.stringify(gitRevisionPlugin.version()),
+            // COMMITHASH: JSON.stringify(gitRevisionPlugin.commithash()),
+            // BRANCH: JSON.stringify(gitRevisionPlugin.branch())
+        }),
     ],
     performance: {
         hints: false,

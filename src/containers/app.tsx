@@ -4,10 +4,8 @@
 import { LocaleProvider } from "antd";
 import * as React from "react";
 import { hot } from "react-hot-loader";
-import { connect } from "react-redux";
-import { Redirect, Route, Switch } from "react-router";
-import { setUser } from "../redux/app/actions";
-import { IRootState } from "../redux/reducers";
+import { Route, Switch } from "react-router";
+import { DEPLOY_TYPE, VERSION } from "../constants";
 import t from "../services/trans/i18n";
 import Languages from "../services/trans/languages";
 import Layout from "./../components/Layout";
@@ -41,10 +39,16 @@ class AppContainer extends React.Component<IProps, IState> {
     }
 
     public componentDidMount() {
-        // add body direction at first run
         document.body.dir = Config.language.dir;
+        if (DEPLOY_TYPE === "sandbox") {
+            document.body.style.backgroundColor = "rgb(154, 189, 154)";
+        }
+        if (DEPLOY_TYPE === "development") {
+            document.getElementById("develop").style.display = "block";
+            document.getElementById("develop").innerHTML = DEPLOY_TYPE + " " + `<b>${VERSION}</b>`;
+        }
+
         document.body.addEventListener("changeLanguage", (event: CustomEvent) => {
-            // change body direction on language change
             document.body.dir = Languages[event.detail.code].dir;
             t.changeLanguage(event.detail.code, () => {
                 this.forceUpdate();
