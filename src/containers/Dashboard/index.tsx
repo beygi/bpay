@@ -15,6 +15,10 @@ import Stock from "../../components/Stock";
 import Transactions from "../../components/Transactions";
 import Unsettled from "../../components/Unsettled";
 import Guide from "../../components/UserStatusGuide";
+import { DEPLOY_TYPE } from "../../constants";
+import { setUser } from "../../redux/app/actions";
+import { IRootState } from "../../redux/reducers";
+
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
@@ -33,9 +37,21 @@ class DashboardContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
+
+        const sandbox = (DEPLOY_TYPE === "sandbox") ?
+            <Col md={24} >
+                <Block className="sandbox">
+                    {t.t("this is the sandbox enviroment , you can test your payments here, \
+        all transactions will be done using bitcoin test network not real network")}
+                </Block>
+            </Col>
+
+            : null;
+
         if (userObject.keycloak.hasRealmRole("webapp_admin")) {
             return (
                 <Row gutter={8}>
+                    {sandbox}
                     <Col md={8} >
                         <Row gutter={8}>
                             <Col md={24} >
@@ -134,6 +150,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
         if (userObject.keycloak.hasRealmRole("merchant") || userObject.keycloak.hasRealmRole("merchants_admin")) {
             return (
                 <Row gutter={8}>
+                    {sandbox}
                     <Col sm={24} md={24} lg={8} >
                         <Row gutter={8}>
                             {/* <Col md={24} >
@@ -185,6 +202,7 @@ class DashboardContainer extends React.Component<IProps, IState> {
         }
         return (
             <Row gutter={8}>
+                {sandbox}
                 <Col md={24} >
                     <Block><h3>{t.t("No Access")}</h3></Block>
                 </Col>
