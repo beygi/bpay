@@ -1,6 +1,13 @@
 # Web Client
 This is a guide to dev,build and deploy webapp
 
+
+##### master build status
+[![pipeline status](https://gitlab.becopay.com/ui/web/badges/master/pipeline.svg)](https://gitlab.becopay.com/ui/web/commits/master)
+
+##### development build status
+[![pipeline status](https://gitlab.becopay.com/ui/web/badges/develop/pipeline.svg)](https://gitlab.becopay.com/ui/web/commits/develop)
+
 ## Installation
 ```bash
 yarn install
