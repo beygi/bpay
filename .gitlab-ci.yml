@@ -1,0 +1,117 @@
+production build:
+  stage:    build 
+  script:
+    - "export DEPLOY_TYPE=production && ./build.sh"
+  only:
+    - master
+  tags:
+    - my      
+  cache:
+    key: production
+    untracked: true           
+
+production test:
+  stage:      test
+  script:     
+    - pwd && echo passed
+  only:
+    - master 
+  tags:
+    - my
+  cache:
+    key: production
+    untracked: true                   
+
+
+production deploy:
+  stage: deploy
+  script:
+    - "rsync -r -a -v -e ssh --delete dist/ staging@79.137.5.196:/home/staging/my/production/out"
+  environment:
+    name: Production
+    url: https://my.becopay.com/
+  tags:
+    - my           
+  only:
+    - master 
+  cache:
+    key: production
+    untracked: true     
+    
+sandbox build:
+  stage: build
+  only:
+    - master 
+  tags:
+    - my          
+  script:   
+    - "export DEPLOY_TYPE=sandbox && ./build.sh"
+  cache:
+    key: sandbox
+    untracked: true               
+        
+sandbox test:
+    stage:  test
+    only:
+        - master 
+    tags:
+        - my          
+    script:     
+        - pwd && echo passed
+    cache:
+        key: sandbox
+        untracked: true                    
+
+sandbox deploy:
+  stage: deploy
+  script:
+    - "rsync -r -a -v -e ssh --delete dist/ staging@79.137.5.196:/home/staging/my/sandbox/out"
+  environment:
+    name: SandBox
+    url: https://sandbox-my.becopay.com/
+  tags:
+    - my           
+  only:
+    - master
+  cache:
+    key: sandbox
+    untracked: true                    
+                        
+development build:
+    stage:  build
+    only:
+        - develop 
+    tags:
+        - my          
+    script: 
+        - "export DEPLOY_TYPE=development && ./build.sh"
+    cache:
+        key: development
+        untracked: true
+        
+development test:
+    stage:      test
+    only:
+        - develop 
+    tags:
+        - my          
+    script:     
+        - pwd && echo passed 
+    cache:
+        key: development
+        untracked: true        
+        
+development deploy:
+    stage: deploy
+    script:
+        - "rsync -r -a -v -e ssh --delete dist/ staging@79.137.5.196:/home/staging/my/development/out"
+    environment:
+        name: Staging
+        url: https://staging-my.becopay.com/
+    tags:
+        - my           
+    only:
+    - develop
+    cache:
+        key: development
+        untracked: true
