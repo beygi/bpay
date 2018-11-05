@@ -78,4 +78,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps)(LiveComponent);
+export default connect(mapStateToProps, null, null, { pure: false })(LiveComponent);
