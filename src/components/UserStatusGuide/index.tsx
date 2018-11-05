@@ -40,12 +40,12 @@ class UserStatusGuideComponent extends React.Component<IProps, IState> {
                     <Step description={t.t("You are a member")} status="finish" title={t.t("Register")} icon={<Icon type="user" />} />
                     <Step description={t.t("Verify your email address")} status="finish" title={t.t("Verify email")} icon={<Icon type="mail" />} />
                     <Step description={t.t("Upload your documents")} status="process" title={t.t("Upload")} icon={<Icon type="loading-3-quarters" />} />
-                    <Step description="We are validating you" status="wait" title={t.t("Identity check")} icon={<Icon type="solution" />} />
-                    <Step description={t.t("Happy Trading")} status="wait" title="Done" icon={<Icon type="check" />} />
+                    <Step description={t.t("Validating your documents")} status="wait" title={t.t("Identity check")} icon={<Icon type="solution" />} />
+                    <Step description={t.t("Happy Trading")} status="wait" title={t.t("Done")} icon={<Icon type="check" />} />
                 </Steps>
                 <div>
                     <Link to="/kyc">
-                        <Button className="action" icon="idcard" type="primary" size="large">Validate yourself</Button>
+                        <Button className="action" icon="idcard" type="primary" size="large">{t.t("Validate yourself")}</Button>
                     </Link>
                 </div>
             </div >

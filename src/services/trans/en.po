@@ -17,6 +17,9 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
+msgid "Activate"
+msgstr ""
+
 msgid "Active Sessions"
 msgstr ""
 
@@ -87,6 +90,9 @@ msgid "Destination Card number"
 msgstr ""
 
 msgid "Destination card"
+msgstr ""
+
+msgid "Done"
 msgstr ""
 
 msgid "Driving license"
@@ -177,6 +183,9 @@ msgid "License Type"
 msgstr ""
 
 msgid "Limit"
+msgstr ""
+
+msgid "Live prices"
 msgstr ""
 
 msgid "Login Password"
@@ -377,6 +386,12 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
+msgid "Validate yourself"
+msgstr ""
+
+msgid "Validating your documents"
+msgstr ""
+
 msgid "Verify email"
 msgstr ""
 
@@ -393,6 +408,9 @@ msgid "Warning"
 msgstr ""
 
 msgid "You are a member"
+msgstr ""
+
+msgid "Your balance"
 msgstr ""
 
 msgid "add group"

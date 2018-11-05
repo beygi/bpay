@@ -20,7 +20,7 @@ function getMenus() {
             visible: true,
         },
     };
-    if (userObject.keycloak.hasRealmRole("webapp_admin")) {
+    if (true || userObject.keycloak.hasRealmRole("webapp_admin")) {
         availableMenus = {
             dashboard: {
                 icon: "dashboard",
@@ -46,12 +46,12 @@ function getMenus() {
                 text: t.t("Deposit"),
                 visible: true,
             },
-            wallets: {
-                icon: "wallet",
-                path: "/wallets",
-                text: t.t("Wallets"),
-                visible: true,
-            },
+            // wallets: {
+            //     icon: "wallet",
+            //     path: "/wallets",
+            //     text: t.t("Wallets"),
+            //     visible: true,
+            // },
             kyc: {
                 icon: "solution",
                 path: "/kyc",

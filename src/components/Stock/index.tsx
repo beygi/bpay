@@ -76,9 +76,9 @@ class StockComponent extends React.Component<IProps, IState> {
             return (<div>Loading ...</div>);
         }
         const rates = this.state.exchangeRates.map((rate) => {
-            return <div key={rate.symbol}><span className="symbol">{rate.symbol}: </span><span className="rate"><Ex value={rate.rate} seperateThousand /></span></div>;
+            return <div key={rate.symbol}><span className="symbol">{t.t(rate.symbol)}: </span><span className="rate"><Ex value={rate.rate} seperateThousand /></span></div>;
         });
-        const title = (this.props.hideTitle) ? null : <span className="balance-name"><i className={`live-icon cc ${this.props.symbol}`}></i>{this.props.cryptos[this.props.symbol].name}</span>;
+        const title = (this.props.hideTitle) ? null : <span className="balance-name"><i className={`live-icon cc ${this.props.symbol}`}></i>{t.t(this.props.cryptos[this.props.symbol].name)}</span>;
         return (
             <div className="stock" >
                 {title}

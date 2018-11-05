@@ -17,6 +17,9 @@ msgstr "حسابداری"
 msgid "Actions"
 msgstr "عملیات"
 
+msgid "Activate"
+msgstr "فعال سازی"
+
 msgid "Active Sessions"
 msgstr "نشست های فعال"
 
@@ -77,8 +80,9 @@ msgstr "تاریخ و زمان پرداخت"
 msgid "Deposit"
 msgstr "واریز"
 
+#, fuzzy
 msgid "Deposit history"
-msgstr "تاریخچهٔ مبالغ واریز"
+msgstr "تاریخچهٔ مبالغ واریزی"
 
 msgid "Description"
 msgstr "توضیحات"
@@ -88,6 +92,9 @@ msgstr "شماره کارت مقصد"
 
 msgid "Destination card"
 msgstr "شماره کارت مقصد"
+
+msgid "Done"
+msgstr "تمام"
 
 msgid "Driving license"
 msgstr "گواهینامه رانندگی"
@@ -131,8 +138,9 @@ msgstr "صفحه اول"
 msgid "Gender"
 msgstr "جنسیت"
 
+#, fuzzy
 msgid "Google Authenticator"
-msgstr "ورود دو مرحله ای توسط گوگل"
+msgstr "ورود توسط گوگل"
 
 msgid "Group Name"
 msgstr "نام گروه"
@@ -178,6 +186,9 @@ msgstr "نوع کارت مشخصات"
 
 msgid "Limit"
 msgstr "محدودیت"
+
+msgid "Live prices"
+msgstr "قیمت زنده"
 
 msgid "Login Password"
 msgstr "رمز عبور"
@@ -377,6 +388,12 @@ msgstr "داشبورد کاربر"
 msgid "Users"
 msgstr "کاربران"
 
+msgid "Validate yourself"
+msgstr "تایید هویت"
+
+msgid "Validating your documents"
+msgstr "بررسی و تایید مدارک"
+
 msgid "Verify email"
 msgstr "تایید ایمیل"
 
@@ -394,6 +411,9 @@ msgstr "هشدار"
 
 msgid "You are a member"
 msgstr "شما اکنون یک کاربر هستید"
+
+msgid "Your balance"
+msgstr "بالانس حساب شما"
 
 msgid "add group"
 msgstr "اضافه کردن گرون"

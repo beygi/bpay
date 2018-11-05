@@ -40,11 +40,11 @@ const config = {
             type: "crypto",
         },
         IRR: {
-            name: "IR Rial",
+            name: "IRR",
             type: "fiat",
         },
         USD: {
-            name: "US dollar",
+            name: "USD",
             type: "fiat",
         },
     },
