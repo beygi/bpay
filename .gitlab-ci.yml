@@ -8,8 +8,9 @@ production build:
     - my      
   cache:
     key: production
-    untracked: true           
-
+    paths:
+        - node_modules/
+        - dist/
 production test:
   stage:      test
   script:     
@@ -33,7 +34,8 @@ production deploy:
     - master 
   cache:
     key: production
-    untracked: true     
+    paths:
+        - dist/
     
 sandbox build:
   stage: build
@@ -45,7 +47,9 @@ sandbox build:
     - "export DEPLOY_TYPE=sandbox && ./build.sh"
   cache:
     key: sandbox
-    untracked: true               
+    paths:
+        - node_modules/
+        - dist/
         
 sandbox test:
     stage:  test
@@ -69,7 +73,8 @@ sandbox deploy:
     - master
   cache:
     key: sandbox
-    untracked: true                    
+    paths:
+        - dist/  
                         
 development build:
     stage:  build
@@ -81,7 +86,9 @@ development build:
         - "export DEPLOY_TYPE=development && ./build.sh"
     cache:
         key: development
-        untracked: true
+        paths:
+            - node_modules/
+            - dist/
         
 development test:
     stage:      test
@@ -105,4 +112,5 @@ development deploy:
     - develop
     cache:
         key: development
-        untracked: true
+        paths:
+            - dist/
