@@ -77,7 +77,7 @@ export default class Seeder {
                 },
             },
             USD: {
-                name: "US dollar",
+                name: "USD",
                 balance: {
                     available: 12,
                     inOrder: 1,
@@ -85,7 +85,7 @@ export default class Seeder {
                 },
             },
             IRR: {
-                name: "IR Rial",
+                name: "IRR",
                 balance: {
                     available: 1200,
                     inOrder: 100,

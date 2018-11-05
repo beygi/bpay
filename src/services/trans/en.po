@@ -125,11 +125,11 @@ msgid "Date and time"
 msgstr ""
 
 #: src/components/DashboardMenu/menu.tsx:46
-#: src/containers/Exchange/index.tsx:53
+#: src/containers/Dashboard/index.tsx:117 src/containers/Exchange/index.tsx:53
 msgid "Deposit"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:126 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:128 src/containers/Deposit/index.tsx:53
 #: src/containers/Exchange/index.tsx:56
 msgid "Deposit history"
 msgstr ""
@@ -278,6 +278,10 @@ msgstr ""
 
 #: src/components/PlaceOrder/index.tsx:54
 msgid "Limit"
+msgstr ""
+
+#: src/containers/Dashboard/index.tsx:123
+msgid "Live prices"
 msgstr ""
 
 #: src/containers/User/components/Login/index.tsx:116
@@ -616,7 +620,7 @@ msgstr ""
 msgid "You are a member"
 msgstr ""
 
-#: src/containers/Exchange/index.tsx:50
+#: src/containers/Dashboard/index.tsx:113 src/containers/Exchange/index.tsx:50
 msgid "Your balance"
 msgstr ""
 

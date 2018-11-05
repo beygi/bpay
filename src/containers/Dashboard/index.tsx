@@ -114,13 +114,13 @@ all transactions will be done using bitcoin test network not real network.")}
                                     <Balance />
                                     <Link to="/deposit">
                                         <Button
-                                            size="large" className="neat-btn" type="primary"><FontAwesomeIcon icon={["fas", "lock"]} />{t.t("Deposit")}
+                                            className="neat-btn" type="primary">{t.t("Deposit")}
                                         </Button>
                                     </Link>
                                 </Block>
                             </Col>
                             <Col md={24} >
-                                <Block collapse title="Live prices" icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
+                                <Block collapse title={t.t("Live prices")} icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
                                     <Live />
                                 </Block>
                             </Col>

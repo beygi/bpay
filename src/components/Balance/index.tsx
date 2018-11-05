@@ -6,6 +6,7 @@ import { Collapse } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
+import Ex from "../../components/ExchangeValue";
 import config from "../../config";
 import btcApi from "../../lib/api/btc";
 import { updateUserBalance } from "../../redux/app/actions";
@@ -94,8 +95,10 @@ class BalanceComponent extends React.Component<IProps, IState> {
         const coins = Object.keys(this.state.fiats).map((key) =>
             <div className="coin-balance" key={key}>
                 <span className="balance-icon" > {config.icons[key]}</span >
-                <p className="balance-name">{this.state.balance[key].name}</p>
-                <p className="balance-number">{this.state.balance[key].balance.available || 0}</p>
+                <p className="balance-name">{t.t(this.state.balance[key].name)}</p>
+                <p className="balance-number">
+                    <Ex value={this.state.balance[key].balance.available || 0} />
+                </p>
             </div>,
         );
         return (

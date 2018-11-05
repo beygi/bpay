@@ -51,9 +51,9 @@ class LiveComponent extends React.Component<IProps, IState> {
                 const usdPrice: number = _.round(parseFloat(coin.quotes.USD.price), 2) || 0;
                 return (
                     <div className="coin-balance" key={coin.symbol}>
-                        <i className={`live-icon cc ${coin.symbol}`}></i>
-                        <p className="balance-name">{coin.name}</p>
-                        <p className="balance-number">$<Ex value={usdPrice} /></p>
+                        <i className={`live-icon cc ${coin.symbol}-alt`}></i>
+                        <span className="balance-name">{t.t(coin.name)}</span>
+                        <p className="balance-number usd">$<Ex value={usdPrice} /></p>
                         <p className="balance-number"><i className={"cc BTC-alt"}></i><Ex value={btcPrice} fixFloatNum={6} /></p>
                     </div>);
             },
