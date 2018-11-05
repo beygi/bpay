@@ -14,8 +14,8 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:142
-msgid "Active Sessions"
+#: src/components/GoogleAuth/index.tsx:36
+msgid "Activate"
 msgstr ""
 
 #: src/containers/Groups/index.tsx:109
@@ -39,12 +39,12 @@ msgstr ""
 msgid "Available"
 msgstr ""
 
-#: src/components/Analysis/index.tsx:130
-msgid "Balance"
-msgstr ""
-
 #: src/components/Unsettled/index.tsx:67
 msgid "‌Balance"
+msgstr ""
+
+#: src/components/Analysis/index.tsx:130
+msgid "Balance"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:60
@@ -117,10 +117,11 @@ msgid "Date and time"
 msgstr ""
 
 #: src/components/DashboardMenu/menu.tsx:46
+#: src/containers/Exchange/index.tsx:53
 msgid "Deposit"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:77
+#: src/containers/Dashboard/index.tsx:126
 #: src/containers/Deposit/index.tsx:53
 #: src/containers/Exchange/index.tsx:56
 msgid "Deposit history"
@@ -132,6 +133,10 @@ msgstr ""
 
 #: src/components/Settle/index.tsx:185
 msgid "Destination Card number"
+msgstr ""
+
+#: src/components/UserStatusGuide/index.tsx:44
+msgid "Done"
 msgstr ""
 
 #: src/containers/KYC/index.tsx:195
@@ -296,8 +301,7 @@ msgstr ""
 msgid "Master"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:176
-#: src/containers/Dashboard/index.tsx:59
+#: src/containers/Dashboard/index.tsx:77
 msgid "New Invoice"
 msgstr ""
 
@@ -307,10 +311,6 @@ msgstr ""
 
 #: src/containers/Admin/Users/index.tsx:147
 msgid "Next Page"
-msgstr ""
-
-#: src/containers/Dashboard/index.tsx:208
-msgid "No Access"
 msgstr ""
 
 #: src/components/NewInvoice/index.tsx:67
@@ -470,7 +470,7 @@ msgid "Sell "
 msgstr ""
 
 #: src/components/Unsettled/index.tsx:83
-#: src/containers/Dashboard/index.tsx:169
+#: src/containers/Dashboard/index.tsx:70
 msgid "Settle"
 msgstr ""
 
@@ -580,6 +580,14 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
+#: src/components/UserStatusGuide/index.tsx:48
+msgid "Validate yourself"
+msgstr ""
+
+#: src/components/UserStatusGuide/index.tsx:43
+msgid "Validating your documents"
+msgstr ""
+
 #: src/components/UserStatusGuide/index.tsx:41
 msgid "Verify email"
 msgstr ""
@@ -596,10 +604,6 @@ msgstr ""
 msgid "waiting"
 msgstr ""
 
-#: src/components/DashboardMenu/menu.tsx:52
-msgid "Wallets"
-msgstr ""
-
 #: src/components/Deposit/index.tsx:119
 msgid "Warning"
 msgstr ""
@@ -610,6 +614,10 @@ msgstr ""
 
 #: src/components/UserStatusGuide/index.tsx:40
 msgid "You are a member"
+msgstr ""
+
+#: src/containers/Exchange/index.tsx:50
+msgid "Your balance"
 msgstr ""
 
 #: src/containers/KYC/index.tsx:243

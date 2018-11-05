@@ -33,7 +33,7 @@ class GoogleAuthComponent extends React.Component<IProps, IState> {
                 </div>
                 <div className="action">
                     <Button href={`${config.keycloakConfig.url}/realms/master/account/totp`}
-                     size="large" className="neat-btn" type="primary"><FontAwesomeIcon icon={["fas", "lock"]} />Active</Button>
+                        size="large" className="neat-btn" type="primary"><FontAwesomeIcon icon={["fas", "lock"]} />{t.t("Activate")}</Button>
                 </div>
             </div >
         );

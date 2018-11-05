@@ -19,7 +19,7 @@ import t from "../../services/trans/i18n";
 import "./style.less";
 
 interface IProps {
-        match?: any;
+    match?: any;
 }
 
 interface IState {
@@ -32,13 +32,13 @@ class ExchangeContainer extends React.Component<IProps, IState> {
         super(props);
         if (this.props.match.params.market) {
             this.state = {
-                fromSymbol : this.props.match.params.market.split(":")[0],
+                fromSymbol: this.props.match.params.market.split(":")[0],
                 toSymbol: this.props.match.params.market.split(":")[1],
             };
         } else {
             this.state = {
-                fromSymbol : "ETH",
-                toSymbol : "BTC",
+                fromSymbol: "ETH",
+                toSymbol: "BTC",
             };
         }
     }
@@ -47,10 +47,10 @@ class ExchangeContainer extends React.Component<IProps, IState> {
         return (
             <Row gutter={8}>
                 <Col md={5} >
-                    <Block className="user-balance" collapse title="Your balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
+                    <Block className="user-balance" title={t.t("Your balance")} icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
                         <Balance />
                         <Link to="/deposit">
-                            <Button className="action" type="primary" size="small">Deposit</Button>
+                            <Button className="action" type="default">{t.t("Deposit")}</Button>
                         </Link>
                     </Block>
                     <Block iconPosition="right" title={t.t("Deposit history")} icon={<FontAwesomeIcon icon={["fas", "history"]} />}  >
@@ -60,29 +60,29 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                 <Col md={14} >
                     <Row gutter={8}>
                         <Col md={12} >
-                            <Block collapse title={config.currencies[this.state.fromSymbol].name} icon={config.icons[this.state.fromSymbol]}>
+                            <Block title={t.t(config.currencies[this.state.fromSymbol].name)} icon={config.icons[this.state.fromSymbol]}>
                                 <Stock symbol={this.state.fromSymbol} hideTitle />
                             </Block>
                         </Col>
                         <Col md={12} >
-                            <Block collapse title={config.currencies[this.state.toSymbol].name} icon={config.icons[this.state.toSymbol]}>
+                            <Block title={t.t(config.currencies[this.state.toSymbol].name)} icon={config.icons[this.state.toSymbol]}>
                                 <Stock symbol={this.state.toSymbol} hideTitle />
                             </Block>
                         </Col>
                     </Row>
                     <Block className="trading-view" transparent noPadding >
                         <TradingViewWidget
-                                symbol={`BITFINEX:${this.state.fromSymbol}${this.state.toSymbol}`}
-    theme={Themes.DARK}
-    autosize
-/>
+                            symbol={`BITFINEX:${this.state.fromSymbol}${this.state.toSymbol}`}
+                            theme={Themes.DARK}
+                            autosize
+                        />
                     </Block>
                     <Block>
                         <PlaceOrder fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
                     </Block>
                 </Col>
                 <Col md={5} >
-                    <Block  title="Live prices" icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
+                    <Block title="Live prices" icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
                         <Live />
                     </Block>
                 </Col>

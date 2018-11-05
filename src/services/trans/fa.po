@@ -24,9 +24,9 @@ msgstr "اطلاعات حساب"
 msgid "Actions"
 msgstr "عملیات"
 
-#: src/containers/Dashboard/index.tsx:142
-msgid "Active Sessions"
-msgstr "نشست های فعال"
+#: src/components/GoogleAuth/index.tsx:36
+msgid "Activate"
+msgstr "فعال سازی"
 
 #: src/containers/Groups/index.tsx:109
 msgid "add group"
@@ -48,12 +48,12 @@ msgstr "مقدار وارد شده با مجموع مبلغ فاکتورهای �
 msgid "Available"
 msgstr "در دسترس"
 
-#: src/components/Analysis/index.tsx:130
-msgid "Balance"
-msgstr "بالانس"
-
 #: src/components/Unsettled/index.tsx:67
 msgid "‌Balance"
+msgstr "بالانس"
+
+#: src/components/Analysis/index.tsx:130
+msgid "Balance"
 msgstr "بالانس"
 
 #: src/components/Deposit/index.tsx:60 src/containers/KYC/index.tsx:126
@@ -125,13 +125,14 @@ msgid "Date and time"
 msgstr "تاریخ و زمان پرداخت"
 
 #: src/components/DashboardMenu/menu.tsx:46
+#: src/containers/Exchange/index.tsx:53
 msgid "Deposit"
 msgstr "واریز"
 
-#: src/containers/Dashboard/index.tsx:77 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:126 src/containers/Deposit/index.tsx:53
 #: src/containers/Exchange/index.tsx:56
 msgid "Deposit history"
-msgstr "تاریخچهٔ مبالغ واریز"
+msgstr "تاریخچهٔ مبالغ واریزی"
 
 #: src/components/NewInvoice/index.tsx:120
 msgid "Description"
@@ -140,6 +141,10 @@ msgstr "توضیحات"
 #: src/components/Settle/index.tsx:185
 msgid "Destination Card number"
 msgstr "شماره کارت مقصد"
+
+#: src/components/UserStatusGuide/index.tsx:44
+msgid "Done"
+msgstr "تمام"
 
 #: src/containers/KYC/index.tsx:195
 msgid "Driving license"
@@ -211,7 +216,7 @@ msgstr "جنسیت"
 
 #: src/components/GoogleAuth/index.tsx:32
 msgid "Google Authenticator"
-msgstr "ورود دو مرحله ای توسط گوگل"
+msgstr "ورود توسط گوگل"
 
 #: src/containers/Groups/index.tsx:114 src/containers/Groups/index.tsx:129
 #: src/containers/Groups/index.tsx:26
@@ -301,7 +306,7 @@ msgstr "مرد"
 msgid "Master"
 msgstr "اصلی"
 
-#: src/containers/Dashboard/index.tsx:176 src/containers/Dashboard/index.tsx:59
+#: src/containers/Dashboard/index.tsx:77
 msgid "New Invoice"
 msgstr "فاکتور جدید"
 
@@ -312,10 +317,6 @@ msgstr "فاکتور جدید با موفقیت ایجاد شد"
 #: src/containers/Admin/Users/index.tsx:147
 msgid "Next Page"
 msgstr "صفحه بعد"
-
-#: src/containers/Dashboard/index.tsx:208
-msgid "No Access"
-msgstr "شما به این قسمت دسترسی ندارید"
 
 #: src/components/NewInvoice/index.tsx:67
 msgid "Open gateway"
@@ -470,7 +471,7 @@ msgstr "سلفی با شناسه و توضیحات"
 msgid "Sell "
 msgstr "فروش "
 
-#: src/components/Unsettled/index.tsx:83 src/containers/Dashboard/index.tsx:169
+#: src/components/Unsettled/index.tsx:83 src/containers/Dashboard/index.tsx:70
 msgid "Settle"
 msgstr "تسویه"
 
@@ -579,6 +580,14 @@ msgstr "داشبورد کاربر"
 msgid "Users"
 msgstr "کاربران"
 
+#: src/components/UserStatusGuide/index.tsx:48
+msgid "Validate yourself"
+msgstr "تایید هویت"
+
+#: src/components/UserStatusGuide/index.tsx:43
+msgid "Validating your documents"
+msgstr "بررسی و تایید مدارک"
+
 #: src/components/UserStatusGuide/index.tsx:41
 msgid "Verify email"
 msgstr "تایید ایمیل"
@@ -595,10 +604,6 @@ msgstr "مشاهده آدرس کیف پول"
 msgid "waiting"
 msgstr "در انتظار پرداخت"
 
-#: src/components/DashboardMenu/menu.tsx:52
-msgid "Wallets"
-msgstr "کیف پول ها"
-
 #: src/components/Deposit/index.tsx:119
 msgid "Warning"
 msgstr "هشدار"
@@ -611,9 +616,22 @@ msgstr "ما وضعیت را در صفحهٔ کاربری تان به اطلاع
 msgid "You are a member"
 msgstr "شما اکنون یک کاربر هستید"
 
+#: src/containers/Exchange/index.tsx:50
+msgid "Your balance"
+msgstr "بالانس حساب شما"
+
 #: src/containers/KYC/index.tsx:243
 msgid "your information submitted successfully"
 msgstr "اطلاعات شما با موفقیت ارسال شد"
+
+#~ msgid "Wallets"
+#~ msgstr "کیف پول ها"
+
+#~ msgid "Active Sessions"
+#~ msgstr "نشست های فعال"
+
+#~ msgid "No Access"
+#~ msgstr "شما به این قسمت دسترسی ندارید"
 
 #~ msgid "Unsettled invoices"
 #~ msgstr "فاکتورهای تسویه نشده"
