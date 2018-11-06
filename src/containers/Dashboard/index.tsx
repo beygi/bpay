@@ -102,7 +102,7 @@ all transactions will be done using bitcoin test network not real network.")}
             );
         }
 
-        if (true || userObject.keycloak.hasRealmRole("webapp_admin")) {
+        if (DEPLOY_TYPE === "development" || userObject.keycloak.hasRealmRole("webapp_admin")) {
             return (
                 <Row gutter={8}>
                     {sandbox}
@@ -187,13 +187,13 @@ all transactions will be done using bitcoin test network not real network.")}
                 </Row>
             );
         }
-        // return (
-        //     <Row gutter={8}>
-        //         {sandbox}
-        //         <Col md={24} >
-        //             <Block><h3>{t.t("No Access")}</h3></Block>
-        //         </Col>
-        //     </Row>);
+        return (
+            <Row gutter={8}>
+                {sandbox}
+                <Col md={24} >
+                    <Block><h3>{t.t("No Access")}</h3></Block>
+                </Col>
+            </Row>);
     }
 }
 
