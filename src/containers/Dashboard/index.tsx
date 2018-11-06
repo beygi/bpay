@@ -1,11 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Col, Layout, Row } from "antd";
+import { Button, Col, Row } from "antd";
 import * as React from "react";
-import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Balance from "../../components/Balance";
 import ChangePassword from "../../components/ChangePassword";
-import Profile from "../../components/DashboardHeaderProfile";
 import DepositHistory from "../../components/DepositHistory";
 import Forex from "../../components/Forex";
 import GoogleAuth from "../../components/GoogleAuth";
@@ -20,6 +18,7 @@ import Guide from "../../components/UserStatusGuide";
 import { DEPLOY_TYPE } from "../../constants";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
+
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
@@ -103,7 +102,7 @@ all transactions will be done using bitcoin test network not real network.")}
             );
         }
 
-        if (true || userObject.keycloak.hasRealmRole("webapp_admin")) {
+        if (DEPLOY_TYPE === "development" || userObject.keycloak.hasRealmRole("webapp_admin")) {
             return (
                 <Row gutter={8}>
                     {sandbox}
@@ -188,13 +187,13 @@ all transactions will be done using bitcoin test network not real network.")}
                 </Row>
             );
         }
-        // return (
-        //     <Row gutter={8}>
-        //         {sandbox}
-        //         <Col md={24} >
-        //             <Block><h3>{t.t("No Access")}</h3></Block>
-        //         </Col>
-        //     </Row>);
+        return (
+            <Row gutter={8}>
+                {sandbox}
+                <Col md={24} >
+                    <Block><h3>{t.t("No Access")}</h3></Block>
+                </Col>
+            </Row>);
     }
 }
 
