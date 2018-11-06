@@ -17,7 +17,9 @@ import USER from "./../../lib/user";
 import "./style.less";
 
 const Option = Select.Option;
-const fiats = [t.t("IRR"), t.t("USD"), t.t("EUR"), t.t("Bitcoin"), t.t("Ethereum"), t.t("failed"), t.t("waiting"), t.t("success"), t.t("settled")];
+
+// for translation purposes
+const fiats = [t.t("IRR"), t.t("USD"), t.t("EUR"), t.t("Bitcoin"), t.t("Ethereum"), t.t("Litecoin"), t.t("failed"), t.t("waiting"), t.t("success"), t.t("settled")];
 interface IProps {
     /**  current user's email address that is synced with redux */
     user: any;

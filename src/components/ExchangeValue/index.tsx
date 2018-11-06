@@ -2,9 +2,7 @@
  * @module Components/ExchangeValueComponent
  */
 import * as React from "react";
-const commaNumber = require("comma-number");
 import t from "../../services/trans/i18n";
-import languages from "../../services/trans/languages";
 import "./style.less";
 
 interface IProps {

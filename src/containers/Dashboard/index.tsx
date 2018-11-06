@@ -111,11 +111,6 @@ all transactions will be done using bitcoin test network not real network.")}
                             <Col md={24} >
                                 <Block className="user-balance" title={t.t("Your balance")} icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
                                     <Balance />
-                                    <Link to="/deposit">
-                                        <Button
-                                            className="neat-btn" type="primary">{t.t("Deposit")}
-                                        </Button>
-                                    </Link>
                                 </Block>
                             </Col>
                             <Col md={24} >

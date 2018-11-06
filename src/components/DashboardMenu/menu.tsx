@@ -41,7 +41,7 @@ function getMenus() {
                 visible: true,
             },
             deposit: {
-                icon: "export",
+                icon: "import",
                 path: "/deposit",
                 text: t.t("Deposit"),
                 visible: true,
