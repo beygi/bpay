@@ -103,22 +103,8 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
     public render() {
         const formItemLayout = {
             labelCol: { lg: 4, md: 24 },
-            wrapperCol: { lg: 14, md: 24 },
+            wrapperCol: { lg: 12, md: 24 },
         };
-
-        const tailFormItemLayout = {
-            wrapperCol: {
-                xs: {
-                    span: 24,
-                    offset: 0,
-                },
-                sm: {
-                    span: 16,
-                    offset: 4,
-                },
-            },
-        };
-
         const countries = this.state.countries.map((item, i) => <Option key={i} value={item.id}>{item.name}</Option>);
         const { getFieldDecorator } = this.props.form;
 
@@ -193,7 +179,7 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                         label={t.t("License Type")}
                     >
                         {getFieldDecorator("ltype", {
-                            initialValue: "passport",
+                            initialValue: "PS",
                         })(
                             <RadioGroup   >
                                 <RadioButton value="PS">{t.t("Passport")}</RadioButton>
@@ -237,7 +223,7 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                         )}
                     </FormItem>
 
-                    <FormItem {...tailFormItemLayout}>
+                    <FormItem label=" " colon={false} {...formItemLayout}>
                         <Button type="primary" htmlType="submit" size="large">{t.t("Submit")}</Button>
                     </FormItem>
 
