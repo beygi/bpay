@@ -124,12 +124,13 @@ msgstr "تاریخ"
 msgid "Date and time"
 msgstr "تاریخ و زمان پرداخت"
 
+#: src/components/Balance/index.tsx:111
 #: src/components/DashboardMenu/menu.tsx:46
-#: src/containers/Dashboard/index.tsx:117 src/containers/Exchange/index.tsx:53
+#: src/containers/Exchange/index.tsx:53
 msgid "Deposit"
-msgstr "واریز"
+msgstr "شارژ حساب"
 
-#: src/containers/Dashboard/index.tsx:128 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:123 src/containers/Deposit/index.tsx:53
 #: src/containers/Exchange/index.tsx:56
 msgid "Deposit history"
 msgstr "تاریخچهٔ مبالغ واریزی"
@@ -280,7 +281,7 @@ msgstr "نوع کارت مشخصات"
 msgid "Limit"
 msgstr "محدودیت"
 
-#: src/containers/Dashboard/index.tsx:123
+#: src/containers/Dashboard/index.tsx:118
 msgid "Live prices"
 msgstr "قیمت زنده"
 

@@ -2,10 +2,11 @@
  * @module Components/BalanceComponent
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Collapse } from "antd";
+import { Button, Collapse } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import Ex from "../../components/ExchangeValue";
 import config from "../../config";
 import btcApi from "../../lib/api/btc";
@@ -102,7 +103,15 @@ class BalanceComponent extends React.Component<IProps, IState> {
             </div>,
         );
         return (
-            <div className="user-balance" > {coins}</div >
+            <div className="user-balance" > {coins}
+                <Link to="/deposit">
+                    <Button
+                        icon="import"
+                        className="neat-btn" type="primary" size="large">
+                        {t.t("Deposit")}
+                    </Button>
+                </Link>
+            </div >
         );
     }
 }

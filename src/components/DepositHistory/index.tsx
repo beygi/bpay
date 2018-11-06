@@ -8,6 +8,8 @@ import { connect } from "react-redux";
 import config from "../../config";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
+import { localDate } from "../../services/trans/i18n";
+import Ex from "../ExchangeValue";
 import USER from "./../../lib/user";
 import "./style.less";
 
@@ -47,25 +49,29 @@ class DespositHistoryComponent extends React.Component<IProps, IState> {
                     value: 2.0,
                     coin: "BTC",
                     validation: 4,
-                    date: "Mon Jul 23 09:43:16",
+                    total: 5,
+                    date: new Date().getTime(),
                 },
                 {
                     value: 0.1,
                     coin: "BTC",
                     validation: 0,
-                    date: "Mon Jul 23 09:48:34",
+                    total: 5,
+                    date: new Date(new Date().setDate(new Date().getDate() - 2)).getTime(),
                 },
                 {
                     value: 3.0,
                     coin: "USD",
                     validation: 5,
-                    date: "Mon Jul 23 09:43:16",
+                    total: 5,
+                    date: new Date(new Date().setDate(new Date().getDate() - 3)).getTime(),
                 },
                 {
                     value: 2.0,
                     coin: "ETH",
-                    validation: 4,
-                    date: "Mon Jul 23 09:43:16",
+                    validation: 15,
+                    total: 25,
+                    date: new Date(new Date().setDate(new Date().getDate() - 6)).getTime(),
                 },
             ],
         };
@@ -92,19 +98,27 @@ class DespositHistoryComponent extends React.Component<IProps, IState> {
     }
 
     public render() {
+        const pDate = localDate(t.default.language);
         return (
             <List
                 className="deposite-history"
                 itemLayout="horizontal"
                 dataSource={this.state.history}
                 renderItem={(item) => {
-                    const title = <span>{config.icons[item.coin]}&nbsp;{item.value}</span>;
-                    const percent = item.validation * 20;
-                    const percentText = (item.validation === 5) ? "Done" : ` ${item.validation} / 5`;
+                    const title = <span>{config.icons[item.coin]}<Ex stockStyle={false} value={item.value} /></span>;
+                    const percent = (item.validation * 100) / item.total;
+                    const percentText = (item.validation === item.total) ? "Done" : ` ${item.validation.toLocaleString(t.default.language)}/${item.total.toLocaleString(t.default.language)}`;
+                    const date = new pDate(item.date).toLocaleString();
 
                     return (<List.Item className="deposit-item">
-                        <List.Item.Meta title={title} description={item.date} />
-                        <Progress className="transaction-validate" strokeWidth={10} width={50} type="circle" percent={percent} format={() => percentText} />
+                        <List.Item.Meta title={title} description={date} />
+                        {
+                            (percent === 100) ?
+                                <Progress className="transaction-success" strokeWidth={10} width={50} type="circle" percent={percent} />
+                                :
+                                <Progress className="transaction-validate" strokeWidth={10} width={50} type="circle" percent={percent} format={() => percentText} />
+                        }
+
                     </List.Item>);
                 }}
             />

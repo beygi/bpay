@@ -116,13 +116,13 @@ msgstr ""
 msgid "Date and time"
 msgstr ""
 
+#: src/components/Balance/index.tsx:111
 #: src/components/DashboardMenu/menu.tsx:46
-#: src/containers/Dashboard/index.tsx:117
 #: src/containers/Exchange/index.tsx:53
 msgid "Deposit"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:128
+#: src/containers/Dashboard/index.tsx:123
 #: src/containers/Deposit/index.tsx:53
 #: src/containers/Exchange/index.tsx:56
 msgid "Deposit history"
@@ -275,7 +275,7 @@ msgstr ""
 msgid "Limit"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:123
+#: src/containers/Dashboard/index.tsx:118
 msgid "Live prices"
 msgstr ""
 

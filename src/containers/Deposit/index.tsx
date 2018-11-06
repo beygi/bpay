@@ -33,12 +33,12 @@ class DepositContainer extends React.Component<IProps, IState> {
         return (
             <Row gutter={8}>
                 <Col md={6} >
-                    <Block className="user-balance" collapse title="Balance" icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
+                    <Block className="user-balance" collapse title={t.t("Your balance")} icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
                         <Balance />
                     </Block>
-                    <Block collapse title="Live prices" icon={<FontAwesomeIcon  icon={ ["fas", "chart-line"] }  />} iconPosition="right" >
-                       <Live />
-                   </Block>
+                    <Block collapse title={t.t("Live prices")} icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
+                        <Live />
+                    </Block>
                 </Col>
                 <Col md={12} >
                     <Row gutter={8}>
@@ -51,7 +51,7 @@ class DepositContainer extends React.Component<IProps, IState> {
                 </Col>
                 <Col md={6} >
                     <Block title={t.t("Deposit history")} icon={<FontAwesomeIcon icon={["fas", "history"]} />}  >
-                            <History />
+                        <History />
                     </Block>
                 </Col>
             </Row>

@@ -1,1 +1,21 @@
 @import (reference) "../../theme/application";
+.transaction-validate {
+    .ant-progress-circle-path {
+        stroke: @validation-progress;
+    }
+    .ant-progress-text {
+        color: @validation-progress !important;
+    }
+}
+
+.transaction-success
+{
+        .ant-progress-circle-path {
+                stroke: @validation-done !important;
+        }
+        .ant-progress-text
+        {
+            color : @validation-done !important;
+            stroke: @validation-done !important;
+        }    
+}
