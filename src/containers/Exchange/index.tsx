@@ -49,9 +49,6 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                 <Col md={5} >
                     <Block className="user-balance" title={t.t("Your balance")} icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
                         <Balance />
-                        <Link to="/deposit">
-                            <Button className="action" type="default">{t.t("Deposit")}</Button>
-                        </Link>
                     </Block>
                     <Block iconPosition="right" title={t.t("Deposit history")} icon={<FontAwesomeIcon icon={["fas", "history"]} />}  >
                         <DepositHistory />
@@ -73,7 +70,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                     <Block className="trading-view" transparent noPadding >
                         <TradingViewWidget
                             symbol={`BITFINEX:${this.state.fromSymbol}${this.state.toSymbol}`}
-                            theme={Themes.DARK}
+                            theme={Themes.LIGHT}
                             autosize
                         />
                     </Block>
@@ -82,7 +79,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                     </Block>
                 </Col>
                 <Col md={5} >
-                    <Block title="Live prices" icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
+                    <Block title={t.t("Live prices")} icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
                         <Live />
                     </Block>
                 </Col>

@@ -52,7 +52,7 @@ msgstr ""
 msgid "Before you start"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "Bitcoin"
 msgstr ""
 
@@ -118,13 +118,12 @@ msgstr ""
 
 #: src/components/Balance/index.tsx:111
 #: src/components/DashboardMenu/menu.tsx:46
-#: src/containers/Exchange/index.tsx:53
 msgid "Deposit"
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:123
 #: src/containers/Deposit/index.tsx:53
-#: src/containers/Exchange/index.tsx:56
+#: src/containers/Exchange/index.tsx:53
 msgid "Deposit history"
 msgstr ""
 
@@ -160,11 +159,11 @@ msgstr ""
 msgid "Email:"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "Ethereum"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "EUR"
 msgstr ""
 
@@ -176,7 +175,7 @@ msgstr ""
 msgid "Exchange"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "failed"
 msgstr ""
 
@@ -246,7 +245,7 @@ msgstr ""
 msgid "In order"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "IRR"
 msgstr ""
 
@@ -275,7 +274,12 @@ msgstr ""
 msgid "Limit"
 msgstr ""
 
+#: src/components/Transactions/index.tsx:22
+msgid "Litecoin"
+msgstr ""
+
 #: src/containers/Dashboard/index.tsx:118
+#: src/containers/Deposit/index.tsx:39
 msgid "Live prices"
 msgstr ""
 
@@ -456,7 +460,7 @@ msgstr ""
 msgid "search"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:133
+#: src/components/Transactions/index.tsx:135
 msgid "Select merchant"
 msgstr ""
 
@@ -483,7 +487,7 @@ msgstr ""
 msgid "Settle detail"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "settled"
 msgstr ""
 
@@ -512,7 +516,7 @@ msgstr ""
 msgid "Submit transaction"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "success"
 msgstr ""
 
@@ -540,7 +544,7 @@ msgstr ""
 msgid "Tax Cash Desk"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:107
+#: src/components/Transactions/index.tsx:109
 msgid "There is no data to display"
 msgstr ""
 
@@ -560,7 +564,7 @@ msgstr ""
 msgid "Tracking code"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:146
+#: src/components/Transactions/index.tsx:148
 msgid "Transactions"
 msgstr ""
 
@@ -573,7 +577,7 @@ msgstr ""
 msgid "Upload your documents"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "USD"
 msgstr ""
 
@@ -605,7 +609,7 @@ msgstr ""
 msgid "View wallet address"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:20
+#: src/components/Transactions/index.tsx:22
 msgid "waiting"
 msgstr ""
 
@@ -622,6 +626,7 @@ msgid "You are a member"
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:113
+#: src/containers/Deposit/index.tsx:36
 #: src/containers/Exchange/index.tsx:50
 msgid "Your balance"
 msgstr ""

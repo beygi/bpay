@@ -29,8 +29,9 @@ class LiveComponent extends React.Component<IProps, IState> {
 
     public static getDerivedStateFromProps(props, state) {
         // update state.balance when props changes by redux4
+        console.log(props.cryptos);
         if (props.cryptos !== null) {
-            return { cryptos: _.sortBy(props.cryptos, ["rank"]) };
+            return { cryptos: _.sortBy(_.pick(props.cryptos, Object.keys(config.currencies)), ["rank"]) };
         }
         return null;
     }
