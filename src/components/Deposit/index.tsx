@@ -57,7 +57,7 @@ class DepositComponent extends React.Component<IProps, IState> {
         let dropDownName = t.t("Please select a currency to deposit");
         const dropDownIcon = <FontAwesomeIcon icon={["fas", "angle-down"]} />;
         let DepositOrDescription = <Alert
-            message={t.t("Before you start")}
+            message={<h2>{t.t("Before you start")}</h2>}
             description={<div>Additional description and informations about deposit
             <ul>
                     <li>Additional description and informations about deposit </li>
@@ -116,7 +116,7 @@ class DepositComponent extends React.Component<IProps, IState> {
                 </InputGroup>
 
                 <Alert
-                    message={t.t("Warning")}
+                    message={<h3>{t.t("Warning")}</h3>}
                     description={<div>
                         <ul>
                             <li>coins will be available after <span className="confirmation-num">

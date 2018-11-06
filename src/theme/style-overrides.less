@@ -402,17 +402,28 @@
 }
 
 .ant-alert-with-description.ant-alert-warning {
-    background: lighten(@palette-high,10%);
+    background: @alert-warning-background;
     color: @palette-light;
     border: none;
 
     .ant-alert-message {
-        color: @alert-warning-color;
+        color: @palette-light;
     }
 
     .ant-alert-icon {
         color: @alert-warning-color;
     }
+}
+
+.ant-alert-with-description.ant-alert-error {
+    background: @alert-error-background;
+    color: @palette-light;
+    border: none;
+
+    .ant-alert-message {
+        color: @palette-light;
+    }
+
 }
 
 .ant-modal-content, .ant-modal-header,.ant-message-notice-content
