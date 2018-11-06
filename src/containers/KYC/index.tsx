@@ -9,6 +9,7 @@ import Api from "../../lib/api/kyc";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
+import "./style.less";
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -91,8 +92,8 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
         if (file[type] === true) {
             notification.success({
                 message: type + " " + t.t("Image uploaded successfully"),
-                description: "Your " + type + " image uploaded to our servers, you can change it any time before our review",
                 placement: "bottomRight",
+                description: t.t("Your  {type} image uploaded to our servers, you can change it any time before our review").replace("{type}", type),
                 duration: 5,
             });
         }
@@ -123,12 +124,16 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
 
         let block = <div></div>;
         if (!this.state.submited) {
-            block = <Block><h2>{t.t("Before you start")}</h2>
-                <div>
-                    KYC stands for (Know Your Customer) it is the process of a business <br /> verifying and identifying the identity
- of its clients. It is required <br /> because the KYC its used to refer to the bank and anti-money laundering regulations.
- <br /> <br />
-                </div>
+            block = <Block>
+                <Alert className="kyc-info"
+                    message={<h2>{t.t("Before you start")}</h2>}
+                    description={<div dangerouslySetInnerHTML={{
+                        __html: t.t("KYC stands for (Know Your Customer) it is the process of a business. <br> verifying and identifying the identity \
+of its clients.It is required because the KYC its used to refer to the bank and anti-money laundering regulations."),
+                    }}></div>}
+                    type="info"
+                    showIcon
+                />
                 <Form layout="horizontal" onSubmit={this.handleSubmit} className="login-form">
 
                     {/*  first name */}

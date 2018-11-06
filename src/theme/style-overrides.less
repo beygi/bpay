@@ -200,7 +200,16 @@
         margin-left: 8px;
         margin-right: auto;
     }
-    
+    .ant-radio-button-wrapper:first-child
+    {
+        border-right: 1px solid @secondaryVariant6;
+        border-left : none;
+        border-radius : 0px 4px 4px 0px
+    }
+    .ant-radio-button-wrapper:last-child
+    {
+        border-radius : 4px 0 0 4px;
+    }
 }
 
 
@@ -379,7 +388,7 @@
 }
 
 .ant-alert-with-description.ant-alert-info {
-    background: lighten(@palette-high,10%);
+    background: @secondaryVariant9;
     color: @palette-light;
     border: none;
 
@@ -456,4 +465,16 @@
 .ant-layout
 {
     background: inherit !important;
+}
+.ant-radio-inner,.ant-radio-button-wrapper
+{
+    background-color: @palette-light;
+}
+.ant-radio-wrapper
+{
+    color : @palette-light;
+}
+.ant-radio-button-wrapper-checked
+{
+    background-color: @secondaryVariant9;
 }
