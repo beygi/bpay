@@ -9,6 +9,7 @@ import Profile from "../../components/DashboardHeaderProfile";
 import DepositHistory from "../../components/DepositHistory";
 import Block from "../../components/Holder";
 import Live from "../../components/Live";
+import Market from "../../components/Market";
 import PlaceOrder from "../../components/PlaceOrder";
 import ActieveSessions from "../../components/Sessions";
 import Stock from "../../components/Stock";
@@ -37,8 +38,8 @@ class ExchangeContainer extends React.Component<IProps, IState> {
             };
         } else {
             this.state = {
-                fromSymbol: "ETH",
-                toSymbol: "BTC",
+                fromSymbol: "BTC",
+                toSymbol: "USD",
             };
         }
     }
@@ -56,16 +57,16 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                 </Col>
                 <Col md={14} >
                     <Row gutter={8}>
-                        <Col md={12} >
-                            <Block title={t.t(config.currencies[this.state.fromSymbol].name)} icon={config.icons[this.state.fromSymbol]}>
-                                <Stock symbol={this.state.fromSymbol} hideTitle />
+                        <Col md={24} >
+                            <Block>
+                                <Market from={this.state.fromSymbol} to={this.state.toSymbol} />
                             </Block>
                         </Col>
-                        <Col md={12} >
+                        {/* <Col md={12} >
                             <Block title={t.t(config.currencies[this.state.toSymbol].name)} icon={config.icons[this.state.toSymbol]}>
                                 <Stock symbol={this.state.toSymbol} hideTitle />
                             </Block>
-                        </Col>
+                        </Col> */}
                     </Row>
                     <Block className="trading-view" transparent noPadding >
                         <TradingViewWidget
