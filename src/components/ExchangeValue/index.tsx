@@ -16,6 +16,8 @@ interface IProps {
     localNumbers?: boolean;
     /** Will be displayed in red and green color when value is changed */
     stockStyle?: boolean;
+    /** Display Percent mark at begining */
+    percentMark?: boolean;
 }
 
 interface IState {
@@ -70,7 +72,7 @@ class ExchangeValueComponent extends React.Component<IProps, IState> {
             output = this.state.value.toLocaleString("en", options);
         }
         return (
-            <span className={`exchange-value ${this.state.status}`}>{output}</span>
+            <span className={`exchange-value ${this.state.status}`}>{(this.props.percentMark ? "%" : "")}{output}</span>
         );
     }
 }
