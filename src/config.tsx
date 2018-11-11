@@ -26,12 +26,14 @@ const config = {
             depositeWallet: "btcbeygizasdfrwgsdfgsdfgsdfdfsgsfdgdfg",
             confirmationNumber: 5,
             type: "crypto",
+            markets: ["ETH", "LTC"],
         },
         ETH: {
             name: "Ethereum",
             depositeWallet: "etherasdfrwgsdfgsdfgsdfgdfsgsfdgdfg",
             confirmationNumber: 20,
             type: "crypto",
+            markets: ["LTC"],
         },
         LTC: {
             name: "Litecoin",
@@ -42,6 +44,7 @@ const config = {
         IRR: {
             name: "IRR",
             type: "fiat",
+            markets: ["BTC", "ETH", "LTC"],
         },
         USD: {
             name: "USD",
