@@ -38,12 +38,14 @@ function calcExchangeRate(props) {
         return exchange;
     }
     // calc exchange rate
-    const calculated = exchange.map((fiat) => {
-        fiat.rate = _.round(props.cryptos[props.from].quotes.USD.price * props.forex[fiat.symbol], 2);
-        if (fiat.symbol === "IRR") {
-            fiat.rate = _.round(fiat.rate, 0);
+    const calculated = exchange.map((currency) => {
+        if (config.currencies[currency.symbol].type === "fiat") {
+            currency.rate = _.round(props.cryptos[props.from].quotes.USD.price * props.forex[currency.symbol], 4);
+        } else {
+            currency.rate = _.round(1 / (props.cryptos[props.to].quotes.USD.price / props.cryptos[props.from].quotes.USD.price), 4);
         }
-        return fiat;
+
+        return currency;
     });
     return calculated;
 }
@@ -74,33 +76,43 @@ class MarketComponent extends React.Component<IProps, IState> {
 
     public render() {
         if (!this.props.cryptos || !this.props.forex) {
-            return (<div>Loading ...</div>);
+            return (<div>{t.t("Loading ...")}</div>);
         }
+
+        let floatNumbers = 2;
+        if (this.props.to === "IRR") {
+            floatNumbers = 0;
+        }
+        if (this.props.to === "BTC" || this.props.to === "ETH") {
+            floatNumbers = 4;
+        }
+
         const columns = [{
             title: t.t("Last Price"),
             dataIndex: "price",
             key: "price",
-            render: (text) => <Ex value={text} seperateThousand />,
+            render: (text) => <Ex fixFloatNum={floatNumbers} value={text} seperateThousand />,
         },
         {
             title: t.t("24h Change"),
             dataIndex: "change",
             key: "change",
-            render: (text, record) => <Ex percentMark value={((record.high / record.low) - 1) * 100} seperateThousand />,
+            render: (text, record) => <Ex fixFloatNum={floatNumbers} percentMark value={((record.high / record.low) - 1) * 100} seperateThousand />,
         },
         {
             title: t.t("24h High"),
             dataIndex: "high",
             key: "high",
-            render: (text) => <Ex value={text} seperateThousand />,
+            render: (text) => <Ex value={text} fixFloatNum={floatNumbers} seperateThousand />,
         },
         {
             title: t.t("24h Low"),
             dataIndex: "low",
             key: "low",
-            render: (text) => <Ex value={text} seperateThousand />,
+            render: (text) => <Ex value={text} fixFloatNum={floatNumbers} seperateThousand />,
         },
         ];
+
         // const rates = this.state.exchangeRates.map((rate) => {
         //     return <div key={rate.symbol}><span className="symbol">{t.t(rate.symbol)}: </span><span className="rate"><Ex value={rate.rate} seperateThousand /></span></div>;
         // });

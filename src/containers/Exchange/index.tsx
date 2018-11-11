@@ -70,7 +70,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                     </Row>
                     <Block className="trading-view" transparent noPadding >
                         <TradingViewWidget
-                            symbol={`BITFINEX:${this.state.fromSymbol}${this.state.toSymbol}`}
+                            symbol={`${this.state.fromSymbol}${this.state.toSymbol}`}
                             theme={Themes.LIGHT}
                             autosize
                         />
