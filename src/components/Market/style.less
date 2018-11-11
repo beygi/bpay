@@ -1,0 +1,38 @@
+@import (reference) "../../theme/application";
+
+.stock {
+    .balance-name {
+        font-size: 23px;
+        i {
+            font-size: 28px;
+        }
+    }
+    .symbol
+    {
+        font-family: mono;
+        min-width: 100px;
+        display: inline-block;
+    }
+}
+
+.market-prices
+{
+    .ant-table
+    {
+    border: none;
+    background: transparent;
+    th
+    {
+        background: transparent !important;
+        color: @palette-light;
+        border: none !important;
+    }
+    td 
+    {
+        .exchange-value
+        {
+        font-weight: bold;
+        }
+    }
+    }
+}

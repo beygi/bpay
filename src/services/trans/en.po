@@ -5,6 +5,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: src/containers/KYC/index.tsx:187
+msgid " National ID Card"
+msgstr ""
+
+#: src/components/Market/index.tsx:86
+msgid "24h Change"
+msgstr ""
+
+#: src/components/Market/index.tsx:92
+msgid "24h High"
+msgstr ""
+
+#: src/components/Market/index.tsx:98
+msgid "24h Low"
+msgstr ""
+
 #: src/components/DashboardHeader/index.tsx:100
 msgid "Account information"
 msgstr ""
@@ -128,7 +144,7 @@ msgid "Deposit"
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:122 src/containers/Deposit/index.tsx:53
-#: src/containers/Exchange/index.tsx:53
+#: src/containers/Exchange/index.tsx:54
 msgid "Deposit history"
 msgstr ""
 
@@ -270,6 +286,10 @@ msgstr ""
 msgid "Last Name"
 msgstr ""
 
+#: src/components/Market/index.tsx:80
+msgid "Last Price"
+msgstr ""
+
 #: src/containers/KYC/index.tsx:193
 msgid "License ID"
 msgstr ""
@@ -287,7 +307,7 @@ msgid "Litecoin"
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:117 src/containers/Deposit/index.tsx:39
-#: src/containers/Exchange/index.tsx:82
+#: src/containers/Exchange/index.tsx:83
 msgid "Live prices"
 msgstr ""
 
@@ -317,10 +337,6 @@ msgstr ""
 msgid "Master"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:187
-msgid "National ID Card"
-msgstr ""
-
 #: src/containers/Dashboard/index.tsx:76
 msgid "New Invoice"
 msgstr ""
@@ -334,6 +350,7 @@ msgid "Next Page"
 msgstr ""
 
 #: src/containers/Accounting/index.tsx:60
+#: src/containers/Dashboard/index.tsx:194
 msgid "No Access"
 msgstr ""
 
@@ -652,7 +669,7 @@ msgid "Your  {type} image uploaded to our servers, you can change it any time be
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:112 src/containers/Deposit/index.tsx:36
-#: src/containers/Exchange/index.tsx:50
+#: src/containers/Exchange/index.tsx:51
 msgid "Your balance"
 msgstr ""
 
