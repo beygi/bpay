@@ -1,70 +1,117 @@
 // we override ant styles here
+
 &[dir='rtl'] {
-    .ant-col-sm-1, .ant-col-sm-2, .ant-col-sm-3, .ant-col-sm-4, .ant-col-sm-5, .ant-col-sm-6, .ant-col-sm-7, .ant-col-sm-8, .ant-col-sm-9, .ant-col-sm-10, .ant-col-sm-11, .ant-col-sm-12, .ant-col-sm-13, .ant-col-sm-14, .ant-col-sm-15, .ant-col-sm-16, .ant-col-sm-17, .ant-col-sm-18, .ant-col-sm-19, .ant-col-sm-20, .ant-col-sm-21, .ant-col-sm-22, .ant-col-sm-23, .ant-col-sm-24
-    {
+    .ant-col-sm-1,
+    .ant-col-sm-10,
+    .ant-col-sm-11,
+    .ant-col-sm-12,
+    .ant-col-sm-13,
+    .ant-col-sm-14,
+    .ant-col-sm-15,
+    .ant-col-sm-16,
+    .ant-col-sm-17,
+    .ant-col-sm-18,
+    .ant-col-sm-19,
+    .ant-col-sm-2,
+    .ant-col-sm-20,
+    .ant-col-sm-21,
+    .ant-col-sm-22,
+    .ant-col-sm-23,
+    .ant-col-sm-24,
+    .ant-col-sm-3,
+    .ant-col-sm-4,
+    .ant-col-sm-5,
+    .ant-col-sm-6,
+    .ant-col-sm-7,
+    .ant-col-sm-8,
+    .ant-col-sm-9 {
         float: right;
     }
-    @media (min-width: 768px) { 
-        .ant-col-md-1, .ant-col-md-2, .ant-col-md-3, .ant-col-md-4, .ant-col-md-5, .ant-col-md-6, .ant-col-md-7, .ant-col-md-8, .ant-col-md-9, .ant-col-md-10, .ant-col-md-11, .ant-col-md-12, .ant-col-md-13, .ant-col-md-14, .ant-col-md-15, .ant-col-md-16, .ant-col-md-17, .ant-col-md-18, .ant-col-md-19, .ant-col-md-20, .ant-col-md-21, .ant-col-md-22, .ant-col-md-23, .ant-col-md-24
-        {
+    @media (min-width: 768px) {
+        .ant-col-md-1,
+        .ant-col-md-10,
+        .ant-col-md-11,
+        .ant-col-md-12,
+        .ant-col-md-13,
+        .ant-col-md-14,
+        .ant-col-md-15,
+        .ant-col-md-16,
+        .ant-col-md-17,
+        .ant-col-md-18,
+        .ant-col-md-19,
+        .ant-col-md-2,
+        .ant-col-md-20,
+        .ant-col-md-21,
+        .ant-col-md-22,
+        .ant-col-md-23,
+        .ant-col-md-24,
+        .ant-col-md-3,
+        .ant-col-md-4,
+        .ant-col-md-5,
+        .ant-col-md-6,
+        .ant-col-md-7,
+        .ant-col-md-8,
+        .ant-col-md-9 {
             float: right;
         }
     }
-    .ant-collapse > .ant-collapse-item > .ant-collapse-header .arrow svg
-    {
+
+    .ant-collapse > .ant-collapse-item > .ant-collapse-header .arrow svg {
         transform: scaleX(-1);
         transition: transform 0.2s;
     }
-    .ant-collapse > .ant-collapse-item > .ant-collapse-header[aria-expanded="true"] .anticon-right svg
-    {
+
+    .ant-collapse > .ant-collapse-item > .ant-collapse-header[aria-expanded="true"] .anticon-right svg {
         transform: rotate(90deg);
         transition: transform 0.2s;
     }
-    .ant-popover
-    {
+
+    .ant-popover {
         text-align: right;
     }
-    .ant-table table
-    {
+
+    .ant-table table {
         text-align: right;
     }
-    .ant-table-thead > tr > th
-    {
+
+    .ant-table-thead > tr > th {
         text-align: right;
     }
-    .ant-btn > .anticon + span, .ant-btn > span + .anticon
-    {
+
+    .ant-btn > .anticon + span,
+    .ant-btn > span + .anticon {
         margin-left: auto;
         margin-right: 8px;
     }
-    .ant-btn.ant-btn-loading:not(.ant-btn-circle):not(.ant-btn-circle-outline):not(.ant-btn-icon-only) .anticon
-    {
-        margin-right : -14px;
-        margin-left : auto;
-        padding-right : 10px;
+
+    .ant-btn.ant-btn-loading:not(.ant-btn-circle):not(.ant-btn-circle-outline):not(.ant-btn-icon-only) .anticon {
+        margin-right: -14px;
+        margin-left: auto;
+        padding-right: 10px;
     }
-    .ant-notification-notice-closable .ant-notification-notice-message
-    {
+
+    .ant-notification-notice-closable .ant-notification-notice-message {
         margin-right: 48px;
         padding-right: 0;
         margin-left: auto;
     }
-    .ant-notification-notice-with-icon .ant-notification-notice-description
-    {
+
+    .ant-notification-notice-with-icon .ant-notification-notice-description {
         margin-right: 48px;
         padding-right: 0;
         margin-left: auto;
     }
-    .ant-notification-notice-close
-    {
+
+    .ant-notification-notice-close {
         right: auto;
         left: 22px;
-    }    
-    .ant-collapse > .ant-collapse-item > .ant-collapse-header .arrow
-    {
-        right : 16px;
+    }
+
+    .ant-collapse > .ant-collapse-item > .ant-collapse-header .arrow {
+        right: 16px;
         left: auto;
     }
+
     .ant-modal-close {
         left: 0;
         right: auto;
@@ -124,130 +171,139 @@
             margin: 0 0 0 10px;
         }
     }
-    
-    .ant-pagination-prev, .ant-pagination-jump-prev, .ant-pagination-jump-next , .ant-pagination-item
-    {
+
+    .ant-pagination-item,
+    .ant-pagination-jump-next,
+    .ant-pagination-jump-prev,
+    .ant-pagination-prev {
         margin-right: auto;
         margin-left: 8px;
     }
-    .ant-pagination-item-link,.ant-pagination-item-link-icon
-    {
+
+    .ant-pagination-item-link,
+    .ant-pagination-item-link-icon {
         transform: scaleX(-1) !important;
     }
-    .ant-select-selection__clear
-    {
+
+    .ant-select-selection__clear {
         right: auto;
         left: 11px;
     }
-    .ant-calendar-picker-clear, .ant-calendar-picker-icon
-    {
+
+    .ant-calendar-picker-clear,
+    .ant-calendar-picker-icon {
         left: 12px;
-        right:auto;
+        right: auto;
     }
-    .ant-calendar-header .ant-calendar-next-month-btn
-    {
+
+    .ant-calendar-header .ant-calendar-next-month-btn {
         left: 29px;
-        right:auto;
+        right: auto;
     }
-    .ant-calendar-header .ant-calendar-next-century-btn, .ant-calendar-header .ant-calendar-next-decade-btn, .ant-calendar-header .ant-calendar-next-year-btn
-    {
-        right:auto;
-        left:7px;
+
+    .ant-calendar-header .ant-calendar-next-century-btn,
+    .ant-calendar-header .ant-calendar-next-decade-btn,
+    .ant-calendar-header .ant-calendar-next-year-btn {
+        right: auto;
+        left: 7px;
     }
-    .ant-calendar-header .ant-calendar-prev-month-btn
-    {
-        left:auto;
-        right:29px;
+
+    .ant-calendar-header .ant-calendar-prev-month-btn {
+        left: auto;
+        right: 29px;
     }
-    .ant-calendar-header .ant-calendar-prev-century-btn, .ant-calendar-header .ant-calendar-prev-decade-btn, .ant-calendar-header .ant-calendar-prev-year-btn
-    {
-        left:auto;
-        right:7px;
+
+    .ant-calendar-header .ant-calendar-prev-century-btn,
+    .ant-calendar-header .ant-calendar-prev-decade-btn,
+    .ant-calendar-header .ant-calendar-prev-year-btn {
+        left: auto;
+        right: 7px;
     }
-    .ant-calendar-time .ant-calendar-footer .ant-calendar-today-btn
-    {
-        float:right;
+
+    .ant-calendar-time .ant-calendar-footer .ant-calendar-today-btn {
+        float: right;
     }
-    .ant-calendar-time .ant-calendar-footer-btn
-    {
-        text-align:left;
+
+    .ant-calendar-time .ant-calendar-footer-btn {
+        text-align: left;
     }
-    .ant-calendar-time .ant-calendar-footer .ant-calendar-time-picker-btn
-    {
-        margin-right:auto;
-        margin-left:8px;
+
+    .ant-calendar-time .ant-calendar-footer .ant-calendar-time-picker-btn {
+        margin-right: auto;
+        margin-left: 8px;
     }
-    .ant-form-vertical .ant-form-item-label, .ant-col-24.ant-form-item-label, .ant-col-xl-24.ant-form-item-label
-    {
-        text-align : right;
+
+    .ant-col-24.ant-form-item-label,
+    .ant-col-xl-24.ant-form-item-label,
+    .ant-form-vertical .ant-form-item-label {
+        text-align: right;
     }
+
     .ant-form-item-required::before {
         margin-right: auto;
         margin-left: 4px;
     }
-    .ant-form-inline .ant-form-item
-    {
-        margin-right : 16px;
-        margin-left : auto;
+
+    .ant-form-inline .ant-form-item {
+        margin-right: 16px;
+        margin-left: auto;
     }
+
     .ant-steps-item-title::after {
         right: 100%;
         left: auto;
     }
-    .ant-steps-item-title
-    {
-        padding-left : 16px;
+
+    .ant-steps-item-title {
+        padding-left: 16px;
         padding-right: auto;
     }
-    .ant-steps-item-icon
-    {
+
+    .ant-steps-item-icon {
         margin-left: 8px;
         margin-right: auto;
     }
-    .ant-radio-button-wrapper:first-child
-    {
+
+    .ant-radio-button-wrapper:first-child {
         border-right: 1px solid @secondaryVariant6;
-        border-left : none;
-        border-radius : 0px 4px 4px 0px
+        border-left: none;
+        border-radius: 0 4px 4px 0;
     }
-    .ant-radio-button-wrapper:last-child
-    {
-        border-radius : 4px 0 0 4px;
+
+    .ant-radio-button-wrapper:last-child {
+        border-radius: 4px 0 0 4px;
     }
 }
-
-
 //////////
-.ant-form-inline .ant-form-item
-{
-    margin-right : auto;
-    margin-left : 16px;
+.ant-form-inline .ant-form-item {
+    margin-right: auto;
+    margin-left: 16px;
 }
 
-.ant-select-selection-selected-value
-{
-    color: @primaryTextColor !important;   
+.ant-select-selection-selected-value {
+    color: @primaryTextColor !important;
     opacity: 0.7 !important;
     padding: 0 !important;
 }
-.ant-select-selection__placeholder
-{
-    color: @primaryTextColor !important;   
+
+.ant-select-selection__placeholder {
+    color: @primaryTextColor !important;
     opacity: 0.5 !important;
 }
-.ant-select-selection__clear
-{
+
+.ant-select-selection__clear {
     right: 11px;
     left: auto;
     background: @secondaryVariant7;
     color: @secondaryTextColor;
     border-radius: 10px;
-    &:hover
-    {
+
+    &:hover {
         background: @secondaryVariant9;
         color: @secondaryTextColor;
     }
 }
+
 .ant-layout-content {
     height: calc(100% - 64px);
     margin: 20px;
@@ -260,52 +316,59 @@
 .ant-tabs:not(.ant-tabs-vertical) > .ant-tabs-content > .ant-tabs-tabpane-inactive {
     width: 0;
 }
-.ant-pagination-item-ellipsis , .ant-pagination-item-link-icon
-{
+
+.ant-pagination-item-ellipsis,
+.ant-pagination-item-link-icon {
     color: @secondaryTextColor !important;
-    &:hover , &:focus
-    {
+
+    &:focus,
+    &:hover {
         color: @secondaryTextColor !important;
     }
 }
-.ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link ,  .ant-pagination-prev
-{
+
+.ant-pagination-next .ant-pagination-item-link,
+.ant-pagination-prev,
+.ant-pagination-prev .ant-pagination-item-link {
     background-color: @secondaryVariant9 !important;
     border-color: @secondaryVariant9 !important;
 }
-.ant-pagination-item, .ant-pagination-next , .ant-pagination-prev
-{
+
+.ant-pagination-item,
+.ant-pagination-next,
+.ant-pagination-prev {
     background-color: @secondaryVariant9;
     border-color: @secondaryVariant9;
-    a
-    {
-        color : @secondaryTextColor;
+
+    a {
+        color: @secondaryTextColor;
         background-color: @secondaryVariant9;
         border-color: @secondaryVariant9;
     }
-    &:hover , &:focus
-    {
-        a 
-        {
-                color: @secondaryTextColor;
+
+    &:focus,
+    &:hover {
+        a {
+            color: @secondaryTextColor;
         }
-        border-color:  @secondaryTextColor;
+        border-color: @secondaryTextColor;
         color: @secondaryTextColor;
     }
 }
-.ant-pagination-item-active
-{
-    border-color:  @secondaryTextColor;
-    &:hover , &:focus
-    {
-        a 
-        {
-                color: @secondaryTextColor;
+
+.ant-pagination-item-active {
+    border-color: @secondaryTextColor;
+
+    &:focus,
+    &:hover {
+        a {
+            color: @secondaryTextColor;
         }
-        border-color:  @secondaryTextColor;
+        border-color: @secondaryTextColor;
         color: @secondaryTextColor;
     }
 }
+
 .ant-popover-title {
     color: @palette-light;
     border-bottom: 2px solid @palette-high;
@@ -427,95 +490,100 @@
     .ant-alert-message {
         color: @palette-light;
     }
-
 }
 
-.ant-modal-content, .ant-modal-header,.ant-message-notice-content
-{
-    background-color:  lighten(@palette-high,10%);
+.ant-message-notice-content,
+.ant-modal-content,
+.ant-modal-header {
+    background-color: lighten(@palette-high,10%);
+}
 
+.ant-message-notice-content,
+.ant-modal-title {
+    color: @palette-light;
 }
-.ant-modal-title, .ant-message-notice-content
-{
-        color: @palette-light;
-}
-.ant-popover-arrow,.ant-popover-inner
-{
+
+.ant-popover-arrow,
+.ant-popover-inner {
     background-color: @secondaryVariant8;
 }
-.ant-select-selection
-{
+
+.ant-select-selection {
     background-color: @palette-light;
     border-color: #069AE5;
 }
-.ant-select-dropdown-menu
-{
+
+.ant-select-dropdown-menu {
     background-color: @palette-light;
-    li{
-        &:hover
-        {
+
+    li {
+        &:hover {
             background-color: @secondaryVariant8;
-            color : @secondaryTextColor;
+            color: @secondaryTextColor;
             border-radius: 0;
         }
     }
 }
 
-.ant-modal-content, .ant-modal-header, .ant-message-notice-content
-{
+.ant-message-notice-content,
+.ant-modal-content,
+.ant-modal-header {
     background-color: @palette-light;
 }
-.ant-modal-title
-{
-    color : @primaryTextColor;
+
+.ant-modal-title {
+    color: @primaryTextColor;
 }
-.ant-input-number
-{
+
+.ant-input-number {
     width: 100%;
 }
-.ant-calendar-time-picker-select
-{
+
+.ant-calendar-time-picker-select {
     direction: ltr !important;
 }
-.ant-layout
-{
+
+.ant-layout {
     background: inherit !important;
 }
-.ant-radio-inner,.ant-radio-button-wrapper
-{
+
+.ant-radio-button-wrapper,
+.ant-radio-inner {
     background-color: @palette-light;
 }
-.ant-radio-wrapper
-{
-    color : @palette-light;
+
+.ant-radio-wrapper {
+    color: @palette-light;
 }
-.ant-radio-button-wrapper-checked
-{
+
+.ant-radio-button-wrapper-checked {
     background-color: @secondaryVariant9;
 }
-.ant-upload.ant-upload-select-picture-card
-{
+
+.ant-upload.ant-upload-select-picture-card {
     margin: none;
 }
-.ant-dropdown-menu
-{
+
+.ant-dropdown-menu {
     text-align: inherit;
     background-color: @secondaryVariant9;
-    color : @secondaryTextColor;
+    color: @secondaryTextColor;
 }
-.ant-dropdown-menu-item > a, .ant-dropdown-menu-submenu-title > a
-{
-    color : @secondaryTextColor;
+
+.ant-dropdown-menu-item > a,
+.ant-dropdown-menu-submenu-title > a {
+    color: @secondaryTextColor;
 }
-.ant-dropdown-menu-item:hover, .ant-dropdown-menu-submenu-title:hover
-{
+
+.ant-dropdown-menu-item:hover,
+.ant-dropdown-menu-submenu-title:hover {
     background-color: @secondaryVariant7;
 }
-.ant-tooltip-inner
-{
+
+.ant-tooltip-inner {
     text-align: inherit !important;
 }
-.ant-col-xs-24.ant-form-item-label
-{
+
+.ant-col-xs-24.ant-form-item-label {
     text-align: inherit !important;
 }
