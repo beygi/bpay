@@ -3,16 +3,16 @@
  */
 
 import { Icon, Input, Layout, Popover, Tooltip } from "antd";
+import axios from "axios";
 import * as React from "react";
-
 const Search = Input.Search;
 import * as  _ from "lodash";
 import * as Gravatar from "react-gravatar";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { VERSION } from "../../constants";
 import { logOut } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
-
 import t from "../../services/trans/i18n";
 import adminMenu from "../DashboardMenu/adminMenu";
 import menu from "../DashboardMenu/menu";
@@ -41,6 +41,7 @@ interface IProps {
 }
 
 interface IState {
+    uiUpdate: boolean;
 }
 
 /**
@@ -51,12 +52,37 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
         this.logOut = this.logOut.bind(this);
+        this.state = {
+            uiUpdate: false,
+        };
+    }
+
+    public componentDidMount() {
+        // we fetch data every 5 seconds until our websocket is available
+        const intervalId = setInterval(this.getVersion.bind(this), 20000);
+    }
+
+    public getVersion() {
+        axios.get("/VERSION", { responseType: "text" })
+            .then((response) => {
+                // handle success
+                if (!this.state.uiUpdate && response.data !== VERSION) {
+                    this.setState(
+                        { uiUpdate: true },
+                    );
+                }
+            });
     }
 
     /** logout current user , it calls logOut from props which is binded to a redux function */
     public logOut() {
         this.props.logOut();
         userObject.keycloak.logout();
+    }
+
+    /** relaod current window to get new version */
+    public reload() {
+        location.reload(true);
     }
 
     public render() {
@@ -91,15 +117,20 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
             MenuItem = _.find(Menus, { path: "/" + this.props.path.split("/")[1] });
         }
 
+        const uiUpdateButton = this.state.uiUpdate ? <Tooltip placement="bottom" title={t.t("New version available , click for update")}>
+            <Icon onClick={this.reload} type="sync" />
+        </Tooltip> : null;
+
         return (
             <div className={AdminClass}>
                 <div className="selected-menu">
                     <Icon type={MenuItem.icon} />{MenuItem.text}
                 </div>
                 <div className="header-icons">
+                    {uiUpdateButton}
                     <Popover placement="bottom" title={t.t("Account information")} content={<HeaderProfile />} trigger="click">
                         <Gravatar email={this.props.userEmail} default="retro"
-                            size={60} className={"ProfilePic"} />
+                            size={60} className={`ProfilePic${(this.state.uiUpdate ? " ui-update" : "")}`} />
                     </Popover>
                     <Tooltip placement="bottom" title={t.t("Logout")}>
                         <Icon type="logout" onClick={this.logOut} />

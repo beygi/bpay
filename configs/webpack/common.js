@@ -119,6 +119,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "[name]-[chunkhash].min.css",
         }),
+	new GitRevisionPlugin(),
         new webpack.DefinePlugin({
             DEPLOY_TYPE: JSON.stringify(process.env.DEPLOY_TYPE || "production"),
             VERSION: JSON.stringify(gitRevisionPlugin.version()),
