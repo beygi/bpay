@@ -19,6 +19,7 @@ import { DEPLOY_TYPE } from "../../constants";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 
+import * as _ from "lodash";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
@@ -48,9 +49,11 @@ all transactions will be done using bitcoin test network not real network.")}
 
             : null;
 
+        const allBlocks = [];
+
         if (userObject.keycloak.hasRealmRole("merchant") || userObject.keycloak.hasRealmRole("merchants_admin")) {
-            return (
-                <Row gutter={8}>
+            allBlocks.push(
+                <Row key="merchant" gutter={8}>
                     {sandbox}
                     <Col sm={24} md={24} lg={8} >
                         <Row gutter={8}>
@@ -98,13 +101,13 @@ all transactions will be done using bitcoin test network not real network.")}
                             </Col>
                         </Row> */}
                     </Col>
-                </Row>
-            );
+                </Row>)
+                ;
         }
 
         if (userObject.keycloak.hasRealmRole("webapp_user") || userObject.keycloak.hasRealmRole("webapp_admin")) {
-            return (
-                <Row gutter={8}>
+            allBlocks.push(
+                <Row key="webapp" gutter={8}>
                     {sandbox}
                     <Col md={8} >
                         <Row gutter={8}>
@@ -184,16 +187,19 @@ all transactions will be done using bitcoin test network not real network.")}
                             </Col>
                         </Row> */}
                     </Col>
-                </Row>
+                </Row>,
             );
+        } else {
+            allBlocks.push(
+                <Row key="denied" gutter={8}>
+                    {sandbox}
+                    <Col md={24} >
+                        <Block><h3>{t.t("No Access")}</h3></Block>
+                    </Col>
+                </Row>);
         }
-        return (
-            <Row gutter={8}>
-                {sandbox}
-                <Col md={24} >
-                    <Block><h3>{t.t("No Access")}</h3></Block>
-                </Col>
-            </Row>);
+        console.log(allBlocks);
+        return allBlocks;
     }
 }
 
