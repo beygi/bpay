@@ -76,20 +76,6 @@ class MarketComponent extends React.Component<IProps, IState> {
     }
 
     public render() {
-        console.log(this.props);
-        const menu = (
-            <Menu>
-                <Menu.Item key="0">
-                    <a href="http://www.alipay.com/">1st menu item</a>
-                </Menu.Item>
-                <Menu.Item key="1">
-                    <a href="http://www.taobao.com/">2nd menu item</a>
-                </Menu.Item>
-                <Menu.Divider />
-                <Menu.Item key="3">3rd menu item</Menu.Item>
-            </Menu>
-        );
-
         if (!this.props.cryptos || !this.props.forex) {
             return (<div>{t.t("Loading ...")}</div>);
         }
