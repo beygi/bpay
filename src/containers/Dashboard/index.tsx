@@ -189,7 +189,9 @@ all transactions will be done using bitcoin test network not real network.")}
                     </Col>
                 </Row>,
             );
-        } else {
+        }
+
+        if (allBlocks === []) {
             allBlocks.push(
                 <Row key="denied" gutter={8}>
                     {sandbox}
@@ -198,7 +200,7 @@ all transactions will be done using bitcoin test network not real network.")}
                     </Col>
                 </Row>);
         }
-        console.log(allBlocks);
+
         return allBlocks;
     }
 }
