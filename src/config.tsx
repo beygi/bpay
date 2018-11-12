@@ -21,6 +21,16 @@ const config = {
         checkLoginIframe: false,
     },
     currencies: {
+        IRR: {
+            name: "IRR",
+            type: "fiat",
+            markets: ["BTC", "ETH", "LTC"],
+        },
+        USD: {
+            name: "USD",
+            type: "fiat",
+            markets: ["BTC", "ETH", "LTC"],
+        },
         BTC: {
             name: "Bitcoin",
             depositeWallet: "btcbeygizasdfrwgsdfgsdfgsdfdfsgsfdgdfg",
@@ -40,15 +50,7 @@ const config = {
             depositeWallet: "litecoin1weasrtasdf4rtsadfsdfsd4s54sddfdf",
             confirmationNumber: 16,
             type: "crypto",
-        },
-        IRR: {
-            name: "IRR",
-            type: "fiat",
-            markets: ["BTC", "ETH", "LTC"],
-        },
-        USD: {
-            name: "USD",
-            type: "fiat",
+            markets: [],
         },
     },
     icons:

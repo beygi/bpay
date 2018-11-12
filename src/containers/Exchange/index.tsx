@@ -29,6 +29,14 @@ interface IState {
 }
 
 class ExchangeContainer extends React.Component<IProps, IState> {
+
+    public static getDerivedStateFromProps(props, state) {
+        return {
+            fromSymbol: props.match.params.market.split(":")[0],
+            toSymbol: props.match.params.market.split(":")[1],
+        };
+    }
+
     constructor(props: IProps) {
         super(props);
         if (this.props.match.params.market) {

@@ -1,10 +1,11 @@
 /**
  * @module Components/MarketComponent
  */
-import { Col, Row, Table } from "antd";
+import { Col, Dropdown, Icon, Menu, Row, Table } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import Ex from "../../components/ExchangeValue";
 import config from "../../config";
 import { IRootState } from "../../redux/reducers";
@@ -75,9 +76,43 @@ class MarketComponent extends React.Component<IProps, IState> {
     }
 
     public render() {
+        console.log(this.props);
+        const menu = (
+            <Menu>
+                <Menu.Item key="0">
+                    <a href="http://www.alipay.com/">1st menu item</a>
+                </Menu.Item>
+                <Menu.Item key="1">
+                    <a href="http://www.taobao.com/">2nd menu item</a>
+                </Menu.Item>
+                <Menu.Divider />
+                <Menu.Item key="3">3rd menu item</Menu.Item>
+            </Menu>
+        );
+
         if (!this.props.cryptos || !this.props.forex) {
             return (<div>{t.t("Loading ...")}</div>);
         }
+
+        // get available markets
+        const availableMarkets = Object.keys(config.currencies).map((key) => {
+            return config.currencies[key].markets.map((market) => {
+                return (
+                    <Menu.Item key={`${market}:${key}`}>
+                        <Link className="market-link" to={`/exchange/${market}:${key}`}  >
+                            <span>
+                                {`${t.t(config.currencies[market].name)}`}
+                            </span>
+                            &nbsp;/&nbsp;
+                            <span>
+                                {`${t.t(config.currencies[key].name)}`}
+                            </span>
+                        </Link>
+                    </Menu.Item>
+                );
+            },
+            );
+        });
 
         let floatNumbers = 2;
         if (this.props.to === "IRR") {
@@ -131,9 +166,14 @@ class MarketComponent extends React.Component<IProps, IState> {
         return (
             <Row gutter={8}>
                 <Col md={8} >
-                    <div className="stock" >
-                        {title}
-                    </div>
+                    <Dropdown overlay={<Menu>{availableMarkets}</Menu>} trigger={["click"]}>
+                        <a className="ant-dropdown-link select-market" href="#">
+                            <div className="stock" >
+                                <Icon type="down" />
+                                {title}
+                            </div>
+                        </a>
+                    </Dropdown>
                 </Col>
                 <Col md={16} >
                     <Table className="market-prices" bordered={false} size="small" pagination={false} dataSource={dataSource} columns={columns} />
