@@ -20,7 +20,7 @@ function getMenus() {
             visible: true,
         },
     };
-    if (true || userObject.keycloak.hasRealmRole("webapp_admin")) {
+    if (userObject.keycloak.hasRealmRole("webapp_user") || userObject.keycloak.hasRealmRole("webapp_admin")) {
         availableMenus = {
             dashboard: {
                 icon: "dashboard",

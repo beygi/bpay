@@ -102,7 +102,7 @@ all transactions will be done using bitcoin test network not real network.")}
             );
         }
 
-        if (DEPLOY_TYPE === "development" || userObject.keycloak.hasRealmRole("webapp_admin")) {
+        if (userObject.keycloak.hasRealmRole("webapp_user") || userObject.keycloak.hasRealmRole("webapp_admin")) {
             return (
                 <Row gutter={8}>
                     {sandbox}
