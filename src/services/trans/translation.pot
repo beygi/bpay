@@ -6,19 +6,19 @@ msgstr ""
 msgid " National ID Card"
 msgstr ""
 
-#: src/components/Market/index.tsx:86
+#: src/components/Market/index.tsx:118
 msgid "24h Change"
 msgstr ""
 
-#: src/components/Market/index.tsx:92
+#: src/components/Market/index.tsx:124
 msgid "24h High"
 msgstr ""
 
-#: src/components/Market/index.tsx:98
+#: src/components/Market/index.tsx:130
 msgid "24h Low"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:100
+#: src/components/DashboardHeader/index.tsx:131
 msgid "Account information"
 msgstr ""
 
@@ -56,12 +56,12 @@ msgstr ""
 msgid "Available"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:67
-msgid "‌Balance"
-msgstr ""
-
 #: src/components/Analysis/index.tsx:130
 msgid "Balance"
+msgstr ""
+
+#: src/components/Unsettled/index.tsx:67
+msgid "‌Balance"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:60
@@ -145,7 +145,7 @@ msgstr ""
 
 #: src/containers/Dashboard/index.tsx:122
 #: src/containers/Deposit/index.tsx:53
-#: src/containers/Exchange/index.tsx:54
+#: src/containers/Exchange/index.tsx:68
 msgid "Deposit history"
 msgstr ""
 
@@ -289,7 +289,7 @@ msgstr ""
 msgid "Last Name"
 msgstr ""
 
-#: src/components/Market/index.tsx:80
+#: src/components/Market/index.tsx:112
 msgid "Last Price"
 msgstr ""
 
@@ -311,8 +311,12 @@ msgstr ""
 
 #: src/containers/Dashboard/index.tsx:117
 #: src/containers/Deposit/index.tsx:39
-#: src/containers/Exchange/index.tsx:83
+#: src/containers/Exchange/index.tsx:97
 msgid "Live prices"
+msgstr ""
+
+#: src/components/Market/index.tsx:80
+msgid "Loading ..."
 msgstr ""
 
 #: src/containers/User/components/Login/index.tsx:116
@@ -323,7 +327,7 @@ msgstr ""
 msgid "Login Password"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:104
+#: src/components/DashboardHeader/index.tsx:135
 #: src/components/DashboardHeaderProfile/index.tsx:69
 msgid "Logout"
 msgstr ""
@@ -348,6 +352,10 @@ msgstr ""
 
 #: src/components/NewInvoice/index.tsx:63
 msgid "New Invoice Created"
+msgstr ""
+
+#: src/components/DashboardHeader/index.tsx:120
+msgid "New version available , click for update"
 msgstr ""
 
 #: src/containers/Admin/Users/index.tsx:147
@@ -580,7 +588,7 @@ msgstr ""
 msgid "Symbol"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:86
+#: src/components/DashboardHeader/index.tsx:112
 msgid "System Administration"
 msgstr ""
 
@@ -631,7 +639,7 @@ msgstr ""
 msgid "USD"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:76
+#: src/components/DashboardHeader/index.tsx:102
 msgid "User Dashboard"
 msgstr ""
 
@@ -681,7 +689,7 @@ msgstr ""
 
 #: src/containers/Dashboard/index.tsx:112
 #: src/containers/Deposit/index.tsx:36
-#: src/containers/Exchange/index.tsx:51
+#: src/containers/Exchange/index.tsx:65
 msgid "Your balance"
 msgstr ""
 

@@ -16,19 +16,19 @@ msgstr ""
 msgid " National ID Card"
 msgstr " کارت ملی"
 
-#: src/components/Market/index.tsx:86
+#: src/components/Market/index.tsx:118
 msgid "24h Change"
 msgstr "تغییر در ۲۴ ساعت"
 
-#: src/components/Market/index.tsx:92
+#: src/components/Market/index.tsx:124
 msgid "24h High"
 msgstr "بیشترین در ۲۴ ساعت"
 
-#: src/components/Market/index.tsx:98
+#: src/components/Market/index.tsx:130
 msgid "24h Low"
 msgstr "کمترین در ۲۴ ساعت"
 
-#: src/components/DashboardHeader/index.tsx:100
+#: src/components/DashboardHeader/index.tsx:131
 msgid "Account information"
 msgstr "اطلاعات حساب"
 
@@ -65,12 +65,12 @@ msgstr "مقدار وارد شده با مجموع مبلغ فاکتورهای �
 msgid "Available"
 msgstr "در دسترس"
 
-#: src/components/Unsettled/index.tsx:67
-msgid "‌Balance"
-msgstr "بالانس"
-
 #: src/components/Analysis/index.tsx:130
 msgid "Balance"
+msgstr "بالانس"
+
+#: src/components/Unsettled/index.tsx:67
+msgid "‌Balance"
 msgstr "بالانس"
 
 #: src/components/Deposit/index.tsx:60 src/containers/KYC/index.tsx:115
@@ -151,7 +151,7 @@ msgid "Deposit"
 msgstr "شارژ حساب"
 
 #: src/containers/Dashboard/index.tsx:122 src/containers/Deposit/index.tsx:53
-#: src/containers/Exchange/index.tsx:54
+#: src/containers/Exchange/index.tsx:68
 msgid "Deposit history"
 msgstr "تاریخچهٔ مبالغ واریزی"
 
@@ -293,7 +293,7 @@ msgstr "آخرین ورود:"
 msgid "Last Name"
 msgstr "نام خانوادگی"
 
-#: src/components/Market/index.tsx:80
+#: src/components/Market/index.tsx:112
 msgid "Last Price"
 msgstr "آخرین قیمت"
 
@@ -314,9 +314,13 @@ msgid "Litecoin"
 msgstr "لایت کوین"
 
 #: src/containers/Dashboard/index.tsx:117 src/containers/Deposit/index.tsx:39
-#: src/containers/Exchange/index.tsx:83
+#: src/containers/Exchange/index.tsx:97
 msgid "Live prices"
 msgstr "قیمت زنده"
+
+#: src/components/Market/index.tsx:80
+msgid "Loading ..."
+msgstr "بارگزاری ..."
 
 #: src/containers/User/components/Login/index.tsx:116
 msgid "login"
@@ -326,7 +330,7 @@ msgstr "ورود"
 msgid "Login Password"
 msgstr "رمز عبور"
 
-#: src/components/DashboardHeader/index.tsx:104
+#: src/components/DashboardHeader/index.tsx:135
 #: src/components/DashboardHeaderProfile/index.tsx:69
 msgid "Logout"
 msgstr "خروج"
@@ -351,6 +355,10 @@ msgstr "فاکتور جدید"
 #: src/components/NewInvoice/index.tsx:63
 msgid "New Invoice Created"
 msgstr "فاکتور جدید با موفقیت ایجاد شد"
+
+#: src/components/DashboardHeader/index.tsx:120
+msgid "New version available , click for update"
+msgstr "نسخهٔ جدیدی از نرم افزار هم اکنون منتشر شده است. برای به روز رسانی کلیک کنید"
 
 #: src/containers/Admin/Users/index.tsx:147
 msgid "Next Page"
@@ -577,7 +585,7 @@ msgstr "پشتیبانی"
 msgid "Symbol"
 msgstr "نماد"
 
-#: src/components/DashboardHeader/index.tsx:86
+#: src/components/DashboardHeader/index.tsx:112
 msgid "System Administration"
 msgstr "مدیریت سیستم"
 
@@ -627,7 +635,7 @@ msgstr "مستندات خود را بارگذاری کنید"
 msgid "USD"
 msgstr "دلار آمریکا"
 
-#: src/components/DashboardHeader/index.tsx:76
+#: src/components/DashboardHeader/index.tsx:102
 msgid "User Dashboard"
 msgstr "داشبورد کاربر"
 
@@ -676,7 +684,7 @@ msgid "Your  {type} image uploaded to our servers, you can change it any time be
 msgstr "تصویر {type} شما با موفقیت به سرورهای ما ارسال شد، شما میتوانید پیش از بررسی ما آن را تغییر دهید"
 
 #: src/containers/Dashboard/index.tsx:112 src/containers/Deposit/index.tsx:36
-#: src/containers/Exchange/index.tsx:51
+#: src/containers/Exchange/index.tsx:65
 msgid "Your balance"
 msgstr "بالانس حساب شما"
 
@@ -702,9 +710,6 @@ msgstr "اطلاعات شما با موفقیت ارسال شد"
 
 #~ msgid "Email address"
 #~ msgstr "آدرس ایمیل"
-
-#~ msgid "Loading ..."
-#~ msgstr "بارگزاری ..."
 
 #~ msgid "New Payment"
 #~ msgstr "پرداخت جدید"
