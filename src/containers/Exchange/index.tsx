@@ -37,7 +37,10 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                 toSymbol: props.match.params.market.split(":")[1],
             };
         }
-        return null;
+        return {
+            fromSymbol: "BTC",
+            toSymbol: "USD",
+        };
     }
 
     constructor(props: IProps) {
