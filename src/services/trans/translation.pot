@@ -42,6 +42,7 @@ msgstr ""
 msgid "add new group"
 msgstr ""
 
+#: src/components/PlaceOrder/index.tsx:68
 #: src/components/Settle/index.tsx:114
 #: src/components/Settle/index.tsx:135
 #: src/components/SettleUps/index.tsx:98
@@ -56,12 +57,12 @@ msgstr ""
 msgid "Available"
 msgstr ""
 
-#: src/components/Analysis/index.tsx:130
-msgid "Balance"
-msgstr ""
-
 #: src/components/Unsettled/index.tsx:67
 msgid "‌Balance"
+msgstr ""
+
+#: src/components/Analysis/index.tsx:130
+msgid "Balance"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:60
@@ -73,8 +74,8 @@ msgstr ""
 msgid "Bitcoin"
 msgstr ""
 
-#: src/components/PlaceOrder/index.tsx:58
-#: src/components/PlaceOrder/index.tsx:83
+#: src/components/PlaceOrder/index.tsx:59
+#: src/components/PlaceOrder/index.tsx:84
 msgid "Buy "
 msgstr ""
 
@@ -301,7 +302,7 @@ msgstr ""
 msgid "License Type"
 msgstr ""
 
-#: src/components/PlaceOrder/index.tsx:54
+#: src/components/PlaceOrder/index.tsx:55
 msgid "Limit"
 msgstr ""
 
@@ -490,6 +491,7 @@ msgid "Previous Page"
 msgstr ""
 
 #: src/components/Invoice/index.tsx:58
+#: src/components/PlaceOrder/index.tsx:61
 msgid "Price"
 msgstr ""
 
@@ -523,8 +525,8 @@ msgstr ""
 msgid "Selfie With ID And Note"
 msgstr ""
 
-#: src/components/PlaceOrder/index.tsx:116
-#: src/components/PlaceOrder/index.tsx:91
+#: src/components/PlaceOrder/index.tsx:117
+#: src/components/PlaceOrder/index.tsx:92
 msgid "Sell "
 msgstr ""
 
@@ -610,6 +612,7 @@ msgid "this is the sandbox enviroment , you can test your payments here, all tra
 msgstr ""
 
 #: src/components/Deposit/index.tsx:77
+#: src/components/PlaceOrder/index.tsx:75
 msgid "Total"
 msgstr ""
 

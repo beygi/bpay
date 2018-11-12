@@ -52,8 +52,8 @@ msgstr "اضافه کردن گرون"
 msgid "add new group"
 msgstr "اضافه کردن گروه جدید"
 
-#: src/components/Settle/index.tsx:114 src/components/Settle/index.tsx:135
-#: src/components/SettleUps/index.tsx:98
+#: src/components/PlaceOrder/index.tsx:68 src/components/Settle/index.tsx:114
+#: src/components/Settle/index.tsx:135 src/components/SettleUps/index.tsx:98
 msgid "Amount"
 msgstr "مقدار"
 
@@ -65,12 +65,12 @@ msgstr "مقدار وارد شده با مجموع مبلغ فاکتورهای �
 msgid "Available"
 msgstr "در دسترس"
 
-#: src/components/Analysis/index.tsx:130
-msgid "Balance"
-msgstr "بالانس"
-
 #: src/components/Unsettled/index.tsx:67
 msgid "‌Balance"
+msgstr "بالانس"
+
+#: src/components/Analysis/index.tsx:130
+msgid "Balance"
 msgstr "بالانس"
 
 #: src/components/Deposit/index.tsx:60 src/containers/KYC/index.tsx:115
@@ -81,8 +81,8 @@ msgstr "قبل از اینکه شروع کنید"
 msgid "Bitcoin"
 msgstr "بیت کوین"
 
-#: src/components/PlaceOrder/index.tsx:58
-#: src/components/PlaceOrder/index.tsx:83
+#: src/components/PlaceOrder/index.tsx:59
+#: src/components/PlaceOrder/index.tsx:84
 msgid "Buy "
 msgstr "خرید "
 
@@ -305,7 +305,7 @@ msgstr "شماره کارت مشخصات"
 msgid "License Type"
 msgstr "نوع کارت مشخصات"
 
-#: src/components/PlaceOrder/index.tsx:54
+#: src/components/PlaceOrder/index.tsx:55
 msgid "Limit"
 msgstr "محدودیت"
 
@@ -489,7 +489,7 @@ msgstr "لطفا تصویر سلفی خودتان را وارد کنید"
 msgid "Previous Page"
 msgstr "صفحه قبل"
 
-#: src/components/Invoice/index.tsx:58
+#: src/components/Invoice/index.tsx:58 src/components/PlaceOrder/index.tsx:61
 msgid "Price"
 msgstr "قیمت"
 
@@ -522,8 +522,8 @@ msgstr "زمان انتخاب شده مربوط به آینده است"
 msgid "Selfie With ID And Note"
 msgstr "سلفی با شناسه و توضیحات"
 
-#: src/components/PlaceOrder/index.tsx:116
-#: src/components/PlaceOrder/index.tsx:91
+#: src/components/PlaceOrder/index.tsx:117
+#: src/components/PlaceOrder/index.tsx:92
 msgid "Sell "
 msgstr "فروش "
 
@@ -606,7 +606,7 @@ msgstr "داده ای برای نمایش وجود ندارد"
 msgid "this is the sandbox enviroment , you can test your payments here, all transactions will be done using bitcoin test network not real network."
 msgstr "این محیط تنها برای آزمایش پرداخت توسط توسعه دهندگان ایجاد شده است. تمامی پرداخت ها در این محیط در بستر تست شبکه بلاکچین صورت میگیرد و رمز‌ارز واقعی تبادل نمیشود."
 
-#: src/components/Deposit/index.tsx:77
+#: src/components/Deposit/index.tsx:77 src/components/PlaceOrder/index.tsx:75
 msgid "Total"
 msgstr "مجموع"
 

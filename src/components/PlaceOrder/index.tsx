@@ -6,6 +6,7 @@ import { FormComponentProps } from "antd/lib/form";
 import * as React from "react";
 import { connect } from "react-redux";
 import Block from "../../components/Holder";
+import config from "../../config";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 import "./style.less";
@@ -55,23 +56,23 @@ class PlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                     <Row gutter={8}>
                         <Col md={12}>
                             <Block className="place-order">
-                                <h3>{t.t("Buy ") + this.props.fromSymbol}</h3>
+                                <h3>{t.t("Buy ") + t.t(config.currencies[this.props.fromSymbol].name)}</h3>
                                 <Form onSubmit={this.handleSubmit} className="login-form">
-                                    <FormItem {...formItemLayout} label="Price">
+                                    <FormItem {...formItemLayout} label={t.t("Price")}>
                                         {getFieldDecorator("price", {
                                             rules: [{ required: true, message: "Please input price" }],
                                         })(
                                             <Input />,
                                         )}
                                     </FormItem>
-                                    <FormItem {...formItemLayout} label="Amount">
+                                    <FormItem {...formItemLayout} label={t.t("Amount")}>
                                         {getFieldDecorator("amount", {
                                             rules: [{ required: true, message: "Please input amount" }],
                                         })(
                                             <Input />,
                                         )}
                                     </FormItem>
-                                    <FormItem {...formItemLayout} label="Total">
+                                    <FormItem {...formItemLayout} label={t.t("Total")}>
                                         {getFieldDecorator("total", {
                                             rules: [{ required: false, message: "Please input amount" }],
                                         })(
@@ -80,7 +81,7 @@ class PlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                                     </FormItem>
                                     <FormItem>
                                         <Button className="buy-btn" type="primary" htmlType="submit" >
-                                            {t.t("Buy ") + this.props.fromSymbol}
+                                            {t.t("Buy ") + t.t(config.currencies[this.props.fromSymbol].name)}
                                         </Button>
                                     </FormItem>
                                 </Form>
@@ -88,23 +89,23 @@ class PlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                         </Col>
                         <Col md={12}>
                             <Block className="place-order">
-                                <h3>{t.t("Sell ") + this.props.fromSymbol}</h3>
+                                <h3>{t.t("Sell ") + t.t(config.currencies[this.props.fromSymbol].name)}</h3>
                                 <Form onSubmit={this.handleSubmit} className="login-form">
-                                    <FormItem {...formItemLayout} label="Price">
+                                    <FormItem {...formItemLayout} label={t.t("Price")}>
                                         {getFieldDecorator("price", {
                                             rules: [{ required: true, message: "Please input price" }],
                                         })(
                                             <Input />,
                                         )}
                                     </FormItem>
-                                    <FormItem {...formItemLayout} label="Amount">
+                                    <FormItem {...formItemLayout} label={t.t("Amount")}>
                                         {getFieldDecorator("amount", {
                                             rules: [{ required: true, message: "Please input amount" }],
                                         })(
                                             <Input />,
                                         )}
                                     </FormItem>
-                                    <FormItem {...formItemLayout} label="Total">
+                                    <FormItem {...formItemLayout} label={t.t("Total")}>
                                         {getFieldDecorator("total", {
                                             rules: [{ required: false, message: "Please input amount" }],
                                         })(
@@ -113,7 +114,7 @@ class PlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                                     </FormItem>
                                     <FormItem>
                                         <Button className="sell-btn" type="primary" htmlType="submit" >
-                                            {t.t("Sell ") + this.props.fromSymbol}
+                                            {t.t("Sell ") + t.t(config.currencies[this.props.fromSymbol].name)}
                                         </Button>
                                     </FormItem>
                                 </Form>
