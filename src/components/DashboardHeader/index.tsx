@@ -71,6 +71,11 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                         { uiUpdate: true },
                     );
                 }
+                if (this.state.uiUpdate && response.data + "" === VERSION + "") {
+                    this.setState(
+                        { uiUpdate: false },
+                    );
+                }
             });
     }
 
