@@ -21,6 +21,7 @@ import "./theme/application.less";
 
 require("./lib/icon");
 
+import { VERSION } from "./constants";
 import KeyCloacksApi from "./lib/api-old";
 
 // we need a history object to hold browsers history
@@ -30,6 +31,7 @@ const user = USER.getInstance();
 
 const keyCloak = KeyCloacksApi.getInstance();
 
+console.log("becopay version: " + VERSION);
 // Docs : `https://www.keycloak.org/docs/3.0/securing_apps/topics/oidc/javascript-adapter.html`
 user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
 
