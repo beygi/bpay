@@ -63,7 +63,7 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
     }
 
     public getVersion() {
-        axios.get("/VERSION", { responseType: "text" })
+        axios.get("/VERSION?" + Date.now(), { responseType: "text" })
             .then((response) => {
                 // handle success
                 if (!this.state.uiUpdate && response.data + "" !== VERSION + "") {
