@@ -1,7 +1,7 @@
 /**
  * @module Components/LimitedPlaceOrderComponent
  */
-import { Button, Form, InputNumber } from "antd";
+import { Button, Form, InputNumber, notification } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import * as _ from "lodash";
 import * as React from "react";
@@ -86,6 +86,16 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
 
     public handleSubmit = (e) => {
         e.preventDefault();
+        this.props.form.validateFieldsAndScroll((err, values) => {
+            if (!err) {
+                notification.success({
+                    message: t.t("{type} request").replace("{type}", this.state.type),
+                    description: t.t("{type} request places successfully").replace("{type}", this.state.type),
+                    placement: "bottomRight",
+                });
+            }
+
+        });
     }
 
     /** amount and price field validator */
@@ -119,7 +129,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
 
         const { getFieldDecorator } = this.props.form;
         return (
-            <Block className="place-order">
+            <Block className="limited-place-order">
                 <h3>{t.t(`${this.state.type} `) + t.t(config.currencies[this.props.fromSymbol].name)}</h3>
                 <Form onSubmit={this.handleSubmit} className="limited-form">
                     <FormItem {...formItemLayout} label={t.t("Price")}>
@@ -158,7 +168,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                         )}
                     </FormItem>
                     <FormItem {...formItemLayout} label={t.t("Total")}>
-                        <Ex fixFloatNum={floatNumbers} value={this.state.total || 0} stockStyle={false} />
+                        <Ex fixFloatNum={floatNumbers} value={this.state.total || 0} stockStyle={false} /> {t.t(this.props.toSymbol)}
                     </FormItem>
                     <FormItem>
                         <Button className={`${this.props.type}-btn`} type="primary" htmlType="submit" >
