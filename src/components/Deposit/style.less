@@ -1,7 +1,7 @@
 @import (reference) "../../theme/application";
 
 .deposit-coin-select {
-    background-color: darken(@palette-high,5%);
+    background-color: @secondaryVariant9;
 
     .balance-name {
         margin-left: 10px;
@@ -11,9 +11,21 @@
     a {
         text-decoration: none;
         color: @palette-light;
+
+        h2 {
+            padding: 10px;
+            background-color: @secondaryVariant8;
+            border-radius: 3px;
+
+            &:hover {
+                background-color: @primaryVariant6;
+            }
+            transition-property: background-color;
+            transition-duration: 2s;
+        }
     }
-    .balance-icon
-    {
+
+    .balance-icon {
         font-size: 25px;
     }
 }
@@ -53,20 +65,17 @@
     margin-top: 20px;
 }
 
-.confirmation-num
-{
-    color : @alert-warning-color;
+.confirmation-num {
+    color: @alert-warning-color;
 }
 
-.modal-wallet
-{
+.modal-wallet {
     text-align: center;
     margin-top: 20px;
     font-weight: bold;
 }
 
-.qr-img
-{
- display: block;
- margin:auto;
+.qr-img {
+    display: block;
+    margin: auto;
 }
