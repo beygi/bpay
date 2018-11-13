@@ -1,30 +1,15 @@
 /**
  * @module Components/PlaceOrderComponent
  */
-import { Button, Checkbox, Col, Form, Input, Row, Tabs } from "antd";
+import { Col, Form, Row, Tabs } from "antd";
 import { FormComponentProps } from "antd/lib/form";
+import * as _ from "lodash";
 import * as React from "react";
-import { connect } from "react-redux";
-import Block from "../../components/Holder";
-import config from "../../config";
-import { IRootState } from "../../redux/reducers";
+import LimitedPlaceOrderComponent from "../../components/LimitedPlaceOrder";
 import t from "../../services/trans/i18n";
 import "./style.less";
 
 const TabPane = Tabs.TabPane;
-const FormItem = Form.Item;
-
-const formItemLayout = {
-    labelCol: {
-        xs: { span: 24 },
-        sm: { span: 8 },
-    },
-    wrapperCol: {
-        xs: { span: 24 },
-        sm: { span: 16 },
-    },
-};
-
 interface IPlaceProps extends FormComponentProps {
     /** origin symbol */
     fromSymbol: string;
@@ -44,81 +29,16 @@ class PlaceOrderComponent extends React.Component<IPlaceProps, IState> {
         super(props);
     }
 
-    public handleSubmit = (e) => {
-        e.preventDefault();
-
-    }
     public render() {
-        const { getFieldDecorator } = this.props.form;
         return (
             <Tabs defaultActiveKey="1" >
                 <TabPane tab={t.t("Limit")} key="1">
                     <Row gutter={8}>
                         <Col md={12}>
-                            <Block className="place-order">
-                                <h3>{t.t("Buy ") + t.t(config.currencies[this.props.fromSymbol].name)}</h3>
-                                <Form onSubmit={this.handleSubmit} className="login-form">
-                                    <FormItem {...formItemLayout} label={t.t("Price")}>
-                                        {getFieldDecorator("price", {
-                                            rules: [{ required: true, message: "Please input price" }],
-                                        })(
-                                            <Input />,
-                                        )}
-                                    </FormItem>
-                                    <FormItem {...formItemLayout} label={t.t("Amount")}>
-                                        {getFieldDecorator("amount", {
-                                            rules: [{ required: true, message: "Please input amount" }],
-                                        })(
-                                            <Input />,
-                                        )}
-                                    </FormItem>
-                                    <FormItem {...formItemLayout} label={t.t("Total")}>
-                                        {getFieldDecorator("total", {
-                                            rules: [{ required: false, message: "Please input amount" }],
-                                        })(
-                                            <Input />,
-                                        )}
-                                    </FormItem>
-                                    <FormItem>
-                                        <Button className="buy-btn" type="primary" htmlType="submit" >
-                                            {t.t("Buy ") + t.t(config.currencies[this.props.fromSymbol].name)}
-                                        </Button>
-                                    </FormItem>
-                                </Form>
-                            </Block>
+                            <LimitedPlaceOrderComponent fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="buy" />
                         </Col>
                         <Col md={12}>
-                            <Block className="place-order">
-                                <h3>{t.t("Sell ") + t.t(config.currencies[this.props.fromSymbol].name)}</h3>
-                                <Form onSubmit={this.handleSubmit} className="login-form">
-                                    <FormItem {...formItemLayout} label={t.t("Price")}>
-                                        {getFieldDecorator("price", {
-                                            rules: [{ required: true, message: "Please input price" }],
-                                        })(
-                                            <Input />,
-                                        )}
-                                    </FormItem>
-                                    <FormItem {...formItemLayout} label={t.t("Amount")}>
-                                        {getFieldDecorator("amount", {
-                                            rules: [{ required: true, message: "Please input amount" }],
-                                        })(
-                                            <Input />,
-                                        )}
-                                    </FormItem>
-                                    <FormItem {...formItemLayout} label={t.t("Total")}>
-                                        {getFieldDecorator("total", {
-                                            rules: [{ required: false, message: "Please input amount" }],
-                                        })(
-                                            <Input />,
-                                        )}
-                                    </FormItem>
-                                    <FormItem>
-                                        <Button className="sell-btn" type="primary" htmlType="submit" >
-                                            {t.t("Sell ") + t.t(config.currencies[this.props.fromSymbol].name)}
-                                        </Button>
-                                    </FormItem>
-                                </Form>
-                            </Block>
+                            <LimitedPlaceOrderComponent fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="sell" />
                         </Col>
                     </Row>
                 </TabPane>

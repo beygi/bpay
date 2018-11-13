@@ -10,6 +10,14 @@ import { store } from "../../redux/store";
  */
 export default class Tools {
 
+    /** returns price of any symbol (fiat or crypto)
+     *   based on another symbol(fiat or crypto)
+     *    this function uses redux store to access informations
+     */
+    public static getPrice(fromSymbol: string, toSymbol: string) {
+        return this.getUsdRate(fromSymbol) * (1 / this.getUsdRate(toSymbol));
+    }
+
     /** returns usd rate of any symbol (fiat or crypto)
      *    this function uses redux store to access informations
      */

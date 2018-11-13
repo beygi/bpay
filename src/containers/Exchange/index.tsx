@@ -89,7 +89,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                             autosize
                         />
                     </Block>
-                    <Block>
+                    <Block className="place-order">
                         <PlaceOrder fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
                     </Block>
                 </Col>
