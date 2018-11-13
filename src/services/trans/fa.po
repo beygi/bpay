@@ -16,6 +16,10 @@ msgstr ""
 msgid " National ID Card"
 msgstr " کارت ملی"
 
+#: src/components/Deposit/index.tsx:106
+msgid "{coin} Deposite address"
+msgstr "آدرس پرداخت {coin}"
+
 #: src/components/LimitedPlaceOrder/index.tsx:92
 msgid "{type} request"
 msgstr "درخواست {type}"
@@ -36,7 +40,7 @@ msgstr "بیشترین در ۲۴ ساعت"
 msgid "24h Low"
 msgstr "کمترین در ۲۴ ساعت"
 
-#: src/components/DashboardHeader/index.tsx:131
+#: src/components/DashboardHeader/index.tsx:136
 msgid "Account information"
 msgstr "اطلاعات حساب"
 
@@ -70,7 +74,7 @@ msgstr "مقدار"
 msgid "amount is not equal to selected invoice sum"
 msgstr "مقدار وارد شده با مجموع مبلغ فاکتورهای انتخاب شده همخوانی ندارد"
 
-#: src/components/Deposit/index.tsx:79
+#: src/components/Deposit/index.tsx:80
 msgid "Available"
 msgstr "در دسترس"
 
@@ -82,7 +86,7 @@ msgstr "بالانس"
 msgid "‌Balance"
 msgstr "بالانس"
 
-#: src/components/Deposit/index.tsx:60 src/containers/KYC/index.tsx:115
+#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:115
 msgid "Before you start"
 msgstr "قبل از اینکه شروع کنید"
 
@@ -110,6 +114,10 @@ msgstr "بررسی"
 msgid "click to open gateway"
 msgstr "برای باز شدن درگاه کلیک کنید"
 
+#: src/components/Deposit/index.tsx:125
+msgid "coins will be available after "
+msgstr "رمز‌ارز ها تنها بعد از "
+
 #: src/components/Analysis/index.tsx:115
 msgid "Cold"
 msgstr "سرد"
@@ -117,6 +125,14 @@ msgstr "سرد"
 #: src/containers/Admin/Dashboard/index.tsx:39
 msgid "Cold storage"
 msgstr "مخزن سرد"
+
+#: src/components/Deposit/index.tsx:99
+msgid "Copy"
+msgstr "کپی"
+
+#: src/components/Deposit/index.tsx:98
+msgid "Copy wallet address to clipboard"
+msgstr "کپی کردن آدرس پرداخت"
 
 #: src/components/Unsettled/index.tsx:74
 msgid "Count"
@@ -174,6 +190,10 @@ msgstr "شماره کارت مقصد"
 #: src/components/Settle/index.tsx:185
 msgid "Destination Card number"
 msgstr "شماره کارت مقصد"
+
+#: src/components/Deposit/index.tsx:102
+msgid "Display Qr code of wallet"
+msgstr "نمایش کد Qr کیف پول"
 
 #: src/components/UserStatusGuide/index.tsx:44
 msgid "Done"
@@ -276,7 +296,7 @@ msgstr "شناسه"
 msgid "Image uploaded successfully"
 msgstr "تصویر با موفقیت بارگذاری شد"
 
-#: src/components/Deposit/index.tsx:78
+#: src/components/Deposit/index.tsx:79
 msgid "In order"
 msgstr "در حال فروش"
 
@@ -338,7 +358,7 @@ msgstr "ورود"
 msgid "Login Password"
 msgstr "رمز عبور"
 
-#: src/components/DashboardHeader/index.tsx:135
+#: src/components/DashboardHeader/index.tsx:140
 #: src/components/DashboardHeaderProfile/index.tsx:69
 msgid "Logout"
 msgstr "خروج"
@@ -356,6 +376,10 @@ msgstr "مرد"
 msgid "Master"
 msgstr "اصلی"
 
+#: src/components/Deposit/index.tsx:128
+msgid "network confirmations"
+msgstr "تاییدیه شبکه در دسترس خواهند بود"
+
 #: src/containers/Dashboard/index.tsx:79
 msgid "New Invoice"
 msgstr "فاکتور جدید"
@@ -364,7 +388,7 @@ msgstr "فاکتور جدید"
 msgid "New Invoice Created"
 msgstr "فاکتور جدید با موفقیت ایجاد شد"
 
-#: src/components/DashboardHeader/index.tsx:120
+#: src/components/DashboardHeader/index.tsx:125
 msgid "New version available , click for update"
 msgstr "نسخهٔ جدیدی از نرم افزار هم اکنون منتشر شده است. برای به روز رسانی کلیک کنید"
 
@@ -392,6 +416,14 @@ msgstr "شماره کارت مبدا"
 #: src/components/Settle/index.tsx:176
 msgid "Origin Card number"
 msgstr "شماره کارت مبدا"
+
+#: src/components/Deposit/index.tsx:92
+msgid "Our {coin} wallet address:"
+msgstr "آدرس کیف پول {coin} ما:"
+
+#: src/components/Deposit/index.tsx:55
+msgid "Our {currency} deposit address copied to clipboard successfully"
+msgstr "آدرس پرداخت {currency} با موفقیت کپی شد"
 
 #: src/containers/KYC/index.tsx:185
 msgid "Passport"
@@ -465,7 +497,7 @@ msgstr "لطفا رمز عبور خود را وارد کنید"
 msgid "Please select a country"
 msgstr "لطفا کشور خود را انتخاب کنید"
 
-#: src/components/Deposit/index.tsx:57
+#: src/components/Deposit/index.tsx:58
 msgid "Please select a currency to deposit"
 msgstr "لطفا ارز پرداختی را انتخاب کنید"
 
@@ -509,6 +541,10 @@ msgstr "قیمت"
 #: src/components/Analysis/index.tsx:120
 msgid "Promised owes"
 msgstr "بدهی های وعده داده شده"
+
+#: src/components/Deposit/index.tsx:103
+msgid "Qr code"
+msgstr "کد QR"
 
 #: src/components/UserStatusGuide/index.tsx:40
 msgid "Register"
@@ -597,7 +633,7 @@ msgstr "پشتیبانی"
 msgid "Symbol"
 msgstr "نماد"
 
-#: src/components/DashboardHeader/index.tsx:112
+#: src/components/DashboardHeader/index.tsx:117
 msgid "System Administration"
 msgstr "مدیریت سیستم"
 
@@ -618,7 +654,7 @@ msgstr "داده ای برای نمایش وجود ندارد"
 msgid "this is the sandbox enviroment , you can test your payments here, all transactions will be done using bitcoin test network not real network."
 msgstr "این محیط تنها برای آزمایش پرداخت توسط توسعه دهندگان ایجاد شده است. تمامی پرداخت ها در این محیط در بستر تست شبکه بلاکچین صورت میگیرد و رمز‌ارز واقعی تبادل نمیشود."
 
-#: src/components/Deposit/index.tsx:77
+#: src/components/Deposit/index.tsx:78
 #: src/components/LimitedPlaceOrder/index.tsx:170
 msgid "Total"
 msgstr "مجموع"
@@ -648,7 +684,7 @@ msgstr "مستندات خود را بارگذاری کنید"
 msgid "USD"
 msgstr "دلار آمریکا"
 
-#: src/components/DashboardHeader/index.tsx:102
+#: src/components/DashboardHeader/index.tsx:107
 msgid "User Dashboard"
 msgstr "داشبورد کاربر"
 
@@ -680,7 +716,7 @@ msgstr "مشاهده آدرس کیف پول"
 msgid "waiting"
 msgstr "در انتظار پرداخت"
 
-#: src/components/Deposit/index.tsx:119
+#: src/components/Deposit/index.tsx:122
 msgid "Warning"
 msgstr "هشدار"
 
@@ -695,6 +731,10 @@ msgstr "شما اکنون یک کاربر هستید"
 #: src/containers/KYC/index.tsx:96
 msgid "Your  {type} image uploaded to our servers, you can change it any time before our review"
 msgstr "تصویر {type} شما با موفقیت به سرورهای ما ارسال شد، شما میتوانید پیش از بررسی ما آن را تغییر دهید"
+
+#: src/components/Deposit/index.tsx:85
+msgid "your {coin} balance:"
+msgstr "بالانس حساب {coin} شما:"
 
 #: src/containers/Dashboard/index.tsx:115 src/containers/Deposit/index.tsx:36
 #: src/containers/Exchange/index.tsx:65
@@ -718,9 +758,6 @@ msgstr "اطلاعات شما با موفقیت ارسال شد"
 #~ msgid "Copy payment address"
 #~ msgstr "کپی کردن آدرس پرداخت"
 
-#~ msgid "Copy wallet address to clipboard"
-#~ msgstr "کپی کردن آدرس پرداخت"
-
 #~ msgid "Email address"
 #~ msgstr "آدرس ایمیل"
 
@@ -741,9 +778,6 @@ msgstr "اطلاعات شما با موفقیت ارسال شد"
 
 #~ msgid "minutes"
 #~ msgstr "دقیقه"
-
-#~ msgid "payment address copied to clipboard successfully"
-#~ msgstr "آدرس پرداخت با موفقیت کپی شد"
 
 #, fuzzy
 #~ msgid "this is the sandbox enviroment , you can test your payments here,         all transactions will be done using bitcoin test network not real network"

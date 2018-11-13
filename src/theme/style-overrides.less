@@ -273,6 +273,19 @@
     .ant-radio-button-wrapper:last-child {
         border-radius: 4px 0 0 4px;
     }
+    
+    .ant-message .anticon
+    {
+        margin-right: auto;
+        margin-left: 8px;
+    }
+    .ant-input-group.ant-input-group-compact > :last-child
+    {
+        border-radius: 4px 0px 0px 4px;
+        border-left-width: 1px; 
+        border-right-width: auto;
+    }
+    
 }
 //////////
 .ant-form-inline .ant-form-item {
@@ -497,7 +510,10 @@
     background-color: lighten(@palette-high,10%);
 }
 
-.ant-message-notice-content,
+.ant-message-notice-content
+{
+    color : @primaryTextColor;
+}
 .ant-modal-title {
     color: @palette-light;
 }

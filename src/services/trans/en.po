@@ -9,6 +9,10 @@ msgstr ""
 msgid " National ID Card"
 msgstr ""
 
+#: src/components/Deposit/index.tsx:106
+msgid "{coin} Deposite address"
+msgstr ""
+
 #: src/components/LimitedPlaceOrder/index.tsx:92
 msgid "{type} request"
 msgstr ""
@@ -29,7 +33,7 @@ msgstr ""
 msgid "24h Low"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:131
+#: src/components/DashboardHeader/index.tsx:136
 msgid "Account information"
 msgstr ""
 
@@ -63,7 +67,7 @@ msgstr ""
 msgid "amount is not equal to selected invoice sum"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:79
+#: src/components/Deposit/index.tsx:80
 msgid "Available"
 msgstr ""
 
@@ -75,7 +79,7 @@ msgstr ""
 msgid "‌Balance"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:60 src/containers/KYC/index.tsx:115
+#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:115
 msgid "Before you start"
 msgstr ""
 
@@ -103,12 +107,24 @@ msgstr ""
 msgid "click to open gateway"
 msgstr ""
 
+#: src/components/Deposit/index.tsx:125
+msgid "coins will be available after "
+msgstr ""
+
 #: src/components/Analysis/index.tsx:115
 msgid "Cold"
 msgstr ""
 
 #: src/containers/Admin/Dashboard/index.tsx:39
 msgid "Cold storage"
+msgstr ""
+
+#: src/components/Deposit/index.tsx:99
+msgid "Copy"
+msgstr ""
+
+#: src/components/Deposit/index.tsx:98
+msgid "Copy wallet address to clipboard"
 msgstr ""
 
 #: src/components/Unsettled/index.tsx:74
@@ -166,6 +182,10 @@ msgstr ""
 
 #: src/components/Settle/index.tsx:185
 msgid "Destination Card number"
+msgstr ""
+
+#: src/components/Deposit/index.tsx:102
+msgid "Display Qr code of wallet"
 msgstr ""
 
 #: src/components/UserStatusGuide/index.tsx:44
@@ -269,7 +289,7 @@ msgstr ""
 msgid "Image uploaded successfully"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:78
+#: src/components/Deposit/index.tsx:79
 msgid "In order"
 msgstr ""
 
@@ -331,7 +351,7 @@ msgstr ""
 msgid "Login Password"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:135
+#: src/components/DashboardHeader/index.tsx:140
 #: src/components/DashboardHeaderProfile/index.tsx:69
 msgid "Logout"
 msgstr ""
@@ -349,6 +369,10 @@ msgstr ""
 msgid "Master"
 msgstr ""
 
+#: src/components/Deposit/index.tsx:128
+msgid "network confirmations"
+msgstr ""
+
 #: src/containers/Dashboard/index.tsx:79
 msgid "New Invoice"
 msgstr ""
@@ -357,7 +381,7 @@ msgstr ""
 msgid "New Invoice Created"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:120
+#: src/components/DashboardHeader/index.tsx:125
 msgid "New version available , click for update"
 msgstr ""
 
@@ -384,6 +408,14 @@ msgstr ""
 
 #: src/components/Settle/index.tsx:176
 msgid "Origin Card number"
+msgstr ""
+
+#: src/components/Deposit/index.tsx:92
+msgid "Our {coin} wallet address:"
+msgstr ""
+
+#: src/components/Deposit/index.tsx:55
+msgid "Our {currency} deposit address copied to clipboard successfully"
 msgstr ""
 
 #: src/containers/KYC/index.tsx:185
@@ -458,7 +490,7 @@ msgstr ""
 msgid "Please select a country"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:57
+#: src/components/Deposit/index.tsx:58
 msgid "Please select a currency to deposit"
 msgstr ""
 
@@ -501,6 +533,10 @@ msgstr ""
 
 #: src/components/Analysis/index.tsx:120
 msgid "Promised owes"
+msgstr ""
+
+#: src/components/Deposit/index.tsx:103
+msgid "Qr code"
 msgstr ""
 
 #: src/components/UserStatusGuide/index.tsx:40
@@ -590,7 +626,7 @@ msgstr ""
 msgid "Symbol"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:112
+#: src/components/DashboardHeader/index.tsx:117
 msgid "System Administration"
 msgstr ""
 
@@ -611,7 +647,7 @@ msgstr ""
 msgid "this is the sandbox enviroment , you can test your payments here, all transactions will be done using bitcoin test network not real network."
 msgstr ""
 
-#: src/components/Deposit/index.tsx:77
+#: src/components/Deposit/index.tsx:78
 #: src/components/LimitedPlaceOrder/index.tsx:170
 msgid "Total"
 msgstr ""
@@ -641,7 +677,7 @@ msgstr ""
 msgid "USD"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:102
+#: src/components/DashboardHeader/index.tsx:107
 msgid "User Dashboard"
 msgstr ""
 
@@ -673,7 +709,7 @@ msgstr ""
 msgid "waiting"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:119
+#: src/components/Deposit/index.tsx:122
 msgid "Warning"
 msgstr ""
 
@@ -687,6 +723,10 @@ msgstr ""
 
 #: src/containers/KYC/index.tsx:96
 msgid "Your  {type} image uploaded to our servers, you can change it any time before our review"
+msgstr ""
+
+#: src/components/Deposit/index.tsx:85
+msgid "your {coin} balance:"
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:115 src/containers/Deposit/index.tsx:36

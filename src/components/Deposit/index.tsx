@@ -11,6 +11,7 @@ import config from "../../config";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 import Balance from "../Balance";
+import Ex from "../ExchangeValue";
 import Block from "../Holder";
 import USER from "./../../lib/user";
 import "./style.less";
@@ -51,7 +52,7 @@ class DepositComponent extends React.Component<IProps, IState> {
 
     /** display a message to inform users about copied wallet address */
     public showCopiedMessage() {
-        message.success(`Our ${this.props.selectedDepositCurrency} deposit address copied to clipboard successfully`);
+        message.success(t.t("Our {currency} deposit address copied to clipboard successfully").replace("{currency}", t.t(config.currencies[this.props.selectedDepositCurrency].name)));
     }
     public render() {
         let dropDownName = t.t("Please select a currency to deposit");
@@ -79,28 +80,30 @@ class DepositComponent extends React.Component<IProps, IState> {
                 { name: t.t("Available"), value: this.props.balance[this.props.selectedDepositCurrency].balance.available || 0 },
             ];
             const CurrencydropDownIcon = config.icons[this.props.selectedDepositCurrency];
-            dropDownName = <div> {CurrencydropDownIcon} {config.currencies[this.props.selectedDepositCurrency].name}</div>;
+            dropDownName = <div> {CurrencydropDownIcon} {t.t(config.currencies[this.props.selectedDepositCurrency].name)}</div>;
             DepositOrDescription = <div>
-                <h3>your {this.props.selectedDepositCurrency} balance:</h3>
+                <h3>{t.t("your {coin} balance:").replace("{coin}", t.t(config.currencies[this.props.selectedDepositCurrency].name))}</h3>
                 <List className="deposite-balance" bordered={false}
                     size="small"
                     dataSource={data}
-                    renderItem={(item) => (<List.Item><span className="deposite-balance">{item.name}</span>{item.value}</List.Item>)}
+                    renderItem={(item) => (<List.Item><span className="deposite-balance">{item.name}</span><Ex value={item.value} /></List.Item>)}
                 />
-                <div className="wallet-label">Our {config.currencies[this.props.selectedDepositCurrency].name} wallet address:</div>
+                <div className="wallet-label">
+                    {t.t("Our {coin} wallet address:").replace("{coin}", t.t(config.currencies[this.props.selectedDepositCurrency].name))}
+                </div>
                 <InputGroup className="wallet-group" compact>
                     <Input className="wallet" defaultValue={config.currencies[this.props.selectedDepositCurrency].depositeWallet} />
                     <CopyToClipboard text={config.currencies[this.props.selectedDepositCurrency].depositeWallet}
                         onCopy={() => this.showCopiedMessage()}>
-                        <Tooltip placement="top" title="Copy wallet address to clipboard">
-                            <Button className="copy neat-btn" type="primary"><FontAwesomeIcon icon={["fas", "copy"]} />  Copy</Button>
+                        <Tooltip placement="top" title={t.t("Copy wallet address to clipboard")}>
+                            <Button className="copy neat-btn" type="primary"><FontAwesomeIcon icon={["fas", "copy"]} />  {t.t("Copy")}</Button>
                         </Tooltip>
                     </CopyToClipboard>
-                    <Tooltip placement="top" title="Display Qr code of wallet">
-                        <Button onClick={() => this.setQrModalStatus(true)} className="show-qr neat-btn" type="primary"><FontAwesomeIcon icon={["fas", "qrcode"]} />  Qr code</Button>
+                    <Tooltip placement="top" title={t.t("Display Qr code of wallet")}>
+                        <Button onClick={() => this.setQrModalStatus(true)} className="show-qr neat-btn" type="primary"><FontAwesomeIcon icon={["fas", "qrcode"]} />  {t.t("Qr code")}</Button>
                     </Tooltip>
                     <Modal
-                        title={`${config.currencies[this.props.selectedDepositCurrency].name} Deposite address`}
+                        title={t.t("{coin} Deposite address").replace("{coin}", t.t(config.currencies[this.props.selectedDepositCurrency].name))}
                         wrapClassName="vertical-center-modal"
                         visible={this.state.qrModalVisible}
                         onOk={() => this.setQrModalStatus(false)}
@@ -119,8 +122,12 @@ class DepositComponent extends React.Component<IProps, IState> {
                     message={<h3>{t.t("Warning")}</h3>}
                     description={<div>
                         <ul>
-                            <li>coins will be available after <span className="confirmation-num">
-                                {config.currencies[this.props.selectedDepositCurrency].confirmationNumber} </span> network confirmations</li>
+                            <li>
+                                {t.t("coins will be available after ")}
+                                <span className="confirmation-num">
+                                    {config.currencies[this.props.selectedDepositCurrency].confirmationNumber} </span>
+                                {t.t("network confirmations")}
+                            </li>
                             <li>send only {config.currencies[this.props.selectedDepositCurrency].name}
                                 (<span className="confirmation-num">{this.props.selectedDepositCurrency}</span>) to this walelt sending anyother coin may result loss of your deposit</li>
                         </ul>
@@ -134,8 +141,8 @@ class DepositComponent extends React.Component<IProps, IState> {
             if (config.currencies[key].type !== "fiat") {
                 return (<Link replace={true} to={`/deposit/${key}`} key={key}>
                     <h2>
-                        <span className="balance-icon">{config.icons[key]}</span>
-                        <span className="balance-name">{config.currencies[key].name}</span>
+                        <span className="balance-icon">{config.icons[key]}</span>&nbsp;&nbsp;
+                        <span className="balance-name">{t.t(config.currencies[key].name)}</span>
                     </h2>
                 </Link>);
             }
