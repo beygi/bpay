@@ -26,8 +26,9 @@ production deploy:
   script:
     - "rsync -r -a -v -e ssh --delete dist/ staging@79.137.5.196:/home/staging/my/production/out"
     - docker login -u Beygi  -p $CI_BUILD_TOKEN registry.becopay.com
-    - docker build -t registry.becopay.com/ui/web:production-`git describe` .
-    - docker push registry.becopay.com/ui/web:production-`git describe`
+    - docker build -t registry.becopay.com/ui/web/production:`git describe` -t registry.becopay.com/ui/web/production:latest.
+    - docker push registry.becopay.com/ui/web/production:`git describe`
+    - docker push registry.becopay.com/ui/web/production:latest
   environment:
     name: Production
     url: https://my.becopay.com/
@@ -68,8 +69,9 @@ sandbox deploy:
   script:
     - "rsync -r -a -v -e ssh --delete dist/ staging@79.137.5.196:/home/staging/my/sandbox/out"
     - docker login -u Beygi  -p $CI_BUILD_TOKEN registry.becopay.com
-    - docker build -t registry.becopay.com/ui/web:sandbox-`git describe` .
-    - docker push registry.becopay.com/ui/web:sandbox-`git describe`
+    - docker build -t registry.becopay.com/ui/web/sandbox:`git describe` -t registry.becopay.com/ui/web/sandbox:latest.
+    - docker push registry.becopay.com/ui/web/sandbox:`git describe`
+    - docker push registry.becopay.com/ui/web/sandbox:latest
   environment:
     name: SandBox
     url: https://sandbox-my.becopay.com/
@@ -110,8 +112,9 @@ development deploy:
     script:
         - "rsync -r -a -v -e ssh --delete dist/ staging@79.137.5.196:/home/staging/my/development/out"
         - docker login -u Beygi  -p $CI_BUILD_TOKEN registry.becopay.com
-        - docker build -t registry.becopay.com/ui/web:staging-`git describe` .
-        - docker push registry.becopay.com/ui/web:staging-`git describe`
+        - docker build -t registry.becopay.com/ui/web/staging:`git describe` -t registry.becopay.com/ui/web/staging:latest.
+        - docker push registry.becopay.com/ui/web/staging:`git describe`
+        - docker push registry.becopay.com/ui/web/staging:latest
 
     environment:
         name: Staging
