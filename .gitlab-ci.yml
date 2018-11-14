@@ -40,6 +40,9 @@ production deploy:
     key: production
     paths:
         - dist/
+  artifacts:
+    paths:
+        - dist/
     
 sandbox build:
   stage: build
@@ -81,6 +84,9 @@ sandbox deploy:
     - master
   cache:
     key: sandbox
+    paths:
+        - dist/
+  artifacts:
     paths:
         - dist/  
                         
@@ -125,6 +131,9 @@ development deploy:
     - develop
     cache:
         key: development
+        paths:
+            - dist/
+    artifacts:
         paths:
             - dist/
 
