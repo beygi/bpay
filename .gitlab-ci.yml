@@ -67,6 +67,9 @@ sandbox deploy:
   stage: deploy
   script:
     - "rsync -r -a -v -e ssh --delete dist/ staging@79.137.5.196:/home/staging/my/sandbox/out"
+    - docker login -u Beygi  -p $CI_BUILD_TOKEN registry.becopay.com
+    - docker build -t registry.becopay.com/ui/web:sandbox-`git describe` .
+    - docker push registry.becopay.com/ui/web:sandbox-`git describe`
   environment:
     name: SandBox
     url: https://sandbox-my.becopay.com/
@@ -106,6 +109,10 @@ development deploy:
     stage: deploy
     script:
         - "rsync -r -a -v -e ssh --delete dist/ staging@79.137.5.196:/home/staging/my/development/out"
+        - docker login -u Beygi  -p $CI_BUILD_TOKEN registry.becopay.com
+        - docker build -t registry.becopay.com/ui/web:staging-`git describe` .
+        - docker push registry.becopay.com/ui/web:staging-`git describe`
+
     environment:
         name: Staging
         url: https://staging-my.becopay.com/
