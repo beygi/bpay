@@ -93,7 +93,10 @@ sandbox deploy:
 development build:
     stage:  build
     only:
-        - develop 
+       - tags
+    except:
+       - /^(?!develop).+@/
+
     tags:
         - my          
     script: 
@@ -107,7 +110,9 @@ development build:
 development test:
     stage:      test
     only:
-        - develop 
+       - tags
+    except:
+       - /^(?!develop).+@/
     tags:
         - my          
     script:     
@@ -128,7 +133,9 @@ development deploy:
     tags:
         - my           
     only:
-    - develop
+       - tags
+    except:
+       - /^(?!develop).+@/
     cache:
         key: development
         paths:
