@@ -1,13 +1,3 @@
-test:
-  stage:      test
-  script:     
-    - pwd && echo passed
-  only:
-    - master 
-    - develop
-  tags:
-    - my
-
 production build:
   stage:    build 
   script:
@@ -21,6 +11,15 @@ production build:
     paths:
         - node_modules/
         - dist/
+production test:
+  stage:      test
+  script:     
+    - pwd && echo passed
+  only:
+    - master 
+  tags:
+    - my
+
 
 production deploy:
   stage: deploy
@@ -51,6 +50,15 @@ sandbox build:
     paths:
         - node_modules/
         - dist/
+        
+sandbox test:
+    stage:  test
+    only:
+        - master 
+    tags:
+        - my          
+    script:     
+        - pwd && echo passed
 
 sandbox deploy:
   stage: deploy
@@ -82,6 +90,15 @@ development build:
             - node_modules/
             - dist/
         
+development test:
+    stage:      test
+    only:
+        - develop 
+    tags:
+        - my          
+    script:     
+        - pwd && echo passed 
+        
 development deploy:
     stage: deploy
     script:
@@ -97,3 +114,4 @@ development deploy:
         key: development
         paths:
             - dist/
+
