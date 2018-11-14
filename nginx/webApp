@@ -2,9 +2,9 @@ server {
        listen 80;
        listen [::]:80;
 
-       server_name my.becopay.com;
+       server_name localhost;
 
-       root /home/staging/web/dist;
+       root /usr/share/nginx/html;
        index index.html;
 
        location / {
