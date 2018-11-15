@@ -2,7 +2,8 @@
  * @module Components/DepositComponent
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Alert, Button, Icon, Input, List, message, Modal, notification, Tooltip } from "antd";
+import { Alert, Button, Input, List, message, Modal, Tooltip } from "antd";
+import jrQrcode from "jr-qrcode";
 import * as React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { connect } from "react-redux";
@@ -10,7 +11,6 @@ import { Link } from "react-router-dom";
 import config from "../../config";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
-import Balance from "../Balance";
 import Ex from "../ExchangeValue";
 import Block from "../Holder";
 import USER from "./../../lib/user";
@@ -71,9 +71,7 @@ class DepositComponent extends React.Component<IProps, IState> {
             type="info"
             showIcon
         />;
-        let collapseClosed = false;
         if (this.props.selectedDepositCurrency) {
-            collapseClosed = true;
             const data = [
                 { name: t.t("Total"), value: this.props.balance[this.props.selectedDepositCurrency].balance.total || 0 },
                 { name: t.t("In order"), value: this.props.balance[this.props.selectedDepositCurrency].balance.inOrder || 0 },
@@ -112,7 +110,7 @@ class DepositComponent extends React.Component<IProps, IState> {
                     >
                         <p>
                             <img className="qr-img"
-                                src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${config.currencies[this.props.selectedDepositCurrency].depositeWallet}`} alt="" />
+                                src={jrQrcode.getQrBase64(config.currencies[this.props.selectedDepositCurrency].depositeWallet, { padding: 0 })} alt="" />
                         </p>
                         <h3 className="modal-wallet">{config.currencies[this.props.selectedDepositCurrency].depositeWallet}</h3>
                     </Modal>
