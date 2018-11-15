@@ -3,7 +3,9 @@ production build:
   script:
     - "export DEPLOY_TYPE=production && ./build.sh"
   only:
-    - master
+    - tags
+  except:
+    - /^(?!master).+@/
   tags:
     - my      
   cache:
@@ -16,7 +18,9 @@ production test:
   script:     
     - pwd && echo passed
   only:
-    - master 
+    - tags
+  except:
+    - /^(?!master).+@/
   tags:
     - my
 
@@ -35,7 +39,9 @@ production deploy:
   tags:
     - my           
   only:
-    - master 
+    - tags
+  except:
+    - /^(?!master).+@/
   cache:
     key: production
     paths:
@@ -47,7 +53,9 @@ production deploy:
 sandbox build:
   stage: build
   only:
-    - master 
+    - tags
+  except:
+    - /^(?!master).+@/
   tags:
     - my          
   script:   
@@ -61,7 +69,9 @@ sandbox build:
 sandbox test:
     stage:  test
     only:
-        - master 
+      - tags
+    except:
+      - /^(?!master).+@/
     tags:
         - my          
     script:     
@@ -81,7 +91,9 @@ sandbox deploy:
   tags:
     - my           
   only:
-    - master
+    - tags
+  except:
+    - /^(?!master).+@/
   cache:
     key: sandbox
     paths:
