@@ -8,7 +8,7 @@ msgstr ""
 msgid " National ID Card"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:106
+#: src/components/Deposit/index.tsx:105
 msgid "{coin} Deposite address"
 msgstr ""
 
@@ -56,6 +56,10 @@ msgstr ""
 msgid "add new group"
 msgstr ""
 
+#: src/components/Deposit/index.tsx:65
+msgid "After making a deposit, you can track its progress on the history page."
+msgstr ""
+
 #: src/components/LimitedPlaceOrder/index.tsx:153
 #: src/components/Settle/index.tsx:114 src/components/Settle/index.tsx:135
 #: src/components/SettleUps/index.tsx:98
@@ -66,16 +70,16 @@ msgstr ""
 msgid "amount is not equal to selected invoice sum"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:80
+#: src/components/Deposit/index.tsx:75
 msgid "Available"
-msgstr ""
-
-#: src/components/Analysis/index.tsx:130
-msgid "Balance"
 msgstr ""
 
 #: src/components/Unsettled/index.tsx:67
 msgid "‌Balance"
+msgstr ""
+
+#: src/components/Analysis/index.tsx:130
+msgid "Balance"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:115
@@ -106,7 +110,7 @@ msgstr ""
 msgid "click to open gateway"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:126
+#: src/components/Deposit/index.tsx:125
 msgid "coins will be available after "
 msgstr ""
 
@@ -118,11 +122,11 @@ msgstr ""
 msgid "Cold storage"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:99
+#: src/components/Deposit/index.tsx:98
 msgid "Copy"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:98
+#: src/components/Deposit/index.tsx:97
 msgid "Copy wallet address to clipboard"
 msgstr ""
 
@@ -163,7 +167,7 @@ msgstr "التاريخ"
 msgid "Date and time"
 msgstr "الوقت الباقي"
 
-#: src/components/Balance/index.tsx:111
+#: src/components/Balance/index.tsx:113
 #: src/components/DashboardMenu/menu.tsx:46
 msgid "Deposit"
 msgstr ""
@@ -185,7 +189,7 @@ msgstr ""
 msgid "Destination Card number"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:102
+#: src/components/Deposit/index.tsx:101
 msgid "Display Qr code of wallet"
 msgstr ""
 
@@ -290,7 +294,7 @@ msgstr ""
 msgid "Image uploaded successfully"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:79
+#: src/components/Deposit/index.tsx:74
 msgid "In order"
 msgstr ""
 
@@ -414,7 +418,7 @@ msgstr ""
 msgid "Origin Card number"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:92
+#: src/components/Deposit/index.tsx:91
 msgid "Our {coin} wallet address:"
 msgstr ""
 
@@ -498,6 +502,15 @@ msgstr "رجاء أدخل بريد إلكتروني عنوان"
 msgid "Please input your Password"
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
+#: src/components/Deposit/index.tsx:121
+#, fuzzy
+msgid "Please note"
+msgstr "رجاء أدخل بريد إلكتروني عنوان"
+
+#: src/components/Deposit/index.tsx:64
+msgid "please read our security section"
+msgstr ""
+
 #: src/containers/KYC/index.tsx:169
 #, fuzzy
 msgid "Please select a country"
@@ -553,7 +566,7 @@ msgstr ""
 msgid "Promised owes"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:103
+#: src/components/Deposit/index.tsx:102
 msgid "Qr code"
 msgstr ""
 
@@ -673,7 +686,7 @@ msgstr ""
 msgid "to this walelt sending anyother coin may result loss of your deposit"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:78
+#: src/components/Deposit/index.tsx:73
 #: src/components/LimitedPlaceOrder/index.tsx:170
 msgid "Total"
 msgstr ""
@@ -736,10 +749,6 @@ msgstr ""
 msgid "waiting"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:122
-msgid "Warning"
-msgstr ""
-
 #: src/containers/KYC/index.tsx:235
 msgid "we will inform you about the progress in your profile page"
 msgstr ""
@@ -752,7 +761,7 @@ msgstr ""
 msgid "Your  {type} image uploaded to our servers, you can change it any time before our review"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:85
+#: src/components/Deposit/index.tsx:80
 msgid "your {coin} balance:"
 msgstr ""
 

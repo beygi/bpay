@@ -16,7 +16,7 @@ msgstr ""
 msgid " National ID Card"
 msgstr " کارت ملی"
 
-#: src/components/Deposit/index.tsx:106
+#: src/components/Deposit/index.tsx:105
 msgid "{coin} Deposite address"
 msgstr "آدرس پرداخت {coin}"
 
@@ -64,6 +64,10 @@ msgstr "اضافه کردن گرون"
 msgid "add new group"
 msgstr "اضافه کردن گروه جدید"
 
+#: src/components/Deposit/index.tsx:65
+msgid "After making a deposit, you can track its progress on the history page."
+msgstr "بعد از انجام واریز میتوانید روند اجرای آن را در ستون سمت چپ مشاهده کنید."
+
 #: src/components/LimitedPlaceOrder/index.tsx:153
 #: src/components/Settle/index.tsx:114 src/components/Settle/index.tsx:135
 #: src/components/SettleUps/index.tsx:98
@@ -74,16 +78,16 @@ msgstr "مقدار"
 msgid "amount is not equal to selected invoice sum"
 msgstr "مقدار وارد شده با مجموع مبلغ فاکتورهای انتخاب شده همخوانی ندارد"
 
-#: src/components/Deposit/index.tsx:80
+#: src/components/Deposit/index.tsx:75
 msgid "Available"
 msgstr "در دسترس"
 
-#: src/components/Analysis/index.tsx:130
-msgid "Balance"
-msgstr "بالانس"
-
 #: src/components/Unsettled/index.tsx:67
 msgid "‌Balance"
+msgstr "بالانس"
+
+#: src/components/Analysis/index.tsx:130
+msgid "Balance"
 msgstr "بالانس"
 
 #: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:115
@@ -114,7 +118,7 @@ msgstr "بررسی"
 msgid "click to open gateway"
 msgstr "برای باز شدن درگاه کلیک کنید"
 
-#: src/components/Deposit/index.tsx:126
+#: src/components/Deposit/index.tsx:125
 msgid "coins will be available after "
 msgstr "رمز‌ارز ها تنها بعد از "
 
@@ -126,11 +130,11 @@ msgstr "سرد"
 msgid "Cold storage"
 msgstr "مخزن سرد"
 
-#: src/components/Deposit/index.tsx:99
+#: src/components/Deposit/index.tsx:98
 msgid "Copy"
 msgstr "کپی"
 
-#: src/components/Deposit/index.tsx:98
+#: src/components/Deposit/index.tsx:97
 msgid "Copy wallet address to clipboard"
 msgstr "کپی کردن آدرس پرداخت"
 
@@ -169,7 +173,7 @@ msgstr "تاریخ"
 msgid "Date and time"
 msgstr "تاریخ و زمان پرداخت"
 
-#: src/components/Balance/index.tsx:111
+#: src/components/Balance/index.tsx:113
 #: src/components/DashboardMenu/menu.tsx:46
 msgid "Deposit"
 msgstr "شارژ حساب"
@@ -191,7 +195,7 @@ msgstr "شماره کارت مقصد"
 msgid "Destination Card number"
 msgstr "شماره کارت مقصد"
 
-#: src/components/Deposit/index.tsx:102
+#: src/components/Deposit/index.tsx:101
 msgid "Display Qr code of wallet"
 msgstr "نمایش کد Qr کیف پول"
 
@@ -296,7 +300,7 @@ msgstr "شناسه"
 msgid "Image uploaded successfully"
 msgstr "تصویر با موفقیت بارگذاری شد"
 
-#: src/components/Deposit/index.tsx:79
+#: src/components/Deposit/index.tsx:74
 msgid "In order"
 msgstr "در حال فروش"
 
@@ -417,7 +421,7 @@ msgstr "شماره کارت مبدا"
 msgid "Origin Card number"
 msgstr "شماره کارت مبدا"
 
-#: src/components/Deposit/index.tsx:92
+#: src/components/Deposit/index.tsx:91
 msgid "Our {coin} wallet address:"
 msgstr "آدرس کیف پول {coin} ما:"
 
@@ -493,6 +497,14 @@ msgstr "لطفا شمارهٔ مدرک خود را وارد کنید "
 msgid "Please input your Password"
 msgstr "لطفا رمز عبور خود را وارد کنید"
 
+#: src/components/Deposit/index.tsx:121
+msgid "Please note"
+msgstr "لطفا توجه کنید"
+
+#: src/components/Deposit/index.tsx:64
+msgid "please read our security section"
+msgstr "لطفا راهنما های موجود در بخش امنیت را بخوانید"
+
 #: src/containers/KYC/index.tsx:169
 msgid "Please select a country"
 msgstr "لطفا کشور خود را انتخاب کنید"
@@ -542,7 +554,7 @@ msgstr "قیمت"
 msgid "Promised owes"
 msgstr "بدهی های وعده داده شده"
 
-#: src/components/Deposit/index.tsx:103
+#: src/components/Deposit/index.tsx:102
 msgid "Qr code"
 msgstr "کد QR"
 
@@ -662,7 +674,7 @@ msgstr "این محیط تنها برای آزمایش پرداخت توسط ت�
 msgid "to this walelt sending anyother coin may result loss of your deposit"
 msgstr "را به این کیف پول ارسال کنید. ارسال سایر رمز ارزها به این کیف پول ممکن است باعث از دست رفتن آنها شود"
 
-#: src/components/Deposit/index.tsx:78
+#: src/components/Deposit/index.tsx:73
 #: src/components/LimitedPlaceOrder/index.tsx:170
 msgid "Total"
 msgstr "مجموع"
@@ -724,10 +736,6 @@ msgstr "مشاهده آدرس کیف پول"
 msgid "waiting"
 msgstr "در انتظار پرداخت"
 
-#: src/components/Deposit/index.tsx:122
-msgid "Warning"
-msgstr "هشدار"
-
 #: src/containers/KYC/index.tsx:235
 msgid "we will inform you about the progress in your profile page"
 msgstr "ما وضعیت را در صفحهٔ کاربری تان به اطلاع خواهیم رساند‍"
@@ -740,7 +748,7 @@ msgstr "شما اکنون یک کاربر هستید"
 msgid "Your  {type} image uploaded to our servers, you can change it any time before our review"
 msgstr "تصویر {type} شما با موفقیت به سرورهای ما ارسال شد، شما میتوانید پیش از بررسی ما آن را تغییر دهید"
 
-#: src/components/Deposit/index.tsx:85
+#: src/components/Deposit/index.tsx:80
 msgid "your {coin} balance:"
 msgstr "بالانس حساب {coin} شما:"
 
@@ -752,6 +760,9 @@ msgstr "بالانس حساب شما"
 #: src/containers/KYC/index.tsx:234
 msgid "your information submitted successfully"
 msgstr "اطلاعات شما با موفقیت ارسال شد"
+
+#~ msgid "Warning"
+#~ msgstr "هشدار"
 
 #~ msgid "Identity check"
 #~ msgstr "بررسی مشخصات"
