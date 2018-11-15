@@ -3,9 +3,7 @@ production build:
   script:
     - "export DEPLOY_TYPE=production && ./build.sh"
   only:
-    - tags
-  except:
-    - /^(?!master).+@/
+    - master
   tags:
     - my      
   cache:
@@ -18,9 +16,7 @@ production test:
   script:     
     - pwd && echo passed
   only:
-    - tags
-  except:
-    - /^(?!master).+@/
+    - master 
   tags:
     - my
 
@@ -39,9 +35,7 @@ production deploy:
   tags:
     - my           
   only:
-    - tags
-  except:
-    - /^(?!master).+@/
+    - master 
   cache:
     key: production
     paths:
@@ -53,9 +47,7 @@ production deploy:
 sandbox build:
   stage: build
   only:
-    - tags
-  except:
-    - /^(?!master).+@/
+    - master 
   tags:
     - my          
   script:   
@@ -69,9 +61,7 @@ sandbox build:
 sandbox test:
     stage:  test
     only:
-      - tags
-    except:
-      - /^(?!master).+@/
+        - master 
     tags:
         - my          
     script:     
@@ -91,9 +81,7 @@ sandbox deploy:
   tags:
     - my           
   only:
-    - tags
-  except:
-    - /^(?!master).+@/
+    - master
   cache:
     key: sandbox
     paths:
@@ -105,10 +93,7 @@ sandbox deploy:
 development build:
     stage:  build
     only:
-       - tags
-    except:
-       - /^(?!develop).+@/
-
+        - develop 
     tags:
         - my          
     script: 
@@ -122,9 +107,7 @@ development build:
 development test:
     stage:      test
     only:
-       - tags
-    except:
-       - /^(?!develop).+@/
+        - develop 
     tags:
         - my          
     script:     
@@ -145,9 +128,7 @@ development deploy:
     tags:
         - my           
     only:
-       - tags
-    except:
-       - /^(?!develop).+@/
+    - develop
     cache:
         key: development
         paths:
@@ -155,4 +136,5 @@ development deploy:
     artifacts:
         paths:
             - dist/
+
 
