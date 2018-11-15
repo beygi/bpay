@@ -114,7 +114,7 @@ msgstr "بررسی"
 msgid "click to open gateway"
 msgstr "برای باز شدن درگاه کلیک کنید"
 
-#: src/components/Deposit/index.tsx:125
+#: src/components/Deposit/index.tsx:126
 msgid "coins will be available after "
 msgstr "رمز‌ارز ها تنها بعد از "
 
@@ -376,7 +376,7 @@ msgstr "مرد"
 msgid "Master"
 msgstr "اصلی"
 
-#: src/components/Deposit/index.tsx:128
+#: src/components/Deposit/index.tsx:129
 msgid "network confirmations"
 msgstr "تاییدیه شبکه در دسترس خواهند بود"
 
@@ -575,6 +575,10 @@ msgstr "سلفی با شناسه و توضیحات"
 msgid "Sell"
 msgstr "فروش"
 
+#: src/components/Deposit/index.tsx:131
+msgid "send only"
+msgstr "تنها"
+
 #: src/components/Unsettled/index.tsx:83 src/containers/Accounting/index.tsx:32
 #: src/containers/Dashboard/index.tsx:72
 msgid "Settle"
@@ -653,6 +657,10 @@ msgstr "داده ای برای نمایش وجود ندارد"
 #: src/containers/Dashboard/index.tsx:45
 msgid "this is the sandbox enviroment , you can test your payments here, all transactions will be done using bitcoin test network not real network."
 msgstr "این محیط تنها برای آزمایش پرداخت توسط توسعه دهندگان ایجاد شده است. تمامی پرداخت ها در این محیط در بستر تست شبکه بلاکچین صورت میگیرد و رمز‌ارز واقعی تبادل نمیشود."
+
+#: src/components/Deposit/index.tsx:132
+msgid "to this walelt sending anyother coin may result loss of your deposit"
+msgstr "را به این کیف پول ارسال کنید. ارسال سایر رمز ارزها به این کیف پول ممکن است باعث از دست رفتن آنها شود"
 
 #: src/components/Deposit/index.tsx:78
 #: src/components/LimitedPlaceOrder/index.tsx:170

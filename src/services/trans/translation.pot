@@ -106,7 +106,7 @@ msgstr ""
 msgid "click to open gateway"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:125
+#: src/components/Deposit/index.tsx:126
 msgid "coins will be available after "
 msgstr ""
 
@@ -374,7 +374,7 @@ msgstr ""
 msgid "Master"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:128
+#: src/components/Deposit/index.tsx:129
 msgid "network confirmations"
 msgstr ""
 
@@ -576,6 +576,10 @@ msgstr ""
 msgid "Sell"
 msgstr ""
 
+#: src/components/Deposit/index.tsx:131
+msgid "send only"
+msgstr ""
+
 #: src/components/Unsettled/index.tsx:83
 #: src/containers/Accounting/index.tsx:32
 #: src/containers/Dashboard/index.tsx:72
@@ -655,6 +659,10 @@ msgstr ""
 
 #: src/containers/Dashboard/index.tsx:45
 msgid "this is the sandbox enviroment , you can test your payments here, all transactions will be done using bitcoin test network not real network."
+msgstr ""
+
+#: src/components/Deposit/index.tsx:132
+msgid "to this walelt sending anyother coin may result loss of your deposit"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:78

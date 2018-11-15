@@ -125,11 +125,12 @@ class DepositComponent extends React.Component<IProps, IState> {
                             <li>
                                 {t.t("coins will be available after ")}
                                 <span className="confirmation-num">
-                                    {config.currencies[this.props.selectedDepositCurrency].confirmationNumber} </span>
+                                    <Ex fixFloatNum={0} value={config.currencies[this.props.selectedDepositCurrency].confirmationNumber} stockStyle={false} />
+                                </span> {}
                                 {t.t("network confirmations")}
                             </li>
-                            <li>send only {config.currencies[this.props.selectedDepositCurrency].name}
-                                (<span className="confirmation-num">{this.props.selectedDepositCurrency}</span>) to this walelt sending anyother coin may result loss of your deposit</li>
+                            <li>{t.t("send only")} {t.t(config.currencies[this.props.selectedDepositCurrency].name)} {}
+                                (<span className="confirmation-num">{this.props.selectedDepositCurrency}</span>) {t.t("to this walelt sending anyother coin may result loss of your deposit")}</li>
                         </ul>
                     </div>}
                     type="warning"
