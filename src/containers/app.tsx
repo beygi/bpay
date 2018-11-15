@@ -46,7 +46,7 @@ class AppContainer extends React.Component<IProps, IState> {
         }
         if (DEPLOY_TYPE === "development") {
             document.getElementById("develop").style.display = "block";
-            document.getElementById("develop").innerHTML = DEPLOY_TYPE + " " + `<b>${VERSION} ${(BRANCH !== "develop") ? BRANCH : ""}</b>`;
+            document.getElementById("develop").innerHTML = DEPLOY_TYPE + " " + `<b>${VERSION} ${BRANCH}</b>`;
         }
 
         document.body.addEventListener("changeLanguage", (event: CustomEvent) => {
