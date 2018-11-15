@@ -2,7 +2,7 @@
  * @module Components/DepositComponent
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Alert, Button, Input, List, message, Modal, notification, Tooltip } from "antd";
+import { Alert, Button, Icon, Input, List, message, Modal, notification, Tooltip } from "antd";
 import * as React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { connect } from "react-redux";
@@ -56,7 +56,7 @@ class DepositComponent extends React.Component<IProps, IState> {
     }
     public render() {
         let dropDownName = t.t("Please select a currency to deposit");
-        const dropDownIcon = <FontAwesomeIcon icon={["fas", "angle-down"]} />;
+        const dropDownIcon = <FontAwesomeIcon icon={["fas", "arrow-left"]} />;
         let DepositOrDescription = <Alert
             message={<h2>{t.t("Before you start")}</h2>}
             description={<div>Additional description and informations about deposit
@@ -159,7 +159,9 @@ class DepositComponent extends React.Component<IProps, IState> {
         }
         return (
             <div>
-                <Block showArrow={false} className="deposit-coin-select" collapseClosed={collapseClosed} collapse centerTitle={true} title={dropDownName} icon={dropDownIcon} iconPosition="left" >
+                <Block
+                    className="deposit-coin-select"
+                    centerTitle={true} title={dropDownName} iconPosition="left" >
                     {coins}
                 </Block>
                 {DepositOrDescription}

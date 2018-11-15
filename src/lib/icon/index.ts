@@ -4,11 +4,11 @@ import { faBtc, faEthereum, faGoogle, faGripfire } from "@fortawesome/free-brand
 // import { faHandshake } from "@fortawesome/free-regular-svg-icons";
 
 import {
-    faAddressCard, faAngleDown, faArchive, faBalanceScale, faBox, faChartLine, faCheck, faCheckDouble, faCopy, faDollarSign, faDonate, faEdit, faExchangeAlt,
+    faAddressCard, faArchive, faArrowLeft, faBalanceScale, faBox, faChartLine, faCheck, faCheckDouble, faCopy, faDollarSign, faDonate, faEdit, faExchangeAlt,
     faExternalLinkAlt, faHandHolding, faHandHoldingUsd, faHandshake, faHistory, faHourglassHalf, faKey, faLink, faLock, faMoneyCheckAlt, faPlus, faQrcode, faSearch,
     faSnowflake, faTimes, faUserClock, faWallet,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faPlus, faCheckDouble, faHandHolding, faArchive, faGoogle, faLock, faUserClock, faLink, faExternalLinkAlt,
     faEdit, faKey, faSearch, faWallet, faHistory, faBtc, faDollarSign, faEthereum, faBox, faBalanceScale, faExchangeAlt, faGripfire, faSnowflake,
-    faDonate, faHandHoldingUsd, faMoneyCheckAlt, faHandshake, faAddressCard, faAngleDown, faQrcode, faCopy, faChartLine, faCheck, faTimes, faHourglassHalf);
+    faDonate, faHandHoldingUsd, faMoneyCheckAlt, faHandshake, faAddressCard, faArrowLeft, faQrcode, faCopy, faChartLine, faCheck, faTimes, faHourglassHalf);
