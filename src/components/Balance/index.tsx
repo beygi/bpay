@@ -24,7 +24,7 @@ interface IProps {
     /**  holds user balance object */
     balance: {};
     /** display deposit button */
-    hideButton: boolean;
+    hideButton?: boolean;
 }
 
 interface IState {
