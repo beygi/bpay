@@ -131,9 +131,9 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                 <div className="selected-menu">
                     <Icon type={MenuItem.icon} />{MenuItem.text}
                 </div>
-                <div className="header-icons">
+                <div className="header-icons" id="header-icons">
                     {uiUpdateButton}
-                    <Popover placement="bottom" title={t.t("Account information")} content={<HeaderProfile />} trigger="click">
+                    <Popover getPopupContainer={() => document.getElementById("header-icons")} placement="bottom" title={t.t("Account information")} content={<HeaderProfile />} trigger="click">
                         <Gravatar email={this.props.userEmail} default="retro"
                             size={60} className={`ProfilePic${(this.state.uiUpdate ? " ui-update" : "")}`} />
                     </Popover>

@@ -38,7 +38,7 @@ class TranslateComponent extends React.Component<IProps, IState> {
             </Menu>;
 
         return (
-            <Dropdown className="change-language" overlay={menu} trigger={["click"]}>
+            <Dropdown getPopupContainer={() => document.getElementById("header-icons")} className="change-language" overlay={menu} trigger={["click"]}>
                 <a className="ant-dropdown-link">
                     {languages[t.default.language].name}
                     <Icon type="down" />

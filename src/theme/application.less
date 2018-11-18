@@ -39,7 +39,36 @@
     }
     .ant-popover-arrow, .ant-popover-inner
     {
-        background-color:  @dark-bk !important;
+        background-color:  @dark-menu !important;
+    }
+    .ant-btn-primary
+    {
+        background-color: @dark-button;
+        border-color: darken($background-color , 10%);
+    }
+    .ant-popover-title
+    {
+        border-color: @dark-bk;
+    }
+    .ant-dropdown-menu
+    {
+        background-color:   @dark-block-color  !important;
+    }
+    .header-logo-user .header-icons .anticon
+    {
+        color : @dark-bk;
+        &:hover
+        {
+            color: @secondaryTextColor;
+        }
+    }
+    .header-logo-user .header-icons .ProfilePic
+    {
+        border: 3px solid @dark-bk;
+        &:hover
+        {
+            border-color: @secondaryTextColor;
+        }
     }
 }
 
