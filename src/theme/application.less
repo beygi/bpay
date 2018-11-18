@@ -8,6 +8,44 @@
 @import "./assets/fonts/b2mark/font"; //our application custom fonts
 @import "./assets/fonts/cryptocoins/font"; //our application custom fonts
 
+
+
+
+.dark
+{
+    .header-logo-user
+    {
+        background: @dark-block-color;  
+    }
+    .block
+    {
+        border: 2px solid darken(@dark-block-color,5%);
+        box-shadow: none;
+        background-color: @dark-block-color;   
+    }
+    .transparent
+    {
+        background-color: transparent; 
+    }
+    .ant-layout-content
+    {
+        background-color:  @dark-bk;
+        margin: 0px;
+        padding: 8px;
+    }
+    .bm-menu
+    {
+        background-color:  @dark-bk;
+    }
+    .ant-popover-arrow, .ant-popover-inner
+    {
+        background-color:  @dark-bk !important;
+    }
+}
+
+
+
+
 .neat-btn {
 }
 .ant-btn

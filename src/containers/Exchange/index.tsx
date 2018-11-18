@@ -89,7 +89,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                             <Block className="trading-view" noPadding >
                                 <TradingViewWidget
                                     symbol={`${this.state.fromSymbol}${this.state.toSymbol}`}
-                                    theme={Themes.LIGHT}
+                                    theme={Themes.DARK}
                                     autosize
                                     style={2}
                                     allow_symbol_change={false}
@@ -97,7 +97,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                             </Block>
                         </Col>
                         <Col md={24} >
-                            <Block className="place-order" transparent>
+                            <Block className="place-order" transparent noPadding >
                                 <PlaceOrder fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
                             </Block>
                         </Col>

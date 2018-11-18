@@ -59,7 +59,7 @@ export default class DashboardPrivateLayout extends React.Component<IProps, ISta
             AdminClass = "admin-menu " + this.state.menuClass;
         }
         return (
-            <Layout className={`${AdminClass} ${this.props.children.props.location.pathname.split("/")[1]}-page`} style={{ minHeight: "100vh" }}>
+            <Layout className={`${AdminClass} ${this.props.children.props.location.pathname.split("/")[1]}-page dark`} style={{ minHeight: "100vh" }}>
                 <DashboardMenuComponent isAdmin={this.props.isAdmin} />
                 <Layout id="privateContent" className="private-content">
                     <DashboardHeaderComponent isAdmin={this.props.isAdmin} />
