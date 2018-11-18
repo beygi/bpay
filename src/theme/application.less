@@ -1,165 +1,217 @@
-@import "./color-palette";   // our application colors
-@import "./application-variables";   // our application variables
+@import "./color-palette";
+// our application colors
+@import "./application-variables";
+// our application variables
 @import "./style-overrides"; //override ant styles here
 @import "./mixins"; //custom mixins
-
 //@import "./assets/fonts/ant/font";    //use local fonts for ant
 @import "./assets/fonts/shabnam/font"; //our application custom fonts
 @import "./assets/fonts/b2mark/font"; //our application custom fonts
 @import "./assets/fonts/cryptocoins/font"; //our application custom fonts
 
-
-
-
-.dark
-{
-    .header-logo-user
+.dark {
+    ant-pagination-item-active a .exchange-value.normal
     {
-        background: @dark-block-color;  
+        background: transparent !important;
     }
-    .block
+    .ant-pagination-item, .ant-pagination-next, .ant-pagination-prev
     {
+        background:  transparent !important;
+        a{
+            background: transparent !important;
+            .exchange-value.normal
+            {
+                background-color: inherit !important;
+            }  
+        }
+        border-color: lighten(@dark-bk,10%);
+    }
+    .ant-pagination-item-active
+    {
+        background-color:  lighten(@dark-bk,10%) !important;
+        border-color : @secondaryTextColor;
+        a{
+            .exchange-value.normal
+            {
+                color :  @secondaryTextColor !important;
+            }  
+        }
+    }
+    .ant-pagination-next .ant-pagination-item-link, .ant-pagination-prev, .ant-pagination-prev .ant-pagination-item-link
+    {
+        border-color: lighten(@dark-bk,10%) !important;
+        background-color: @dark-bk !important;
+    }
+    .transaction-block {
+        .shop-name {
+            background-color: @dark-bk;
+        }
+
+        .ant-table {
+            background: @dark-bk;
+            .ant-table-thead > tr > th {
+                border-bottom-color: lighten(@dark-bk,10%) !important;
+            }
+        }
+    }
+    .live-price .coin-balance,.coin-balance,.deposit-item {
+        border-color: @dark-bk !important;
+    }
+
+    .ant-form-item-children {
+        color: @secondaryTextColor;
+    }
+
+    .header-logo-user {
+        background: @dark-block-color;
+    }
+
+    .block {
         border: 2px solid darken(@dark-block-color,5%);
         box-shadow: none;
-        background-color: @dark-block-color;   
+        background-color: @dark-block-color;
     }
-    .transparent
-    {
-        background-color: transparent; 
+
+    .transparent {
+        background-color: transparent;
     }
-    .ant-layout-content
-    {
-        background-color:  @dark-bk;
-        margin: 0px;
+
+    .ant-layout-content {
+        background-color: @dark-bk;
+        margin: 0;
         padding: 8px;
     }
-    .bm-menu
-    {
-        background-color:  @dark-bk;
+
+    .bm-menu {
+        background-color: @dark-bk;
     }
-    .ant-popover-arrow, .ant-popover-inner
-    {
-        background-color:  @dark-menu !important;
+
+    .ant-popover-arrow,
+    .ant-popover-inner {
+        background-color: @dark-menu !important;
     }
-    .ant-btn-primary
-    {
+
+    .ant-btn-primary {
         background-color: @dark-button;
         border-color: darken($background-color , 10%);
     }
-    .ant-popover-title
-    {
+
+    .ant-popover-title {
         border-color: @dark-bk;
     }
-    .ant-dropdown-menu
-    {
-        background-color:   @dark-block-color  !important;
+
+    .ant-dropdown-menu {
+        background-color: darken(@dark-bk ,3%) !important;
     }
-    .header-logo-user .header-icons .anticon
-    {
-        color : @dark-bk;
-        &:hover
-        {
+
+    .header-logo-user .header-icons .anticon {
+        color: @dark-bk;
+
+        &:hover {
             color: @secondaryTextColor;
         }
     }
-    .header-logo-user .header-icons .ProfilePic
-    {
+
+    .header-logo-user .header-icons .ProfilePic {
         border: 3px solid @dark-bk;
-        &:hover
-        {
+
+        &:hover {
             border-color: @secondaryTextColor;
         }
     }
-}
 
-
-
-
-.neat-btn {
-}
-.ant-btn
-{
-    svg
-    {
-            margin-right:10px;
+    .exchange-value.fall {
+        color: @hot-storage;
     }
-    .single-icon
-    {
-        margin-right:10px;
-        margin-left:10px;
+
+    .exchange-value.normal {
+        color: lighten(@dark-bk,30%);
+    }
+
+    .ant-form-item-required::before {
+        color: @hot-storage;
     }
 }
 
-.main-header
-{
-    color : @primaryTextColor;
+.neat-btn {}
+
+.ant-btn {
+    svg {
+        margin-right: 10px;
+    }
+
+    .single-icon {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
 }
-body,.ant-layout
-{
-    background: @body-background ;
+
+.main-header {
+    color: @primaryTextColor;
 }
-*
-{
-        font-family: b2mark , Shabnam !important;
+
+.ant-layout,
+body {
+    background: @body-background;
 }
-.ant-spin-spinning
-{
+
+* {
+    font-family: b2mark , Shabnam !important;
+}
+
+.ant-spin-spinning {
     text-align: center;
     display: block;
 }
 
-.sandbox
-{
+.sandbox {
     background-color: #fb3c5d;
     color: white;
     text-align: justify;
     box-shadow: none;
 }
-#develop
-{
+
+#develop {
     position: fixed;
     background-color: #000c;
     color: white;
     bottom: 0;
     left: 0;
     padding: 3px 26px;
-    border-radius: 0px 5px 0px 0px;
+    border-radius: 0 5px 0 0;
     font-family: mono;
     display: none;
+    z-index: 10000;
 }
 
 &[dir='rtl'] {
-    *
-    {
-     direction: rtl;
+    * {
+        direction: rtl;
     }
-     input
-     {
+
+    input {
         #rtl-placeholder()
-     }
-     .btn-icon
-     {
-         margin-left:10px;
-         margin-right:0px;
-     }
-     .ant-btn
-     {
-         svg
-         {
-                 margin-right:0px;
-                 margin-left:10px;
-         }
-         .single-icon
-         {
-             margin-right:10px;
-             margin-left:10px;
-         }
-     }
-     .ltr
-     {
-         text-align: left !important;
-         direction: ltr !important;
-     }
-     
-     
+    }
+
+    .btn-icon {
+        margin-left: 10px;
+        margin-right: 0;
+    }
+
+    .ant-btn {
+        svg {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+
+        .single-icon {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+    }
+
+    .ltr {
+        text-align: left !important;
+        direction: ltr !important;
+    }
 }

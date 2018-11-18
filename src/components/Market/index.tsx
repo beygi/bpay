@@ -152,7 +152,7 @@ class MarketComponent extends React.Component<IProps, IState> {
         return (
             <Row gutter={8}>
                 <Col md={8} >
-                    <Dropdown overlay={<Menu>{availableMarkets}</Menu>} trigger={["click"]}>
+                    <Dropdown getPopupContainer={() => document.getElementById("privateContent")} overlay={<Menu>{availableMarkets}</Menu>} trigger={["click"]}>
                         <a className="ant-dropdown-link select-market" href="#">
                             <div className="stock" >
                                 <Icon type="down" />
@@ -160,11 +160,11 @@ class MarketComponent extends React.Component<IProps, IState> {
                             </div>
                         </a>
                     </Dropdown>
-                </Col>
+                </Col >
                 <Col md={16} >
                     <Table className="market-prices" bordered={false} size="small" pagination={false} dataSource={dataSource} columns={columns} />
                 </Col>
-            </Row>
+            </Row >
         );
     }
 }
