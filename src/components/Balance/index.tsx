@@ -21,9 +21,10 @@ const userObject = USER.getInstance();
 
 interface IProps {
     updateUserBalance: (balance) => void;
-
     /**  holds user balance object */
     balance: {};
+    /** display deposit button */
+    hideButton?: boolean;
 }
 
 interface IState {
@@ -104,13 +105,16 @@ class BalanceComponent extends React.Component<IProps, IState> {
         );
         return (
             <div className="user-balance" > {coins}
-                <Link to="/deposit">
-                    <Button
-                        icon="import"
-                        className="neat-btn" type="primary" size="large">
-                        {t.t("Deposit")}
-                    </Button>
-                </Link>
+                {(!this.props.hideButton) ?
+                    <Link to="/deposit">
+                        <Button
+                            icon="import"
+                            className="neat-btn" type="primary" size="large">
+                            {t.t("Deposit")}
+                        </Button>
+                    </Link> : null
+                }
+
             </div >
         );
     }

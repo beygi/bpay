@@ -27,9 +27,9 @@ module.exports = {
 
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
-	alias: {
-	      moment: 'antd-jalali-moment',
-	    },
+        alias: {
+            moment: 'antd-jalali-moment',
+        },
     },
     context: resolve(__dirname, '../../src'),
     module: {
@@ -114,17 +114,17 @@ module.exports = {
         new CheckerPlugin(),
         new HtmlWebpackPlugin({
             template: 'index.html',
-	    favicon: 'logo.png',
+            favicon: 'logo.png',
         }),
         new MiniCssExtractPlugin({
             filename: "[name]-[chunkhash].min.css",
         }),
-	new GitRevisionPlugin(),
+        new GitRevisionPlugin(),
         new webpack.DefinePlugin({
             DEPLOY_TYPE: JSON.stringify(process.env.DEPLOY_TYPE || "production"),
             VERSION: JSON.stringify(gitRevisionPlugin.version()),
             // COMMITHASH: JSON.stringify(gitRevisionPlugin.commithash()),
-            // BRANCH: JSON.stringify(gitRevisionPlugin.branch())
+            BRANCH: JSON.stringify(gitRevisionPlugin.branch())
         }),
     ],
     performance: {

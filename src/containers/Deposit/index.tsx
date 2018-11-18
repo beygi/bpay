@@ -34,7 +34,7 @@ class DepositContainer extends React.Component<IProps, IState> {
             <Row gutter={8}>
                 <Col md={6} >
                     <Block className="user-balance" collapse title={t.t("Your balance")} icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
-                        <Balance />
+                        <Balance hideButton />
                     </Block>
                     <Block collapse title={t.t("Live prices")} icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
                         <Live />

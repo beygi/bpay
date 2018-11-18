@@ -5,7 +5,7 @@ import { LocaleProvider } from "antd";
 import * as React from "react";
 import { hot } from "react-hot-loader";
 import { Route, Switch } from "react-router";
-import { DEPLOY_TYPE, VERSION } from "../constants";
+import { BRANCH, DEPLOY_TYPE, VERSION } from "../constants";
 import t from "../services/trans/i18n";
 import Languages from "../services/trans/languages";
 import Layout from "./../components/Layout";
@@ -46,7 +46,7 @@ class AppContainer extends React.Component<IProps, IState> {
         }
         if (DEPLOY_TYPE === "development") {
             document.getElementById("develop").style.display = "block";
-            document.getElementById("develop").innerHTML = DEPLOY_TYPE + " " + `<b>${VERSION}</b>`;
+            document.getElementById("develop").innerHTML = DEPLOY_TYPE + " " + `<b>${VERSION} ${BRANCH}</b>`;
         }
 
         document.body.addEventListener("changeLanguage", (event: CustomEvent) => {
