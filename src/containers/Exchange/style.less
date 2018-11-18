@@ -1,6 +1,37 @@
 @import (reference) "../../theme/application";
+
+@dark-block-color : #4C4649;
+@dark-bk : #665F62;
+@dark-button : #665F62;
+
 .trading-view
 {
-    height: 489px !important;
+    height: 350px !important;
     margin-bottom: 7px; 
+    padding: 0 !important;
+}
+.exchange-page
+{
+    .ant-layout-content
+    {
+        background-color: @secondaryVariant9;
+        margin: 0;
+        padding: 4px;
+    }
+    .ant-layout
+    {
+    }
+    .block
+    {
+        border-radius: 0;
+        box-shadow: none;
+        margin-bottom: 8px;
+        padding: 5px;
+        .block-title {
+            font-size: 15px;
+            margin-bottom: $font-size;
+            font-weight: bold;
+        }
+        border: 1px solid @secondaryVariant6; 
+    }
 }

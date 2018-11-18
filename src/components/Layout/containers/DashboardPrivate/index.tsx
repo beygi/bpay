@@ -67,8 +67,8 @@ export default class DashboardPrivateLayout extends React.Component<IProps, ISta
                         {this.props.children}
                     </Content>
                 </Layout>
-            </Layout>;
-        )
+            </Layout>
+        );
     }
 
     private toggle() {

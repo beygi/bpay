@@ -87,6 +87,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                             symbol={`${this.state.fromSymbol}${this.state.toSymbol}`}
                             theme={Themes.LIGHT}
                             autosize
+                            style={2}
                         />
                     </Block>
                     <Block className="place-order">
