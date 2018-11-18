@@ -39,35 +39,36 @@ export default class DashboardPrivateLayout extends React.Component<IProps, ISta
         };
     }
 
-public handleScroll(event) {
+    public handleScroll(event) {
         console.log(event.pageY);
         if (event.pageY > 25) {
-             this.setState({
-               menuClass: "mini-menu",
-             });
+            this.setState({
+                menuClass: "mini-menu",
+            });
         } else {
             this.setState({
-              menuClass: "normal-menu",
+                menuClass: "normal-menu",
             });
         }
     }
 
     public render() {
+        console.log(this.props);
         let AdminClass: string = this.state.menuClass;
         if (this.props.isAdmin) {
             AdminClass = "admin-menu " + this.state.menuClass;
         }
         return (
-            <Layout className={AdminClass} style={{ minHeight: "100vh" }}>
-                <DashboardMenuComponent  isAdmin={this.props.isAdmin} />
+            <Layout className={`${AdminClass} ${this.props.children.props.location.pathname.split("/")[1]}-page`} style={{ minHeight: "100vh" }}>
+                <DashboardMenuComponent isAdmin={this.props.isAdmin} />
                 <Layout id="privateContent" className="private-content">
-                    <DashboardHeaderComponent isAdmin={this.props.isAdmin}  />
+                    <DashboardHeaderComponent isAdmin={this.props.isAdmin} />
                     <Content>
                         {this.props.children}
                     </Content>
                 </Layout>
-            </Layout>
-        );
+            </Layout>;
+        )
     }
 
     private toggle() {

@@ -25,9 +25,6 @@ const newApi = Api.getInstance();
 interface IUserFormProps extends FormComponentProps {
 }
 
-interface IUserFormProps extends FormComponentProps {
-}
-
 interface IState {
     cover: string;
     passport: string;
