@@ -7,24 +7,41 @@
 .trading-view
 {
     height: 350px !important;
-    margin-bottom: 7px; 
-    padding: 0 !important;
 }
 .exchange-page
 {
+    .ant-tabs-nav .ant-tabs-tab
+    {
+        color : @primaryLightColor;
+        &:hover
+        {
+            color : @secondaryTextColor;
+        }
+    }
+    .ant-tabs-content
+    {
+        padding: 0;
+    }
+    .ant-tabs-nav .ant-tabs-tab
+    {
+        padding: 6px 8px;
+    }
     .ant-layout-content
     {
         background-color: @secondaryVariant9;
         margin: 0;
-        padding: 4px;
+        padding: 8px;
     }
     .ant-layout
     {
     }
+    .transparent
+    {
+        border : none !important;
+    }
     .block
     {
-        border-radius: 0;
-        box-shadow: none;
+        border-radius: 0px;
         margin-bottom: 8px;
         padding: 5px;
         .block-title {
@@ -32,6 +49,5 @@
             margin-bottom: $font-size;
             font-weight: bold;
         }
-        border: 1px solid @secondaryVariant6; 
     }
 }

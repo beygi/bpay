@@ -70,6 +70,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                     </Block>
                 </Col>
                 <Col md={14} >
+
                     <Row gutter={8}>
                         <Col md={24} >
                             <Block>
@@ -82,19 +83,34 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                             </Block>
                         </Col> */}
                     </Row>
-                    <Block className="trading-view" transparent noPadding >
-                        <TradingViewWidget
-                            symbol={`${this.state.fromSymbol}${this.state.toSymbol}`}
-                            theme={Themes.LIGHT}
-                            autosize
-                            style={2}
-                        />
-                    </Block>
-                    <Block className="place-order">
-                        <PlaceOrder fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
-                    </Block>
+
+                    <Row gutter={8}>
+                        <Col md={24} >
+                            <Block className="trading-view" noPadding >
+                                <TradingViewWidget
+                                    symbol={`${this.state.fromSymbol}${this.state.toSymbol}`}
+                                    theme={Themes.LIGHT}
+                                    autosize
+                                    style={2}
+                                    allow_symbol_change={false}
+                                />
+                            </Block>
+                        </Col>
+                        <Col md={24} >
+                            <Block className="place-order" transparent>
+                                <PlaceOrder fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
+                            </Block>
+                        </Col>
+                    </Row>
+
                 </Col>
                 <Col md={5} >
+                    <Block title={t.t("Live prices")} icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
+                        <Live />
+                    </Block>
+                    <Block title={t.t("Live prices")} icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
+                        <Live />
+                    </Block>
                     <Block title={t.t("Live prices")} icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
                         <Live />
                     </Block>
