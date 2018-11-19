@@ -240,10 +240,10 @@ of its clients.It is required because the KYC its used to refer to the bank and 
             <Row gutter={8}>
                 <Col md={6} >
                     <Block>
-                        <img src="https://dummyimage.com/600x400/0086C3/3ee6e0.png" alt="" />
+                        <img src="https://imgplaceholder.com/600x400/transparent/ffffff?font-family=Roboto_Bold" alt="" />
                     </Block>
                     <Block>
-                        <img src="https://dummyimage.com/600x800/0086C3/3ee6e0.png" alt="" />
+                        <img src="https://imgplaceholder.com/600x800/transparent/ffffff?font-family=Roboto_Bold" alt="" />
                     </Block>
                 </Col>
                 <Col md={18} >
