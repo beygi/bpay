@@ -43,6 +43,9 @@ interface IProps {
 
     /** holds current user's administration status */
     isAdmin: boolean;
+
+    /** holds components language */
+    language: string;
 }
 
 interface IState {

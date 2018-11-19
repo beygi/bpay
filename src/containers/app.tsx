@@ -6,6 +6,8 @@ import * as React from "react";
 import { hot } from "react-hot-loader";
 import { Route, Switch } from "react-router";
 import { BRANCH, DEPLOY_TYPE, VERSION } from "../constants";
+import { updateUser } from "../redux/app/actions";
+import { store } from "../redux/store";
 import t from "../services/trans/i18n";
 import Languages from "../services/trans/languages";
 import Layout from "./../components/Layout";
@@ -52,6 +54,7 @@ class AppContainer extends React.Component<IProps, IState> {
         document.body.addEventListener("changeLanguage", (event: CustomEvent) => {
             document.body.dir = Languages[event.detail.code].dir;
             t.changeLanguage(event.detail.code, () => {
+                store.dispatch(updateUser({ language: event.detail.code }));
                 this.forceUpdate();
             });
         });
