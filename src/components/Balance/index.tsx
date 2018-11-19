@@ -41,7 +41,10 @@ class BalanceComponent extends React.Component<IProps, IState> {
     public static getDerivedStateFromProps(props, state) {
         // update state.balance when props changes by redux
         if (props.balance !== null) {
-            return { balance: { ...state.balance, ...props.balance } };
+            return {
+                balance: { ...state.balance, ...props.balance },
+                language: props.language,
+            };
         }
         return null;
     }
@@ -130,12 +133,14 @@ function mapStateToProps(state: IRootState) {
     if (state.app.user.balance !== undefined) {
         return {
             balance: state.app.user.balance,
+            language: state.app.user.language,
         };
     }
     // there is no balance from redux, state must not be updated in getDerivedStateFromProps
     return {
         balance: null,
+        language: state.app.user.language,
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(BalanceComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(BalanceComponent);

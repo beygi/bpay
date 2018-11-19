@@ -95,13 +95,15 @@ function mapStateToProps(state: IRootState) {
         return {
             cryptos: state.app.market.cryptos,
             forex: state.app.market.forex,
+            language: state.app.user.language,
         };
     }
     // there is no balance from redux, state must not be updated in getDerivedStateFromProps
     return {
         cryptos: null,
         forex: null,
+        language: state.app.user.language,
     };
 }
 
-export default connect(mapStateToProps, null, null, { pure: false })(StockComponent);
+export default connect(mapStateToProps)(StockComponent);

@@ -92,7 +92,8 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state: IRootState) {
     return {
         path: state.router.location.pathname,
+        language: state.app.user.language,
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(DashboardMenuComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardMenuComponent);

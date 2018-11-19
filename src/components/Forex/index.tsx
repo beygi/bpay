@@ -94,12 +94,14 @@ function mapStateToProps(state: IRootState) {
     if (state.app.market && state.app.market.cryptos && state.app.market.forex) {
         return {
             forex: state.app.market.forex,
+            language: state.app.user.language,
         };
     }
     // there is no balance from redux, state must not be updated in getDerivedStateFromProps
     return {
         forex: null,
+        language: state.app.user.language,
     };
 }
 
-export default connect(mapStateToProps, null, null, { pure: false })(ForexComponent);
+export default connect(mapStateToProps)(ForexComponent);

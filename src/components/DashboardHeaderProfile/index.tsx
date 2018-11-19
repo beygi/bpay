@@ -85,7 +85,8 @@ function mapStateToProps(state: IRootState) {
     return {
         email: state.app.user.email,
         auth_time: state.app.user.auth_time,
+        language: state.app.user.language,
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(DashboardHeaderProfileComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardHeaderProfileComponent);

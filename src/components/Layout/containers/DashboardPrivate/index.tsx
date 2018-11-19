@@ -57,7 +57,6 @@ class DashboardPrivateLayout extends React.Component<IProps, IState> {
     }
 
     public render() {
-        console.log(this.props);
         let AdminClass: string = this.state.menuClass;
         if (this.props.isAdmin) {
             AdminClass = "admin-menu " + this.state.menuClass;

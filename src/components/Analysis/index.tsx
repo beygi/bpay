@@ -184,7 +184,8 @@ function mapStateToProps(state: IRootState) {
         cashDesks: state.app.office.cashDesks || null,
         forex: state.app.market.forex || null,
         cryptos: state.app.market.cryptos || null,
+        language: state.app.user.language,
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(AnalysisComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(AnalysisComponent);

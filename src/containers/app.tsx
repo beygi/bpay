@@ -6,6 +6,8 @@ import * as React from "react";
 import { hot } from "react-hot-loader";
 import { Route, Switch } from "react-router";
 import { BRANCH, DEPLOY_TYPE, VERSION } from "../constants";
+import { updateUser } from "../redux/app/actions";
+import { store } from "../redux/store";
 import t from "../services/trans/i18n";
 import Languages from "../services/trans/languages";
 import Layout from "./../components/Layout";
@@ -37,10 +39,18 @@ interface IState {
 class AppContainer extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
+        if (store.getState().app.user && store.getState().app.user.language && t.default.language !== store.getState().app.user.language) {
+            document.body.dir = Languages[store.getState().app.user.language].dir;
+            t.changeLanguage(store.getState().app.user.language, () => {
+                this.forceUpdate();
+            });
+        } else {
+            document.body.dir = Config.language.dir;
+            store.dispatch(updateUser({ language: Config.language.codeName, theme: "light" }));
+        }
     }
 
     public componentDidMount() {
-        document.body.dir = Config.language.dir;
         if (DEPLOY_TYPE === "sandbox") {
             document.body.style.backgroundColor = "rgb(154, 189, 154)";
         }
@@ -52,6 +62,7 @@ class AppContainer extends React.Component<IProps, IState> {
         document.body.addEventListener("changeLanguage", (event: CustomEvent) => {
             document.body.dir = Languages[event.detail.code].dir;
             t.changeLanguage(event.detail.code, () => {
+                store.dispatch(updateUser({ language: event.detail.code }));
                 this.forceUpdate();
             });
         });

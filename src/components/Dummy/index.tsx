@@ -44,7 +44,8 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state: IRootState) {
     return {
         email: state.app.user.email,
+        language: state.app.user.language,
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(DummyComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(DummyComponent);

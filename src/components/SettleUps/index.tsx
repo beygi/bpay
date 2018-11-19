@@ -256,4 +256,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(SettleUps);
+export default connect(mapStateToProps, mapDispatchToProps)(SettleUps);
