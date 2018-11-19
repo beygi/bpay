@@ -102,7 +102,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
             labelCol: { lg: 4, md: 24 },
             wrapperCol: { lg: 12, md: 24 },
         };
-        const countries = this.state.countries.map((item, i) => <Option key={i} value={item.id}>{item.name}</Option>);
+        const countries = this.state.countries.map((item, i) => <Option key={`${i}`} value={item.id}>{item.name}</Option>);
         const { getFieldDecorator } = this.props.form;
 
         let block = <div></div>;

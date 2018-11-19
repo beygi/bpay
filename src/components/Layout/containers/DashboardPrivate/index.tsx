@@ -11,7 +11,7 @@ import { connect } from "react-redux";
 import { IRootState } from "../../../../redux/reducers";
 import "./style.less";
 
-const { Sider, Content } = Layout;
+const { Content } = Layout;
 
 interface IProps {
     /** react element which is filled the layout */
@@ -88,4 +88,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps, null, null, { pure: false })(DashboardPrivateLayout);
+export default connect(mapStateToProps, null, null)(DashboardPrivateLayout);

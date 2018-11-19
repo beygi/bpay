@@ -3,7 +3,6 @@
  */
 import { ConnectedRouter } from "connected-react-router";
 import { createBrowserHistory } from "history";
-import * as Keycloak from "keycloak-js";
 import * as _ from "lodash";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
@@ -40,6 +39,7 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         // token is in user.keycloak.token, pick and other useful information for saving in store
         // get user profile
         const userData = _.pick(user.keycloak.tokenParsed, ["email", "given_name", "family_name", "realm_access", "auth_time"]);
+        console.log(user.keycloak);
         user.keycloak.loadUserProfile().then(() => {
             const apiKey = _.get(user.keycloak, "profile.attributes.apikey[0]", "");
             const mobile = _.get(user.keycloak, "profile.attributes.mobile[0]", "");

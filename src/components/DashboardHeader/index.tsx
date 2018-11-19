@@ -2,16 +2,15 @@
  * @module Components/DashboardHeaderComponent
  */
 
-import { Icon, Input, Layout, Popover, Tooltip } from "antd";
+import { Icon, Popover, Tooltip } from "antd";
 import axios from "axios";
-import * as React from "react";
-const Search = Input.Search;
 import * as  _ from "lodash";
+import * as React from "react";
 import * as Gravatar from "react-gravatar";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { VERSION } from "../../constants";
-import { logOut } from "../../redux/app/actions";
+import { logOut, updateUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 import adminMenu from "../DashboardMenu/adminMenu";
@@ -21,20 +20,26 @@ import HeaderProfile from "../DashboardHeaderProfile";
 import USER from "./../../lib/user";
 
 const logo = require("../../assets/images/logo-header.png");
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./style.less";
 
-const { Header }: any = Layout;
 const userObject = USER.getInstance();
 
 interface IProps {
     /** email address of curren user */
-    userEmail: any;
+    userEmail?: any;
 
     /** current browser path we use it to find proper icon and title of the page */
-    path: any;
+    path?: any;
+
+    /** current ui theme which is binded to redux */
+    theme?: any;
 
     /** logout function which is binded to a redux function */
-    logOut: () => void;
+    logOut?: () => void;
+
+    /** change user theme (this function is binded to a redux funtion) */
+    updateUser?: (userObject: any) => void;
 
     /** holds current user's administration status */
     isAdmin: boolean;
@@ -52,6 +57,7 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
         this.logOut = this.logOut.bind(this);
+        this.changeTheme = this.changeTheme.bind(this);
         this.state = {
             uiUpdate: false,
         };
@@ -83,6 +89,16 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
     public logOut() {
         this.props.logOut();
         userObject.keycloak.logout();
+    }
+
+    /** change user theme */
+    public changeTheme() {
+        if (this.props.theme === "light") {
+            this.props.updateUser({ theme: "dark" });
+        } else {
+            this.props.updateUser({ theme: "light" });
+        }
+
     }
 
     /** relaod current window to get new version */
@@ -140,6 +156,15 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                     <Tooltip placement="bottom" title={t.t("Logout")}>
                         <Icon type="logout" onClick={this.logOut} />
                     </Tooltip>
+                    <Tooltip placement="bottom" title={(this.props.theme === "light") ? t.t("Night mode: off") : "Night mode: on"}>
+                        <span className={`anticon anticon-${this.props.theme}`} onClick={this.changeTheme}>
+                            {
+                                (this.props.theme === "light") ?
+                                    <FontAwesomeIcon icon={["far", "moon"]} /> :
+                                    <FontAwesomeIcon icon={["fas", "moon"]} />
+                            }
+                        </span>
+                    </Tooltip>
                     {AdminButton}
                     {HeaderLogo}
                 </div>
@@ -152,14 +177,16 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
 function mapDispatchToProps(dispatch) {
     return {
         logOut: () => dispatch(logOut()),
+        updateUser: (user) => dispatch(updateUser(user)),
     };
 }
 
 function mapStateToProps(state: IRootState) {
     return {
         userEmail: state.app.user.email,
+        theme: state.app.user.theme,
         path: state.router.location.pathname,
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(DashboardHeaderComponent);
+export default connect(mapStateToProps, mapDispatchToProps, null)(DashboardHeaderComponent);
