@@ -12,7 +12,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: src/containers/KYC/index.tsx:187
+#: src/containers/KYC/index.tsx:184
 msgid " National ID Card"
 msgstr " کارت ملی"
 
@@ -40,7 +40,7 @@ msgstr "بیشترین در ۲۴ ساعت"
 msgid "24h Low"
 msgstr "کمترین در ۲۴ ساعت"
 
-#: src/components/DashboardHeader/index.tsx:136
+#: src/components/DashboardHeader/index.tsx:152
 msgid "Account information"
 msgstr "اطلاعات حساب"
 
@@ -90,7 +90,7 @@ msgstr "بالانس"
 msgid "Balance"
 msgstr "بالانس"
 
-#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:115
+#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:112
 msgid "Before you start"
 msgstr "قبل از اینکه شروع کنید"
 
@@ -142,7 +142,7 @@ msgstr "کپی کردن آدرس پرداخت"
 msgid "Count"
 msgstr "تعداد"
 
-#: src/containers/KYC/index.tsx:162
+#: src/containers/KYC/index.tsx:159
 msgid "Country"
 msgstr "کشور"
 
@@ -203,7 +203,7 @@ msgstr "نمایش کد Qr کیف پول"
 msgid "Done"
 msgstr "تمام"
 
-#: src/containers/KYC/index.tsx:186
+#: src/containers/KYC/index.tsx:183
 msgid "Driving license"
 msgstr "گواهینامه رانندگی"
 
@@ -255,11 +255,11 @@ msgstr "عدم موفقیت در تسویه حساب فاکتورها"
 msgid "Fee Cash Desk"
 msgstr "میز حساب تعرفه ها"
 
-#: src/containers/KYC/index.tsx:154
+#: src/containers/KYC/index.tsx:151
 msgid "Female"
 msgstr "زن"
 
-#: src/containers/KYC/index.tsx:126
+#: src/containers/KYC/index.tsx:123
 msgid "First Name"
 msgstr "نام"
 
@@ -267,7 +267,7 @@ msgstr "نام"
 msgid "First Page"
 msgstr "صفحه اول"
 
-#: src/containers/KYC/index.tsx:146
+#: src/containers/KYC/index.tsx:143
 msgid "Gender"
 msgstr "جنسیت"
 
@@ -296,7 +296,7 @@ msgstr "مخزن گرم"
 msgid "ID"
 msgstr "شناسه"
 
-#: src/containers/KYC/index.tsx:94
+#: src/containers/KYC/index.tsx:91
 msgid "Image uploaded successfully"
 msgstr "تصویر با موفقیت بارگذاری شد"
 
@@ -313,7 +313,7 @@ msgstr "ریال ایران"
 msgid "KYC"
 msgstr "اصالت مشتریان"
 
-#: src/containers/KYC/index.tsx:117
+#: src/containers/KYC/index.tsx:114
 msgid "KYC stands for (Know Your Customer) it is the process of a business. <br> verifying and identifying the identity of its clients.It is required because the KYC its used to refer to the bank and anti-money laundering regulations."
 msgstr "تایید اصالت مشتری بخش جدایی ناپذیری از روند ارائه این نوع خدمات است. <br> بررسی و تایید هویت مشتریان به دلیل وجود قوانین پولشویی و قوانین بانکی لازمهٔ معامله در این وب سایت است."
 
@@ -321,7 +321,7 @@ msgstr "تایید اصالت مشتری بخش جدایی ناپذیری از �
 msgid "Last login:"
 msgstr "آخرین ورود:"
 
-#: src/containers/KYC/index.tsx:135
+#: src/containers/KYC/index.tsx:132
 msgid "Last Name"
 msgstr "نام خانوادگی"
 
@@ -329,11 +329,11 @@ msgstr "نام خانوادگی"
 msgid "Last Price"
 msgstr "آخرین قیمت"
 
-#: src/containers/KYC/index.tsx:193
+#: src/containers/KYC/index.tsx:190
 msgid "License ID"
 msgstr "شماره کارت مشخصات"
 
-#: src/containers/KYC/index.tsx:179
+#: src/containers/KYC/index.tsx:176
 msgid "License Type"
 msgstr "نوع کارت مشخصات"
 
@@ -346,7 +346,8 @@ msgid "Litecoin"
 msgstr "لایت کوین"
 
 #: src/containers/Dashboard/index.tsx:120 src/containers/Deposit/index.tsx:39
-#: src/containers/Exchange/index.tsx:97
+#: src/containers/Exchange/index.tsx:108 src/containers/Exchange/index.tsx:111
+#: src/containers/Exchange/index.tsx:114
 msgid "Live prices"
 msgstr "قیمت زنده"
 
@@ -362,7 +363,7 @@ msgstr "ورود"
 msgid "Login Password"
 msgstr "رمز عبور"
 
-#: src/components/DashboardHeader/index.tsx:140
+#: src/components/DashboardHeader/index.tsx:156
 #: src/components/DashboardHeaderProfile/index.tsx:69
 msgid "Logout"
 msgstr "خروج"
@@ -372,7 +373,7 @@ msgstr "خروج"
 msgid "lorem ipsum"
 msgstr "متن تست"
 
-#: src/containers/KYC/index.tsx:153
+#: src/containers/KYC/index.tsx:150
 msgid "Male"
 msgstr "مرد"
 
@@ -392,13 +393,21 @@ msgstr "فاکتور جدید"
 msgid "New Invoice Created"
 msgstr "فاکتور جدید با موفقیت ایجاد شد"
 
-#: src/components/DashboardHeader/index.tsx:125
+#: src/components/DashboardHeader/index.tsx:141
 msgid "New version available , click for update"
 msgstr "نسخهٔ جدیدی از نرم افزار هم اکنون منتشر شده است. برای به روز رسانی کلیک کنید"
 
 #: src/containers/Admin/Users/index.tsx:147
 msgid "Next Page"
 msgstr "صفحه بعد"
+
+#: src/components/DashboardHeader/index.tsx:159
+msgid "Night mode: off"
+msgstr "حالت شب: خاموش"
+
+#: src/components/DashboardHeader/index.tsx:159
+msgid "Night mode: on"
+msgstr "حالت شب: روشن"
 
 #: src/containers/Accounting/index.tsx:60
 #: src/containers/Dashboard/index.tsx:199
@@ -429,7 +438,7 @@ msgstr "آدرس کیف پول {coin} ما:"
 msgid "Our {currency} deposit address copied to clipboard successfully"
 msgstr "آدرس پرداخت {currency} با موفقیت کپی شد"
 
-#: src/containers/KYC/index.tsx:185
+#: src/containers/KYC/index.tsx:182
 msgid "Passport"
 msgstr "گذرنامه"
 
@@ -437,11 +446,11 @@ msgstr "گذرنامه"
 msgid "Passport cover"
 msgstr "جلد گذرنامه"
 
-#: src/containers/KYC/index.tsx:202
+#: src/containers/KYC/index.tsx:199
 msgid "Passport Cover"
 msgstr "جلد گذرنامه"
 
-#: src/components/KYC/index.tsx:41 src/containers/KYC/index.tsx:210
+#: src/components/KYC/index.tsx:41 src/containers/KYC/index.tsx:207
 msgid "Passport Personal Page"
 msgstr "صفحه مشخصات گذرنامه"
 
@@ -481,15 +490,15 @@ msgstr "لطفا کد پیگیری سیستم بانکی را وارد کنید 
 msgid "Please input your Email"
 msgstr "لطفا آدرس ایمیل تان را وارد کنید"
 
-#: src/containers/KYC/index.tsx:128
+#: src/containers/KYC/index.tsx:125
 msgid "Please input your first name"
 msgstr "لطفا نام تان را وارد کنید"
 
-#: src/containers/KYC/index.tsx:137
+#: src/containers/KYC/index.tsx:134
 msgid "Please input your last name"
 msgstr "لطفا نام خانوادگی خود را وارد کنید"
 
-#: src/containers/KYC/index.tsx:195
+#: src/containers/KYC/index.tsx:192
 msgid "Please input your license id "
 msgstr "لطفا شمارهٔ مدرک خود را وارد کنید "
 
@@ -505,7 +514,7 @@ msgstr "لطفا توجه کنید"
 msgid "please read our security section"
 msgstr "لطفا راهنما های موجود در بخش امنیت را بخوانید"
 
-#: src/containers/KYC/index.tsx:169
+#: src/containers/KYC/index.tsx:166
 msgid "Please select a country"
 msgstr "لطفا کشور خود را انتخاب کنید"
 
@@ -521,23 +530,23 @@ msgstr "لطفا مبلغ را وارد کنید"
 msgid "Please select payment date and time"
 msgstr "لطفا تاریخ و ساعت پرداخت را وارد کنید"
 
-#: src/containers/KYC/index.tsx:166 src/containers/KYC/index.tsx:48
+#: src/containers/KYC/index.tsx:163 src/containers/KYC/index.tsx:45
 msgid "Please select your country"
 msgstr "لطفا کشور خود را انتخاب کنید"
 
-#: src/containers/KYC/index.tsx:150
+#: src/containers/KYC/index.tsx:147
 msgid "Please select your gender"
 msgstr "لطفا جنسیت خود را مشخص کنید"
 
-#: src/containers/KYC/index.tsx:204
+#: src/containers/KYC/index.tsx:201
 msgid "please upload your cover"
 msgstr "لطفا تصویر جلد را بارگذاری کنید"
 
-#: src/containers/KYC/index.tsx:212
+#: src/containers/KYC/index.tsx:209
 msgid "please upload your passport personal page"
 msgstr "لطفا تصویر صفحهٔ مشخصات گذرنامه تان را وارد کنید"
 
-#: src/containers/KYC/index.tsx:220
+#: src/containers/KYC/index.tsx:217
 msgid "please upload your slefie  image"
 msgstr "لطفا تصویر سلفی خودتان را وارد کنید"
 
@@ -579,7 +588,7 @@ msgstr "انتخاب فروشنده"
 msgid "Selected time is in the future"
 msgstr "زمان انتخاب شده مربوط به آینده است"
 
-#: src/components/KYC/index.tsx:45 src/containers/KYC/index.tsx:218
+#: src/components/KYC/index.tsx:45 src/containers/KYC/index.tsx:215
 msgid "Selfie With ID And Note"
 msgstr "سلفی با شناسه و توضیحات"
 
@@ -625,7 +634,7 @@ msgstr "وضعیت"
 msgid "sth"
 msgstr "چیزی"
 
-#: src/containers/KYC/index.tsx:227
+#: src/containers/KYC/index.tsx:224
 msgid "Submit"
 msgstr "ارسال"
 
@@ -649,7 +658,7 @@ msgstr "پشتیبانی"
 msgid "Symbol"
 msgstr "نماد"
 
-#: src/components/DashboardHeader/index.tsx:117
+#: src/components/DashboardHeader/index.tsx:133
 msgid "System Administration"
 msgstr "مدیریت سیستم"
 
@@ -704,7 +713,7 @@ msgstr "مستندات خود را بارگذاری کنید"
 msgid "USD"
 msgstr "دلار آمریکا"
 
-#: src/components/DashboardHeader/index.tsx:107
+#: src/components/DashboardHeader/index.tsx:123
 msgid "User Dashboard"
 msgstr "داشبورد کاربر"
 
@@ -736,7 +745,7 @@ msgstr "مشاهده آدرس کیف پول"
 msgid "waiting"
 msgstr "در انتظار پرداخت"
 
-#: src/containers/KYC/index.tsx:235
+#: src/containers/KYC/index.tsx:232
 msgid "we will inform you about the progress in your profile page"
 msgstr "ما وضعیت را در صفحهٔ کاربری تان به اطلاع خواهیم رساند‍"
 
@@ -744,7 +753,7 @@ msgstr "ما وضعیت را در صفحهٔ کاربری تان به اطلاع
 msgid "You are a member"
 msgstr "شما اکنون یک کاربر هستید"
 
-#: src/containers/KYC/index.tsx:96
+#: src/containers/KYC/index.tsx:93
 msgid "Your  {type} image uploaded to our servers, you can change it any time before our review"
 msgstr "تصویر {type} شما با موفقیت به سرورهای ما ارسال شد، شما میتوانید پیش از بررسی ما آن را تغییر دهید"
 
@@ -757,7 +766,7 @@ msgstr "بالانس حساب {coin} شما:"
 msgid "Your balance"
 msgstr "بالانس حساب شما"
 
-#: src/containers/KYC/index.tsx:234
+#: src/containers/KYC/index.tsx:231
 msgid "your information submitted successfully"
 msgstr "اطلاعات شما با موفقیت ارسال شد"
 

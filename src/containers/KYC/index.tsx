@@ -25,9 +25,6 @@ const newApi = Api.getInstance();
 interface IUserFormProps extends FormComponentProps {
 }
 
-interface IUserFormProps extends FormComponentProps {
-}
-
 interface IState {
     cover: string;
     passport: string;
@@ -105,7 +102,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
             labelCol: { lg: 4, md: 24 },
             wrapperCol: { lg: 12, md: 24 },
         };
-        const countries = this.state.countries.map((item, i) => <Option key={i} value={item.id}>{item.name}</Option>);
+        const countries = this.state.countries.map((item, i) => <Option key={`${i}`} value={item.id}>{item.name}</Option>);
         const { getFieldDecorator } = this.props.form;
 
         let block = <div></div>;
@@ -243,10 +240,10 @@ of its clients.It is required because the KYC its used to refer to the bank and 
             <Row gutter={8}>
                 <Col md={6} >
                     <Block>
-                        <img src="https://dummyimage.com/600x400/0086C3/3ee6e0.png" alt="" />
+                        <img src="https://imgplaceholder.com/600x400/transparent/ffffff?font-family=Roboto_Bold" alt="" />
                     </Block>
                     <Block>
-                        <img src="https://dummyimage.com/600x800/0086C3/3ee6e0.png" alt="" />
+                        <img src="https://imgplaceholder.com/600x800/transparent/ffffff?font-family=Roboto_Bold" alt="" />
                     </Block>
                 </Col>
                 <Col md={18} >

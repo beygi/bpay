@@ -21,6 +21,7 @@ import "./style.less";
 
 interface IProps {
     match?: any;
+    theme?: string;
 }
 
 interface IState {
@@ -70,6 +71,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                     </Block>
                 </Col>
                 <Col md={14} >
+
                     <Row gutter={8}>
                         <Col md={24} >
                             <Block>
@@ -82,18 +84,34 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                             </Block>
                         </Col> */}
                     </Row>
-                    <Block className="trading-view" transparent noPadding >
-                        <TradingViewWidget
-                            symbol={`${this.state.fromSymbol}${this.state.toSymbol}`}
-                            theme={Themes.LIGHT}
-                            autosize
-                        />
-                    </Block>
-                    <Block className="place-order">
-                        <PlaceOrder fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
-                    </Block>
+
+                    <Row gutter={8}>
+                        <Col md={24} >
+                            <Block className="trading-view" noPadding >
+                                <TradingViewWidget
+                                    symbol={`${this.state.fromSymbol}${this.state.toSymbol}`}
+                                    theme={(this.props.theme === "light") ? Themes.LIGHT : Themes.DARK}
+                                    autosize
+                                    style={2}
+                                    allow_symbol_change={false}
+                                />
+                            </Block>
+                        </Col>
+                        <Col md={24} >
+                            <Block className="place-order" transparent noPadding >
+                                <PlaceOrder fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
+                            </Block>
+                        </Col>
+                    </Row>
+
                 </Col>
                 <Col md={5} >
+                    <Block title={t.t("Live prices")} icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
+                        <Live />
+                    </Block>
+                    <Block title={t.t("Live prices")} icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
+                        <Live />
+                    </Block>
                     <Block title={t.t("Live prices")} icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
                         <Live />
                     </Block>
@@ -103,4 +121,10 @@ class ExchangeContainer extends React.Component<IProps, IState> {
     }
 }
 
-export default ExchangeContainer;
+function mapStateToProps(state: IRootState) {
+    return {
+        theme: state.app.user.theme,
+    };
+}
+
+export default connect(mapStateToProps, null, null)(ExchangeContainer);

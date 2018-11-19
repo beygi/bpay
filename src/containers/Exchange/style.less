@@ -1,6 +1,48 @@
 @import (reference) "../../theme/application";
 .trading-view
 {
-    height: 489px !important;
-    margin-bottom: 7px; 
+    height: 350px !important;
+}
+.exchange-page
+{
+    .ant-tabs-nav .ant-tabs-tab
+    {
+        color : @primaryLightColor;
+        &:hover
+        {
+            color : @secondaryTextColor;
+        }
+    }
+    .ant-tabs-content
+    {
+        padding: 0;
+    }
+    .ant-tabs-nav .ant-tabs-tab
+    {
+        padding: 6px 8px;
+    }
+    .ant-layout-content
+    {
+        background-color: @secondaryVariant9;
+        margin: 0;
+        padding: 8px;
+    }
+    .ant-layout
+    {
+    }
+    .transparent
+    {
+        border : none !important;
+    }
+    .block
+    {
+        border-radius: 0px;
+        margin-bottom: 8px;
+        padding: 5px;
+        .block-title {
+            font-size: 15px;
+            margin-bottom: $font-size;
+            font-weight: bold;
+        }
+    }
 }
