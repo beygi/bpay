@@ -131,9 +131,49 @@
     .ant-form-item-required::before {
         color: @hot-storage;
     }
+    
+    .deposit-coin-select a h2
+    {
+        background-color: darken(@dark-bk,13%);
+        &:hover
+        {
+            background-color: lighten(@dark-bk,15%) !important;
+        }
+    }
+    .deposit-coin-select
+    {
+            background-color: @dark-bk;
+    }
+    .deposite-balance .ant-list-item
+    {
+        background-color: @dark-menu;
+        border : 1px solid @dark-block-color !important;
+    }
+    .ant-input
+    {
+        border-color : @dark-button;
+    }
+    .ant-alert-with-description.ant-alert-warning
+    {
+            background: @dark-warning;
+    }
+    .ant-alert-with-description.ant-alert-info
+    {
+        background: @dark-menu;
+        border: 1px solid lighten(@dark-menu, 30%);
+    }
+    .ant-radio-button-wrapper, .ant-radio-button-wrapper:first-child
+    {
+        border-color: lighten(@dark-bk,30%);
+    }
+    .ant-radio-button-wrapper:not(:first-child)::before {
+        background-color: transparent;
+    }
+    .ant-form-explain
+    {
+        color : lighten(@hot-storage,10%) !important;
+    }
 }
-
-.neat-btn {}
 
 .ant-btn {
     svg {
