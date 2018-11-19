@@ -156,7 +156,7 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                     <Tooltip placement="bottom" title={t.t("Logout")}>
                         <Icon type="logout" onClick={this.logOut} />
                     </Tooltip>
-                    <Tooltip placement="bottom" title={(this.props.theme === "light") ? t.t("Night mode: off") : "Night mode: on"}>
+                    <Tooltip placement="bottom" title={(this.props.theme === "light") ? t.t("Night mode: off") : t.t("Night mode: on")}>
                         <span className={`anticon anticon-${this.props.theme}`} onClick={this.changeTheme}>
                             {
                                 (this.props.theme === "light") ?
