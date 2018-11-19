@@ -39,10 +39,18 @@ interface IState {
 class AppContainer extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
+        if (store.getState().app.user && store.getState().app.user.language && t.default.language !== store.getState().app.user.language) {
+            document.body.dir = Languages[store.getState().app.user.language].dir;
+            t.changeLanguage(store.getState().app.user.language, () => {
+                this.forceUpdate();
+            });
+        } else {
+            document.body.dir = Config.language.dir;
+            store.dispatch(updateUser({ language: Config.language.codeName, theme: "light" }));
+        }
     }
 
     public componentDidMount() {
-        document.body.dir = Config.language.dir;
         if (DEPLOY_TYPE === "sandbox") {
             document.body.style.backgroundColor = "rgb(154, 189, 154)";
         }
