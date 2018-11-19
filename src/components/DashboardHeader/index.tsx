@@ -27,13 +27,13 @@ const userObject = USER.getInstance();
 
 interface IProps {
     /** email address of curren user */
-    userEmail?: any;
+    userEmail: any;
 
     /** current browser path we use it to find proper icon and title of the page */
-    path?: any;
+    path: any;
 
     /** current ui theme which is binded to redux */
-    theme?: any;
+    theme: any;
 
     /** logout function which is binded to a redux function */
     logOut?: () => void;
@@ -185,8 +185,9 @@ function mapStateToProps(state: IRootState) {
     return {
         userEmail: state.app.user.email,
         theme: state.app.user.theme,
+        language: state.app.user.language,
         path: state.router.location.pathname,
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, null)(DashboardHeaderComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardHeaderComponent);
