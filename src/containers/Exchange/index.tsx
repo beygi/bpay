@@ -21,6 +21,7 @@ import "./style.less";
 
 interface IProps {
     match?: any;
+    theme?: string;
 }
 
 interface IState {
@@ -89,7 +90,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                             <Block className="trading-view" noPadding >
                                 <TradingViewWidget
                                     symbol={`${this.state.fromSymbol}${this.state.toSymbol}`}
-                                    theme={Themes.DARK}
+                                    theme={(this.props.theme === "light") ? Themes.LIGHT : Themes.DARK}
                                     autosize
                                     style={2}
                                     allow_symbol_change={false}
@@ -120,4 +121,10 @@ class ExchangeContainer extends React.Component<IProps, IState> {
     }
 }
 
-export default ExchangeContainer;
+function mapStateToProps(state: IRootState) {
+    return {
+        theme: state.app.user.theme,
+    };
+}
+
+export default connect(mapStateToProps, null, null)(ExchangeContainer);
