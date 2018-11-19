@@ -7,6 +7,8 @@ import * as React from "react";
 import DashboardHeaderComponent from "./../../../DashboardHeader";
 import DashboardMenuComponent from "./../../../DashboardMenu";
 
+import { connect } from "react-redux";
+import { IRootState } from "../../../../redux/reducers";
 import "./style.less";
 
 const { Sider, Content } = Layout;
@@ -16,6 +18,8 @@ interface IProps {
     children: JSX.Element;
     /** specify admin status */
     isAdmin: boolean;
+    /** specify dark or light theme, read from redux */
+    theme?: string;
 }
 
 interface IState {
@@ -26,7 +30,7 @@ interface IState {
 /**
  * private layout to represent pages that needs a loggined user
  */
-export default class DashboardPrivateLayout extends React.Component<IProps, IState> {
+class DashboardPrivateLayout extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
 
@@ -59,7 +63,7 @@ export default class DashboardPrivateLayout extends React.Component<IProps, ISta
             AdminClass = "admin-menu " + this.state.menuClass;
         }
         return (
-            <Layout className={`${AdminClass} ${this.props.children.props.location.pathname.split("/")[1]}-page dark`} style={{ minHeight: "100vh" }}>
+            <Layout className={`${AdminClass} ${this.props.children.props.location.pathname.split("/")[1]}-page ${this.props.theme}`} style={{ minHeight: "100vh" }}>
                 <DashboardMenuComponent isAdmin={this.props.isAdmin} />
                 <Layout id="privateContent" className="private-content">
                     <DashboardHeaderComponent isAdmin={this.props.isAdmin} />
@@ -77,3 +81,11 @@ export default class DashboardPrivateLayout extends React.Component<IProps, ISta
         });
     }
 }
+
+function mapStateToProps(state: IRootState) {
+    return {
+        theme: state.app.user.theme,
+    };
+}
+
+export default connect(mapStateToProps, null, null, { pure: false })(DashboardPrivateLayout);

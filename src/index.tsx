@@ -45,7 +45,7 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
             const mobile = _.get(user.keycloak, "profile.attributes.mobile[0]", "");
 
             // set user in store
-            store.dispatch(updateUser({ ...userData, token: user.keycloak.token, apiKey, mobile }));
+            store.dispatch(updateUser({ ...userData, token: user.keycloak.token, apiKey, mobile, theme: "light" }));
 
             // set user in user object because it has an instance now
             user.setUser(userData);
