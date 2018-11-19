@@ -289,4 +289,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(Form.create()(Settle));
+export default connect(mapStateToProps, mapDispatchToProps)(Form.create()(Settle));

@@ -70,12 +70,14 @@ function mapStateToProps(state: IRootState) {
     if (state.app.market && state.app.market.cryptos !== undefined) {
         return {
             cryptos: state.app.market.cryptos,
+            language: state.app.user.language,
         };
     }
     // there is no balance from redux, state must not be updated in getDerivedStateFromProps
     return {
         cryptos: null,
+        language: state.app.user.language,
     };
 }
 
-export default connect(mapStateToProps, null, null, { pure: false })(LiveComponent);
+export default connect(mapStateToProps)(LiveComponent);

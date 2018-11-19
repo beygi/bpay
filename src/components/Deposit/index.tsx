@@ -173,12 +173,14 @@ function mapStateToProps(state: IRootState) {
     if (state.app.user.balance !== undefined) {
         return {
             balance: state.app.user.balance,
+            language: state.app.user.language,
         };
     }
     // there is no balance from redux, state must not be updated in getDerivedStateFromProps
     return {
         balance: null,
+        language: state.app.user.language,
     };
 }
 
-export default connect(mapStateToProps, null, null, { pure: false })(DepositComponent);
+export default connect(mapStateToProps)(DepositComponent);

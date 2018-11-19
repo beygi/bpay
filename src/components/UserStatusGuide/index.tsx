@@ -70,4 +70,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps, null, null, { pure: false })(UserStatusGuideComponent);
+export default connect(mapStateToProps)(UserStatusGuideComponent);

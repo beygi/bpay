@@ -146,4 +146,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(Unsettled);
+export default connect(mapStateToProps, mapDispatchToProps)(Unsettled);

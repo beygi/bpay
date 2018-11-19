@@ -130,12 +130,14 @@ function mapStateToProps(state: IRootState) {
     if (state.app.user.history !== undefined) {
         return {
             history: state.app.user.history,
+            language: state.app.user.language,
         };
     }
     // there is no balance from redux, state must not be updated in getDerivedStateFromProps
     return {
         history: null,
+        language: state.app.user.language,
     };
 }
 
-export default connect(mapStateToProps, null, null, { pure: false })(DespositHistoryComponent);
+export default connect(mapStateToProps)(DespositHistoryComponent);
