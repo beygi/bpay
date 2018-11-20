@@ -69,8 +69,8 @@ msgid "After making a deposit, you can track its progress on the history page."
 msgstr "بعد از انجام واریز میتوانید روند اجرای آن را در ستون سمت چپ مشاهده کنید."
 
 #: src/components/LimitedPlaceOrder/index.tsx:153
-#: src/components/Settle/index.tsx:114 src/components/Settle/index.tsx:135
-#: src/components/SettleUps/index.tsx:98
+#: src/components/MarketTrades/index.tsx:70 src/components/Settle/index.tsx:114
+#: src/components/Settle/index.tsx:135 src/components/SettleUps/index.tsx:98
 msgid "Amount"
 msgstr "مقدار"
 
@@ -179,7 +179,7 @@ msgid "Deposit"
 msgstr "شارژ حساب"
 
 #: src/containers/Dashboard/index.tsx:125 src/containers/Deposit/index.tsx:53
-#: src/containers/Exchange/index.tsx:69
+#: src/containers/Exchange/index.tsx:70
 msgid "Deposit history"
 msgstr "تاریخچهٔ مبالغ واریزی"
 
@@ -346,7 +346,7 @@ msgid "Litecoin"
 msgstr "لایت کوین"
 
 #: src/containers/Dashboard/index.tsx:120 src/containers/Deposit/index.tsx:39
-#: src/containers/Exchange/index.tsx:109
+#: src/containers/Exchange/index.tsx:110
 msgid "Live prices"
 msgstr "قیمت زنده"
 
@@ -555,6 +555,7 @@ msgstr "صفحه قبل"
 
 #: src/components/Invoice/index.tsx:58
 #: src/components/LimitedPlaceOrder/index.tsx:135
+#: src/components/MarketTrades/index.tsx:63
 msgid "Price"
 msgstr "قیمت"
 
@@ -678,6 +679,10 @@ msgstr "داده ای برای نمایش وجود ندارد"
 msgid "this is the sandbox enviroment , you can test your payments here, all transactions will be done using bitcoin test network not real network."
 msgstr "این محیط تنها برای آزمایش پرداخت توسط توسعه دهندگان ایجاد شده است. تمامی پرداخت ها در این محیط در بستر تست شبکه بلاکچین صورت میگیرد و رمز‌ارز واقعی تبادل نمیشود."
 
+#: src/components/MarketTrades/index.tsx:55
+msgid "Time"
+msgstr "زمان"
+
 #: src/components/Deposit/index.tsx:132
 msgid "to this walelt sending anyother coin may result loss of your deposit"
 msgstr "را به این کیف پول ارسال کنید. ارسال سایر رمز ارزها به این کیف پول ممکن است باعث از دست رفتن آنها شود"
@@ -695,7 +700,7 @@ msgstr "مجموع:"
 msgid "Tracking code"
 msgstr "شماره رهگیری"
 
-#: src/containers/Exchange/index.tsx:112
+#: src/containers/Exchange/index.tsx:113
 msgid "Trades"
 msgstr "معاملات"
 
@@ -765,7 +770,7 @@ msgid "your {coin} balance:"
 msgstr "بالانس حساب {coin} شما:"
 
 #: src/containers/Dashboard/index.tsx:115 src/containers/Deposit/index.tsx:36
-#: src/containers/Exchange/index.tsx:66
+#: src/containers/Exchange/index.tsx:67
 msgid "Your balance"
 msgstr "بالانس حساب شما"
 

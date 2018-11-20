@@ -2,24 +2,28 @@
  * @module Components/MarketTrades
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Collapse } from "antd";
+import { Collapse, Table } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
 import Ex from "../../components/ExchangeValue";
 import config from "../../config";
 import { IRootState } from "../../redux/reducers";
-import t from "../../services/trans/i18n";
+import t, { localDate } from "../../services/trans/i18n";
 import "./style.less";
 
 interface IProps {
+    /**  from symbol */
+    from: string;
+    /**  to symbol */
+    to: string;
     /** crypto currencies exchange data from redux store */
-    cryptos: {};
+    trades: [];
 }
 
 interface IState {
     /** crypto currencies exchange data */
-    cryptos: any[];
+    trades: any[];
 }
 
 /**
@@ -29,8 +33,8 @@ class MarketTradesComponent extends React.Component<IProps, IState> {
 
     public static getDerivedStateFromProps(props) {
         // update state.balance when props changes by redux4
-        if (props.cryptos !== null) {
-            return { cryptos: _.sortBy(props.cryptos, ["rank"]) };
+        if (props.trades !== null) {
+            return { trades: props.trades[`${props.from}-${props.to}`] };
         }
         return null;
     }
@@ -39,43 +43,63 @@ class MarketTradesComponent extends React.Component<IProps, IState> {
         super(props);
         // initial coin state. it must be available in config file
         this.state = {
-            cryptos: null,
+            trades: null,
         };
     }
 
     public render() {
-        let coins: any = <div>Loading ...</div>;
-        if (this.state.cryptos) {
-            coins = this.state.cryptos.map((coin) => {
-                const btcPrice: number = _.round(parseFloat(coin.quotes.BTC.price), 6) || 0;
-                const usdPrice: number = _.round(parseFloat(coin.quotes.USD.price), 2) || 0;
-                return (
-                    <div className="coin-balance" key={coin.symbol}>
-                        <i className={`live-icon cc ${coin.symbol}-alt`}></i>
-                        <span className="balance-name">{t.t(coin.name)}</span>
-                        <p className="balance-number usd">$<Ex value={usdPrice} /></p>
-                        <p className="balance-number"><i className={"cc BTC-alt"}></i><Ex value={btcPrice} fixFloatNum={6} /></p>
+        const trades: any = <div>Loading ...</div>;
+        const pDate = localDate(t.default.language);
+        const columns = [
+            {
+                title: t.t("Time"),
+                dataIndex: "time",
+                render: (date) => {
+                    const TimeStamp = +new Date(date);
+                    const tradeDate = new pDate(TimeStamp);
+                    return (<div className="time"><Ex fixFloatNum={0} value={tradeDate.getHours()}
+                        stockStyle={false} />:<Ex fixFloatNum={0} value={tradeDate.getMinutes()} stockStyle={false} />
                     </div>);
+                },
             },
+            {
+                title: t.t("Price"),
+                dataIndex: "price",
+                render: (price) => (
+                    <Ex fixFloatNum={2} value={price} seperateThousand />
+                ),
+            },
+            {
+                title: t.t("Amount"),
+                dataIndex: "amount",
+                render: (price) => (
+                    <Ex stockStyle={false} fixFloatNum={2} value={price} seperateThousand />
+                ),
+            },
+        ];
+        if (this.state.trades) {
+            return (
+                <Table pagination={false} size="small" rowKey={(recordm, i) => i}
+                    className="market-trades" dataSource={this.state.trades} columns={columns}>
+                </Table>
             );
         }
-
         return (
-            <div className="user-balance live-price" > {coins}</div >
+            <div className="user-balance live-price" > {trades}</div >
         );
     }
 }
 
 function mapStateToProps(state: IRootState) {
-    if (state.app.market && state.app.market.cryptos !== undefined) {
+    if (state.app.market && state.app.market.trades !== undefined) {
         return {
-            cryptos: state.app.market.cryptos,
+            trades: state.app.market.trades,
             language: state.app.user.language,
         };
     }
     // there is no balance from redux, state must not be updated in getDerivedStateFromProps
     return {
-        cryptos: null,
+        trades: null,
         language: state.app.user.language,
     };
 }

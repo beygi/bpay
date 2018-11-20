@@ -1,25 +1,30 @@
 @import (reference) "../../theme/application";
-.live-price
+.market-trades
 {
-    .coin-balance
+    .ant-table,th
     {
-       display:flex;
-       align-items:center;
-       border-bottom: 1px solid @palette-high;
-       &:last-child
-       {
-           border-bottom: none;
-       }
-       padding: 4px 0px;
-       .balance-number.usd
-       {
-               padding-left: 10px;
-       }
+    background-color: transparent;
+    border: none;
     }
-}
-.live-icon
-{
-    margin-right: 7px;
-    margin-left: 7px;
-    font-size: 20px;
+    th
+     {
+    background: transparent !important;
+    color : @secondaryTextColor !important;    
+    text-align: left !important;
+    }
+    .ant-table-tbody > tr > td
+    {
+        border-bottom: none;   
+        text-align: left;
+        padding: 0px !important;
+    }
+    .time
+    {
+        color : @secondaryTextColor !important;    
+    }
+    .exchange-value.normal
+    {
+        color : @secondaryTextColor !important;    
+    }
+    
 }

@@ -30,7 +30,7 @@ export default class Seeder {
         setInterval(() => { this.setMarket(); }, 10000);
         setInterval(() => { this.setForex(); }, 60000);
         setInterval(() => { this.setOffice(); }, 1000);
-        setInterval(() => { this.setTrades(); }, 5000);
+        setInterval(() => { this.setTrades(); }, 1000);
     }
 
     public setTrades() {
@@ -48,16 +48,27 @@ export default class Seeder {
         const trades = {};
         availableMarkets.forEach((market) => {
             trades[market] = _.get(store.getState(), `app.market.trades.${market}`,
-                Array.from({ length: 10 }, () => _.random(0.9995, 1.0005) * (tools.getPrice(market.split("-")[0], market.split("-")[1]))));
-
+                Array.from({ length: 20 }, () => {
+                    return {
+                        amount: _.random(0.1, 8.0),
+                        time: _.now(),
+                        price: _.random(0.9995, 1.0005) * (tools.getPrice(market.split("-")[0], market.split("-")[1])),
+                    };
+                }),
+            );
         });
 
         // change last value
         Object.keys(trades).map((market) => {
             trades[market].pop();
-            trades[market].unshift(_.random(0.9995, 1.0005) * trades[market][0]);
+            trades[market].unshift(
+                {
+                    amount: _.random(0.1, 8),
+                    time: _.now(),
+                    price: _.random(0.9995, 1.0005) * trades[market][0].price,
+                },
+            );
         });
-        console.log(trades);
         store.dispatch(updateMarketTrades(trades));
     }
 

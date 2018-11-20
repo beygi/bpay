@@ -113,7 +113,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                     <Block title={<div>{`${t.t("Trades")}`}
                         <span className="subtitle"> {`${t.t(config.currencies[this.state.fromSymbol].name)} / ${t.t(config.currencies[this.state.toSymbol].name)}`}</span></div>}
                         icon={<FontAwesomeIcon icon={["fas", "list"]} />} iconPosition="right" >
-                        <MarketTrades />
+                        <MarketTrades from={this.state.fromSymbol} to={this.state.toSymbol} />
                     </Block>
                 </Col>
             </Row >
