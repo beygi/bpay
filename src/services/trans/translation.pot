@@ -59,7 +59,7 @@ msgid "After making a deposit, you can track its progress on the history page."
 msgstr ""
 
 #: src/components/LimitedPlaceOrder/index.tsx:153
-#: src/components/MarketTrades/index.tsx:70
+#: src/components/MarketTrades/index.tsx:73
 #: src/components/Settle/index.tsx:114
 #: src/components/Settle/index.tsx:135
 #: src/components/SettleUps/index.tsx:98
@@ -556,7 +556,7 @@ msgstr ""
 
 #: src/components/Invoice/index.tsx:58
 #: src/components/LimitedPlaceOrder/index.tsx:135
-#: src/components/MarketTrades/index.tsx:63
+#: src/components/MarketTrades/index.tsx:66
 msgid "Price"
 msgstr ""
 

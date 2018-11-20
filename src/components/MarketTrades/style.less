@@ -17,6 +17,20 @@
         border-bottom: none;   
         text-align: left;
         padding: 0px !important;
+        &:hover
+        {
+            background-color: transparent;
+        }
+    }
+    .ant-table-tbody > tr
+    {
+        &:hover
+        {
+        
+            td{
+                background-color: fade(@secondaryTextColor, 10%);
+            }    
+        }
     }
     .time
     {
