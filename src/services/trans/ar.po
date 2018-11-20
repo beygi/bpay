@@ -32,7 +32,7 @@ msgstr ""
 msgid "24h Low"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:152
+#: src/components/DashboardHeader/index.tsx:155
 msgid "Account information"
 msgstr ""
 
@@ -167,13 +167,13 @@ msgstr "التاريخ"
 msgid "Date and time"
 msgstr "الوقت الباقي"
 
-#: src/components/Balance/index.tsx:113
+#: src/components/Balance/index.tsx:116
 #: src/components/DashboardMenu/menu.tsx:46
 msgid "Deposit"
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:125 src/containers/Deposit/index.tsx:53
-#: src/containers/Exchange/index.tsx:68
+#: src/containers/Exchange/index.tsx:69
 msgid "Deposit history"
 msgstr ""
 
@@ -340,8 +340,7 @@ msgid "Litecoin"
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:120 src/containers/Deposit/index.tsx:39
-#: src/containers/Exchange/index.tsx:108 src/containers/Exchange/index.tsx:111
-#: src/containers/Exchange/index.tsx:114
+#: src/containers/Exchange/index.tsx:109
 msgid "Live prices"
 msgstr ""
 
@@ -358,7 +357,7 @@ msgstr ""
 msgid "Login Password"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:156
+#: src/components/DashboardHeader/index.tsx:159
 #: src/components/DashboardHeaderProfile/index.tsx:69
 msgid "Logout"
 msgstr ""
@@ -390,7 +389,7 @@ msgstr "معرف الفاتورة"
 msgid "New Invoice Created"
 msgstr "معرف الفاتورة"
 
-#: src/components/DashboardHeader/index.tsx:141
+#: src/components/DashboardHeader/index.tsx:144
 msgid "New version available , click for update"
 msgstr ""
 
@@ -398,11 +397,11 @@ msgstr ""
 msgid "Next Page"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:159
+#: src/components/DashboardHeader/index.tsx:162
 msgid "Night mode: off"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:159
+#: src/components/DashboardHeader/index.tsx:162
 msgid "Night mode: on"
 msgstr ""
 
@@ -670,7 +669,7 @@ msgstr ""
 msgid "Symbol"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:133
+#: src/components/DashboardHeader/index.tsx:136
 msgid "System Administration"
 msgstr ""
 
@@ -708,6 +707,10 @@ msgstr ""
 msgid "Tracking code"
 msgstr ""
 
+#: src/containers/Exchange/index.tsx:112
+msgid "Trades"
+msgstr ""
+
 #: src/components/Transactions/index.tsx:148
 msgid "Transactions"
 msgstr ""
@@ -725,7 +728,7 @@ msgstr ""
 msgid "USD"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:123
+#: src/components/DashboardHeader/index.tsx:126
 msgid "User Dashboard"
 msgstr ""
 
@@ -775,7 +778,7 @@ msgid "your {coin} balance:"
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:115 src/containers/Deposit/index.tsx:36
-#: src/containers/Exchange/index.tsx:65
+#: src/containers/Exchange/index.tsx:66
 msgid "Your balance"
 msgstr ""
 

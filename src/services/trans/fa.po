@@ -40,7 +40,7 @@ msgstr "بیشترین در ۲۴ ساعت"
 msgid "24h Low"
 msgstr "کمترین در ۲۴ ساعت"
 
-#: src/components/DashboardHeader/index.tsx:152
+#: src/components/DashboardHeader/index.tsx:155
 msgid "Account information"
 msgstr "اطلاعات حساب"
 
@@ -173,13 +173,13 @@ msgstr "تاریخ"
 msgid "Date and time"
 msgstr "تاریخ و زمان پرداخت"
 
-#: src/components/Balance/index.tsx:113
+#: src/components/Balance/index.tsx:116
 #: src/components/DashboardMenu/menu.tsx:46
 msgid "Deposit"
 msgstr "شارژ حساب"
 
 #: src/containers/Dashboard/index.tsx:125 src/containers/Deposit/index.tsx:53
-#: src/containers/Exchange/index.tsx:68
+#: src/containers/Exchange/index.tsx:69
 msgid "Deposit history"
 msgstr "تاریخچهٔ مبالغ واریزی"
 
@@ -346,8 +346,7 @@ msgid "Litecoin"
 msgstr "لایت کوین"
 
 #: src/containers/Dashboard/index.tsx:120 src/containers/Deposit/index.tsx:39
-#: src/containers/Exchange/index.tsx:108 src/containers/Exchange/index.tsx:111
-#: src/containers/Exchange/index.tsx:114
+#: src/containers/Exchange/index.tsx:109
 msgid "Live prices"
 msgstr "قیمت زنده"
 
@@ -363,7 +362,7 @@ msgstr "ورود"
 msgid "Login Password"
 msgstr "رمز عبور"
 
-#: src/components/DashboardHeader/index.tsx:156
+#: src/components/DashboardHeader/index.tsx:159
 #: src/components/DashboardHeaderProfile/index.tsx:69
 msgid "Logout"
 msgstr "خروج"
@@ -393,7 +392,7 @@ msgstr "فاکتور جدید"
 msgid "New Invoice Created"
 msgstr "فاکتور جدید با موفقیت ایجاد شد"
 
-#: src/components/DashboardHeader/index.tsx:141
+#: src/components/DashboardHeader/index.tsx:144
 msgid "New version available , click for update"
 msgstr "نسخهٔ جدیدی از نرم افزار هم اکنون منتشر شده است. برای به روز رسانی کلیک کنید"
 
@@ -401,11 +400,11 @@ msgstr "نسخهٔ جدیدی از نرم افزار هم اکنون منتشر 
 msgid "Next Page"
 msgstr "صفحه بعد"
 
-#: src/components/DashboardHeader/index.tsx:159
+#: src/components/DashboardHeader/index.tsx:162
 msgid "Night mode: off"
 msgstr "حالت شب: خاموش"
 
-#: src/components/DashboardHeader/index.tsx:159
+#: src/components/DashboardHeader/index.tsx:162
 msgid "Night mode: on"
 msgstr "حالت شب: روشن"
 
@@ -658,7 +657,7 @@ msgstr "پشتیبانی"
 msgid "Symbol"
 msgstr "نماد"
 
-#: src/components/DashboardHeader/index.tsx:133
+#: src/components/DashboardHeader/index.tsx:136
 msgid "System Administration"
 msgstr "مدیریت سیستم"
 
@@ -696,6 +695,10 @@ msgstr "مجموع:"
 msgid "Tracking code"
 msgstr "شماره رهگیری"
 
+#: src/containers/Exchange/index.tsx:112
+msgid "Trades"
+msgstr "معاملات"
+
 #: src/components/Transactions/index.tsx:148
 msgid "Transactions"
 msgstr "تراکنش ها"
@@ -713,7 +716,7 @@ msgstr "مستندات خود را بارگذاری کنید"
 msgid "USD"
 msgstr "دلار آمریکا"
 
-#: src/components/DashboardHeader/index.tsx:123
+#: src/components/DashboardHeader/index.tsx:126
 msgid "User Dashboard"
 msgstr "داشبورد کاربر"
 
@@ -762,7 +765,7 @@ msgid "your {coin} balance:"
 msgstr "بالانس حساب {coin} شما:"
 
 #: src/containers/Dashboard/index.tsx:115 src/containers/Deposit/index.tsx:36
-#: src/containers/Exchange/index.tsx:65
+#: src/containers/Exchange/index.tsx:66
 msgid "Your balance"
 msgstr "بالانس حساب شما"
 
