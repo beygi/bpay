@@ -69,18 +69,12 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
     public componentDidUpdate(prevProps) {
         // Typical usage (don't forget to compare props):
         if (this.props.fromSymbol !== prevProps.fromSymbol || this.props.toSymbol !== prevProps.toSymbol) {
-            let floatNumbers = 2;
-            if (this.props.toSymbol === "IRR") {
-                floatNumbers = 0;
-            }
-            if (this.props.toSymbol === "BTC" || this.props.toSymbol === "ETH") {
-                floatNumbers = 4;
-            }
+            const priceFloatedNums = config.marketsOptions[`${this.props.fromSymbol}:${this.props.toSymbol}`].priceFloatedNums;
             this.props.form.setFieldsValue({
-                price: _.round(Tools.getPrice(this.props.fromSymbol, this.props.toSymbol), floatNumbers),
+                price: _.round(Tools.getPrice(this.props.fromSymbol, this.props.toSymbol), priceFloatedNums),
                 amount: 1,
             });
-            this.setState({ total: _.round(Tools.getPrice(this.props.fromSymbol, this.props.toSymbol), floatNumbers) });
+            this.setState({ total: _.round(Tools.getPrice(this.props.fromSymbol, this.props.toSymbol), priceFloatedNums) });
         }
     }
 
@@ -116,25 +110,17 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
     }
 
     public render() {
-        let step = 0.1;
-        let floatNumbers = 2;
-        if (this.props.toSymbol === "IRR") {
-            step = 10000;
-            floatNumbers = 0;
-        }
-        if (this.props.toSymbol === "BTC" || this.props.toSymbol === "ETH") {
-            step = 0.001;
-            floatNumbers = 4;
-        }
-
         const { getFieldDecorator } = this.props.form;
+        const priceStep = config.marketsOptions[`${this.props.fromSymbol}:${this.props.toSymbol}`].priceStep;
+        const amountStep = config.marketsOptions[`${this.props.fromSymbol}:${this.props.toSymbol}`].amountStep;
+        const priceFloatedNums = config.marketsOptions[`${this.props.fromSymbol}:${this.props.toSymbol}`].priceFloatedNums;
         return (
             <Block className="limited-place-order">
                 <h3>{t.t(`${this.state.type} `) + t.t(config.currencies[this.props.fromSymbol].name)}</h3>
                 <Form onSubmit={this.handleSubmit} className="limited-form">
                     <FormItem {...formItemLayout} label={t.t("Price")}>
                         {getFieldDecorator("price", {
-                            initialValue: _.round(Tools.getPrice(this.props.fromSymbol, this.props.toSymbol), floatNumbers),
+                            initialValue: _.round(Tools.getPrice(this.props.fromSymbol, this.props.toSymbol), priceFloatedNums),
                             rules: [{
                                 required: true,
                                 validator: this.checkPrice,
@@ -144,7 +130,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                                 placeholder={this.props.toSymbol}
                                 min={0}
                                 max={10000000000}
-                                step={step}
+                                step={priceStep}
                                 onChange={this.handlePriceChange}
                                 formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                             />,
@@ -163,13 +149,30 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                                 placeholder={this.props.fromSymbol}
                                 min={0}
                                 max={10000000000}
+                                step={amountStep}
                                 formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                             />,
                         )}
                     </FormItem>
                     <FormItem {...formItemLayout} label={t.t("Total")}>
-                        <Ex fixFloatNum={floatNumbers} value={this.state.total || 0} stockStyle={false} /> {t.t(this.props.toSymbol)}
+                        {getFieldDecorator("total", {
+                            initialValue: this.state.total || 0,
+                            rules: [{
+                                required: true,
+                                validator: this.checkPrice,
+                            }],
+                        })(
+                            <InputNumber
+                                placeholder={this.props.fromSymbol}
+                                min={0}
+                                max={10000000000}
+                                formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                            />,
+                        )}
                     </FormItem>
+                    {/* <FormItem {...formItemLayout} label={t.t("Total")}>
+                        <Ex fixFloatNum={floatNumbers} value={this.state.total || 0} stockStyle={false} /> {t.t(this.props.toSymbol)}
+                    </FormItem> */}
                     <FormItem>
                         <Button className={`${this.props.type}-btn`} type="primary" htmlType="submit" >
                             {t.t(`${this.state.type} `) + t.t(config.currencies[this.props.fromSymbol].name)}
