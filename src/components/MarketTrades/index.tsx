@@ -50,6 +50,7 @@ class MarketTradesComponent extends React.Component<IProps, IState> {
     public render() {
         const trades: any = <div>Loading ...</div>;
         const pDate = localDate(t.default.language);
+        const priceFloatedNums = config.marketsOptions[`${this.props.from}:${this.props.to}`].priceFloatedNums;
         const columns = [
             {
                 title: t.t("Time"),
@@ -66,7 +67,7 @@ class MarketTradesComponent extends React.Component<IProps, IState> {
                 title: t.t("Price"),
                 dataIndex: "price",
                 render: (price) => (
-                    <Ex fixFloatNum={2} value={price} seperateThousand />
+                    <Ex fixFloatNum={priceFloatedNums} value={price} seperateThousand />
                 ),
             },
             {
@@ -79,7 +80,7 @@ class MarketTradesComponent extends React.Component<IProps, IState> {
         ];
         if (this.state.trades) {
             return (
-                <Table pagination={false} size="small" rowKey={(recordm, i) => i}
+                <Table pagination={false} size="small" rowKey={(record, i) => `${i}`}
                     className="market-trades" dataSource={this.state.trades} columns={columns}>
                 </Table>
             );
