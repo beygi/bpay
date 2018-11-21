@@ -35,8 +35,13 @@ interface IPlaceProps extends FormComponentProps {
 }
 
 interface IState {
-    /** holds total value of order */
+    /** holds total value of the order */
     total?: number;
+    /** holds price value of the order */
+    price?: number;
+    /** holds amount value of the order */
+    amount?: number;
+    /** holds order type, buy or sell */
     type?: string;
 }
 
@@ -48,24 +53,28 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
     constructor(props: IPlaceProps) {
         super(props);
         const priceFloatedNums = config.marketsOptions[`${this.props.fromSymbol}:${this.props.toSymbol}`].priceFloatedNums;
+        const currentPrice = _.round(Tools.getPrice(this.props.fromSymbol, this.props.toSymbol), priceFloatedNums);
         this.state = {
-            total: _.round(Tools.getPrice(this.props.fromSymbol, this.props.toSymbol), priceFloatedNums),
+            total: currentPrice,
+            price: currentPrice,
             type: (this.props.type === "sell") ? t.t("Sell") : t.t("Buy"),
         };
 
         this.handlePriceChange = this.handlePriceChange.bind(this);
         this.handleAmountChange = this.handleAmountChange.bind(this);
+        this.handleTotalChange = this.handleTotalChange.bind(this);
     }
 
     public componentDidUpdate(prevProps) {
         // Typical usage (don't forget to compare props):
         if (this.props.fromSymbol !== prevProps.fromSymbol || this.props.toSymbol !== prevProps.toSymbol) {
             const priceFloatedNums = config.marketsOptions[`${this.props.fromSymbol}:${this.props.toSymbol}`].priceFloatedNums;
-            this.props.form.setFieldsValue({
-                price: _.round(Tools.getPrice(this.props.fromSymbol, this.props.toSymbol), priceFloatedNums),
-                amount: 1,
+            const currentPrice = _.round(Tools.getPrice(this.props.fromSymbol, this.props.toSymbol), priceFloatedNums);
+            this.setState({
+                total: currentPrice,
+                price: currentPrice,
+                amount: 2,
             });
-            this.setState({ total: _.round(Tools.getPrice(this.props.fromSymbol, this.props.toSymbol), priceFloatedNums) });
         }
     }
 
@@ -93,11 +102,28 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
     }
 
     public handlePriceChange(value, floats) {
-        this.setState({ total: _.round(this.props.form.getFieldValue("amount") * value, floats) });
+        this.setState({
+            total: _.round(this.props.form.getFieldValue("amount") * value, floats),
+            price: value,
+        });
+        this.props.form.resetFields(["total"]);
     }
 
     public handleAmountChange(value, floats) {
-        this.setState({ total: _.round(this.props.form.getFieldValue("price") * value, floats) });
+        this.setState({
+            total: _.round(this.props.form.getFieldValue("price") * value, floats),
+            amount: value,
+        });
+        this.props.form.resetFields(["total"]);
+    }
+
+    public handleTotalChange(value, floats) {
+        // this.setState({ total: _.round(this.props.form.getFieldValue("price") * value, floats) });
+        this.setState({
+            amount: _.round(value / this.state.price, floats * 2),
+            total: value,
+        });
+        this.props.form.resetFields(["amount"]);
     }
 
     public render() {
@@ -111,7 +137,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                 <Form onSubmit={this.handleSubmit} className="limited-form">
                     <FormItem {...formItemLayout} label={t.t("Price")}>
                         {getFieldDecorator("price", {
-                            initialValue: _.round(Tools.getPrice(this.props.fromSymbol, this.props.toSymbol), priceFloatedNums),
+                            initialValue: this.state.price || 0,
                             rules: [{
                                 required: true,
                                 validator: this.checkPrice,
@@ -129,7 +155,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                     </FormItem>
                     <FormItem {...formItemLayout} label={t.t("Amount")}>
                         {getFieldDecorator("amount", {
-                            initialValue: 1,
+                            initialValue: this.state.amount || 1,
                             rules: [{
                                 required: true,
                                 validator: this.checkPrice,
@@ -155,6 +181,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                         })(
                             <InputNumber
                                 placeholder={this.props.fromSymbol}
+                                onChange={(value) => { this.handleTotalChange(value, priceFloatedNums); }}
                                 min={0}
                                 max={10000000000}
                                 formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
