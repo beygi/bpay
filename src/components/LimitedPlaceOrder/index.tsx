@@ -73,6 +73,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                 price: currentPrice,
                 amount: 2,
             });
+            this.props.form.resetFields(["amount", "price", "total"]);
         }
     }
 
@@ -118,7 +119,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
     public handleTotalChange(value, floats) {
         // this.setState({ total: _.round(this.props.form.getFieldValue("price") * value, floats) });
         this.setState({
-            amount: _.round(value / this.state.price, floats * 2),
+            amount: _.round(value / this.state.price, floats * 4),
             total: value,
         });
         this.props.form.resetFields(["amount"]);
@@ -131,7 +132,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
         const priceFloatedNums = config.marketsOptions[`${this.props.fromSymbol}:${this.props.toSymbol}`].priceFloatedNums;
         return (
             <Block className="limited-place-order">
-                <h3>{t.t(`${this.props.type} `) + t.t(config.currencies[this.props.fromSymbol].name)}</h3>
+                <h3>{`${t.t(this.props.type)} ` + t.t(config.currencies[this.props.fromSymbol].name)}</h3>
                 <Form onSubmit={this.handleSubmit} className="limited-form">
                     <FormItem {...formItemLayout} label={t.t("Price")}>
                         {getFieldDecorator("price", {
