@@ -13,7 +13,8 @@ import t from "../../services/trans/i18n";
 import "./style.less";
 
 const FormItem = Form.Item;
-
+// for translation purposes
+const types = [t.t("buy"), t.t("sell")];
 const formItemLayout = {
     labelCol: {
         xs: { span: 24 },
@@ -41,8 +42,6 @@ interface IState {
     price?: number;
     /** holds amount value of the order */
     amount?: number;
-    /** holds order type, buy or sell */
-    type?: string;
 }
 
 /**
@@ -57,7 +56,6 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
         this.state = {
             total: currentPrice,
             price: currentPrice,
-            type: (this.props.type === "sell") ? t.t("Sell") : t.t("Buy"),
         };
 
         this.handlePriceChange = this.handlePriceChange.bind(this);
@@ -83,8 +81,8 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 notification.success({
-                    message: t.t("{type} request").replace("{type}", this.state.type),
-                    description: t.t("{type} request places successfully").replace("{type}", this.state.type),
+                    message: t.t("{type} request").replace("{type}", t.t(this.props.type)),
+                    description: t.t("{type} request places successfully").replace("{type}", t.t(this.props.type)),
                     placement: "bottomRight",
                 });
             }
@@ -133,7 +131,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
         const priceFloatedNums = config.marketsOptions[`${this.props.fromSymbol}:${this.props.toSymbol}`].priceFloatedNums;
         return (
             <Block className="limited-place-order">
-                <h3>{t.t(`${this.state.type} `) + t.t(config.currencies[this.props.fromSymbol].name)}</h3>
+                <h3>{t.t(`${this.props.type} `) + t.t(config.currencies[this.props.fromSymbol].name)}</h3>
                 <Form onSubmit={this.handleSubmit} className="limited-form">
                     <FormItem {...formItemLayout} label={t.t("Price")}>
                         {getFieldDecorator("price", {
@@ -193,7 +191,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                     </FormItem> */}
                     <FormItem>
                         <Button className={`${this.props.type}-btn`} type="primary" htmlType="submit" >
-                            {t.t(`${this.state.type} `) + t.t(config.currencies[this.props.fromSymbol].name)}
+                            {`${t.t(this.props.type)} ` + t.t(config.currencies[this.props.fromSymbol].name)}
                         </Button>
                     </FormItem>
                 </Form>
