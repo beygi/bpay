@@ -20,11 +20,11 @@ msgstr " کارت ملی"
 msgid "{coin} Deposite address"
 msgstr "آدرس پرداخت {coin}"
 
-#: src/components/LimitedPlaceOrder/index.tsx:92
+#: src/components/LimitedPlaceOrder/index.tsx:84
 msgid "{type} request"
 msgstr "درخواست {type}"
 
-#: src/components/LimitedPlaceOrder/index.tsx:93
+#: src/components/LimitedPlaceOrder/index.tsx:85
 msgid "{type} request places successfully"
 msgstr "درخواست {type} با موفقیت ثبت شد"
 
@@ -68,8 +68,8 @@ msgstr "اضافه کردن گروه جدید"
 msgid "After making a deposit, you can track its progress on the history page."
 msgstr "بعد از انجام واریز میتوانید روند اجرای آن را در ستون سمت چپ مشاهده کنید."
 
-#: src/components/LimitedPlaceOrder/index.tsx:153
-#: src/components/MarketTrades/index.tsx:73 src/components/Settle/index.tsx:114
+#: src/components/LimitedPlaceOrder/index.tsx:154
+#: src/components/MarketTrades/index.tsx:74 src/components/Settle/index.tsx:114
 #: src/components/Settle/index.tsx:135 src/components/SettleUps/index.tsx:98
 msgid "Amount"
 msgstr "مقدار"
@@ -82,12 +82,12 @@ msgstr "مقدار وارد شده با مجموع مبلغ فاکتورهای �
 msgid "Available"
 msgstr "در دسترس"
 
-#: src/components/Unsettled/index.tsx:67
-msgid "‌Balance"
-msgstr "بالانس"
-
 #: src/components/Analysis/index.tsx:130
 msgid "Balance"
+msgstr "بالانس"
+
+#: src/components/Unsettled/index.tsx:67
+msgid "‌Balance"
 msgstr "بالانس"
 
 #: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:112
@@ -98,8 +98,8 @@ msgstr "قبل از اینکه شروع کنید"
 msgid "Bitcoin"
 msgstr "بیت کوین"
 
-#: src/components/LimitedPlaceOrder/index.tsx:62
-msgid "Buy"
+#: src/components/LimitedPlaceOrder/index.tsx:17
+msgid "buy"
 msgstr "خرید"
 
 #: src/components/ChangePassword/index.tsx:36
@@ -473,7 +473,7 @@ msgstr "لطفا شماره کارت ۱۶ رقمی مبدا را وارد کنی
 msgid "Please input description, max length is 30"
 msgstr "لطفا متن توضیحات را وارد کنید. حداکثر ۳۰ حرف"
 
-#: src/components/LimitedPlaceOrder/index.tsx:106
+#: src/components/LimitedPlaceOrder/index.tsx:98
 msgid "please input number"
 msgstr "لطفا یک عدد وارد کنید"
 
@@ -554,8 +554,8 @@ msgid "Previous Page"
 msgstr "صفحه قبل"
 
 #: src/components/Invoice/index.tsx:58
-#: src/components/LimitedPlaceOrder/index.tsx:135
-#: src/components/MarketTrades/index.tsx:66
+#: src/components/LimitedPlaceOrder/index.tsx:136
+#: src/components/MarketTrades/index.tsx:67
 msgid "Price"
 msgstr "قیمت"
 
@@ -592,8 +592,8 @@ msgstr "زمان انتخاب شده مربوط به آینده است"
 msgid "Selfie With ID And Note"
 msgstr "سلفی با شناسه و توضیحات"
 
-#: src/components/LimitedPlaceOrder/index.tsx:62
-msgid "Sell"
+#: src/components/LimitedPlaceOrder/index.tsx:17
+msgid "sell"
 msgstr "فروش"
 
 #: src/components/Deposit/index.tsx:131
@@ -679,7 +679,7 @@ msgstr "داده ای برای نمایش وجود ندارد"
 msgid "this is the sandbox enviroment , you can test your payments here, all transactions will be done using bitcoin test network not real network."
 msgstr "این محیط تنها برای آزمایش پرداخت توسط توسعه دهندگان ایجاد شده است. تمامی پرداخت ها در این محیط در بستر تست شبکه بلاکچین صورت میگیرد و رمز‌ارز واقعی تبادل نمیشود."
 
-#: src/components/MarketTrades/index.tsx:55
+#: src/components/MarketTrades/index.tsx:56
 msgid "Time"
 msgstr "زمان"
 
@@ -688,7 +688,7 @@ msgid "to this walelt sending anyother coin may result loss of your deposit"
 msgstr "را به این کیف پول ارسال کنید. ارسال سایر رمز ارزها به این کیف پول ممکن است باعث از دست رفتن آنها شود"
 
 #: src/components/Deposit/index.tsx:73
-#: src/components/LimitedPlaceOrder/index.tsx:170
+#: src/components/LimitedPlaceOrder/index.tsx:172
 msgid "Total"
 msgstr "مجموع"
 
@@ -777,6 +777,9 @@ msgstr "بالانس حساب شما"
 #: src/containers/KYC/index.tsx:231
 msgid "your information submitted successfully"
 msgstr "اطلاعات شما با موفقیت ارسال شد"
+
+#~ msgid "Sell"
+#~ msgstr "فروش"
 
 #~ msgid "Warning"
 #~ msgstr "هشدار"
