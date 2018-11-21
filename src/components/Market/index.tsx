@@ -107,30 +107,30 @@ class MarketComponent extends React.Component<IProps, IState> {
         if (this.props.to === "BTC" || this.props.to === "ETH") {
             floatNumbers = 4;
         }
-
+        const priceFloatedNums = config.marketsOptions[`${this.props.from}:${this.props.to}`].priceFloatedNums;
         const columns = [{
             title: t.t("Last Price"),
             dataIndex: "price",
             key: "price",
-            render: (text) => <Ex fixFloatNum={floatNumbers} value={text} seperateThousand />,
+            render: (text) => <Ex fixFloatNum={priceFloatedNums} value={text} seperateThousand />,
         },
         {
             title: t.t("24h Change"),
             dataIndex: "change",
             key: "change",
-            render: (text, record) => <Ex fixFloatNum={floatNumbers} percentMark value={((record.high / record.low) - 1) * 100} seperateThousand />,
+            render: (text, record) => <Ex fixFloatNum={priceFloatedNums} percentMark value={((record.high / record.low) - 1) * 100} seperateThousand />,
         },
         {
             title: t.t("24h High"),
             dataIndex: "high",
             key: "high",
-            render: (text) => <Ex value={text} fixFloatNum={floatNumbers} seperateThousand />,
+            render: (text) => <Ex value={text} fixFloatNum={priceFloatedNums} seperateThousand />,
         },
         {
             title: t.t("24h Low"),
             dataIndex: "low",
             key: "low",
-            render: (text) => <Ex value={text} fixFloatNum={floatNumbers} seperateThousand />,
+            render: (text) => <Ex value={text} fixFloatNum={priceFloatedNums} seperateThousand />,
         },
         ];
 
