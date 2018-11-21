@@ -32,7 +32,7 @@ msgstr ""
 msgid "24h Low"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:152
+#: src/components/DashboardHeader/index.tsx:155
 msgid "Account information"
 msgstr ""
 
@@ -61,8 +61,8 @@ msgid "After making a deposit, you can track its progress on the history page."
 msgstr ""
 
 #: src/components/LimitedPlaceOrder/index.tsx:153
-#: src/components/Settle/index.tsx:114 src/components/Settle/index.tsx:135
-#: src/components/SettleUps/index.tsx:98
+#: src/components/MarketTrades/index.tsx:73 src/components/Settle/index.tsx:114
+#: src/components/Settle/index.tsx:135 src/components/SettleUps/index.tsx:98
 msgid "Amount"
 msgstr ""
 
@@ -167,13 +167,13 @@ msgstr "التاريخ"
 msgid "Date and time"
 msgstr "الوقت الباقي"
 
-#: src/components/Balance/index.tsx:113
+#: src/components/Balance/index.tsx:116
 #: src/components/DashboardMenu/menu.tsx:46
 msgid "Deposit"
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:125 src/containers/Deposit/index.tsx:53
-#: src/containers/Exchange/index.tsx:68
+#: src/containers/Exchange/index.tsx:70
 msgid "Deposit history"
 msgstr ""
 
@@ -340,8 +340,7 @@ msgid "Litecoin"
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:120 src/containers/Deposit/index.tsx:39
-#: src/containers/Exchange/index.tsx:108 src/containers/Exchange/index.tsx:111
-#: src/containers/Exchange/index.tsx:114
+#: src/containers/Exchange/index.tsx:110
 msgid "Live prices"
 msgstr ""
 
@@ -358,7 +357,7 @@ msgstr ""
 msgid "Login Password"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:156
+#: src/components/DashboardHeader/index.tsx:159
 #: src/components/DashboardHeaderProfile/index.tsx:69
 msgid "Logout"
 msgstr ""
@@ -390,7 +389,7 @@ msgstr "معرف الفاتورة"
 msgid "New Invoice Created"
 msgstr "معرف الفاتورة"
 
-#: src/components/DashboardHeader/index.tsx:141
+#: src/components/DashboardHeader/index.tsx:144
 msgid "New version available , click for update"
 msgstr ""
 
@@ -398,11 +397,11 @@ msgstr ""
 msgid "Next Page"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:159
+#: src/components/DashboardHeader/index.tsx:162
 msgid "Night mode: off"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:159
+#: src/components/DashboardHeader/index.tsx:162
 msgid "Night mode: on"
 msgstr ""
 
@@ -568,6 +567,7 @@ msgstr ""
 
 #: src/components/Invoice/index.tsx:58
 #: src/components/LimitedPlaceOrder/index.tsx:135
+#: src/components/MarketTrades/index.tsx:66
 msgid "Price"
 msgstr ""
 
@@ -670,7 +670,7 @@ msgstr ""
 msgid "Symbol"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:133
+#: src/components/DashboardHeader/index.tsx:136
 msgid "System Administration"
 msgstr ""
 
@@ -691,6 +691,10 @@ msgstr ""
 msgid "this is the sandbox enviroment , you can test your payments here, all transactions will be done using bitcoin test network not real network."
 msgstr ""
 
+#: src/components/MarketTrades/index.tsx:55
+msgid "Time"
+msgstr ""
+
 #: src/components/Deposit/index.tsx:132
 msgid "to this walelt sending anyother coin may result loss of your deposit"
 msgstr ""
@@ -706,6 +710,10 @@ msgstr ""
 
 #: src/components/Settle/index.tsx:195 src/components/SettleUps/index.tsx:117
 msgid "Tracking code"
+msgstr ""
+
+#: src/containers/Exchange/index.tsx:113
+msgid "Trades"
 msgstr ""
 
 #: src/components/Transactions/index.tsx:148
@@ -725,7 +733,7 @@ msgstr ""
 msgid "USD"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:123
+#: src/components/DashboardHeader/index.tsx:126
 msgid "User Dashboard"
 msgstr ""
 
@@ -775,7 +783,7 @@ msgid "your {coin} balance:"
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:115 src/containers/Deposit/index.tsx:36
-#: src/containers/Exchange/index.tsx:65
+#: src/containers/Exchange/index.tsx:67
 msgid "Your balance"
 msgstr ""
 

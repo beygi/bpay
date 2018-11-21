@@ -10,6 +10,7 @@ import DepositHistory from "../../components/DepositHistory";
 import Block from "../../components/Holder";
 import Live from "../../components/Live";
 import Market from "../../components/Market";
+import MarketTrades from "../../components/MarketTrades";
 import PlaceOrder from "../../components/PlaceOrder";
 import ActieveSessions from "../../components/Sessions";
 import Stock from "../../components/Stock";
@@ -61,7 +62,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
 
     public render() {
         return (
-            <Row gutter={8}>
+            <Row gutter={4}>
                 <Col md={5} >
                     <Block className="user-balance" title={t.t("Your balance")} icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
                         <Balance />
@@ -109,14 +110,13 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                     <Block title={t.t("Live prices")} icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
                         <Live />
                     </Block>
-                    <Block title={t.t("Live prices")} icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
-                        <Live />
-                    </Block>
-                    <Block title={t.t("Live prices")} icon={<FontAwesomeIcon icon={["fas", "chart-line"]} />} iconPosition="right" >
-                        <Live />
+                    <Block title={<div>{`${t.t("Trades")}`}
+                        <span className="subtitle"> {`${t.t(config.currencies[this.state.fromSymbol].name)} / ${t.t(config.currencies[this.state.toSymbol].name)}`}</span></div>}
+                        icon={<FontAwesomeIcon icon={["fas", "list"]} />} iconPosition="right" >
+                        <MarketTrades from={this.state.fromSymbol} to={this.state.toSymbol} />
                     </Block>
                 </Col>
-            </Row>
+            </Row >
         );
     }
 }

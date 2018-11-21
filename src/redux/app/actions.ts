@@ -9,5 +9,6 @@ export const updateUserBalance = createAction<any>(Actions.UPDATE_USER_BALANCE);
 
 export const updateMarketCryptos = createAction<any>(Actions.UPDATE_MARKET_CRYPTOS);
 export const updateMarketForex = createAction<any>(Actions.UPDATE_MARKET_FOREX);
+export const updateMarketTrades = createAction<any>(Actions.UPDATE_MARKET_TRADES);
 
 export const updateOfficeCashDesks = createAction<any>(Actions.UPDATE_OFFICE_CASHDESKS);
