@@ -47,18 +47,9 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
 
     constructor(props: IPlaceProps) {
         super(props);
-        let floatNumbers = 2;
-        if (this.props.toSymbol === "IRR") {
-            floatNumbers = 0;
-        }
-        if (this.props.toSymbol === "BTC" || this.props.toSymbol === "ETH") {
-            floatNumbers = 4;
-        }
-        if (this.props.toSymbol === "BTC" || this.props.toSymbol === "ETH") {
-            floatNumbers = 4;
-        }
+        const priceFloatedNums = config.marketsOptions[`${this.props.fromSymbol}:${this.props.toSymbol}`].priceFloatedNums;
         this.state = {
-            total: _.round(Tools.getPrice(this.props.fromSymbol, this.props.toSymbol), floatNumbers),
+            total: _.round(Tools.getPrice(this.props.fromSymbol, this.props.toSymbol), priceFloatedNums),
             type: (this.props.type === "sell") ? t.t("Sell") : t.t("Buy"),
         };
 
@@ -101,12 +92,12 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
         return;
     }
 
-    public handlePriceChange(value) {
-        this.setState({ total: this.props.form.getFieldValue("amount") * value });
+    public handlePriceChange(value, floats) {
+        this.setState({ total: _.round(this.props.form.getFieldValue("amount") * value, floats) });
     }
 
-    public handleAmountChange(value) {
-        this.setState({ total: this.props.form.getFieldValue("price") * value });
+    public handleAmountChange(value, floats) {
+        this.setState({ total: _.round(this.props.form.getFieldValue("price") * value, floats) });
     }
 
     public render() {
@@ -131,7 +122,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                                 min={0}
                                 max={10000000000}
                                 step={priceStep}
-                                onChange={this.handlePriceChange}
+                                onChange={(value) => { this.handlePriceChange(value, priceFloatedNums); }}
                                 formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                             />,
                         )}
@@ -145,7 +136,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                             }],
                         })(
                             <InputNumber
-                                onChange={this.handleAmountChange}
+                                onChange={(value) => { this.handleAmountChange(value, priceFloatedNums); }}
                                 placeholder={this.props.fromSymbol}
                                 min={0}
                                 max={10000000000}
