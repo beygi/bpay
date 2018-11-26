@@ -10,11 +10,11 @@ msgstr ""
 msgid "{coin} Deposite address"
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:84
+#: src/components/LimitedPlaceOrder/index.tsx:90
 msgid "{type} request"
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:85
+#: src/components/LimitedPlaceOrder/index.tsx:91
 msgid "{type} request places successfully"
 msgstr ""
 
@@ -58,7 +58,7 @@ msgstr ""
 msgid "After making a deposit, you can track its progress on the history page."
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:154
+#: src/components/LimitedPlaceOrder/index.tsx:166
 #: src/components/MarketTrades/index.tsx:74
 #: src/components/Settle/index.tsx:114
 #: src/components/Settle/index.tsx:135
@@ -147,6 +147,10 @@ msgstr ""
 msgid "Create time"
 msgstr ""
 
+#: src/components/LimitedPlaceOrder/index.tsx:163
+msgid "Current"
+msgstr ""
+
 #: src/components/Analysis/index.tsx:125
 msgid "Current owes"
 msgstr ""
@@ -174,7 +178,7 @@ msgstr ""
 
 #: src/containers/Dashboard/index.tsx:125
 #: src/containers/Deposit/index.tsx:53
-#: src/containers/Exchange/index.tsx:70
+#: src/containers/Exchange/index.tsx:71
 msgid "Deposit history"
 msgstr ""
 
@@ -344,7 +348,7 @@ msgstr ""
 
 #: src/containers/Dashboard/index.tsx:120
 #: src/containers/Deposit/index.tsx:39
-#: src/containers/Exchange/index.tsx:110
+#: src/containers/Exchange/index.tsx:115
 msgid "Live prices"
 msgstr ""
 
@@ -373,6 +377,10 @@ msgstr ""
 
 #: src/containers/KYC/index.tsx:150
 msgid "Male"
+msgstr ""
+
+#: src/components/PlaceOrder/index.tsx:45
+msgid "Market price"
 msgstr ""
 
 #: src/components/Analysis/index.tsx:105
@@ -416,8 +424,16 @@ msgstr ""
 msgid "Open gateway"
 msgstr ""
 
+#: src/components/Orders/index.tsx:41
+msgid "Order history"
+msgstr ""
+
 #: src/components/Invoice/index.tsx:51
 msgid "Order id"
+msgstr ""
+
+#: src/components/Orders/index.tsx:36
+msgid "Orders"
 msgstr ""
 
 #: src/components/SettleUps/index.tsx:109
@@ -473,7 +489,7 @@ msgstr ""
 msgid "Please input description, max length is 30"
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:98
+#: src/components/LimitedPlaceOrder/index.tsx:104
 msgid "please input number"
 msgstr ""
 
@@ -555,7 +571,8 @@ msgid "Previous Page"
 msgstr ""
 
 #: src/components/Invoice/index.tsx:58
-#: src/components/LimitedPlaceOrder/index.tsx:136
+#: src/components/LimitedPlaceOrder/index.tsx:143
+#: src/components/LimitedPlaceOrder/index.tsx:162
 #: src/components/MarketTrades/index.tsx:67
 msgid "Price"
 msgstr ""
@@ -692,7 +709,8 @@ msgid "to this walelt sending anyother coin may result loss of your deposit"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:73
-#: src/components/LimitedPlaceOrder/index.tsx:172
+#: src/components/LimitedPlaceOrder/index.tsx:187
+#: src/components/LimitedPlaceOrder/index.tsx:205
 msgid "Total"
 msgstr ""
 
@@ -705,7 +723,7 @@ msgstr ""
 msgid "Tracking code"
 msgstr ""
 
-#: src/containers/Exchange/index.tsx:113
+#: src/containers/Exchange/index.tsx:118
 msgid "Trades"
 msgstr ""
 
@@ -776,7 +794,7 @@ msgstr ""
 
 #: src/containers/Dashboard/index.tsx:115
 #: src/containers/Deposit/index.tsx:36
-#: src/containers/Exchange/index.tsx:67
+#: src/containers/Exchange/index.tsx:68
 msgid "Your balance"
 msgstr ""
 
