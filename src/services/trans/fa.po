@@ -20,11 +20,11 @@ msgstr " کارت ملی"
 msgid "{coin} Deposite address"
 msgstr "آدرس پرداخت {coin}"
 
-#: src/components/LimitedPlaceOrder/index.tsx:85
+#: src/components/LimitedPlaceOrder/index.tsx:90
 msgid "{type} request"
 msgstr "درخواست {type}"
 
-#: src/components/LimitedPlaceOrder/index.tsx:86
+#: src/components/LimitedPlaceOrder/index.tsx:91
 msgid "{type} request places successfully"
 msgstr "درخواست {type} با موفقیت ثبت شد"
 
@@ -68,7 +68,7 @@ msgstr "اضافه کردن گروه جدید"
 msgid "After making a deposit, you can track its progress on the history page."
 msgstr "بعد از انجام واریز میتوانید روند اجرای آن را در ستون سمت چپ مشاهده کنید."
 
-#: src/components/LimitedPlaceOrder/index.tsx:156
+#: src/components/LimitedPlaceOrder/index.tsx:166
 #: src/components/MarketTrades/index.tsx:74 src/components/Settle/index.tsx:114
 #: src/components/Settle/index.tsx:135 src/components/SettleUps/index.tsx:98
 msgid "Amount"
@@ -153,6 +153,10 @@ msgstr "ایجاد"
 #: src/components/Invoice/index.tsx:61
 msgid "Create time"
 msgstr "زمان ایجاد"
+
+#: src/components/LimitedPlaceOrder/index.tsx:163
+msgid "Current"
+msgstr "قیمت کنونی"
 
 #: src/components/Analysis/index.tsx:125
 msgid "Current owes"
@@ -346,7 +350,7 @@ msgid "Litecoin"
 msgstr "لایت کوین"
 
 #: src/containers/Dashboard/index.tsx:120 src/containers/Deposit/index.tsx:39
-#: src/containers/Exchange/index.tsx:116
+#: src/containers/Exchange/index.tsx:115
 msgid "Live prices"
 msgstr "قیمت زنده"
 
@@ -421,7 +425,7 @@ msgstr "شما به این قسمت دسترسی ندارید"
 msgid "Open gateway"
 msgstr "باز کردن درگاه"
 
-#: src/components/Orders/index.tsx:38
+#: src/components/Orders/index.tsx:41
 msgid "Order history"
 msgstr "تاریخچهٔ سفارشات"
 
@@ -429,7 +433,7 @@ msgstr "تاریخچهٔ سفارشات"
 msgid "Order id"
 msgstr "شماره سفارش"
 
-#: src/components/Orders/index.tsx:35
+#: src/components/Orders/index.tsx:36
 msgid "Orders"
 msgstr "سفارشات"
 
@@ -485,7 +489,7 @@ msgstr "لطفا شماره کارت ۱۶ رقمی مبدا را وارد کنی
 msgid "Please input description, max length is 30"
 msgstr "لطفا متن توضیحات را وارد کنید. حداکثر ۳۰ حرف"
 
-#: src/components/LimitedPlaceOrder/index.tsx:99
+#: src/components/LimitedPlaceOrder/index.tsx:104
 msgid "please input number"
 msgstr "لطفا یک عدد وارد کنید"
 
@@ -566,7 +570,8 @@ msgid "Previous Page"
 msgstr "صفحه قبل"
 
 #: src/components/Invoice/index.tsx:58
-#: src/components/LimitedPlaceOrder/index.tsx:137
+#: src/components/LimitedPlaceOrder/index.tsx:143
+#: src/components/LimitedPlaceOrder/index.tsx:162
 #: src/components/MarketTrades/index.tsx:67
 msgid "Price"
 msgstr "قیمت"
@@ -700,7 +705,8 @@ msgid "to this walelt sending anyother coin may result loss of your deposit"
 msgstr "را به این کیف پول ارسال کنید. ارسال سایر رمز ارزها به این کیف پول ممکن است باعث از دست رفتن آنها شود"
 
 #: src/components/Deposit/index.tsx:73
-#: src/components/LimitedPlaceOrder/index.tsx:175
+#: src/components/LimitedPlaceOrder/index.tsx:187
+#: src/components/LimitedPlaceOrder/index.tsx:205
 msgid "Total"
 msgstr "مجموع"
 
@@ -712,7 +718,7 @@ msgstr "مجموع:"
 msgid "Tracking code"
 msgstr "شماره رهگیری"
 
-#: src/containers/Exchange/index.tsx:119
+#: src/containers/Exchange/index.tsx:118
 msgid "Trades"
 msgstr "معاملات"
 

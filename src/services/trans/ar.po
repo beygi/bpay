@@ -12,11 +12,11 @@ msgstr ""
 msgid "{coin} Deposite address"
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:85
+#: src/components/LimitedPlaceOrder/index.tsx:90
 msgid "{type} request"
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:86
+#: src/components/LimitedPlaceOrder/index.tsx:91
 msgid "{type} request places successfully"
 msgstr ""
 
@@ -60,7 +60,7 @@ msgstr ""
 msgid "After making a deposit, you can track its progress on the history page."
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:156
+#: src/components/LimitedPlaceOrder/index.tsx:166
 #: src/components/MarketTrades/index.tsx:74 src/components/Settle/index.tsx:114
 #: src/components/Settle/index.tsx:135 src/components/SettleUps/index.tsx:98
 msgid "Amount"
@@ -146,6 +146,10 @@ msgstr ""
 #, fuzzy
 msgid "Create time"
 msgstr "الوقت الباقي"
+
+#: src/components/LimitedPlaceOrder/index.tsx:163
+msgid "Current"
+msgstr ""
 
 #: src/components/Analysis/index.tsx:125
 msgid "Current owes"
@@ -340,7 +344,7 @@ msgid "Litecoin"
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:120 src/containers/Deposit/index.tsx:39
-#: src/containers/Exchange/index.tsx:116
+#: src/containers/Exchange/index.tsx:115
 msgid "Live prices"
 msgstr ""
 
@@ -418,7 +422,7 @@ msgstr ""
 msgid "Open gateway"
 msgstr ""
 
-#: src/components/Orders/index.tsx:38
+#: src/components/Orders/index.tsx:41
 msgid "Order history"
 msgstr ""
 
@@ -426,7 +430,7 @@ msgstr ""
 msgid "Order id"
 msgstr ""
 
-#: src/components/Orders/index.tsx:35
+#: src/components/Orders/index.tsx:36
 msgid "Orders"
 msgstr ""
 
@@ -483,7 +487,7 @@ msgstr "رجاء أدخل بريد إلكتروني عنوان"
 msgid "Please input description, max length is 30"
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:99
+#: src/components/LimitedPlaceOrder/index.tsx:104
 #, fuzzy
 msgid "please input number"
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
@@ -578,7 +582,8 @@ msgid "Previous Page"
 msgstr ""
 
 #: src/components/Invoice/index.tsx:58
-#: src/components/LimitedPlaceOrder/index.tsx:137
+#: src/components/LimitedPlaceOrder/index.tsx:143
+#: src/components/LimitedPlaceOrder/index.tsx:162
 #: src/components/MarketTrades/index.tsx:67
 msgid "Price"
 msgstr ""
@@ -712,7 +717,8 @@ msgid "to this walelt sending anyother coin may result loss of your deposit"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:73
-#: src/components/LimitedPlaceOrder/index.tsx:175
+#: src/components/LimitedPlaceOrder/index.tsx:187
+#: src/components/LimitedPlaceOrder/index.tsx:205
 msgid "Total"
 msgstr ""
 
@@ -724,7 +730,7 @@ msgstr ""
 msgid "Tracking code"
 msgstr ""
 
-#: src/containers/Exchange/index.tsx:119
+#: src/containers/Exchange/index.tsx:118
 msgid "Trades"
 msgstr ""
 

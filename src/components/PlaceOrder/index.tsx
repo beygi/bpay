@@ -45,10 +45,10 @@ class PlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                 <TabPane tab={t.t("Market price")} key="2">
                     <Row gutter={4}>
                         <Col md={12}>
-                            <LimitedPlaceOrderComponent fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="buy" />
+                            <LimitedPlaceOrderComponent exchangeType="market" fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="buy" />
                         </Col>
                         <Col md={12}>
-                            <LimitedPlaceOrderComponent fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="sell" />
+                            <LimitedPlaceOrderComponent exchangeType="market" fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="sell" />
                         </Col>
                     </Row>
                 </TabPane>
