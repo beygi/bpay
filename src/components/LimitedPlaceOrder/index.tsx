@@ -119,7 +119,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
     public handleTotalChange(value, floats) {
         // this.setState({ total: _.round(this.props.form.getFieldValue("price") * value, floats) });
         this.setState({
-            amount: _.round(value / this.state.price, floats * 4),
+            amount: _.round(value / this.state.price, 10),
             total: value,
         });
         this.props.form.resetFields(["amount"]);
