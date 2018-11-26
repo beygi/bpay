@@ -73,7 +73,7 @@ export default class Seeder {
     }
 
     public setMarket() {
-        axios.get("https://api.coinmarketcap.com/v2/ticker/?convert=BTC&limit=7").then((response) => {
+        axios.get("https://api.coinmarketcap.com/v2/ticker/?convert=BTC&limit=15").then((response) => {
             const cryptos: any = {};
             for (const currency of Object.keys(response.data.data)) {
                 cryptos[response.data.data[currency].symbol] = response.data.data[currency];
