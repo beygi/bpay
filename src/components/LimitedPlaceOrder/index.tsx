@@ -144,6 +144,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                         })(
                             <InputNumber
                                 placeholder={this.props.toSymbol}
+                                size="small"
                                 min={0}
                                 max={10000000000}
                                 step={priceStep}
@@ -163,6 +164,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                             <InputNumber
                                 onChange={(value) => { this.handleAmountChange(value, priceFloatedNums); }}
                                 placeholder={this.props.fromSymbol}
+                                size="small"
                                 min={0}
                                 max={10000000000}
                                 step={amountStep}
@@ -181,6 +183,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                             <InputNumber
                                 placeholder={this.props.fromSymbol}
                                 onChange={(value) => { this.handleTotalChange(value, priceFloatedNums); }}
+                                size="small"
                                 min={0}
                                 max={10000000000}
                                 formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
@@ -191,7 +194,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                         <Ex fixFloatNum={floatNumbers} value={this.state.total || 0} stockStyle={false} /> {t.t(this.props.toSymbol)}
                     </FormItem> */}
                     <FormItem>
-                        <Button className={`${this.props.type}-btn`} type="primary" htmlType="submit" >
+                        <Button size="small" className={`${this.props.type}-btn`} type="primary" htmlType="submit" >
                             {`${t.t(this.props.type)} ` + t.t(config.currencies[this.props.fromSymbol].name)}
                         </Button>
                     </FormItem>

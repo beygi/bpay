@@ -31,9 +31,19 @@ class PlaceOrderComponent extends React.Component<IPlaceProps, IState> {
 
     public render() {
         return (
-            <Tabs defaultActiveKey="1" >
+            <Tabs animated={false} defaultActiveKey="1" >
                 <TabPane tab={t.t("Limit")} key="1">
-                    <Row gutter={8}>
+                    <Row gutter={4}>
+                        <Col md={12}>
+                            <LimitedPlaceOrderComponent fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="buy" />
+                        </Col>
+                        <Col md={12}>
+                            <LimitedPlaceOrderComponent fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="sell" />
+                        </Col>
+                    </Row>
+                </TabPane>
+                <TabPane tab={t.t("Market price")} key="2">
+                    <Row gutter={4}>
                         <Col md={12}>
                             <LimitedPlaceOrderComponent fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="buy" />
                         </Col>
