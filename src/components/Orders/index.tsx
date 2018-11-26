@@ -34,12 +34,12 @@ class OrdersComponent extends React.Component<IPlaceProps, IState> {
         return (
             <Tabs defaultActiveKey="1" animated={false} >
                 <TabPane tab={t.t("Orders")} key="1">
-                    <Block>
+                    <Block className="user-orders">
                         <MarketTrades from={this.props.fromSymbol} to={this.props.toSymbol} />
                     </Block>
                 </TabPane>
                 <TabPane tab={t.t("Order history")} key="2">
-                    <Block>
+                    <Block className="order-history">
                         <MarketTrades from={this.props.fromSymbol} to={this.props.toSymbol} />
                     </Block>
                 </TabPane>
