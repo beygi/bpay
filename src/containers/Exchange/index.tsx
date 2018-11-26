@@ -98,7 +98,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                                 />
                             </Block>
                         </Col>
-                        <Col md={24} >
+                        <Col md={12} >
                             <Block className="place-order" transparent noPadding >
                                 <PlaceOrder fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
                             </Block>
