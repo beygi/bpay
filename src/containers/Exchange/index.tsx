@@ -98,12 +98,12 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                                 />
                             </Block>
                         </Col>
-                        <Col md={12} >
+                        <Col md={24} lg={12} >
                             <Block className="place-order" transparent noPadding >
                                 <PlaceOrder fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
                             </Block>
                         </Col>
-                        <Col md={12} >
+                        <Col md={24} lg={12}>
                             <Block className="orders" transparent noPadding >
                                 <Orders fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
                             </Block>
