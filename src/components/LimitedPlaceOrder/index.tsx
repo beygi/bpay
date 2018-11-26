@@ -194,7 +194,7 @@ class LimitedPlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                         <Ex fixFloatNum={floatNumbers} value={this.state.total || 0} stockStyle={false} /> {t.t(this.props.toSymbol)}
                     </FormItem> */}
                     <FormItem>
-                        <Button className={`${this.props.type}-btn`} type="primary" htmlType="submit" >
+                        <Button size="small" className={`${this.props.type}-btn`} type="primary" htmlType="submit" >
                             {`${t.t(this.props.type)} ` + t.t(config.currencies[this.props.fromSymbol].name)}
                         </Button>
                     </FormItem>

@@ -11,6 +11,7 @@ import Block from "../../components/Holder";
 import Live from "../../components/Live";
 import Market from "../../components/Market";
 import MarketTrades from "../../components/MarketTrades";
+import Orders from "../../components/Orders";
 import PlaceOrder from "../../components/PlaceOrder";
 import ActieveSessions from "../../components/Sessions";
 import Stock from "../../components/Stock";
@@ -72,8 +73,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                     </Block>
                 </Col>
                 <Col md={14} >
-
-                    <Row gutter={8}>
+                    <Row gutter={4}>
                         <Col md={24} >
                             <Block>
                                 <Market from={this.state.fromSymbol} to={this.state.toSymbol} />
@@ -86,7 +86,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                         </Col> */}
                     </Row>
 
-                    <Row gutter={8}>
+                    <Row gutter={4}>
                         <Col md={24} >
                             <Block className="trading-view" noPadding >
                                 <TradingViewWidget
@@ -101,6 +101,11 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                         <Col md={12} >
                             <Block className="place-order" transparent noPadding >
                                 <PlaceOrder fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
+                            </Block>
+                        </Col>
+                        <Col md={12} >
+                            <Block className="orders" transparent noPadding >
+                                <Orders fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
                             </Block>
                         </Col>
                     </Row>
