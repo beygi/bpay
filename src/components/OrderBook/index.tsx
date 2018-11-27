@@ -69,7 +69,7 @@ class OrderBook extends React.Component<IProps, IState> {
             },
             {
                 title: t.t("Count"),
-                dataIndex: "amount",
+                dataIndex: "count",
                 render: (count) => {
                     return (<Ex fixFloatNum={0} stockStyle={false} value={count} />);
                 },

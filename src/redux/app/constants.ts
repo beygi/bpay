@@ -7,5 +7,6 @@ export const LOG_OUT = "app-log-out";
 export const UPDATE_MARKET_CRYPTOS = "update-market-cryptos";
 export const UPDATE_MARKET_FOREX = "update-market-forex";
 export const UPDATE_MARKET_TRADES = "update-market-trades";
+export const UPDATE_MARKET_ORDERS = "update-market-orders";
 
 export const UPDATE_OFFICE_CASHDESKS = "update-office-cashdesks";
