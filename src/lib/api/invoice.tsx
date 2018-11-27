@@ -28,6 +28,7 @@ interface InvRequest {
     "mobile": string;
     "orderId": string;
     "price": string;
+    "symbol": string;
 }
 interface Invoice {
     "amount": number;
@@ -142,7 +143,7 @@ interface settleUpInvoices {
 }
 
 interface Logger {
-    log: (line: string) => any
+    log: (line: string) => any;
 }
 export default class invoiceApi {
     public static getInstance() {
