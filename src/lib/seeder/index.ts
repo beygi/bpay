@@ -125,6 +125,14 @@ export default class Seeder {
                     total: 13,
                 },
             },
+            EUR: {
+                name: "EUR",
+                balance: {
+                    available: 8,
+                    inOrder: 1,
+                    total: 9,
+                },
+            },
             IRR: {
                 name: "IRR",
                 balance: {
