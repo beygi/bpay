@@ -1,0 +1,44 @@
+@import (reference) "../../theme/application";
+.market-orders
+{
+    .ant-table,th
+    {
+    background-color: transparent;
+    border: none;
+    }
+    th
+     {
+    background: transparent !important;
+    color : @secondaryTextColor !important;    
+    text-align: center !important;
+    }
+    .ant-table-tbody > tr > td
+    {
+        border-bottom: none;   
+        text-align: center;
+        padding: 0px !important;
+        &:hover
+        {
+            background-color: transparent;
+        }
+    }
+    .ant-table-tbody > tr
+    {
+        &:hover
+        {
+        
+            td{
+                background-color: fade(@secondaryTextColor, 10%);
+            }    
+        }
+    }
+    .time
+    {
+        color : @secondaryTextColor !important;    
+    }
+    .exchange-value.normal
+    {
+        color : @secondaryTextColor !important;    
+    }
+    
+}
