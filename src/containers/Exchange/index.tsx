@@ -89,7 +89,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
 
                     <Row gutter={4}>
                         <Col md={24} >
-                            <Block className="trading-view" noPadding >
+                            <Block className="trading-view" transparent noPadding >
                                 <TradingViewWidget
                                     symbol={`${this.state.fromSymbol}${this.state.toSymbol}`}
                                     theme={(this.props.theme === "light") ? Themes.LIGHT : Themes.DARK}
