@@ -4,11 +4,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Table, Tag, Tooltip } from "antd";
 import * as _ from "lodash";
+import * as Moment from "moment";
 import * as React from "react";
 import config from "../../config";
 import USER from "../../lib/user";
-import { localDate } from "../../services/trans/i18n";
 import t from "../../services/trans/i18n";
+import { localDate } from "../../services/trans/i18n";
 import Ex from "../ExchangeValue";
 import Block from "../Holder";
 import "./style.less";
@@ -70,9 +71,9 @@ class Invoice extends React.Component<IProps, IState> {
         const pDate = localDate(t.default.language);
         const invoice = this.props.invoice;
         const date = new pDate(invoice.timestamp).toLocaleString();
+        const relativeDate = Moment(invoice.timestamp).fromNow();
         invoice.date = date;
         const tablecolumns = [...columns];
-
         // add an extra column to detail table for display detailed settle transaction
         if (invoice.status === "settled") {
             tablecolumns.push({
@@ -100,9 +101,11 @@ class Invoice extends React.Component<IProps, IState> {
                     <Tooltip title={invoice.description}>
                         <Tag className="tag-desc" color="#453e41">{invoice.description}</Tag>
                     </Tooltip>
-                    <Tag className="tag-date" color="#898989">
-                        {date}
-                    </Tag>
+                    <Tooltip title={date}>
+                        <Tag className="tag-date" color="#898989">
+                            {relativeDate}
+                        </Tag>
+                    </Tooltip>
                     {icons[invoice.status]}
                     <a className="callback" target="blank" href={invoice.callback}><FontAwesomeIcon icon={["fas", "link"]} /></a>
                     &nbsp;
