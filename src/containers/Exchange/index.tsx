@@ -100,17 +100,15 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                             </Block>
                         </Col>
                         <Col md={24} >
-                            <Block title={<div>{`${t.t("Order book")}`}
+                            <Block className="order-book" title={<div>{`${t.t("Order book")}`}
                                 <span className="subtitle"> {`${t.t(config.currencies[this.state.fromSymbol].name)} / ${t.t(config.currencies[this.state.toSymbol].name)}`}</span></div>}
                                 icon={<FontAwesomeIcon icon={["fas", "list"]} />} iconPosition="right" >
                                 <Row gutter={4}>
                                     <Col md={12} >
-                                        <h3>{t.t("sell")}</h3>
-                                        <OrderBook type="sell" from={this.state.fromSymbol} to={this.state.toSymbol} />
+                                        <OrderBook type="buy" from={this.state.fromSymbol} to={this.state.toSymbol} />
                                     </Col>
                                     <Col md={12} >
-                                        <h3>{t.t("buy")}</h3>
-                                        <OrderBook type="buy" from={this.state.fromSymbol} to={this.state.toSymbol} />
+                                        <OrderBook type="sell" from={this.state.fromSymbol} to={this.state.toSymbol} />
                                     </Col>
                                 </Row>
                             </Block>

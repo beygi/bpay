@@ -123,6 +123,9 @@ class OrderBook extends React.Component<IProps, IState> {
                 },
             },
         ];
+        if (this.props.type === "sell") {
+            columns.reverse();
+        }
         if (this.state.orders) {
             return (
                 <Table pagination={false} size="small" rowKey={(record, i) => `${i}`}
