@@ -2,7 +2,7 @@ import axios from "axios";
 import * as _ from "lodash";
 import config from "../../../src/config";
 import { updateUser } from "../../redux/app/actions";
-import { updateMarketCryptos, updateMarketForex, updateMarketTrades, updateOfficeCashDesks, updateUserBalance } from "../../redux/app/actions";
+import { updateMarketCryptos, updateMarketForex, updateMarketOrders, updateMarketTrades, updateOfficeCashDesks, updateUserBalance } from "../../redux/app/actions";
 import { store } from "../../redux/store";
 import tools from "../../services/tools";
 import USER from "../user";
@@ -46,6 +46,8 @@ export default class Seeder {
         }));
 
         const trades = {};
+        const orders = {};
+
         availableMarkets.forEach((market) => {
             trades[market] = _.get(store.getState(), `app.market.trades.${market}`,
                 Array.from({ length: 20 }, () => {
@@ -56,6 +58,30 @@ export default class Seeder {
                     };
                 }),
             );
+
+            orders[market] = {
+                buy: [],
+                sell: [],
+            };
+
+            orders[market].buy = Array.from({ length: 100 }, (n, i) => {
+                const index = i + 1;
+                const percent = (100 - i) / 100;
+                return {
+                    amount: _.random(0.1 * index, 0.13 * index, true),
+                    price: percent * (tools.getPrice(market.split("-")[0], market.split("-")[1])),
+                };
+            });
+
+            orders[market].sell = Array.from({ length: 100 }, (n, i) => {
+                const index = i + 1;
+                const percent = index / 100;
+                return {
+                    amount: _.random(0.1 * index, 0.13 * index, true),
+                    price: (1 + percent) * (tools.getPrice(market.split("-")[0], market.split("-")[1])),
+                };
+            });
+
         });
 
         // change last value
@@ -65,11 +91,12 @@ export default class Seeder {
                 {
                     amount: _.random(0.1, 8),
                     time: _.now(),
-                    price: _.random(0.9995, 1.0005) * trades[market][0].price,
+                    price: _.random(0.9995, 1.0005) * tools.getPrice(market.split("-")[0], market.split("-")[1]),
                 },
             );
         });
         store.dispatch(updateMarketTrades(trades));
+        store.dispatch(updateMarketOrders(orders));
     }
 
     public setMarket() {

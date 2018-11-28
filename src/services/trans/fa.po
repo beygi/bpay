@@ -68,8 +68,9 @@ msgstr "اضافه کردن گروه جدید"
 msgid "After making a deposit, you can track its progress on the history page."
 msgstr "بعد از انجام واریز میتوانید روند اجرای آن را در ستون سمت چپ مشاهده کنید."
 
-#: src/components/LimitedPlaceOrder/index.tsx:166
-#: src/components/MarketTrades/index.tsx:74 src/components/Settle/index.tsx:114
+#: src/components/LimitedPlaceOrder/index.tsx:167
+#: src/components/MarketTrades/index.tsx:74
+#: src/components/OrderBook/index.tsx:64 src/components/Settle/index.tsx:114
 #: src/components/Settle/index.tsx:135 src/components/SettleUps/index.tsx:98
 msgid "Amount"
 msgstr "مقدار"
@@ -138,7 +139,7 @@ msgstr "کپی"
 msgid "Copy wallet address to clipboard"
 msgstr "کپی کردن آدرس پرداخت"
 
-#: src/components/Unsettled/index.tsx:74
+#: src/components/OrderBook/index.tsx:71 src/components/Unsettled/index.tsx:74
 msgid "Count"
 msgstr "تعداد"
 
@@ -153,10 +154,6 @@ msgstr "ایجاد"
 #: src/components/Invoice/index.tsx:61
 msgid "Create time"
 msgstr "زمان ایجاد"
-
-#: src/components/LimitedPlaceOrder/index.tsx:163
-msgid "Current"
-msgstr "قیمت کنونی"
 
 #: src/components/Analysis/index.tsx:125
 msgid "Current owes"
@@ -183,7 +180,7 @@ msgid "Deposit"
 msgstr "شارژ حساب"
 
 #: src/containers/Dashboard/index.tsx:125 src/containers/Deposit/index.tsx:53
-#: src/containers/Exchange/index.tsx:71
+#: src/containers/Exchange/index.tsx:72
 msgid "Deposit history"
 msgstr "تاریخچهٔ مبالغ واریزی"
 
@@ -350,7 +347,7 @@ msgid "Litecoin"
 msgstr "لایت کوین"
 
 #: src/containers/Dashboard/index.tsx:120 src/containers/Deposit/index.tsx:39
-#: src/containers/Exchange/index.tsx:115
+#: src/containers/Exchange/index.tsx:130
 msgid "Live prices"
 msgstr "قیمت زنده"
 
@@ -380,6 +377,7 @@ msgstr "متن تست"
 msgid "Male"
 msgstr "مرد"
 
+#: src/components/LimitedPlaceOrder/index.tsx:164
 #: src/components/PlaceOrder/index.tsx:45
 msgid "Market price"
 msgstr "به قیمت بازار"
@@ -424,6 +422,10 @@ msgstr "شما به این قسمت دسترسی ندارید"
 #: src/components/NewInvoice/index.tsx:67
 msgid "Open gateway"
 msgstr "باز کردن درگاه"
+
+#: src/containers/Exchange/index.tsx:103
+msgid "Order book"
+msgstr "لیست درخواست‌ها"
 
 #: src/components/Orders/index.tsx:41
 msgid "Order history"
@@ -489,7 +491,7 @@ msgstr "لطفا شماره کارت ۱۶ رقمی مبدا را وارد کنی
 msgid "Please input description, max length is 30"
 msgstr "لطفا متن توضیحات را وارد کنید. حداکثر ۳۰ حرف"
 
-#: src/components/LimitedPlaceOrder/index.tsx:104
+#: src/components/LimitedPlaceOrder/index.tsx:105
 msgid "please input number"
 msgstr "لطفا یک عدد وارد کنید"
 
@@ -570,9 +572,10 @@ msgid "Previous Page"
 msgstr "صفحه قبل"
 
 #: src/components/Invoice/index.tsx:58
-#: src/components/LimitedPlaceOrder/index.tsx:143
-#: src/components/LimitedPlaceOrder/index.tsx:162
+#: src/components/LimitedPlaceOrder/index.tsx:144
+#: src/components/LimitedPlaceOrder/index.tsx:163
 #: src/components/MarketTrades/index.tsx:67
+#: src/components/OrderBook/index.tsx:57
 msgid "Price"
 msgstr "قیمت"
 
@@ -705,8 +708,7 @@ msgid "to this walelt sending anyother coin may result loss of your deposit"
 msgstr "را به این کیف پول ارسال کنید. ارسال سایر رمز ارزها به این کیف پول ممکن است باعث از دست رفتن آنها شود"
 
 #: src/components/Deposit/index.tsx:73
-#: src/components/LimitedPlaceOrder/index.tsx:187
-#: src/components/LimitedPlaceOrder/index.tsx:205
+#: src/components/LimitedPlaceOrder/index.tsx:188
 msgid "Total"
 msgstr "مجموع"
 
@@ -718,7 +720,7 @@ msgstr "مجموع:"
 msgid "Tracking code"
 msgstr "شماره رهگیری"
 
-#: src/containers/Exchange/index.tsx:118
+#: src/containers/Exchange/index.tsx:133
 msgid "Trades"
 msgstr "معاملات"
 
@@ -788,13 +790,16 @@ msgid "your {coin} balance:"
 msgstr "بالانس حساب {coin} شما:"
 
 #: src/containers/Dashboard/index.tsx:115 src/containers/Deposit/index.tsx:36
-#: src/containers/Exchange/index.tsx:68
+#: src/containers/Exchange/index.tsx:69
 msgid "Your balance"
 msgstr "بالانس حساب شما"
 
 #: src/containers/KYC/index.tsx:231
 msgid "your information submitted successfully"
 msgstr "اطلاعات شما با موفقیت ارسال شد"
+
+#~ msgid "Current"
+#~ msgstr "قیمت کنونی"
 
 #~ msgid "Sell"
 #~ msgstr "فروش"

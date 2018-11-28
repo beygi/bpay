@@ -11,6 +11,7 @@ import Block from "../../components/Holder";
 import Live from "../../components/Live";
 import Market from "../../components/Market";
 import MarketTrades from "../../components/MarketTrades";
+import OrderBook from "../../components/OrderBook";
 import Orders from "../../components/Orders";
 import PlaceOrder from "../../components/PlaceOrder";
 import ActieveSessions from "../../components/Sessions";
@@ -88,7 +89,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
 
                     <Row gutter={4}>
                         <Col md={24} >
-                            <Block className="trading-view" noPadding >
+                            <Block className="trading-view" transparent noPadding >
                                 <TradingViewWidget
                                     symbol={`${this.state.fromSymbol}${this.state.toSymbol}`}
                                     theme={(this.props.theme === "light") ? Themes.LIGHT : Themes.DARK}
@@ -96,6 +97,20 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                                     style={2}
                                     allow_symbol_change={false}
                                 />
+                            </Block>
+                        </Col>
+                        <Col md={24} >
+                            <Block className="order-book" title={<div>{`${t.t("Order book")}`}
+                                <span className="subtitle"> {`${t.t(config.currencies[this.state.fromSymbol].name)} / ${t.t(config.currencies[this.state.toSymbol].name)}`}</span></div>}
+                                icon={<FontAwesomeIcon icon={["fas", "list"]} />} iconPosition="right" >
+                                <Row gutter={4}>
+                                    <Col md={12} >
+                                        <OrderBook type="buy" from={this.state.fromSymbol} to={this.state.toSymbol} />
+                                    </Col>
+                                    <Col md={12} >
+                                        <OrderBook type="sell" from={this.state.fromSymbol} to={this.state.toSymbol} />
+                                    </Col>
+                                </Row>
                             </Block>
                         </Col>
                         <Col md={24} lg={12} >

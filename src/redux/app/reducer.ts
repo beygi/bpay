@@ -64,6 +64,12 @@ export default handleActions<IAppStoreState, any>({
             market: { ...state.market, trades: action.payload },
         };
     },
+    [Actions.UPDATE_MARKET_ORDERS]: (state, action: IAction<any>) => {
+        return {
+            ...state,
+            market: { ...state.market, orders: action.payload },
+        };
+    },
 
     [Actions.UPDATE_OFFICE_CASHDESKS]: (state, action: IAction<any>) => {
         return {
