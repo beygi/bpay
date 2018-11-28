@@ -30,7 +30,7 @@ export default class Seeder {
         setInterval(() => { this.setMarket(); }, 10000);
         setInterval(() => { this.setForex(); }, 60000);
         setInterval(() => { this.setOffice(); }, 1000);
-        setInterval(() => { this.setTrades(); }, 1000);
+        setInterval(() => { this.setTrades(); }, 2000);
     }
 
     public setTrades() {
@@ -64,21 +64,17 @@ export default class Seeder {
                 sell: [],
             };
 
-            orders[market].buy = Array.from({ length: 100 }, (n, i) => {
-                const index = i + 1;
-                const percent = (100 - i) / 100;
+            orders[market].buy = Array.from({ length: 20 }, () => {
                 return {
-                    amount: _.random(0.1 * index, 0.13 * index, true),
-                    price: percent * (tools.getPrice(market.split("-")[0], market.split("-")[1])),
+                    amount: _.random(0.1, 4, true),
+                    price: _.random(0.1, 0.999, true) * (tools.getPrice(market.split("-")[0], market.split("-")[1])),
                 };
             });
 
-            orders[market].sell = Array.from({ length: 100 }, (n, i) => {
-                const index = i + 1;
-                const percent = index / 100;
+            orders[market].sell = Array.from({ length: 20 }, () => {
                 return {
-                    amount: _.random(0.1 * index, 0.13 * index, true),
-                    price: (1 + percent) * (tools.getPrice(market.split("-")[0], market.split("-")[1])),
+                    amount: _.random(0.1, 4, true),
+                    price: _.random(1.001, 1.9, true) * (tools.getPrice(market.split("-")[0], market.split("-")[1])),
                 };
             });
 

@@ -70,6 +70,18 @@ class OrderBook extends React.Component<IProps, IState> {
                 },
             );
             orders = _.orderBy(orders, "price", (props.type === "sell") ? "asc" : "desc").slice(0, 12);
+
+            // append each row to next
+            orders = orders.map((item, index) => {
+                if (index === 0) { item.totalAmount = item.amount; return item; }
+                item.totalAmount = item.amount + orders[index - 1].totalAmount;
+                // item.amount += orders[index - 1].amount;
+                item.total += orders[index - 1].total;
+                return item;
+            },
+
+            );
+
             let max: any = _.maxBy(orders, "total");
             max = max.total;
             return {
@@ -110,9 +122,16 @@ class OrderBook extends React.Component<IProps, IState> {
             },
             {
                 title: t.t("Total"),
-                dataIndex: "total",
+                dataIndex: "totalAmount",
                 render: (price) => (
                     <Ex stockStyle={false} fixFloatNum={2} value={price} seperateThousand />
+                ),
+            },
+            {
+                title: t.t("Total value"),
+                dataIndex: "total",
+                render: (price) => (
+                    <Ex stockStyle={false} fixFloatNum={0} value={price} seperateThousand />
                 ),
             },
             {

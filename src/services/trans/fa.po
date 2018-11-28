@@ -70,7 +70,7 @@ msgstr "بعد از انجام واریز میتوانید روند اجرای �
 
 #: src/components/LimitedPlaceOrder/index.tsx:167
 #: src/components/MarketTrades/index.tsx:74
-#: src/components/OrderBook/index.tsx:64 src/components/Settle/index.tsx:114
+#: src/components/OrderBook/index.tsx:117 src/components/Settle/index.tsx:114
 #: src/components/Settle/index.tsx:135 src/components/SettleUps/index.tsx:98
 msgid "Amount"
 msgstr "مقدار"
@@ -139,7 +139,7 @@ msgstr "کپی"
 msgid "Copy wallet address to clipboard"
 msgstr "کپی کردن آدرس پرداخت"
 
-#: src/components/OrderBook/index.tsx:71 src/components/Unsettled/index.tsx:74
+#: src/components/OrderBook/index.tsx:138 src/components/Unsettled/index.tsx:74
 msgid "Count"
 msgstr "تعداد"
 
@@ -575,7 +575,7 @@ msgstr "صفحه قبل"
 #: src/components/LimitedPlaceOrder/index.tsx:144
 #: src/components/LimitedPlaceOrder/index.tsx:163
 #: src/components/MarketTrades/index.tsx:67
-#: src/components/OrderBook/index.tsx:57
+#: src/components/OrderBook/index.tsx:110
 msgid "Price"
 msgstr "قیمت"
 
@@ -709,8 +709,13 @@ msgstr "را به این کیف پول ارسال کنید. ارسال سایر 
 
 #: src/components/Deposit/index.tsx:73
 #: src/components/LimitedPlaceOrder/index.tsx:188
+#: src/components/OrderBook/index.tsx:124
 msgid "Total"
 msgstr "مجموع"
+
+#: src/components/OrderBook/index.tsx:131
+msgid "Total value"
+msgstr "ارزش کل"
 
 #: src/components/Settle/index.tsx:212
 msgid "Total:"
@@ -797,6 +802,9 @@ msgstr "بالانس حساب شما"
 #: src/containers/KYC/index.tsx:231
 msgid "your information submitted successfully"
 msgstr "اطلاعات شما با موفقیت ارسال شد"
+
+#~ msgid "Value"
+#~ msgstr "ارزش"
 
 #~ msgid "Current"
 #~ msgstr "قیمت کنونی"
