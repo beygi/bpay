@@ -64,17 +64,17 @@ export default class Seeder {
                 sell: [],
             };
 
-            orders[market].buy = Array.from({ length: 300 }, () => {
+            orders[market].buy = Array.from({ length: 10 }, () => {
                 return {
                     amount: _.random(0.1, 8.0),
-                    price: _.random(0.5, 1) * (tools.getPrice(market.split("-")[0], market.split("-")[1])),
+                    price: _.random(0.5, 1, true) * (tools.getPrice(market.split("-")[0], market.split("-")[1])),
                 };
             });
 
-            orders[market].sell = Array.from({ length: 300 }, () => {
+            orders[market].sell = Array.from({ length: 10 }, () => {
                 return {
-                    amount: _.random(0.1, 8.0),
-                    price: _.random(1, 2) * (tools.getPrice(market.split("-")[0], market.split("-")[1])),
+                    amount: _.random(0.1, 8.0, true),
+                    price: _.random(1, 2, true) * (tools.getPrice(market.split("-")[0], market.split("-")[1])),
                 };
             });
 

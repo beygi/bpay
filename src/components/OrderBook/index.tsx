@@ -18,8 +18,8 @@ interface IProps {
     to: string;
     /** crypto currencies exchange data from redux store */
     orders: [];
-    /**  to symbol */
-    type: string;
+    /**  order book type, sell or buy */
+    type: "sell" | "buy";
 }
 
 interface IState {
@@ -35,7 +35,38 @@ class OrderBook extends React.Component<IProps, IState> {
     public static getDerivedStateFromProps(props) {
         // update state.balance when props changes by redux4
         if (props.orders !== null) {
-            return { orders: props.orders[`${props.from}-${props.to}`] };
+
+            let orders = props.orders[`${props.from}-${props.to}`][props.type].map((order) => {
+                order.price = _.round(order.price, -3);
+                order.total = order.price * order.amount;
+                return (order);
+            });
+
+            // orders = _.orderBy(orders, "price", (props.type === "sell") ? "asc" : "desc");
+            orders = _.groupBy(orders, "price");
+
+            orders = Object.keys(orders).map(
+                (key) => {
+                    const count = orders[key].length;
+                    return orders[key].reduce(
+                        (accumulator, currentValue) => {
+                            accumulator.amount += currentValue.amount;
+                            accumulator.total += currentValue.total;
+                            accumulator.count = count;
+                            accumulator.price = currentValue.price;
+                            return accumulator;
+                        },
+                    );
+                    // orders[key].map((item) => {
+                    //     item.count = count;
+                    //     return item;
+                    // });
+                },
+            );
+            console.log(orders);
+            return {
+                orders,
+            };
         }
         return null;
     }
@@ -68,6 +99,13 @@ class OrderBook extends React.Component<IProps, IState> {
                 ),
             },
             {
+                title: t.t("Total"),
+                dataIndex: "total",
+                render: (price) => (
+                    <Ex stockStyle={false} fixFloatNum={2} value={price} seperateThousand />
+                ),
+            },
+            {
                 title: t.t("Count"),
                 dataIndex: "count",
                 render: (count) => {
@@ -89,9 +127,9 @@ class OrderBook extends React.Component<IProps, IState> {
 }
 
 function mapStateToProps(state: IRootState) {
-    if (state.app.market && state.app.market.trades !== undefined) {
+    if (state.app.market && state.app.market.orders !== undefined) {
         return {
-            orders: state.app.market.trades,
+            orders: state.app.market.orders,
             language: state.app.user.language,
         };
     }

@@ -105,10 +105,12 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                                 icon={<FontAwesomeIcon icon={["fas", "list"]} />} iconPosition="right" >
                                 <Row gutter={4}>
                                     <Col md={12} >
+                                        <h3>{t.t("sell")}</h3>
                                         <OrderBook type="sell" from={this.state.fromSymbol} to={this.state.toSymbol} />
                                     </Col>
                                     <Col md={12} >
-                                        <OrderBook type="sell" from={this.state.fromSymbol} to={this.state.toSymbol} />
+                                        <h3>{t.t("buy")}</h3>
+                                        <OrderBook type="buy" from={this.state.fromSymbol} to={this.state.toSymbol} />
                                     </Col>
                                 </Row>
                             </Block>
