@@ -1,5 +1,5 @@
 @import (reference) "../../theme/application";
-.market-trades
+.market-orders
 {
     .ant-table,th
     {
@@ -11,12 +11,11 @@
     background: transparent !important;
     color : @secondaryTextColor !important;    
     text-align: center !important;
-    width: 33%;
     }
     .ant-table-tbody > tr > td
     {
         border-bottom: none;   
-        text-align: center !important;
+        text-align: center;
         padding: 0px !important;
         &:hover
         {
@@ -27,7 +26,6 @@
     {
         &:hover
         {
-        
             td{
                 background-color: fade(@secondaryTextColor, 10%);
             }    

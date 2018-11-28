@@ -67,47 +67,56 @@ const config = {
             priceStep: 100000,
             amountStep: 0.01,
             priceFloatedNums: 0,
+            orderBookRoundFactor: -7,
         },
         "ETH:IRR": {
             priceStep: 100000,
             amountStep: 0.1,
             priceFloatedNums: 0,
+            orderBookRoundFactor: -5,
         },
         "LTC:IRR": {
             priceStep: 50000,
             amountStep: 0.5,
             priceFloatedNums: 0,
+            orderBookRoundFactor: -5,
         },
         "BTC:USD": {
             priceStep: 50,
             amountStep: 0.1,
             priceFloatedNums: 2,
+            orderBookRoundFactor: -2,
         },
         "ETH:USD": {
             priceStep: 1,
             amountStep: 0.5,
             priceFloatedNums: 2,
+            orderBookRoundFactor: 0,
         },
         "LTC:USD": {
             priceStep: 0.5,
             amountStep: 1,
             priceFloatedNums: 3,
+            orderBookRoundFactor: 0,
         },
         "ETH:BTC": {
             priceStep: 0.005,
             amountStep: 1,
             priceFloatedNums: 4,
+            orderBookRoundFactor: 3,
         },
         "LTC:BTC":
         {
             priceStep: 0.00001,
             amountStep: 10,
             priceFloatedNums: 6,
+            orderBookRoundFactor: 4,
         },
         "LTC:ETH": {
             priceStep: 0.0005,
             amountStep: 1,
             priceFloatedNums: 4,
+            orderBookRoundFactor: 2,
         },
     },
 };

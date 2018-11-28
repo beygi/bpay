@@ -60,8 +60,9 @@ msgstr ""
 msgid "After making a deposit, you can track its progress on the history page."
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:166
-#: src/components/MarketTrades/index.tsx:74 src/components/Settle/index.tsx:114
+#: src/components/LimitedPlaceOrder/index.tsx:167
+#: src/components/MarketTrades/index.tsx:74
+#: src/components/OrderBook/index.tsx:117 src/components/Settle/index.tsx:114
 #: src/components/Settle/index.tsx:135 src/components/SettleUps/index.tsx:98
 msgid "Amount"
 msgstr ""
@@ -130,7 +131,7 @@ msgstr ""
 msgid "Copy wallet address to clipboard"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:74
+#: src/components/OrderBook/index.tsx:138 src/components/Unsettled/index.tsx:74
 msgid "Count"
 msgstr ""
 
@@ -146,10 +147,6 @@ msgstr ""
 #, fuzzy
 msgid "Create time"
 msgstr "الوقت الباقي"
-
-#: src/components/LimitedPlaceOrder/index.tsx:163
-msgid "Current"
-msgstr ""
 
 #: src/components/Analysis/index.tsx:125
 msgid "Current owes"
@@ -177,7 +174,7 @@ msgid "Deposit"
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:125 src/containers/Deposit/index.tsx:53
-#: src/containers/Exchange/index.tsx:71
+#: src/containers/Exchange/index.tsx:72
 msgid "Deposit history"
 msgstr ""
 
@@ -344,7 +341,7 @@ msgid "Litecoin"
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:120 src/containers/Deposit/index.tsx:39
-#: src/containers/Exchange/index.tsx:115
+#: src/containers/Exchange/index.tsx:130
 msgid "Live prices"
 msgstr ""
 
@@ -375,6 +372,7 @@ msgstr ""
 msgid "Male"
 msgstr ""
 
+#: src/components/LimitedPlaceOrder/index.tsx:164
 #: src/components/PlaceOrder/index.tsx:45
 msgid "Market price"
 msgstr ""
@@ -420,6 +418,10 @@ msgstr ""
 
 #: src/components/NewInvoice/index.tsx:67
 msgid "Open gateway"
+msgstr ""
+
+#: src/containers/Exchange/index.tsx:103
+msgid "Order book"
 msgstr ""
 
 #: src/components/Orders/index.tsx:41
@@ -487,7 +489,7 @@ msgstr "رجاء أدخل بريد إلكتروني عنوان"
 msgid "Please input description, max length is 30"
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:104
+#: src/components/LimitedPlaceOrder/index.tsx:105
 #, fuzzy
 msgid "please input number"
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
@@ -582,9 +584,10 @@ msgid "Previous Page"
 msgstr ""
 
 #: src/components/Invoice/index.tsx:58
-#: src/components/LimitedPlaceOrder/index.tsx:143
-#: src/components/LimitedPlaceOrder/index.tsx:162
+#: src/components/LimitedPlaceOrder/index.tsx:144
+#: src/components/LimitedPlaceOrder/index.tsx:163
 #: src/components/MarketTrades/index.tsx:67
+#: src/components/OrderBook/index.tsx:110
 msgid "Price"
 msgstr ""
 
@@ -717,9 +720,13 @@ msgid "to this walelt sending anyother coin may result loss of your deposit"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:73
-#: src/components/LimitedPlaceOrder/index.tsx:187
-#: src/components/LimitedPlaceOrder/index.tsx:205
+#: src/components/LimitedPlaceOrder/index.tsx:188
+#: src/components/OrderBook/index.tsx:124
 msgid "Total"
+msgstr ""
+
+#: src/components/OrderBook/index.tsx:131
+msgid "Total value"
 msgstr ""
 
 #: src/components/Settle/index.tsx:212
@@ -730,7 +737,7 @@ msgstr ""
 msgid "Tracking code"
 msgstr ""
 
-#: src/containers/Exchange/index.tsx:118
+#: src/containers/Exchange/index.tsx:133
 msgid "Trades"
 msgstr ""
 
@@ -801,7 +808,7 @@ msgid "your {coin} balance:"
 msgstr ""
 
 #: src/containers/Dashboard/index.tsx:115 src/containers/Deposit/index.tsx:36
-#: src/containers/Exchange/index.tsx:68
+#: src/containers/Exchange/index.tsx:69
 msgid "Your balance"
 msgstr ""
 
