@@ -25,6 +25,8 @@ interface IProps {
 interface IState {
     /** crypto currencies exchange data */
     orders: any[];
+    /** maximum volume of orders in final price step */
+    max: number;
 }
 
 /**
@@ -37,12 +39,11 @@ class OrderBook extends React.Component<IProps, IState> {
         if (props.orders !== null) {
 
             let orders = props.orders[`${props.from}-${props.to}`][props.type].map((order) => {
-                order.price = _.round(order.price, -3);
+                order.price = _.round(order.price, config.marketsOptions[`${props.from}:${props.to}`].orderBookRoundFactor);
                 order.total = order.price * order.amount;
                 return (order);
             });
 
-            // orders = _.orderBy(orders, "price", (props.type === "sell") ? "asc" : "desc");
             orders = _.groupBy(orders, "price");
 
             orders = Object.keys(orders).map(
@@ -55,6 +56,11 @@ class OrderBook extends React.Component<IProps, IState> {
                             accumulator.count = count;
                             accumulator.price = currentValue.price;
                             return accumulator;
+                        }, {
+                            count: 0,
+                            amount: 0,
+                            total: 0,
+                            price: 0,
                         },
                     );
                     // orders[key].map((item) => {
@@ -63,9 +69,12 @@ class OrderBook extends React.Component<IProps, IState> {
                     // });
                 },
             );
-            console.log(orders);
+            orders = _.orderBy(orders, "price", (props.type === "sell") ? "asc" : "desc").slice(0, 12);
+            let max: any = _.maxBy(orders, "total");
+            max = max.total;
             return {
                 orders,
+                max,
             };
         }
         return null;
@@ -76,6 +85,7 @@ class OrderBook extends React.Component<IProps, IState> {
         // initial coin state. it must be available in config file
         this.state = {
             orders: null,
+            max: 0,
         };
     }
 
@@ -116,7 +126,15 @@ class OrderBook extends React.Component<IProps, IState> {
         if (this.state.orders) {
             return (
                 <Table pagination={false} size="small" rowKey={(record, i) => `${i}`}
-                    className="market-orders" dataSource={this.state.orders} columns={columns}>
+                    className="market-orders" dataSource={this.state.orders} columns={columns}
+                    onRow={(record) => {
+                        return {
+                            style: (this.props.type === "sell") ?
+                                { background: `linear-gradient(to right, rgba(255, 88, 88, 0.7) ${_.round((record.total / this.state.max) * 100)}%,transparent 0%)` } :
+                                { background: `linear-gradient(to left, rgba(143, 170, 131 , 0.7) ${_.round((record.total / this.state.max) * 100)}%,transparent 0%)` },
+                        };
+                    }}
+                >
                 </Table>
             );
         }

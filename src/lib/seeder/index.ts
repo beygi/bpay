@@ -64,17 +64,21 @@ export default class Seeder {
                 sell: [],
             };
 
-            orders[market].buy = Array.from({ length: 10 }, () => {
+            orders[market].buy = Array.from({ length: 100 }, (n, i) => {
+                const index = i + 1;
+                const percent = (100 - i) / 100;
                 return {
-                    amount: _.random(0.1, 8.0),
-                    price: _.random(0.5, 1, true) * (tools.getPrice(market.split("-")[0], market.split("-")[1])),
+                    amount: _.random(0.1 * index, 0.13 * index, true),
+                    price: percent * (tools.getPrice(market.split("-")[0], market.split("-")[1])),
                 };
             });
 
-            orders[market].sell = Array.from({ length: 10 }, () => {
+            orders[market].sell = Array.from({ length: 100 }, (n, i) => {
+                const index = i + 1;
+                const percent = index / 100;
                 return {
-                    amount: _.random(0.1, 8.0, true),
-                    price: _.random(1, 2, true) * (tools.getPrice(market.split("-")[0], market.split("-")[1])),
+                    amount: _.random(0.1 * index, 0.13 * index, true),
+                    price: (1 + percent) * (tools.getPrice(market.split("-")[0], market.split("-")[1])),
                 };
             });
 
@@ -87,7 +91,7 @@ export default class Seeder {
                 {
                     amount: _.random(0.1, 8),
                     time: _.now(),
-                    price: _.random(0.9995, 1.0005) * trades[market][0].price,
+                    price: _.random(0.9995, 1.0005) * tools.getPrice(market.split("-")[0], market.split("-")[1]),
                 },
             );
         });
