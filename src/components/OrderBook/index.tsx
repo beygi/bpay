@@ -7,6 +7,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import Ex from "../../components/ExchangeValue";
 import config from "../../config";
+import { updateUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t, { localDate } from "../../services/trans/i18n";
 import "./style.less";
@@ -20,6 +21,8 @@ interface IProps {
     orders: [];
     /**  order book type, sell or buy */
     type: "sell" | "buy";
+    /** store dispatcher */
+    updateStorePrice: (price) => void;
 }
 
 interface IState {
@@ -70,6 +73,7 @@ class OrderBook extends React.Component<IProps, IState> {
                 },
             );
             orders = _.orderBy(orders, "price", (props.type === "sell") ? "asc" : "desc").slice(0, 12);
+            // orders = _.orderBy(orders, "price", "asc").slice(0, 12);
 
             // append each row to next
             orders = orders.map((item, index) => {
@@ -142,18 +146,19 @@ class OrderBook extends React.Component<IProps, IState> {
                 },
             },
         ];
-        if (this.props.type === "sell") {
-            columns.reverse();
-        }
+        // if (this.props.type === "sell") {
+        //     columns.reverse();
+        // }
         if (this.state.orders) {
             return (
                 <Table pagination={false} size="small" rowKey={(record, i) => `${i}`}
-                    className="market-orders" dataSource={this.state.orders} columns={columns}
+                    className="market-orders" dataSource={(this.props.type === "buy") ? this.state.orders.reverse() : this.state.orders} columns={columns}
                     onRow={(record) => {
                         return {
                             style: (this.props.type === "sell") ?
-                                { background: `linear-gradient(to right, rgba(255, 88, 88, 0.7) ${_.round((record.total / this.state.max) * 100)}%,transparent 0%)` } :
+                                { background: `linear-gradient(to left, rgba(255, 88, 88, 0.7) ${_.round((record.total / this.state.max) * 100)}%,transparent 0%)` } :
                                 { background: `linear-gradient(to left, rgba(143, 170, 131 , 0.7) ${_.round((record.total / this.state.max) * 100)}%,transparent 0%)` },
+                            onClick: () => { this.props.updateStorePrice(record.price); },
                         };
                     }}
                 >
@@ -164,6 +169,12 @@ class OrderBook extends React.Component<IProps, IState> {
             <div className="user-balance live-price" > {trades}</div >
         );
     }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        updateStorePrice: (price) => dispatch(updateUser({ bidPrice: price })),
+    };
 }
 
 function mapStateToProps(state: IRootState) {
@@ -180,4 +191,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps)(OrderBook);
+export default connect(mapStateToProps, mapDispatchToProps)(OrderBook);

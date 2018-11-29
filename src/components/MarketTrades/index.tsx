@@ -8,6 +8,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import Ex from "../../components/ExchangeValue";
 import config from "../../config";
+import { updateUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t, { localDate } from "../../services/trans/i18n";
 import "./style.less";
@@ -19,6 +20,8 @@ interface IProps {
     to: string;
     /** crypto currencies exchange data from redux store */
     trades: [];
+    /** store dispatcher */
+    updateStorePrice: (price) => void;
 }
 
 interface IState {
@@ -81,7 +84,13 @@ class MarketTradesComponent extends React.Component<IProps, IState> {
         if (this.state.trades) {
             return (
                 <Table pagination={false} size="small" rowKey={(record, i) => `${i}`}
-                    className="market-trades" dataSource={this.state.trades} columns={columns}>
+                    className="market-trades" dataSource={this.state.trades} columns={columns}
+                    onRow={(record) => {
+                        return {
+                            onClick: () => { this.props.updateStorePrice(record.price); },
+                        };
+                    }}
+                >
                 </Table>
             );
         }
@@ -89,6 +98,12 @@ class MarketTradesComponent extends React.Component<IProps, IState> {
             <div className="user-balance live-price" > {trades}</div >
         );
     }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        updateStorePrice: (price) => dispatch(updateUser({ bidPrice: price })),
+    };
 }
 
 function mapStateToProps(state: IRootState) {
@@ -105,4 +120,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps)(MarketTradesComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(MarketTradesComponent);
