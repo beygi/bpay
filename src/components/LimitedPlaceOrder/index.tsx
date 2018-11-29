@@ -5,9 +5,11 @@ import { Button, Form, InputNumber, notification } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import * as _ from "lodash";
 import * as React from "react";
+import { connect } from "react-redux";
 import Ex from "../../components/ExchangeValue";
 import Block from "../../components/Holder";
 import config from "../../config";
+import { IRootState } from "../../redux/reducers";
 import Tools from "../../services/tools";
 import t from "../../services/trans/i18n";
 import "./style.less";
@@ -35,6 +37,8 @@ interface IProps extends FormComponentProps {
     type: string;
     /** limit or market */
     exchangeType?: "limit" | "market";
+    /** bidding price, read from redux */
+    price: number;
 }
 
 interface IState {
@@ -70,16 +74,19 @@ class LimitedPlaceOrderComponent extends React.Component<IProps, IState> {
 
     public componentDidUpdate(prevProps) {
         // Typical usage (don't forget to compare props):
+        const priceFloatedNums = config.marketsOptions[`${this.props.fromSymbol}:${this.props.toSymbol}`].priceFloatedNums;
         if (this.props.fromSymbol !== prevProps.fromSymbol || this.props.toSymbol !== prevProps.toSymbol) {
-            const priceFloatedNums = config.marketsOptions[`${this.props.fromSymbol}:${this.props.toSymbol}`].priceFloatedNums;
             const currentPrice = _.round(Tools.getPrice(this.props.fromSymbol, this.props.toSymbol), priceFloatedNums);
             this.setState({
                 total: currentPrice,
                 price: currentPrice,
-                amount: 2,
+                amount: 1,
             });
-            this.props.form.resetFields(["amount", "price", "total"]);
         }
+        if (this.props.price !== prevProps.price) {
+            this.handlePriceChange(_.round(this.props.price, priceFloatedNums), priceFloatedNums);
+        }
+        this.props.form.resetFields(["amount", "price", "total"]);
     }
 
     public handleSubmit = (e) => {
@@ -98,7 +105,6 @@ class LimitedPlaceOrderComponent extends React.Component<IProps, IState> {
 
     /** amount and price field validator */
     public checkPrice = (rule, value, callback) => {
-        console.log("CHECK");
         if (value > 0) {
             callback();
         }
@@ -221,4 +227,16 @@ class LimitedPlaceOrderComponent extends React.Component<IProps, IState> {
     }
 }
 
-export default Form.create()(LimitedPlaceOrderComponent);
+function mapDispatchToProps(dispatch) {
+    return {
+    };
+}
+
+function mapStateToProps(state: IRootState) {
+    return {
+        price: state.app.user.bidPrice,
+        language: state.app.user.language,
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form.create()(LimitedPlaceOrderComponent));
