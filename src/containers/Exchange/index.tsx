@@ -65,7 +65,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
     public render() {
         return (
             <Row className="exchange-row" gutter={4}>
-                <Col className="full-height" md={14} >
+                <Col className="parent" md={14} >
                     {/* <Row gutter={4}>
                         <Col md={12} >
                             <Block title={t.t(config.currencies[this.state.toSymbol].name)} icon={config.icons[this.state.toSymbol]}>
@@ -73,7 +73,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                             </Block>
                         </Col>
                     </Row> */}
-                    <Row className="full-height" gutter={4}>
+                    <Row className="main-row grow" gutter={4}>
                         <Col md={24} >
                             <Block>
                                 <Market from={this.state.fromSymbol} to={this.state.toSymbol} />
@@ -91,30 +91,35 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                             </Block>
                         </Col>
                         <Col md={24} >
-
+                            <Row gutter={4}>
+                                <Col md={12} >
+                                    <Block className="place-order" transparent noPadding >
+                                        <PlaceOrder fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
+                                    </Block>
+                                </Col>
+                                <Col md={12} >
+                                    <Block className="orders" transparent noPadding >
+                                        <Orders fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
+                                    </Block>
+                                </Col>
+                            </Row>
                         </Col>
-                        <Col md={24} lg={12} >
-                            <Block className="place-order" transparent noPadding >
-                                <PlaceOrder fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
-                            </Block>
-                        </Col>
-                        <Col md={24} lg={12}>
-                            <Block className="orders" transparent noPadding >
-                                <Orders fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
+                    </Row>
+                </Col>
+                <Col className="parent" md={10} >
+                    <Row className="main-row" gutter={4}>
+                        <Col md={24} >
+                            <Block className="user-balance" title={t.t("Your balance")} icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
+                                <Balance hideButton />
                             </Block>
                         </Col>
                     </Row>
 
-                </Col>
-                <Col className="full-height" md={10} >
-                    <Block className="user-balance" title={t.t("Your balance")} icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
-                        <Balance hideButton />
-                    </Block>
                     {/* <Block iconPosition="right" title={t.t("Deposit history")} icon={<FontAwesomeIcon icon={["fas", "history"]} />}  >
                         <DepositHistory />
                     </Block> */}
-                    <Row className="full-height-trades" gutter={4}>
-                        <Col className="full-height" md={14} >
+                    <Row className="main-row main-horizontal-row grow" gutter={4}>
+                        <Col md={14} >
                             <Block className="order-book" title={<div>{`${t.t("Order book")}`}
                                 <span className="subtitle"> {`${t.t(config.currencies[this.state.fromSymbol].name)} / ${t.t(config.currencies[this.state.toSymbol].name)}`}</span></div>}
                                 icon={<FontAwesomeIcon icon={["fas", "list"]} />} iconPosition="right" >
@@ -122,8 +127,8 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                                 <OrderBook type="sell" from={this.state.fromSymbol} to={this.state.toSymbol} />
                             </Block>
                         </Col>
-                        <Col className="full-height" md={10} >
-                            <Block className="full-height" title={<div>{`${t.t("Trades")}`}
+                        <Col md={10} >
+                            <Block className="order-book" title={<div>{`${t.t("Trades")}`}
                                 <span className="subtitle"> {`${t.t(config.currencies[this.state.fromSymbol].name)} / ${t.t(config.currencies[this.state.toSymbol].name)}`}</span></div>}
                                 icon={<FontAwesomeIcon icon={["fas", "list"]} />} iconPosition="right" >
                                 <MarketTrades from={this.state.fromSymbol} to={this.state.toSymbol} />

@@ -1,19 +1,41 @@
 @import (reference) "../../theme/application";
 .exchange-row
 {
-    height: 100%;
-    .full-height
+    flex-grow: 1;
+    display: flex;
+    .parent 
     {
-        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        .main-row
+        {
+            display: flex;
+            flex-direction: column;
+        }
+        .main-horizontal-row
+        {
+            display: flex;
+            flex-direction: row;
+            .block
+            {
+                height: 100%;
+            }
+        }
+    }
+    .grow
+    {
+        flex-grow: 1;
+    }
+    .orders
+    {
+        margin-bottom: 0 !important;
     }
 }
 .trading-view-block
 {
-    height: calc(100% - 386px);
-}
-.full-height-trades
-{
-    height: calc(100% - 157px);
+    display: flex;
+    flex-grow: 1;
 }
 .order-book
 {
@@ -24,7 +46,7 @@
 }
 .trading-view
 {
-    height: 100% !important;
+    flex-grow: 1;
 }
 .subtitle
 {
