@@ -1,4 +1,42 @@
 @import (reference) "../../theme/application";
+.exchange-row
+{
+    flex-grow: 1;
+    display: flex;
+    .parent 
+    {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        .main-row
+        {
+            display: flex;
+            flex-direction: column;
+        }
+        .main-horizontal-row
+        {
+            display: flex;
+            flex-direction: row;
+            .block
+            {
+                height: 100%;
+            }
+        }
+    }
+    .grow
+    {
+        flex-grow: 1;
+    }
+    .orders
+    {
+        margin-bottom: 0 !important;
+    }
+}
+.trading-view-block
+{
+    display: flex;
+    flex-grow: 1;
+}
 .order-book
 {
     .ant-col-md-12
@@ -8,7 +46,7 @@
 }
 .trading-view
 {
-    height: 350px !important;
+    flex-grow: 1;
 }
 .subtitle
 {

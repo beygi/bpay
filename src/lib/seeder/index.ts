@@ -49,8 +49,8 @@ export default class Seeder {
         const orders = {};
 
         availableMarkets.forEach((market) => {
-            trades[market] = _.get(store.getState(), `app.market.trades.${market}`,
-                Array.from({ length: 20 }, () => {
+            trades[market] = _.get(store.getState(), `app.market.tradess.${market}`,
+                Array.from({ length: 26 }, () => {
                     return {
                         amount: _.random(0.1, 8.0),
                         time: _.now(),
