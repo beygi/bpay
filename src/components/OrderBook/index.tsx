@@ -7,6 +7,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import Ex from "../../components/ExchangeValue";
 import config from "../../config";
+import { updateUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t, { localDate } from "../../services/trans/i18n";
 import "./style.less";
@@ -20,6 +21,8 @@ interface IProps {
     orders: [];
     /**  order book type, sell or buy */
     type: "sell" | "buy";
+    /** store dispatcher */
+    updateStorePrice: (price) => void;
 }
 
 interface IState {
@@ -154,6 +157,7 @@ class OrderBook extends React.Component<IProps, IState> {
                             style: (this.props.type === "sell") ?
                                 { background: `linear-gradient(to right, rgba(255, 88, 88, 0.7) ${_.round((record.total / this.state.max) * 100)}%,transparent 0%)` } :
                                 { background: `linear-gradient(to left, rgba(143, 170, 131 , 0.7) ${_.round((record.total / this.state.max) * 100)}%,transparent 0%)` },
+                            onClick: () => { this.props.updateStorePrice(record.price); },
                         };
                     }}
                 >
@@ -164,6 +168,12 @@ class OrderBook extends React.Component<IProps, IState> {
             <div className="user-balance live-price" > {trades}</div >
         );
     }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        updateStorePrice: (price) => dispatch(updateUser({ bidPrice: price })),
+    };
 }
 
 function mapStateToProps(state: IRootState) {
@@ -180,4 +190,4 @@ function mapStateToProps(state: IRootState) {
     };
 }
 
-export default connect(mapStateToProps)(OrderBook);
+export default connect(mapStateToProps, mapDispatchToProps)(OrderBook);
