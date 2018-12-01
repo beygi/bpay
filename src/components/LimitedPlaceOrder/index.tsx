@@ -82,11 +82,12 @@ class LimitedPlaceOrderComponent extends React.Component<IProps, IState> {
                 price: currentPrice,
                 amount: 1,
             });
+            this.props.form.resetFields(["amount", "price", "total"]);
         }
         if (this.props.price !== prevProps.price) {
             this.handlePriceChange(_.round(this.props.price, priceFloatedNums), priceFloatedNums);
+            this.props.form.resetFields(["amount", "price", "total"]);
         }
-        this.props.form.resetFields(["amount", "price", "total"]);
     }
 
     public handleSubmit = (e) => {
