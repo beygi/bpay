@@ -157,13 +157,14 @@ class OrderBook extends React.Component<IProps, IState> {
         // }
         if (this.state.orders) {
             return (
-                <Table showHeader={this.props.showHeaders} pagination={false} size="small" rowKey={(record, i) => `${i}`}
-                    className="market-orders" dataSource={(this.props.type === "buy") ? this.state.orders.reverse() : this.state.orders} columns={columns}
+                <Table pagination={false} size="small" rowKey={(record, i) => `${i}`}
+                    className={`market-orders${(!this.props.showHeaders) ? " hide-header" : ""}`}
+                    dataSource={(this.props.type === "buy") ? this.state.orders.reverse() : this.state.orders} columns={columns}
                     onRow={(record) => {
                         return {
                             style: (this.props.type === "sell") ?
                                 { background: `linear-gradient(to left, rgba(255, 88, 88, 0.5) ${_.round((record.total / this.state.max) * 100)}%,transparent 0%)` } :
-                                { background: `linear-gradient(to left, rgba(143, 170, 131 , 0.5) ${_.round((record.total / this.state.max) * 100)}%,transparent 0%)` },
+                                { background: `linear-gradient(to left, rgba(143, 170, 131 , 0.7) ${_.round((record.total / this.state.max) * 100)}%,transparent 0%)` },
                             onClick: () => { this.props.updateStorePrice(record.price); },
                         };
                     }}

@@ -126,6 +126,12 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                                 <OrderBook type="buy" from={this.state.fromSymbol} to={this.state.toSymbol} />
                                 <br />
                                 <OrderBook type="sell" showHeaders={false} from={this.state.fromSymbol} to={this.state.toSymbol} />
+                                <div className="info">
+                                    <FontAwesomeIcon className="buy" icon={["fas", "square-full"]} />
+                                    <span>{t.t("buy")}</span>
+                                    <FontAwesomeIcon className="sell" icon={["fas", "square-full"]} />
+                                    <span>{t.t("sell")}</span>
+                                </div>
                             </Block>
                         </Col>
                         <Col className="horizontal-col" xl={10} md={24} >
