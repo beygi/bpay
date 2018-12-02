@@ -1,4 +1,41 @@
 @import (reference) "../../theme/application";
+
+@media (max-width: 768px) {
+    .selected-menu {
+        font-size: 17px !important; 
+        line-height: 28px !important;
+        margin-top: 0 !important;
+        margin-left: 40px !important;
+        .anticon
+        {
+            display: none;
+        }
+    }
+    .ProfilePic {
+        border: 2px solid @palette-high !important;
+        height: 32px !important;
+    }
+    .user-dashboard-logo
+    {
+        object-fit: cover;
+        width: 27px !important;
+        height: 32px !important;
+        object-position: left;
+        margin: 0px 3px !important;
+    }
+    .header-logo-user {
+        height: 52px !important;
+    }
+    &[dir='rtl'] {
+        .selected-menu {
+            margin-right: 40px !important;
+            margin-left: 0px !important;
+        }
+     }
+}
+
+
+
 &[dir='rtl'] {
         .anticon-logout {
             svg
