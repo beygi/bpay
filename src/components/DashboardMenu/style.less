@@ -1,4 +1,18 @@
 @import (reference) "../../theme/application";
+@media (max-width: 768px) {
+    .bm-burger-button {
+        width: 26px !important;
+        height: 22px !important;
+        top: 14px !important;
+        left: 10px !important;
+    }
+    &[dir='rtl'] {
+        .bm-burger-button {
+            right: 10px !important;
+            left: auto !important;
+        }
+     }
+}
 &[dir='rtl'] {
     .bm-burger-button {
         right: 30px;

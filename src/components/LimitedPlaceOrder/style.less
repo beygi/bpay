@@ -1,8 +1,14 @@
 @import (reference) "../../theme/application";
-@media (max-width: 768px) {
+@media (min-width: 576px) and (max-width: 768px) {
     .limited-place-order
     {
-        height: 290px !important;
+        height: 260px !important;
+    }
+}
+@media (max-width: 576px) {
+    .limited-place-order
+    {
+        height: 300px !important;
     }
 }
 .limited-place-order
@@ -39,7 +45,7 @@
         height: 45px;
     }
     height: 260px;
-    margin-bottom: 0px !important;
+    margin-bottom: 4px !important;
 }
 .buy-btn
 {
