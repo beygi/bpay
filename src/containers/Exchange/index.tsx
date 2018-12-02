@@ -64,8 +64,8 @@ class ExchangeContainer extends React.Component<IProps, IState> {
 
     public render() {
         return (
-            <Row className="exchange-row" gutter={4}>
-                <Col className="parent" md={14} >
+            <Row type="flex" justify="space-between" className="exchange-row" gutter={4}>
+                <Col className="parent" lg={14} md={24}>
                     {/* <Row gutter={4}>
                         <Col md={12} >
                             <Block title={t.t(config.currencies[this.state.toSymbol].name)} icon={config.icons[this.state.toSymbol]}>
@@ -73,7 +73,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                             </Block>
                         </Col>
                     </Row> */}
-                    <Row className="main-row grow" gutter={4}>
+                    <Row type="flex" justify="start" className="main-row grow" gutter={4}>
                         <Col md={24} >
                             <Block>
                                 <Market from={this.state.fromSymbol} to={this.state.toSymbol} />
@@ -106,8 +106,8 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                         </Col>
                     </Row>
                 </Col>
-                <Col className="parent" md={10} >
-                    <Row className="main-row" gutter={4}>
+                <Col className="parent" lg={10} md={24} >
+                    <Row type="flex" className="main-row" gutter={4}>
                         <Col md={24} >
                             <Block className="user-balance" title={t.t("Your balance")} icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
                                 <Balance hideButton />
@@ -118,8 +118,8 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                     {/* <Block iconPosition="right" title={t.t("Deposit history")} icon={<FontAwesomeIcon icon={["fas", "history"]} />}  >
                         <DepositHistory />
                     </Block> */}
-                    <Row className="main-row main-horizontal-row grow" gutter={4}>
-                        <Col md={14} >
+                    <Row type="flex" className="main-row main-horizontal-row grow" gutter={4}>
+                        <Col xl={14} md={24} >
                             <Block className="order-book" title={<div>{`${t.t("Order book")}`}
                                 <span className="subtitle"> {`${t.t(config.currencies[this.state.fromSymbol].name)} / ${t.t(config.currencies[this.state.toSymbol].name)}`}</span></div>}
                                 icon={<FontAwesomeIcon icon={["fas", "list"]} />} iconPosition="right" >
@@ -127,7 +127,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                                 <OrderBook type="sell" from={this.state.fromSymbol} to={this.state.toSymbol} />
                             </Block>
                         </Col>
-                        <Col md={10} >
+                        <Col xl={10} md={24} >
                             <Block className="order-book" title={<div>{`${t.t("Trades")}`}
                                 <span className="subtitle"> {`${t.t(config.currencies[this.state.fromSymbol].name)} / ${t.t(config.currencies[this.state.toSymbol].name)}`}</span></div>}
                                 icon={<FontAwesomeIcon icon={["fas", "list"]} />} iconPosition="right" >
