@@ -10,6 +10,10 @@
         display: block !important;
         height: 300px;
     }
+    .trading-view
+    {
+        height: 100%;
+    }    
     .parent 
     {
         display: block !important;
@@ -43,7 +47,11 @@
             flex-direction: row;
             .block
             {
-                height: 100%;
+                flex-grow: 1;
+            }
+            .horizontal-col
+            {
+                display: flex;
             }
         }
     }
@@ -51,17 +59,16 @@
     {
         flex-grow: 1;
     }
-    .orders
-    {
-        margin-bottom: 0 !important;
-    }
 }
 .trading-view-block
 {
     display: flex;
     flex-grow: 1;
     min-height: 200px;
-    max-height: 500px;
+}
+.trading-view
+{
+    flex-grow: 1;
 }
 .order-book
 {
@@ -69,11 +76,6 @@
     {
         float: left !important;
     }
-}
-.trading-view
-{
-    flex-grow: 1;
-    height: 100%;
 }
 .subtitle
 {
