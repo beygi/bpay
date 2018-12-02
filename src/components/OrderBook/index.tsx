@@ -19,6 +19,8 @@ interface IProps {
     to: string;
     /** crypto currencies exchange data from redux store */
     orders: [];
+    /** display table header */
+    showHeaders: boolean;
     /**  order book type, sell or buy */
     type: "sell" | "buy";
     /** store dispatcher */
@@ -36,6 +38,10 @@ interface IState {
  * we have live currencies exchnage rate and price in this block
  */
 class OrderBook extends React.Component<IProps, IState> {
+
+    public static defaultProps: Partial<IProps> = {
+        showHeaders: true,
+    };
 
     public static getDerivedStateFromProps(props) {
         // update state.balance when props changes by redux4
@@ -151,7 +157,7 @@ class OrderBook extends React.Component<IProps, IState> {
         // }
         if (this.state.orders) {
             return (
-                <Table pagination={false} size="small" rowKey={(record, i) => `${i}`}
+                <Table showHeader={this.props.showHeaders} pagination={false} size="small" rowKey={(record, i) => `${i}`}
                     className="market-orders" dataSource={(this.props.type === "buy") ? this.state.orders.reverse() : this.state.orders} columns={columns}
                     onRow={(record) => {
                         return {

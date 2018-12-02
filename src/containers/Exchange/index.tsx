@@ -124,7 +124,8 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                                 <span className="subtitle"> {`${t.t(config.currencies[this.state.fromSymbol].name)} / ${t.t(config.currencies[this.state.toSymbol].name)}`}</span></div>}
                                 icon={<FontAwesomeIcon icon={["fas", "list"]} />} iconPosition="right" >
                                 <OrderBook type="buy" from={this.state.fromSymbol} to={this.state.toSymbol} />
-                                <OrderBook type="sell" from={this.state.fromSymbol} to={this.state.toSymbol} />
+                                <br />
+                                <OrderBook type="sell" showHeaders={false} from={this.state.fromSymbol} to={this.state.toSymbol} />
                             </Block>
                         </Col>
                         <Col className="horizontal-col" xl={10} md={24} >
