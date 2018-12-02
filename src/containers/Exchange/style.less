@@ -1,5 +1,14 @@
 @import (reference) "../../theme/application";
-
+  &[dir='rtl']{
+      .info{
+          span
+          {
+              margin-left: 20px !important;
+              margin-right: 5px !important;
+          }
+      }  
+    }
+  
 @media (max-width: 1024px) {
     .exchange-row
     {
@@ -58,6 +67,22 @@
     .grow
     {
         flex-grow: 1;
+    }
+    .info{
+        margin: 10px;
+        span
+        {
+            margin-left: 5px;
+            margin-right: 20px;
+        }
+        .buy
+        {
+            color: @order-book-buy;
+        }
+        .sell
+        {
+            color: @order-book-sell;
+        }
     }
 }
 .trading-view-block

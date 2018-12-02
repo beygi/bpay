@@ -1,6 +1,19 @@
 @import (reference) "../../theme/application";
 .market-orders
 {
+    &.hide-header
+    {
+        thead
+        {
+            th
+            {
+                visibility: collapse;
+                line-height: 0px;
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+            }
+        }
+    }
     .ant-table,th
     {
     background-color: transparent;
