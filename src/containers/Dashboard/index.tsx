@@ -112,7 +112,8 @@ all transactions will be done using bitcoin test network not real network.")}
                     <Col md={8} >
                         <Row gutter={8}>
                             <Col md={24} >
-                                <Block className="user-balance" title={t.t("Your balance")} icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
+                                <Block collapse
+                                    className="user-balance" title={t.t("Your balance")} icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
                                     <Balance />
                                 </Block>
                             </Col>
@@ -122,7 +123,7 @@ all transactions will be done using bitcoin test network not real network.")}
                                 </Block>
                             </Col>
                             <Col md={24} >
-                                <Block iconPosition="right" collapse title={t.t("Deposit history")} icon={<FontAwesomeIcon icon={["fas", "history"]} />}  >
+                                <Block iconPosition="right" collapse collapseClosed title={t.t("Deposit history")} icon={<FontAwesomeIcon icon={["fas", "history"]} />}  >
                                     <DepositHistory />
                                 </Block>
                             </Col>
