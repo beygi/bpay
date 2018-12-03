@@ -42,7 +42,7 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         user.keycloak.loadUserProfile().then(() => {
             const apiKey = _.get(user.keycloak, "profile.attributes.apikey[0]", "");
             const mobile = _.get(user.keycloak, "profile.attributes.mobile[0]", "");
-            const theme = _.get(user.keycloak, "profile.attributes.theme[0]", "");
+            const theme = _.get(user.keycloak, "profile.attributes.theme[0]", "light");
             const language = _.get(user.keycloak, "profile.attributes.locale[0]", "");
 
             // set user in store
