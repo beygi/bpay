@@ -17,7 +17,7 @@ export default class API {
 
     private constructor() {
         // empty;
-        this.setBaseURL("https://aas.avazcoin.com/auth");
+        this.setBaseURL("https://accounts.becopay.com/auth");
     }
 
     public CreateAxiosInstance() {
