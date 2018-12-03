@@ -110,7 +110,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                     <Row type="flex" className="main-row" gutter={4}>
                         <Col md={24} >
                             <Block className="user-balance" title={t.t("Your balance")} icon={<FontAwesomeIcon icon={["fas", "balance-scale"]} />} iconPosition="right" >
-                                <Balance hideButton />
+                                <Balance symbols={[this.state.toSymbol, this.state.fromSymbol]} hideButton />
                             </Block>
                         </Col>
                     </Row>

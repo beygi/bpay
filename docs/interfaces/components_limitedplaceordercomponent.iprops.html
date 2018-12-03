@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/components_balancecomponent.html">Components/BalanceComponent</a>
+					<a href="../modules/components_limitedplaceordercomponent.html">Components/LimitedPlaceOrderComponent</a>
 				</li>
 				<li>
-					<a href="components_balancecomponent.iprops.html">IProps</a>
+					<a href="components_limitedplaceordercomponent.iprops.html">IProps</a>
 				</li>
 			</ul>
 			<h1>Interface IProps</h1>
@@ -73,7 +73,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IProps</span>
+						<span class="tsd-signature-type">FormComponentProps</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">IProps</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -84,10 +89,12 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="components_balancecomponent.iprops.html#balance" class="tsd-kind-icon">balance</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="components_balancecomponent.iprops.html#hidebutton" class="tsd-kind-icon">hide<wbr>Button</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="components_balancecomponent.iprops.html#symbols" class="tsd-kind-icon">symbols</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="components_balancecomponent.iprops.html#updateuserbalance" class="tsd-kind-icon">update<wbr>User<wbr>Balance</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="components_limitedplaceordercomponent.iprops.html#exchangetype" class="tsd-kind-icon">exchange<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="components_limitedplaceordercomponent.iprops.html#form" class="tsd-kind-icon">form</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="components_limitedplaceordercomponent.iprops.html#fromsymbol" class="tsd-kind-icon">from<wbr>Symbol</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="components_limitedplaceordercomponent.iprops.html#price" class="tsd-kind-icon">price</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="components_limitedplaceordercomponent.iprops.html#tosymbol" class="tsd-kind-icon">to<wbr>Symbol</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="components_limitedplaceordercomponent.iprops.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,79 +103,89 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="balance" class="tsd-anchor"></a>
-					<h3>balance</h3>
-					<div class="tsd-signature tsd-kind-icon">balance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">__type</span></div>
+					<a name="exchangetype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> exchange<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">exchange<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"limit"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"market"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in components/Balance/index.tsx:19</li>
+							<li>Defined in components/LimitedPlaceOrder/index.tsx:39</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>holds user balance object</p>
+							<p>limit or market</p>
 						</div>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="form" class="tsd-anchor"></a>
+					<h3>form</h3>
+					<div class="tsd-signature tsd-kind-icon">form<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WrappedFormUtils</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from FormComponentProps.form</p>
+						<ul>
+							<li>Defined in /home/mahdy/Projects/b2b/node_modules/antd/lib/form/Form.d.ts:106</li>
+						</ul>
+					</aside>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="hidebutton" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> hide<wbr>Button</h3>
-					<div class="tsd-signature tsd-kind-icon">hide<wbr>Button<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="fromsymbol" class="tsd-anchor"></a>
+					<h3>from<wbr>Symbol</h3>
+					<div class="tsd-signature tsd-kind-icon">from<wbr>Symbol<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in components/Balance/index.tsx:21</li>
+							<li>Defined in components/LimitedPlaceOrder/index.tsx:33</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>display deposit button</p>
+							<p>origin symbol</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="symbols" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> symbols</h3>
-					<div class="tsd-signature tsd-kind-icon">symbols<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="price" class="tsd-anchor"></a>
+					<h3>price</h3>
+					<div class="tsd-signature tsd-kind-icon">price<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in components/Balance/index.tsx:23</li>
+							<li>Defined in components/LimitedPlaceOrder/index.tsx:41</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>symbols to show, default is all</p>
+							<p>bidding price, read from redux</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="updateuserbalance" class="tsd-anchor"></a>
-					<h3>update<wbr>User<wbr>Balance</h3>
-					<div class="tsd-signature tsd-kind-icon">update<wbr>User<wbr>Balance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<a name="tosymbol" class="tsd-anchor"></a>
+					<h3>to<wbr>Symbol</h3>
+					<div class="tsd-signature tsd-kind-icon">to<wbr>Symbol<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in components/Balance/index.tsx:17</li>
+							<li>Defined in components/LimitedPlaceOrder/index.tsx:35</li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>balance<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>balance: <span class="tsd-signature-type">any</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-									</li>
-								</ul>
-							</li>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>target symbol</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in components/LimitedPlaceOrder/index.tsx:37</li>
 						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>buy or sell</p>
+						</div>
 					</div>
 				</section>
 			</section>
@@ -180,41 +197,59 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/components_balancecomponent.html">Components/<wbr>Balance<wbr>Component</a>
+						<a href="../modules/components_limitedplaceordercomponent.html">Components/<wbr>Limited<wbr>Place<wbr>Order<wbr>Component</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="../classes/components_balancecomponent.balancecomponent.html" class="tsd-kind-icon">Balance<wbr>Component</a>
+						<a href="../classes/components_limitedplaceordercomponent.limitedplaceordercomponent.html" class="tsd-kind-icon">Limited<wbr>Place<wbr>Order<wbr>Component</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="components_balancecomponent.iprops.html" class="tsd-kind-icon">IProps</a>
+						<a href="components_limitedplaceordercomponent.iprops.html" class="tsd-kind-icon">IProps</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="components_balancecomponent.iprops.html#balance" class="tsd-kind-icon">balance</a>
+								<a href="components_limitedplaceordercomponent.iprops.html#exchangetype" class="tsd-kind-icon">exchange<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="components_limitedplaceordercomponent.iprops.html#form" class="tsd-kind-icon">form</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="components_balancecomponent.iprops.html#hidebutton" class="tsd-kind-icon">hide<wbr>Button</a>
+								<a href="components_limitedplaceordercomponent.iprops.html#fromsymbol" class="tsd-kind-icon">from<wbr>Symbol</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="components_balancecomponent.iprops.html#symbols" class="tsd-kind-icon">symbols</a>
+								<a href="components_limitedplaceordercomponent.iprops.html#price" class="tsd-kind-icon">price</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="components_balancecomponent.iprops.html#updateuserbalance" class="tsd-kind-icon">update<wbr>User<wbr>Balance</a>
+								<a href="components_limitedplaceordercomponent.iprops.html#tosymbol" class="tsd-kind-icon">to<wbr>Symbol</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="components_limitedplaceordercomponent.iprops.html#type" class="tsd-kind-icon">type</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="components_balancecomponent.istate.html" class="tsd-kind-icon">IState</a>
+						<a href="components_limitedplaceordercomponent.istate.html" class="tsd-kind-icon">IState</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/components_limitedplaceordercomponent.html#formitem" class="tsd-kind-icon">Form<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/components_limitedplaceordercomponent.html#types" class="tsd-kind-icon">types</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/components_balancecomponent.html#mapstatetoprops" class="tsd-kind-icon">map<wbr>State<wbr>ToProps</a>
+						<a href="../modules/components_limitedplaceordercomponent.html#mapdispatchtoprops" class="tsd-kind-icon">map<wbr>Dispatch<wbr>ToProps</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/components_limitedplaceordercomponent.html#mapstatetoprops" class="tsd-kind-icon">map<wbr>State<wbr>ToProps</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/components_limitedplaceordercomponent.html#formitemlayout" class="tsd-kind-icon">form<wbr>Item<wbr>Layout</a>
 					</li>
 				</ul>
 			</nav>
