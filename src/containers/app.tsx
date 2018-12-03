@@ -39,7 +39,7 @@ interface IState {
 class AppContainer extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
-        console.log(store.getState());
+        // console.log(store.getState());
         if (store.getState().app.user && store.getState().app.user.language) {
             document.body.dir = Languages[store.getState().app.user.language].dir;
             if (t.default.language !== store.getState().app.user.language) {
