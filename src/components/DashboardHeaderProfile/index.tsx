@@ -57,6 +57,10 @@ class DashboardHeaderProfileComponent extends React.Component<IProps, IState> {
                     <span className="caption">{t.t("Email:")} </span>{this.props.email}
                 </div>
                 <div className="line">
+                    <span className="caption" >{t.t("User level:")} </span>
+                    <span className={`${userObject.getLevel().code}`}>{userObject.getLevel().name}</span>
+                </div>
+                <div className="line">
                     <span className="caption">{t.t("Last login:")} </span>{date}
                 </div>
                 <div className="line">
