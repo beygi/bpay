@@ -112,25 +112,25 @@ class MarketComponent extends React.Component<IProps, IState> {
             title: t.t("Last Price"),
             dataIndex: "price",
             key: "price",
-            render: (text) => <Ex fixFloatNum={priceFloatedNums} value={text} seperateThousand />,
+            render: (text) => <Ex floatsNum={priceFloatedNums} value={text} seperateThousand />,
         },
         {
             title: t.t("24h Change"),
             dataIndex: "change",
             key: "change",
-            render: (text, record) => <Ex fixFloatNum={priceFloatedNums} percentMark value={((record.high / record.low) - 1) * 100} seperateThousand />,
+            render: (text, record) => <Ex floatsNum={priceFloatedNums} percentMark value={((record.high / record.low) - 1) * 100} seperateThousand />,
         },
         {
             title: t.t("24h High"),
             dataIndex: "high",
             key: "high",
-            render: (text) => <Ex value={text} fixFloatNum={priceFloatedNums} seperateThousand />,
+            render: (text) => <Ex value={text} floatsNum={priceFloatedNums} seperateThousand />,
         },
         {
             title: t.t("24h Low"),
             dataIndex: "low",
             key: "low",
-            render: (text) => <Ex value={text} fixFloatNum={priceFloatedNums} seperateThousand />,
+            render: (text) => <Ex value={text} floatsNum={priceFloatedNums} seperateThousand />,
         },
         ];
 

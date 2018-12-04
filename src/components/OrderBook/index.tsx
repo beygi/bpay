@@ -120,35 +120,35 @@ class OrderBook extends React.Component<IProps, IState> {
                 title: t.t("Price"),
                 dataIndex: "price",
                 render: (price) => (
-                    <Ex fixFloatNum={priceFloatedNums} stockStyle={false} value={price} seperateThousand />
+                    <Ex floatsNum={priceFloatedNums} stockStyle={false} value={price} seperateThousand />
                 ),
             },
             {
                 title: t.t("Amount"),
                 dataIndex: "amount",
                 render: (price) => (
-                    <Ex stockStyle={false} fixFloatNum={2} value={price} seperateThousand />
+                    <Ex stockStyle={false} floatsNum={2} value={price} seperateThousand />
                 ),
             },
             {
                 title: t.t("Total"),
                 dataIndex: "totalAmount",
                 render: (price) => (
-                    <Ex stockStyle={false} fixFloatNum={2} value={price} seperateThousand />
+                    <Ex stockStyle={false} floatsNum={2} value={price} seperateThousand />
                 ),
             },
             {
                 title: t.t("Total value"),
                 dataIndex: "total",
                 render: (price) => (
-                    <Ex stockStyle={false} fixFloatNum={0} value={price} seperateThousand />
+                    <Ex stockStyle={false} floatsNum={0} value={price} seperateThousand />
                 ),
             },
             {
                 title: t.t("Count"),
                 dataIndex: "count",
                 render: (count) => {
-                    return (<Ex fixFloatNum={0} stockStyle={false} value={count} />);
+                    return (<Ex floatsNum={0} stockStyle={false} value={count} />);
                 },
             },
         ];

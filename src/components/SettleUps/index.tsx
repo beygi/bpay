@@ -98,7 +98,7 @@ class SettleUps extends React.Component<IProps, IState> {
                 title: t.t("Amount"),
                 dataIndex: "amount",
                 render: (price) => (
-                    <Ex fixFloatNum={0} value={price} seperateThousand />
+                    <Ex floatsNum={0} value={price} seperateThousand />
                 ),
             },
             {
@@ -239,7 +239,7 @@ class SettleUps extends React.Component<IProps, IState> {
     /**  render paginations with local numbers */
     public itemRender(current: number, type: any, originalElement?: any) {
         if (type === "page") {
-            return <a> <Ex fixFloatNum={0} value={current} seperateThousand /></a>;
+            return <a> <Ex floatsNum={0} value={current} seperateThousand /></a>;
         }
         return originalElement;
     }

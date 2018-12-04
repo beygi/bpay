@@ -91,8 +91,8 @@ class Invoice extends React.Component<IProps, IState> {
             });
         }
         invoice.statusName = t.t(invoice.status);
-        invoice.priceComponent = <Ex fixFloatNum={0} value={invoice.payerAmount} seperateThousand />;
-        invoice.checkoutComponent = <Ex fixFloatNum={0} value={invoice.merchantAmount} seperateThousand />;
+        invoice.priceComponent = <Ex floatsNum={3} fixedFloats={false} value={invoice.payerAmount} seperateThousand />;
+        invoice.checkoutComponent = <Ex floatsNum={3} fixedFloats={false} value={invoice.merchantAmount} seperateThousand />;
         return (
             <Block key={invoice.id} collapse collapseClosed className={"transaction-block"}
                 title={<span>

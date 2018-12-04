@@ -1,13 +1,5 @@
 @import (reference) "../../theme/application";
 
-&[dir='rtl'] {
-    .new-invoice {
-        .ant-btn {
-            
-        }
-    }
-}
-
 .new-invoice {
     padding: 20px;
 
@@ -17,7 +9,9 @@
     padding-bottom: 10px;
 
     #price {
-        #ltr-placeholder()
+        #ltr-placeholder();
+        direction: ltr;
+        text-align: left;
     }
 
     .price {

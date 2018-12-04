@@ -9,14 +9,16 @@ interface IProps {
     /** input numer */
     value: number;
     /**  number of floating point digits to display , default is 2 */
-    fixFloatNum?: number;
-    /** seperate thousands with comma */
+    floatsNum?: number;
+    /** always display floats even when not exist. default is true */
+    fixedFloats?: boolean;
+    /** seperate thousands with comma. default is false */
     seperateThousand?: boolean;
-    /** display local numbers */
+    /** display local numbers. default is true */
     localNumbers?: boolean;
-    /** Will be displayed in red and green color when value is changed */
+    /** Will be displayed in red and green color when value is changed. default is true */
     stockStyle?: boolean;
-    /** Display Percent mark at begining */
+    /** Display Percent mark at begining. default is false */
     percentMark?: boolean;
 }
 
@@ -34,17 +36,25 @@ interface IState {
  */
 class ExchangeValueComponent extends React.Component<IProps, IState> {
 
+    public static defaultProps: Partial<IProps> = {
+        floatsNum: 2,
+        fixedFloats: true,
+        seperateThousand: false,
+        localNumbers: true,
+        stockStyle: true,
+        percentMark: false,
+    };
+
     public static getDerivedStateFromProps(props, state) {
-        if (props.stockStyle === false) { return { status: "normal", value: parseFloat(props.value) }; }
+        if (props.stockStyle === false || props.value === state.value) {
+            return { status: "normal", value: parseFloat(props.value) };
+        }
         // check for grow or fall
         if (props.value > state.value) {
             return { status: "grow", value: parseFloat(props.value) };
         }
         if (props.value < state.value) {
             return { status: "fall", value: parseFloat(props.value) };
-        }
-        if (props.value === state.value) {
-            return { status: "normal", value: parseFloat(props.value) };
         }
         return null;
     }
@@ -58,15 +68,15 @@ class ExchangeValueComponent extends React.Component<IProps, IState> {
     }
 
     public render() {
-        const floats = (this.props.fixFloatNum === 0) ? this.props.fixFloatNum : (this.props.fixFloatNum || 2);
+        const floats = this.props.floatsNum;
         let output = "";
         const options = {
-            minimumFractionDigits: floats,
+            minimumFractionDigits: (this.props.fixedFloats) ? floats : 0,
             maximumFractionDigits: floats,
             useGrouping: this.props.seperateThousand,
         };
 
-        if (this.props.localNumbers == null || this.props.localNumbers) {
+        if (this.props.localNumbers) {
             output = this.state.value.toLocaleString(t.default.language, options);
         } else {
             output = this.state.value.toLocaleString("en", options);
