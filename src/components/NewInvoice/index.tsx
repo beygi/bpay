@@ -2,9 +2,10 @@
  * @module Components/NewInvoice
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Form, Input, InputNumber, notification } from "antd";
+import { Button, Form, Input, InputNumber, notification, Select } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import axios from "axios";
+import * as _ from "lodash";
 import * as React from "react";
 import { JsonTable } from "react-json-to-html";
 import { connect } from "react-redux";
@@ -14,7 +15,9 @@ import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
+
 const FormItem = Form.Item;
+const Option = Select.Option;
 
 interface IProps extends FormComponentProps {
     user: any;
@@ -54,7 +57,7 @@ class NewInvoice extends React.Component<IProps, IState> {
                         price: values.price,
                         mobile: this.props.user.mobile,
                         orderId: this.uuid(),
-                        payerCur: "IRR",
+                        payerCur: values.fiat,
                         merchantCur: "IRR",
                     },
                     $domain: "https://api.becopay.com",
@@ -92,7 +95,10 @@ class NewInvoice extends React.Component<IProps, IState> {
         return;
     }
     public render() {
+        const fiats = _.filter(config.currencies, { type: "fiat" }).map((fiat) => <Option key={fiat.name} value={fiat.name}>{t.t(fiat.name)}</Option>);
+
         const { getFieldDecorator } = this.props.form;
+
         return (
             <Form className="new-invoice" layout="inline" onSubmit={this.handleSubmit}  >
                 <FormItem className="price">
@@ -110,6 +116,20 @@ class NewInvoice extends React.Component<IProps, IState> {
                             max={10000000000}
                             formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                         />,
+                    )}
+                </FormItem>
+                <FormItem className="fiat">
+                    {getFieldDecorator("fiat", {
+                        rules: [{
+                            required: true, message: t.t("Please select input currency"),
+                        }],
+                        initialValue: "IRR",
+                    })(
+                        <Select size="large">
+                            {
+                                fiats
+                            }
+                        </Select>,
                     )}
                 </FormItem>
                 <FormItem className="description">

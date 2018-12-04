@@ -31,6 +31,11 @@ const config = {
             type: "fiat",
             markets: ["BTC", "ETH", "LTC"],
         },
+        EUR: {
+            name: "EUR",
+            type: "fiat",
+            markets: ["BTC"],
+        },
         BTC: {
             name: "Bitcoin",
             depositeWallet: "btcbeygizasdfrwgsdfgsdfgsdfdfsgsfdgdfg",
@@ -93,11 +98,16 @@ const config = {
             priceFloatedNums: 2,
             orderBookRoundFactor: 0,
         },
-        "LTC:USD": {
+        "LTC:EUR": {
             priceStep: 0.5,
             amountStep: 1,
             priceFloatedNums: 3,
             orderBookRoundFactor: 0,
+        },
+        "BTC:EUR": {
+            priceStep: 50,
+            amountStep: 0.1,
+            priceFloatedNums: 2,
         },
         "ETH:BTC": {
             priceStep: 0.005,
