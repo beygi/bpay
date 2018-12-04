@@ -63,6 +63,7 @@ const config = {
         BTC: <i className="cc BTC-alt"></i>,
         USD: <span>$</span>,
         IRR: <span>﷼</span>,
+        EUR: <span>€</span>,
         ETH: <i className="cc ETH-alt"></i>,
         LTC: <i className="cc LTC-alt"></i>,
     },
