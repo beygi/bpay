@@ -28,7 +28,7 @@ interface InvRequest {
     "merchantCur": string;
     "mobile": string;
     "orderId": string;
-    "payerCur": string;
+    "currency": string;
     "price": string;
 }
 interface Invoice {

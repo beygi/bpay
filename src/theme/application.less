@@ -47,6 +47,11 @@
             background-color: @dark-block-color;
         }
 
+       .checkout
+       {
+           background-color: lighten(@dark-block-color,20%);
+       }
+
         .ant-table {
             background: @dark-bk;
             .ant-table-thead > tr > th {
@@ -126,6 +131,13 @@
 
     .exchange-value.normal {
         color: lighten(@dark-bk,30%);
+    }
+    
+    .mini
+    {
+        .exchange-value.normal {
+            color:  @secondaryTextColor
+        }
     }
 
     .ant-form-item-required::before {

@@ -57,7 +57,7 @@ class NewInvoice extends React.Component<IProps, IState> {
                         price: values.price,
                         mobile: this.props.user.mobile,
                         orderId: this.uuid(),
-                        payerCur: values.fiat,
+                        currency: values.fiat,
                         merchantCur: "IRR",
                     },
                     $domain: "https://api.becopay.com",
