@@ -40,7 +40,7 @@ function getUserAttr() {
         apiKey: _.get(user.keycloak, "profile.attributes.apikey[0]", ""),
         mobile: _.get(user.keycloak, "profile.attributes.mobile[0]", ""),
         // theme: _.get(user.keycloak, "profile.attributes.theme[0]", "light"),
-        language: _.get(user.keycloak, "profile.attributes.locale[0]", ""),
+        // language: _.get(user.keycloak, "profile.attributes.locale[0]", ""),
     };
 
 }
