@@ -111,7 +111,7 @@ class NewInvoice extends React.Component<IProps, IState> {
                     })(
                         <InputNumber
                             size="large"
-                            placeholder="IRR"
+                            placeholder={this.props.form.getFieldValue("fiat")}
                             min={0}
                             max={10000000000}
                             formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
