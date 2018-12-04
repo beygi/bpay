@@ -7,8 +7,7 @@ import * as _ from "lodash";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { Redirect, Route, Switch } from "react-router";
-
+import { Route, Switch } from "react-router";
 import AppContainer from "./containers/app";
 import Seeder from "./lib/seeder";
 import USER from "./lib/user";
@@ -25,31 +24,40 @@ import KeyCloacksApi from "./lib/api-old";
 
 // we need a history object to hold browsers history
 const history = createBrowserHistory();
-// an unique user instance returned from an statc method in user class
 const user = USER.getInstance();
+// an unique user instance returned from an statc method in user class
 
 const keyCloak = KeyCloacksApi.getInstance();
 
 console.log("becopay version: " + VERSION);
+
+// prepare user properties and set defaults from keycloak
+function getUserAttr() {
+    const userData = _.pick(user.keycloak.tokenParsed, ["email", "given_name", "family_name", "realm_access", "auth_time"]);
+    return {
+        ...userData,
+        token: user.keycloak.token,
+        apiKey: _.get(user.keycloak, "profile.attributes.apikey[0]", ""),
+        mobile: _.get(user.keycloak, "profile.attributes.mobile[0]", ""),
+        theme: _.get(user.keycloak, "profile.attributes.theme[0]", "light"),
+        language: _.get(user.keycloak, "profile.attributes.locale[0]", ""),
+    };
+
+}
+
 // Docs : `https://www.keycloak.org/docs/3.0/securing_apps/topics/oidc/javascript-adapter.html`
 user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
 
     if (authenticated) {
         // token is in user.keycloak.token, pick and other useful information for saving in store
         // get user profile
-        const userData = _.pick(user.keycloak.tokenParsed, ["email", "given_name", "family_name", "realm_access", "auth_time"]);
         console.log(user.keycloak);
         user.keycloak.loadUserProfile().then(() => {
-            const apiKey = _.get(user.keycloak, "profile.attributes.apikey[0]", "");
-            const mobile = _.get(user.keycloak, "profile.attributes.mobile[0]", "");
-            const theme = _.get(user.keycloak, "profile.attributes.theme[0]", "light");
-            const language = _.get(user.keycloak, "profile.attributes.locale[0]", "");
-
             // set user in store
-            store.dispatch(updateUser({ ...userData, token: user.keycloak.token, apiKey, mobile, theme, language }));
+            store.dispatch(updateUser(getUserAttr()));
 
             // set user in user object because it has an instance now
-            user.setUser(userData);
+            user.setUser(getUserAttr());
             // seeding user with defaults and random generated data
             // if (store.getState().app.user && !store.getState().app.user.balance) {
             // console.log("seeding user ... ");
@@ -77,8 +85,10 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         setInterval(() => {
             user.keycloak.updateToken().success((refreshed) => {
                 if (refreshed) {
+                    user.keycloak.loadUserProfile().then(() => {
+                        store.dispatch(updateUser(getUserAttr()));
+                    });
                     keyCloak.setAuthToken(user.keycloak.token);
-                    store.dispatch(updateUser({ ...userData, token: user.keycloak.token }));
                 }
             });
         }, 30000);
