@@ -106,6 +106,17 @@ class Invoice extends React.Component<IProps, IState> {
                     <span className="symbol">
                         {t.t(invoice.merchantCur)}
                     </span>
+                    {
+                        (invoice.merchantCur !== invoice.payerCur) ?
+                            <Tag className="shop-name checkout">
+                                <span className="price-value mini" >
+                                    {invoice.priceComponent}
+                                </span>
+                                <span className="symbol mini">
+                                    {t.t(invoice.payerCur)}
+                                </span>
+                            </Tag> : null
+                    }
                 </span>}
                 iconPosition="right" icon={<span>
                     <Tooltip title={invoice.description}>

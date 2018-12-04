@@ -57,7 +57,7 @@ class NewInvoice extends React.Component<IProps, IState> {
                         price: values.price,
                         mobile: this.props.user.mobile,
                         orderId: this.uuid(),
-                        payerCur: values.fiat,
+                        currency: values.fiat,
                         merchantCur: "IRR",
                     },
                     $domain: "https://api.becopay.com",
@@ -111,7 +111,7 @@ class NewInvoice extends React.Component<IProps, IState> {
                     })(
                         <InputNumber
                             size="large"
-                            placeholder="IRR"
+                            placeholder={this.props.form.getFieldValue("fiat")}
                             min={0}
                             max={10000000000}
                             formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
