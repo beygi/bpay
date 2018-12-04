@@ -94,7 +94,7 @@ class Invoice extends React.Component<IProps, IState> {
         invoice.priceComponent = <Ex fixFloatNum={0} value={invoice.payerAmount} seperateThousand />;
         invoice.checkoutComponent = <Ex fixFloatNum={0} value={invoice.merchantAmount} seperateThousand />;
         return (
-            <Block key={invoice.id} collapse className={"transaction-block"}
+            <Block key={invoice.id} collapse collapseClosed className={"transaction-block"}
                 title={<span>
                     {this.userObject.hasRealmRole("merchants_admin") ? <Tag className="shop-name">{invoice.shopName}</Tag> : null}
                     <Tag className="invoice-id" color="#453e41">

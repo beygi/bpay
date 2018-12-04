@@ -17,10 +17,8 @@ import "./style.less";
 const userObject = USER.getInstance();
 
 interface IProps {
-    /** current user's email address */
-    email: any;
-    auth_time: number;
-
+    /** current user object from redux */
+    user: any;
     /** logout current user (this function is binded to a redux funtion) */
     logOut: () => void;
 }
@@ -49,12 +47,11 @@ class DashboardHeaderProfileComponent extends React.Component<IProps, IState> {
     public render() {
         // const date = strftime("%B %d, %Y %H:%M:%S", new pDate(this.props.auth_time * 1000));
         const pDate = localDate(t.default.language);
-        const date = new pDate(this.props.auth_time * 1000).toLocaleString();
-
+        const date = new pDate(this.props.user.auth_time * 1000).toLocaleString();
         return (
             <div className="header-user-profile">
                 <div className="line">
-                    <span className="caption">{t.t("Email:")} </span>{this.props.email}
+                    <span className="caption">{t.t("Email:")} </span>{this.props.user.email}
                 </div>
                 <div className="line">
                     <span className="caption" >{t.t("User level:")} </span>
@@ -87,9 +84,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state: IRootState) {
     return {
-        email: state.app.user.email,
-        auth_time: state.app.user.auth_time,
-        language: state.app.user.language,
+        user: state.app.user,
     };
 }
 
