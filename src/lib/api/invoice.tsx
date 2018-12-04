@@ -30,7 +30,6 @@ interface InvRequest {
     "orderId": string;
     "payerCur": string;
     "price": string;
-    "symbol": string;
 }
 interface Invoice {
     "amount": number;

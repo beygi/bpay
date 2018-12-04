@@ -75,12 +75,12 @@ msgstr ""
 msgid "Available"
 msgstr ""
 
-#: src/components/Analysis/index.tsx:130
-msgid "Balance"
-msgstr ""
-
 #: src/components/Unsettled/index.tsx:67
 msgid "‌Balance"
+msgstr ""
+
+#: src/components/Analysis/index.tsx:130
+msgid "Balance"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:61
@@ -101,7 +101,7 @@ msgstr ""
 msgid "Change"
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:71
+#: src/components/DashboardHeaderProfile/index.tsx:72
 msgid "Change Password"
 msgstr ""
 
@@ -109,7 +109,15 @@ msgstr ""
 msgid "Checking"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:64
+#: src/components/Invoice/index.tsx:67
+msgid "Checkout Amount"
+msgstr ""
+
+#: src/components/Invoice/index.tsx:63
+msgid "Checkout Symbol"
+msgstr ""
+
+#: src/components/NewInvoice/index.tsx:69
 msgid "click to open gateway"
 msgstr ""
 
@@ -142,11 +150,11 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:128
+#: src/components/NewInvoice/index.tsx:150
 msgid "Create"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:62
+#: src/components/Invoice/index.tsx:71
 msgid "Create time"
 msgstr ""
 
@@ -180,7 +188,7 @@ msgstr ""
 msgid "Deposit history"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:120
+#: src/components/NewInvoice/index.tsx:142
 msgid "Description"
 msgstr ""
 
@@ -240,7 +248,7 @@ msgstr ""
 msgid "failed"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:75
+#: src/components/NewInvoice/index.tsx:80
 msgid "Failed to create invoice"
 msgstr ""
 
@@ -316,7 +324,7 @@ msgstr ""
 msgid "KYC stands for (Know Your Customer) it is the process of a business. <br> verifying and identifying the identity of its clients.It is required because the KYC its used to refer to the bank and anti-money laundering regulations."
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:63
+#: src/components/DashboardHeaderProfile/index.tsx:64
 msgid "Last login:"
 msgstr ""
 
@@ -362,7 +370,7 @@ msgid "Login Password"
 msgstr ""
 
 #: src/components/DashboardHeader/index.tsx:159
-#: src/components/DashboardHeaderProfile/index.tsx:72
+#: src/components/DashboardHeaderProfile/index.tsx:73
 msgid "Logout"
 msgstr ""
 
@@ -393,7 +401,7 @@ msgstr ""
 msgid "New Invoice"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:63
+#: src/components/NewInvoice/index.tsx:68
 msgid "New Invoice Created"
 msgstr ""
 
@@ -418,7 +426,7 @@ msgstr ""
 msgid "No Access"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:67
+#: src/components/NewInvoice/index.tsx:72
 msgid "Open gateway"
 msgstr ""
 
@@ -475,6 +483,14 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
+#: src/components/Invoice/index.tsx:59
+msgid "Payer Amount"
+msgstr ""
+
+#: src/components/Invoice/index.tsx:56
+msgid "Payer Symbol"
+msgstr ""
+
 #: src/containers/Groups/index.tsx:34
 msgid "Permission"
 msgstr ""
@@ -487,7 +503,7 @@ msgstr ""
 msgid "Please input 16 digits origin card number "
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:116
+#: src/components/NewInvoice/index.tsx:138
 msgid "Please input description, max length is 30"
 msgstr ""
 
@@ -495,7 +511,7 @@ msgstr ""
 msgid "please input number"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:89
+#: src/components/NewInvoice/index.tsx:94
 msgid "Please input price"
 msgstr ""
 
@@ -539,6 +555,10 @@ msgstr ""
 msgid "Please select a currency to deposit"
 msgstr ""
 
+#: src/components/NewInvoice/index.tsx:124
+msgid "Please select input currency"
+msgstr ""
+
 #: src/components/Settle/index.tsx:84
 msgid "Please select payment amount"
 msgstr ""
@@ -572,7 +592,6 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:59
 #: src/components/LimitedPlaceOrder/index.tsx:151
 #: src/components/LimitedPlaceOrder/index.tsx:170
 #: src/components/MarketTrades/index.tsx:70
@@ -629,7 +648,7 @@ msgstr ""
 msgid "Settle"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:80
+#: src/components/Invoice/index.tsx:89
 msgid "Settle detail"
 msgstr ""
 
@@ -651,7 +670,7 @@ msgstr ""
 msgid "Shop Name"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:65
+#: src/components/Invoice/index.tsx:74
 msgid "Status"
 msgstr ""
 
@@ -679,15 +698,11 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:56
-msgid "Symbol"
-msgstr ""
-
 #: src/components/DashboardHeader/index.tsx:136
 msgid "System Administration"
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:66
+#: src/components/DashboardHeaderProfile/index.tsx:67
 msgid "System language:"
 msgstr ""
 
@@ -739,7 +754,7 @@ msgstr ""
 msgid "Transactions"
 msgstr ""
 
-#: src/lib/user/index.ts:73
+#: src/lib/user/index.ts:80
 msgid "unverified"
 msgstr ""
 
@@ -776,7 +791,7 @@ msgstr ""
 msgid "Validating your documents"
 msgstr ""
 
-#: src/lib/user/index.ts:71
+#: src/lib/user/index.ts:73
 msgid "verified"
 msgstr ""
 

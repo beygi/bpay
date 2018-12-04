@@ -53,12 +53,21 @@ class Invoice extends React.Component<IProps, IState> {
                 dataIndex: "orderId",
             },
             {
-                title: t.t("Symbol"),
-                dataIndex: "symbol",
+                title: t.t("Payer Symbol"),
+                dataIndex: "payerCur",
             }, {
-                title: t.t("Price"),
+                title: t.t("Payer Amount"),
                 dataIndex: "priceComponent",
-            }, {
+            },
+            {
+                title: t.t("Checkout Symbol"),
+                dataIndex: "merchantCur",
+            },
+            {
+                title: t.t("Checkout Amount"),
+                dataIndex: "checkoutComponent",
+            },
+            {
                 title: t.t("Create time"),
                 dataIndex: "date",
             }, {
@@ -82,7 +91,8 @@ class Invoice extends React.Component<IProps, IState> {
             });
         }
         invoice.statusName = t.t(invoice.status);
-        invoice.priceComponent = <Ex fixFloatNum={0} value={invoice.price} seperateThousand />;
+        invoice.priceComponent = <Ex fixFloatNum={0} value={invoice.payerAmount} seperateThousand />;
+        invoice.checkoutComponent = <Ex fixFloatNum={0} value={invoice.merchantAmount} seperateThousand />;
         return (
             <Block key={invoice.id} collapse className={"transaction-block"}
                 title={<span>
@@ -91,10 +101,10 @@ class Invoice extends React.Component<IProps, IState> {
                         {invoice.id}
                     </Tag>
                     <span className="price-value" >
-                        <Ex fixFloatNum={0} value={invoice.price} seperateThousand />
+                        {invoice.checkoutComponent}
                     </span>
                     <span className="symbol">
-                        {t.t(invoice.symbol)}
+                        {t.t(invoice.merchantCur)}
                     </span>
                 </span>}
                 iconPosition="right" icon={<span>
