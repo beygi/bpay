@@ -17,7 +17,7 @@ export default class API {
 
     private constructor() {
         // empty;
-        this.setBaseURL("https://aas.avazcoin.com/auth");
+        this.setBaseURL("https://accounts.becopay.com/auth");
     }
 
     public CreateAxiosInstance() {
@@ -81,8 +81,21 @@ export default class API {
                 max: size,
             },
         };
-
+        // this.UpdateUser();
         return this.axios.get("/admin/realms/master/users", params);
+    }
+
+    // keyCloaks
+    public UpdateUser() {
+        let params = {};
+        params = {
+            firstName: "beygoo",
+            attributes: {
+                theme: "light",
+                locale: ["fa"],
+            },
+        };
+        return this.axios.put("/admin/realms/master/users/11704ecb-3c95-4d54-ac6d-9b99b1f65fa6", params);
     }
 
 }

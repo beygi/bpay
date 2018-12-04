@@ -30,7 +30,7 @@ export default class Seeder {
         setInterval(() => { this.setMarket(); }, 10000);
         setInterval(() => { this.setForex(); }, 60000);
         setInterval(() => { this.setOffice(); }, 1000);
-        setInterval(() => { this.setTrades(); }, 2000);
+        setInterval(() => { this.setTrades(); }, 10000);
     }
 
     public setTrades() {
@@ -146,6 +146,14 @@ export default class Seeder {
                     available: 12,
                     inOrder: 1,
                     total: 13,
+                },
+            },
+            EUR: {
+                name: "EUR",
+                balance: {
+                    available: 8,
+                    inOrder: 1,
+                    total: 9,
                 },
             },
             IRR: {
