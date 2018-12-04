@@ -51,13 +51,14 @@ class NewInvoice extends React.Component<IProps, IState> {
             if (!err) {
                 this.setState({ loading: true });
                 this.api.addInvoiceUsingPOST({
-                    inv: {
+                    invReq: {
                         apikey: this.props.user.apiKey,
                         description: values.description,
                         price: values.price,
                         mobile: this.props.user.mobile,
                         orderId: this.uuid(),
-                        symbol: values.fiat,
+                        payerCur: values.fiat,
+                        merchantCur: "IRR",
                     },
                     $domain: "https://api.becopay.com",
                 }).then((response) => {
