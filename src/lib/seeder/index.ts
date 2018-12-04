@@ -30,7 +30,7 @@ export default class Seeder {
         setInterval(() => { this.setMarket(); }, 10000);
         setInterval(() => { this.setForex(); }, 60000);
         setInterval(() => { this.setOffice(); }, 1000);
-        setInterval(() => { this.setTrades(); }, 10000);
+        setInterval(() => { this.setTrades(); }, 3000);
     }
 
     public setTrades() {
