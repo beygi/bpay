@@ -114,7 +114,7 @@ class Settle extends React.Component<IProps, IState> {
                 title: t.t("Amount"),
                 dataIndex: "amount",
                 render: (price) => (
-                    <Ex fixFloatNum={0} value={price} seperateThousand />
+                    <Ex floatsNum={0} value={price} seperateThousand />
                 ),
             },
             {
@@ -165,7 +165,7 @@ class Settle extends React.Component<IProps, IState> {
                                             const style = { border: "", borderRadius: "" };
                                             return (
                                                 <div className="ant-calendar-date" style={style} >
-                                                    <Ex fixFloatNum={0} value={current.date()} stockStyle={false} />
+                                                    <Ex floatsNum={0} value={current.date()} stockStyle={false} />
                                                 </div>
                                             );
                                         }}
@@ -210,7 +210,7 @@ class Settle extends React.Component<IProps, IState> {
                         columns={columns} rowKey="id" dataSource={this.state.invoices.settleUpInvoices} size="small" />
                     <div>
                         {t.t("Total:") + " "}
-                        <Ex stockStyle={false} fixFloatNum={0} value={this.state.sum} seperateThousand />
+                        <Ex stockStyle={false} floatsNum={0} value={this.state.sum} seperateThousand />
                     </div>
                 </div>
             );

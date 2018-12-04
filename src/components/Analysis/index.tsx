@@ -89,7 +89,7 @@ class AnalysisComponent extends React.Component<IProps, IState> {
                             <span><FontAwesomeIcon icon={["fas", "handshake"]} /> {symbolPromiesd.toFixed(2)}</span>
                             &nbsp;<span><FontAwesomeIcon icon={["fas", "hand-holding"]} /> {symbolCurrent.toFixed(2)}</span>
                         </div>
-                        <div><FontAwesomeIcon icon={["fas", "balance-scale"]} /> $<Rate value={promisedDiffinUsd} fixFloatNum={1} seperateThousand /></div>
+                        <div><FontAwesomeIcon icon={["fas", "balance-scale"]} /> $<Rate value={promisedDiffinUsd} floatsNum={1} seperateThousand /></div>
                         <Button onClick={() => this.showModal(this.props.symbol, symbol)} size="small" className="neat-btn" type="primary">Exchange</Button>
                     </Col >);
             }
@@ -129,7 +129,7 @@ class AnalysisComponent extends React.Component<IProps, IState> {
             {
                 name: t.t("Balance"),
                 icon: <FontAwesomeIcon icon={["fas", "balance-scale"]} />,
-                value: <div> $<Rate value={diffInUsd} fixFloatNum={1} seperateThousand /></div>,
+                value: <div> $<Rate value={diffInUsd} floatsNum={1} seperateThousand /></div>,
             },
         ];
 

@@ -54,7 +54,7 @@ class LiveComponent extends React.Component<IProps, IState> {
                         <i className={`live-icon cc ${coin.symbol}-alt`}></i>
                         <span className="balance-name">{t.t(coin.name)}</span>
                         <p className="balance-number usd">$<Ex value={usdPrice} /></p>
-                        <p className="balance-number"><i className={"cc BTC-alt"}></i><Ex value={btcPrice} fixFloatNum={6} /></p>
+                        <p className="balance-number"><i className={"cc BTC-alt"}></i><Ex value={btcPrice} floatsNum={6} /></p>
                     </div>);
             },
             );

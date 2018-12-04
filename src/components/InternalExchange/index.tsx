@@ -74,7 +74,7 @@ class InternalExchangeComponent extends React.Component<IProps, IState> {
                                 <span><FontAwesomeIcon icon={["fas", "handshake"]} /> {symbolPromiesd.toFixed(2)}</span>
                                 &nbsp;<span><FontAwesomeIcon icon={["fas", "hand-holding"]} /> {symbolCurrent.toFixed(2)}</span>
                             </div>
-                            <div><FontAwesomeIcon icon={["fas", "balance-scale"]} /> $<Rate value={promisedDiffinUsd} fixFloatNum={1} seperateThousand /></div>
+                            <div><FontAwesomeIcon icon={["fas", "balance-scale"]} /> $<Rate value={promisedDiffinUsd} floatsNum={1} seperateThousand /></div>
                         </Block>
                     </Col >);
             }
@@ -108,7 +108,7 @@ class InternalExchangeComponent extends React.Component<IProps, IState> {
                                 <span><FontAwesomeIcon icon={["fas", "handshake"]} /> {symbolPromiesd.toFixed(2)}</span>
                                 &nbsp;<span><FontAwesomeIcon icon={["fas", "hand-holding"]} /> {symbolCurrent.toFixed(2)}</span>
                             </div>
-                            <div><FontAwesomeIcon icon={["fas", "balance-scale"]} /> $<Rate value={promisedDiffinUsd} fixFloatNum={1} seperateThousand /></div>
+                            <div><FontAwesomeIcon icon={["fas", "balance-scale"]} /> $<Rate value={promisedDiffinUsd} floatsNum={1} seperateThousand /></div>
                         </Block>
                     </Col >);
             }

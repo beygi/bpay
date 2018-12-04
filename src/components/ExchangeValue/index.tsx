@@ -9,7 +9,9 @@ interface IProps {
     /** input numer */
     value: number;
     /**  number of floating point digits to display , default is 2 */
-    fixFloatNum?: number;
+    floatsNum?: number;
+    /** always display floats even when not exist. default is true */
+    fixedFloats?: boolean;
     /** seperate thousands with comma */
     seperateThousand?: boolean;
     /** display local numbers */
@@ -58,7 +60,7 @@ class ExchangeValueComponent extends React.Component<IProps, IState> {
     }
 
     public render() {
-        const floats = (this.props.fixFloatNum === 0) ? this.props.fixFloatNum : (this.props.fixFloatNum || 2);
+        const floats = (this.props.floatsNum === 0) ? this.props.floatsNum : (this.props.floatsNum || 2);
         let output = "";
         const options = {
             minimumFractionDigits: floats,
