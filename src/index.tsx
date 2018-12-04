@@ -81,17 +81,17 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
 
         // }
 
-        // refresh token automatically after 3000 seconds
+        // refresh token automatically after 1 minutes
         setInterval(() => {
             user.keycloak.updateToken().success((refreshed) => {
                 if (refreshed) {
-                    user.keycloak.loadUserProfile().then(() => {
-                        store.dispatch(updateUser(getUserAttr()));
-                    });
                     keyCloak.setAuthToken(user.keycloak.token);
                 }
+                user.keycloak.loadUserProfile().then(() => {
+                    store.dispatch(updateUser(getUserAttr()));
+                });
             });
-        }, 30000);
+        }, 60000);
     } else {
         // user is not logged in
         store.dispatch(setUser(null));
