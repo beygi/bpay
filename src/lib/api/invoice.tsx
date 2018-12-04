@@ -25,8 +25,10 @@ interface Debt {
 interface InvRequest {
     "apikey": string;
     "description": string;
+    "merchantCur": string;
     "mobile": string;
     "orderId": string;
+    "payerCur": string;
     "price": string;
 }
 interface Invoice {
@@ -34,11 +36,13 @@ interface Invoice {
     "blockchainCoin": "tbitcoin" | "bitcoin" | "ethereum" | "usdollar" | "iranrial" | "syrianpound" | "euro";
     "category": string;
     "cryptoAmount": string;
-    "currency": string;
     "description": string;
     "failed": boolean;
     "id": string;
+    "merchantAmount": number;
+    "merchantCoin": string;
     "orderid": string;
+    "payerCoin": string;
     "qr": string;
     "regdatetime": string;
     "settleup": Settleup;
@@ -55,13 +59,15 @@ interface InvoiceResponse {
     "description": string;
     "gatewayUrl": string;
     "id": string;
+    "merchantAmount": number;
+    "merchantCoin": string;
     "orderId": string;
-    "price": number;
+    "payerAmount": number;
+    "payerCoin": string;
     "qr": string;
     "remaining": number;
     "shopName": string;
     "status": string;
-    "symbol": string;
     "timeout": number;
     "timestamp": number;
 }
@@ -69,6 +75,7 @@ interface Link {
     "href": string;
     "templated": boolean;
 }
+
 interface Merchant {
     "callback": string;
     "cardNumber": string;
@@ -142,7 +149,7 @@ interface settleUpInvoices {
 }
 
 interface Logger {
-    log: (line: string) => any
+    log: (line: string) => any;
 }
 export default class invoiceApi {
     public static getInstance() {
@@ -297,7 +304,7 @@ export default class invoiceApi {
     }
 
     public addInvoiceUsingPOST(parameters: {
-        "inv": InvRequest,
+        "invReq": InvRequest,
         $queryParameters?: any,
         $domain?: string,
     }): Promise<request.Response> {
@@ -311,12 +318,12 @@ export default class invoiceApi {
             headers.Accept = "*/*";
             headers["Content-Type"] = "application/json";
 
-            if (parameters.inv !== undefined) {
-                body = parameters.inv;
+            if (parameters.invReq !== undefined) {
+                body = parameters.invReq;
             }
 
-            if (parameters.inv === undefined) {
-                reject(new Error("Missing required  parameter: inv"));
+            if (parameters.invReq === undefined) {
+                reject(new Error("Missing required  parameter: invReq"));
                 return;
             }
 
@@ -762,6 +769,77 @@ export default class invoiceApi {
 
             if (parameters.invoices !== undefined) {
                 queryParameters.invoices = parameters.invoices;
+            }
+
+            if (parameters.mermob !== undefined) {
+                queryParameters.mermob = parameters.mermob;
+            }
+
+            if (parameters.mob !== undefined) {
+                queryParameters.mob = parameters.mob;
+            }
+
+            if (parameters.$queryParameters) {
+                Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                    queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+                });
+            }
+
+            this.request("GET", domain + path, body, headers, queryParameters, form, reject, resolve);
+        });
+    }
+
+    public resetTesthopUsingGET(parameters: {
+        "apikey"?: string,
+        "mob"?: string,
+        $queryParameters?: any,
+        $domain?: string,
+    }): Promise<request.Response> {
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/settleup/testreset";
+        let body: any;
+        const queryParameters: any = {};
+        const headers: any = {};
+        const form: any = {};
+        return new Promise((resolve, reject) => {
+            headers.Accept = "*/*";
+
+            if (parameters.apikey !== undefined) {
+                queryParameters.apikey = parameters.apikey;
+            }
+
+            if (parameters.mob !== undefined) {
+                queryParameters.mob = parameters.mob;
+            }
+
+            if (parameters.$queryParameters) {
+                Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                    queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+                });
+            }
+
+            this.request("GET", domain + path, body, headers, queryParameters, form, reject, resolve);
+        });
+    }
+
+    public successAllwaitongUsingGET(parameters: {
+        "apikey"?: string,
+        "mermob"?: string,
+        "mob"?: string,
+        $queryParameters?: any,
+        $domain?: string,
+    }): Promise<request.Response> {
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        const path = "/settleup/testsuccess";
+        let body: any;
+        const queryParameters: any = {};
+        const headers: any = {};
+        const form: any = {};
+        return new Promise((resolve, reject) => {
+            headers.Accept = "*/*";
+
+            if (parameters.apikey !== undefined) {
+                queryParameters.apikey = parameters.apikey;
             }
 
             if (parameters.mermob !== undefined) {

@@ -1,5 +1,4 @@
 {
-
     "swagger": "2.0",
     "info": {
         "description": "Invoice Service",
@@ -19,41 +18,29 @@
     "host": "87.98.188.77:9193",
     "basePath": "/",
     "tags": [{
-            "name": "invoice-rest",
-            "description": "Invoice Rest"
-        },
-        {
-            "name": "merchant-rest",
-            "description": "Merchant Rest"
-        },
-        {
-            "name": "operation-handler",
-            "description": "Operation Handler"
-        },
-        {
-            "name": "settleup-rest",
-            "description": "Settleup Rest"
-        },
-        {
-            "name": "web-mvc-endpoint-handler-mapping",
-            "description": "Web Mvc Endpoint Handler Mapping"
-        }
-    ],
-    "schemes": [
-        "https"
-    ],
+        "name": "invoice-rest",
+        "description": "Invoice Rest"
+    }, {
+        "name": "merchant-rest",
+        "description": "Merchant Rest"
+    }, {
+        "name": "operation-handler",
+        "description": "Operation Handler"
+    }, {
+        "name": "settleup-rest",
+        "description": "Settleup Rest"
+    }, {
+        "name": "web-mvc-endpoint-handler-mapping",
+        "description": "Web Mvc Endpoint Handler Mapping"
+    }],
+    "schemes": ["https"],
     "paths": {
         "/actuator": {
             "get": {
-                "tags": [
-                    "web-mvc-endpoint-handler-mapping"
-                ],
+                "tags": ["web-mvc-endpoint-handler-mapping"],
                 "summary": "links",
                 "operationId": "linksUsingGET",
-                "produces": [
-                    "application/json",
-                    "application/vnd.spring-boot.actuator.v2+json"
-                ],
+                "produces": ["application/json", "application/vnd.spring-boot.actuator.v2+json"],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -82,15 +69,10 @@
         },
         "/actuator/health": {
             "get": {
-                "tags": [
-                    "operation-handler"
-                ],
+                "tags": ["operation-handler"],
                 "summary": "handle",
                 "operationId": "handleUsingGET",
-                "produces": [
-                    "application/json",
-                    "application/vnd.spring-boot.actuator.v2+json"
-                ],
+                "produces": ["application/json", "application/vnd.spring-boot.actuator.v2+json"],
                 "parameters": [{
                     "in": "body",
                     "name": "body",
@@ -125,15 +107,10 @@
         },
         "/actuator/info": {
             "get": {
-                "tags": [
-                    "operation-handler"
-                ],
+                "tags": ["operation-handler"],
                 "summary": "handle",
                 "operationId": "handleUsingGET_1",
-                "produces": [
-                    "application/json",
-                    "application/vnd.spring-boot.actuator.v2+json"
-                ],
+                "produces": ["application/json", "application/vnd.spring-boot.actuator.v2+json"],
                 "parameters": [{
                     "in": "body",
                     "name": "body",
@@ -168,36 +145,29 @@
         },
         "/invoice": {
             "get": {
-                "tags": [
-                    "invoice-rest"
-                ],
+                "tags": ["invoice-rest"],
                 "summary": "getById",
                 "operationId": "getByIdUsingGET",
-                "produces": [
-                    "application/json"
-                ],
+                "produces": ["application/json"],
                 "parameters": [{
-                        "name": "apikey",
-                        "in": "query",
-                        "description": "apikey",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "id",
-                        "in": "query",
-                        "description": "id",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "mob",
-                        "in": "query",
-                        "description": "mob",
-                        "required": false,
-                        "type": "string"
-                    }
-                ],
+                    "name": "apikey",
+                    "in": "query",
+                    "description": "apikey",
+                    "required": false,
+                    "type": "string"
+                }, {
+                    "name": "id",
+                    "in": "query",
+                    "description": "id",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "mob",
+                    "in": "query",
+                    "description": "mob",
+                    "required": false,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -224,21 +194,15 @@
                 "deprecated": false
             },
             "post": {
-                "tags": [
-                    "invoice-rest"
-                ],
-                "summary": "addInvoice",
+                "tags": ["invoice-rest"],
+                "summary": "create new invoice.",
                 "operationId": "addInvoiceUsingPOST",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "*/*"
-                ],
+                "consumes": ["application/json"],
+                "produces": ["*/*"],
                 "parameters": [{
                     "in": "body",
-                    "name": "inv",
-                    "description": "inv",
+                    "name": "invReq",
+                    "description": "invReq",
                     "required": true,
                     "schema": {
                         "$ref": "#/definitions/InvRequest"
@@ -255,7 +219,10 @@
                         "description": "Created"
                     },
                     "204": {
-                        "description": "service and uri is ok but content not found"
+                        "description": "service and uri is ok but content not found",
+                        "schema": {
+                            "$ref": "#/definitions/InvoiceResponse"
+                        }
                     },
                     "400": {
                         "description": "Bad request"
@@ -275,63 +242,53 @@
         },
         "/invoice/all": {
             "get": {
-                "tags": [
-                    "invoice-rest"
-                ],
+                "tags": ["invoice-rest"],
                 "summary": "return invoices pagination if not found 204 content not found",
                 "operationId": "getAllInvoicev2UsingGET",
-                "produces": [
-                    "application/json"
-                ],
+                "produces": ["application/json"],
                 "parameters": [{
-                        "name": "apikey",
-                        "in": "query",
-                        "description": "apikey",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "dir",
-                        "in": "query",
-                        "description": "dir",
-                        "required": false,
-                        "type": "string",
-                        "default": "asc"
-                    },
-                    {
-                        "name": "mob",
-                        "in": "query",
-                        "description": "mob",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "description": "page",
-                        "required": false,
-                        "type": "integer",
-                        "default": 0,
-                        "format": "int32"
-                    },
-                    {
-                        "name": "size",
-                        "in": "query",
-                        "description": "size",
-                        "required": false,
-                        "type": "integer",
-                        "default": 20,
-                        "format": "int32"
-                    },
-                    {
-                        "name": "status",
-                        "in": "query",
-                        "description": "status",
-                        "required": false,
-                        "type": "string",
-                        "default": "success,waiting,failed"
-                    }
-                ],
+                    "name": "apikey",
+                    "in": "query",
+                    "description": "apikey",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "dir",
+                    "in": "query",
+                    "description": "dir",
+                    "required": false,
+                    "type": "string",
+                    "default": "asc"
+                }, {
+                    "name": "mob",
+                    "in": "query",
+                    "description": "mob",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "page",
+                    "in": "query",
+                    "description": "page",
+                    "required": false,
+                    "type": "integer",
+                    "default": 0,
+                    "format": "int32"
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "size",
+                    "required": false,
+                    "type": "integer",
+                    "default": 20,
+                    "format": "int32"
+                }, {
+                    "name": "status",
+                    "in": "query",
+                    "description": "status",
+                    "required": false,
+                    "type": "string",
+                    "default": "success,waiting,failed,settled"
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -363,36 +320,29 @@
         },
         "/invoice/byorderid": {
             "get": {
-                "tags": [
-                    "invoice-rest"
-                ],
+                "tags": ["invoice-rest"],
                 "summary": "getByOrderId",
                 "operationId": "getByOrderIdUsingGET",
-                "produces": [
-                    "application/json"
-                ],
+                "produces": ["application/json"],
                 "parameters": [{
-                        "name": "apikey",
-                        "in": "query",
-                        "description": "apikey",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "id",
-                        "in": "query",
-                        "description": "id",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "mob",
-                        "in": "query",
-                        "description": "mob",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                    "name": "apikey",
+                    "in": "query",
+                    "description": "apikey",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "id",
+                    "in": "query",
+                    "description": "id",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "mob",
+                    "in": "query",
+                    "description": "mob",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -421,17 +371,11 @@
         },
         "/invoice/coinselection": {
             "put": {
-                "tags": [
-                    "invoice-rest"
-                ],
+                "tags": ["invoice-rest"],
                 "summary": "change coin specific invoice",
                 "operationId": "changeCoinUsingPUT",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
                 "parameters": [{
                     "in": "body",
                     "name": "changeCode",
@@ -475,29 +419,23 @@
         },
         "/merchant": {
             "get": {
-                "tags": [
-                    "merchant-rest"
-                ],
+                "tags": ["merchant-rest"],
                 "summary": "getMerchantInfo",
                 "operationId": "getMerchantInfoUsingGET",
-                "produces": [
-                    "*/*"
-                ],
+                "produces": ["*/*"],
                 "parameters": [{
-                        "name": "mob",
-                        "in": "query",
-                        "description": "mob",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "token",
-                        "in": "query",
-                        "description": "token",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                    "name": "mob",
+                    "in": "query",
+                    "description": "mob",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "token",
+                    "in": "query",
+                    "description": "token",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -518,17 +456,11 @@
                 "deprecated": false
             },
             "post": {
-                "tags": [
-                    "merchant-rest"
-                ],
+                "tags": ["merchant-rest"],
                 "summary": "addMerchant",
                 "operationId": "addMerchantUsingPOST",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "*/*"
-                ],
+                "consumes": ["application/json"],
+                "produces": ["*/*"],
                 "parameters": [{
                     "in": "body",
                     "name": "merchant",
@@ -563,55 +495,46 @@
         },
         "/merchant/debt": {
             "get": {
-                "tags": [
-                    "merchant-rest"
-                ],
+                "tags": ["merchant-rest"],
                 "summary": "getMerchantDebt",
                 "operationId": "getMerchantDebtUsingGET",
-                "produces": [
-                    "*/*"
-                ],
+                "produces": ["*/*"],
                 "parameters": [{
-                        "name": "apikey",
-                        "in": "query",
-                        "description": "apikey",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "dir",
-                        "in": "query",
-                        "description": "dir",
-                        "required": false,
-                        "type": "string",
-                        "default": "asc"
-                    },
-                    {
-                        "name": "mob",
-                        "in": "query",
-                        "description": "mob",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "description": "page",
-                        "required": false,
-                        "type": "integer",
-                        "default": 0,
-                        "format": "int32"
-                    },
-                    {
-                        "name": "size",
-                        "in": "query",
-                        "description": "size",
-                        "required": false,
-                        "type": "integer",
-                        "default": 20,
-                        "format": "int32"
-                    }
-                ],
+                    "name": "apikey",
+                    "in": "query",
+                    "description": "apikey",
+                    "required": false,
+                    "type": "string"
+                }, {
+                    "name": "dir",
+                    "in": "query",
+                    "description": "dir",
+                    "required": false,
+                    "type": "string",
+                    "default": "asc"
+                }, {
+                    "name": "mob",
+                    "in": "query",
+                    "description": "mob",
+                    "required": false,
+                    "type": "string"
+                }, {
+                    "name": "page",
+                    "in": "query",
+                    "description": "page",
+                    "required": false,
+                    "type": "integer",
+                    "default": 0,
+                    "format": "int32"
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "size",
+                    "required": false,
+                    "type": "integer",
+                    "default": 20,
+                    "format": "int32"
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -634,14 +557,10 @@
         },
         "/merchant/token": {
             "get": {
-                "tags": [
-                    "merchant-rest"
-                ],
+                "tags": ["merchant-rest"],
                 "summary": "getToken",
                 "operationId": "getTokenUsingGET",
-                "produces": [
-                    "*/*"
-                ],
+                "produces": ["*/*"],
                 "parameters": [{
                     "name": "mob",
                     "in": "query",
@@ -671,55 +590,46 @@
         },
         "/settleup": {
             "get": {
-                "tags": [
-                    "settleup-rest"
-                ],
+                "tags": ["settleup-rest"],
                 "summary": "getAll",
                 "operationId": "getAllUsingGET",
-                "produces": [
-                    "*/*"
-                ],
+                "produces": ["*/*"],
                 "parameters": [{
-                        "name": "apikey",
-                        "in": "query",
-                        "description": "apikey",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "dir",
-                        "in": "query",
-                        "description": "dir",
-                        "required": false,
-                        "type": "string",
-                        "default": "asc"
-                    },
-                    {
-                        "name": "mob",
-                        "in": "query",
-                        "description": "mob",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "description": "page",
-                        "required": false,
-                        "type": "integer",
-                        "default": 0,
-                        "format": "int32"
-                    },
-                    {
-                        "name": "size",
-                        "in": "query",
-                        "description": "size",
-                        "required": false,
-                        "type": "integer",
-                        "default": 20,
-                        "format": "int32"
-                    }
-                ],
+                    "name": "apikey",
+                    "in": "query",
+                    "description": "apikey",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "dir",
+                    "in": "query",
+                    "description": "dir",
+                    "required": false,
+                    "type": "string",
+                    "default": "asc"
+                }, {
+                    "name": "mob",
+                    "in": "query",
+                    "description": "mob",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "name": "page",
+                    "in": "query",
+                    "description": "page",
+                    "required": false,
+                    "type": "integer",
+                    "default": 0,
+                    "format": "int32"
+                }, {
+                    "name": "size",
+                    "in": "query",
+                    "description": "size",
+                    "required": false,
+                    "type": "integer",
+                    "default": 20,
+                    "format": "int32"
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -751,17 +661,11 @@
         },
         "/settleup/add": {
             "post": {
-                "tags": [
-                    "settleup-rest"
-                ],
+                "tags": ["settleup-rest"],
                 "summary": "settleUp1",
                 "operationId": "settleUp1UsingPOST",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "*/*"
-                ],
+                "consumes": ["application/json"],
+                "produces": ["*/*"],
                 "parameters": [{
                     "in": "body",
                     "name": "requestSettle",
@@ -802,48 +706,137 @@
         },
         "/settleup/presettle": {
             "get": {
-                "tags": [
-                    "settleup-rest"
-                ],
+                "tags": ["settleup-rest"],
                 "summary": "getPreSettle",
                 "operationId": "getPreSettleUsingGET",
-                "produces": [
-                    "*/*"
-                ],
+                "produces": ["*/*"],
                 "parameters": [{
-                        "name": "apikey",
-                        "in": "query",
-                        "description": "apikey",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "invoices",
-                        "in": "query",
-                        "description": "invoices",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "mermob",
-                        "in": "query",
-                        "description": "mermob",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "mob",
-                        "in": "query",
-                        "description": "mob",
-                        "required": false,
-                        "type": "string"
-                    }
-                ],
+                    "name": "apikey",
+                    "in": "query",
+                    "description": "apikey",
+                    "required": false,
+                    "type": "string"
+                }, {
+                    "name": "invoices",
+                    "in": "query",
+                    "description": "invoices",
+                    "required": false,
+                    "type": "string"
+                }, {
+                    "name": "mermob",
+                    "in": "query",
+                    "description": "mermob",
+                    "required": false,
+                    "type": "string"
+                }, {
+                    "name": "mob",
+                    "in": "query",
+                    "description": "mob",
+                    "required": false,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/Debt"
+                        }
+                    },
+                    "204": {
+                        "description": "service and uri is ok but content not found"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized to access to this service"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/settleup/testreset": {
+            "get": {
+                "tags": ["settleup-rest"],
+                "summary": "resetTesthop",
+                "operationId": "resetTesthopUsingGET",
+                "produces": ["*/*"],
+                "parameters": [{
+                    "name": "apikey",
+                    "in": "query",
+                    "description": "apikey",
+                    "required": false,
+                    "type": "string"
+                }, {
+                    "name": "mob",
+                    "in": "query",
+                    "description": "mob",
+                    "required": false,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "204": {
+                        "description": "service and uri is ok but content not found"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "401": {
+                        "description": "Unauthorized to access to this service"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/settleup/testsuccess": {
+            "get": {
+                "tags": ["settleup-rest"],
+                "summary": "successAllwaitong",
+                "operationId": "successAllwaitongUsingGET",
+                "produces": ["*/*"],
+                "parameters": [{
+                    "name": "apikey",
+                    "in": "query",
+                    "description": "apikey",
+                    "required": false,
+                    "type": "string"
+                }, {
+                    "name": "mermob",
+                    "in": "query",
+                    "description": "mermob",
+                    "required": false,
+                    "type": "string",
+                    "default": "09120779807"
+                }, {
+                    "name": "mob",
+                    "in": "query",
+                    "description": "mob",
+                    "required": false,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
                         }
                     },
                     "204": {
@@ -911,8 +904,7 @@
                     "type": "string"
                 },
                 "sum": {
-                    "type": "integer",
-                    "format": "int64"
+                    "type": "number"
                 }
             },
             "title": "Debt"
@@ -926,10 +918,16 @@
                 "description": {
                     "type": "string"
                 },
+                "merchantCoin": {
+                    "type": "string"
+                },
                 "mobile": {
                     "type": "string"
                 },
                 "orderId": {
+                    "type": "string"
+                },
+                "payerCoin": {
                     "type": "string"
                 },
                 "price": {
@@ -942,28 +940,16 @@
             "type": "object",
             "properties": {
                 "amount": {
-                    "type": "integer",
-                    "format": "int64"
+                    "type": "number"
                 },
                 "blockchainCoin": {
                     "type": "string",
-                    "enum": [
-                        "tbitcoin",
-                        "bitcoin",
-                        "ethereum",
-                        "usdollar",
-                        "iranrial",
-                        "syrianpound",
-                        "euro"
-                    ]
+                    "enum": ["tbitcoin", "bitcoin", "ethereum", "usdollar", "iranrial", "syrianpound", "euro"]
                 },
                 "category": {
                     "type": "string"
                 },
                 "cryptoAmount": {
-                    "type": "string"
-                },
-                "currency": {
                     "type": "string"
                 },
                 "description": {
@@ -976,7 +962,16 @@
                     "type": "string",
                     "readOnly": true
                 },
+                "merchantAmount": {
+                    "type": "number"
+                },
+                "merchantCoin": {
+                    "type": "string"
+                },
                 "orderid": {
+                    "type": "string"
+                },
+                "payerCoin": {
                     "type": "string"
                 },
                 "qr": {
@@ -1031,12 +1026,20 @@
                 "id": {
                     "type": "string"
                 },
+                "merchantAmount": {
+                    "type": "number"
+                },
+                "merchantCoin": {
+                    "type": "string"
+                },
                 "orderId": {
                     "type": "string"
                 },
-                "price": {
-                    "type": "integer",
-                    "format": "int64"
+                "payerAmount": {
+                    "type": "number"
+                },
+                "payerCoin": {
+                    "type": "string"
                 },
                 "qr": {
                     "type": "string"
@@ -1049,9 +1052,6 @@
                     "type": "string"
                 },
                 "status": {
-                    "type": "string"
-                },
-                "symbol": {
                     "type": "string"
                 },
                 "timeout": {
@@ -1187,8 +1187,7 @@
             "type": "object",
             "properties": {
                 "amount": {
-                    "type": "integer",
-                    "format": "int64"
+                    "type": "number"
                 },
                 "apikey": {
                     "type": "string"
@@ -1225,8 +1224,7 @@
             "type": "object",
             "properties": {
                 "amount": {
-                    "type": "integer",
-                    "format": "int64"
+                    "type": "number"
                 },
                 "destCard": {
                     "type": "string"
@@ -1277,8 +1275,7 @@
             "type": "object",
             "properties": {
                 "amount": {
-                    "type": "integer",
-                    "format": "int64"
+                    "type": "number"
                 },
                 "date": {
                     "type": "integer",
@@ -1291,5 +1288,4 @@
             "title": "settleUpInvoices"
         }
     }
-
 }
