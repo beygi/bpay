@@ -67,14 +67,14 @@ class Unsettled extends React.Component<IProps, IState> {
                 title: t.t("‌Balance"),
                 dataIndex: "balance",
                 render: (price) => (
-                    <Ex fixFloatNum={0} value={price} seperateThousand stockStyle={false} />
+                    <Ex floatsNum={0} value={price} seperateThousand stockStyle={false} />
                 ),
             },
             {
                 title: t.t("Count"),
                 dataIndex: "count",
                 render: (age) => (
-                    <Ex fixFloatNum={0} value={age} seperateThousand stockStyle={false} />
+                    <Ex floatsNum={0} value={age} seperateThousand stockStyle={false} />
                 ),
             }, {
                 title: t.t("Actions"),
@@ -129,7 +129,7 @@ class Unsettled extends React.Component<IProps, IState> {
     /**  render paginations with local numbers */
     public itemRender(current: number, type: any, originalElement?: any) {
         if (type === "page") {
-            return <a> <Ex fixFloatNum={0} value={current} seperateThousand stockStyle={false} /></a>;
+            return <a> <Ex floatsNum={0} value={current} seperateThousand stockStyle={false} /></a>;
         }
         return originalElement;
     }

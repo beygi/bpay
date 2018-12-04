@@ -61,8 +61,8 @@ class MarketTradesComponent extends React.Component<IProps, IState> {
                 render: (date) => {
                     const TimeStamp = +new Date(date);
                     const tradeDate = new pDate(TimeStamp);
-                    return (<div className="time"><Ex fixFloatNum={0} value={tradeDate.getHours()}
-                        stockStyle={false} />:<Ex fixFloatNum={0} value={tradeDate.getMinutes()} stockStyle={false} />
+                    return (<div className="time"><Ex floatsNum={0} value={tradeDate.getHours()}
+                        stockStyle={false} />:<Ex floatsNum={0} value={tradeDate.getMinutes()} stockStyle={false} />
                     </div>);
                 },
             },
@@ -70,14 +70,14 @@ class MarketTradesComponent extends React.Component<IProps, IState> {
                 title: t.t("Price"),
                 dataIndex: "price",
                 render: (price) => (
-                    <Ex fixFloatNum={priceFloatedNums} value={price} seperateThousand />
+                    <Ex floatsNum={priceFloatedNums} value={price} seperateThousand />
                 ),
             },
             {
                 title: t.t("Amount"),
                 dataIndex: "amount",
                 render: (price) => (
-                    <Ex stockStyle={false} fixFloatNum={2} value={price} seperateThousand />
+                    <Ex stockStyle={false} floatsNum={2} value={price} seperateThousand />
                 ),
             },
         ];

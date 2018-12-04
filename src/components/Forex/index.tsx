@@ -76,7 +76,7 @@ class ForexComponent extends React.Component<IProps, IState> {
             if (rate.symbol !== this.props.symbol) {
                 return <div key={rate.symbol}><span className="symbol">
                     {t.t(rate.symbol)}:
-                </span><span className="rate"><Ex value={rate.rate} fixFloatNum={rate.round} seperateThousand /></span></div>;
+                </span><span className="rate"><Ex value={rate.rate} floatsNum={rate.round} seperateThousand /></span></div>;
             }
             return null;
         });

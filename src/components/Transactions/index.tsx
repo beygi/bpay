@@ -213,7 +213,7 @@ class Transactions extends React.Component<IProps, IState> {
     /**  render paginations with local numbers */
     public itemRender(current: number, type: any, originalElement?: any) {
         if (type === "page") {
-            return <a> <Ex fixFloatNum={0} value={current} seperateThousand /></a>;
+            return <a> <Ex floatsNum={0} value={current} seperateThousand /></a>;
         }
         return originalElement;
     }

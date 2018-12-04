@@ -124,7 +124,7 @@ class DepositComponent extends React.Component<IProps, IState> {
                             <li>
                                 {t.t("coins will be available after ")}
                                 <span className="confirmation-num">
-                                    <Ex fixFloatNum={0} value={config.currencies[this.props.selectedDepositCurrency].confirmationNumber} stockStyle={false} />
+                                    <Ex floatsNum={0} value={config.currencies[this.props.selectedDepositCurrency].confirmationNumber} stockStyle={false} />
                                 </span> {}
                                 {t.t("network confirmations")}
                             </li>

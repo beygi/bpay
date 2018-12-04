@@ -70739,7 +70739,7 @@
 					"children": [
 						{
 							"id": 610,
-							"name": "fixFloatNum",
+							"name": "floatsNum",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
