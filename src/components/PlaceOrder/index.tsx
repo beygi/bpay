@@ -15,6 +15,8 @@ interface IPlaceProps extends FormComponentProps {
     fromSymbol: string;
     /** target symbol */
     toSymbol: string;
+    /** display kyc modal */
+    kycModal: () => void;
 }
 
 interface IState {
@@ -35,20 +37,20 @@ class PlaceOrderComponent extends React.Component<IPlaceProps, IState> {
                 <TabPane tab={t.t("Limit")} key="1">
                     <Row gutter={4}>
                         <Col md={12}>
-                            <LimitedPlaceOrderComponent fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="buy" />
+                            <LimitedPlaceOrderComponent kycModal={this.props.kycModal} fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="buy" />
                         </Col>
                         <Col md={12}>
-                            <LimitedPlaceOrderComponent fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="sell" />
+                            <LimitedPlaceOrderComponent kycModal={this.props.kycModal} fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="sell" />
                         </Col>
                     </Row>
                 </TabPane>
                 <TabPane tab={t.t("Market price")} key="2">
                     <Row gutter={4}>
                         <Col md={12}>
-                            <LimitedPlaceOrderComponent exchangeType="market" fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="buy" />
+                            <LimitedPlaceOrderComponent kycModal={this.props.kycModal} exchangeType="market" fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="buy" />
                         </Col>
                         <Col md={12}>
-                            <LimitedPlaceOrderComponent exchangeType="market" fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="sell" />
+                            <LimitedPlaceOrderComponent kycModal={this.props.kycModal} exchangeType="market" fromSymbol={this.props.fromSymbol} toSymbol={this.props.toSymbol} type="sell" />
                         </Col>
                     </Row>
                 </TabPane>

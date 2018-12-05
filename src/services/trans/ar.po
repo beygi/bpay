@@ -36,6 +36,10 @@ msgstr ""
 msgid "Account information"
 msgstr ""
 
+#: src/containers/Exchange/index.tsx:160
+msgid "Account verification"
+msgstr ""
+
 #: src/components/DashboardMenu/menu.tsx:74
 msgid "Accounting"
 msgstr ""
@@ -92,7 +96,7 @@ msgid "Bitcoin"
 msgstr ""
 
 #: src/components/LimitedPlaceOrder/index.tsx:19
-#: src/containers/Exchange/index.tsx:131
+#: src/containers/Exchange/index.tsx:134
 msgid "buy"
 msgstr ""
 
@@ -100,7 +104,7 @@ msgstr ""
 msgid "Change"
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:72
+#: src/components/DashboardHeaderProfile/index.tsx:69
 msgid "Change Password"
 msgstr ""
 
@@ -221,7 +225,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:57
+#: src/components/DashboardHeaderProfile/index.tsx:54
 msgid "Email:"
 msgstr ""
 
@@ -319,7 +323,7 @@ msgstr ""
 msgid "KYC stands for (Know Your Customer) it is the process of a business. <br> verifying and identifying the identity of its clients.It is required because the KYC its used to refer to the bank and anti-money laundering regulations."
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:64
+#: src/components/DashboardHeaderProfile/index.tsx:61
 msgid "Last login:"
 msgstr ""
 
@@ -365,7 +369,7 @@ msgid "Login Password"
 msgstr ""
 
 #: src/components/DashboardHeader/index.tsx:159
-#: src/components/DashboardHeaderProfile/index.tsx:73
+#: src/components/DashboardHeaderProfile/index.tsx:70
 msgid "Logout"
 msgstr ""
 
@@ -426,7 +430,7 @@ msgstr ""
 msgid "Open gateway"
 msgstr ""
 
-#: src/containers/Exchange/index.tsx:123
+#: src/containers/Exchange/index.tsx:126
 msgid "Order book"
 msgstr ""
 
@@ -643,7 +647,7 @@ msgid "Selfie With ID And Note"
 msgstr ""
 
 #: src/components/LimitedPlaceOrder/index.tsx:19
-#: src/containers/Exchange/index.tsx:133
+#: src/containers/Exchange/index.tsx:136
 msgid "sell"
 msgstr ""
 
@@ -709,7 +713,7 @@ msgstr ""
 msgid "System Administration"
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:67
+#: src/components/DashboardHeaderProfile/index.tsx:64
 msgid "System language:"
 msgstr ""
 
@@ -752,7 +756,7 @@ msgstr ""
 msgid "Tracking code"
 msgstr ""
 
-#: src/containers/Exchange/index.tsx:138
+#: src/containers/Exchange/index.tsx:141
 msgid "Trades"
 msgstr ""
 
@@ -781,7 +785,7 @@ msgstr ""
 msgid "User Dashboard"
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:60
+#: src/components/DashboardHeaderProfile/index.tsx:57
 msgid "User level:"
 msgstr ""
 
@@ -799,6 +803,10 @@ msgstr ""
 
 #: src/lib/user/index.ts:73
 msgid "verified"
+msgstr ""
+
+#: src/containers/Exchange/index.tsx:165
+msgid "Verify Account"
 msgstr ""
 
 #: src/components/UserStatusGuide/index.tsx:41
@@ -834,8 +842,12 @@ msgstr ""
 msgid "your {coin} balance:"
 msgstr ""
 
+#: src/containers/Exchange/index.tsx:172
+msgid "Your account is not verified. Only verified accounts can use exchange area. Please verify your account."
+msgstr ""
+
 #: src/containers/Dashboard/index.tsx:116 src/containers/Deposit/index.tsx:36
-#: src/containers/Exchange/index.tsx:112
+#: src/containers/Exchange/index.tsx:115
 msgid "Your balance"
 msgstr ""
 

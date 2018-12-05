@@ -12,9 +12,11 @@ import config from "../../config";
 import { IRootState } from "../../redux/reducers";
 import Tools from "../../services/tools";
 import t from "../../services/trans/i18n";
+import USER from "./../../lib/user";
 import "./style.less";
 
 const FormItem = Form.Item;
+const userObject = USER.getInstance();
 // for translation purposes
 const types = [t.t("buy"), t.t("sell")];
 const formItemLayout = {
@@ -39,6 +41,8 @@ interface IProps extends FormComponentProps {
     exchangeType?: "limit" | "market";
     /** bidding price, read from redux */
     price: number;
+    /** display kyc modal */
+    kycModal: () => void;
 }
 
 interface IState {
@@ -92,16 +96,19 @@ class LimitedPlaceOrderComponent extends React.Component<IProps, IState> {
 
     public handleSubmit = (e) => {
         e.preventDefault();
-        this.props.form.validateFieldsAndScroll((err, values) => {
-            if (!err) {
-                notification.success({
-                    message: t.t("{type} request").replace("{type}", t.t(this.props.type)),
-                    description: t.t("{type} request places successfully").replace("{type}", t.t(this.props.type)),
-                    placement: "bottomRight",
-                });
-            }
-
-        });
+        if (userObject.getLevel().code === "verified") {
+            this.props.form.validateFieldsAndScroll((err, values) => {
+                if (!err) {
+                    notification.success({
+                        message: t.t("{type} request").replace("{type}", t.t(this.props.type)),
+                        description: t.t("{type} request places successfully").replace("{type}", t.t(this.props.type)),
+                        placement: "bottomRight",
+                    });
+                }
+            });
+        } else {
+            this.props.kycModal();
+        }
     }
 
     /** amount and price field validator */

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Col, Layout, Row } from "antd";
+import { Button, Col, Layout, Modal, Row } from "antd";
 import * as React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -20,7 +20,10 @@ import config from "../../config";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
+import USER from "./../../lib/user";
 import "./style.less";
+
+const userObject = USER.getInstance();
 
 interface IProps {
     match?: any;
@@ -30,6 +33,7 @@ interface IProps {
 interface IState {
     fromSymbol?: string;
     toSymbol?: string;
+    kycModal: boolean;
 }
 
 class ExchangeContainer extends React.Component<IProps, IState> {
@@ -53,13 +57,20 @@ class ExchangeContainer extends React.Component<IProps, IState> {
             this.state = {
                 fromSymbol: this.props.match.params.market.split(":")[0],
                 toSymbol: this.props.match.params.market.split(":")[1],
+                kycModal: (userObject.getLevel().code === "verified" ? false : true),
             };
         } else {
             this.state = {
                 fromSymbol: "BTC",
                 toSymbol: "USD",
+                kycModal: (userObject.getLevel().code === "verified" ? false : true),
             };
         }
+        this.showModal = this.showModal.bind(this);
+    }
+
+    public showModal() {
+        this.setState({ kycModal: true });
     }
 
     public render() {
@@ -94,7 +105,7 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                             <Row gutter={4}>
                                 <Col md={24} lg={24} xl={12}>
                                     <Block className="place-order" transparent noPadding >
-                                        <PlaceOrder fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} />
+                                        <PlaceOrder fromSymbol={this.state.fromSymbol} toSymbol={this.state.toSymbol} kycModal={this.showModal} />
                                     </Block>
                                 </Col>
                                 <Col md={24} lg={24} xl={12}>
@@ -153,7 +164,25 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                         <MarketTrades from={this.state.fromSymbol} to={this.state.toSymbol} />
                     </Block>
                 </Col> */}
-            </Row >
+                <Modal onCancel={() => this.setState({ kycModal: false })} closable
+                    cancelButtonDisabled visible={this.state.kycModal} title={t.t("Account verification")}
+                    footer={[
+                        <Link key="kyc" to="/kyc">
+                            <Button
+                                className="neat-btn verify-btn" type="primary" size="large">
+                                {t.t("Verify Account")}
+                            </Button>
+                        </Link>,
+                    ]}
+                >
+                    <div>
+                        {
+                            t.t("Your account is not verified. Only verified accounts can use exchange area. Please verify your account.")
+                        }
+                    </div>
+
+                </Modal>
+            </Row>
         );
     }
 }

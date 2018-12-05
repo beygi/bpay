@@ -44,6 +44,10 @@ msgstr "کمترین در ۲۴ ساعت"
 msgid "Account information"
 msgstr "اطلاعات حساب"
 
+#: src/containers/Exchange/index.tsx:160
+msgid "Account verification"
+msgstr "نیاز به تایید حساب کاربری"
+
 #: src/components/DashboardMenu/menu.tsx:74
 msgid "Accounting"
 msgstr "حسابداری"
@@ -100,7 +104,7 @@ msgid "Bitcoin"
 msgstr "بیت کوین"
 
 #: src/components/LimitedPlaceOrder/index.tsx:19
-#: src/containers/Exchange/index.tsx:131
+#: src/containers/Exchange/index.tsx:134
 msgid "buy"
 msgstr "خرید"
 
@@ -108,7 +112,7 @@ msgstr "خرید"
 msgid "Change"
 msgstr "تغییر"
 
-#: src/components/DashboardHeaderProfile/index.tsx:72
+#: src/components/DashboardHeaderProfile/index.tsx:69
 msgid "Change Password"
 msgstr "تغییر رمز عبور"
 
@@ -227,7 +231,7 @@ msgstr "ویرایش گروه"
 msgid "Email"
 msgstr "ایمیل"
 
-#: src/components/DashboardHeaderProfile/index.tsx:57
+#: src/components/DashboardHeaderProfile/index.tsx:54
 msgid "Email:"
 msgstr "ایمیل:"
 
@@ -325,7 +329,7 @@ msgstr "اصالت مشتریان"
 msgid "KYC stands for (Know Your Customer) it is the process of a business. <br> verifying and identifying the identity of its clients.It is required because the KYC its used to refer to the bank and anti-money laundering regulations."
 msgstr "تایید اصالت مشتری بخش جدایی ناپذیری از روند ارائه این نوع خدمات است. <br> بررسی و تایید هویت مشتریان به دلیل وجود قوانین پولشویی و قوانین بانکی لازمهٔ معامله در این وب سایت است."
 
-#: src/components/DashboardHeaderProfile/index.tsx:64
+#: src/components/DashboardHeaderProfile/index.tsx:61
 msgid "Last login:"
 msgstr "آخرین ورود:"
 
@@ -370,7 +374,7 @@ msgid "Login Password"
 msgstr "رمز عبور"
 
 #: src/components/DashboardHeader/index.tsx:159
-#: src/components/DashboardHeaderProfile/index.tsx:73
+#: src/components/DashboardHeaderProfile/index.tsx:70
 msgid "Logout"
 msgstr "خروج"
 
@@ -429,7 +433,7 @@ msgstr "شما به این قسمت دسترسی ندارید"
 msgid "Open gateway"
 msgstr "باز کردن درگاه"
 
-#: src/containers/Exchange/index.tsx:123
+#: src/containers/Exchange/index.tsx:126
 msgid "Order book"
 msgstr "لیست درخواست‌ها"
 
@@ -630,7 +634,7 @@ msgid "Selfie With ID And Note"
 msgstr "سلفی با شناسه و توضیحات"
 
 #: src/components/LimitedPlaceOrder/index.tsx:19
-#: src/containers/Exchange/index.tsx:133
+#: src/containers/Exchange/index.tsx:136
 msgid "sell"
 msgstr "فروش"
 
@@ -696,7 +700,7 @@ msgstr "پشتیبانی"
 msgid "System Administration"
 msgstr "مدیریت سیستم"
 
-#: src/components/DashboardHeaderProfile/index.tsx:67
+#: src/components/DashboardHeaderProfile/index.tsx:64
 msgid "System language:"
 msgstr "زبان سیستم:"
 
@@ -739,7 +743,7 @@ msgstr "مجموع:"
 msgid "Tracking code"
 msgstr "شماره رهگیری"
 
-#: src/containers/Exchange/index.tsx:138
+#: src/containers/Exchange/index.tsx:141
 msgid "Trades"
 msgstr "معاملات"
 
@@ -768,7 +772,7 @@ msgstr "دلار آمریکا"
 msgid "User Dashboard"
 msgstr "داشبورد کاربر"
 
-#: src/components/DashboardHeaderProfile/index.tsx:60
+#: src/components/DashboardHeaderProfile/index.tsx:57
 msgid "User level:"
 msgstr "درجهٔ کاربری:"
 
@@ -787,6 +791,10 @@ msgstr "بررسی و تایید مدارک"
 #: src/lib/user/index.ts:73
 msgid "verified"
 msgstr "تایید شده"
+
+#: src/containers/Exchange/index.tsx:165
+msgid "Verify Account"
+msgstr "تایید حساب کاربری"
 
 #: src/components/UserStatusGuide/index.tsx:41
 msgid "Verify email"
@@ -820,8 +828,12 @@ msgstr "تصویر {type} شما با موفقیت به سرورهای ما ار
 msgid "your {coin} balance:"
 msgstr "بالانس حساب {coin} شما:"
 
+#: src/containers/Exchange/index.tsx:172
+msgid "Your account is not verified. Only verified accounts can use exchange area. Please verify your account."
+msgstr "تنها حساب های کاربری تایید شده میتوانند از قسمت خرید و فروش استفاده کنند. لطفا حساب کاربری خود را تایید کنید."
+
 #: src/containers/Dashboard/index.tsx:116 src/containers/Deposit/index.tsx:36
-#: src/containers/Exchange/index.tsx:112
+#: src/containers/Exchange/index.tsx:115
 msgid "Your balance"
 msgstr "بالانس حساب شما"
 
