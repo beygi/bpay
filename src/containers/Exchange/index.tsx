@@ -164,12 +164,12 @@ class ExchangeContainer extends React.Component<IProps, IState> {
                         <MarketTrades from={this.state.fromSymbol} to={this.state.toSymbol} />
                     </Block>
                 </Col> */}
-                <Modal onCancel={() => this.setState({ kycModal: false })} closable
+                <Modal className={this.props.theme} onCancel={() => this.setState({ kycModal: false })} closable
                     cancelButtonDisabled visible={this.state.kycModal} title={t.t("Account verification")}
                     footer={[
                         <Link key="kyc" to="/kyc">
                             <Button
-                                className="neat-btn verify-btn" type="primary" size="large">
+                                className="verify-btn" type="primary" size="large">
                                 {t.t("Verify Account")}
                             </Button>
                         </Link>,

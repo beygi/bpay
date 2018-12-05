@@ -10,6 +10,19 @@
 @import "./assets/fonts/cryptocoins/font"; //our application custom fonts
 
 .dark {
+    .ant-modal-content, .ant-modal-header,.ant-modal-title,.ant-modal-footer,.ant-modal-close
+    {
+        background-color: @dark-block-color !important;
+        color : @secondaryTextColor;
+        border-color : lighten(@dark-block-color,10%);
+    }
+    .ant-modal-close
+    {
+        &:hover
+        {
+            color : darken(@secondaryTextColor,50%);
+        }
+    }
     ant-pagination-item-active a .exchange-value.normal
     {
         background: transparent !important;
