@@ -99,7 +99,16 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
     }
     user.keycloak.onAuthLogout = () => {
         // user is sso loged out
-        store.dispatch(setUser(null));
+        const cleanUser = user.getCurrent();
+        Object.keys(cleanUser).map((key) => {
+            if (key !== "theme" && key !== "language") {
+                cleanUser[key] = null;
+            }
+        },
+        );
+        store.dispatch(setUser(
+            { ...cleanUser },
+        ));
         user.keycloak.login({ kcLocale: t.default.language });
     };
 });

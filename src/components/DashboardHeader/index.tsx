@@ -147,9 +147,12 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
 
         return (
             <div className={AdminClass}>
-                <div className="selected-menu">
-                    <Icon type={MenuItem.icon} />{MenuItem.text}
-                </div>
+                {
+                    (MenuItem) ?
+                        <div className="selected-menu">
+                            <Icon type={MenuItem.icon} />{MenuItem.text}
+                        </div> : null
+                }
                 <div className="header-icons" id="header-icons">
                     {uiUpdateButton}
                     <Popover getPopupContainer={() => document.getElementById("header-icons")} placement="bottom" title={t.t("Account information")} content={<HeaderProfile />} trigger="click">
@@ -171,8 +174,7 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                     {AdminButton}
                     {HeaderLogo}
                 </div>
-            </div >
-        );
+            </div>);
     }
 
 }
