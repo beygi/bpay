@@ -1,5 +1,33 @@
 @import (reference) "../../theme/application";
 .unsettled-merchants
 {
-    margin-bottom: 10px;
+    .ant-table,th
+    {
+    background-color: transparent;
+    border: none;
+    }
+    th
+     {
+    background: transparent !important; 
+    text-align: center !important;
+    color : @secondaryTextColor !important; 
+    }
+    .ant-table-tbody > tr > td
+    {
+        border-bottom: none;   
+        &:hover
+        {
+            background-color: transparent;
+        }
+    }
+    .ant-table-tbody > tr
+    {
+        &:hover
+        {
+        
+            td{
+                background-color: fade(@secondaryTextColor, 10%);
+            }    
+        }
+    }
 }
