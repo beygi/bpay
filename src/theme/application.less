@@ -14,6 +14,20 @@
     {
         color : @secondaryTextColor !important; 
     }
+    .ant-table-placeholder
+    {
+        background-color: fade(@secondaryTextColor, 10%);
+        color : @secondaryTextColor !important;
+        border-color: transparent;
+    }
+    .ant-table-row-expand-icon::after
+    {
+        color :  @dark-block-color;
+    }
+    tr.ant-table-expanded-row
+    {
+        background-color: fade(@secondaryTextColor, 10%);
+    }
     .ant-table,th
     {
     background-color: transparent;
