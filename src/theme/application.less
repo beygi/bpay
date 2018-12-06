@@ -24,9 +24,9 @@
     }
 }
 .dark {
-    .ant-select-arrow-icon,.ant-select-selection-selected-value
+    .ant-select-arrow-icon,.ant-select-selection-selected-value,.ant-select-selection__placeholder
     {
-        color: @secondaryTextColor;
+        color: @secondaryTextColor !important;
         opacity: 1 !important;
     }
     .ant-input-number-handler-down
@@ -47,6 +47,14 @@
         background-color: fade(@secondaryTextColor, 10%) !important;
         color : @secondaryTextColor; 
         border-color : @dark-button;
+
+    }
+    .ant-form-item-control
+    {
+        .anticon
+        {
+            color: @secondaryTextColor;
+        }
     }
     .ant-select-selection-selected-value
     {
@@ -78,7 +86,7 @@
     th
      {
     background: transparent !important; 
-    text-align: center !important;
+    text-align: center;
     color : @secondaryTextColor !important; 
     }
     .ant-table-tbody > tr > td

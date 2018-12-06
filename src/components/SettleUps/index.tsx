@@ -121,7 +121,7 @@ class SettleUps extends React.Component<IProps, IState> {
         // holds jsx of invoices as an array
         let settles = null;
         // if (this.state.settles && this.state.invoices.content !== undefined) {
-        if (this.state.settles) {
+        if (this.state.settles && !this.state.loading) {
             // invoices = this.state.settles.map((invoice) => {
             //     return (
             //         <Invoice key={invoice.id} invoice={invoice} />
@@ -147,8 +147,6 @@ class SettleUps extends React.Component<IProps, IState> {
                     dataSource={this.state.settles.content}
                 />
                 ;
-        } else {
-            settles = <h3 className="no-data">{t.t("There is no data to display")}</h3>;
         }
 
         const merchantsSearch = (this.userObject.hasRealmRole("merchants_admin")) ? <Select

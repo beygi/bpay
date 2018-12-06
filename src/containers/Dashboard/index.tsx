@@ -85,6 +85,11 @@ all transactions will be done using bitcoin test network not real network.")}
                                     <ChangePassword />
                                 </Block>
                             </Col>
+                            <Col md={24} >
+                                <Block>
+                                    <GoogleAuth />
+                                </Block>
+                            </Col>
                         </Row>
                     </Col>
                     <Col sm={24} md={24} lg={16} >
