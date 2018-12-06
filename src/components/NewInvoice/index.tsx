@@ -23,6 +23,7 @@ interface IProps extends FormComponentProps {
     mobile: string;
     apiKey: string;
     theme: string;
+    language: string;
 }
 interface IState {
     invoiceId: string;
@@ -168,6 +169,7 @@ function mapStateToProps(state: IRootState) {
         mobile: state.app.user.mobile,
         apiKey: state.app.user.apiKey,
         theme: state.app.user.theme,
+        language: state.app.user.language,
     };
 }
 
