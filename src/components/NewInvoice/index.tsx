@@ -20,7 +20,9 @@ const FormItem = Form.Item;
 const Option = Select.Option;
 
 interface IProps extends FormComponentProps {
-    user: any;
+    mobile: string;
+    apiKey: string;
+    theme: string;
 }
 interface IState {
     invoiceId: string;
@@ -52,10 +54,10 @@ class NewInvoice extends React.Component<IProps, IState> {
                 this.setState({ loading: true });
                 this.api.addInvoiceUsingPOST({
                     invReq: {
-                        apikey: this.props.user.apiKey,
+                        apikey: this.props.apiKey,
                         description: values.description,
                         price: values.price,
-                        mobile: this.props.user.mobile,
+                        mobile: this.props.mobile,
                         orderId: this.uuid(),
                         currency: values.fiat,
                         merchantCur: "IRR",
@@ -125,7 +127,7 @@ class NewInvoice extends React.Component<IProps, IState> {
                         }],
                         initialValue: "IRR",
                     })(
-                        <Select size="large">
+                        <Select dropdownClassName={`select-${this.props.theme}`} size="large">
                             {
                                 fiats
                             }
@@ -163,7 +165,9 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state: IRootState) {
     return {
-        user: state.app.user,
+        mobile: state.app.user.mobile,
+        apiKey: state.app.user.apiKey,
+        theme: state.app.user.theme,
     };
 }
 
