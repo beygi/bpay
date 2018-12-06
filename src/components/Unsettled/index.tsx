@@ -15,7 +15,9 @@ import USER from "./../../lib/user";
 import "./style.less";
 interface IProps {
     /**  current user's email address that is synced with redux */
-    user: any;
+    mobile: string;
+    apiKey: string;
+    theme: string;
 }
 
 interface IState {
@@ -87,12 +89,14 @@ class Unsettled extends React.Component<IProps, IState> {
         if (this.state.merchants && this.state.merchants.content !== undefined) {
             return (
                 <div>
-                    <Table className="unsettled-merchants" loading={this.state.loading} pagination={false} columns={columns} rowKey="id" dataSource={this.state.merchants.content} size="small" />
+                    <Table className="unsettled-merchants"
+                        loading={this.state.loading} pagination={false} columns={columns} rowKey="id" dataSource={this.state.merchants.content} size="small" />
                     <Pagination onChange={(page) => { this.setState({ currentPage: page, loading: true }, () => { this.getUnsettledMerchants(); }); }}
                         hideOnSinglePage pageSize={10} current={this.state.currentPage} total={this.state.merchants.count}
                         itemRender={this.itemRender}
                     />
                     <Modal
+                        className={this.props.theme}
                         maskClosable
                         visible={this.state.showModal}
                         onCancel={() => this.setState({ showModal: false })}
@@ -115,8 +119,8 @@ class Unsettled extends React.Component<IProps, IState> {
     // seach merchants
     public getUnsettledMerchants() {
         this.api.getMerchantDebtUsingGET({
-            apikey: this.props.user.apiKey,
-            mob: this.props.user.mobile,
+            apikey: this.props.apiKey,
+            mob: this.props.mobile,
             size: 10,
             page: this.state.currentPage - 1,
             dir: "desc",
@@ -142,7 +146,9 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state: IRootState) {
     return {
-        user: state.app.user,
+        mobile: state.app.user.mobile,
+        apiKey: state.app.user.apiKey,
+        theme: state.app.user.theme,
     };
 }
 

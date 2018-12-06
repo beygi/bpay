@@ -117,16 +117,22 @@
             td {
                 border-color: lighten(@palette-high,10%);
             }
-            &:hover {
-                color: @palette-high;
-            }
         }
 
         .ant-table-thead > tr > th {
             background: transparent !important;
-            color: @palette-light;
+            color: @primaryTextColor;
             font-weight: bold !important;
             border-bottom: 1px solid lighten(@palette-high,20%) !important;
         }
     }
+    .ant-table-tbody > tr
+    {
+        &:hover
+        {
+            td{
+                background-color: fade(@secondaryTextColor, 25%);
+            }    
+        }
+    } 
 }

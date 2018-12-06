@@ -10,6 +10,54 @@
 @import "./assets/fonts/cryptocoins/font"; //our application custom fonts
 
 .dark {
+    .ant-table
+    {
+        color : @secondaryTextColor !important; 
+    }
+    .ant-table-placeholder
+    {
+        background-color: fade(@secondaryTextColor, 10%);
+        color : @secondaryTextColor !important;
+        border-color: transparent;
+    }
+    .ant-table-row-expand-icon::after
+    {
+        color :  @dark-block-color;
+    }
+    tr.ant-table-expanded-row
+    {
+        background-color: fade(@secondaryTextColor, 10%);
+    }
+    .ant-table,th
+    {
+    background-color: transparent;
+    border: none;
+    }
+    th
+     {
+    background: transparent !important; 
+    text-align: center !important;
+    color : @secondaryTextColor !important; 
+    }
+    .ant-table-tbody > tr > td
+    {
+        border-bottom: none;   
+        &:hover
+        {
+            background-color: transparent;
+            color : @secondaryTextColor !important;
+        }
+    }
+    .ant-table-tbody > tr
+    {
+        &:hover
+        {
+            td{
+                background-color: fade(@secondaryTextColor, 10%);
+                color : @secondaryTextColor !important;
+            }    
+        }
+    }    
     .ant-modal-content, .ant-modal-header,.ant-modal-title,.ant-modal-footer,.ant-modal-close
     {
         background-color: @dark-block-color !important;
@@ -112,6 +160,10 @@
     .ant-btn-primary {
         background-color: @dark-button;
         border-color: darken($background-color , 10%);
+        &:hover
+        {
+            background-color: darken(@dark-button,15%);
+        }
     }
 
     .ant-popover-title {
