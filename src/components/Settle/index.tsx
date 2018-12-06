@@ -48,7 +48,7 @@ class Settle extends React.Component<IProps, IState> {
     /** handles row selection. this function set sum and seleced rows to the component state */
     public rowSelection = {
         onChange: (selectedRowKeys, selectedRows) => {
-            this.setState({ selectedInvoices: selectedRowKeys, sum: _.sumBy(selectedRows, "amount") }, () => {
+            this.setState({ selectedInvoices: selectedRowKeys, sum: _.sumBy(selectedRows, "merchantAmount") }, () => {
                 this.props.form.validateFieldsAndScroll(["amount"], { force: true });
             });
             // console.log(`selectedRowKeys: ${selectedRowKeys}`, "selectedRows: ", selectedRows);
@@ -112,7 +112,7 @@ class Settle extends React.Component<IProps, IState> {
             },
             {
                 title: t.t("Amount"),
-                dataIndex: "amount",
+                dataIndex: "merchantAmount",
                 render: (price) => (
                     <Ex floatsNum={0} value={price} seperateThousand />
                 ),

@@ -24,6 +24,10 @@
     }
 }
 .dark {
+    .ant-form-item-label label , .ant-form-item-required
+    {
+        color: @secondaryTextColor !important;
+    }
     .ant-select-arrow-icon,.ant-select-selection-selected-value,.ant-select-selection__placeholder
     {
         color: @secondaryTextColor !important;
@@ -63,6 +67,22 @@
     .ant-table
     {
         color : @secondaryTextColor !important; 
+    }
+    .ant-table-header
+    {
+        background-color:  lighten(@dark-block-color,10%) !important;
+    }
+    .settle-form
+    {
+        .ant-table-body
+        {
+            background-color: lighten(@dark-block-color,10%) !important;
+        }
+    }
+
+    .ant-table-row-selected td
+    {
+        background-color:  lighten(@dark-block-color,3%) !important;
     }
     .ant-table-placeholder
     {
