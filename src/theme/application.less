@@ -9,7 +9,49 @@
 @import "./assets/fonts/b2mark/font"; //our application custom fonts
 @import "./assets/fonts/cryptocoins/font"; //our application custom fonts
 
+.select-dark
+{
+    border-radius: 0px;
+    .ant-select-dropdown-menu-item
+    {
+        background-color: @dark-button;
+        color:  @secondaryTextColor;
+        border-radius: 0px;
+        &:hover
+        {
+            background-color:  darken(@dark-button,5%);
+        }
+    }
+}
 .dark {
+    .ant-select-arrow-icon,.ant-select-selection-selected-value
+    {
+        color: @secondaryTextColor;
+        opacity: 1 !important;
+    }
+    .ant-input-number-handler-down
+    {
+            border-color : @dark-button;
+    }
+    .ant-input-number-handler
+    {
+        .anticon
+        {
+            color: @secondaryTextColor;
+        }
+    }
+    
+    .ant-input,.ant-input-number,.ant-select-selection,.ant-select-dropdown,.ant-input-number-handler-wrap
+    {
+        border-radius: 0px;
+        background-color: fade(@secondaryTextColor, 10%) !important;
+        color : @secondaryTextColor; 
+        border-color : @dark-button;
+    }
+    .ant-select-selection-selected-value
+    {
+        color : @secondaryTextColor !important; 
+    }
     .ant-table
     {
         color : @secondaryTextColor !important; 
@@ -225,10 +267,6 @@
     {
         background-color: @dark-menu;
         border : 1px solid @dark-block-color !important;
-    }
-    .ant-input
-    {
-        border-color : @dark-button;
     }
     .ant-alert-with-description.ant-alert-warning
     {
