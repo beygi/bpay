@@ -12,9 +12,38 @@
 .dark {
     .ant-table
     {
-        background-color: transparent;
-        color : @secondaryTextColor;
+        color : @secondaryTextColor !important; 
     }
+    .ant-table,th
+    {
+    background-color: transparent;
+    border: none;
+    }
+    th
+     {
+    background: transparent !important; 
+    text-align: center !important;
+    color : @secondaryTextColor !important; 
+    }
+    .ant-table-tbody > tr > td
+    {
+        border-bottom: none;   
+        &:hover
+        {
+            background-color: transparent;
+            color : @secondaryTextColor !important;
+        }
+    }
+    .ant-table-tbody > tr
+    {
+        &:hover
+        {
+            td{
+                background-color: fade(@secondaryTextColor, 10%);
+                color : @secondaryTextColor !important;
+            }    
+        }
+    }    
     .ant-modal-content, .ant-modal-header,.ant-modal-title,.ant-modal-footer,.ant-modal-close
     {
         background-color: @dark-block-color !important;
