@@ -120,7 +120,7 @@ msgstr ""
 msgid "Checkout Symbol"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:72
+#: src/components/NewInvoice/index.tsx:70
 msgid "click to open gateway"
 msgstr ""
 
@@ -152,7 +152,7 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:153
+#: src/components/NewInvoice/index.tsx:150
 msgid "Create"
 msgstr ""
 
@@ -189,7 +189,7 @@ msgstr ""
 msgid "Deposit history"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:145
+#: src/components/NewInvoice/index.tsx:142
 msgid "Description"
 msgstr ""
 
@@ -249,7 +249,7 @@ msgstr ""
 msgid "failed"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:83
+#: src/components/NewInvoice/index.tsx:81
 msgid "Failed to create invoice"
 msgstr ""
 
@@ -308,6 +308,10 @@ msgstr ""
 
 #: src/components/Deposit/index.tsx:74
 msgid "In order"
+msgstr ""
+
+#: src/components/Transactions/index.tsx:23
+msgid "invoice amount exceeded your daily limit"
 msgstr ""
 
 #: src/components/Transactions/index.tsx:22
@@ -400,7 +404,7 @@ msgstr ""
 msgid "New Invoice"
 msgstr "معرف الفاتورة"
 
-#: src/components/NewInvoice/index.tsx:71
+#: src/components/NewInvoice/index.tsx:69
 #, fuzzy
 msgid "New Invoice Created"
 msgstr "معرف الفاتورة"
@@ -426,7 +430,7 @@ msgstr ""
 msgid "No Access"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:75
+#: src/components/NewInvoice/index.tsx:73
 msgid "Open gateway"
 msgstr ""
 
@@ -503,7 +507,7 @@ msgstr ""
 msgid "Please input 16 digits origin card number "
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
-#: src/components/NewInvoice/index.tsx:141
+#: src/components/NewInvoice/index.tsx:138
 msgid "Please input description, max length is 30"
 msgstr ""
 
@@ -512,7 +516,7 @@ msgstr ""
 msgid "please input number"
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
-#: src/components/NewInvoice/index.tsx:97
+#: src/components/NewInvoice/index.tsx:94
 msgid "Please input price"
 msgstr ""
 
@@ -565,7 +569,7 @@ msgstr "يرجى اختيار عملة الدفع"
 msgid "Please select a currency to deposit"
 msgstr "يرجى اختيار عملة الدفع"
 
-#: src/components/NewInvoice/index.tsx:127
+#: src/components/NewInvoice/index.tsx:124
 #, fuzzy
 msgid "Please select input currency"
 msgstr "يرجى اختيار عملة الدفع"
@@ -634,7 +638,7 @@ msgid "search"
 msgstr ""
 
 #: src/components/SettleUps/index.tsx:157
-#: src/components/Transactions/index.tsx:135
+#: src/components/Transactions/index.tsx:137
 msgid "Select merchant"
 msgstr ""
 
@@ -721,7 +725,7 @@ msgstr ""
 msgid "Tax Cash Desk"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:109
+#: src/components/Transactions/index.tsx:111
 msgid "There is no data to display"
 msgstr ""
 
@@ -759,7 +763,7 @@ msgstr ""
 msgid "Trades"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:148
+#: src/components/Transactions/index.tsx:150
 msgid "Transactions"
 msgstr ""
 

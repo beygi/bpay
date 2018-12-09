@@ -19,7 +19,9 @@ import "./style.less";
 const Option = Select.Option;
 
 // for translation purposes
-const fiats = [t.t("IRR"), t.t("USD"), t.t("EUR"), t.t("Bitcoin"), t.t("Ethereum"), t.t("Litecoin"), t.t("failed"), t.t("waiting"), t.t("success"), t.t("settled")];
+const fiats = [t.t("IRR"), t.t("USD"), t.t("EUR"), t.t("Bitcoin"), t.t("Ethereum"), t.t("Litecoin"), t.t("failed"), t.t("waiting"), t.t("success"), t.t("settled"),
+t.t("invoice amount exceeded your daily limit");
+]
 interface IProps {
     /**  current user's email address that is synced with redux */
     user: any;
