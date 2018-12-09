@@ -20,11 +20,11 @@ msgstr " کارت ملی"
 msgid "{coin} Deposite address"
 msgstr "آدرس پرداخت {coin}"
 
-#: src/components/LimitedPlaceOrder/index.tsx:98
+#: src/components/LimitedPlaceOrder/index.tsx:103
 msgid "{type} request"
 msgstr "درخواست {type}"
 
-#: src/components/LimitedPlaceOrder/index.tsx:99
+#: src/components/LimitedPlaceOrder/index.tsx:104
 msgid "{type} request places successfully"
 msgstr "درخواست {type} با موفقیت ثبت شد"
 
@@ -40,11 +40,11 @@ msgstr "بیشترین در ۲۴ ساعت"
 msgid "24h Low"
 msgstr "کمترین در ۲۴ ساعت"
 
-#: src/components/DashboardHeader/index.tsx:155
+#: src/components/DashboardHeader/index.tsx:158
 msgid "Account information"
 msgstr "اطلاعات حساب"
 
-#: src/containers/Exchange/index.tsx:160
+#: src/containers/Exchange/index.tsx:168
 msgid "Account verification"
 msgstr "نیاز به تایید حساب کاربری"
 
@@ -52,7 +52,7 @@ msgstr "نیاز به تایید حساب کاربری"
 msgid "Accounting"
 msgstr "حسابداری"
 
-#: src/components/Unsettled/index.tsx:80
+#: src/components/Unsettled/index.tsx:82
 msgid "Actions"
 msgstr "عملیات"
 
@@ -72,7 +72,7 @@ msgstr "اضافه کردن گروه جدید"
 msgid "After making a deposit, you can track its progress on the history page."
 msgstr "بعد از انجام واریز میتوانید روند اجرای آن را در ستون سمت چپ مشاهده کنید."
 
-#: src/components/LimitedPlaceOrder/index.tsx:174
+#: src/components/LimitedPlaceOrder/index.tsx:181
 #: src/components/MarketTrades/index.tsx:77
 #: src/components/OrderBook/index.tsx:127 src/components/Settle/index.tsx:114
 #: src/components/Settle/index.tsx:135 src/components/SettleUps/index.tsx:98
@@ -87,7 +87,7 @@ msgstr "مقدار وارد شده با مجموع مبلغ فاکتورهای �
 msgid "Available"
 msgstr "در دسترس"
 
-#: src/components/Unsettled/index.tsx:67
+#: src/components/Unsettled/index.tsx:69
 msgid "‌Balance"
 msgstr "بالانس"
 
@@ -103,8 +103,8 @@ msgstr "قبل از اینکه شروع کنید"
 msgid "Bitcoin"
 msgstr "بیت کوین"
 
-#: src/components/LimitedPlaceOrder/index.tsx:19
-#: src/containers/Exchange/index.tsx:134
+#: src/components/LimitedPlaceOrder/index.tsx:21
+#: src/containers/Exchange/index.tsx:142
 msgid "buy"
 msgstr "خرید"
 
@@ -128,7 +128,7 @@ msgstr "مبلغ تسویه"
 msgid "Checkout Symbol"
 msgstr "نماد تسویه"
 
-#: src/components/NewInvoice/index.tsx:69
+#: src/components/NewInvoice/index.tsx:72
 msgid "click to open gateway"
 msgstr "برای باز شدن درگاه کلیک کنید"
 
@@ -152,7 +152,7 @@ msgstr "کپی"
 msgid "Copy wallet address to clipboard"
 msgstr "کپی کردن آدرس پرداخت"
 
-#: src/components/OrderBook/index.tsx:148 src/components/Unsettled/index.tsx:74
+#: src/components/OrderBook/index.tsx:148 src/components/Unsettled/index.tsx:76
 msgid "Count"
 msgstr "تعداد"
 
@@ -160,7 +160,7 @@ msgstr "تعداد"
 msgid "Country"
 msgstr "کشور"
 
-#: src/components/NewInvoice/index.tsx:150
+#: src/components/NewInvoice/index.tsx:153
 msgid "Create"
 msgstr "ایجاد"
 
@@ -191,11 +191,11 @@ msgstr "تاریخ و زمان پرداخت"
 msgid "Deposit"
 msgstr "شارژ حساب"
 
-#: src/containers/Dashboard/index.tsx:126 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:131 src/containers/Deposit/index.tsx:53
 msgid "Deposit history"
 msgstr "تاریخچهٔ مبالغ واریزی"
 
-#: src/components/NewInvoice/index.tsx:142
+#: src/components/NewInvoice/index.tsx:145
 msgid "Description"
 msgstr "توضیحات"
 
@@ -255,7 +255,7 @@ msgstr "خرید و فروش"
 msgid "failed"
 msgstr "ناموفق"
 
-#: src/components/NewInvoice/index.tsx:80
+#: src/components/NewInvoice/index.tsx:83
 msgid "Failed to create invoice"
 msgstr "عدم موفقیت در ایجاد فاکتور"
 
@@ -349,7 +349,7 @@ msgstr "شماره کارت مشخصات"
 msgid "License Type"
 msgstr "نوع کارت مشخصات"
 
-#: src/components/PlaceOrder/index.tsx:35
+#: src/components/PlaceOrder/index.tsx:37
 msgid "Limit"
 msgstr "معاملهٔ محدود"
 
@@ -357,7 +357,7 @@ msgstr "معاملهٔ محدود"
 msgid "Litecoin"
 msgstr "لایت کوین"
 
-#: src/containers/Dashboard/index.tsx:121 src/containers/Deposit/index.tsx:39
+#: src/containers/Dashboard/index.tsx:126 src/containers/Deposit/index.tsx:39
 msgid "Live prices"
 msgstr "قیمت زنده"
 
@@ -373,7 +373,7 @@ msgstr "ورود"
 msgid "Login Password"
 msgstr "رمز عبور"
 
-#: src/components/DashboardHeader/index.tsx:159
+#: src/components/DashboardHeader/index.tsx:162
 #: src/components/DashboardHeaderProfile/index.tsx:70
 msgid "Logout"
 msgstr "خروج"
@@ -387,8 +387,8 @@ msgstr "متن تست"
 msgid "Male"
 msgstr "مرد"
 
-#: src/components/LimitedPlaceOrder/index.tsx:171
-#: src/components/PlaceOrder/index.tsx:45
+#: src/components/LimitedPlaceOrder/index.tsx:178
+#: src/components/PlaceOrder/index.tsx:47
 msgid "Market price"
 msgstr "به قیمت بازار"
 
@@ -404,7 +404,7 @@ msgstr "تاییدیه شبکه در دسترس خواهند بود"
 msgid "New Invoice"
 msgstr "فاکتور جدید"
 
-#: src/components/NewInvoice/index.tsx:68
+#: src/components/NewInvoice/index.tsx:71
 msgid "New Invoice Created"
 msgstr "فاکتور جدید با موفقیت ایجاد شد"
 
@@ -416,24 +416,24 @@ msgstr "نسخهٔ جدیدی از نرم افزار هم اکنون منتشر 
 msgid "Next Page"
 msgstr "صفحه بعد"
 
-#: src/components/DashboardHeader/index.tsx:162
+#: src/components/DashboardHeader/index.tsx:165
 msgid "Night mode: off"
 msgstr "حالت شب: خاموش"
 
-#: src/components/DashboardHeader/index.tsx:162
+#: src/components/DashboardHeader/index.tsx:165
 msgid "Night mode: on"
 msgstr "حالت شب: روشن"
 
-#: src/containers/Accounting/index.tsx:60
-#: src/containers/Dashboard/index.tsx:200
+#: src/containers/Accounting/index.tsx:71
+#: src/containers/Dashboard/index.tsx:205
 msgid "No Access"
 msgstr "شما به این قسمت دسترسی ندارید"
 
-#: src/components/NewInvoice/index.tsx:72
+#: src/components/NewInvoice/index.tsx:75
 msgid "Open gateway"
 msgstr "باز کردن درگاه"
 
-#: src/containers/Exchange/index.tsx:126
+#: src/containers/Exchange/index.tsx:134
 msgid "Order book"
 msgstr "لیست درخواست‌ها"
 
@@ -505,15 +505,15 @@ msgstr "لطفا شماره کارت ۱۶ رقمی مقصد را وارد کنی
 msgid "Please input 16 digits origin card number "
 msgstr "لطفا شماره کارت ۱۶ رقمی مبدا را وارد کنید "
 
-#: src/components/NewInvoice/index.tsx:138
+#: src/components/NewInvoice/index.tsx:141
 msgid "Please input description, max length is 30"
 msgstr "لطفا متن توضیحات را وارد کنید. حداکثر ۳۰ حرف"
 
-#: src/components/LimitedPlaceOrder/index.tsx:112
+#: src/components/LimitedPlaceOrder/index.tsx:119
 msgid "please input number"
 msgstr "لطفا یک عدد وارد کنید"
 
-#: src/components/NewInvoice/index.tsx:94
+#: src/components/NewInvoice/index.tsx:97
 msgid "Please input price"
 msgstr "لطفا قیمت را وارد کنید"
 
@@ -557,7 +557,7 @@ msgstr "لطفا کشور خود را انتخاب کنید"
 msgid "Please select a currency to deposit"
 msgstr "لطفا ارز پرداختی را انتخاب کنید"
 
-#: src/components/NewInvoice/index.tsx:124
+#: src/components/NewInvoice/index.tsx:127
 msgid "Please select input currency"
 msgstr "لطفا ارز مرجع پرداخت را انتخاب کنید"
 
@@ -593,8 +593,8 @@ msgstr "لطفا تصویر سلفی خودتان را وارد کنید"
 msgid "Previous Page"
 msgstr "صفحه قبل"
 
-#: src/components/LimitedPlaceOrder/index.tsx:151
-#: src/components/LimitedPlaceOrder/index.tsx:170
+#: src/components/LimitedPlaceOrder/index.tsx:158
+#: src/components/LimitedPlaceOrder/index.tsx:177
 #: src/components/MarketTrades/index.tsx:70
 #: src/components/OrderBook/index.tsx:120
 msgid "Price"
@@ -620,7 +620,7 @@ msgstr "مرا به خاطر بسپار"
 msgid "search"
 msgstr "جستجو"
 
-#: src/components/SettleUps/index.tsx:159
+#: src/components/SettleUps/index.tsx:157
 #: src/components/Transactions/index.tsx:135
 msgid "Select merchant"
 msgstr "انتخاب فروشنده"
@@ -633,8 +633,8 @@ msgstr "زمان انتخاب شده مربوط به آینده است"
 msgid "Selfie With ID And Note"
 msgstr "سلفی با شناسه و توضیحات"
 
-#: src/components/LimitedPlaceOrder/index.tsx:19
-#: src/containers/Exchange/index.tsx:136
+#: src/components/LimitedPlaceOrder/index.tsx:21
+#: src/containers/Exchange/index.tsx:144
 msgid "sell"
 msgstr "فروش"
 
@@ -642,8 +642,8 @@ msgstr "فروش"
 msgid "send only"
 msgstr "تنها"
 
-#: src/components/Unsettled/index.tsx:83 src/containers/Accounting/index.tsx:32
-#: src/containers/Dashboard/index.tsx:72
+#: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:33
+#: src/containers/Accounting/index.tsx:43 src/containers/Dashboard/index.tsx:72
 msgid "Settle"
 msgstr "تسویه"
 
@@ -651,7 +651,7 @@ msgstr "تسویه"
 msgid "Settle detail"
 msgstr "جزییات تراکنش تسویه"
 
-#: src/components/SettleUps/index.tsx:172
+#: src/components/SettleUps/index.tsx:170
 msgid "Settle Ups"
 msgstr "تسویه حساب ها"
 
@@ -659,12 +659,12 @@ msgstr "تسویه حساب ها"
 msgid "settled"
 msgstr "تسویه شده"
 
-#: src/components/Unsettled/index.tsx:102
+#: src/components/Unsettled/index.tsx:106
 msgid "Shop name"
 msgstr "نام فروشگاه"
 
 #: src/components/Invoice/index.tsx:48 src/components/SettleUps/index.tsx:105
-#: src/components/Unsettled/index.tsx:63
+#: src/components/Unsettled/index.tsx:65
 msgid "Shop Name"
 msgstr "نام فروشگاه"
 
@@ -708,7 +708,6 @@ msgstr "زبان سیستم:"
 msgid "Tax Cash Desk"
 msgstr "میز حساب مالیات"
 
-#: src/components/SettleUps/index.tsx:151
 #: src/components/Transactions/index.tsx:109
 msgid "There is no data to display"
 msgstr "داده ای برای نمایش وجود ندارد"
@@ -726,7 +725,7 @@ msgid "to this walelt sending anyother coin may result loss of your deposit"
 msgstr "را به این کیف پول ارسال کنید. ارسال سایر رمز ارزها به این کیف پول ممکن است باعث از دست رفتن آنها شود"
 
 #: src/components/Deposit/index.tsx:73
-#: src/components/LimitedPlaceOrder/index.tsx:195
+#: src/components/LimitedPlaceOrder/index.tsx:202
 #: src/components/OrderBook/index.tsx:134
 msgid "Total"
 msgstr "مجموع"
@@ -743,7 +742,7 @@ msgstr "مجموع:"
 msgid "Tracking code"
 msgstr "شماره رهگیری"
 
-#: src/containers/Exchange/index.tsx:141
+#: src/containers/Exchange/index.tsx:149
 msgid "Trades"
 msgstr "معاملات"
 
@@ -792,7 +791,7 @@ msgstr "بررسی و تایید مدارک"
 msgid "verified"
 msgstr "تایید شده"
 
-#: src/containers/Exchange/index.tsx:165
+#: src/containers/Exchange/index.tsx:173
 msgid "Verify Account"
 msgstr "تایید حساب کاربری"
 
@@ -828,12 +827,13 @@ msgstr "تصویر {type} شما با موفقیت به سرورهای ما ار
 msgid "your {coin} balance:"
 msgstr "بالانس حساب {coin} شما:"
 
-#: src/containers/Exchange/index.tsx:172
+#: src/containers/Exchange/index.tsx:180
 msgid "Your account is not verified. Only verified accounts can use exchange area. Please verify your account."
 msgstr "تنها حساب های کاربری تایید شده میتوانند از قسمت خرید و فروش استفاده کنند. لطفا حساب کاربری خود را تایید کنید."
 
-#: src/containers/Dashboard/index.tsx:116 src/containers/Deposit/index.tsx:36
-#: src/containers/Exchange/index.tsx:115
+#: src/containers/Accounting/index.tsx:40
+#: src/containers/Dashboard/index.tsx:121 src/containers/Deposit/index.tsx:36
+#: src/containers/Exchange/index.tsx:123
 msgid "Your balance"
 msgstr "بالانس حساب شما"
 

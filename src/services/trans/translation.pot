@@ -10,11 +10,11 @@ msgstr ""
 msgid "{coin} Deposite address"
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:98
+#: src/components/LimitedPlaceOrder/index.tsx:103
 msgid "{type} request"
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:99
+#: src/components/LimitedPlaceOrder/index.tsx:104
 msgid "{type} request places successfully"
 msgstr ""
 
@@ -30,11 +30,11 @@ msgstr ""
 msgid "24h Low"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:155
+#: src/components/DashboardHeader/index.tsx:158
 msgid "Account information"
 msgstr ""
 
-#: src/containers/Exchange/index.tsx:160
+#: src/containers/Exchange/index.tsx:168
 msgid "Account verification"
 msgstr ""
 
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Accounting"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:80
+#: src/components/Unsettled/index.tsx:82
 msgid "Actions"
 msgstr ""
 
@@ -62,7 +62,7 @@ msgstr ""
 msgid "After making a deposit, you can track its progress on the history page."
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:174
+#: src/components/LimitedPlaceOrder/index.tsx:181
 #: src/components/MarketTrades/index.tsx:77
 #: src/components/OrderBook/index.tsx:127
 #: src/components/Settle/index.tsx:114
@@ -79,7 +79,7 @@ msgstr ""
 msgid "Available"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:67
+#: src/components/Unsettled/index.tsx:69
 msgid "‌Balance"
 msgstr ""
 
@@ -96,8 +96,8 @@ msgstr ""
 msgid "Bitcoin"
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:19
-#: src/containers/Exchange/index.tsx:134
+#: src/components/LimitedPlaceOrder/index.tsx:21
+#: src/containers/Exchange/index.tsx:142
 msgid "buy"
 msgstr ""
 
@@ -121,7 +121,7 @@ msgstr ""
 msgid "Checkout Symbol"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:69
+#: src/components/NewInvoice/index.tsx:72
 msgid "click to open gateway"
 msgstr ""
 
@@ -146,7 +146,7 @@ msgid "Copy wallet address to clipboard"
 msgstr ""
 
 #: src/components/OrderBook/index.tsx:148
-#: src/components/Unsettled/index.tsx:74
+#: src/components/Unsettled/index.tsx:76
 msgid "Count"
 msgstr ""
 
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:150
+#: src/components/NewInvoice/index.tsx:153
 msgid "Create"
 msgstr ""
 
@@ -187,12 +187,12 @@ msgstr ""
 msgid "Deposit"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:126
+#: src/containers/Dashboard/index.tsx:131
 #: src/containers/Deposit/index.tsx:53
 msgid "Deposit history"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:142
+#: src/components/NewInvoice/index.tsx:145
 msgid "Description"
 msgstr ""
 
@@ -252,7 +252,7 @@ msgstr ""
 msgid "failed"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:80
+#: src/components/NewInvoice/index.tsx:83
 msgid "Failed to create invoice"
 msgstr ""
 
@@ -348,7 +348,7 @@ msgstr ""
 msgid "License Type"
 msgstr ""
 
-#: src/components/PlaceOrder/index.tsx:35
+#: src/components/PlaceOrder/index.tsx:37
 msgid "Limit"
 msgstr ""
 
@@ -356,7 +356,7 @@ msgstr ""
 msgid "Litecoin"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:121
+#: src/containers/Dashboard/index.tsx:126
 #: src/containers/Deposit/index.tsx:39
 msgid "Live prices"
 msgstr ""
@@ -373,7 +373,7 @@ msgstr ""
 msgid "Login Password"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:159
+#: src/components/DashboardHeader/index.tsx:162
 #: src/components/DashboardHeaderProfile/index.tsx:70
 msgid "Logout"
 msgstr ""
@@ -388,8 +388,8 @@ msgstr ""
 msgid "Male"
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:171
-#: src/components/PlaceOrder/index.tsx:45
+#: src/components/LimitedPlaceOrder/index.tsx:178
+#: src/components/PlaceOrder/index.tsx:47
 msgid "Market price"
 msgstr ""
 
@@ -405,7 +405,7 @@ msgstr ""
 msgid "New Invoice"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:68
+#: src/components/NewInvoice/index.tsx:71
 msgid "New Invoice Created"
 msgstr ""
 
@@ -417,24 +417,24 @@ msgstr ""
 msgid "Next Page"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:162
+#: src/components/DashboardHeader/index.tsx:165
 msgid "Night mode: off"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:162
+#: src/components/DashboardHeader/index.tsx:165
 msgid "Night mode: on"
 msgstr ""
 
-#: src/containers/Accounting/index.tsx:60
-#: src/containers/Dashboard/index.tsx:200
+#: src/containers/Accounting/index.tsx:71
+#: src/containers/Dashboard/index.tsx:205
 msgid "No Access"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:72
+#: src/components/NewInvoice/index.tsx:75
 msgid "Open gateway"
 msgstr ""
 
-#: src/containers/Exchange/index.tsx:126
+#: src/containers/Exchange/index.tsx:134
 msgid "Order book"
 msgstr ""
 
@@ -507,15 +507,15 @@ msgstr ""
 msgid "Please input 16 digits origin card number "
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:138
+#: src/components/NewInvoice/index.tsx:141
 msgid "Please input description, max length is 30"
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:112
+#: src/components/LimitedPlaceOrder/index.tsx:119
 msgid "please input number"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:94
+#: src/components/NewInvoice/index.tsx:97
 msgid "Please input price"
 msgstr ""
 
@@ -559,7 +559,7 @@ msgstr ""
 msgid "Please select a currency to deposit"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:124
+#: src/components/NewInvoice/index.tsx:127
 msgid "Please select input currency"
 msgstr ""
 
@@ -596,8 +596,8 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:151
-#: src/components/LimitedPlaceOrder/index.tsx:170
+#: src/components/LimitedPlaceOrder/index.tsx:158
+#: src/components/LimitedPlaceOrder/index.tsx:177
 #: src/components/MarketTrades/index.tsx:70
 #: src/components/OrderBook/index.tsx:120
 msgid "Price"
@@ -623,7 +623,7 @@ msgstr ""
 msgid "search"
 msgstr ""
 
-#: src/components/SettleUps/index.tsx:159
+#: src/components/SettleUps/index.tsx:157
 #: src/components/Transactions/index.tsx:135
 msgid "Select merchant"
 msgstr ""
@@ -637,8 +637,8 @@ msgstr ""
 msgid "Selfie With ID And Note"
 msgstr ""
 
-#: src/components/LimitedPlaceOrder/index.tsx:19
-#: src/containers/Exchange/index.tsx:136
+#: src/components/LimitedPlaceOrder/index.tsx:21
+#: src/containers/Exchange/index.tsx:144
 msgid "sell"
 msgstr ""
 
@@ -646,8 +646,9 @@ msgstr ""
 msgid "send only"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:83
-#: src/containers/Accounting/index.tsx:32
+#: src/components/Unsettled/index.tsx:85
+#: src/containers/Accounting/index.tsx:33
+#: src/containers/Accounting/index.tsx:43
 #: src/containers/Dashboard/index.tsx:72
 msgid "Settle"
 msgstr ""
@@ -656,7 +657,7 @@ msgstr ""
 msgid "Settle detail"
 msgstr ""
 
-#: src/components/SettleUps/index.tsx:172
+#: src/components/SettleUps/index.tsx:170
 msgid "Settle Ups"
 msgstr ""
 
@@ -664,13 +665,13 @@ msgstr ""
 msgid "settled"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:102
+#: src/components/Unsettled/index.tsx:106
 msgid "Shop name"
 msgstr ""
 
 #: src/components/Invoice/index.tsx:48
 #: src/components/SettleUps/index.tsx:105
-#: src/components/Unsettled/index.tsx:63
+#: src/components/Unsettled/index.tsx:65
 msgid "Shop Name"
 msgstr ""
 
@@ -714,7 +715,6 @@ msgstr ""
 msgid "Tax Cash Desk"
 msgstr ""
 
-#: src/components/SettleUps/index.tsx:151
 #: src/components/Transactions/index.tsx:109
 msgid "There is no data to display"
 msgstr ""
@@ -732,7 +732,7 @@ msgid "to this walelt sending anyother coin may result loss of your deposit"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:73
-#: src/components/LimitedPlaceOrder/index.tsx:195
+#: src/components/LimitedPlaceOrder/index.tsx:202
 #: src/components/OrderBook/index.tsx:134
 msgid "Total"
 msgstr ""
@@ -750,7 +750,7 @@ msgstr ""
 msgid "Tracking code"
 msgstr ""
 
-#: src/containers/Exchange/index.tsx:141
+#: src/containers/Exchange/index.tsx:149
 msgid "Trades"
 msgstr ""
 
@@ -799,7 +799,7 @@ msgstr ""
 msgid "verified"
 msgstr ""
 
-#: src/containers/Exchange/index.tsx:165
+#: src/containers/Exchange/index.tsx:173
 msgid "Verify Account"
 msgstr ""
 
@@ -835,13 +835,14 @@ msgstr ""
 msgid "your {coin} balance:"
 msgstr ""
 
-#: src/containers/Exchange/index.tsx:172
+#: src/containers/Exchange/index.tsx:180
 msgid "Your account is not verified. Only verified accounts can use exchange area. Please verify your account."
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:116
+#: src/containers/Accounting/index.tsx:40
+#: src/containers/Dashboard/index.tsx:121
 #: src/containers/Deposit/index.tsx:36
-#: src/containers/Exchange/index.tsx:115
+#: src/containers/Exchange/index.tsx:123
 msgid "Your balance"
 msgstr ""
 
