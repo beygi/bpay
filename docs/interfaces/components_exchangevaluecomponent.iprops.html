@@ -84,7 +84,8 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="components_exchangevaluecomponent.iprops.html#floatsNum" class="tsd-kind-icon">fix<wbr>Float<wbr>Num</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="components_exchangevaluecomponent.iprops.html#fixedfloats" class="tsd-kind-icon">fixed<wbr>Floats</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="components_exchangevaluecomponent.iprops.html#floatsnum" class="tsd-kind-icon">floats<wbr>Num</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="components_exchangevaluecomponent.iprops.html#localnumbers" class="tsd-kind-icon">local<wbr>Numbers</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="components_exchangevaluecomponent.iprops.html#percentmark" class="tsd-kind-icon">percent<wbr>Mark</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="components_exchangevaluecomponent.iprops.html#seperatethousand" class="tsd-kind-icon">seperate<wbr>Thousand</a></li>
@@ -98,9 +99,24 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="floatsNum" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> fix<wbr>Float<wbr>Num</h3>
-					<div class="tsd-signature tsd-kind-icon">fix<wbr>Float<wbr>Num<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="fixedfloats" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> fixed<wbr>Floats</h3>
+					<div class="tsd-signature tsd-kind-icon">fixed<wbr>Floats<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in components/ExchangeValue/index.tsx:14</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>always display floats even when not exist. default is true</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="floatsnum" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> floats<wbr>Num</h3>
+					<div class="tsd-signature tsd-kind-icon">floats<wbr>Num<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in components/ExchangeValue/index.tsx:12</li>
@@ -118,12 +134,12 @@
 					<div class="tsd-signature tsd-kind-icon">local<wbr>Numbers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in components/ExchangeValue/index.tsx:16</li>
+							<li>Defined in components/ExchangeValue/index.tsx:18</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>display local numbers</p>
+							<p>display local numbers. default is true</p>
 						</div>
 					</div>
 				</section>
@@ -133,12 +149,12 @@
 					<div class="tsd-signature tsd-kind-icon">percent<wbr>Mark<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in components/ExchangeValue/index.tsx:20</li>
+							<li>Defined in components/ExchangeValue/index.tsx:22</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Display Percent mark at begining</p>
+							<p>Display Percent mark at begining. default is false</p>
 						</div>
 					</div>
 				</section>
@@ -148,12 +164,12 @@
 					<div class="tsd-signature tsd-kind-icon">seperate<wbr>Thousand<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in components/ExchangeValue/index.tsx:14</li>
+							<li>Defined in components/ExchangeValue/index.tsx:16</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>seperate thousands with comma</p>
+							<p>seperate thousands with comma. default is false</p>
 						</div>
 					</div>
 				</section>
@@ -163,12 +179,12 @@
 					<div class="tsd-signature tsd-kind-icon">stock<wbr>Style<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in components/ExchangeValue/index.tsx:18</li>
+							<li>Defined in components/ExchangeValue/index.tsx:20</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Will be displayed in red and green color when value is changed</p>
+							<p>Will be displayed in red and green color when value is changed. default is true</p>
 						</div>
 					</div>
 				</section>
@@ -211,7 +227,10 @@
 						<a href="components_exchangevaluecomponent.iprops.html" class="tsd-kind-icon">IProps</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="components_exchangevaluecomponent.iprops.html#floatsNum" class="tsd-kind-icon">fix<wbr>Float<wbr>Num</a>
+								<a href="components_exchangevaluecomponent.iprops.html#fixedfloats" class="tsd-kind-icon">fixed<wbr>Floats</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="components_exchangevaluecomponent.iprops.html#floatsnum" class="tsd-kind-icon">floats<wbr>Num</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
 								<a href="components_exchangevaluecomponent.iprops.html#localnumbers" class="tsd-kind-icon">local<wbr>Numbers</a>
