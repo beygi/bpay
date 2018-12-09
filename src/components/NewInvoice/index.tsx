@@ -4,10 +4,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Form, Input, InputNumber, notification, Select } from "antd";
 import { FormComponentProps } from "antd/lib/form";
-import axios from "axios";
 import * as _ from "lodash";
 import * as React from "react";
-import { JsonTable } from "react-json-to-html";
 import { connect } from "react-redux";
 import config from "../../config";
 import API from "../../lib/api/invoice";
@@ -23,6 +21,7 @@ interface IProps extends FormComponentProps {
     mobile: string;
     apiKey: string;
     theme: string;
+    language: string;
 }
 interface IState {
     invoiceId: string;
@@ -80,10 +79,9 @@ class NewInvoice extends React.Component<IProps, IState> {
                     const errorText = (error.response.body.message) ? error.response.body.message : error;
                     notification.error({
                         message: t.t("Failed to create invoice"),
-                        description: errorText,
+                        description: t.t(errorText),
                         placement: "bottomRight",
                     });
-
                 });
             }
         });
@@ -168,6 +166,7 @@ function mapStateToProps(state: IRootState) {
         mobile: state.app.user.mobile,
         apiKey: state.app.user.apiKey,
         theme: state.app.user.theme,
+        language: state.app.user.language,
     };
 }
 
