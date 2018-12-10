@@ -229,7 +229,8 @@
 
     .ant-btn-primary {
         background-color: @dark-button;
-        border-color:   @dark-button;
+        border-color:   darken(@dark-button,15%);
+        border-width: 0;
         &:hover
         {
             background-color: darken(@dark-button,15%);
@@ -333,6 +334,7 @@
         margin-right: 10px;
         margin-left: 10px;
     }
+
 }
 
 .main-header {

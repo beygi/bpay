@@ -75,7 +75,7 @@ msgstr ""
 msgid "amount is not equal to selected invoice sum"
 msgstr ""
 
-#: src/components/GatewayInformation/index.tsx:57
+#: src/components/GatewayInformation/index.tsx:59
 msgid "API key"
 msgstr ""
 
@@ -83,12 +83,12 @@ msgstr ""
 msgid "Available"
 msgstr ""
 
-#: src/components/Analysis/index.tsx:130
-msgid "Balance"
-msgstr ""
-
 #: src/components/Unsettled/index.tsx:69
 msgid "‌Balance"
+msgstr ""
+
+#: src/components/Analysis/index.tsx:130
+msgid "Balance"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:112
@@ -141,11 +141,11 @@ msgid "Cold storage"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:98
-#: src/components/GatewayInformation/index.tsx:64
+#: src/components/GatewayInformation/index.tsx:76
 msgid "Copy"
 msgstr ""
 
-#: src/components/GatewayInformation/index.tsx:63
+#: src/components/GatewayInformation/index.tsx:75
 msgid "Copy API key to clipboard"
 msgstr ""
 
@@ -303,6 +303,10 @@ msgstr ""
 msgid "Happy Trading"
 msgstr ""
 
+#: src/components/GatewayInformation/index.tsx:65
+msgid "Hide"
+msgstr ""
+
 #: src/components/Analysis/index.tsx:110
 msgid "Hot"
 msgstr ""
@@ -408,7 +412,7 @@ msgstr ""
 msgid "Master"
 msgstr ""
 
-#: src/components/GatewayInformation/index.tsx:72
+#: src/components/GatewayInformation/index.tsx:84
 msgid "Mobile"
 msgstr ""
 
@@ -676,7 +680,7 @@ msgstr ""
 msgid "send only"
 msgstr ""
 
-#: src/components/GatewayInformation/index.tsx:71
+#: src/components/GatewayInformation/index.tsx:83
 msgid "Service URL"
 msgstr ""
 
@@ -704,6 +708,10 @@ msgstr ""
 #: src/components/Invoice/index.tsx:48 src/components/SettleUps/index.tsx:105
 #: src/components/Unsettled/index.tsx:65
 msgid "Shop Name"
+msgstr ""
+
+#: src/components/GatewayInformation/index.tsx:68
+msgid "Show"
 msgstr ""
 
 #: src/components/Invoice/index.tsx:74
@@ -870,7 +878,7 @@ msgstr ""
 msgid "Your account is not verified. Only verified accounts can use exchange area. Please verify your account."
 msgstr ""
 
-#: src/components/GatewayInformation/index.tsx:41
+#: src/components/GatewayInformation/index.tsx:43
 msgid "Your API key copied to clipboard successfully"
 msgstr ""
 

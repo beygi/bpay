@@ -83,7 +83,7 @@ msgstr "مقدار"
 msgid "amount is not equal to selected invoice sum"
 msgstr "مقدار وارد شده با مجموع مبلغ فاکتورهای انتخاب شده همخوانی ندارد"
 
-#: src/components/GatewayInformation/index.tsx:57
+#: src/components/GatewayInformation/index.tsx:59
 msgid "API key"
 msgstr "کلید API"
 
@@ -91,12 +91,12 @@ msgstr "کلید API"
 msgid "Available"
 msgstr "در دسترس"
 
-#: src/components/Analysis/index.tsx:130
-msgid "Balance"
-msgstr "بالانس"
-
 #: src/components/Unsettled/index.tsx:69
 msgid "‌Balance"
+msgstr "بالانس"
+
+#: src/components/Analysis/index.tsx:130
+msgid "Balance"
 msgstr "بالانس"
 
 #: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:112
@@ -149,11 +149,11 @@ msgid "Cold storage"
 msgstr "مخزن سرد"
 
 #: src/components/Deposit/index.tsx:98
-#: src/components/GatewayInformation/index.tsx:64
+#: src/components/GatewayInformation/index.tsx:76
 msgid "Copy"
 msgstr "کپی"
 
-#: src/components/GatewayInformation/index.tsx:63
+#: src/components/GatewayInformation/index.tsx:75
 msgid "Copy API key to clipboard"
 msgstr "کپی کردن آدرس API"
 
@@ -309,6 +309,10 @@ msgstr "نام گروه"
 msgid "Happy Trading"
 msgstr "با خوشحالی معامله کنید"
 
+#: src/components/GatewayInformation/index.tsx:65
+msgid "Hide"
+msgstr "پوشاندن"
+
 #: src/components/Analysis/index.tsx:110
 msgid "Hot"
 msgstr "گرم"
@@ -413,7 +417,7 @@ msgstr "به قیمت بازار"
 msgid "Master"
 msgstr "اصلی"
 
-#: src/components/GatewayInformation/index.tsx:72
+#: src/components/GatewayInformation/index.tsx:84
 msgid "Mobile"
 msgstr "موبایل"
 
@@ -663,7 +667,7 @@ msgstr "فروش"
 msgid "send only"
 msgstr "تنها"
 
-#: src/components/GatewayInformation/index.tsx:71
+#: src/components/GatewayInformation/index.tsx:83
 msgid "Service URL"
 msgstr "آدرس سرویس"
 
@@ -692,6 +696,10 @@ msgstr "نام فروشگاه"
 #: src/components/Unsettled/index.tsx:65
 msgid "Shop Name"
 msgstr "نام فروشگاه"
+
+#: src/components/GatewayInformation/index.tsx:68
+msgid "Show"
+msgstr "نمایش"
 
 #: src/components/Invoice/index.tsx:74
 msgid "Status"
@@ -856,7 +864,7 @@ msgstr "بالانس حساب {coin} شما:"
 msgid "Your account is not verified. Only verified accounts can use exchange area. Please verify your account."
 msgstr "تنها حساب های کاربری تایید شده میتوانند از قسمت خرید و فروش استفاده کنند. لطفا حساب کاربری خود را تایید کنید."
 
-#: src/components/GatewayInformation/index.tsx:41
+#: src/components/GatewayInformation/index.tsx:43
 msgid "Your API key copied to clipboard successfully"
 msgstr "کلید API شما با موفقیت کپی شد"
 

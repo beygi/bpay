@@ -24,6 +24,7 @@ interface IProps {
 }
 
 interface IState {
+    displayApiKey: boolean;
 }
 
 /**
@@ -35,6 +36,7 @@ class GatewayInformationComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
+        this.state = { displayApiKey: false };
     }
 
     public showCopiedMessage() {
@@ -57,7 +59,17 @@ class GatewayInformationComponent extends React.Component<IProps, IState> {
                 key: t.t("API key"), value:
                     <div>
                         <InputGroup compact >
-                            <Input className="api-key-input" defaultValue={this.props.apiKey} />
+                            {
+                                (this.state.displayApiKey) ?
+                                    <Button onClick={() => this.setState({ displayApiKey: false })}
+                                        className="copy neat-btn" type="primary"><FontAwesomeIcon icon={["far", "eye-slash"]} />  {t.t("Hide")}</Button>
+                                    :
+                                    <Button onClick={() => this.setState({ displayApiKey: true })}
+                                        className="copy neat-btn" type="primary"><FontAwesomeIcon icon={["far", "eye"]} />  {t.t("Show")}</Button>
+                            }
+                            {
+                                (this.state.displayApiKey) ? <Input className="api-key-input" defaultValue={this.props.apiKey} /> : null
+                            }
                             <CopyToClipboard text={this.props.apiKey}
                                 onCopy={() => this.showCopiedMessage()}>
                                 <Tooltip placement="top" title={t.t("Copy API key to clipboard")}>
