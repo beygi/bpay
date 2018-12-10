@@ -50,12 +50,22 @@ all transactions will be done using bitcoin test network not real network.")}
 
             : null;
 
+        const merchantWarning = (userObject.keycloak.hasRealmRole("merchant") && userObject.getLevel().level === 1) ?
+            <Col md={24} >
+                <Block className="sandbox">
+                    {t.t("You can now create becopay invoices. but your account must be verified to withdraw your balance. please contact us for verification.")}
+                </Block>
+            </Col>
+
+            : null;
+
         const allBlocks = [];
 
         if (userObject.keycloak.hasRealmRole("merchant") || userObject.keycloak.hasRealmRole("merchants_admin")) {
             allBlocks.push(
                 <Row key="merchant" gutter={8}>
                     {sandbox}
+                    {merchantWarning}
                     <Col sm={24} md={24} lg={8} >
                         <Row gutter={8}>
                             {/* <Col md={24} >

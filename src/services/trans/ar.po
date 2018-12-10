@@ -194,7 +194,7 @@ msgstr "الوقت الباقي"
 msgid "Deposit"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:137 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:147 src/containers/Deposit/index.tsx:53
 msgid "Deposit history"
 msgstr ""
 
@@ -282,7 +282,7 @@ msgstr ""
 msgid "First Page"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:85
+#: src/containers/Dashboard/index.tsx:95
 msgid "Gateway information"
 msgstr ""
 
@@ -372,7 +372,7 @@ msgstr ""
 msgid "Litecoin"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:132 src/containers/Deposit/index.tsx:39
+#: src/containers/Dashboard/index.tsx:142 src/containers/Deposit/index.tsx:39
 msgid "Live prices"
 msgstr ""
 
@@ -420,7 +420,7 @@ msgstr ""
 msgid "network confirmations"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:80
+#: src/containers/Dashboard/index.tsx:90
 #, fuzzy
 msgid "New Invoice"
 msgstr "معرف الفاتورة"
@@ -450,7 +450,7 @@ msgstr ""
 msgid "no access"
 msgstr ""
 
-#: src/containers/Accounting/index.tsx:65
+#: src/containers/Accounting/index.tsx:60
 msgid "No Access"
 msgstr ""
 
@@ -688,7 +688,7 @@ msgid "Service URL"
 msgstr ""
 
 #: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:32
-#: src/containers/Accounting/index.tsx:38 src/containers/Dashboard/index.tsx:73
+#: src/containers/Dashboard/index.tsx:83
 msgid "Settle"
 msgstr ""
 
@@ -873,7 +873,11 @@ msgstr ""
 msgid "You are a member"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:211
+#: src/containers/Dashboard/index.tsx:56
+msgid "You can now create becopay invoices. but your account must be verified to withdraw your balance. please contact us for verification."
+msgstr ""
+
+#: src/containers/Dashboard/index.tsx:221
 msgid "You don't have enough permission to view this area"
 msgstr ""
 
@@ -893,7 +897,7 @@ msgstr ""
 msgid "Your API key copied to clipboard successfully"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:127 src/containers/Deposit/index.tsx:36
+#: src/containers/Dashboard/index.tsx:137 src/containers/Deposit/index.tsx:36
 #: src/containers/Exchange/index.tsx:123
 msgid "Your balance"
 msgstr ""

@@ -200,7 +200,7 @@ msgstr "تاریخ و زمان پرداخت"
 msgid "Deposit"
 msgstr "شارژ حساب"
 
-#: src/containers/Dashboard/index.tsx:137 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:147 src/containers/Deposit/index.tsx:53
 msgid "Deposit history"
 msgstr "تاریخچهٔ مبالغ واریزی"
 
@@ -288,7 +288,7 @@ msgstr "نام"
 msgid "First Page"
 msgstr "صفحه اول"
 
-#: src/containers/Dashboard/index.tsx:85
+#: src/containers/Dashboard/index.tsx:95
 msgid "Gateway information"
 msgstr "اطلاعات درگاه پرداخت"
 
@@ -378,7 +378,7 @@ msgstr "معاملهٔ محدود"
 msgid "Litecoin"
 msgstr "لایت کوین"
 
-#: src/containers/Dashboard/index.tsx:132 src/containers/Deposit/index.tsx:39
+#: src/containers/Dashboard/index.tsx:142 src/containers/Deposit/index.tsx:39
 msgid "Live prices"
 msgstr "قیمت زنده"
 
@@ -425,7 +425,7 @@ msgstr "موبایل"
 msgid "network confirmations"
 msgstr "تاییدیه شبکه در دسترس خواهند بود"
 
-#: src/containers/Dashboard/index.tsx:80
+#: src/containers/Dashboard/index.tsx:90
 msgid "New Invoice"
 msgstr "فاکتور جدید"
 
@@ -453,7 +453,7 @@ msgstr "حالت شب: روشن"
 msgid "no access"
 msgstr "بدون دسترسی"
 
-#: src/containers/Accounting/index.tsx:65
+#: src/containers/Accounting/index.tsx:60
 msgid "No Access"
 msgstr "شما به این قسمت دسترسی ندارید"
 
@@ -675,7 +675,7 @@ msgid "Service URL"
 msgstr "آدرس سرویس"
 
 #: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:32
-#: src/containers/Accounting/index.tsx:38 src/containers/Dashboard/index.tsx:73
+#: src/containers/Dashboard/index.tsx:83
 msgid "Settle"
 msgstr "تسویه"
 
@@ -859,7 +859,12 @@ msgstr "ما وضعیت را در صفحهٔ کاربری تان به اطلاع
 msgid "You are a member"
 msgstr "شما اکنون یک کاربر هستید"
 
-#: src/containers/Dashboard/index.tsx:211
+#: src/containers/Dashboard/index.tsx:56
+#, fuzzy
+msgid "You can now create becopay invoices. but your account must be verified to withdraw your balance. please contact us for verification."
+msgstr "شما می توانید فاکتور پرداخت بکوپی ایجاد کنید ولی برای تسویه حساب باید اطلاعات خود را تکمیل کنید. برای تکمیل حساب کاربری خود با ما تماس بگیرید."
+
+#: src/containers/Dashboard/index.tsx:221
 msgid "You don't have enough permission to view this area"
 msgstr "شما دسترسی کافی برای مشاهده این قسمت را ندارید"
 
@@ -879,7 +884,7 @@ msgstr "تنها حساب های کاربری تایید شده میتوانند
 msgid "Your API key copied to clipboard successfully"
 msgstr "کلید API شما با موفقیت کپی شد"
 
-#: src/containers/Dashboard/index.tsx:127 src/containers/Deposit/index.tsx:36
+#: src/containers/Dashboard/index.tsx:137 src/containers/Deposit/index.tsx:36
 #: src/containers/Exchange/index.tsx:123
 msgid "Your balance"
 msgstr "بالانس حساب شما"
