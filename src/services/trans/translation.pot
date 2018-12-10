@@ -790,7 +790,7 @@ msgstr ""
 msgid "Transactions"
 msgstr ""
 
-#: src/lib/user/index.ts:80
+#: src/lib/user/index.ts:87
 msgid "unverified"
 msgstr ""
 
@@ -827,8 +827,12 @@ msgstr ""
 msgid "Validating your documents"
 msgstr ""
 
-#: src/lib/user/index.ts:73
+#: src/lib/user/index.ts:80
 msgid "verified"
+msgstr ""
+
+#: src/lib/user/index.ts:73
+msgid "verified merchant"
 msgstr ""
 
 #: src/containers/Exchange/index.tsx:173

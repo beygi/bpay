@@ -783,7 +783,7 @@ msgstr "معاملات"
 msgid "Transactions"
 msgstr "تراکنش ها"
 
-#: src/lib/user/index.ts:80
+#: src/lib/user/index.ts:87
 msgid "unverified"
 msgstr "تایید نشده"
 
@@ -820,9 +820,13 @@ msgstr "تایید هویت"
 msgid "Validating your documents"
 msgstr "بررسی و تایید مدارک"
 
-#: src/lib/user/index.ts:73
+#: src/lib/user/index.ts:80
 msgid "verified"
 msgstr "تایید شده"
+
+#: src/lib/user/index.ts:73
+msgid "verified merchant"
+msgstr "فروشندهٔ تایید شده"
 
 #: src/containers/Exchange/index.tsx:173
 msgid "Verify Account"
