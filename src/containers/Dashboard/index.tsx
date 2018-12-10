@@ -20,6 +20,7 @@ import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 
 import * as _ from "lodash";
+import GatewayInformation from "../../components/GatewayInformation";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
@@ -49,12 +50,22 @@ all transactions will be done using bitcoin test network not real network.")}
 
             : null;
 
+        const merchantWarning = (userObject.keycloak.hasRealmRole("merchant") && userObject.getLevel().level === 1) ?
+            <Col md={24} >
+                <Block className="sandbox">
+                    {t.t("You can now create becopay invoices. but your account must be verified to withdraw your balance. please contact us for verification.")}
+                </Block>
+            </Col>
+
+            : null;
+
         const allBlocks = [];
 
         if (userObject.keycloak.hasRealmRole("merchant") || userObject.keycloak.hasRealmRole("merchants_admin")) {
             allBlocks.push(
                 <Row key="merchant" gutter={8}>
                     {sandbox}
+                    {merchantWarning}
                     <Col sm={24} md={24} lg={8} >
                         <Row gutter={8}>
                             {/* <Col md={24} >
@@ -78,6 +89,11 @@ all transactions will be done using bitcoin test network not real network.")}
                             <Col md={24} >
                                 <Block title={t.t("New Invoice")} icon={<FontAwesomeIcon icon={["fas", "edit"]} />}>
                                     <NewInvoice />
+                                </Block>
+                            </Col>
+                            <Col md={24} >
+                                <Block title={t.t("Gateway information")} icon={<FontAwesomeIcon icon={["fas", "th-list"]} />}>
+                                    <GatewayInformation />
                                 </Block>
                             </Col>
                             <Col md={24} >
@@ -197,12 +213,12 @@ all transactions will be done using bitcoin test network not real network.")}
             );
         }
 
-        if (allBlocks === []) {
+        if (allBlocks.length === 0) {
             allBlocks.push(
                 <Row key="denied" gutter={8}>
                     {sandbox}
                     <Col md={24} >
-                        <Block><h3>{t.t("No Access")}</h3></Block>
+                        <Block><h3>{t.t("You don't have enough permission to view this area")}</h3></Block>
                     </Col>
                 </Row>);
         }

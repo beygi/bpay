@@ -1,6 +1,6 @@
 // we override ant styles here
-
 &[dir='rtl'] {
+
     .ant-tabs-nav .ant-tabs-tab
     {
         margin: 0px 0px 0px 32px;
@@ -286,8 +286,8 @@
     .ant-input-group.ant-input-group-compact > :last-child
     {
         border-radius: 4px 0px 0px 4px;
-        border-left-width: 1px; 
-        border-right-width: auto;
+        border-right-width: 1px !important;
+        border-left-width: 0 !important;
     }
     .ant-input-group.ant-input-group-compact > :first-child
     {
@@ -299,6 +299,39 @@
     
 }
 //////////
+
+.ant-btn {
+    border-color: darken(@secondaryVariant9,10%);
+    border-width: 0;
+}
+
+.ant-input-group.ant-input-group-compact > :last-child
+{
+    border-left-width: 1px;
+    border-right-width: 0;
+    &:hover
+    {
+        border-left-width: auto;
+        border-right-width: auto;
+    }
+}
+.ant-input-group.ant-input-group-compact > :first-child
+{
+    &:hover
+    {
+        border-left-width: 0px;
+        border-right-width: 0px;
+    }
+}
+.ant-input-group.ant-input-group-compact > *
+{
+    &:hover
+    {
+        border-left-width: 1px;
+        border-right-width: 0px !important;
+    }
+}
+
 .ant-form-inline .ant-form-item {
     margin-right: auto;
     margin-left: 16px;

@@ -189,6 +189,9 @@
                 border-bottom-color: lighten(@dark-bk,10%) !important;
             }
         }
+        
+        background-color: lighten(@dark-block-color,3%) !important;
+        
     }
     .live-price .coin-balance,.coin-balance,.deposit-item {
         border-color: @dark-bk !important;
@@ -229,10 +232,12 @@
 
     .ant-btn-primary {
         background-color: @dark-button;
-        border-color: darken($background-color , 10%);
+        border-color:   darken(@dark-button,15%);
+        border-width: 0;
         &:hover
         {
             background-color: darken(@dark-button,15%);
+            border-color:  darken(@dark-button,15%);
         }
     }
 
@@ -332,6 +337,7 @@
         margin-right: 10px;
         margin-left: 10px;
     }
+
 }
 
 .main-header {
@@ -353,10 +359,11 @@ body {
 }
 
 .sandbox {
-    background-color: #fb3c5d;
+    background-color: #fb3c5d !important;
     color: white;
     text-align: justify;
     box-shadow: none;
+    font-size: larger;
 }
 
 #develop {

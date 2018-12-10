@@ -67,18 +67,34 @@ export default class USER {
     }
 
     public getLevel() {
-        if (this.hasRealmRole("webapp_verified_user")) {
+        if (this.hasRealmRole("verified_merchant")) {
+            return ({
+                level: 3,
+                name: t.t("verified merchant"),
+                code: "verified-merchant",
+            });
+        }
+        if (this.hasRealmRole("webapp_user")) {
             return ({
                 level: 2,
                 name: t.t("verified"),
                 code: "verified",
             });
         }
+        if (this.hasRealmRole("webapp_user") || this.hasRealmRole("merchant")) {
+            return (
+                {
+                    level: 1,
+                    name: t.t("unverified"),
+                    code: "unverified",
+                }
+            );
+        }
         return (
             {
-                level: 1,
-                name: t.t("unverified"),
-                code: "unverified",
+                level: 0,
+                name: t.t("no access"),
+                code: "no-access",
             }
         );
     }
