@@ -107,7 +107,7 @@ class NewInvoice extends React.Component<IProps, IState> {
                             required: true, type: "number",
                             validator: this.checkPrice,
                         }],
-                        initialValue: 20000,
+                        initialValue: 0,
                     })(
                         <InputNumber
                             size="large"
