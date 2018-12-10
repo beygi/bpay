@@ -229,10 +229,11 @@
 
     .ant-btn-primary {
         background-color: @dark-button;
-        border-color: darken($background-color , 10%);
+        border-color:   @dark-button;
         &:hover
         {
             background-color: darken(@dark-button,15%);
+            border-color:  darken(@dark-button,15%);
         }
     }
 

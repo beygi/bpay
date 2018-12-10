@@ -83,16 +83,20 @@ msgstr "مقدار"
 msgid "amount is not equal to selected invoice sum"
 msgstr "مقدار وارد شده با مجموع مبلغ فاکتورهای انتخاب شده همخوانی ندارد"
 
+#: src/components/GatewayInformation/index.tsx:57
+msgid "API key"
+msgstr "کلید API"
+
 #: src/components/Deposit/index.tsx:75
 msgid "Available"
 msgstr "در دسترس"
 
-#: src/components/Unsettled/index.tsx:69
-msgid "‌Balance"
-msgstr "بالانس"
-
 #: src/components/Analysis/index.tsx:130
 msgid "Balance"
+msgstr "بالانس"
+
+#: src/components/Unsettled/index.tsx:69
+msgid "‌Balance"
 msgstr "بالانس"
 
 #: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:112
@@ -145,8 +149,13 @@ msgid "Cold storage"
 msgstr "مخزن سرد"
 
 #: src/components/Deposit/index.tsx:98
+#: src/components/GatewayInformation/index.tsx:64
 msgid "Copy"
 msgstr "کپی"
+
+#: src/components/GatewayInformation/index.tsx:63
+msgid "Copy API key to clipboard"
+msgstr "کپی کردن آدرس API"
 
 #: src/components/Deposit/index.tsx:97
 msgid "Copy wallet address to clipboard"
@@ -191,7 +200,7 @@ msgstr "تاریخ و زمان پرداخت"
 msgid "Deposit"
 msgstr "شارژ حساب"
 
-#: src/containers/Dashboard/index.tsx:131 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:137 src/containers/Deposit/index.tsx:53
 msgid "Deposit history"
 msgstr "تاریخچهٔ مبالغ واریزی"
 
@@ -279,6 +288,10 @@ msgstr "نام"
 msgid "First Page"
 msgstr "صفحه اول"
 
+#: src/containers/Dashboard/index.tsx:85
+msgid "Gateway information"
+msgstr "اطلاعات درگاه پرداخت"
+
 #: src/containers/KYC/index.tsx:143
 msgid "Gender"
 msgstr "جنسیت"
@@ -361,7 +374,7 @@ msgstr "معاملهٔ محدود"
 msgid "Litecoin"
 msgstr "لایت کوین"
 
-#: src/containers/Dashboard/index.tsx:126 src/containers/Deposit/index.tsx:39
+#: src/containers/Dashboard/index.tsx:132 src/containers/Deposit/index.tsx:39
 msgid "Live prices"
 msgstr "قیمت زنده"
 
@@ -400,11 +413,15 @@ msgstr "به قیمت بازار"
 msgid "Master"
 msgstr "اصلی"
 
+#: src/components/GatewayInformation/index.tsx:72
+msgid "Mobile"
+msgstr "موبایل"
+
 #: src/components/Deposit/index.tsx:129
 msgid "network confirmations"
 msgstr "تاییدیه شبکه در دسترس خواهند بود"
 
-#: src/containers/Dashboard/index.tsx:79
+#: src/containers/Dashboard/index.tsx:80
 msgid "New Invoice"
 msgstr "فاکتور جدید"
 
@@ -428,8 +445,8 @@ msgstr "حالت شب: خاموش"
 msgid "Night mode: on"
 msgstr "حالت شب: روشن"
 
-#: src/containers/Accounting/index.tsx:71
-#: src/containers/Dashboard/index.tsx:205
+#: src/containers/Accounting/index.tsx:60
+#: src/containers/Dashboard/index.tsx:211
 msgid "No Access"
 msgstr "شما به این قسمت دسترسی ندارید"
 
@@ -646,8 +663,12 @@ msgstr "فروش"
 msgid "send only"
 msgstr "تنها"
 
-#: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:33
-#: src/containers/Accounting/index.tsx:43 src/containers/Dashboard/index.tsx:72
+#: src/components/GatewayInformation/index.tsx:71
+msgid "Service URL"
+msgstr "آدرس سرویس"
+
+#: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:32
+#: src/containers/Dashboard/index.tsx:73
 msgid "Settle"
 msgstr "تسویه"
 
@@ -659,7 +680,7 @@ msgstr "جزییات تراکنش تسویه"
 msgid "Settle Ups"
 msgstr "تسویه حساب ها"
 
-#: src/components/Transactions/index.tsx:22
+#: src/components/Transactions/index.tsx:23
 msgid "settled"
 msgstr "تسویه شده"
 
@@ -716,7 +737,7 @@ msgstr "میز حساب مالیات"
 msgid "There is no data to display"
 msgstr "داده ای برای نمایش وجود ندارد"
 
-#: src/containers/Dashboard/index.tsx:45
+#: src/containers/Dashboard/index.tsx:46
 msgid "this is the sandbox enviroment , you can test your payments here, all transactions will be done using bitcoin test network not real network."
 msgstr "این محیط تنها برای آزمایش پرداخت توسط توسعه دهندگان ایجاد شده است. تمامی پرداخت ها در این محیط در بستر تست شبکه بلاکچین صورت میگیرد و رمز‌ارز واقعی تبادل نمیشود."
 
@@ -835,8 +856,11 @@ msgstr "بالانس حساب {coin} شما:"
 msgid "Your account is not verified. Only verified accounts can use exchange area. Please verify your account."
 msgstr "تنها حساب های کاربری تایید شده میتوانند از قسمت خرید و فروش استفاده کنند. لطفا حساب کاربری خود را تایید کنید."
 
-#: src/containers/Accounting/index.tsx:40
-#: src/containers/Dashboard/index.tsx:121 src/containers/Deposit/index.tsx:36
+#: src/components/GatewayInformation/index.tsx:41
+msgid "Your API key copied to clipboard successfully"
+msgstr "کلید API شما با موفقیت کپی شد"
+
+#: src/containers/Dashboard/index.tsx:127 src/containers/Deposit/index.tsx:36
 #: src/containers/Exchange/index.tsx:123
 msgid "Your balance"
 msgstr "بالانس حساب شما"

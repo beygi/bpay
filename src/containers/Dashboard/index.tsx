@@ -20,6 +20,7 @@ import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 
 import * as _ from "lodash";
+import GatewayInformation from "../../components/GatewayInformation";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
@@ -78,6 +79,11 @@ all transactions will be done using bitcoin test network not real network.")}
                             <Col md={24} >
                                 <Block title={t.t("New Invoice")} icon={<FontAwesomeIcon icon={["fas", "edit"]} />}>
                                     <NewInvoice />
+                                </Block>
+                            </Col>
+                            <Col md={24} >
+                                <Block title={t.t("Gateway information")} icon={<FontAwesomeIcon icon={["fas", "th-list"]} />}>
+                                    <GatewayInformation />
                                 </Block>
                             </Col>
                             <Col md={24} >

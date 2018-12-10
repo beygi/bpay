@@ -75,16 +75,20 @@ msgstr ""
 msgid "amount is not equal to selected invoice sum"
 msgstr ""
 
+#: src/components/GatewayInformation/index.tsx:57
+msgid "API key"
+msgstr ""
+
 #: src/components/Deposit/index.tsx:75
 msgid "Available"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:69
-msgid "‌Balance"
-msgstr ""
-
 #: src/components/Analysis/index.tsx:130
 msgid "Balance"
+msgstr ""
+
+#: src/components/Unsettled/index.tsx:69
+msgid "‌Balance"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:61
@@ -138,7 +142,12 @@ msgid "Cold storage"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:98
+#: src/components/GatewayInformation/index.tsx:64
 msgid "Copy"
+msgstr ""
+
+#: src/components/GatewayInformation/index.tsx:63
+msgid "Copy API key to clipboard"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:97
@@ -187,7 +196,7 @@ msgstr ""
 msgid "Deposit"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:131
+#: src/containers/Dashboard/index.tsx:137
 #: src/containers/Deposit/index.tsx:53
 msgid "Deposit history"
 msgstr ""
@@ -276,6 +285,10 @@ msgstr ""
 msgid "First Page"
 msgstr ""
 
+#: src/containers/Dashboard/index.tsx:85
+msgid "Gateway information"
+msgstr ""
+
 #: src/containers/KYC/index.tsx:143
 msgid "Gender"
 msgstr ""
@@ -360,7 +373,7 @@ msgstr ""
 msgid "Litecoin"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:126
+#: src/containers/Dashboard/index.tsx:132
 #: src/containers/Deposit/index.tsx:39
 msgid "Live prices"
 msgstr ""
@@ -401,11 +414,15 @@ msgstr ""
 msgid "Master"
 msgstr ""
 
+#: src/components/GatewayInformation/index.tsx:72
+msgid "Mobile"
+msgstr ""
+
 #: src/components/Deposit/index.tsx:129
 msgid "network confirmations"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:79
+#: src/containers/Dashboard/index.tsx:80
 msgid "New Invoice"
 msgstr ""
 
@@ -429,8 +446,8 @@ msgstr ""
 msgid "Night mode: on"
 msgstr ""
 
-#: src/containers/Accounting/index.tsx:71
-#: src/containers/Dashboard/index.tsx:205
+#: src/containers/Accounting/index.tsx:60
+#: src/containers/Dashboard/index.tsx:211
 msgid "No Access"
 msgstr ""
 
@@ -650,10 +667,13 @@ msgstr ""
 msgid "send only"
 msgstr ""
 
+#: src/components/GatewayInformation/index.tsx:71
+msgid "Service URL"
+msgstr ""
+
 #: src/components/Unsettled/index.tsx:85
-#: src/containers/Accounting/index.tsx:33
-#: src/containers/Accounting/index.tsx:43
-#: src/containers/Dashboard/index.tsx:72
+#: src/containers/Accounting/index.tsx:32
+#: src/containers/Dashboard/index.tsx:73
 msgid "Settle"
 msgstr ""
 
@@ -665,7 +685,7 @@ msgstr ""
 msgid "Settle Ups"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:22
+#: src/components/Transactions/index.tsx:23
 msgid "settled"
 msgstr ""
 
@@ -723,7 +743,7 @@ msgstr ""
 msgid "There is no data to display"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:45
+#: src/containers/Dashboard/index.tsx:46
 msgid "this is the sandbox enviroment , you can test your payments here, all transactions will be done using bitcoin test network not real network."
 msgstr ""
 
@@ -843,8 +863,11 @@ msgstr ""
 msgid "Your account is not verified. Only verified accounts can use exchange area. Please verify your account."
 msgstr ""
 
-#: src/containers/Accounting/index.tsx:40
-#: src/containers/Dashboard/index.tsx:121
+#: src/components/GatewayInformation/index.tsx:41
+msgid "Your API key copied to clipboard successfully"
+msgstr ""
+
+#: src/containers/Dashboard/index.tsx:127
 #: src/containers/Deposit/index.tsx:36
 #: src/containers/Exchange/index.tsx:123
 msgid "Your balance"

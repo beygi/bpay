@@ -6,9 +6,9 @@ import { faMoon as Day } from "@fortawesome/free-regular-svg-icons";
 import {
     faAddressCard, faArchive, faArrowLeft, faBalanceScale, faBox, faChartLine, faCheck, faCheckDouble, faCopy, faDollarSign, faDonate, faEdit, faExchangeAlt,
     faExternalLinkAlt, faHandHolding, faHandHoldingUsd, faHandshake, faHistory, faHourglassHalf, faKey, faLink, faList, faLock,
-    faMoneyCheckAlt, faMoon, faPlus, faQrcode, faSearch, faSnowflake, faSquareFull, faTimes, faUserClock, faWallet,
+    faMoneyCheckAlt, faMoon, faPlus, faQrcode, faSearch, faSnowflake, faSquareFull, faThList, faTimes, faUserClock, faWallet,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faSquareFull, faMoon, Day, faPlus, faCheckDouble, faHandHolding, faArchive, faGoogle, faLock, faUserClock, faLink, faExternalLinkAlt, faList,
+library.add(faThList, faSquareFull, faMoon, Day, faPlus, faCheckDouble, faHandHolding, faArchive, faGoogle, faLock, faUserClock, faLink, faExternalLinkAlt, faList,
     faEdit, faKey, faSearch, faWallet, faHistory, faBtc, faDollarSign, faEthereum, faBox, faBalanceScale, faExchangeAlt, faGripfire, faSnowflake,
     faDonate, faHandHoldingUsd, faMoneyCheckAlt, faHandshake, faAddressCard, faArrowLeft, faQrcode, faCopy, faChartLine, faCheck, faTimes, faHourglassHalf);
