@@ -2,7 +2,7 @@
  * @module Components/GatewayInformationComponent
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Input, message, Table, Tag, Tooltip } from "antd";
+import { Button, Input, message, Table, Tooltip } from "antd";
 import * as React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { connect } from "react-redux";
