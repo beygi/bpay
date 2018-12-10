@@ -203,12 +203,12 @@ all transactions will be done using bitcoin test network not real network.")}
             );
         }
 
-        if (allBlocks === []) {
+        if (allBlocks.length === 0) {
             allBlocks.push(
                 <Row key="denied" gutter={8}>
                     {sandbox}
                     <Col md={24} >
-                        <Block><h3>{t.t("No Access")}</h3></Block>
+                        <Block><h3>{t.t("You don't have enough permission to view this area")}</h3></Block>
                     </Col>
                 </Row>);
         }

@@ -335,7 +335,7 @@ msgstr "در حال فروش"
 
 #: src/components/Transactions/index.tsx:23
 msgid "invoice amount exceeded your daily limit"
-msgstr "برای دریافت مبلغ بیشتر از ده میلیون ریال باید حساب کاربری تان را تایید کنید. برای تایید حساب کاربری با ما تماس بگیرید."
+msgstr "برای دریافت مبلغ بیشتر از ده میلیون ریال باید حساب کاربری تان را تایید کنید. برای تایید حساب کاربری با ما تماس بگیرید"
 
 #: src/components/Transactions/index.tsx:22
 msgid "IRR"
@@ -449,8 +449,11 @@ msgstr "حالت شب: خاموش"
 msgid "Night mode: on"
 msgstr "حالت شب: روشن"
 
-#: src/containers/Accounting/index.tsx:60
-#: src/containers/Dashboard/index.tsx:211
+#: src/lib/user/index.ts:96
+msgid "no access"
+msgstr "بدون دسترسی"
+
+#: src/containers/Accounting/index.tsx:65
 msgid "No Access"
 msgstr "شما به این قسمت دسترسی ندارید"
 
@@ -672,7 +675,7 @@ msgid "Service URL"
 msgstr "آدرس سرویس"
 
 #: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:32
-#: src/containers/Dashboard/index.tsx:73
+#: src/containers/Accounting/index.tsx:38 src/containers/Dashboard/index.tsx:73
 msgid "Settle"
 msgstr "تسویه"
 
@@ -783,7 +786,7 @@ msgstr "معاملات"
 msgid "Transactions"
 msgstr "تراکنش ها"
 
-#: src/lib/user/index.ts:87
+#: src/lib/user/index.ts:88
 msgid "unverified"
 msgstr "تایید نشده"
 
@@ -855,6 +858,10 @@ msgstr "ما وضعیت را در صفحهٔ کاربری تان به اطلاع
 #: src/components/UserStatusGuide/index.tsx:40
 msgid "You are a member"
 msgstr "شما اکنون یک کاربر هستید"
+
+#: src/containers/Dashboard/index.tsx:211
+msgid "You don't have enough permission to view this area"
+msgstr "شما دسترسی کافی برای مشاهده این قسمت را ندارید"
 
 #: src/containers/KYC/index.tsx:93
 msgid "Your  {type} image uploaded to our servers, you can change it any time before our review"
