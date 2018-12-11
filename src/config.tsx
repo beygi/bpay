@@ -12,6 +12,7 @@ const config = {
     apiUrl: "http://87.98.188.77:9092/",
     NewApiUrl: "https://api.becopay.com",
     gateWayUrl: "https://gateway.becopay.com",
+    developersZone: "https://becopay.com/en/io/",
     language: Languages.fa,
     languages: Languages,
     keycloakConfig: {

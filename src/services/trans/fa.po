@@ -288,6 +288,10 @@ msgstr "نام"
 msgid "First Page"
 msgstr "صفحه اول"
 
+#: src/components/GatewayInformation/index.tsx:95
+msgid "for more information about integrating your system with our gateway please visit our developrs area"
+msgstr "برای دریافت اطلاعات بیشتر در مورد چگونگی اتصال درگاه پرداخت ما به سرویس خودتان لطفا قسمت توسعه دهندگان را مطالعه کنید"
+
 #: src/containers/Dashboard/index.tsx:95
 msgid "Gateway information"
 msgstr "اطلاعات درگاه پرداخت"
@@ -295,6 +299,10 @@ msgstr "اطلاعات درگاه پرداخت"
 #: src/containers/KYC/index.tsx:143
 msgid "Gender"
 msgstr "جنسیت"
+
+#: src/components/GatewayInformation/index.tsx:97
+msgid "Go to developers area"
+msgstr "رفتن به صفحهٔ توسعه دهندگان"
 
 #: src/components/GoogleAuth/index.tsx:32
 msgid "Google Authenticator"
@@ -648,7 +656,7 @@ msgstr "مرا به خاطر بسپار"
 msgid "search"
 msgstr "جستجو"
 
-#: src/components/SettleUps/index.tsx:157
+#: src/components/SettleUps/index.tsx:158
 #: src/components/Transactions/index.tsx:137
 msgid "Select merchant"
 msgstr "انتخاب فروشنده"
@@ -683,7 +691,7 @@ msgstr "تسویه"
 msgid "Settle detail"
 msgstr "جزییات تراکنش تسویه"
 
-#: src/components/SettleUps/index.tsx:170
+#: src/components/SettleUps/index.tsx:171
 msgid "Settle Ups"
 msgstr "تسویه حساب ها"
 

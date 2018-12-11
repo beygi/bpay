@@ -24,6 +24,10 @@
     }
 }
 .dark {
+    .ant-input-group.ant-input-group-compact > *
+    {
+        border-radius: 0 !important;
+    }
     .ant-form-item-label label , .ant-form-item-required
     {
         color: @secondaryTextColor !important;
@@ -305,10 +309,15 @@
     {
             background: @dark-warning;
     }
-    .ant-alert-with-description.ant-alert-info
+    .ant-alert-with-description.ant-alert-info,.ant-alert-info
     {
         background: @dark-menu;
-        border: 1px solid lighten(@dark-menu, 30%);
+        border: 1px solid lighten(@dark-menu, 15%);
+        border-radius: 2px;
+    }
+    .ant-alert-message
+    {
+        color : @secondaryTextColor;
     }
     .ant-radio-button-wrapper, .ant-radio-button-wrapper:first-child
     {

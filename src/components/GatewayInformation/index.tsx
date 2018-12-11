@@ -2,7 +2,7 @@
  * @module Components/GatewayInformationComponent
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Input, message, Table, Tooltip } from "antd";
+import { Alert, Button, Input, message, Table, Tooltip } from "antd";
 import * as React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { connect } from "react-redux";
@@ -84,11 +84,20 @@ class GatewayInformationComponent extends React.Component<IProps, IState> {
             { key: t.t("Mobile"), value: this.props.mobile },
         ];
         return (
-            <Table className="gateway-info"
-                pagination={false}
-                showHeader={false}
-                columns={columns}
-                rowKey="id" dataSource={data} size="small" />
+            <div>
+                <Table className="gateway-info"
+                    pagination={false}
+                    showHeader={false}
+                    columns={columns}
+                    rowKey="id" dataSource={data} size="small" />
+                <Alert className="developers" message={
+                    <div>
+                        {t.t("for more information about integrating your system with our gateway please visit our developrs area")}
+                        <br /><br />
+                        <Button target="_blank" type="primary" href={config.developersZone} ><FontAwesomeIcon icon={["fas", "code"]} /> {t.t("Go to developers area")}</Button>
+                    </div>
+                } type="info" showIcon />
+            </div>
         );
     }
 
