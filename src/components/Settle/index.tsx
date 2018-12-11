@@ -17,8 +17,10 @@ import USER from "./../../lib/user";
 import "./style.less";
 
 interface IProps extends FormComponentProps {
-    /**  current user's email address that is synced with redux */
-    user: any;
+    /**  current user's mobile number that is synced with redux */
+    mobile: string;
+    /**  current user's api key that is synced with redux */
+    apiKey: string;
     /**  the unique id of the merchnat. this is email address for now */
     merchantId: string;
     /** success callback. it can be used to close modal */
@@ -95,7 +97,7 @@ class Settle extends React.Component<IProps, IState> {
             callback(t.t("Selected time is in the future"));
             return;
         }
-
+        callback();
         return;
     }
 
@@ -228,8 +230,8 @@ class Settle extends React.Component<IProps, IState> {
                 this.setState({ loading: true });
                 values.datetime = values.datetime.toISOString();
                 // prepare post data, format data and append extra props to values
-                values.apikey = this.props.user.apiKey;
-                values.mob = this.props.user.mobile;
+                values.apikey = this.props.apiKey;
+                values.mob = this.props.mobile;
                 // notice: i don't set merMobile as a property name normally, i named it to match with our api schema
                 values.merMobile = this.props.merchantId;
                 values.invoiceIds = this.state.selectedInvoices;
@@ -265,8 +267,8 @@ class Settle extends React.Component<IProps, IState> {
     /** get merchant data and invouce */
     public getInvoices() {
         this.api.getPreSettleUsingGET({
-            apikey: this.props.user.apiKey,
-            mob: this.props.user.mobile,
+            apikey: this.props.apiKey,
+            mob: this.props.mobile,
             mermob: this.props.merchantId,
             $domain: "https://api.becopay.com",
         }).then((response) => {
@@ -285,7 +287,8 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state: IRootState) {
     return {
-        user: state.app.user,
+        mobile: state.app.user.mobile,
+        apiKey: state.app.user.apiKey,
     };
 }
 
