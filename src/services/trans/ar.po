@@ -282,12 +282,20 @@ msgstr ""
 msgid "First Page"
 msgstr ""
 
+#: src/components/GatewayInformation/index.tsx:95
+msgid "for more information about integrating your system with our gateway please visit our developrs area"
+msgstr ""
+
 #: src/containers/Dashboard/index.tsx:95
 msgid "Gateway information"
 msgstr ""
 
 #: src/containers/KYC/index.tsx:143
 msgid "Gender"
+msgstr ""
+
+#: src/components/GatewayInformation/index.tsx:97
+msgid "Go to developers area"
 msgstr ""
 
 #: src/components/GoogleAuth/index.tsx:32
@@ -661,7 +669,7 @@ msgstr ""
 msgid "search"
 msgstr ""
 
-#: src/components/SettleUps/index.tsx:157
+#: src/components/SettleUps/index.tsx:158
 #: src/components/Transactions/index.tsx:137
 msgid "Select merchant"
 msgstr ""
@@ -696,7 +704,7 @@ msgstr ""
 msgid "Settle detail"
 msgstr ""
 
-#: src/components/SettleUps/index.tsx:170
+#: src/components/SettleUps/index.tsx:171
 msgid "Settle Ups"
 msgstr ""
 
