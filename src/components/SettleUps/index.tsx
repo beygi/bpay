@@ -119,36 +119,24 @@ class SettleUps extends React.Component<IProps, IState> {
             },
         ];
         // holds jsx of invoices as an array
-        let settles = null;
-        // if (this.state.settles && this.state.invoices.content !== undefined) {
-        if (this.state.settles && !this.state.loading) {
-            // invoices = this.state.settles.map((invoice) => {
-            //     return (
-            //         <Invoice key={invoice.id} invoice={invoice} />
-            //     );
-            // });
-            // if (invoices.length === 0) {
-            //     invoices = <h3 className="no-data">{t.t("There is no data to display")}</h3>;
-            // }
-            settles =
-                <Table
-                    rowKey="id"
-                    className="settles-table"
-                    columns={columns}
-                    pagination={false}
-                    expandedRowRender={(record: any) => {
-                        const invoices = record.invoices.map((invoice) => {
-                            return (
-                                <Invoice key={invoice.id} invoice={invoice} />
-                            );
-                        });
-                        return invoices;
-                    }
-                    }
-                    dataSource={this.state.settles.content}
-                />
-                ;
-        }
+        const settles =
+            <Table
+                rowKey="id"
+                className="settles-table"
+                columns={columns}
+                pagination={false}
+                expandedRowRender={(record: any) => {
+                    const invoices = record.invoices.map((invoice) => {
+                        return (
+                            <Invoice key={invoice.id} invoice={invoice} />
+                        );
+                    });
+                    return invoices;
+                }
+                }
+                dataSource={this.state.settles.content}
+            />
+            ;
 
         const merchantsSearch = (this.userObject.hasRealmRole("merchants_admin")) ? <Select
             showSearch
@@ -199,7 +187,7 @@ class SettleUps extends React.Component<IProps, IState> {
             dir: "desc",
             $domain: "https://api.becopay.com",
         }).then((response) => {
-            this.setState({ settles: { ...this.state.settles, ...{ content: response.body.content } }, loading: false });
+            this.setState({ settles: { ...this.state.settles, ...{ count: response.body.count, content: response.body.content } }, loading: false });
         }).catch(
             () => {
                 this.setState({ loading: false });
