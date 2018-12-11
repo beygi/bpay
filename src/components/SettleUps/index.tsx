@@ -198,7 +198,7 @@ class SettleUps extends React.Component<IProps, IState> {
             dir: "desc",
             $domain: "https://api.becopay.com",
         }).then((response) => {
-            this.setState({ settles: { ...this.state.settles, ...{ content: response.body } }, loading: false });
+            this.setState({ settles: { ...this.state.settles, ...{ content: response.body.content } }, loading: false });
         }).catch(
             () => {
                 this.setState({ loading: false });
