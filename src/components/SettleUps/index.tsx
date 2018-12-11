@@ -88,7 +88,7 @@ class SettleUps extends React.Component<IProps, IState> {
             },
             {
                 title: t.t("Date and time"),
-                dataIndex: "datetime",
+                dataIndex: "dateTime",
                 render: (date) => {
                     const TimeStamp = +new Date(date);
                     return (<div>{new pDate(TimeStamp).toLocaleString()}</div>);
@@ -103,7 +103,7 @@ class SettleUps extends React.Component<IProps, IState> {
             },
             {
                 title: t.t("Shop Name"),
-                dataIndex: "merchant.shopName",
+                dataIndex: "shopName",
             },
             {
                 title: t.t("Origin card"),
@@ -115,7 +115,7 @@ class SettleUps extends React.Component<IProps, IState> {
             },
             {
                 title: t.t("Tracking code"),
-                dataIndex: "txid",
+                dataIndex: "txId",
             },
         ];
         // holds jsx of invoices as an array
@@ -132,6 +132,7 @@ class SettleUps extends React.Component<IProps, IState> {
             // }
             settles =
                 <Table
+                    rowKey="id"
                     className="settles-table"
                     columns={columns}
                     pagination={false}
