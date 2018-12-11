@@ -54,7 +54,7 @@ class SettleUps extends React.Component<IProps, IState> {
 
         // initial state
         this.state = {
-            settles: { count: 12, content: [] }, currentPage: 1, loading: true
+            settles: { count: 12, content: null }, currentPage: 1, loading: true
             , merchantsResult: [], merchantsLoading: false, merchantFilter: [],
         };
         // send token with all api requests
@@ -119,18 +119,9 @@ class SettleUps extends React.Component<IProps, IState> {
             },
         ];
         // holds jsx of invoices as an array
-        let settles = null;
-        // if (this.state.settles && this.state.invoices.content !== undefined) {
-        if (this.state.settles && !this.state.loading) {
-            // invoices = this.state.settles.map((invoice) => {
-            //     return (
-            //         <Invoice key={invoice.id} invoice={invoice} />
-            //     );
-            // });
-            // if (invoices.length === 0) {
-            //     invoices = <h3 className="no-data">{t.t("There is no data to display")}</h3>;
-            // }
-            settles =
+        const settles =
+            (this.state.settles.content == null) ?
+                null :
                 <Table
                     rowKey="id"
                     className="settles-table"
@@ -147,8 +138,7 @@ class SettleUps extends React.Component<IProps, IState> {
                     }
                     dataSource={this.state.settles.content}
                 />
-                ;
-        }
+            ;
 
         const merchantsSearch = (this.userObject.hasRealmRole("merchants_admin")) ? <Select
             showSearch
@@ -199,7 +189,7 @@ class SettleUps extends React.Component<IProps, IState> {
             dir: "desc",
             $domain: "https://api.becopay.com",
         }).then((response) => {
-            this.setState({ settles: { ...this.state.settles, ...{ content: response.body.content } }, loading: false });
+            this.setState({ settles: { ...this.state.settles, ...{ count: response.body.count, content: response.body.content } }, loading: false });
         }).catch(
             () => {
                 this.setState({ loading: false });

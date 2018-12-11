@@ -65,13 +65,13 @@ msgstr ""
 #: src/components/LimitedPlaceOrder/index.tsx:181
 #: src/components/MarketTrades/index.tsx:77
 #: src/components/OrderBook/index.tsx:127
-#: src/components/Settle/index.tsx:114
-#: src/components/Settle/index.tsx:135
+#: src/components/Settle/index.tsx:116
+#: src/components/Settle/index.tsx:137
 #: src/components/SettleUps/index.tsx:98
 msgid "Amount"
 msgstr ""
 
-#: src/components/Settle/index.tsx:82
+#: src/components/Settle/index.tsx:84
 msgid "amount is not equal to selected invoice sum"
 msgstr ""
 
@@ -182,11 +182,11 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: src/components/Settle/index.tsx:121
+#: src/components/Settle/index.tsx:123
 msgid "Date"
 msgstr ""
 
-#: src/components/Settle/index.tsx:152
+#: src/components/Settle/index.tsx:154
 #: src/components/SettleUps/index.tsx:90
 msgid "Date and time"
 msgstr ""
@@ -209,7 +209,7 @@ msgstr ""
 msgid "Destination card"
 msgstr ""
 
-#: src/components/Settle/index.tsx:185
+#: src/components/Settle/index.tsx:187
 msgid "Destination Card number"
 msgstr ""
 
@@ -269,7 +269,7 @@ msgstr ""
 msgid "Failed to create invoice"
 msgstr ""
 
-#: src/components/Settle/index.tsx:255
+#: src/components/Settle/index.tsx:257
 msgid "Failed to settle invoices"
 msgstr ""
 
@@ -331,7 +331,7 @@ msgstr ""
 msgid "Hot storage"
 msgstr ""
 
-#: src/components/Settle/index.tsx:110
+#: src/components/Settle/index.tsx:112
 #: src/components/SettleUps/index.tsx:86
 msgid "ID"
 msgstr ""
@@ -354,6 +354,7 @@ msgstr ""
 
 #: src/components/DashboardMenu/adminMenu.tsx:26
 #: src/components/DashboardMenu/menu.tsx:58
+#: src/components/DashboardMenu/menu.tsx:88
 msgid "KYC"
 msgstr ""
 
@@ -494,7 +495,7 @@ msgstr ""
 msgid "Origin card"
 msgstr ""
 
-#: src/components/Settle/index.tsx:176
+#: src/components/Settle/index.tsx:178
 msgid "Origin Card number"
 msgstr ""
 
@@ -539,11 +540,11 @@ msgstr ""
 msgid "Permission"
 msgstr ""
 
-#: src/components/Settle/index.tsx:189
+#: src/components/Settle/index.tsx:191
 msgid "Please input 16 digits destination card number "
 msgstr ""
 
-#: src/components/Settle/index.tsx:179
+#: src/components/Settle/index.tsx:181
 msgid "Please input 16 digits origin card number "
 msgstr ""
 
@@ -559,7 +560,7 @@ msgstr ""
 msgid "Please input price"
 msgstr ""
 
-#: src/components/Settle/index.tsx:198
+#: src/components/Settle/index.tsx:200
 msgid "Please input Tracking code "
 msgstr ""
 
@@ -603,11 +604,11 @@ msgstr ""
 msgid "Please select input currency"
 msgstr ""
 
-#: src/components/Settle/index.tsx:84
+#: src/components/Settle/index.tsx:86
 msgid "Please select payment amount"
 msgstr ""
 
-#: src/components/Settle/index.tsx:91
+#: src/components/Settle/index.tsx:93
 msgid "Please select payment date and time"
 msgstr ""
 
@@ -668,12 +669,12 @@ msgstr ""
 msgid "search"
 msgstr ""
 
-#: src/components/SettleUps/index.tsx:158
+#: src/components/SettleUps/index.tsx:148
 #: src/components/Transactions/index.tsx:137
 msgid "Select merchant"
 msgstr ""
 
-#: src/components/Settle/index.tsx:95
+#: src/components/Settle/index.tsx:97
 msgid "Selected time is in the future"
 msgstr ""
 
@@ -705,7 +706,7 @@ msgstr ""
 msgid "Settle detail"
 msgstr ""
 
-#: src/components/SettleUps/index.tsx:171
+#: src/components/SettleUps/index.tsx:161
 msgid "Settle Ups"
 msgstr ""
 
@@ -739,7 +740,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: src/components/Settle/index.tsx:204
+#: src/components/Settle/index.tsx:206
 msgid "Submit transaction"
 msgstr ""
 
@@ -747,7 +748,7 @@ msgstr ""
 msgid "success"
 msgstr ""
 
-#: src/components/Settle/index.tsx:244
+#: src/components/Settle/index.tsx:246
 msgid "successfully settled"
 msgstr ""
 
@@ -793,11 +794,11 @@ msgstr ""
 msgid "Total value"
 msgstr ""
 
-#: src/components/Settle/index.tsx:212
+#: src/components/Settle/index.tsx:214
 msgid "Total:"
 msgstr ""
 
-#: src/components/Settle/index.tsx:195
+#: src/components/Settle/index.tsx:197
 #: src/components/SettleUps/index.tsx:117
 msgid "Tracking code"
 msgstr ""
