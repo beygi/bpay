@@ -100,7 +100,14 @@
     }
     tr.ant-table-expanded-row
     {
-        background-color: fade(@secondaryTextColor, 10%);
+        background-color:  @dark-block-color;
+        &:hover
+        {
+            background-color: @dark-block-color;
+            td{
+                background-color: transparent !important;
+            }  
+        }
     }
     .ant-table,th
     {

@@ -54,7 +54,7 @@ class SettleUps extends React.Component<IProps, IState> {
 
         // initial state
         this.state = {
-            settles: { count: 12, content: [] }, currentPage: 1, loading: true
+            settles: { count: 12, content: null }, currentPage: 1, loading: true
             , merchantsResult: [], merchantsLoading: false, merchantFilter: [],
         };
         // send token with all api requests
@@ -120,22 +120,24 @@ class SettleUps extends React.Component<IProps, IState> {
         ];
         // holds jsx of invoices as an array
         const settles =
-            <Table
-                rowKey="id"
-                className="settles-table"
-                columns={columns}
-                pagination={false}
-                expandedRowRender={(record: any) => {
-                    const invoices = record.invoices.map((invoice) => {
-                        return (
-                            <Invoice key={invoice.id} invoice={invoice} />
-                        );
-                    });
-                    return invoices;
-                }
-                }
-                dataSource={this.state.settles.content}
-            />
+            (this.state.settles.content == null) ?
+                null :
+                <Table
+                    rowKey="id"
+                    className="settles-table"
+                    columns={columns}
+                    pagination={false}
+                    expandedRowRender={(record: any) => {
+                        const invoices = record.invoices.map((invoice) => {
+                            return (
+                                <Invoice key={invoice.id} invoice={invoice} />
+                            );
+                        });
+                        return invoices;
+                    }
+                    }
+                    dataSource={this.state.settles.content}
+                />
             ;
 
         const merchantsSearch = (this.userObject.hasRealmRole("merchants_admin")) ? <Select
