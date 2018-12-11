@@ -120,7 +120,7 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                     type="info"
                     showIcon
                 />
-                <Form layout="horizontal" onSubmit={this.handleSubmit} className="login-form">
+                <Form layout="horizontal" onSubmit={this.handleSubmit} className="kyc-form">
 
                     {/*  first name */}
                     <FormItem label={t.t("First Name")}  {...formItemLayout} >
@@ -192,8 +192,8 @@ of its clients.It is required because the KYC its used to refer to the bank and 
 
                     {/*  License ID */}
                     <FormItem label={t.t("National code")}  {...formItemLayout} >
-                        {getFieldDecorator("licenseid", {
-                            rules: [{ required: true, message: t.t("Please input your national code ") }],
+                        {getFieldDecorator("national-code", {
+                            rules: [{ required: true, pattern: /^\d{10}$/, message: t.t("Please input your national code ") }],
                         })(
                             <Input prefix={<Icon type="idcard" />} />,
                         )}
@@ -201,7 +201,7 @@ of its clients.It is required because the KYC its used to refer to the bank and 
 
                     <FormItem label={t.t("Bank card number")}  {...formItemLayout} >
                         {getFieldDecorator("card", {
-                            rules: [{ required: true, message: t.t("Please input your bank card number") }],
+                            rules: [{ required: true, pattern: /^\d{16}$/, message: t.t("Please input your 16 digits card number ") }],
                         })(
                             <Input prefix={<Icon type="credit-card" />} />,
                         )}

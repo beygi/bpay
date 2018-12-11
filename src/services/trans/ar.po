@@ -56,7 +56,7 @@ msgstr ""
 msgid "add new group"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:209
+#: src/containers/KYC/index.tsx:210
 msgid "Address"
 msgstr ""
 
@@ -91,11 +91,11 @@ msgstr ""
 msgid "‌Balance"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:201
+#: src/containers/KYC/index.tsx:202
 msgid "Bank card number"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:114
+#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:115
 msgid "Before you start"
 msgstr ""
 
@@ -270,11 +270,11 @@ msgstr ""
 msgid "Fee Cash Desk"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:153
+#: src/containers/KYC/index.tsx:154
 msgid "Female"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:125
+#: src/containers/KYC/index.tsx:126
 msgid "First Name"
 msgstr ""
 
@@ -290,7 +290,7 @@ msgstr ""
 msgid "Gateway information"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:145
+#: src/containers/KYC/index.tsx:146
 msgid "Gender"
 msgstr ""
 
@@ -327,7 +327,7 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:93
+#: src/containers/KYC/index.tsx:94
 msgid "Image uploaded successfully"
 msgstr ""
 
@@ -349,7 +349,7 @@ msgstr ""
 msgid "KYC"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:116
+#: src/containers/KYC/index.tsx:117
 msgid "KYC stands for (Know Your Customer) it is the process of a business. <br> verifying and identifying the identity of its clients.It is required because the KYC its used to refer to the bank and anti-money laundering regulations."
 msgstr ""
 
@@ -357,7 +357,7 @@ msgstr ""
 msgid "Last login:"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:134
+#: src/containers/KYC/index.tsx:135
 msgid "Last Name"
 msgstr ""
 
@@ -400,7 +400,7 @@ msgstr ""
 msgid "lorem ipsum"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:152
+#: src/containers/KYC/index.tsx:153
 msgid "Male"
 msgstr ""
 
@@ -417,11 +417,11 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:193
+#: src/containers/KYC/index.tsx:194
 msgid "National code"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:218
+#: src/containers/KYC/index.tsx:219
 msgid "National ID card"
 msgstr ""
 
@@ -550,14 +550,14 @@ msgstr ""
 msgid "Please input Tracking code "
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
-#: src/containers/KYC/index.tsx:211
+#: src/containers/KYC/index.tsx:204
 #, fuzzy
-msgid "Please input your address"
+msgid "Please input your 16 digits card number "
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
-#: src/containers/KYC/index.tsx:203
+#: src/containers/KYC/index.tsx:212
 #, fuzzy
-msgid "Please input your bank card number"
+msgid "Please input your address"
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
 #: src/containers/User/components/Login/index.tsx:103
@@ -565,17 +565,17 @@ msgstr "رجاء أدخل بريد إلكتروني عنوان"
 msgid "Please input your Email"
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
-#: src/containers/KYC/index.tsx:127
+#: src/containers/KYC/index.tsx:128
 #, fuzzy
 msgid "Please input your first name"
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
-#: src/containers/KYC/index.tsx:136
+#: src/containers/KYC/index.tsx:137
 #, fuzzy
 msgid "Please input your last name"
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
-#: src/containers/KYC/index.tsx:195
+#: src/containers/KYC/index.tsx:196
 #, fuzzy
 msgid "Please input your national code "
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
@@ -614,17 +614,17 @@ msgstr "يرجى اختيار عملة الدفع"
 msgid "Please select payment date and time"
 msgstr "يرجى اختيار عملة الدفع"
 
-#: src/containers/KYC/index.tsx:47
+#: src/containers/KYC/index.tsx:48
 #, fuzzy
 msgid "Please select your country"
 msgstr "يرجى اختيار عملة الدفع"
 
-#: src/containers/KYC/index.tsx:149
+#: src/containers/KYC/index.tsx:150
 #, fuzzy
 msgid "Please select your gender"
 msgstr "يرجى اختيار عملة الدفع"
 
-#: src/containers/KYC/index.tsx:220
+#: src/containers/KYC/index.tsx:221
 msgid "please upload your national id card"
 msgstr ""
 
@@ -728,7 +728,7 @@ msgstr ""
 msgid "sth"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:243
+#: src/containers/KYC/index.tsx:244
 msgid "Submit"
 msgstr "إرسال"
 
@@ -868,7 +868,7 @@ msgstr ""
 msgid "waiting"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:251
+#: src/containers/KYC/index.tsx:252
 msgid "we will inform you about the progress in your profile page"
 msgstr ""
 
@@ -884,7 +884,7 @@ msgstr ""
 msgid "You don't have enough permission to view this area"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:95
+#: src/containers/KYC/index.tsx:96
 msgid "Your  {type} image uploaded to our servers, you can change it any time before our review"
 msgstr ""
 
@@ -905,9 +905,13 @@ msgstr ""
 msgid "Your balance"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:250
+#: src/containers/KYC/index.tsx:251
 msgid "your information submitted successfully"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Please input your bank card number"
+#~ msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
 #, fuzzy
 #~ msgid "Please input your license id "
