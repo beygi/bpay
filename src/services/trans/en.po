@@ -666,7 +666,7 @@ msgstr ""
 msgid "search"
 msgstr ""
 
-#: src/components/SettleUps/index.tsx:158
+#: src/components/SettleUps/index.tsx:148
 #: src/components/Transactions/index.tsx:137
 msgid "Select merchant"
 msgstr ""
@@ -701,7 +701,7 @@ msgstr ""
 msgid "Settle detail"
 msgstr ""
 
-#: src/components/SettleUps/index.tsx:171
+#: src/components/SettleUps/index.tsx:161
 msgid "Settle Ups"
 msgstr ""
 

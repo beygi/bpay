@@ -347,7 +347,7 @@ msgstr "در حال فروش"
 
 #: src/components/Transactions/index.tsx:23
 msgid "invoice amount exceeded your daily limit"
-msgstr "برای دریافت مبلغ بیشتر از ده میلیون ریال باید حساب کاربری تان را تایید کنید. برای تایید حساب کاربری با ما تماس بگیرید"
+msgstr "برای دریافت مبلغ بیشتر از پنجاه میلیون ریال باید حساب کاربری تان را تایید کنید. برای تایید حساب کاربری با ما تماس بگیرید"
 
 #: src/components/Transactions/index.tsx:22
 msgid "IRR"
@@ -666,7 +666,7 @@ msgstr "مرا به خاطر بسپار"
 msgid "search"
 msgstr "جستجو"
 
-#: src/components/SettleUps/index.tsx:158
+#: src/components/SettleUps/index.tsx:148
 #: src/components/Transactions/index.tsx:137
 msgid "Select merchant"
 msgstr "انتخاب فروشنده"
@@ -701,7 +701,7 @@ msgstr "تسویه"
 msgid "Settle detail"
 msgstr "جزییات تراکنش تسویه"
 
-#: src/components/SettleUps/index.tsx:171
+#: src/components/SettleUps/index.tsx:161
 msgid "Settle Ups"
 msgstr "تسویه حساب ها"
 
