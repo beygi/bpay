@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Col, Row } from "antd";
+import { Button, Col, Icon, Row } from "antd";
 import * as React from "react";
 import { Link } from "react-router-dom";
 import Balance from "../../components/Balance";
@@ -53,6 +53,7 @@ all transactions will be done using bitcoin test network not real network.")}
         const merchantWarning = (userObject.keycloak.hasRealmRole("merchant") && userObject.getLevel().level === 1) ?
             <Col md={24} >
                 <Block className="sandbox">
+                    <Icon type="info-circle" />
                     {t.t("You can now create becopay invoices. but your account must be verified to withdraw your balance. please contact us for verification.")}
                 </Block>
             </Col>

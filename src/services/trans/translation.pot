@@ -2,10 +2,6 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 
-#: src/containers/KYC/index.tsx:184
-msgid " National ID Card"
-msgstr ""
-
 #: src/components/Deposit/index.tsx:105
 msgid "{coin} Deposite address"
 msgstr ""
@@ -58,6 +54,10 @@ msgstr ""
 msgid "add new group"
 msgstr ""
 
+#: src/containers/KYC/index.tsx:210
+msgid "Address"
+msgstr ""
+
 #: src/components/Deposit/index.tsx:65
 msgid "After making a deposit, you can track its progress on the history page."
 msgstr ""
@@ -91,8 +91,12 @@ msgstr ""
 msgid "‌Balance"
 msgstr ""
 
+#: src/containers/KYC/index.tsx:202
+msgid "Bank card number"
+msgstr ""
+
 #: src/components/Deposit/index.tsx:61
-#: src/containers/KYC/index.tsx:112
+#: src/containers/KYC/index.tsx:115
 msgid "Before you start"
 msgstr ""
 
@@ -159,10 +163,6 @@ msgstr ""
 msgid "Count"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:159
-msgid "Country"
-msgstr ""
-
 #: src/components/NewInvoice/index.tsx:150
 msgid "Create"
 msgstr ""
@@ -221,10 +221,6 @@ msgstr ""
 msgid "Done"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:183
-msgid "Driving license"
-msgstr ""
-
 #: src/containers/Groups/index.tsx:37
 msgid "edit"
 msgstr ""
@@ -277,11 +273,11 @@ msgstr ""
 msgid "Fee Cash Desk"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:151
+#: src/containers/KYC/index.tsx:154
 msgid "Female"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:123
+#: src/containers/KYC/index.tsx:126
 msgid "First Name"
 msgstr ""
 
@@ -297,7 +293,7 @@ msgstr ""
 msgid "Gateway information"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:143
+#: src/containers/KYC/index.tsx:146
 msgid "Gender"
 msgstr ""
 
@@ -336,7 +332,7 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:91
+#: src/containers/KYC/index.tsx:94
 msgid "Image uploaded successfully"
 msgstr ""
 
@@ -358,7 +354,7 @@ msgstr ""
 msgid "KYC"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:114
+#: src/containers/KYC/index.tsx:117
 msgid "KYC stands for (Know Your Customer) it is the process of a business. <br> verifying and identifying the identity of its clients.It is required because the KYC its used to refer to the bank and anti-money laundering regulations."
 msgstr ""
 
@@ -366,20 +362,12 @@ msgstr ""
 msgid "Last login:"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:132
+#: src/containers/KYC/index.tsx:135
 msgid "Last Name"
 msgstr ""
 
 #: src/components/Market/index.tsx:112
 msgid "Last Price"
-msgstr ""
-
-#: src/containers/KYC/index.tsx:190
-msgid "License ID"
-msgstr ""
-
-#: src/containers/KYC/index.tsx:176
-msgid "License Type"
 msgstr ""
 
 #: src/components/PlaceOrder/index.tsx:37
@@ -418,7 +406,7 @@ msgstr ""
 msgid "lorem ipsum"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:150
+#: src/containers/KYC/index.tsx:153
 msgid "Male"
 msgstr ""
 
@@ -433,6 +421,14 @@ msgstr ""
 
 #: src/components/GatewayInformation/index.tsx:84
 msgid "Mobile"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:194
+msgid "National code"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:219
+msgid "National ID card"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:129
@@ -507,20 +503,11 @@ msgstr ""
 msgid "Our {currency} deposit address copied to clipboard successfully"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:182
-msgid "Passport"
-msgstr ""
-
 #: src/components/KYC/index.tsx:37
 msgid "Passport cover"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:199
-msgid "Passport Cover"
-msgstr ""
-
 #: src/components/KYC/index.tsx:41
-#: src/containers/KYC/index.tsx:207
 msgid "Passport Personal Page"
 msgstr ""
 
@@ -564,20 +551,28 @@ msgstr ""
 msgid "Please input Tracking code "
 msgstr ""
 
+#: src/containers/KYC/index.tsx:204
+msgid "Please input your 16 digits card number "
+msgstr ""
+
+#: src/containers/KYC/index.tsx:212
+msgid "Please input your address"
+msgstr ""
+
 #: src/containers/User/components/Login/index.tsx:103
 msgid "Please input your Email"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:125
+#: src/containers/KYC/index.tsx:128
 msgid "Please input your first name"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:134
+#: src/containers/KYC/index.tsx:137
 msgid "Please input your last name"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:192
-msgid "Please input your license id "
+#: src/containers/KYC/index.tsx:196
+msgid "Please input your national code "
 msgstr ""
 
 #: src/containers/User/components/Login/index.tsx:110
@@ -590,10 +585,6 @@ msgstr ""
 
 #: src/components/Deposit/index.tsx:64
 msgid "please read our security section"
-msgstr ""
-
-#: src/containers/KYC/index.tsx:166
-msgid "Please select a country"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:58
@@ -612,25 +603,16 @@ msgstr ""
 msgid "Please select payment date and time"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:163
-#: src/containers/KYC/index.tsx:45
+#: src/containers/KYC/index.tsx:48
 msgid "Please select your country"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:147
+#: src/containers/KYC/index.tsx:150
 msgid "Please select your gender"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:201
-msgid "please upload your cover"
-msgstr ""
-
-#: src/containers/KYC/index.tsx:209
-msgid "please upload your passport personal page"
-msgstr ""
-
-#: src/containers/KYC/index.tsx:217
-msgid "please upload your slefie  image"
+#: src/containers/KYC/index.tsx:221
+msgid "please upload your national id card"
 msgstr ""
 
 #: src/containers/Admin/Users/index.tsx:144
@@ -679,7 +661,6 @@ msgid "Selected time is in the future"
 msgstr ""
 
 #: src/components/KYC/index.tsx:45
-#: src/containers/KYC/index.tsx:215
 msgid "Selfie With ID And Note"
 msgstr ""
 
@@ -736,7 +717,7 @@ msgstr ""
 msgid "sth"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:224
+#: src/containers/KYC/index.tsx:244
 msgid "Submit"
 msgstr ""
 
@@ -876,7 +857,7 @@ msgstr ""
 msgid "waiting"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:232
+#: src/containers/KYC/index.tsx:252
 msgid "we will inform you about the progress in your profile page"
 msgstr ""
 
@@ -892,7 +873,7 @@ msgstr ""
 msgid "You don't have enough permission to view this area"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:93
+#: src/containers/KYC/index.tsx:96
 msgid "Your  {type} image uploaded to our servers, you can change it any time before our review"
 msgstr ""
 
@@ -914,6 +895,6 @@ msgstr ""
 msgid "Your balance"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:231
+#: src/containers/KYC/index.tsx:251
 msgid "your information submitted successfully"
 msgstr ""

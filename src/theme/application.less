@@ -24,6 +24,10 @@
     }
 }
 .dark {
+    .sandbox
+    {
+        background-color: @dark-menu !important;
+    }
     .ant-input-group.ant-input-group-compact > *
     {
         border-radius: 0 !important;
@@ -376,10 +380,15 @@ body {
 
 .sandbox {
     background-color: #fb3c5d !important;
-    color: white;
+    color: darken(@secondaryTextColor , 15%);
     text-align: justify;
     box-shadow: none;
     font-size: larger;
+    .anticon-info-circle
+    {
+        color : @alert-info-color;
+        margin: 0px 10px;
+    }
 }
 
 #develop {
