@@ -12,10 +12,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: src/containers/KYC/index.tsx:184
-msgid " National ID Card"
-msgstr " کارت ملی"
-
 #: src/components/Deposit/index.tsx:105
 msgid "{coin} Deposite address"
 msgstr "آدرس پرداخت {coin}"
@@ -68,6 +64,10 @@ msgstr "اضافه کردن گرون"
 msgid "add new group"
 msgstr "اضافه کردن گروه جدید"
 
+#: src/containers/KYC/index.tsx:209
+msgid "Address"
+msgstr "آدرس پستی"
+
 #: src/components/Deposit/index.tsx:65
 msgid "After making a deposit, you can track its progress on the history page."
 msgstr "بعد از انجام واریز میتوانید روند اجرای آن را در ستون سمت چپ مشاهده کنید."
@@ -99,7 +99,11 @@ msgstr "بالانس"
 msgid "‌Balance"
 msgstr "بالانس"
 
-#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:112
+#: src/containers/KYC/index.tsx:201
+msgid "Bank card number"
+msgstr "شماره کارت بانکی"
+
+#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:114
 msgid "Before you start"
 msgstr "قبل از اینکه شروع کنید"
 
@@ -165,10 +169,6 @@ msgstr "کپی کردن آدرس پرداخت"
 msgid "Count"
 msgstr "تعداد"
 
-#: src/containers/KYC/index.tsx:159
-msgid "Country"
-msgstr "کشور"
-
 #: src/components/NewInvoice/index.tsx:150
 msgid "Create"
 msgstr "ایجاد"
@@ -224,10 +224,6 @@ msgstr "نمایش کد Qr کیف پول"
 msgid "Done"
 msgstr "تمام"
 
-#: src/containers/KYC/index.tsx:183
-msgid "Driving license"
-msgstr "گواهینامه رانندگی"
-
 #: src/containers/Groups/index.tsx:37
 msgid "edit"
 msgstr "ویرایش"
@@ -280,11 +276,11 @@ msgstr "عدم موفقیت در تسویه حساب فاکتورها"
 msgid "Fee Cash Desk"
 msgstr "میز حساب تعرفه ها"
 
-#: src/containers/KYC/index.tsx:151
+#: src/containers/KYC/index.tsx:153
 msgid "Female"
 msgstr "زن"
 
-#: src/containers/KYC/index.tsx:123
+#: src/containers/KYC/index.tsx:125
 msgid "First Name"
 msgstr "نام"
 
@@ -300,7 +296,7 @@ msgstr "برای دریافت اطلاعات بیشتر در مورد چگونگ
 msgid "Gateway information"
 msgstr "اطلاعات درگاه پرداخت"
 
-#: src/containers/KYC/index.tsx:143
+#: src/containers/KYC/index.tsx:145
 msgid "Gender"
 msgstr "جنسیت"
 
@@ -337,7 +333,7 @@ msgstr "مخزن گرم"
 msgid "ID"
 msgstr "شناسه"
 
-#: src/containers/KYC/index.tsx:91
+#: src/containers/KYC/index.tsx:93
 msgid "Image uploaded successfully"
 msgstr "تصویر با موفقیت بارگذاری شد"
 
@@ -359,7 +355,7 @@ msgstr "ریال ایران"
 msgid "KYC"
 msgstr "اصالت مشتریان"
 
-#: src/containers/KYC/index.tsx:114
+#: src/containers/KYC/index.tsx:116
 msgid "KYC stands for (Know Your Customer) it is the process of a business. <br> verifying and identifying the identity of its clients.It is required because the KYC its used to refer to the bank and anti-money laundering regulations."
 msgstr "تایید اصالت مشتری بخشی جدایی ناپذیر از روند ارائه این نوع خدمات است. <br> بررسی و تایید هویت مشتریان به دلیل وجود قوانین پولشویی و قوانین بانکی لازمهٔ استفاده از این وب سایت است."
 
@@ -367,21 +363,13 @@ msgstr "تایید اصالت مشتری بخشی جدایی ناپذیر از �
 msgid "Last login:"
 msgstr "آخرین ورود:"
 
-#: src/containers/KYC/index.tsx:132
+#: src/containers/KYC/index.tsx:134
 msgid "Last Name"
 msgstr "نام خانوادگی"
 
 #: src/components/Market/index.tsx:112
 msgid "Last Price"
 msgstr "آخرین قیمت"
-
-#: src/containers/KYC/index.tsx:190
-msgid "License ID"
-msgstr "شماره کارت مشخصات"
-
-#: src/containers/KYC/index.tsx:176
-msgid "License Type"
-msgstr "نوع کارت مشخصات"
 
 #: src/components/PlaceOrder/index.tsx:37
 msgid "Limit"
@@ -417,7 +405,7 @@ msgstr "خروج"
 msgid "lorem ipsum"
 msgstr "متن تست"
 
-#: src/containers/KYC/index.tsx:150
+#: src/containers/KYC/index.tsx:152
 msgid "Male"
 msgstr "مرد"
 
@@ -433,6 +421,14 @@ msgstr "اصلی"
 #: src/components/GatewayInformation/index.tsx:84
 msgid "Mobile"
 msgstr "موبایل"
+
+#: src/containers/KYC/index.tsx:193
+msgid "National code"
+msgstr "کد ملی"
+
+#: src/containers/KYC/index.tsx:218
+msgid "National ID card"
+msgstr "کارت ملی"
 
 #: src/components/Deposit/index.tsx:129
 msgid "network confirmations"
@@ -506,19 +502,11 @@ msgstr "آدرس کیف پول {coin} ما:"
 msgid "Our {currency} deposit address copied to clipboard successfully"
 msgstr "آدرس پرداخت {currency} با موفقیت کپی شد"
 
-#: src/containers/KYC/index.tsx:182
-msgid "Passport"
-msgstr "گذرنامه"
-
 #: src/components/KYC/index.tsx:37
 msgid "Passport cover"
 msgstr "جلد گذرنامه"
 
-#: src/containers/KYC/index.tsx:199
-msgid "Passport Cover"
-msgstr "جلد گذرنامه"
-
-#: src/components/KYC/index.tsx:41 src/containers/KYC/index.tsx:207
+#: src/components/KYC/index.tsx:41
 msgid "Passport Personal Page"
 msgstr "صفحه مشخصات گذرنامه"
 
@@ -562,21 +550,29 @@ msgstr "لطفا قیمت را وارد کنید"
 msgid "Please input Tracking code "
 msgstr "لطفا کد پیگیری سیستم بانکی را وارد کنید "
 
+#: src/containers/KYC/index.tsx:211
+msgid "Please input your address"
+msgstr "لطفا آدرس خود را وارد کنید"
+
+#: src/containers/KYC/index.tsx:203
+msgid "Please input your bank card number"
+msgstr "لطفا شمارهٔ کارت بانکی خود را وارد کنید"
+
 #: src/containers/User/components/Login/index.tsx:103
 msgid "Please input your Email"
 msgstr "لطفا آدرس ایمیل تان را وارد کنید"
 
-#: src/containers/KYC/index.tsx:125
+#: src/containers/KYC/index.tsx:127
 msgid "Please input your first name"
-msgstr "لطفا نام تان را وارد کنید"
+msgstr "لطفا نام خود را وارد کنید"
 
-#: src/containers/KYC/index.tsx:134
+#: src/containers/KYC/index.tsx:136
 msgid "Please input your last name"
 msgstr "لطفا نام خانوادگی خود را وارد کنید"
 
-#: src/containers/KYC/index.tsx:192
-msgid "Please input your license id "
-msgstr "لطفا شمارهٔ مدرک خود را وارد کنید "
+#: src/containers/KYC/index.tsx:195
+msgid "Please input your national code "
+msgstr "لطفا کد ملی خود را وارد کنید "
 
 #: src/containers/User/components/Login/index.tsx:110
 msgid "Please input your Password"
@@ -589,10 +585,6 @@ msgstr "لطفا توجه کنید"
 #: src/components/Deposit/index.tsx:64
 msgid "please read our security section"
 msgstr "لطفا راهنما های موجود در بخش امنیت را بخوانید"
-
-#: src/containers/KYC/index.tsx:166
-msgid "Please select a country"
-msgstr "لطفا کشور خود را انتخاب کنید"
 
 #: src/components/Deposit/index.tsx:58
 msgid "Please select a currency to deposit"
@@ -610,25 +602,17 @@ msgstr "لطفا مبلغ را وارد کنید"
 msgid "Please select payment date and time"
 msgstr "لطفا تاریخ و ساعت پرداخت را وارد کنید"
 
-#: src/containers/KYC/index.tsx:163 src/containers/KYC/index.tsx:45
+#: src/containers/KYC/index.tsx:47
 msgid "Please select your country"
 msgstr "لطفا کشور خود را انتخاب کنید"
 
-#: src/containers/KYC/index.tsx:147
+#: src/containers/KYC/index.tsx:149
 msgid "Please select your gender"
 msgstr "لطفا جنسیت خود را مشخص کنید"
 
-#: src/containers/KYC/index.tsx:201
-msgid "please upload your cover"
-msgstr "لطفا تصویر جلد را بارگذاری کنید"
-
-#: src/containers/KYC/index.tsx:209
-msgid "please upload your passport personal page"
-msgstr "لطفا تصویر صفحهٔ مشخصات گذرنامه تان را وارد کنید"
-
-#: src/containers/KYC/index.tsx:217
-msgid "please upload your slefie  image"
-msgstr "لطفا تصویر سلفی خودتان را وارد کنید"
+#: src/containers/KYC/index.tsx:220
+msgid "please upload your national id card"
+msgstr "لطفا تصویر کارت ملی خود را بارگذاری کنید"
 
 #: src/containers/Admin/Users/index.tsx:144
 msgid "Previous Page"
@@ -675,7 +659,7 @@ msgstr "انتخاب فروشنده"
 msgid "Selected time is in the future"
 msgstr "زمان انتخاب شده مربوط به آینده است"
 
-#: src/components/KYC/index.tsx:45 src/containers/KYC/index.tsx:215
+#: src/components/KYC/index.tsx:45
 msgid "Selfie With ID And Note"
 msgstr "سلفی با شناسه و توضیحات"
 
@@ -730,7 +714,7 @@ msgstr "وضعیت"
 msgid "sth"
 msgstr "چیزی"
 
-#: src/containers/KYC/index.tsx:224
+#: src/containers/KYC/index.tsx:243
 msgid "Submit"
 msgstr "ارسال"
 
@@ -869,7 +853,7 @@ msgstr "مشاهده آدرس کیف پول"
 msgid "waiting"
 msgstr "در انتظار پرداخت"
 
-#: src/containers/KYC/index.tsx:232
+#: src/containers/KYC/index.tsx:251
 msgid "we will inform you about the progress in your profile page"
 msgstr "ما وضعیت را در صفحهٔ کاربری تان به اطلاع خواهیم رساند‍"
 
@@ -885,7 +869,7 @@ msgstr "شما می توانید فاکتور پرداخت بکوپی ایجاد
 msgid "You don't have enough permission to view this area"
 msgstr "شما دسترسی کافی برای مشاهده این قسمت را ندارید"
 
-#: src/containers/KYC/index.tsx:93
+#: src/containers/KYC/index.tsx:95
 msgid "Your  {type} image uploaded to our servers, you can change it any time before our review"
 msgstr "تصویر {type} شما با موفقیت به سرورهای ما ارسال شد، شما میتوانید پیش از بررسی ما آن را تغییر دهید"
 
@@ -906,9 +890,39 @@ msgstr "کلید API شما با موفقیت کپی شد"
 msgid "Your balance"
 msgstr "بالانس حساب شما"
 
-#: src/containers/KYC/index.tsx:231
+#: src/containers/KYC/index.tsx:250
 msgid "your information submitted successfully"
 msgstr "اطلاعات شما با موفقیت ارسال شد"
+
+#~ msgid "Country"
+#~ msgstr "کشور"
+
+#~ msgid "Driving license"
+#~ msgstr "گواهینامه رانندگی"
+
+#~ msgid "License ID"
+#~ msgstr "شماره کارت مشخصات"
+
+#~ msgid "License Type"
+#~ msgstr "نوع کارت مشخصات"
+
+#~ msgid "Passport"
+#~ msgstr "گذرنامه"
+
+#~ msgid "Passport Cover"
+#~ msgstr "جلد گذرنامه"
+
+#~ msgid "Please input your license id "
+#~ msgstr "لطفا شمارهٔ مدرک خود را وارد کنید "
+
+#~ msgid "Please select a country"
+#~ msgstr "لطفا کشور خود را انتخاب کنید"
+
+#~ msgid "please upload your passport personal page"
+#~ msgstr "لطفا تصویر صفحهٔ مشخصات گذرنامه تان را وارد کنید"
+
+#~ msgid "please upload your slefie  image"
+#~ msgstr "لطفا تصویر سلفی خودتان را وارد کنید"
 
 #~ msgid "Value"
 #~ msgstr "ارزش"
@@ -934,9 +948,6 @@ msgstr "اطلاعات شما با موفقیت ارسال شد"
 #, fuzzy
 #~ msgid "Copy payment address"
 #~ msgstr "کپی کردن آدرس پرداخت"
-
-#~ msgid "Email address"
-#~ msgstr "آدرس ایمیل"
 
 #~ msgid "New Payment"
 #~ msgstr "پرداخت جدید"

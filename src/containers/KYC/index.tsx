@@ -19,6 +19,9 @@ const RadioGroup = Radio.Group;
 const coverImg = require("../../assets/images/cover.png");
 const personalImg = require("../../assets/images/personal.png");
 const selfieImg = require("../../assets/images/selfie.png");
+const nationalImg = require("../../assets/images/national.jpg");
+
+const { TextArea } = Input;
 
 const newApi = Api.getInstance();
 
@@ -154,7 +157,8 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                     </FormItem>
 
                     {/*  country */}
-                    <FormItem
+
+                    {/* <FormItem
                         {...formItemLayout}
                         label={t.t("Country")}
                     >
@@ -164,14 +168,14 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                             ],
                         })(
                             <Select placeholder={t.t("Please select a country")} showSearch={true}>
-                                {/* <Option value="">{t.t("Please select ...")}</Option> */}
+                                <Option value="">{t.t("Please select ...")}</Option>
                                 {countries}
                             </Select>,
                         )}
-                    </FormItem>
+                    </FormItem> */}
 
                     {/* License Type */}
-                    <FormItem
+                    {/* <FormItem
                         {...formItemLayout}
                         label={t.t("License Type")}
                     >
@@ -184,41 +188,57 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                                 <RadioButton value="NI">{t.t(" National ID Card")}</RadioButton>
                             </RadioGroup>,
                         )}
-                    </FormItem>
+                    </FormItem> */}
 
                     {/*  License ID */}
-                    <FormItem label={t.t("License ID")}  {...formItemLayout} >
+                    <FormItem label={t.t("National code")}  {...formItemLayout} >
                         {getFieldDecorator("licenseid", {
-                            rules: [{ required: true, message: t.t("Please input your license id ") }],
+                            rules: [{ required: true, message: t.t("Please input your national code ") }],
                         })(
-                            <Input prefix={<Icon type="file-text" />} />,
+                            <Input prefix={<Icon type="idcard" />} />,
+                        )}
+                    </FormItem>
+
+                    <FormItem label={t.t("Bank card number")}  {...formItemLayout} >
+                        {getFieldDecorator("card", {
+                            rules: [{ required: true, message: t.t("Please input your bank card number") }],
+                        })(
+                            <Input prefix={<Icon type="credit-card" />} />,
+                        )}
+                    </FormItem>
+
+                    <FormItem label={t.t("Address")}  {...formItemLayout} >
+                        {getFieldDecorator("address", {
+                            rules: [{ required: true, message: t.t("Please input your address") }],
+                        })(
+                            <TextArea autosize={{ minRows: 2, maxRows: 6 }} />,
                         )}
                     </FormItem>
 
                     {/*  Upload */}
-                    <FormItem label={t.t("Passport Cover")}  {...formItemLayout} >
+                    <FormItem label={t.t("National ID card")}  {...formItemLayout} >
                         {getFieldDecorator("cover", {
-                            rules: [{ required: true, message: t.t("please upload your cover") }],
+                            rules: [{ required: true, message: t.t("please upload your national id card") }],
                         })(
-                            <Uploader callback={this.setImage} example={coverImg} action="http://87.98.188.77:9092/kyc/img" name="file" data={{ imgtype: "cover" }} />,
+                            <Uploader callback={this.setImage} example={nationalImg} action="http://87.98.188.77:9092/kyc/img" name="file" data={{ imgtype: "cover" }} />,
                         )}
                     </FormItem>
 
-                    <FormItem label={t.t("Passport Personal Page")}  {...formItemLayout} >
+                    {/* <FormItem label={t.t("Passport Personal Page")}  {...formItemLayout} >
                         {getFieldDecorator("passport", {
                             rules: [{ required: true, message: t.t("please upload your passport personal page") }],
                         })(
                             <Uploader callback={this.setImage} example={personalImg} action="http://87.98.188.77:9092/kyc/img" name="file" data={{ imgtype: "passport" }} />,
                         )}
-                    </FormItem>
+                    </FormItem> */}
 
-                    <FormItem label={t.t("Selfie With ID And Note")}  {...formItemLayout} >
+                    {/* <FormItem label={t.t("Selfie With ID And Note")}  {...formItemLayout} >
                         {getFieldDecorator("passid", {
                             rules: [{ required: true, message: t.t("please upload your slefie  image") }],
                         })(
                             <Uploader callback={this.setImage} example={selfieImg} action="http://87.98.188.77:9092/kyc/img" name="file" data={{ imgtype: "passid" }} />,
                         )}
-                    </FormItem>
+                    </FormItem> */}
 
                     <FormItem label=" " colon={false} {...formItemLayout}>
                         <Button type="primary" htmlType="submit" size="large">{t.t("Submit")}</Button>
