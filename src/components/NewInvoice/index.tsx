@@ -76,7 +76,7 @@ class NewInvoice extends React.Component<IProps, IState> {
                     // handle error
                     this.setState({ loading: false });
                     // console.log(error.toString());
-                    const errorText = (error.response.body.message) ? error.response.body.message : error;
+                    const errorText = (error.response.body.description) ? error.response.body.description : error;
                     notification.error({
                         message: t.t("Failed to create invoice"),
                         description: t.t(errorText),
