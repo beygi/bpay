@@ -91,12 +91,12 @@ msgstr ""
 msgid "Available"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:69
-msgid "‌Balance"
-msgstr ""
-
 #: src/components/Analysis/index.tsx:130
 msgid "Balance"
+msgstr ""
+
+#: src/components/Unsettled/index.tsx:69
+msgid "‌Balance"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:112
@@ -204,7 +204,7 @@ msgstr ""
 msgid "Deposit history"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:142
+#: src/components/NewInvoice/index.tsx:135
 msgid "Description"
 msgstr ""
 
@@ -254,6 +254,10 @@ msgstr ""
 
 #: src/components/Uploader/index.tsx:125
 msgid "Example Image"
+msgstr ""
+
+#: src/components/NewInvoice/index.tsx:142
+msgid "example: sell product #1233"
 msgstr ""
 
 #: src/components/DashboardMenu/menu.tsx:40
@@ -632,8 +636,13 @@ msgstr ""
 #: src/components/LimitedPlaceOrder/index.tsx:158
 #: src/components/LimitedPlaceOrder/index.tsx:177
 #: src/components/MarketTrades/index.tsx:70
+#: src/components/NewInvoice/index.tsx:104
 #: src/components/OrderBook/index.tsx:120
 msgid "Price"
+msgstr ""
+
+#: src/components/NewInvoice/index.tsx:121
+msgid "Price unit"
 msgstr ""
 
 #: src/components/Analysis/index.tsx:120

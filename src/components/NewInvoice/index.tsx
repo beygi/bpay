@@ -101,7 +101,7 @@ class NewInvoice extends React.Component<IProps, IState> {
 
         return (
             <Form className="new-invoice" layout="inline" onSubmit={this.handleSubmit}  >
-                <FormItem className="price">
+                <FormItem label={t.t("Price")} className="price">
                     {getFieldDecorator("price", {
                         rules: [{
                             required: true, type: "number",
@@ -118,7 +118,7 @@ class NewInvoice extends React.Component<IProps, IState> {
                         />,
                     )}
                 </FormItem>
-                <FormItem className="fiat">
+                <FormItem label={t.t("Price unit")} className="fiat">
                     {getFieldDecorator("fiat", {
                         rules: [{
                             required: true, message: t.t("Please select input currency"),
@@ -132,14 +132,14 @@ class NewInvoice extends React.Component<IProps, IState> {
                         </Select>,
                     )}
                 </FormItem>
-                <FormItem className="description">
+                <FormItem label={t.t("Description")} className="description">
                     {getFieldDecorator("description", {
                         rules: [{
                             required: true, message: t.t("Please input description, max length is 30"),
                             max: 30,
                         }],
                     })(
-                        <Input id="description" placeholder={t.t("Description")} size="large" />,
+                        <Input id="description" placeholder={t.t("example: sell product #1233")} size="large" />,
                     )}
                 </FormItem>
                 <FormItem
