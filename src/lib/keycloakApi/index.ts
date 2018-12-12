@@ -51,23 +51,6 @@ export default class API {
         return this.headers;
     }
 
-    // Api Calls TODO : they will be generated from swagger
-    public GetCountries() {
-        return this.axios.get("/country");
-    }
-
-    public postKYC(data) {
-        return this.axios.post("/kyc", data);
-    }
-
-    public getAllKYC() {
-        return this.axios.get("/kyc");
-    }
-
-    public changeKycStatus(uid, status) {
-        return this.axios.put("/kyc/" + uid + "/" + status);
-    }
-
     // keyCloaks
     public GetUsers(term, page, size) {
         let params = {};
