@@ -20,7 +20,7 @@ import "./theme/application.less";
 require("./lib/icon");
 
 import { VERSION } from "./constants";
-import KeyCloacksApi from "./lib/api-old";
+import KeyCloacksApi from "./lib/keycloakApi";
 
 // we need a history object to hold browsers history
 const history = createBrowserHistory();

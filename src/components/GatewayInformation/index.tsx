@@ -80,7 +80,7 @@ class GatewayInformationComponent extends React.Component<IProps, IState> {
                     </div>,
 
             },
-            { key: t.t("Service URL"), value: config.NewApiUrl },
+            { key: t.t("Service URL"), value: config.apiUrl },
             { key: t.t("Mobile"), value: this.props.mobile },
         ];
         return (

@@ -2,11 +2,12 @@
  * @module Components/NewInvoice
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Form, Input, InputNumber, notification, Select } from "antd";
+import { Alert, Button, Form, Input, InputNumber, notification, Select } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import config from "../../config";
 import API from "../../lib/api/invoice";
 import { IRootState } from "../../redux/reducers";
@@ -100,57 +101,60 @@ class NewInvoice extends React.Component<IProps, IState> {
         const { getFieldDecorator } = this.props.form;
 
         return (
-            <Form className="new-invoice" layout="inline" onSubmit={this.handleSubmit}  >
-                <FormItem label={t.t("Price")} className="price">
-                    {getFieldDecorator("price", {
-                        rules: [{
-                            required: true, type: "number",
-                            validator: this.checkPrice,
-                        }],
-                        initialValue: 0,
-                    })(
-                        <InputNumber
-                            size="large"
-                            placeholder={this.props.form.getFieldValue("fiat")}
-                            min={0}
-                            max={10000000000}
-                            formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                        />,
-                    )}
-                </FormItem>
-                <FormItem label={t.t("Price unit")} className="fiat">
-                    {getFieldDecorator("fiat", {
-                        rules: [{
-                            required: true, message: t.t("Please select input currency"),
-                        }],
-                        initialValue: "IRR",
-                    })(
-                        <Select dropdownClassName={`select-${this.props.theme}`} size="large">
-                            {
-                                fiats
-                            }
-                        </Select>,
-                    )}
-                </FormItem>
-                <FormItem label={t.t("Description")} className="description">
-                    {getFieldDecorator("description", {
-                        rules: [{
-                            required: true, message: t.t("Please input description, max length is 30"),
-                            max: 30,
-                        }],
-                    })(
-                        <Input id="description" placeholder={t.t("example: sell product #1233")} size="large" />,
-                    )}
-                </FormItem>
-                <FormItem
-                    className="submit"
-                >
-                    <Button loading={this.state.loading} className="neat-btn" type="primary" htmlType="submit" size="large">
-                        {(!this.state.loading) ? <FontAwesomeIcon icon={["fas", "plus"]} /> : null}
-                        {t.t("Create")}
-                    </Button>
-                </FormItem>
-            </Form>
+            <div>
+                <Form className="new-invoice" layout="inline" onSubmit={this.handleSubmit}  >
+                    <FormItem label={t.t("Price")} className="price">
+                        {getFieldDecorator("price", {
+                            rules: [{
+                                required: true, type: "number",
+                                validator: this.checkPrice,
+                            }],
+                            initialValue: 0,
+                        })(
+                            <InputNumber
+                                size="large"
+                                placeholder={this.props.form.getFieldValue("fiat")}
+                                min={0}
+                                max={10000000000}
+                                formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                            />,
+                        )}
+                    </FormItem>
+                    <FormItem label={t.t("Price unit")} className="fiat">
+                        {getFieldDecorator("fiat", {
+                            rules: [{
+                                required: true, message: t.t("Please select input currency"),
+                            }],
+                            initialValue: "IRR",
+                        })(
+                            <Select dropdownClassName={`select-${this.props.theme}`} size="large">
+                                {
+                                    fiats
+                                }
+                            </Select>,
+                        )}
+                    </FormItem>
+                    <FormItem label={t.t("Description")} className="description">
+                        {getFieldDecorator("description", {
+                            rules: [{
+                                required: true, message: t.t("Please input description, max length is 30"),
+                                max: 30,
+                            }],
+                        })(
+                            <Input id="description" placeholder={t.t("example: sell product #1233")} size="large" />,
+                        )}
+                    </FormItem>
+                    <FormItem
+                        className="submit"
+                    >
+                        <Button loading={this.state.loading} className="neat-btn" type="primary" htmlType="submit" size="large">
+                            {(!this.state.loading) ? <FontAwesomeIcon icon={["fas", "plus"]} /> : null}
+                            {t.t("Create")}
+                        </Button>
+                    </FormItem>
+                </Form>
+            </div>
+
         );
     }
 

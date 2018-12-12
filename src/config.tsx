@@ -8,9 +8,7 @@ import Languages from "./services/trans/languages";
  * configuration object
  */
 const config = {
-    // apiUrl: "http://192.168.1.42:9092/",
-    apiUrl: "http://87.98.188.77:9092/",
-    NewApiUrl: "https://api.becopay.com",
+    apiUrl: "https://api.becopay.com",
     gateWayUrl: "https://gateway.becopay.com",
     developersZone: "https://becopay.com/en/io/",
     language: Languages.fa,
