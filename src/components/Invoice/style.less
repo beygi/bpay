@@ -13,6 +13,22 @@
     }
 }
 }
+.share-buttons
+{
+    .SocialMediaShareButton
+    {
+        width: 40px;
+        font-size: 25px;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+        color : @secondaryTextColor;
+        &:hover
+        {
+            color : @primaryVariant3;
+        }
+    }
+}
 .transaction-block
 {
     background-color: @secondaryVariant9;
@@ -40,6 +56,10 @@
     {
         color : @cold-storage;
     }
+    .share-icon
+    {
+        color : @primaryVariant5;
+    }
     .archived
     {
         color : @hot-storage;
@@ -48,11 +68,16 @@
     {
         color : @settled;
     }
-    .success, .archived , .waiting, .settled,.callback
+    .success, .archived , .waiting, .settled,.callback,.share-icon
     {
         width: 30px;
         display: inline-block;
         text-align: center;
+        &.disabled
+        {
+            cursor: default;
+            color : fade(@secondaryTextColor, 10%);
+        }
     }
     .symbol
     {

@@ -20,7 +20,7 @@ const RadioGroup = Radio.Group;
 const coverImg = require("../../assets/images/cover.png");
 const personalImg = require("../../assets/images/personal.png");
 const selfieImg = require("../../assets/images/selfie.png");
-const nationalImg = require("../../assets/images/national.jpg");
+const nationalImg = require("../../assets/images/national.png");
 
 const { TextArea } = Input;
 
