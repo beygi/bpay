@@ -128,11 +128,11 @@ msgstr "تغییر رمز عبور"
 msgid "Checking"
 msgstr "بررسی"
 
-#: src/components/Invoice/index.tsx:67
+#: src/components/Invoice/index.tsx:68
 msgid "Checkout Amount"
 msgstr "مبلغ تسویه"
 
-#: src/components/Invoice/index.tsx:63
+#: src/components/Invoice/index.tsx:64
 msgid "Checkout Symbol"
 msgstr "نماد تسویه"
 
@@ -173,7 +173,7 @@ msgstr "تعداد"
 msgid "Create"
 msgstr "ایجاد"
 
-#: src/components/Invoice/index.tsx:71
+#: src/components/Invoice/index.tsx:72
 msgid "Create time"
 msgstr "زمان ایجاد"
 
@@ -200,7 +200,7 @@ msgstr "تاریخ و زمان پرداخت"
 msgid "Deposit"
 msgstr "شارژ حساب"
 
-#: src/containers/Dashboard/index.tsx:147 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:148 src/containers/Deposit/index.tsx:53
 msgid "Deposit history"
 msgstr "تاریخچهٔ مبالغ واریزی"
 
@@ -292,7 +292,7 @@ msgstr "صفحه اول"
 msgid "for more information about integrating your system with our gateway please visit our developrs area"
 msgstr "برای دریافت اطلاعات بیشتر در مورد چگونگی اتصال درگاه پرداخت ما به سرویس خودتان لطفا قسمت توسعه دهندگان را مطالعه کنید"
 
-#: src/containers/Dashboard/index.tsx:95
+#: src/containers/Dashboard/index.tsx:96
 msgid "Gateway information"
 msgstr "اطلاعات درگاه پرداخت"
 
@@ -351,7 +351,6 @@ msgstr "ریال ایران"
 
 #: src/components/DashboardMenu/adminMenu.tsx:26
 #: src/components/DashboardMenu/menu.tsx:58
-#: src/components/DashboardMenu/menu.tsx:88
 msgid "KYC"
 msgstr "اصالت مشتریان"
 
@@ -379,7 +378,7 @@ msgstr "معاملهٔ محدود"
 msgid "Litecoin"
 msgstr "لایت کوین"
 
-#: src/containers/Dashboard/index.tsx:142 src/containers/Deposit/index.tsx:39
+#: src/containers/Dashboard/index.tsx:143 src/containers/Deposit/index.tsx:39
 msgid "Live prices"
 msgstr "قیمت زنده"
 
@@ -434,7 +433,7 @@ msgstr "کارت ملی"
 msgid "network confirmations"
 msgstr "تاییدیه شبکه در دسترس خواهند بود"
 
-#: src/containers/Dashboard/index.tsx:90
+#: src/containers/Dashboard/index.tsx:91
 msgid "New Invoice"
 msgstr "فاکتور جدید"
 
@@ -478,7 +477,7 @@ msgstr "لیست درخواست‌ها"
 msgid "Order history"
 msgstr "تاریخچهٔ سفارشات"
 
-#: src/components/Invoice/index.tsx:52
+#: src/components/Invoice/index.tsx:53
 msgid "Order id"
 msgstr "شماره سفارش"
 
@@ -514,13 +513,17 @@ msgstr "صفحه مشخصات گذرنامه"
 msgid "Password"
 msgstr "رمز عبور"
 
-#: src/components/Invoice/index.tsx:59
+#: src/components/Invoice/index.tsx:60
 msgid "Payer Amount"
 msgstr "مبلغ پرداختی"
 
-#: src/components/Invoice/index.tsx:56
+#: src/components/Invoice/index.tsx:57
 msgid "Payer Symbol"
 msgstr "نماد پرداخت"
+
+#: src/components/Invoice/index.tsx:141 src/components/Invoice/index.tsx:146
+msgid "Payment URL"
+msgstr "آدرس پرداخت"
 
 #: src/containers/Groups/index.tsx:34
 msgid "Permission"
@@ -551,7 +554,6 @@ msgid "Please input Tracking code "
 msgstr "لطفا کد پیگیری سیستم بانکی را وارد کنید "
 
 #: src/containers/KYC/index.tsx:204
-#, fuzzy
 msgid "Please input your 16 digits card number "
 msgstr "لطفا شماره کارت ۱۶ رقمی خودتان را وارد کنید "
 
@@ -678,11 +680,11 @@ msgid "Service URL"
 msgstr "آدرس سرویس"
 
 #: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:32
-#: src/containers/Dashboard/index.tsx:83
+#: src/containers/Dashboard/index.tsx:84
 msgid "Settle"
 msgstr "تسویه"
 
-#: src/components/Invoice/index.tsx:89
+#: src/components/Invoice/index.tsx:90
 msgid "Settle detail"
 msgstr "جزییات تراکنش تسویه"
 
@@ -698,7 +700,7 @@ msgstr "تسویه شده"
 msgid "Shop name"
 msgstr "نام فروشگاه"
 
-#: src/components/Invoice/index.tsx:48 src/components/SettleUps/index.tsx:105
+#: src/components/Invoice/index.tsx:49 src/components/SettleUps/index.tsx:105
 #: src/components/Unsettled/index.tsx:65
 msgid "Shop Name"
 msgstr "نام فروشگاه"
@@ -707,7 +709,7 @@ msgstr "نام فروشگاه"
 msgid "Show"
 msgstr "نمایش"
 
-#: src/components/Invoice/index.tsx:74
+#: src/components/Invoice/index.tsx:75
 msgid "Status"
 msgstr "وضعیت"
 
@@ -862,11 +864,11 @@ msgstr "ما وضعیت را در صفحهٔ کاربری تان به اطلاع
 msgid "You are a member"
 msgstr "شما اکنون یک کاربر هستید"
 
-#: src/containers/Dashboard/index.tsx:56
+#: src/containers/Dashboard/index.tsx:57
 msgid "You can now create becopay invoices. but your account must be verified to withdraw your balance. please contact us for verification."
 msgstr "شما می توانید فاکتور پرداخت بکوپی ایجاد کنید ولی برای تسویه حساب باید اطلاعات خود را تکمیل کنید. برای تکمیل حساب کاربری خود با ما تماس بگیرید."
 
-#: src/containers/Dashboard/index.tsx:221
+#: src/containers/Dashboard/index.tsx:222
 msgid "You don't have enough permission to view this area"
 msgstr "شما دسترسی کافی برای مشاهده این قسمت را ندارید"
 
@@ -886,7 +888,7 @@ msgstr "تنها حساب های کاربری تایید شده میتوانند
 msgid "Your API key copied to clipboard successfully"
 msgstr "کلید API شما با موفقیت کپی شد"
 
-#: src/containers/Dashboard/index.tsx:137 src/containers/Deposit/index.tsx:36
+#: src/containers/Dashboard/index.tsx:138 src/containers/Deposit/index.tsx:36
 #: src/containers/Exchange/index.tsx:123
 msgid "Your balance"
 msgstr "بالانس حساب شما"
@@ -952,9 +954,6 @@ msgstr "اطلاعات شما با موفقیت ارسال شد"
 #, fuzzy
 #~ msgid "Copy payment address"
 #~ msgstr "کپی کردن آدرس پرداخت"
-
-#~ msgid "New Payment"
-#~ msgstr "پرداخت جدید"
 
 #~ msgid "Open in wallet"
 #~ msgstr "باز کردن در کیف پول"

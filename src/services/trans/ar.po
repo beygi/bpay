@@ -120,11 +120,11 @@ msgstr ""
 msgid "Checking"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:67
+#: src/components/Invoice/index.tsx:68
 msgid "Checkout Amount"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:63
+#: src/components/Invoice/index.tsx:64
 msgid "Checkout Symbol"
 msgstr ""
 
@@ -165,7 +165,7 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:71
+#: src/components/Invoice/index.tsx:72
 #, fuzzy
 msgid "Create time"
 msgstr "الوقت الباقي"
@@ -194,7 +194,7 @@ msgstr "الوقت الباقي"
 msgid "Deposit"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:147 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:148 src/containers/Deposit/index.tsx:53
 msgid "Deposit history"
 msgstr ""
 
@@ -286,7 +286,7 @@ msgstr ""
 msgid "for more information about integrating your system with our gateway please visit our developrs area"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:95
+#: src/containers/Dashboard/index.tsx:96
 msgid "Gateway information"
 msgstr ""
 
@@ -345,7 +345,6 @@ msgstr ""
 
 #: src/components/DashboardMenu/adminMenu.tsx:26
 #: src/components/DashboardMenu/menu.tsx:58
-#: src/components/DashboardMenu/menu.tsx:88
 msgid "KYC"
 msgstr ""
 
@@ -373,7 +372,7 @@ msgstr ""
 msgid "Litecoin"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:142 src/containers/Deposit/index.tsx:39
+#: src/containers/Dashboard/index.tsx:143 src/containers/Deposit/index.tsx:39
 msgid "Live prices"
 msgstr ""
 
@@ -429,7 +428,7 @@ msgstr ""
 msgid "network confirmations"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:90
+#: src/containers/Dashboard/index.tsx:91
 #, fuzzy
 msgid "New Invoice"
 msgstr "معرف الفاتورة"
@@ -475,7 +474,7 @@ msgstr ""
 msgid "Order history"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:52
+#: src/components/Invoice/index.tsx:53
 msgid "Order id"
 msgstr ""
 
@@ -511,13 +510,18 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:59
+#: src/components/Invoice/index.tsx:60
 msgid "Payer Amount"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:56
+#: src/components/Invoice/index.tsx:57
 msgid "Payer Symbol"
 msgstr ""
+
+#: src/components/Invoice/index.tsx:141 src/components/Invoice/index.tsx:146
+#, fuzzy
+msgid "Payment URL"
+msgstr "دفعة جديدة"
 
 #: src/containers/Groups/index.tsx:34
 msgid "Permission"
@@ -691,11 +695,11 @@ msgid "Service URL"
 msgstr ""
 
 #: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:32
-#: src/containers/Dashboard/index.tsx:83
+#: src/containers/Dashboard/index.tsx:84
 msgid "Settle"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:89
+#: src/components/Invoice/index.tsx:90
 msgid "Settle detail"
 msgstr ""
 
@@ -711,7 +715,7 @@ msgstr ""
 msgid "Shop name"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:48 src/components/SettleUps/index.tsx:105
+#: src/components/Invoice/index.tsx:49 src/components/SettleUps/index.tsx:105
 #: src/components/Unsettled/index.tsx:65
 msgid "Shop Name"
 msgstr ""
@@ -720,7 +724,7 @@ msgstr ""
 msgid "Show"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:74
+#: src/components/Invoice/index.tsx:75
 msgid "Status"
 msgstr ""
 
@@ -876,11 +880,11 @@ msgstr ""
 msgid "You are a member"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:56
+#: src/containers/Dashboard/index.tsx:57
 msgid "You can now create becopay invoices. but your account must be verified to withdraw your balance. please contact us for verification."
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:221
+#: src/containers/Dashboard/index.tsx:222
 msgid "You don't have enough permission to view this area"
 msgstr ""
 
@@ -900,7 +904,7 @@ msgstr ""
 msgid "Your API key copied to clipboard successfully"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:137 src/containers/Deposit/index.tsx:36
+#: src/containers/Dashboard/index.tsx:138 src/containers/Deposit/index.tsx:36
 #: src/containers/Exchange/index.tsx:123
 msgid "Your balance"
 msgstr ""
@@ -920,9 +924,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Please select a country"
 #~ msgstr "يرجى اختيار عملة الدفع"
-
-#~ msgid "New Payment"
-#~ msgstr "دفعة جديدة"
 
 #~ msgid "minutes"
 #~ msgstr "دقائق"
