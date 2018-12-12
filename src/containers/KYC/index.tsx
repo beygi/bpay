@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import Profile from "../../components/DashboardHeaderProfile";
 import Block from "../../components/Holder";
 import Uploader from "../../components/Uploader";
+import config from "../../config";
 import Api from "../../lib/api/kyc";
 import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
@@ -66,12 +67,12 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
             cover: {
                 value: this.state.cover,
             },
-            passport: {
-                value: this.state.passport,
-            },
-            passid: {
-                value: this.state.passid,
-            },
+            // passport: {
+            //     value: this.state.passport,
+            // },
+            // passid: {
+            //     value: this.state.passid,
+            // },
         });
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
@@ -218,9 +219,9 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                     {/*  Upload */}
                     <FormItem label={t.t("National ID card")}  {...formItemLayout} >
                         {getFieldDecorator("cover", {
-                            rules: [{ required: true, message: t.t("please upload your national id card") }],
+                            rules: [{ required: false, message: t.t("please upload your national id card") }],
                         })(
-                            <Uploader callback={this.setImage} example={nationalImg} action="http://87.98.188.77:9092/kyc/img" name="file" data={{ imgtype: "cover" }} />,
+                            <Uploader callback={this.setImage} example={nationalImg} action={`${config.apiUrl}/kyc/img`} name="file" data={{ imgtype: "cover" }} />,
                         )}
                     </FormItem>
 
