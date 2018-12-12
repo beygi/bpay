@@ -81,14 +81,14 @@ function getMenus() {
             //     visible: true,
             // },
         };
-        if (userObject.getLevel().level === 1) {
-            availableMenus[`kyc`] = {
-                icon: "solution",
-                path: "/kyc",
-                text: t.t("KYC"),
-                visible: true,
-            };
-        }
+        // if (userObject.getLevel().level === 1) {
+        //     availableMenus[`kyc`] = {
+        //         icon: "solution",
+        //         path: "/kyc",
+        //         text: t.t("KYC"),
+        //         visible: true,
+        //     };
+        // }
 
     }
     return availableMenus;

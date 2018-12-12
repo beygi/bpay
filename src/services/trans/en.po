@@ -12,6 +12,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
+#: src/containers/Dashboard/index.tsx:79
+msgid " Please contact us to verify your accout"
+msgstr ""
+
 #: src/components/Deposit/index.tsx:105
 msgid "{coin} Deposite address"
 msgstr ""
@@ -152,6 +156,10 @@ msgstr ""
 msgid "Cold storage"
 msgstr ""
 
+#: src/containers/Dashboard/index.tsx:73
+msgid "Contact us"
+msgstr ""
+
 #: src/components/Deposit/index.tsx:98
 #: src/components/GatewayInformation/index.tsx:76
 msgid "Copy"
@@ -169,7 +177,7 @@ msgstr ""
 msgid "Count"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:172
+#: src/components/NewInvoice/index.tsx:152
 msgid "Create"
 msgstr ""
 
@@ -200,11 +208,11 @@ msgstr ""
 msgid "Deposit"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:137 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:173 src/containers/Deposit/index.tsx:53
 msgid "Deposit history"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:157
+#: src/components/NewInvoice/index.tsx:137
 msgid "Description"
 msgstr ""
 
@@ -252,7 +260,7 @@ msgstr ""
 msgid "Example Image"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:164
+#: src/components/NewInvoice/index.tsx:144
 msgid "example: sell product #1233"
 msgstr ""
 
@@ -292,7 +300,7 @@ msgstr ""
 msgid "for more information about integrating your system with our gateway please visit our developrs area"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:85
+#: src/containers/Dashboard/index.tsx:121
 msgid "Gateway information"
 msgstr ""
 
@@ -379,7 +387,7 @@ msgstr ""
 msgid "Litecoin"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:132 src/containers/Deposit/index.tsx:39
+#: src/containers/Dashboard/index.tsx:168 src/containers/Deposit/index.tsx:39
 msgid "Live prices"
 msgstr ""
 
@@ -434,7 +442,7 @@ msgstr ""
 msgid "network confirmations"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:80
+#: src/containers/Dashboard/index.tsx:116
 msgid "New Invoice"
 msgstr ""
 
@@ -540,7 +548,7 @@ msgstr ""
 msgid "Please input 16 digits origin card number "
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:160
+#: src/components/NewInvoice/index.tsx:140
 msgid "Please input description, max length is 30"
 msgstr ""
 
@@ -596,7 +604,7 @@ msgstr ""
 msgid "Please select a currency to deposit"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:146
+#: src/components/NewInvoice/index.tsx:126
 msgid "Please select input currency"
 msgstr ""
 
@@ -627,12 +635,12 @@ msgstr ""
 #: src/components/LimitedPlaceOrder/index.tsx:158
 #: src/components/LimitedPlaceOrder/index.tsx:177
 #: src/components/MarketTrades/index.tsx:70
-#: src/components/NewInvoice/index.tsx:126
+#: src/components/NewInvoice/index.tsx:106
 #: src/components/OrderBook/index.tsx:120
 msgid "Price"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:143
+#: src/components/NewInvoice/index.tsx:123
 msgid "Price unit"
 msgstr ""
 
@@ -683,7 +691,7 @@ msgid "Service URL"
 msgstr ""
 
 #: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:32
-#: src/containers/Dashboard/index.tsx:73
+#: src/containers/Dashboard/index.tsx:108
 msgid "Settle"
 msgstr ""
 
@@ -847,10 +855,6 @@ msgstr ""
 msgid "Verify email"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:114
-msgid "Verify your account now"
-msgstr ""
-
 #: src/components/UserStatusGuide/index.tsx:41
 msgid "Verify your email address"
 msgstr ""
@@ -871,11 +875,11 @@ msgstr ""
 msgid "You are a member"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:120
+#: src/containers/Dashboard/index.tsx:78
 msgid "You can now create becopay invoices. but your account must be verified to withdraw your balance."
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:211
+#: src/containers/Dashboard/index.tsx:247
 msgid "You don't have enough permission to view this area"
 msgstr ""
 
@@ -895,7 +899,7 @@ msgstr ""
 msgid "Your API key copied to clipboard successfully"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:127 src/containers/Deposit/index.tsx:36
+#: src/containers/Dashboard/index.tsx:163 src/containers/Deposit/index.tsx:36
 #: src/containers/Exchange/index.tsx:123
 msgid "Your balance"
 msgstr ""

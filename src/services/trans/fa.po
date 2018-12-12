@@ -12,6 +12,10 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 2.0.6\n"
 
+#: src/containers/Dashboard/index.tsx:79
+msgid " Please contact us to verify your accout"
+msgstr " لطفا برای تایید حساب کاربری تان با ما تماس بگیرید"
+
 #: src/components/Deposit/index.tsx:105
 msgid "{coin} Deposite address"
 msgstr "آدرس پرداخت {coin}"
@@ -152,6 +156,10 @@ msgstr "سرد"
 msgid "Cold storage"
 msgstr "مخزن سرد"
 
+#: src/containers/Dashboard/index.tsx:73
+msgid "Contact us"
+msgstr "تماس با ما"
+
 #: src/components/Deposit/index.tsx:98
 #: src/components/GatewayInformation/index.tsx:76
 msgid "Copy"
@@ -169,7 +177,7 @@ msgstr "کپی کردن آدرس پرداخت"
 msgid "Count"
 msgstr "تعداد"
 
-#: src/components/NewInvoice/index.tsx:172
+#: src/components/NewInvoice/index.tsx:152
 msgid "Create"
 msgstr "ایجاد"
 
@@ -200,11 +208,11 @@ msgstr "تاریخ و زمان پرداخت"
 msgid "Deposit"
 msgstr "شارژ حساب"
 
-#: src/containers/Dashboard/index.tsx:137 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:173 src/containers/Deposit/index.tsx:53
 msgid "Deposit history"
 msgstr "تاریخچهٔ مبالغ واریزی"
 
-#: src/components/NewInvoice/index.tsx:157
+#: src/components/NewInvoice/index.tsx:137
 msgid "Description"
 msgstr "توضیحات"
 
@@ -252,7 +260,7 @@ msgstr "یورو"
 msgid "Example Image"
 msgstr "عکس نمونه"
 
-#: src/components/NewInvoice/index.tsx:164
+#: src/components/NewInvoice/index.tsx:144
 msgid "example: sell product #1233"
 msgstr "مثال: فروش محصول با کد ۱۲۳۳"
 
@@ -292,7 +300,7 @@ msgstr "صفحه اول"
 msgid "for more information about integrating your system with our gateway please visit our developrs area"
 msgstr "برای دریافت اطلاعات بیشتر در مورد چگونگی اتصال درگاه پرداخت ما به سرویس خودتان لطفا قسمت توسعه دهندگان را مطالعه کنید"
 
-#: src/containers/Dashboard/index.tsx:85
+#: src/containers/Dashboard/index.tsx:121
 msgid "Gateway information"
 msgstr "اطلاعات درگاه پرداخت"
 
@@ -379,7 +387,7 @@ msgstr "معاملهٔ محدود"
 msgid "Litecoin"
 msgstr "لایت کوین"
 
-#: src/containers/Dashboard/index.tsx:132 src/containers/Deposit/index.tsx:39
+#: src/containers/Dashboard/index.tsx:168 src/containers/Deposit/index.tsx:39
 msgid "Live prices"
 msgstr "قیمت زنده"
 
@@ -434,7 +442,7 @@ msgstr "کارت ملی"
 msgid "network confirmations"
 msgstr "تاییدیه شبکه در دسترس خواهند بود"
 
-#: src/containers/Dashboard/index.tsx:80
+#: src/containers/Dashboard/index.tsx:116
 msgid "New Invoice"
 msgstr "فاکتور جدید"
 
@@ -539,7 +547,7 @@ msgstr "لطفا شماره کارت ۱۶ رقمی مقصد را وارد کنی
 msgid "Please input 16 digits origin card number "
 msgstr "لطفا شماره کارت ۱۶ رقمی مبدا را وارد کنید "
 
-#: src/components/NewInvoice/index.tsx:160
+#: src/components/NewInvoice/index.tsx:140
 msgid "Please input description, max length is 30"
 msgstr "لطفا متن توضیحات را وارد کنید. حداکثر ۳۰ حرف"
 
@@ -595,7 +603,7 @@ msgstr "لطفا راهنما های موجود در بخش امنیت را بخ
 msgid "Please select a currency to deposit"
 msgstr "لطفا ارز پرداختی را انتخاب کنید"
 
-#: src/components/NewInvoice/index.tsx:146
+#: src/components/NewInvoice/index.tsx:126
 msgid "Please select input currency"
 msgstr "لطفا ارز مرجع پرداخت را انتخاب کنید"
 
@@ -626,12 +634,12 @@ msgstr "صفحه قبل"
 #: src/components/LimitedPlaceOrder/index.tsx:158
 #: src/components/LimitedPlaceOrder/index.tsx:177
 #: src/components/MarketTrades/index.tsx:70
-#: src/components/NewInvoice/index.tsx:126
+#: src/components/NewInvoice/index.tsx:106
 #: src/components/OrderBook/index.tsx:120
 msgid "Price"
 msgstr "قیمت"
 
-#: src/components/NewInvoice/index.tsx:143
+#: src/components/NewInvoice/index.tsx:123
 msgid "Price unit"
 msgstr "واحد قیمت گذاری"
 
@@ -682,7 +690,7 @@ msgid "Service URL"
 msgstr "آدرس سرویس"
 
 #: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:32
-#: src/containers/Dashboard/index.tsx:73
+#: src/containers/Dashboard/index.tsx:108
 msgid "Settle"
 msgstr "تسویه"
 
@@ -846,10 +854,6 @@ msgstr "تایید حساب کاربری"
 msgid "Verify email"
 msgstr "تایید ایمیل"
 
-#: src/components/NewInvoice/index.tsx:114
-msgid "Verify your account now"
-msgstr "تایید حساب کاربری"
-
 #: src/components/UserStatusGuide/index.tsx:41
 msgid "Verify your email address"
 msgstr "ایمیل تان را تایید کنید"
@@ -870,11 +874,11 @@ msgstr "ما وضعیت را در صفحهٔ کاربری تان به اطلاع
 msgid "You are a member"
 msgstr "شما اکنون یک کاربر هستید"
 
-#: src/components/NewInvoice/index.tsx:120
+#: src/containers/Dashboard/index.tsx:78
 msgid "You can now create becopay invoices. but your account must be verified to withdraw your balance."
 msgstr "شما می توانید فاکتور پرداخت بکوپی ایجاد کنید ولی برای تسویه حساب باید اطلاعات خود را تکمیل کنید."
 
-#: src/containers/Dashboard/index.tsx:211
+#: src/containers/Dashboard/index.tsx:247
 msgid "You don't have enough permission to view this area"
 msgstr "شما دسترسی کافی برای مشاهده این قسمت را ندارید"
 
@@ -894,7 +898,7 @@ msgstr "تنها حساب های کاربری تایید شده میتوانند
 msgid "Your API key copied to clipboard successfully"
 msgstr "کلید API شما با موفقیت کپی شد"
 
-#: src/containers/Dashboard/index.tsx:127 src/containers/Deposit/index.tsx:36
+#: src/containers/Dashboard/index.tsx:163 src/containers/Deposit/index.tsx:36
 #: src/containers/Exchange/index.tsx:123
 msgid "Your balance"
 msgstr "بالانس حساب شما"
@@ -902,6 +906,9 @@ msgstr "بالانس حساب شما"
 #: src/containers/KYC/index.tsx:252
 msgid "your information submitted successfully"
 msgstr "اطلاعات شما با موفقیت ارسال شد"
+
+#~ msgid "Verify your account now"
+#~ msgstr "تایید حساب کاربری"
 
 #~ msgid "Please input your bank card number"
 #~ msgstr "لطفا شمارهٔ کارت بانکی خود را وارد کنید"
