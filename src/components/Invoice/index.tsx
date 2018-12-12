@@ -2,10 +2,11 @@
  * @module Components/Invoice
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Table, Tag, Tooltip } from "antd";
+import { Popover, Table, Tag, Tooltip } from "antd";
 import * as _ from "lodash";
 import * as Moment from "moment";
 import * as React from "react";
+import { TelegramShareButton, TwitterShareButton } from "react-share";
 import config from "../../config";
 import USER from "../../lib/user";
 import t from "../../services/trans/i18n";
@@ -130,8 +131,36 @@ class Invoice extends React.Component<IProps, IState> {
                     {icons[invoice.status]}
                     <a className="callback" target="blank" href={invoice.callback}><FontAwesomeIcon icon={["fas", "link"]} /></a>
                     &nbsp;
+                    {(invoice.status === "waiting") ?
+                        <span>
                             <a className="waiting" target="blank" href={`${config.gateWayUrl}/invoice/${invoice.id}`}><FontAwesomeIcon icon={["fas", "external-link-alt"]} /></a>
-                </span>}>
+                            <span className="share-icon">
+                                <Popover getPopupContainer={() => document.getElementById("privateContent")} placement="right" content={
+                                    <div className="share-buttons">
+                                        <TelegramShareButton url={`${config.gateWayUrl}/invoice/${invoice.id}`}
+                                            title={t.t("Payment URL")}
+                                        >
+                                            <FontAwesomeIcon icon={["fab", "telegram-plane"]} />
+                                        </TelegramShareButton>
+                                        <TwitterShareButton url={`${config.gateWayUrl}/invoice/${invoice.id}`}
+                                            title={t.t("Payment URL")}
+                                        >
+                                            <FontAwesomeIcon icon={["fab", "twitter"]} />
+                                        </TwitterShareButton>
+                                    </div>
+                                } trigger="hover">
+                                    <FontAwesomeIcon icon={["fas", "share-alt"]} />
+                                </Popover>
+                            </span>
+                        </span>
+                        :
+                        <span>
+                            <span className="waiting disabled"><FontAwesomeIcon icon={["fas", "external-link-alt"]} /></span>
+                            <span className="share-icon disabled"><FontAwesomeIcon icon={["fas", "share-alt"]} /></span>
+                        </span>
+                    }
+
+                </ span>}>
                 <Table pagination={false} columns={tablecolumns} rowKey="id" dataSource={[invoice]} size="small" />
             </Block>
         );
