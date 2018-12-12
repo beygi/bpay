@@ -1,6 +1,6 @@
 // import all font awesome icons seperately
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBtc, faEthereum, faGoogle, faGripfire, faTelegramPlane, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faBtc, faEthereum, faGoogle, faGripfire, faTelegramPlane, faTwitter, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEye, faEyeSlash, faMoon as Day } from "@fortawesome/free-regular-svg-icons";
 
 import {
@@ -11,7 +11,7 @@ import {
     faTimes, faUserClock, faWallet,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faThList, faCode, faSquareFull, faEye, faShareAlt, faMoon, Day, faEyeSlash, faPlus, faCheckDouble,
+library.add(faThList, faCode, faSquareFull, faEye, faShareAlt, faMoon, Day, faEyeSlash, faPlus, faCheckDouble, faWhatsapp,
     faHandHolding, faArchive, faGoogle, faLock, faUserClock, faLink, faExternalLinkAlt, faList, faTelegramPlane, faTwitter,
     faEdit, faKey, faSearch, faWallet, faHistory, faBtc, faDollarSign, faEthereum, faBox, faBalanceScale, faExchangeAlt, faGripfire, faSnowflake,
     faDonate, faHandHoldingUsd, faMoneyCheckAlt, faHandshake, faAddressCard, faArrowLeft, faQrcode, faCopy, faChartLine, faCheck, faTimes, faHourglassHalf);

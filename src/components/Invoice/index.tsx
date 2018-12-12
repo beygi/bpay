@@ -6,7 +6,7 @@ import { Popover, Table, Tag, Tooltip } from "antd";
 import * as _ from "lodash";
 import * as Moment from "moment";
 import * as React from "react";
-import { TelegramShareButton, TwitterShareButton } from "react-share";
+import { TelegramShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
 import config from "../../config";
 import USER from "../../lib/user";
 import t from "../../services/trans/i18n";
@@ -147,6 +147,11 @@ class Invoice extends React.Component<IProps, IState> {
                                         >
                                             <FontAwesomeIcon icon={["fab", "twitter"]} />
                                         </TwitterShareButton>
+                                        <WhatsappShareButton url={`${config.gateWayUrl}/invoice/${invoice.id}`}
+                                            title={t.t("Payment URL")}
+                                        >
+                                            <FontAwesomeIcon icon={["fab", "whatsapp"]} />
+                                        </WhatsappShareButton>
                                     </div>
                                 } trigger="hover">
                                     <FontAwesomeIcon icon={["fas", "share-alt"]} />
