@@ -204,7 +204,8 @@
             }
         }
         
-        background-color: lighten(@dark-block-color,3%) !important;
+        background-color: lighten(@dark-block-color,5%) !important;
+        box-shadow: none !important;
         
     }
     .live-price .coin-balance,.coin-balance,.deposit-item {
@@ -221,7 +222,8 @@
 
     .block {
         border: 2px solid darken(@dark-block-color,5%);
-        box-shadow: none;
+        border: none;
+        box-shadow: -1px 3px 5px -1px darken(@dark-block-color,5%);
         background-color: @dark-block-color;
     }
 
@@ -315,11 +317,12 @@
         background-color: @dark-menu;
         border : 1px solid @dark-block-color !important;
     }
-    .ant-alert-with-description.ant-alert-warning
+    .ant-alert-warning
     {
             background: @dark-warning;
+            border: 1px solid @dark-warning;
     }
-    .ant-alert-with-description.ant-alert-info,.ant-alert-info
+    .ant-alert-info
     {
         background: @dark-menu;
         border: 1px solid lighten(@dark-menu, 15%);

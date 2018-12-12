@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Col, Icon, Row } from "antd";
+import { Alert, Button, Col, Icon, Row } from "antd";
 import * as React from "react";
 import { Link } from "react-router-dom";
 import Balance from "../../components/Balance";
@@ -52,9 +52,24 @@ all transactions will be done using bitcoin test network not real network.")}
 
         const merchantWarning = (userObject.keycloak.hasRealmRole("merchant") && userObject.getLevel().level === 1) ?
             <Col md={24} >
-                <Block className="sandbox">
-                    <Icon type="info-circle" />
-                    {t.t("You can now create becopay invoices. but your account must be verified to withdraw your balance. please contact us for verification.")}
+                <Block transparent noPadding>
+                    <Alert
+                        description={
+                            <Link to="/kyc">
+                                <Button
+                                    size="large"
+                                    icon="import"
+                                    className="neat-btn" type="primary">
+                                    {t.t("Verify your account now")}
+                                </Button>
+                            </Link>
+                        }
+                        message={
+                            <div>
+                                {t.t("You can now create becopay invoices. but your account must be verified to withdraw your balance.")}
+                                <br /><br />
+                            </div>
+                        } type="warning" showIcon />
                 </Block>
             </Col>
 
@@ -66,7 +81,6 @@ all transactions will be done using bitcoin test network not real network.")}
             allBlocks.push(
                 <Row key="merchant" gutter={8}>
                     {sandbox}
-                    {merchantWarning}
                     <Col sm={24} md={24} lg={8} >
                         <Row gutter={8}>
                             {/* <Col md={24} >
@@ -87,6 +101,7 @@ all transactions will be done using bitcoin test network not real network.")}
                                 </Col>
                                 : null
                             }
+                            {merchantWarning}
                             <Col md={24} >
                                 <Block title={t.t("New Invoice")} icon={<FontAwesomeIcon icon={["fas", "edit"]} />}>
                                     <NewInvoice />

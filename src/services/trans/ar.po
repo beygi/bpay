@@ -56,7 +56,7 @@ msgstr ""
 msgid "add new group"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:210
+#: src/containers/KYC/index.tsx:211
 msgid "Address"
 msgstr ""
 
@@ -91,11 +91,11 @@ msgstr ""
 msgid "‌Balance"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:202
+#: src/containers/KYC/index.tsx:203
 msgid "Bank card number"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:115
+#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:116
 msgid "Before you start"
 msgstr ""
 
@@ -128,7 +128,7 @@ msgstr ""
 msgid "Checkout Symbol"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:70
+#: src/components/NewInvoice/index.tsx:71
 msgid "click to open gateway"
 msgstr ""
 
@@ -161,7 +161,7 @@ msgstr ""
 msgid "Count"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:150
+#: src/components/NewInvoice/index.tsx:172
 msgid "Create"
 msgstr ""
 
@@ -194,11 +194,11 @@ msgstr "الوقت الباقي"
 msgid "Deposit"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:148 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:137 src/containers/Deposit/index.tsx:53
 msgid "Deposit history"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:135
+#: src/components/NewInvoice/index.tsx:157
 msgid "Description"
 msgstr ""
 
@@ -246,7 +246,7 @@ msgstr ""
 msgid "Example Image"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:142
+#: src/components/NewInvoice/index.tsx:164
 msgid "example: sell product #1233"
 msgstr ""
 
@@ -258,7 +258,7 @@ msgstr ""
 msgid "failed"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:81
+#: src/components/NewInvoice/index.tsx:82
 msgid "Failed to create invoice"
 msgstr ""
 
@@ -270,11 +270,11 @@ msgstr ""
 msgid "Fee Cash Desk"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:154
+#: src/containers/KYC/index.tsx:155
 msgid "Female"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:126
+#: src/containers/KYC/index.tsx:127
 msgid "First Name"
 msgstr ""
 
@@ -286,11 +286,11 @@ msgstr ""
 msgid "for more information about integrating your system with our gateway please visit our developrs area"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:96
+#: src/containers/Dashboard/index.tsx:85
 msgid "Gateway information"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:146
+#: src/containers/KYC/index.tsx:147
 msgid "Gender"
 msgstr ""
 
@@ -327,7 +327,7 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:94
+#: src/containers/KYC/index.tsx:95
 msgid "Image uploaded successfully"
 msgstr ""
 
@@ -345,10 +345,11 @@ msgstr ""
 
 #: src/components/DashboardMenu/adminMenu.tsx:26
 #: src/components/DashboardMenu/menu.tsx:58
+#: src/components/DashboardMenu/menu.tsx:88
 msgid "KYC"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:117
+#: src/containers/KYC/index.tsx:118
 msgid "KYC stands for (Know Your Customer) it is the process of a business. <br> verifying and identifying the identity of its clients.It is required because the KYC its used to refer to the bank and anti-money laundering regulations."
 msgstr ""
 
@@ -356,7 +357,7 @@ msgstr ""
 msgid "Last login:"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:135
+#: src/containers/KYC/index.tsx:136
 msgid "Last Name"
 msgstr ""
 
@@ -372,7 +373,7 @@ msgstr ""
 msgid "Litecoin"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:143 src/containers/Deposit/index.tsx:39
+#: src/containers/Dashboard/index.tsx:132 src/containers/Deposit/index.tsx:39
 msgid "Live prices"
 msgstr ""
 
@@ -399,7 +400,7 @@ msgstr ""
 msgid "lorem ipsum"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:153
+#: src/containers/KYC/index.tsx:154
 msgid "Male"
 msgstr ""
 
@@ -416,11 +417,11 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:194
+#: src/containers/KYC/index.tsx:195
 msgid "National code"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:219
+#: src/containers/KYC/index.tsx:220
 msgid "National ID card"
 msgstr ""
 
@@ -428,12 +429,12 @@ msgstr ""
 msgid "network confirmations"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:91
+#: src/containers/Dashboard/index.tsx:80
 #, fuzzy
 msgid "New Invoice"
 msgstr "معرف الفاتورة"
 
-#: src/components/NewInvoice/index.tsx:69
+#: src/components/NewInvoice/index.tsx:70
 #, fuzzy
 msgid "New Invoice Created"
 msgstr "معرف الفاتورة"
@@ -462,7 +463,7 @@ msgstr ""
 msgid "No Access"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:73
+#: src/components/NewInvoice/index.tsx:74
 msgid "Open gateway"
 msgstr ""
 
@@ -519,6 +520,7 @@ msgid "Payer Symbol"
 msgstr ""
 
 #: src/components/Invoice/index.tsx:141 src/components/Invoice/index.tsx:146
+#: src/components/Invoice/index.tsx:151
 #, fuzzy
 msgid "Payment URL"
 msgstr "دفعة جديدة"
@@ -536,7 +538,7 @@ msgstr ""
 msgid "Please input 16 digits origin card number "
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
-#: src/components/NewInvoice/index.tsx:138
+#: src/components/NewInvoice/index.tsx:160
 msgid "Please input description, max length is 30"
 msgstr ""
 
@@ -545,7 +547,7 @@ msgstr ""
 msgid "please input number"
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
-#: src/components/NewInvoice/index.tsx:94
+#: src/components/NewInvoice/index.tsx:95
 msgid "Please input price"
 msgstr ""
 
@@ -554,12 +556,12 @@ msgstr ""
 msgid "Please input Tracking code "
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
-#: src/containers/KYC/index.tsx:204
+#: src/containers/KYC/index.tsx:205
 #, fuzzy
 msgid "Please input your 16 digits card number "
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
-#: src/containers/KYC/index.tsx:212
+#: src/containers/KYC/index.tsx:213
 #, fuzzy
 msgid "Please input your address"
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
@@ -569,17 +571,17 @@ msgstr "رجاء أدخل بريد إلكتروني عنوان"
 msgid "Please input your Email"
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
-#: src/containers/KYC/index.tsx:128
+#: src/containers/KYC/index.tsx:129
 #, fuzzy
 msgid "Please input your first name"
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
-#: src/containers/KYC/index.tsx:137
+#: src/containers/KYC/index.tsx:138
 #, fuzzy
 msgid "Please input your last name"
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
 
-#: src/containers/KYC/index.tsx:196
+#: src/containers/KYC/index.tsx:197
 #, fuzzy
 msgid "Please input your national code "
 msgstr "رجاء أدخل بريد إلكتروني عنوان"
@@ -603,7 +605,7 @@ msgstr ""
 msgid "Please select a currency to deposit"
 msgstr "يرجى اختيار عملة الدفع"
 
-#: src/components/NewInvoice/index.tsx:124
+#: src/components/NewInvoice/index.tsx:146
 #, fuzzy
 msgid "Please select input currency"
 msgstr "يرجى اختيار عملة الدفع"
@@ -618,17 +620,17 @@ msgstr "يرجى اختيار عملة الدفع"
 msgid "Please select payment date and time"
 msgstr "يرجى اختيار عملة الدفع"
 
-#: src/containers/KYC/index.tsx:48
+#: src/containers/KYC/index.tsx:49
 #, fuzzy
 msgid "Please select your country"
 msgstr "يرجى اختيار عملة الدفع"
 
-#: src/containers/KYC/index.tsx:150
+#: src/containers/KYC/index.tsx:151
 #, fuzzy
 msgid "Please select your gender"
 msgstr "يرجى اختيار عملة الدفع"
 
-#: src/containers/KYC/index.tsx:221
+#: src/containers/KYC/index.tsx:222
 msgid "please upload your national id card"
 msgstr ""
 
@@ -639,12 +641,12 @@ msgstr ""
 #: src/components/LimitedPlaceOrder/index.tsx:158
 #: src/components/LimitedPlaceOrder/index.tsx:177
 #: src/components/MarketTrades/index.tsx:70
-#: src/components/NewInvoice/index.tsx:104
+#: src/components/NewInvoice/index.tsx:126
 #: src/components/OrderBook/index.tsx:120
 msgid "Price"
 msgstr ""
 
-#: src/components/NewInvoice/index.tsx:121
+#: src/components/NewInvoice/index.tsx:143
 msgid "Price unit"
 msgstr ""
 
@@ -695,7 +697,7 @@ msgid "Service URL"
 msgstr ""
 
 #: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:32
-#: src/containers/Dashboard/index.tsx:84
+#: src/containers/Dashboard/index.tsx:73
 msgid "Settle"
 msgstr ""
 
@@ -732,7 +734,7 @@ msgstr ""
 msgid "sth"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:244
+#: src/containers/KYC/index.tsx:245
 msgid "Submit"
 msgstr "إرسال"
 
@@ -859,6 +861,10 @@ msgstr ""
 msgid "Verify email"
 msgstr ""
 
+#: src/components/NewInvoice/index.tsx:114
+msgid "Verify your account now"
+msgstr ""
+
 #: src/components/UserStatusGuide/index.tsx:41
 #, fuzzy
 msgid "Verify your email address"
@@ -872,7 +878,7 @@ msgstr ""
 msgid "waiting"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:252
+#: src/containers/KYC/index.tsx:253
 msgid "we will inform you about the progress in your profile page"
 msgstr ""
 
@@ -880,15 +886,15 @@ msgstr ""
 msgid "You are a member"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:57
-msgid "You can now create becopay invoices. but your account must be verified to withdraw your balance. please contact us for verification."
+#: src/components/NewInvoice/index.tsx:120
+msgid "You can now create becopay invoices. but your account must be verified to withdraw your balance."
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:222
+#: src/containers/Dashboard/index.tsx:211
 msgid "You don't have enough permission to view this area"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:96
+#: src/containers/KYC/index.tsx:97
 msgid "Your  {type} image uploaded to our servers, you can change it any time before our review"
 msgstr ""
 
@@ -904,12 +910,12 @@ msgstr ""
 msgid "Your API key copied to clipboard successfully"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:138 src/containers/Deposit/index.tsx:36
+#: src/containers/Dashboard/index.tsx:127 src/containers/Deposit/index.tsx:36
 #: src/containers/Exchange/index.tsx:123
 msgid "Your balance"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:251
+#: src/containers/KYC/index.tsx:252
 msgid "your information submitted successfully"
 msgstr ""
 

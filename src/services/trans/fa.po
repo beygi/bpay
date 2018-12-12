@@ -64,7 +64,7 @@ msgstr "اضافه کردن گرون"
 msgid "add new group"
 msgstr "اضافه کردن گروه جدید"
 
-#: src/containers/KYC/index.tsx:210
+#: src/containers/KYC/index.tsx:211
 msgid "Address"
 msgstr "آدرس پستی"
 
@@ -99,11 +99,11 @@ msgstr "بالانس"
 msgid "‌Balance"
 msgstr "بالانس"
 
-#: src/containers/KYC/index.tsx:202
+#: src/containers/KYC/index.tsx:203
 msgid "Bank card number"
 msgstr "شماره کارت بانکی"
 
-#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:115
+#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:116
 msgid "Before you start"
 msgstr "قبل از اینکه شروع کنید"
 
@@ -136,7 +136,7 @@ msgstr "مبلغ تسویه"
 msgid "Checkout Symbol"
 msgstr "نماد تسویه"
 
-#: src/components/NewInvoice/index.tsx:70
+#: src/components/NewInvoice/index.tsx:71
 msgid "click to open gateway"
 msgstr "برای باز شدن درگاه کلیک کنید"
 
@@ -169,7 +169,7 @@ msgstr "کپی کردن آدرس پرداخت"
 msgid "Count"
 msgstr "تعداد"
 
-#: src/components/NewInvoice/index.tsx:150
+#: src/components/NewInvoice/index.tsx:172
 msgid "Create"
 msgstr "ایجاد"
 
@@ -200,11 +200,11 @@ msgstr "تاریخ و زمان پرداخت"
 msgid "Deposit"
 msgstr "شارژ حساب"
 
-#: src/containers/Dashboard/index.tsx:148 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:137 src/containers/Deposit/index.tsx:53
 msgid "Deposit history"
 msgstr "تاریخچهٔ مبالغ واریزی"
 
-#: src/components/NewInvoice/index.tsx:135
+#: src/components/NewInvoice/index.tsx:157
 msgid "Description"
 msgstr "توضیحات"
 
@@ -252,7 +252,7 @@ msgstr "یورو"
 msgid "Example Image"
 msgstr "عکس نمونه"
 
-#: src/components/NewInvoice/index.tsx:142
+#: src/components/NewInvoice/index.tsx:164
 msgid "example: sell product #1233"
 msgstr "مثال: فروش محصول با کد ۱۲۳۳"
 
@@ -264,7 +264,7 @@ msgstr "خرید و فروش"
 msgid "failed"
 msgstr "ناموفق"
 
-#: src/components/NewInvoice/index.tsx:81
+#: src/components/NewInvoice/index.tsx:82
 msgid "Failed to create invoice"
 msgstr "عدم موفقیت در ایجاد فاکتور"
 
@@ -276,11 +276,11 @@ msgstr "عدم موفقیت در تسویه حساب فاکتورها"
 msgid "Fee Cash Desk"
 msgstr "میز حساب تعرفه ها"
 
-#: src/containers/KYC/index.tsx:154
+#: src/containers/KYC/index.tsx:155
 msgid "Female"
 msgstr "زن"
 
-#: src/containers/KYC/index.tsx:126
+#: src/containers/KYC/index.tsx:127
 msgid "First Name"
 msgstr "نام"
 
@@ -292,11 +292,11 @@ msgstr "صفحه اول"
 msgid "for more information about integrating your system with our gateway please visit our developrs area"
 msgstr "برای دریافت اطلاعات بیشتر در مورد چگونگی اتصال درگاه پرداخت ما به سرویس خودتان لطفا قسمت توسعه دهندگان را مطالعه کنید"
 
-#: src/containers/Dashboard/index.tsx:96
+#: src/containers/Dashboard/index.tsx:85
 msgid "Gateway information"
 msgstr "اطلاعات درگاه پرداخت"
 
-#: src/containers/KYC/index.tsx:146
+#: src/containers/KYC/index.tsx:147
 msgid "Gender"
 msgstr "جنسیت"
 
@@ -333,7 +333,7 @@ msgstr "مخزن گرم"
 msgid "ID"
 msgstr "شناسه"
 
-#: src/containers/KYC/index.tsx:94
+#: src/containers/KYC/index.tsx:95
 msgid "Image uploaded successfully"
 msgstr "تصویر با موفقیت بارگذاری شد"
 
@@ -351,10 +351,11 @@ msgstr "ریال ایران"
 
 #: src/components/DashboardMenu/adminMenu.tsx:26
 #: src/components/DashboardMenu/menu.tsx:58
+#: src/components/DashboardMenu/menu.tsx:88
 msgid "KYC"
 msgstr "اصالت مشتریان"
 
-#: src/containers/KYC/index.tsx:117
+#: src/containers/KYC/index.tsx:118
 msgid "KYC stands for (Know Your Customer) it is the process of a business. <br> verifying and identifying the identity of its clients.It is required because the KYC its used to refer to the bank and anti-money laundering regulations."
 msgstr "تایید اصالت مشتری بخشی جدایی ناپذیر از روند ارائه این نوع خدمات است. <br> بررسی و تایید هویت مشتریان به دلیل وجود قوانین پولشویی و قوانین بانکی لازمهٔ استفاده از این وب سایت است."
 
@@ -362,7 +363,7 @@ msgstr "تایید اصالت مشتری بخشی جدایی ناپذیر از �
 msgid "Last login:"
 msgstr "آخرین ورود:"
 
-#: src/containers/KYC/index.tsx:135
+#: src/containers/KYC/index.tsx:136
 msgid "Last Name"
 msgstr "نام خانوادگی"
 
@@ -378,7 +379,7 @@ msgstr "معاملهٔ محدود"
 msgid "Litecoin"
 msgstr "لایت کوین"
 
-#: src/containers/Dashboard/index.tsx:143 src/containers/Deposit/index.tsx:39
+#: src/containers/Dashboard/index.tsx:132 src/containers/Deposit/index.tsx:39
 msgid "Live prices"
 msgstr "قیمت زنده"
 
@@ -404,7 +405,7 @@ msgstr "خروج"
 msgid "lorem ipsum"
 msgstr "متن تست"
 
-#: src/containers/KYC/index.tsx:153
+#: src/containers/KYC/index.tsx:154
 msgid "Male"
 msgstr "مرد"
 
@@ -421,11 +422,11 @@ msgstr "اصلی"
 msgid "Mobile"
 msgstr "موبایل"
 
-#: src/containers/KYC/index.tsx:194
+#: src/containers/KYC/index.tsx:195
 msgid "National code"
 msgstr "کد ملی"
 
-#: src/containers/KYC/index.tsx:219
+#: src/containers/KYC/index.tsx:220
 msgid "National ID card"
 msgstr "کارت ملی"
 
@@ -433,11 +434,11 @@ msgstr "کارت ملی"
 msgid "network confirmations"
 msgstr "تاییدیه شبکه در دسترس خواهند بود"
 
-#: src/containers/Dashboard/index.tsx:91
+#: src/containers/Dashboard/index.tsx:80
 msgid "New Invoice"
 msgstr "فاکتور جدید"
 
-#: src/components/NewInvoice/index.tsx:69
+#: src/components/NewInvoice/index.tsx:70
 msgid "New Invoice Created"
 msgstr "فاکتور جدید با موفقیت ایجاد شد"
 
@@ -465,7 +466,7 @@ msgstr "بدون دسترسی"
 msgid "No Access"
 msgstr "شما به این قسمت دسترسی ندارید"
 
-#: src/components/NewInvoice/index.tsx:73
+#: src/components/NewInvoice/index.tsx:74
 msgid "Open gateway"
 msgstr "باز کردن درگاه"
 
@@ -522,6 +523,7 @@ msgid "Payer Symbol"
 msgstr "نماد پرداخت"
 
 #: src/components/Invoice/index.tsx:141 src/components/Invoice/index.tsx:146
+#: src/components/Invoice/index.tsx:151
 msgid "Payment URL"
 msgstr "آدرس پرداخت"
 
@@ -537,7 +539,7 @@ msgstr "لطفا شماره کارت ۱۶ رقمی مقصد را وارد کنی
 msgid "Please input 16 digits origin card number "
 msgstr "لطفا شماره کارت ۱۶ رقمی مبدا را وارد کنید "
 
-#: src/components/NewInvoice/index.tsx:138
+#: src/components/NewInvoice/index.tsx:160
 msgid "Please input description, max length is 30"
 msgstr "لطفا متن توضیحات را وارد کنید. حداکثر ۳۰ حرف"
 
@@ -545,7 +547,7 @@ msgstr "لطفا متن توضیحات را وارد کنید. حداکثر ۳۰
 msgid "please input number"
 msgstr "لطفا یک عدد وارد کنید"
 
-#: src/components/NewInvoice/index.tsx:94
+#: src/components/NewInvoice/index.tsx:95
 msgid "Please input price"
 msgstr "لطفا قیمت را وارد کنید"
 
@@ -553,11 +555,11 @@ msgstr "لطفا قیمت را وارد کنید"
 msgid "Please input Tracking code "
 msgstr "لطفا کد پیگیری سیستم بانکی را وارد کنید "
 
-#: src/containers/KYC/index.tsx:204
+#: src/containers/KYC/index.tsx:205
 msgid "Please input your 16 digits card number "
 msgstr "لطفا شماره کارت ۱۶ رقمی خودتان را وارد کنید "
 
-#: src/containers/KYC/index.tsx:212
+#: src/containers/KYC/index.tsx:213
 msgid "Please input your address"
 msgstr "لطفا آدرس خود را وارد کنید"
 
@@ -565,15 +567,15 @@ msgstr "لطفا آدرس خود را وارد کنید"
 msgid "Please input your Email"
 msgstr "لطفا آدرس ایمیل تان را وارد کنید"
 
-#: src/containers/KYC/index.tsx:128
+#: src/containers/KYC/index.tsx:129
 msgid "Please input your first name"
 msgstr "لطفا نام خود را وارد کنید"
 
-#: src/containers/KYC/index.tsx:137
+#: src/containers/KYC/index.tsx:138
 msgid "Please input your last name"
 msgstr "لطفا نام خانوادگی خود را وارد کنید"
 
-#: src/containers/KYC/index.tsx:196
+#: src/containers/KYC/index.tsx:197
 msgid "Please input your national code "
 msgstr "لطفا کد ملی خود را وارد کنید "
 
@@ -593,7 +595,7 @@ msgstr "لطفا راهنما های موجود در بخش امنیت را بخ
 msgid "Please select a currency to deposit"
 msgstr "لطفا ارز پرداختی را انتخاب کنید"
 
-#: src/components/NewInvoice/index.tsx:124
+#: src/components/NewInvoice/index.tsx:146
 msgid "Please select input currency"
 msgstr "لطفا ارز مرجع پرداخت را انتخاب کنید"
 
@@ -605,15 +607,15 @@ msgstr "لطفا مبلغ را وارد کنید"
 msgid "Please select payment date and time"
 msgstr "لطفا تاریخ و ساعت پرداخت را وارد کنید"
 
-#: src/containers/KYC/index.tsx:48
+#: src/containers/KYC/index.tsx:49
 msgid "Please select your country"
 msgstr "لطفا کشور خود را انتخاب کنید"
 
-#: src/containers/KYC/index.tsx:150
+#: src/containers/KYC/index.tsx:151
 msgid "Please select your gender"
 msgstr "لطفا جنسیت خود را مشخص کنید"
 
-#: src/containers/KYC/index.tsx:221
+#: src/containers/KYC/index.tsx:222
 msgid "please upload your national id card"
 msgstr "لطفا تصویر کارت ملی خود را بارگذاری کنید"
 
@@ -624,12 +626,12 @@ msgstr "صفحه قبل"
 #: src/components/LimitedPlaceOrder/index.tsx:158
 #: src/components/LimitedPlaceOrder/index.tsx:177
 #: src/components/MarketTrades/index.tsx:70
-#: src/components/NewInvoice/index.tsx:104
+#: src/components/NewInvoice/index.tsx:126
 #: src/components/OrderBook/index.tsx:120
 msgid "Price"
 msgstr "قیمت"
 
-#: src/components/NewInvoice/index.tsx:121
+#: src/components/NewInvoice/index.tsx:143
 msgid "Price unit"
 msgstr "واحد قیمت گذاری"
 
@@ -680,7 +682,7 @@ msgid "Service URL"
 msgstr "آدرس سرویس"
 
 #: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:32
-#: src/containers/Dashboard/index.tsx:84
+#: src/containers/Dashboard/index.tsx:73
 msgid "Settle"
 msgstr "تسویه"
 
@@ -717,7 +719,7 @@ msgstr "وضعیت"
 msgid "sth"
 msgstr "چیزی"
 
-#: src/containers/KYC/index.tsx:244
+#: src/containers/KYC/index.tsx:245
 msgid "Submit"
 msgstr "ارسال"
 
@@ -844,6 +846,10 @@ msgstr "تایید حساب کاربری"
 msgid "Verify email"
 msgstr "تایید ایمیل"
 
+#: src/components/NewInvoice/index.tsx:114
+msgid "Verify your account now"
+msgstr "تایید حساب کاربری"
+
 #: src/components/UserStatusGuide/index.tsx:41
 msgid "Verify your email address"
 msgstr "ایمیل تان را تایید کنید"
@@ -856,7 +862,7 @@ msgstr "مشاهده آدرس کیف پول"
 msgid "waiting"
 msgstr "در انتظار پرداخت"
 
-#: src/containers/KYC/index.tsx:252
+#: src/containers/KYC/index.tsx:253
 msgid "we will inform you about the progress in your profile page"
 msgstr "ما وضعیت را در صفحهٔ کاربری تان به اطلاع خواهیم رساند‍"
 
@@ -864,15 +870,15 @@ msgstr "ما وضعیت را در صفحهٔ کاربری تان به اطلاع
 msgid "You are a member"
 msgstr "شما اکنون یک کاربر هستید"
 
-#: src/containers/Dashboard/index.tsx:57
-msgid "You can now create becopay invoices. but your account must be verified to withdraw your balance. please contact us for verification."
-msgstr "شما می توانید فاکتور پرداخت بکوپی ایجاد کنید ولی برای تسویه حساب باید اطلاعات خود را تکمیل کنید. برای تکمیل حساب کاربری خود با ما تماس بگیرید."
+#: src/components/NewInvoice/index.tsx:120
+msgid "You can now create becopay invoices. but your account must be verified to withdraw your balance."
+msgstr "شما می توانید فاکتور پرداخت بکوپی ایجاد کنید ولی برای تسویه حساب باید اطلاعات خود را تکمیل کنید."
 
-#: src/containers/Dashboard/index.tsx:222
+#: src/containers/Dashboard/index.tsx:211
 msgid "You don't have enough permission to view this area"
 msgstr "شما دسترسی کافی برای مشاهده این قسمت را ندارید"
 
-#: src/containers/KYC/index.tsx:96
+#: src/containers/KYC/index.tsx:97
 msgid "Your  {type} image uploaded to our servers, you can change it any time before our review"
 msgstr "تصویر {type} شما با موفقیت به سرورهای ما ارسال شد، شما میتوانید پیش از بررسی ما آن را تغییر دهید"
 
@@ -888,12 +894,12 @@ msgstr "تنها حساب های کاربری تایید شده میتوانند
 msgid "Your API key copied to clipboard successfully"
 msgstr "کلید API شما با موفقیت کپی شد"
 
-#: src/containers/Dashboard/index.tsx:138 src/containers/Deposit/index.tsx:36
+#: src/containers/Dashboard/index.tsx:127 src/containers/Deposit/index.tsx:36
 #: src/containers/Exchange/index.tsx:123
 msgid "Your balance"
 msgstr "بالانس حساب شما"
 
-#: src/containers/KYC/index.tsx:251
+#: src/containers/KYC/index.tsx:252
 msgid "your information submitted successfully"
 msgstr "اطلاعات شما با موفقیت ارسال شد"
 
