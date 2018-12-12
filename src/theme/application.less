@@ -210,6 +210,13 @@
         
         background-color: lighten(@dark-block-color,5%) !important;
         box-shadow: none !important;
+        &:hover
+        {
+            background-color: lighten(@dark-block-color,15%) !important;
+            box-shadow: -1px 3px 5px -1px darken(@dark-block-color,5%) !important;
+        }
+        transition-property: background-color box-shadow;
+        transition-duration: 1s;
         
     }
     .live-price .coin-balance,.coin-balance,.deposit-item {
