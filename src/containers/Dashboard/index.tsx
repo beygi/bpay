@@ -59,29 +59,31 @@ all transactions will be done using bitcoin test network not real network.")}
             <Col md={24} >
                 <Block transparent noPadding>
                     {
-                        /* <Link to="/kyc">
-                        <Button
-                            size="large"
-                            icon="import"
-                            className="neat-btn" type="primary">
-                            {t.t("Verify your account now")}
-                        </Button>
-                    </Link> */}
+                        /*
+                    <Button
+                        href="https://becopay.com/fa/support/"
+                        target="_blank"
+                        size="large"
+                        icon="message"
+                        className="neat-btn" type="primary">
+                        {t.t("Contact us")}
+                    </Button>
+                    */}
                     <Alert
                         description={
-                            <Button
-                                href="https://becopay.com/fa/support/"
-                                target="_blank"
-                                size="large"
-                                icon="message"
-                                className="neat-btn" type="primary">
-                                {t.t("Contact us")}
-                            </Button>
+                            <Link to="/kyc">
+                                <Button
+                                    size="large"
+                                    icon="import"
+                                    className="neat-btn" type="primary">
+                                    {t.t("Verify your account now")}
+                                </Button>
+                            </Link>
                         }
                         message={
                             <div>
                                 {t.t("You can now create becopay invoices. but your account must be verified to withdraw your balance.")}
-                                {t.t(" Please contact us to verify your accout")}
+                                {/* t.t(" Please contact us to verify your accout") */}
                                 <br /><br />
                             </div>
                         } type="warning" showIcon />

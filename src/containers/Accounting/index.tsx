@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Row } from "antd";
 import * as React from "react";
+import GatewayInformation from "../../components/GatewayInformation";
 import Block from "../../components/Holder";
 import SettleUps from "../../components/SettleUps";
 import Unsettled from "../../components/Unsettled";
@@ -25,7 +26,7 @@ class AccountingContainer extends React.Component<IProps, IState> {
         if (userObject.hasRealmRole("merchant") || userObject.hasRealmRole("merchants_admin")) {
             return (
                 <Row gutter={8}>
-                    <Col md={7} >
+                    <Col md={8} >
                         <Row gutter={8}>
                             {userObject.hasRealmRole("merchants_admin") ?
                                 <Col md={24} >
@@ -35,9 +36,14 @@ class AccountingContainer extends React.Component<IProps, IState> {
                                 </Col>
                                 : null
                             }
+                            <Col md={24} >
+                                <Block>
+                                    <GatewayInformation />
+                                </Block>
+                            </Col>
                         </Row>
                     </Col>
-                    <Col md={17} >
+                    <Col md={16} >
                         <Row gutter={8}>
                             <Col md={24} >
                                 <SettleUps />

@@ -3,6 +3,7 @@ import { FormComponentProps } from "antd/lib/form";
 import * as React from "react";
 import { connect } from "react-redux";
 import Profile from "../../components/DashboardHeaderProfile";
+import GatewayInformation from "../../components/GatewayInformation";
 import Block from "../../components/Holder";
 import Uploader from "../../components/Uploader";
 import config from "../../config";
@@ -244,7 +245,6 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                     <FormItem label=" " colon={false} {...formItemLayout}>
                         <Button type="primary" htmlType="submit" size="large">{t.t("Submit")}</Button>
                     </FormItem>
-
                 </Form>
             </Block>;
         } else {
@@ -259,15 +259,12 @@ of its clients.It is required because the KYC its used to refer to the bank and 
 
         return (
             <Row gutter={8}>
-                <Col md={6} >
+                <Col md={8} >
                     <Block>
-                        <img src="https://imgplaceholder.com/600x400/transparent/ffffff?font-family=Roboto_Bold" alt="" />
-                    </Block>
-                    <Block>
-                        <img src="https://imgplaceholder.com/600x800/transparent/ffffff?font-family=Roboto_Bold" alt="" />
+                        <GatewayInformation />
                     </Block>
                 </Col>
-                <Col md={18} >
+                <Col md={16} >
                     {block}
                 </Col>
             </Row >
