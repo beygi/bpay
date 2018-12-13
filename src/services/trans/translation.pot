@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 
-#: src/containers/Dashboard/index.tsx:79
+#: src/containers/Dashboard/index.tsx:84
 msgid " Please contact us to verify your accout"
 msgstr ""
 
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Account verification"
 msgstr ""
 
-#: src/components/DashboardMenu/menu.tsx:74
+#: src/components/DashboardMenu/menu.tsx:64
 msgid "Accounting"
 msgstr ""
 
@@ -149,7 +149,7 @@ msgstr ""
 msgid "Cold storage"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:73
+#: src/containers/Dashboard/index.tsx:78
 msgid "Contact us"
 msgstr ""
 
@@ -185,8 +185,6 @@ msgstr ""
 
 #: src/components/DashboardMenu/adminMenu.tsx:14
 #: src/components/DashboardMenu/menu.tsx:19
-#: src/components/DashboardMenu/menu.tsx:28
-#: src/components/DashboardMenu/menu.tsx:68
 msgid "Dashboard"
 msgstr ""
 
@@ -200,11 +198,11 @@ msgid "Date and time"
 msgstr ""
 
 #: src/components/Balance/index.tsx:72
-#: src/components/DashboardMenu/menu.tsx:46
+#: src/components/DashboardMenu/menu.tsx:41
 msgid "Deposit"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:173
+#: src/containers/Dashboard/index.tsx:178
 #: src/containers/Deposit/index.tsx:53
 msgid "Deposit history"
 msgstr ""
@@ -257,11 +255,15 @@ msgstr ""
 msgid "Example Image"
 msgstr ""
 
+#: src/components/PhoneValidate/index.tsx:60
+msgid "example: 9123456789"
+msgstr ""
+
 #: src/components/NewInvoice/index.tsx:144
 msgid "example: sell product #1233"
 msgstr ""
 
-#: src/components/DashboardMenu/menu.tsx:40
+#: src/components/DashboardMenu/menu.tsx:35
 msgid "Exchange"
 msgstr ""
 
@@ -271,6 +273,10 @@ msgstr ""
 
 #: src/components/NewInvoice/index.tsx:82
 msgid "Failed to create invoice"
+msgstr ""
+
+#: src/components/PhoneValidate/index.tsx:91
+msgid "Failed to send phone number"
 msgstr ""
 
 #: src/components/Settle/index.tsx:257
@@ -297,7 +303,7 @@ msgstr ""
 msgid "for more information about integrating your system with our gateway please visit our developrs area"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:121
+#: src/containers/Dashboard/index.tsx:126
 msgid "Gateway information"
 msgstr ""
 
@@ -357,8 +363,7 @@ msgid "IRR"
 msgstr ""
 
 #: src/components/DashboardMenu/adminMenu.tsx:26
-#: src/components/DashboardMenu/menu.tsx:58
-#: src/components/DashboardMenu/menu.tsx:88
+#: src/components/DashboardMenu/menu.tsx:53
 msgid "KYC"
 msgstr ""
 
@@ -386,7 +391,7 @@ msgstr ""
 msgid "Litecoin"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:168
+#: src/containers/Dashboard/index.tsx:173
 #: src/containers/Deposit/index.tsx:39
 msgid "Live prices"
 msgstr ""
@@ -431,6 +436,10 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
+#: src/components/PhoneValidate/index.tsx:55
+msgid "Mobile number"
+msgstr ""
+
 #: src/containers/KYC/index.tsx:195
 msgid "National code"
 msgstr ""
@@ -443,7 +452,7 @@ msgstr ""
 msgid "network confirmations"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:116
+#: src/containers/Dashboard/index.tsx:121
 msgid "New Invoice"
 msgstr ""
 
@@ -563,6 +572,10 @@ msgstr ""
 
 #: src/components/Settle/index.tsx:200
 msgid "Please input Tracking code "
+msgstr ""
+
+#: src/components/PhoneValidate/index.tsx:58
+msgid "Please input your 10 digits mobile number like example"
 msgstr ""
 
 #: src/containers/KYC/index.tsx:205
@@ -693,7 +706,7 @@ msgstr ""
 
 #: src/components/Unsettled/index.tsx:85
 #: src/containers/Accounting/index.tsx:32
-#: src/containers/Dashboard/index.tsx:108
+#: src/containers/Dashboard/index.tsx:113
 msgid "Settle"
 msgstr ""
 
@@ -731,6 +744,7 @@ msgstr ""
 msgid "sth"
 msgstr ""
 
+#: src/components/PhoneValidate/index.tsx:64
 #: src/containers/KYC/index.tsx:245
 msgid "Submit"
 msgstr ""
@@ -767,7 +781,7 @@ msgstr ""
 msgid "There is no data to display"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:46
+#: src/containers/Dashboard/index.tsx:51
 msgid "this is the sandbox enviroment , you can test your payments here, all transactions will be done using bitcoin test network not real network."
 msgstr ""
 
@@ -835,6 +849,10 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
+#: src/containers/Dashboard/index.tsx:261
+msgid "validate your phone number"
+msgstr ""
+
 #: src/components/UserStatusGuide/index.tsx:48
 msgid "Validate yourself"
 msgstr ""
@@ -879,11 +897,11 @@ msgstr ""
 msgid "You are a member"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:78
+#: src/containers/Dashboard/index.tsx:83
 msgid "You can now create becopay invoices. but your account must be verified to withdraw your balance."
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:247
+#: src/containers/Dashboard/index.tsx:252
 msgid "You don't have enough permission to view this area"
 msgstr ""
 
@@ -903,7 +921,7 @@ msgstr ""
 msgid "Your API key copied to clipboard successfully"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:163
+#: src/containers/Dashboard/index.tsx:168
 #: src/containers/Deposit/index.tsx:36
 #: src/containers/Exchange/index.tsx:123
 msgid "Your balance"

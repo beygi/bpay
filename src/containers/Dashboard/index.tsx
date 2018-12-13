@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Alert, Button, Col, Icon, Row } from "antd";
+import { Alert, Button, Col, Icon, Modal, Row } from "antd";
 import * as React from "react";
 import { Link } from "react-router-dom";
 import Balance from "../../components/Balance";
@@ -22,6 +22,7 @@ import { IRootState } from "../../redux/reducers";
 import * as _ from "lodash";
 import { connect } from "react-redux";
 import GatewayInformation from "../../components/GatewayInformation";
+import PhoneValidate from "../../components/PhoneValidate";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
@@ -31,6 +32,8 @@ const userObject = USER.getInstance();
 interface IProps {
     /** current user token from redux. used for re-render in case of changing permission */
     token: string;
+    /** current user theme from redux */
+    theme: string;
 }
 
 interface IState {
@@ -248,6 +251,18 @@ all transactions will be done using bitcoin test network not real network.")}
                     <Col md={24} >
                         <Block><h3>{t.t("You don't have enough permission to view this area")}</h3></Block>
                     </Col>
+                    <Modal
+                        className={`phone-modal ${this.props.theme}`}
+                        maskClosable
+                        visible={true}
+                        destroyOnClose
+                        footer={null}
+                        width={600}
+                        title={t.t("validate your phone number")}
+                        zIndex={10}
+                    >
+                        <PhoneValidate />
+                    </Modal>
                 </Row>);
         }
 
@@ -258,6 +273,7 @@ all transactions will be done using bitcoin test network not real network.")}
 function mapStateToProps(state: IRootState) {
     return {
         token: state.app.user.token,
+        theme: state.app.user.theme,
     };
 }
 

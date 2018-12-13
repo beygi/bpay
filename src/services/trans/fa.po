@@ -12,7 +12,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: src/containers/Dashboard/index.tsx:79
+#: src/containers/Dashboard/index.tsx:84
 msgid " Please contact us to verify your accout"
 msgstr " لطفا برای تایید حساب کاربری تان با ما تماس بگیرید"
 
@@ -48,7 +48,7 @@ msgstr "اطلاعات حساب"
 msgid "Account verification"
 msgstr "نیاز به تایید حساب کاربری"
 
-#: src/components/DashboardMenu/menu.tsx:74
+#: src/components/DashboardMenu/menu.tsx:64
 msgid "Accounting"
 msgstr "حسابداری"
 
@@ -156,7 +156,7 @@ msgstr "سرد"
 msgid "Cold storage"
 msgstr "مخزن سرد"
 
-#: src/containers/Dashboard/index.tsx:73
+#: src/containers/Dashboard/index.tsx:78
 msgid "Contact us"
 msgstr "تماس با ما"
 
@@ -191,8 +191,6 @@ msgstr "بدهی کنونی"
 
 #: src/components/DashboardMenu/adminMenu.tsx:14
 #: src/components/DashboardMenu/menu.tsx:19
-#: src/components/DashboardMenu/menu.tsx:28
-#: src/components/DashboardMenu/menu.tsx:68
 msgid "Dashboard"
 msgstr "داشبورد"
 
@@ -204,11 +202,11 @@ msgstr "تاریخ"
 msgid "Date and time"
 msgstr "تاریخ و زمان پرداخت"
 
-#: src/components/Balance/index.tsx:72 src/components/DashboardMenu/menu.tsx:46
+#: src/components/Balance/index.tsx:72 src/components/DashboardMenu/menu.tsx:41
 msgid "Deposit"
 msgstr "شارژ حساب"
 
-#: src/containers/Dashboard/index.tsx:173 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:178 src/containers/Deposit/index.tsx:53
 msgid "Deposit history"
 msgstr "تاریخچهٔ مبالغ واریزی"
 
@@ -260,11 +258,15 @@ msgstr "یورو"
 msgid "Example Image"
 msgstr "عکس نمونه"
 
+#: src/components/PhoneValidate/index.tsx:60
+msgid "example: 9123456789"
+msgstr "نمونه: 9123456789"
+
 #: src/components/NewInvoice/index.tsx:144
 msgid "example: sell product #1233"
 msgstr "مثال: فروش محصول با کد ۱۲۳۳"
 
-#: src/components/DashboardMenu/menu.tsx:40
+#: src/components/DashboardMenu/menu.tsx:35
 msgid "Exchange"
 msgstr "خرید و فروش"
 
@@ -275,6 +277,10 @@ msgstr "ناموفق"
 #: src/components/NewInvoice/index.tsx:82
 msgid "Failed to create invoice"
 msgstr "عدم موفقیت در ایجاد فاکتور"
+
+#: src/components/PhoneValidate/index.tsx:91
+msgid "Failed to send phone number"
+msgstr "عدم موفقیت در ارسال شماره تلفن همراه"
 
 #: src/components/Settle/index.tsx:257
 msgid "Failed to settle invoices"
@@ -300,7 +306,7 @@ msgstr "صفحه اول"
 msgid "for more information about integrating your system with our gateway please visit our developrs area"
 msgstr "برای دریافت اطلاعات بیشتر در مورد چگونگی اتصال درگاه پرداخت ما به سرویس خودتان لطفا قسمت توسعه دهندگان را مطالعه کنید"
 
-#: src/containers/Dashboard/index.tsx:121
+#: src/containers/Dashboard/index.tsx:126
 msgid "Gateway information"
 msgstr "اطلاعات درگاه پرداخت"
 
@@ -358,8 +364,7 @@ msgid "IRR"
 msgstr "ریال ایران"
 
 #: src/components/DashboardMenu/adminMenu.tsx:26
-#: src/components/DashboardMenu/menu.tsx:58
-#: src/components/DashboardMenu/menu.tsx:88
+#: src/components/DashboardMenu/menu.tsx:53
 msgid "KYC"
 msgstr "اصالت مشتریان"
 
@@ -387,7 +392,7 @@ msgstr "معاملهٔ محدود"
 msgid "Litecoin"
 msgstr "لایت کوین"
 
-#: src/containers/Dashboard/index.tsx:168 src/containers/Deposit/index.tsx:39
+#: src/containers/Dashboard/index.tsx:173 src/containers/Deposit/index.tsx:39
 msgid "Live prices"
 msgstr "قیمت زنده"
 
@@ -430,6 +435,10 @@ msgstr "اصلی"
 msgid "Mobile"
 msgstr "موبایل"
 
+#: src/components/PhoneValidate/index.tsx:55
+msgid "Mobile number"
+msgstr "شمارهٔ تلفن همراه"
+
 #: src/containers/KYC/index.tsx:195
 msgid "National code"
 msgstr "کد ملی"
@@ -442,7 +451,7 @@ msgstr "کارت ملی"
 msgid "network confirmations"
 msgstr "تاییدیه شبکه در دسترس خواهند بود"
 
-#: src/containers/Dashboard/index.tsx:116
+#: src/containers/Dashboard/index.tsx:121
 msgid "New Invoice"
 msgstr "فاکتور جدید"
 
@@ -562,6 +571,10 @@ msgstr "لطفا قیمت را وارد کنید"
 #: src/components/Settle/index.tsx:200
 msgid "Please input Tracking code "
 msgstr "لطفا کد پیگیری سیستم بانکی را وارد کنید "
+
+#: src/components/PhoneValidate/index.tsx:58
+msgid "Please input your 10 digits mobile number like example"
+msgstr "لطفا شماره تلفن همراه تان را به شکل ۱۰ رقمی مطابق با نمونه وارد کنید"
 
 #: src/containers/KYC/index.tsx:205
 msgid "Please input your 16 digits card number "
@@ -690,7 +703,7 @@ msgid "Service URL"
 msgstr "آدرس سرویس"
 
 #: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:32
-#: src/containers/Dashboard/index.tsx:108
+#: src/containers/Dashboard/index.tsx:113
 msgid "Settle"
 msgstr "تسویه"
 
@@ -727,7 +740,7 @@ msgstr "وضعیت"
 msgid "sth"
 msgstr "چیزی"
 
-#: src/containers/KYC/index.tsx:245
+#: src/components/PhoneValidate/index.tsx:64 src/containers/KYC/index.tsx:245
 msgid "Submit"
 msgstr "ارسال"
 
@@ -763,7 +776,7 @@ msgstr "میز حساب مالیات"
 msgid "There is no data to display"
 msgstr "داده ای برای نمایش وجود ندارد"
 
-#: src/containers/Dashboard/index.tsx:46
+#: src/containers/Dashboard/index.tsx:51
 msgid "this is the sandbox enviroment , you can test your payments here, all transactions will be done using bitcoin test network not real network."
 msgstr "این محیط تنها برای آزمایش پرداخت توسط توسعه دهندگان ایجاد شده است. تمامی پرداخت ها در این محیط در بستر تست شبکه بلاکچین صورت میگیرد و رمز‌ارز واقعی تبادل نمیشود."
 
@@ -830,6 +843,10 @@ msgstr "درجهٔ کاربری:"
 msgid "Users"
 msgstr "کاربران"
 
+#: src/containers/Dashboard/index.tsx:261
+msgid "validate your phone number"
+msgstr "تایید شماره تلفن"
+
 #: src/components/UserStatusGuide/index.tsx:48
 msgid "Validate yourself"
 msgstr "تایید هویت"
@@ -874,11 +891,11 @@ msgstr "ما وضعیت را در صفحهٔ کاربری تان به اطلاع
 msgid "You are a member"
 msgstr "شما اکنون یک کاربر هستید"
 
-#: src/containers/Dashboard/index.tsx:78
+#: src/containers/Dashboard/index.tsx:83
 msgid "You can now create becopay invoices. but your account must be verified to withdraw your balance."
 msgstr "شما می توانید فاکتور پرداخت بکوپی ایجاد کنید ولی برای تسویه حساب باید اطلاعات خود را تکمیل کنید."
 
-#: src/containers/Dashboard/index.tsx:247
+#: src/containers/Dashboard/index.tsx:252
 msgid "You don't have enough permission to view this area"
 msgstr "شما دسترسی کافی برای مشاهده این قسمت را ندارید"
 
@@ -898,7 +915,7 @@ msgstr "تنها حساب های کاربری تایید شده میتوانند
 msgid "Your API key copied to clipboard successfully"
 msgstr "کلید API شما با موفقیت کپی شد"
 
-#: src/containers/Dashboard/index.tsx:163 src/containers/Deposit/index.tsx:36
+#: src/containers/Dashboard/index.tsx:168 src/containers/Deposit/index.tsx:36
 #: src/containers/Exchange/index.tsx:123
 msgid "Your balance"
 msgstr "بالانس حساب شما"
