@@ -26,6 +26,7 @@ interface IProps {
     path: any;
     logOut: () => void;
     isAdmin: boolean;
+    token: string;
 }
 
 interface IState {
@@ -49,7 +50,8 @@ class DashboardMenuComponent extends React.Component<IProps, IState> {
         }
         if (
             nextProps.path !== this.props.path ||
-            nextProps.isAdmin !== this.props.isAdmin
+            nextProps.isAdmin !== this.props.isAdmin ||
+            nextProps.token !== this.props.token
         ) {
             return true;
         }
@@ -93,6 +95,7 @@ function mapStateToProps(state: IRootState) {
     return {
         path: state.router.location.pathname,
         language: state.app.user.language,
+        token: state.app.user.token,
     };
 }
 

@@ -74,7 +74,7 @@ export default class USER {
                 code: "verified-merchant",
             });
         }
-        if (this.hasRealmRole("webapp_user")) {
+        if (this.hasRealmRole("webapp_verified_user")) {
             return ({
                 level: 2,
                 name: t.t("verified"),

@@ -20,6 +20,7 @@ import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 
 import * as _ from "lodash";
+import { connect } from "react-redux";
 import GatewayInformation from "../../components/GatewayInformation";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
@@ -28,6 +29,8 @@ import "./style.less";
 const userObject = USER.getInstance();
 
 interface IProps {
+    /** current user token from redux. used for re-render in case of changing permission */
+    token: string;
 }
 
 interface IState {
@@ -39,7 +42,6 @@ class DashboardContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
-
         const sandbox = (DEPLOY_TYPE === "sandbox") ?
             <Col md={24} >
                 <Block className="sandbox">
@@ -253,4 +255,10 @@ all transactions will be done using bitcoin test network not real network.")}
     }
 }
 
-export default DashboardContainer;
+function mapStateToProps(state: IRootState) {
+    return {
+        token: state.app.user.token,
+    };
+}
+
+export default connect(mapStateToProps)(DashboardContainer);

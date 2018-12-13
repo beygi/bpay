@@ -22,12 +22,7 @@ function getMenus() {
     };
     if (userObject.keycloak.hasRealmRole("webapp_user") || userObject.keycloak.hasRealmRole("webapp_admin")) {
         availableMenus = {
-            dashboard: {
-                icon: "dashboard",
-                path: "/dashboard",
-                text: t.t("Dashboard"),
-                visible: true,
-            },
+            ...availableMenus,
             // balance: {
             //     icon: "calculator",
             //     path: "/balance",
@@ -62,12 +57,7 @@ function getMenus() {
     }
     if (userObject.keycloak.hasRealmRole("merchant")) {
         availableMenus = {
-            dashboard: {
-                icon: "dashboard",
-                path: "/dashboard",
-                text: t.t("Dashboard"),
-                visible: true,
-            },
+            ...availableMenus,
             balance: {
                 icon: "calculator",
                 path: "/accounting",
