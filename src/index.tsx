@@ -89,6 +89,7 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
                 }
                 user.keycloak.loadUserProfile().then(() => {
                     store.dispatch(updateUser(getUserAttr()));
+                    user.getCurrent();
                 });
             });
         }, 60000);

@@ -12,10 +12,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: src/containers/Dashboard/index.tsx:79
-msgid " Please contact us to verify your accout"
-msgstr " لطفا برای تایید حساب کاربری تان با ما تماس بگیرید"
-
 #: src/components/Deposit/index.tsx:105
 msgid "{coin} Deposite address"
 msgstr "آدرس پرداخت {coin}"
@@ -48,7 +44,7 @@ msgstr "اطلاعات حساب"
 msgid "Account verification"
 msgstr "نیاز به تایید حساب کاربری"
 
-#: src/components/DashboardMenu/menu.tsx:74
+#: src/components/DashboardMenu/menu.tsx:64
 msgid "Accounting"
 msgstr "حسابداری"
 
@@ -68,7 +64,7 @@ msgstr "اضافه کردن گرون"
 msgid "add new group"
 msgstr "اضافه کردن گروه جدید"
 
-#: src/containers/KYC/index.tsx:211
+#: src/containers/KYC/index.tsx:218
 msgid "Address"
 msgstr "آدرس پستی"
 
@@ -95,19 +91,19 @@ msgstr "کلید API"
 msgid "Available"
 msgstr "در دسترس"
 
-#: src/components/Analysis/index.tsx:130
-msgid "Balance"
-msgstr "بالانس"
-
 #: src/components/Unsettled/index.tsx:69
 msgid "‌Balance"
 msgstr "بالانس"
 
-#: src/containers/KYC/index.tsx:203
+#: src/components/Analysis/index.tsx:130
+msgid "Balance"
+msgstr "بالانس"
+
+#: src/containers/KYC/index.tsx:210
 msgid "Bank card number"
 msgstr "شماره کارت بانکی"
 
-#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:116
+#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:123
 msgid "Before you start"
 msgstr "قبل از اینکه شروع کنید"
 
@@ -156,10 +152,6 @@ msgstr "سرد"
 msgid "Cold storage"
 msgstr "مخزن سرد"
 
-#: src/containers/Dashboard/index.tsx:73
-msgid "Contact us"
-msgstr "تماس با ما"
-
 #: src/components/Deposit/index.tsx:98
 #: src/components/GatewayInformation/index.tsx:76
 msgid "Copy"
@@ -191,8 +183,6 @@ msgstr "بدهی کنونی"
 
 #: src/components/DashboardMenu/adminMenu.tsx:14
 #: src/components/DashboardMenu/menu.tsx:19
-#: src/components/DashboardMenu/menu.tsx:28
-#: src/components/DashboardMenu/menu.tsx:68
 msgid "Dashboard"
 msgstr "داشبورد"
 
@@ -204,11 +194,11 @@ msgstr "تاریخ"
 msgid "Date and time"
 msgstr "تاریخ و زمان پرداخت"
 
-#: src/components/Balance/index.tsx:72 src/components/DashboardMenu/menu.tsx:46
+#: src/components/Balance/index.tsx:72 src/components/DashboardMenu/menu.tsx:41
 msgid "Deposit"
 msgstr "شارژ حساب"
 
-#: src/containers/Dashboard/index.tsx:173 src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:180 src/containers/Deposit/index.tsx:53
 msgid "Deposit history"
 msgstr "تاریخچهٔ مبالغ واریزی"
 
@@ -248,6 +238,10 @@ msgstr "ایمیل"
 msgid "Email:"
 msgstr "ایمیل:"
 
+#: src/containers/KYC/index.tsx:86
+msgid "Error in sending data"
+msgstr "خطا در ارسال اطلاعات"
+
 #: src/components/Transactions/index.tsx:22
 msgid "Ethereum"
 msgstr "اتریوم"
@@ -260,11 +254,19 @@ msgstr "یورو"
 msgid "Example Image"
 msgstr "عکس نمونه"
 
+#: src/components/PhoneValidate/index.tsx:68
+msgid "example: 43543"
+msgstr "نمونه: 43543"
+
+#: src/components/PhoneValidate/index.tsx:92
+msgid "example: 9123456789"
+msgstr "نمونه: 9123456789"
+
 #: src/components/NewInvoice/index.tsx:144
 msgid "example: sell product #1233"
 msgstr "مثال: فروش محصول با کد ۱۲۳۳"
 
-#: src/components/DashboardMenu/menu.tsx:40
+#: src/components/DashboardMenu/menu.tsx:35
 msgid "Exchange"
 msgstr "خرید و فروش"
 
@@ -276,6 +278,10 @@ msgstr "ناموفق"
 msgid "Failed to create invoice"
 msgstr "عدم موفقیت در ایجاد فاکتور"
 
+#: src/components/PhoneValidate/index.tsx:137
+msgid "Failed to send phone number"
+msgstr "عدم موفقیت در ارسال شماره تلفن همراه"
+
 #: src/components/Settle/index.tsx:257
 msgid "Failed to settle invoices"
 msgstr "عدم موفقیت در تسویه حساب فاکتورها"
@@ -284,11 +290,11 @@ msgstr "عدم موفقیت در تسویه حساب فاکتورها"
 msgid "Fee Cash Desk"
 msgstr "میز حساب تعرفه ها"
 
-#: src/containers/KYC/index.tsx:155
+#: src/containers/KYC/index.tsx:162
 msgid "Female"
 msgstr "زن"
 
-#: src/containers/KYC/index.tsx:127
+#: src/containers/KYC/index.tsx:134
 msgid "First Name"
 msgstr "نام"
 
@@ -300,11 +306,11 @@ msgstr "صفحه اول"
 msgid "for more information about integrating your system with our gateway please visit our developrs area"
 msgstr "برای دریافت اطلاعات بیشتر در مورد چگونگی اتصال درگاه پرداخت ما به سرویس خودتان لطفا قسمت توسعه دهندگان را مطالعه کنید"
 
-#: src/containers/Dashboard/index.tsx:121
+#: src/containers/Dashboard/index.tsx:128
 msgid "Gateway information"
 msgstr "اطلاعات درگاه پرداخت"
 
-#: src/containers/KYC/index.tsx:147
+#: src/containers/KYC/index.tsx:154
 msgid "Gender"
 msgstr "جنسیت"
 
@@ -341,7 +347,7 @@ msgstr "مخزن گرم"
 msgid "ID"
 msgstr "شناسه"
 
-#: src/containers/KYC/index.tsx:95
+#: src/containers/KYC/index.tsx:102
 msgid "Image uploaded successfully"
 msgstr "تصویر با موفقیت بارگذاری شد"
 
@@ -358,12 +364,12 @@ msgid "IRR"
 msgstr "ریال ایران"
 
 #: src/components/DashboardMenu/adminMenu.tsx:26
-#: src/components/DashboardMenu/menu.tsx:58
-#: src/components/DashboardMenu/menu.tsx:88
+#: src/components/DashboardMenu/menu.tsx:53
+#: src/components/DashboardMenu/menu.tsx:78
 msgid "KYC"
 msgstr "اصالت مشتریان"
 
-#: src/containers/KYC/index.tsx:118
+#: src/containers/KYC/index.tsx:125
 msgid "KYC stands for (Know Your Customer) it is the process of a business. <br> verifying and identifying the identity of its clients.It is required because the KYC its used to refer to the bank and anti-money laundering regulations."
 msgstr "تایید اصالت مشتری بخشی جدایی ناپذیر از روند ارائه این نوع خدمات است. <br> بررسی و تایید هویت مشتریان به دلیل وجود قوانین پولشویی و قوانین بانکی لازمهٔ استفاده از این وب سایت است."
 
@@ -371,7 +377,7 @@ msgstr "تایید اصالت مشتری بخشی جدایی ناپذیر از �
 msgid "Last login:"
 msgstr "آخرین ورود:"
 
-#: src/containers/KYC/index.tsx:136
+#: src/containers/KYC/index.tsx:143
 msgid "Last Name"
 msgstr "نام خانوادگی"
 
@@ -387,7 +393,7 @@ msgstr "معاملهٔ محدود"
 msgid "Litecoin"
 msgstr "لایت کوین"
 
-#: src/containers/Dashboard/index.tsx:168 src/containers/Deposit/index.tsx:39
+#: src/containers/Dashboard/index.tsx:175 src/containers/Deposit/index.tsx:39
 msgid "Live prices"
 msgstr "قیمت زنده"
 
@@ -413,7 +419,7 @@ msgstr "خروج"
 msgid "lorem ipsum"
 msgstr "متن تست"
 
-#: src/containers/KYC/index.tsx:154
+#: src/containers/KYC/index.tsx:161
 msgid "Male"
 msgstr "مرد"
 
@@ -430,11 +436,15 @@ msgstr "اصلی"
 msgid "Mobile"
 msgstr "موبایل"
 
-#: src/containers/KYC/index.tsx:195
+#: src/components/PhoneValidate/index.tsx:87
+msgid "Mobile number"
+msgstr "شمارهٔ تلفن همراه"
+
+#: src/containers/KYC/index.tsx:202
 msgid "National code"
 msgstr "کد ملی"
 
-#: src/containers/KYC/index.tsx:220
+#: src/containers/KYC/index.tsx:227
 msgid "National ID card"
 msgstr "کارت ملی"
 
@@ -442,7 +452,7 @@ msgstr "کارت ملی"
 msgid "network confirmations"
 msgstr "تاییدیه شبکه در دسترس خواهند بود"
 
-#: src/containers/Dashboard/index.tsx:116
+#: src/containers/Dashboard/index.tsx:123
 msgid "New Invoice"
 msgstr "فاکتور جدید"
 
@@ -466,11 +476,11 @@ msgstr "حالت شب: خاموش"
 msgid "Night mode: on"
 msgstr "حالت شب: روشن"
 
-#: src/lib/user/index.ts:96
+#: src/lib/user/index.ts:105
 msgid "no access"
 msgstr "بدون دسترسی"
 
-#: src/containers/Accounting/index.tsx:60
+#: src/containers/Accounting/index.tsx:66
 msgid "No Access"
 msgstr "شما به این قسمت دسترسی ندارید"
 
@@ -547,6 +557,10 @@ msgstr "لطفا شماره کارت ۱۶ رقمی مقصد را وارد کنی
 msgid "Please input 16 digits origin card number "
 msgstr "لطفا شماره کارت ۱۶ رقمی مبدا را وارد کنید "
 
+#: src/components/PhoneValidate/index.tsx:66
+msgid "Please input 5 digit verify code which is sent to your device"
+msgstr "لطفا کد تایید ۵ رقمی ارسال شده به تلفن همراه تان را وارد کنید."
+
 #: src/components/NewInvoice/index.tsx:140
 msgid "Please input description, max length is 30"
 msgstr "لطفا متن توضیحات را وارد کنید. حداکثر ۳۰ حرف"
@@ -563,11 +577,15 @@ msgstr "لطفا قیمت را وارد کنید"
 msgid "Please input Tracking code "
 msgstr "لطفا کد پیگیری سیستم بانکی را وارد کنید "
 
-#: src/containers/KYC/index.tsx:205
+#: src/components/PhoneValidate/index.tsx:90
+msgid "Please input your 10 digits mobile number like example"
+msgstr "لطفا شماره تلفن همراه تان را به شکل ۱۰ رقمی مطابق با نمونه وارد کنید"
+
+#: src/containers/KYC/index.tsx:212
 msgid "Please input your 16 digits card number "
 msgstr "لطفا شماره کارت ۱۶ رقمی خودتان را وارد کنید "
 
-#: src/containers/KYC/index.tsx:213
+#: src/containers/KYC/index.tsx:220
 msgid "Please input your address"
 msgstr "لطفا آدرس خود را وارد کنید"
 
@@ -575,15 +593,15 @@ msgstr "لطفا آدرس خود را وارد کنید"
 msgid "Please input your Email"
 msgstr "لطفا آدرس ایمیل تان را وارد کنید"
 
-#: src/containers/KYC/index.tsx:129
+#: src/containers/KYC/index.tsx:136
 msgid "Please input your first name"
 msgstr "لطفا نام خود را وارد کنید"
 
-#: src/containers/KYC/index.tsx:138
+#: src/containers/KYC/index.tsx:145
 msgid "Please input your last name"
 msgstr "لطفا نام خانوادگی خود را وارد کنید"
 
-#: src/containers/KYC/index.tsx:197
+#: src/containers/KYC/index.tsx:204
 msgid "Please input your national code "
 msgstr "لطفا کد ملی خود را وارد کنید "
 
@@ -615,15 +633,15 @@ msgstr "لطفا مبلغ را وارد کنید"
 msgid "Please select payment date and time"
 msgstr "لطفا تاریخ و ساعت پرداخت را وارد کنید"
 
-#: src/containers/KYC/index.tsx:49
+#: src/containers/KYC/index.tsx:50
 msgid "Please select your country"
 msgstr "لطفا کشور خود را انتخاب کنید"
 
-#: src/containers/KYC/index.tsx:151
+#: src/containers/KYC/index.tsx:158
 msgid "Please select your gender"
 msgstr "لطفا جنسیت خود را مشخص کنید"
 
-#: src/containers/KYC/index.tsx:222
+#: src/containers/KYC/index.tsx:229
 msgid "please upload your national id card"
 msgstr "لطفا تصویر کارت ملی خود را بارگذاری کنید"
 
@@ -689,8 +707,8 @@ msgstr "تنها"
 msgid "Service URL"
 msgstr "آدرس سرویس"
 
-#: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:32
-#: src/containers/Dashboard/index.tsx:108
+#: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:33
+#: src/containers/Dashboard/index.tsx:115
 msgid "Settle"
 msgstr "تسویه"
 
@@ -727,7 +745,7 @@ msgstr "وضعیت"
 msgid "sth"
 msgstr "چیزی"
 
-#: src/containers/KYC/index.tsx:245
+#: src/components/PhoneValidate/index.tsx:96 src/containers/KYC/index.tsx:251
 msgid "Submit"
 msgstr "ارسال"
 
@@ -763,7 +781,7 @@ msgstr "میز حساب مالیات"
 msgid "There is no data to display"
 msgstr "داده ای برای نمایش وجود ندارد"
 
-#: src/containers/Dashboard/index.tsx:46
+#: src/containers/Dashboard/index.tsx:51
 msgid "this is the sandbox enviroment , you can test your payments here, all transactions will be done using bitcoin test network not real network."
 msgstr "این محیط تنها برای آزمایش پرداخت توسط توسعه دهندگان ایجاد شده است. تمامی پرداخت ها در این محیط در بستر تست شبکه بلاکچین صورت میگیرد و رمز‌ارز واقعی تبادل نمیشود."
 
@@ -801,7 +819,7 @@ msgstr "معاملات"
 msgid "Transactions"
 msgstr "تراکنش ها"
 
-#: src/lib/user/index.ts:88
+#: src/lib/user/index.ts:97
 msgid "unverified"
 msgstr "تایید نشده"
 
@@ -830,6 +848,10 @@ msgstr "درجهٔ کاربری:"
 msgid "Users"
 msgstr "کاربران"
 
+#: src/containers/Dashboard/index.tsx:263
+msgid "Validate your phone number"
+msgstr "تایید شماره تلفن"
+
 #: src/components/UserStatusGuide/index.tsx:48
 msgid "Validate yourself"
 msgstr "تایید هویت"
@@ -838,13 +860,21 @@ msgstr "تایید هویت"
 msgid "Validating your documents"
 msgstr "بررسی و تایید مدارک"
 
-#: src/lib/user/index.ts:80
+#: src/components/PhoneValidate/index.tsx:63
+msgid "Verification code which is sent via SMS"
+msgstr "کد تایید پیامک شده"
+
+#: src/lib/user/index.ts:89
 msgid "verified"
 msgstr "تایید شده"
 
-#: src/lib/user/index.ts:73
+#: src/lib/user/index.ts:82
 msgid "verified merchant"
 msgstr "فروشندهٔ تایید شده"
+
+#: src/components/PhoneValidate/index.tsx:72
+msgid "Verify"
+msgstr "تایید"
 
 #: src/containers/Exchange/index.tsx:173
 msgid "Verify Account"
@@ -853,6 +883,10 @@ msgstr "تایید حساب کاربری"
 #: src/components/UserStatusGuide/index.tsx:41
 msgid "Verify email"
 msgstr "تایید ایمیل"
+
+#: src/containers/Dashboard/index.tsx:79
+msgid "Verify your account now"
+msgstr "تایید حساب کاربری"
 
 #: src/components/UserStatusGuide/index.tsx:41
 msgid "Verify your email address"
@@ -866,7 +900,7 @@ msgstr "مشاهده آدرس کیف پول"
 msgid "waiting"
 msgstr "در انتظار پرداخت"
 
-#: src/containers/KYC/index.tsx:253
+#: src/containers/KYC/index.tsx:260
 msgid "we will inform you about the progress in your profile page"
 msgstr "ما وضعیت را در صفحهٔ کاربری تان به اطلاع خواهیم رساند‍"
 
@@ -874,15 +908,15 @@ msgstr "ما وضعیت را در صفحهٔ کاربری تان به اطلاع
 msgid "You are a member"
 msgstr "شما اکنون یک کاربر هستید"
 
-#: src/containers/Dashboard/index.tsx:78
+#: src/containers/Dashboard/index.tsx:85
 msgid "You can now create becopay invoices. but your account must be verified to withdraw your balance."
 msgstr "شما می توانید فاکتور پرداخت بکوپی ایجاد کنید ولی برای تسویه حساب باید اطلاعات خود را تکمیل کنید."
 
-#: src/containers/Dashboard/index.tsx:247
+#: src/containers/Dashboard/index.tsx:254
 msgid "You don't have enough permission to view this area"
 msgstr "شما دسترسی کافی برای مشاهده این قسمت را ندارید"
 
-#: src/containers/KYC/index.tsx:97
+#: src/containers/KYC/index.tsx:104
 msgid "Your  {type} image uploaded to our servers, you can change it any time before our review"
 msgstr "تصویر {type} شما با موفقیت به سرورهای ما ارسال شد، شما میتوانید پیش از بررسی ما آن را تغییر دهید"
 
@@ -898,17 +932,20 @@ msgstr "تنها حساب های کاربری تایید شده میتوانند
 msgid "Your API key copied to clipboard successfully"
 msgstr "کلید API شما با موفقیت کپی شد"
 
-#: src/containers/Dashboard/index.tsx:163 src/containers/Deposit/index.tsx:36
+#: src/containers/Dashboard/index.tsx:170 src/containers/Deposit/index.tsx:36
 #: src/containers/Exchange/index.tsx:123
 msgid "Your balance"
 msgstr "بالانس حساب شما"
 
-#: src/containers/KYC/index.tsx:252
+#: src/containers/KYC/index.tsx:259
 msgid "your information submitted successfully"
 msgstr "اطلاعات شما با موفقیت ارسال شد"
 
-#~ msgid "Verify your account now"
-#~ msgstr "تایید حساب کاربری"
+#~ msgid " Please contact us to verify your accout"
+#~ msgstr " لطفا برای تایید حساب کاربری تان با ما تماس بگیرید"
+
+#~ msgid "Contact us"
+#~ msgstr "تماس با ما"
 
 #~ msgid "Please input your bank card number"
 #~ msgstr "لطفا شمارهٔ کارت بانکی خود را وارد کنید"

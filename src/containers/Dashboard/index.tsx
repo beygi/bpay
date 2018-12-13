@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Alert, Button, Col, Icon, Row } from "antd";
+import { Alert, Button, Col, Icon, Modal, Row } from "antd";
 import * as React from "react";
 import { Link } from "react-router-dom";
 import Balance from "../../components/Balance";
@@ -20,7 +20,9 @@ import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 
 import * as _ from "lodash";
+import { connect } from "react-redux";
 import GatewayInformation from "../../components/GatewayInformation";
+import PhoneValidate from "../../components/PhoneValidate";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
@@ -28,6 +30,10 @@ import "./style.less";
 const userObject = USER.getInstance();
 
 interface IProps {
+    /** current user token from redux. used for re-render in case of changing permission */
+    access: number;
+    /** current user theme from redux */
+    theme: string;
 }
 
 interface IState {
@@ -39,7 +45,6 @@ class DashboardContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
-
         const sandbox = (DEPLOY_TYPE === "sandbox") ?
             <Col md={24} >
                 <Block className="sandbox">
@@ -50,33 +55,35 @@ all transactions will be done using bitcoin test network not real network.")}
 
             : null;
 
-        const merchantWarning = (userObject.keycloak.hasRealmRole("merchant") && userObject.getLevel().level === 1) ?
+        const merchantWarning = (userObject.hasRealmRole("merchant") && userObject.getLevel().level === 1) ?
             <Col md={24} >
                 <Block transparent noPadding>
                     {
-                        /* <Link to="/kyc">
-                        <Button
-                            size="large"
-                            icon="import"
-                            className="neat-btn" type="primary">
-                            {t.t("Verify your account now")}
-                        </Button>
-                    </Link> */}
+                        /*
+                    <Button
+                        href="https://becopay.com/fa/support/"
+                        target="_blank"
+                        size="large"
+                        icon="message"
+                        className="neat-btn" type="primary">
+                        {t.t("Contact us")}
+                    </Button>
+                    */}
                     <Alert
                         description={
-                            <Button
-                                href="https://becopay.com/fa/support/"
-                                target="_blank"
-                                size="large"
-                                icon="message"
-                                className="neat-btn" type="primary">
-                                {t.t("Contact us")}
-                            </Button>
+                            <Link to="/kyc">
+                                <Button
+                                    size="large"
+                                    icon="import"
+                                    className="neat-btn" type="primary">
+                                    {t.t("Verify your account now")}
+                                </Button>
+                            </Link>
                         }
                         message={
                             <div>
                                 {t.t("You can now create becopay invoices. but your account must be verified to withdraw your balance.")}
-                                {t.t(" Please contact us to verify your accout")}
+                                {/* t.t(" Please contact us to verify your accout") */}
                                 <br /><br />
                             </div>
                         } type="warning" showIcon />
@@ -87,7 +94,7 @@ all transactions will be done using bitcoin test network not real network.")}
 
         const allBlocks = [];
 
-        if (userObject.keycloak.hasRealmRole("merchant") || userObject.keycloak.hasRealmRole("merchants_admin")) {
+        if (userObject.hasRealmRole("merchant") || userObject.hasRealmRole("merchants_admin")) {
             allBlocks.push(
                 <Row key="merchant" gutter={8}>
                     {sandbox}
@@ -103,7 +110,7 @@ all transactions will be done using bitcoin test network not real network.")}
                                     <GoogleAuth />
                                 </Block>
                             </Col> */}
-                            {userObject.keycloak.hasRealmRole("merchants_admin") ?
+                            {userObject.hasRealmRole("merchants_admin") ?
                                 <Col md={24} >
                                     <Block title={t.t("Settle")} icon={<FontAwesomeIcon icon={["fas", "hand-holding-usd"]} />}>
                                         <Unsettled />
@@ -152,7 +159,7 @@ all transactions will be done using bitcoin test network not real network.")}
                 ;
         }
 
-        if (userObject.keycloak.hasRealmRole("webapp_user") || userObject.keycloak.hasRealmRole("webapp_admin")) {
+        if (userObject.hasRealmRole("webapp_user") || userObject.hasRealmRole("webapp_admin")) {
             allBlocks.push(
                 <Row key="webapp" gutter={8}>
                     {sandbox}
@@ -246,6 +253,18 @@ all transactions will be done using bitcoin test network not real network.")}
                     <Col md={24} >
                         <Block><h3>{t.t("You don't have enough permission to view this area")}</h3></Block>
                     </Col>
+                    <Modal
+                        className={`phone-modal ${this.props.theme}`}
+                        maskClosable
+                        visible={false}
+                        destroyOnClose
+                        footer={null}
+                        width={600}
+                        title={t.t("Validate your phone number")}
+                        zIndex={10}
+                    >
+                        <PhoneValidate />
+                    </Modal>
                 </Row>);
         }
 
@@ -253,4 +272,11 @@ all transactions will be done using bitcoin test network not real network.")}
     }
 }
 
-export default DashboardContainer;
+function mapStateToProps(state: IRootState) {
+    return {
+        access: state.app.user.realm_access.roles.length,
+        theme: state.app.user.theme,
+    };
+}
+
+export default connect(mapStateToProps)(DashboardContainer);

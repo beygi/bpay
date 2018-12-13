@@ -6,41 +6,53 @@
         "title": "kycinfo",
         "termsOfService": "www.b2mark.com/terms",
         "contact": {
-            "name": "b2mark",
-            "url": "http://www.b2mark.com",
-            "email": "info@b2mark.com"
+            "name": "becopay",
+            "url": "http://www.becopay.com",
+            "email": "info@becopay.com"
         },
         "license": {
-            "name": "b2mark",
+            "name": "becopay",
             "url": "www.b2mark.com/license"
         }
     },
     "host": "87.98.188.77:9092",
     "basePath": "/",
-    "schemes": ["https"],
     "tags": [{
-        "name": "country-rest-controller",
-        "description": "Country Rest Controller"
-    }, {
-        "name": "image",
-        "description": "Image"
-    }, {
-        "name": "kyc-rest-controller",
-        "description": "Kyc Rest Controller"
-    }, {
-        "name": "operation-handler",
-        "description": "Operation Handler"
-    }, {
-        "name": "web-mvc-endpoint-handler-mapping",
-        "description": "Web Mvc Endpoint Handler Mapping"
-    }],
+            "name": "country-rest-controller",
+            "description": "Country Rest Controller"
+        },
+        {
+            "name": "image",
+            "description": "Image"
+        },
+        {
+            "name": "kyc-rest-controller",
+            "description": "Kyc Rest Controller"
+        },
+        {
+            "name": "operation-handler",
+            "description": "Operation Handler"
+        },
+        {
+            "name": "web-mvc-endpoint-handler-mapping",
+            "description": "Web Mvc Endpoint Handler Mapping"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "paths": {
         "/actuator": {
             "get": {
-                "tags": ["web-mvc-endpoint-handler-mapping"],
+                "tags": [
+                    "web-mvc-endpoint-handler-mapping"
+                ],
                 "summary": "links",
                 "operationId": "linksUsingGET",
-                "produces": ["application/json", "application/vnd.spring-boot.actuator.v2+json"],
+                "produces": [
+                    "application/json",
+                    "application/vnd.spring-boot.actuator.v2+json"
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -69,10 +81,15 @@
         },
         "/actuator/health": {
             "get": {
-                "tags": ["operation-handler"],
+                "tags": [
+                    "operation-handler"
+                ],
                 "summary": "handle",
                 "operationId": "handleUsingGET",
-                "produces": ["application/json", "application/vnd.spring-boot.actuator.v2+json"],
+                "produces": [
+                    "application/json",
+                    "application/vnd.spring-boot.actuator.v2+json"
+                ],
                 "parameters": [{
                     "in": "body",
                     "name": "body",
@@ -107,10 +124,15 @@
         },
         "/actuator/info": {
             "get": {
-                "tags": ["operation-handler"],
+                "tags": [
+                    "operation-handler"
+                ],
                 "summary": "handle",
                 "operationId": "handleUsingGET_1",
-                "produces": ["application/json", "application/vnd.spring-boot.actuator.v2+json"],
+                "produces": [
+                    "application/json",
+                    "application/vnd.spring-boot.actuator.v2+json"
+                ],
                 "parameters": [{
                     "in": "body",
                     "name": "body",
@@ -145,10 +167,14 @@
         },
         "/country": {
             "get": {
-                "tags": ["country-rest-controller"],
+                "tags": [
+                    "country-rest-controller"
+                ],
                 "summary": "list of country in the world",
                 "operationId": "allcountriesUsingGET",
-                "produces": ["application/json"],
+                "produces": [
+                    "application/json"
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -174,10 +200,14 @@
         },
         "/country/{cid}": {
             "get": {
-                "tags": ["country-rest-controller"],
+                "tags": [
+                    "country-rest-controller"
+                ],
                 "summary": "get country with cid (Country Identification)",
                 "operationId": "getCountryByCidUsingGET",
-                "produces": ["application/json"],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [{
                     "name": "cid",
                     "in": "path",
@@ -213,23 +243,29 @@
         },
         "/img/{uid}/{imgtype}": {
             "get": {
-                "tags": ["image"],
+                "tags": [
+                    "image"
+                ],
                 "summary": "getKycImageByUidAndImgType",
                 "operationId": "getKycImageByUidAndImgTypeUsingGET",
-                "produces": ["*/*"],
+                "produces": [
+                    "*/*"
+                ],
                 "parameters": [{
-                    "name": "imgtype",
-                    "in": "path",
-                    "description": "imgtype",
-                    "required": true,
-                    "type": "string"
-                }, {
-                    "name": "uid",
-                    "in": "path",
-                    "description": "uid",
-                    "required": true,
-                    "type": "string"
-                }],
+                        "name": "imgtype",
+                        "in": "path",
+                        "description": "imgtype",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "uid",
+                        "in": "path",
+                        "description": "uid",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -252,41 +288,49 @@
         },
         "/kyc": {
             "get": {
-                "tags": ["kyc-rest-controller"],
+                "tags": [
+                    "kyc-rest-controller"
+                ],
                 "summary": "return kyc paginatio if not found 204 content not found",
                 "operationId": "getAllKycesUsingGET",
-                "produces": ["application/json"],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [{
-                    "name": "dir",
-                    "in": "query",
-                    "description": "dir",
-                    "required": false,
-                    "type": "string",
-                    "default": "asc"
-                }, {
-                    "name": "page",
-                    "in": "query",
-                    "description": "page",
-                    "required": false,
-                    "type": "integer",
-                    "default": 0,
-                    "format": "int32"
-                }, {
-                    "name": "size",
-                    "in": "query",
-                    "description": "size",
-                    "required": false,
-                    "type": "integer",
-                    "default": 10,
-                    "format": "int32"
-                }, {
-                    "name": "status",
-                    "in": "query",
-                    "description": "status",
-                    "required": false,
-                    "type": "string",
-                    "default": "all"
-                }],
+                        "name": "dir",
+                        "in": "query",
+                        "description": "dir",
+                        "required": false,
+                        "type": "string",
+                        "default": "asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "format": "int32"
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "size",
+                        "required": false,
+                        "type": "integer",
+                        "default": 10,
+                        "format": "int32"
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "status",
+                        "required": false,
+                        "type": "string",
+                        "default": "all"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -319,11 +363,17 @@
                 "deprecated": false
             },
             "post": {
-                "tags": ["kyc-rest-controller"],
+                "tags": [
+                    "kyc-rest-controller"
+                ],
                 "summary": "addKyc",
                 "operationId": "addKycUsingPOST",
-                "consumes": ["application/json"],
-                "produces": ["*/*"],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*"
+                ],
                 "parameters": [{
                     "in": "body",
                     "name": "input",
@@ -356,45 +406,57 @@
                 "deprecated": false
             },
             "put": {
-                "tags": ["kyc-rest-controller"],
+                "tags": [
+                    "kyc-rest-controller"
+                ],
                 "summary": "updateKyc",
                 "operationId": "updateKycUsingPUT",
-                "consumes": ["application/json"],
-                "produces": ["*/*"],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*"
+                ],
                 "parameters": [{
-                    "name": "authenticated",
-                    "in": "query",
-                    "required": false,
-                    "type": "boolean"
-                }, {
-                    "name": "authorities[0].authority",
-                    "in": "query",
-                    "required": false,
-                    "type": "string"
-                }, {
-                    "name": "credentials",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
-                    "name": "details",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
-                    "in": "body",
-                    "name": "kycInput",
-                    "description": "kycInput",
-                    "required": true,
-                    "schema": {
-                        "$ref": "#/definitions/Kycinfo"
+                        "name": "authenticated",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "authorities[0].authority",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "credentials",
+                        "in": "query",
+                        "required": false,
+                        "type": "object"
+                    },
+                    {
+                        "name": "details",
+                        "in": "query",
+                        "required": false,
+                        "type": "object"
+                    },
+                    {
+                        "in": "body",
+                        "name": "kycInput",
+                        "description": "kycInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Kycinfo"
+                        }
+                    },
+                    {
+                        "name": "principal",
+                        "in": "query",
+                        "required": false,
+                        "type": "object"
                     }
-                }, {
-                    "name": "principal",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -420,54 +482,68 @@
         },
         "/kyc/img": {
             "post": {
-                "tags": ["kyc-rest-controller"],
+                "tags": [
+                    "kyc-rest-controller"
+                ],
                 "summary": "addKycImage",
                 "operationId": "addKycImageUsingPOST",
-                "consumes": ["multipart/form-data"],
-                "produces": ["*/*"],
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "*/*"
+                ],
                 "parameters": [{
-                    "name": "authenticated",
-                    "in": "query",
-                    "required": false,
-                    "type": "boolean"
-                }, {
-                    "name": "authorities[0].authority",
-                    "in": "query",
-                    "required": false,
-                    "type": "string"
-                }, {
-                    "name": "credentials",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
-                    "name": "details",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
-                    "name": "file",
-                    "in": "formData",
-                    "description": "file",
-                    "required": true,
-                    "type": "file"
-                }, {
-                    "name": "flashAttributes",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
-                    "name": "imgtype",
-                    "in": "query",
-                    "description": "imgtype",
-                    "required": true,
-                    "type": "string"
-                }, {
-                    "name": "principal",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }],
+                        "name": "authenticated",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "authorities[0].authority",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "credentials",
+                        "in": "query",
+                        "required": false,
+                        "type": "object"
+                    },
+                    {
+                        "name": "details",
+                        "in": "query",
+                        "required": false,
+                        "type": "object"
+                    },
+                    {
+                        "name": "file",
+                        "in": "formData",
+                        "description": "file",
+                        "required": true,
+                        "type": "file"
+                    },
+                    {
+                        "name": "flashAttributes",
+                        "in": "query",
+                        "required": false,
+                        "type": "object"
+                    },
+                    {
+                        "name": "imgtype",
+                        "in": "query",
+                        "description": "imgtype",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "principal",
+                        "in": "query",
+                        "required": false,
+                        "type": "object"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -493,42 +569,52 @@
         },
         "/kyc/img/{imgtype}": {
             "get": {
-                "tags": ["kyc-rest-controller"],
+                "tags": [
+                    "kyc-rest-controller"
+                ],
                 "summary": "getKycImage",
                 "operationId": "getKycImageUsingGET",
-                "produces": ["*/*"],
+                "produces": [
+                    "*/*"
+                ],
                 "parameters": [{
-                    "name": "authenticated",
-                    "in": "query",
-                    "required": false,
-                    "type": "boolean"
-                }, {
-                    "name": "authorities[0].authority",
-                    "in": "query",
-                    "required": false,
-                    "type": "string"
-                }, {
-                    "name": "credentials",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
-                    "name": "details",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }, {
-                    "name": "imgtype",
-                    "in": "path",
-                    "description": "imgtype",
-                    "required": true,
-                    "type": "string"
-                }, {
-                    "name": "principal",
-                    "in": "query",
-                    "required": false,
-                    "type": "object"
-                }],
+                        "name": "authenticated",
+                        "in": "query",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "authorities[0].authority",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "credentials",
+                        "in": "query",
+                        "required": false,
+                        "type": "object"
+                    },
+                    {
+                        "name": "details",
+                        "in": "query",
+                        "required": false,
+                        "type": "object"
+                    },
+                    {
+                        "name": "imgtype",
+                        "in": "path",
+                        "description": "imgtype",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "principal",
+                        "in": "query",
+                        "required": false,
+                        "type": "object"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -549,50 +635,58 @@
                 "deprecated": false
             }
         },
-        "/kyc/status": {
+        "/kyc/merchant": {
             "get": {
-                "tags": ["kyc-rest-controller"],
-                "summary": "return status kyc paginatio if not found 204 content not found",
-                "operationId": "getAllKycStatusesUsingGET",
-                "produces": ["application/json"],
+                "tags": [
+                    "kyc-rest-controller"
+                ],
+                "summary": "return kyc paginatio if not found 204 content not found",
+                "operationId": "getAllMerchantKycesUsingGET",
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [{
-                    "name": "dir",
-                    "in": "query",
-                    "description": "dir",
-                    "required": false,
-                    "type": "string",
-                    "default": "asc"
-                }, {
-                    "name": "page",
-                    "in": "query",
-                    "description": "page",
-                    "required": false,
-                    "type": "integer",
-                    "default": 0,
-                    "format": "int32"
-                }, {
-                    "name": "size",
-                    "in": "query",
-                    "description": "size",
-                    "required": false,
-                    "type": "integer",
-                    "default": 10,
-                    "format": "int32"
-                }, {
-                    "name": "status",
-                    "in": "query",
-                    "description": "status",
-                    "required": false,
-                    "type": "string",
-                    "default": "all"
-                }],
+                        "name": "dir",
+                        "in": "query",
+                        "description": "dir",
+                        "required": false,
+                        "type": "string",
+                        "default": "asc"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "format": "int32"
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "size",
+                        "required": false,
+                        "type": "integer",
+                        "default": 10,
+                        "format": "int32"
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "status",
+                        "required": false,
+                        "type": "string",
+                        "default": "all"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/KycStatus"
+                                "$ref": "#/definitions/MerchantKyc"
                             }
                         }
                     },
@@ -601,8 +695,81 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/KycStatus"
+                                "$ref": "#/definitions/MerchantKyc"
                             }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            },
+            "post": {
+                "tags": [
+                    "kyc-rest-controller"
+                ],
+                "summary": "addMerchantKyc",
+                "operationId": "addMerchantKycUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "input",
+                    "description": "input",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/MerchantKyc"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/MerchantKyc"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/kyc/status": {
+            "get": {
+                "tags": [
+                    "kyc-rest-controller"
+                ],
+                "summary": "getStatus",
+                "operationId": "getStatusUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/KycStatus"
                         }
                     },
                     "401": {
@@ -620,10 +787,14 @@
         },
         "/kyc/status/{uid}": {
             "get": {
-                "tags": ["kyc-rest-controller"],
+                "tags": [
+                    "kyc-rest-controller"
+                ],
                 "summary": "list of status (know your customer) by uid (user identification)",
                 "operationId": "getKycStatusByUidUsingGET",
-                "produces": ["application/json"],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [{
                     "name": "uid",
                     "in": "path",
@@ -659,10 +830,14 @@
         },
         "/kyc/{uid}": {
             "get": {
-                "tags": ["kyc-rest-controller"],
+                "tags": [
+                    "kyc-rest-controller"
+                ],
                 "summary": "list of kyc (know your customer) by uid (user identification)",
                 "operationId": "getKycByUidUsingGET",
-                "produces": ["application/json"],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [{
                     "name": "uid",
                     "in": "path",
@@ -698,24 +873,32 @@
         },
         "/kyc/{uid}/{status}": {
             "put": {
-                "tags": ["kyc-rest-controller"],
-                "summary": "editKycStatus",
-                "operationId": "editKycStatusUsingPUT",
-                "consumes": ["application/json"],
-                "produces": ["*/*"],
+                "tags": [
+                    "kyc-rest-controller"
+                ],
+                "summary": "updateKycStatus",
+                "operationId": "updateKycStatusUsingPUT",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*"
+                ],
                 "parameters": [{
-                    "name": "status",
-                    "in": "path",
-                    "description": "status",
-                    "required": true,
-                    "type": "string"
-                }, {
-                    "name": "uid",
-                    "in": "path",
-                    "description": "uid",
-                    "required": true,
-                    "type": "string"
-                }],
+                        "name": "status",
+                        "in": "path",
+                        "description": "status",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "uid",
+                        "in": "path",
+                        "description": "uid",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -818,7 +1001,12 @@
             "properties": {
                 "status": {
                     "type": "string",
-                    "enum": ["pending", "accepted", "checking", "rejected"]
+                    "enum": [
+                        "pending",
+                        "accepted",
+                        "checking",
+                        "rejected"
+                    ]
                 },
                 "uid": {
                     "type": "string"
@@ -829,6 +1017,12 @@
         "Kycinfo": {
             "type": "object",
             "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "card": {
+                    "type": "string"
+                },
                 "country": {
                     "type": "string"
                 },
@@ -837,7 +1031,11 @@
                 },
                 "gender": {
                     "type": "string",
-                    "enum": ["male", "female", "other"]
+                    "enum": [
+                        "male",
+                        "female",
+                        "other"
+                    ]
                 },
                 "id": {
                     "type": "integer",
@@ -857,12 +1055,21 @@
                 },
                 "ltype": {
                     "type": "string",
-                    "enum": ["DL", "PS", "NI"]
+                    "enum": [
+                        "DL",
+                        "PS",
+                        "NI"
+                    ]
                 },
                 "status": {
                     "type": "string",
                     "readOnly": true,
-                    "enum": ["pending", "accepted", "checking", "rejected"]
+                    "enum": [
+                        "pending",
+                        "accepted",
+                        "checking",
+                        "rejected"
+                    ]
                 },
                 "uid": {
                     "type": "string",
@@ -883,12 +1090,44 @@
             },
             "title": "Link"
         },
-        "MapstringLink": {
+        "Map«string,Link»": {
             "type": "object",
-            "title": "MapstringLink",
+            "title": "Map«string,Link»",
             "additionalProperties": {
                 "$ref": "#/definitions/Link"
             }
+        },
+        "MerchantKyc": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "card": {
+                    "type": "string"
+                },
+                "cover": {
+                    "type": "string"
+                },
+                "fname": {
+                    "type": "string"
+                },
+                "gender": {
+                    "type": "string",
+                    "enum": [
+                        "male",
+                        "female",
+                        "other"
+                    ]
+                },
+                "lname": {
+                    "type": "string"
+                },
+                "nationalCode": {
+                    "type": "string"
+                }
+            },
+            "title": "MerchantKyc"
         },
         "Resource": {
             "type": "object",
@@ -1020,4 +1259,5 @@
             "title": "URL"
         }
     }
+
 }

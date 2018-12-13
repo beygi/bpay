@@ -3,6 +3,8 @@
  */
 
 import * as Keycloak from "keycloak-js";
+import * as _ from "lodash";
+import { updateUser } from "../../redux/app/actions";
 import { store } from "../../redux/store";
 import t from "../../services/trans/i18n";
 import Config from "./../../config";
@@ -28,6 +30,13 @@ export default class USER {
 
         // init keycloak with configurations from config file
         this.keycloak = Keycloak(Config.keycloakConfig);
+    }
+
+    public UpdateProfile(extra?: {}) {
+        this.keycloak.loadUserProfile().then(() => {
+            store.dispatch(updateUser({ ...this.getUserAttr(), ...extra }));
+            this.getCurrent();
+        });
     }
 
     public getCurrent() {
@@ -63,7 +72,7 @@ export default class USER {
     // }
 
     public hasRealmRole(name: string) {
-        return this.keycloak.hasRealmRole(name);
+        return this.getCurrent().realm_access.roles.includes(name);
     }
 
     public getLevel() {
@@ -74,7 +83,7 @@ export default class USER {
                 code: "verified-merchant",
             });
         }
-        if (this.hasRealmRole("webapp_user")) {
+        if (this.hasRealmRole("webapp_verified_user")) {
             return ({
                 level: 2,
                 name: t.t("verified"),
@@ -116,6 +125,19 @@ export default class USER {
 
     public destroy() {
         this.user = null;
+    }
+
+    private getUserAttr() {
+        const userData = _.pick(this.keycloak.tokenParsed, ["email", "given_name", "family_name", "realm_access", "auth_time"]);
+        return {
+            ...userData,
+            token: this.keycloak.token,
+            apiKey: _.get(this.keycloak, "profile.attributes.apikey[0]", ""),
+            mobile: _.get(this.keycloak, "profile.attributes.mobile[0]", ""),
+            // theme: _.get(this.keycloak, "profile.attributes.theme[0]", "light"),
+            // language: _.get(user.keycloak, "profile.attributes.locale[0]", ""),
+        };
+
     }
 
 }
