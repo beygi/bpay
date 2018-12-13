@@ -256,7 +256,7 @@ all transactions will be done using bitcoin test network not real network.")}
                     <Modal
                         className={`phone-modal ${this.props.theme}`}
                         maskClosable
-                        visible={true}
+                        visible={false}
                         destroyOnClose
                         footer={null}
                         width={600}

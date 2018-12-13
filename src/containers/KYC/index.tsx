@@ -1,4 +1,4 @@
-import { Alert, Button, Col, Form, Icon, Input, Layout, Modal, notification, Radio, Row, Select, Upload } from "antd";
+import { Alert, Button, Col, Form, Icon, Input, Layout, message, Modal, notification, Radio, Row, Select, Upload } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import * as React from "react";
 import { connect } from "react-redux";
@@ -78,11 +78,16 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 console.log("Received values of form: ", values);
-                newApi.addKycUsingPOST({ input: values }).then((response) => {
+                newApi.addMerchantKycUsingPOST({ input: values }).then((response) => {
                     this.setState({ submited: true });
                     console.log(response.body);
                 }).catch((error) => {
-                    console.log(error);
+                    notification.error({
+                        message: t.t("Error in sending data"),
+                        placement: "bottomRight",
+                        description: error + "",
+                        duration: 5,
+                    });
                 });
             }
         });
@@ -90,7 +95,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
 
     public setImage(file, type) {
         // success info  warning error
-        console.log(file);
+        // console.log(file);
         if (file[type] === true) {
             notification.success({
                 message: type + " " + t.t("Image uploaded successfully"),
@@ -220,9 +225,9 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                     {/*  Upload */}
                     <FormItem label={t.t("National ID card")}  {...formItemLayout} >
                         {getFieldDecorator("cover", {
-                            rules: [{ required: false, message: t.t("please upload your national id card") }],
+                            rules: [{ required: true, message: t.t("please upload your national id card") }],
                         })(
-                            <Uploader callback={this.setImage} example={nationalImg} action={`${config.apiUrl}/kyc/img`} name="file" data={{ imgtype: "cover" }} />,
+                            <Uploader callback={this.setImage} example={nationalImg} action={`https://87.98.188.77:9092/kyc/img`} name="file" data={{ imgtype: "cover" }} />,
                         )}
                     </FormItem>
 
@@ -241,20 +246,20 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                             <Uploader callback={this.setImage} example={selfieImg} action="http://87.98.188.77:9092/kyc/img" name="file" data={{ imgtype: "passid" }} />,
                         )}
                     </FormItem> */}
-
                     <FormItem label=" " colon={false} {...formItemLayout}>
                         <Button type="primary" htmlType="submit" size="large">{t.t("Submit")}</Button>
                     </FormItem>
                 </Form>
             </Block>;
         } else {
-            block = <Alert banner
-                message={t.t("your information submitted successfully")}
-                description={t.t("we will inform you about the progress in your profile page")}
-                type="success"
-                showIcon
-            />
-                ;
+            block =
+                <Alert
+                    className="kyc-submitte"
+                    message={t.t("your information submitted successfully")}
+                    description={t.t("we will inform you about the progress in your profile page")}
+                    type="success"
+                    showIcon
+                />;
         }
 
         return (

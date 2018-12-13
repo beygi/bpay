@@ -64,7 +64,7 @@ msgstr ""
 msgid "add new group"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:211
+#: src/containers/KYC/index.tsx:218
 msgid "Address"
 msgstr ""
 
@@ -91,19 +91,19 @@ msgstr ""
 msgid "Available"
 msgstr ""
 
-#: src/components/Analysis/index.tsx:130
-msgid "Balance"
-msgstr ""
-
 #: src/components/Unsettled/index.tsx:69
 msgid "‌Balance"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:203
+#: src/components/Analysis/index.tsx:130
+msgid "Balance"
+msgstr ""
+
+#: src/containers/KYC/index.tsx:210
 msgid "Bank card number"
 msgstr ""
 
-#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:116
+#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:123
 msgid "Before you start"
 msgstr ""
 
@@ -238,6 +238,10 @@ msgstr ""
 msgid "Email:"
 msgstr ""
 
+#: src/containers/KYC/index.tsx:86
+msgid "Error in sending data"
+msgstr ""
+
 #: src/components/Transactions/index.tsx:22
 msgid "Ethereum"
 msgstr ""
@@ -286,11 +290,11 @@ msgstr ""
 msgid "Fee Cash Desk"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:155
+#: src/containers/KYC/index.tsx:162
 msgid "Female"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:127
+#: src/containers/KYC/index.tsx:134
 msgid "First Name"
 msgstr ""
 
@@ -306,7 +310,7 @@ msgstr ""
 msgid "Gateway information"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:147
+#: src/containers/KYC/index.tsx:154
 msgid "Gender"
 msgstr ""
 
@@ -343,7 +347,7 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:95
+#: src/containers/KYC/index.tsx:102
 msgid "Image uploaded successfully"
 msgstr ""
 
@@ -361,10 +365,11 @@ msgstr ""
 
 #: src/components/DashboardMenu/adminMenu.tsx:26
 #: src/components/DashboardMenu/menu.tsx:53
+#: src/components/DashboardMenu/menu.tsx:78
 msgid "KYC"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:118
+#: src/containers/KYC/index.tsx:125
 msgid "KYC stands for (Know Your Customer) it is the process of a business. <br> verifying and identifying the identity of its clients.It is required because the KYC its used to refer to the bank and anti-money laundering regulations."
 msgstr ""
 
@@ -372,7 +377,7 @@ msgstr ""
 msgid "Last login:"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:136
+#: src/containers/KYC/index.tsx:143
 msgid "Last Name"
 msgstr ""
 
@@ -414,7 +419,7 @@ msgstr ""
 msgid "lorem ipsum"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:154
+#: src/containers/KYC/index.tsx:161
 msgid "Male"
 msgstr ""
 
@@ -435,11 +440,11 @@ msgstr ""
 msgid "Mobile number"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:195
+#: src/containers/KYC/index.tsx:202
 msgid "National code"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:220
+#: src/containers/KYC/index.tsx:227
 msgid "National ID card"
 msgstr ""
 
@@ -475,7 +480,7 @@ msgstr ""
 msgid "no access"
 msgstr ""
 
-#: src/containers/Accounting/index.tsx:60
+#: src/containers/Accounting/index.tsx:66
 msgid "No Access"
 msgstr ""
 
@@ -577,11 +582,11 @@ msgstr ""
 msgid "Please input your 10 digits mobile number like example"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:205
+#: src/containers/KYC/index.tsx:212
 msgid "Please input your 16 digits card number "
 msgstr ""
 
-#: src/containers/KYC/index.tsx:213
+#: src/containers/KYC/index.tsx:220
 msgid "Please input your address"
 msgstr ""
 
@@ -589,15 +594,15 @@ msgstr ""
 msgid "Please input your Email"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:129
+#: src/containers/KYC/index.tsx:136
 msgid "Please input your first name"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:138
+#: src/containers/KYC/index.tsx:145
 msgid "Please input your last name"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:197
+#: src/containers/KYC/index.tsx:204
 msgid "Please input your national code "
 msgstr ""
 
@@ -629,15 +634,15 @@ msgstr ""
 msgid "Please select payment date and time"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:49
+#: src/containers/KYC/index.tsx:50
 msgid "Please select your country"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:151
+#: src/containers/KYC/index.tsx:158
 msgid "Please select your gender"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:222
+#: src/containers/KYC/index.tsx:229
 msgid "please upload your national id card"
 msgstr ""
 
@@ -703,7 +708,7 @@ msgstr ""
 msgid "Service URL"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:32
+#: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:33
 #: src/containers/Dashboard/index.tsx:115
 msgid "Settle"
 msgstr ""
@@ -741,7 +746,7 @@ msgstr ""
 msgid "sth"
 msgstr ""
 
-#: src/components/PhoneValidate/index.tsx:96 src/containers/KYC/index.tsx:245
+#: src/components/PhoneValidate/index.tsx:96 src/containers/KYC/index.tsx:251
 msgid "Submit"
 msgstr ""
 
@@ -896,7 +901,7 @@ msgstr ""
 msgid "waiting"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:253
+#: src/containers/KYC/index.tsx:260
 msgid "we will inform you about the progress in your profile page"
 msgstr ""
 
@@ -912,7 +917,7 @@ msgstr ""
 msgid "You don't have enough permission to view this area"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:97
+#: src/containers/KYC/index.tsx:104
 msgid "Your  {type} image uploaded to our servers, you can change it any time before our review"
 msgstr ""
 
@@ -933,7 +938,7 @@ msgstr ""
 msgid "Your balance"
 msgstr ""
 
-#: src/containers/KYC/index.tsx:252
+#: src/containers/KYC/index.tsx:259
 msgid "your information submitted successfully"
 msgstr ""
 
