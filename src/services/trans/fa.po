@@ -95,12 +95,12 @@ msgstr "کلید API"
 msgid "Available"
 msgstr "در دسترس"
 
-#: src/components/Analysis/index.tsx:130
-msgid "Balance"
-msgstr "بالانس"
-
 #: src/components/Unsettled/index.tsx:69
 msgid "‌Balance"
+msgstr "بالانس"
+
+#: src/components/Analysis/index.tsx:130
+msgid "Balance"
 msgstr "بالانس"
 
 #: src/containers/KYC/index.tsx:203
@@ -258,7 +258,11 @@ msgstr "یورو"
 msgid "Example Image"
 msgstr "عکس نمونه"
 
-#: src/components/PhoneValidate/index.tsx:60
+#: src/components/PhoneValidate/index.tsx:69
+msgid "example: 43543"
+msgstr "نمونه: 43543"
+
+#: src/components/PhoneValidate/index.tsx:93
 msgid "example: 9123456789"
 msgstr "نمونه: 9123456789"
 
@@ -278,7 +282,7 @@ msgstr "ناموفق"
 msgid "Failed to create invoice"
 msgstr "عدم موفقیت در ایجاد فاکتور"
 
-#: src/components/PhoneValidate/index.tsx:91
+#: src/components/PhoneValidate/index.tsx:134
 msgid "Failed to send phone number"
 msgstr "عدم موفقیت در ارسال شماره تلفن همراه"
 
@@ -435,7 +439,7 @@ msgstr "اصلی"
 msgid "Mobile"
 msgstr "موبایل"
 
-#: src/components/PhoneValidate/index.tsx:55
+#: src/components/PhoneValidate/index.tsx:88
 msgid "Mobile number"
 msgstr "شمارهٔ تلفن همراه"
 
@@ -556,6 +560,10 @@ msgstr "لطفا شماره کارت ۱۶ رقمی مقصد را وارد کنی
 msgid "Please input 16 digits origin card number "
 msgstr "لطفا شماره کارت ۱۶ رقمی مبدا را وارد کنید "
 
+#: src/components/PhoneValidate/index.tsx:67
+msgid "Please input 5 digit verify code which is sent to your device"
+msgstr "لطفا کد تایید ۵ رقمی ارسال شده به تلفن همراه تان را وارد کنید."
+
 #: src/components/NewInvoice/index.tsx:140
 msgid "Please input description, max length is 30"
 msgstr "لطفا متن توضیحات را وارد کنید. حداکثر ۳۰ حرف"
@@ -572,7 +580,7 @@ msgstr "لطفا قیمت را وارد کنید"
 msgid "Please input Tracking code "
 msgstr "لطفا کد پیگیری سیستم بانکی را وارد کنید "
 
-#: src/components/PhoneValidate/index.tsx:58
+#: src/components/PhoneValidate/index.tsx:91
 msgid "Please input your 10 digits mobile number like example"
 msgstr "لطفا شماره تلفن همراه تان را به شکل ۱۰ رقمی مطابق با نمونه وارد کنید"
 
@@ -740,7 +748,7 @@ msgstr "وضعیت"
 msgid "sth"
 msgstr "چیزی"
 
-#: src/components/PhoneValidate/index.tsx:64 src/containers/KYC/index.tsx:245
+#: src/components/PhoneValidate/index.tsx:97 src/containers/KYC/index.tsx:245
 msgid "Submit"
 msgstr "ارسال"
 
@@ -844,7 +852,8 @@ msgid "Users"
 msgstr "کاربران"
 
 #: src/containers/Dashboard/index.tsx:261
-msgid "validate your phone number"
+#, fuzzy
+msgid "Validate your phone number"
 msgstr "تایید شماره تلفن"
 
 #: src/components/UserStatusGuide/index.tsx:48
@@ -855,6 +864,10 @@ msgstr "تایید هویت"
 msgid "Validating your documents"
 msgstr "بررسی و تایید مدارک"
 
+#: src/components/PhoneValidate/index.tsx:64
+msgid "Verification code which is sent via SMS"
+msgstr "کد تایید پیامک شده"
+
 #: src/lib/user/index.ts:80
 msgid "verified"
 msgstr "تایید شده"
@@ -862,6 +875,10 @@ msgstr "تایید شده"
 #: src/lib/user/index.ts:73
 msgid "verified merchant"
 msgstr "فروشندهٔ تایید شده"
+
+#: src/components/PhoneValidate/index.tsx:73
+msgid "Verify"
+msgstr "تایید"
 
 #: src/containers/Exchange/index.tsx:173
 msgid "Verify Account"

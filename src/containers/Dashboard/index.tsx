@@ -258,7 +258,7 @@ all transactions will be done using bitcoin test network not real network.")}
                         destroyOnClose
                         footer={null}
                         width={600}
-                        title={t.t("validate your phone number")}
+                        title={t.t("Validate your phone number")}
                         zIndex={10}
                     >
                         <PhoneValidate />

@@ -22,6 +22,8 @@ interface IProps extends FormComponentProps {
 interface IState {
     /** loading state,  spinner used this value to spinning */
     loading: boolean;
+    /** send or validate */
+    action?: string;
 }
 
 const FormItem = Form.Item;
@@ -35,10 +37,10 @@ class PhoneValidate extends React.Component<IProps, IState> {
     public userObject = USER.getInstance();
     constructor(props: IProps) {
         super(props);
-
         // initial state
         this.state = {
             loading: false,
+            action: "send",
         };
 
         // send token with all api requests
@@ -46,6 +48,37 @@ class PhoneValidate extends React.Component<IProps, IState> {
     }
 
     public render() {
+        if (this.state.action === "sends") {
+            return this.send_render();
+        }
+        return this.verify_render();
+    }
+
+    public verify_render() {
+        const { getFieldDecorator } = this.props.form;
+        return (
+            <div className="phone-validate-form">
+                <Spin spinning={this.state.loading}>
+                    <Form layout="vertical" onSubmit={this.handleVerify}>
+                        <FormItem
+                            label={t.t("Verification code which is sent via SMS")}
+                        >
+                            {getFieldDecorator("code", {
+                                rules: [{ required: true, pattern: /^\d{5}$/, message: t.t("Please input 5 digit verify code which is sent to your device") }],
+                            })(
+                                <Input className="ltr" placeholder={t.t("example: 43543")} />,
+                            )}
+                        </FormItem>
+                        <FormItem>
+                            <Button type="primary" htmlType="submit">{t.t("Verify")}</Button>
+                        </FormItem>
+                    </Form>
+                </Spin>
+            </div>
+        );
+    }
+
+    public send_render() {
         const { getFieldDecorator } = this.props.form;
         return (
             <div className="phone-validate-form">
@@ -67,6 +100,16 @@ class PhoneValidate extends React.Component<IProps, IState> {
                 </Spin>
             </div>
         );
+    }
+
+    /** handles form submit routine */
+    public handleVerify = (e) => {
+        e.preventDefault();
+        this.props.form.validateFieldsAndScroll((err, values) => {
+            if (!err) {
+                alert("verified");
+            }
+        });
     }
 
     /** handles form submit routine */
