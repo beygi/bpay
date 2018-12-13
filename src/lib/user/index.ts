@@ -32,9 +32,10 @@ export default class USER {
         this.keycloak = Keycloak(Config.keycloakConfig);
     }
 
-    public UpdateProfile() {
+    public UpdateProfile(extra?: {}) {
         this.keycloak.loadUserProfile().then(() => {
-            store.dispatch(updateUser(this.getUserAttr()));
+            store.dispatch(updateUser({ ...this.getUserAttr(), ...extra }));
+            this.getCurrent();
         });
     }
 
@@ -71,7 +72,7 @@ export default class USER {
     // }
 
     public hasRealmRole(name: string) {
-        return this.keycloak.hasRealmRole(name);
+        return this.getCurrent().realm_access.roles.includes(name);
     }
 
     public getLevel() {
@@ -133,7 +134,7 @@ export default class USER {
             token: this.keycloak.token,
             apiKey: _.get(this.keycloak, "profile.attributes.apikey[0]", ""),
             mobile: _.get(this.keycloak, "profile.attributes.mobile[0]", ""),
-            theme: _.get(this.keycloak, "profile.attributes.theme[0]", "light"),
+            // theme: _.get(this.keycloak, "profile.attributes.theme[0]", "light"),
             // language: _.get(user.keycloak, "profile.attributes.locale[0]", ""),
         };
 

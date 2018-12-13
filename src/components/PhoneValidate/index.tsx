@@ -2,8 +2,7 @@
  * @module Components/PhoneValidate
  */
 
-import { notification } from "antd";
-import { Button, Form, Input, Spin } from "antd";
+import { Button, Form, Input, message, notification, Spin } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import * as _ from "lodash";
 import * as React from "react";
@@ -107,7 +106,11 @@ class PhoneValidate extends React.Component<IProps, IState> {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
-                alert("verified");
+                const userProps = { ...this.userObject.getCurrent() };
+                if (!userProps.realm_access.roles.includes("merchant")) {
+                    userProps.realm_access.roles.push("merchant");
+                    this.userObject.UpdateProfile(userProps);
+                }
             }
         });
     }

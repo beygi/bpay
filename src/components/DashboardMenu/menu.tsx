@@ -20,7 +20,7 @@ function getMenus() {
             visible: true,
         },
     };
-    if (userObject.keycloak.hasRealmRole("webapp_user") || userObject.keycloak.hasRealmRole("webapp_admin")) {
+    if (userObject.hasRealmRole("webapp_user") || userObject.hasRealmRole("webapp_admin")) {
         availableMenus = {
             ...availableMenus,
             // balance: {
@@ -55,7 +55,7 @@ function getMenus() {
             },
         };
     }
-    if (userObject.keycloak.hasRealmRole("merchant")) {
+    if (userObject.hasRealmRole("merchant")) {
         availableMenus = {
             ...availableMenus,
             balance: {

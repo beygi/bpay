@@ -22,12 +22,12 @@ class AccountingContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
-        if (userObject.keycloak.hasRealmRole("merchant") || userObject.keycloak.hasRealmRole("merchants_admin")) {
+        if (userObject.hasRealmRole("merchant") || userObject.hasRealmRole("merchants_admin")) {
             return (
                 <Row gutter={8}>
                     <Col md={7} >
                         <Row gutter={8}>
-                            {userObject.keycloak.hasRealmRole("merchants_admin") ?
+                            {userObject.hasRealmRole("merchants_admin") ?
                                 <Col md={24} >
                                     <Block title={t.t("Settle")} icon={<FontAwesomeIcon icon={["fas", "hand-holding-usd"]} />}>
                                         <Unsettled />

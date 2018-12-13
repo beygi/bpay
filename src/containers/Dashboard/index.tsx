@@ -31,7 +31,7 @@ const userObject = USER.getInstance();
 
 interface IProps {
     /** current user token from redux. used for re-render in case of changing permission */
-    token: string;
+    access: number;
     /** current user theme from redux */
     theme: string;
 }
@@ -55,7 +55,7 @@ all transactions will be done using bitcoin test network not real network.")}
 
             : null;
 
-        const merchantWarning = (userObject.keycloak.hasRealmRole("merchant") && userObject.getLevel().level === 1) ?
+        const merchantWarning = (userObject.hasRealmRole("merchant") && userObject.getLevel().level === 1) ?
             <Col md={24} >
                 <Block transparent noPadding>
                     {
@@ -92,7 +92,7 @@ all transactions will be done using bitcoin test network not real network.")}
 
         const allBlocks = [];
 
-        if (userObject.keycloak.hasRealmRole("merchant") || userObject.keycloak.hasRealmRole("merchants_admin")) {
+        if (userObject.hasRealmRole("merchant") || userObject.hasRealmRole("merchants_admin")) {
             allBlocks.push(
                 <Row key="merchant" gutter={8}>
                     {sandbox}
@@ -108,7 +108,7 @@ all transactions will be done using bitcoin test network not real network.")}
                                     <GoogleAuth />
                                 </Block>
                             </Col> */}
-                            {userObject.keycloak.hasRealmRole("merchants_admin") ?
+                            {userObject.hasRealmRole("merchants_admin") ?
                                 <Col md={24} >
                                     <Block title={t.t("Settle")} icon={<FontAwesomeIcon icon={["fas", "hand-holding-usd"]} />}>
                                         <Unsettled />
@@ -157,7 +157,7 @@ all transactions will be done using bitcoin test network not real network.")}
                 ;
         }
 
-        if (userObject.keycloak.hasRealmRole("webapp_user") || userObject.keycloak.hasRealmRole("webapp_admin")) {
+        if (userObject.hasRealmRole("webapp_user") || userObject.hasRealmRole("webapp_admin")) {
             allBlocks.push(
                 <Row key="webapp" gutter={8}>
                     {sandbox}
@@ -272,7 +272,7 @@ all transactions will be done using bitcoin test network not real network.")}
 
 function mapStateToProps(state: IRootState) {
     return {
-        token: state.app.user.token,
+        access: state.app.user.realm_access.roles.length,
         theme: state.app.user.theme,
     };
 }
