@@ -20,14 +20,9 @@ function getMenus() {
             visible: true,
         },
     };
-    if (userObject.keycloak.hasRealmRole("webapp_user") || userObject.keycloak.hasRealmRole("webapp_admin")) {
+    if (userObject.hasRealmRole("webapp_user") || userObject.hasRealmRole("webapp_admin")) {
         availableMenus = {
-            dashboard: {
-                icon: "dashboard",
-                path: "/dashboard",
-                text: t.t("Dashboard"),
-                visible: true,
-            },
+            ...availableMenus,
             // balance: {
             //     icon: "calculator",
             //     path: "/balance",
@@ -60,14 +55,9 @@ function getMenus() {
             },
         };
     }
-    if (userObject.keycloak.hasRealmRole("merchant")) {
+    if (userObject.hasRealmRole("merchant")) {
         availableMenus = {
-            dashboard: {
-                icon: "dashboard",
-                path: "/dashboard",
-                text: t.t("Dashboard"),
-                visible: true,
-            },
+            ...availableMenus,
             balance: {
                 icon: "calculator",
                 path: "/accounting",
@@ -81,14 +71,14 @@ function getMenus() {
             //     visible: true,
             // },
         };
-        // if (userObject.getLevel().level === 1) {
-        //     availableMenus[`kyc`] = {
-        //         icon: "solution",
-        //         path: "/kyc",
-        //         text: t.t("KYC"),
-        //         visible: true,
-        //     };
-        // }
+        if (userObject.getLevel().level === 1) {
+            availableMenus[`kyc`] = {
+                icon: "solution",
+                path: "/kyc",
+                text: t.t("KYC"),
+                visible: true,
+            };
+        }
 
     }
     return availableMenus;
