@@ -512,6 +512,21 @@
     background-color: @palette-light;
 }
 
+
+.ant-alert-with-description.ant-alert-success {
+    background: @alert-success-background;
+    color: lighten(@primaryTextColor,10%);
+    border: none;
+
+    .ant-alert-message {
+        color: @secondaryTextColor;
+    }
+
+    .ant-alert-icon {
+        color: @alert-success-color ;
+    }
+}
+
 .ant-alert-with-description.ant-alert-info {
     background: @secondaryVariant9;
     color: @palette-light;
