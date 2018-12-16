@@ -16,6 +16,10 @@ msgstr ""
 msgid "{coin} Deposite address"
 msgstr "آدرس پرداخت {coin}"
 
+#: src/components/KYC/index.tsx:97
+msgid "{describe} image"
+msgstr "تصویر {describe}"
+
 #: src/components/LimitedPlaceOrder/index.tsx:103
 msgid "{type} request"
 msgstr "درخواست {type}"
@@ -64,7 +68,7 @@ msgstr "اضافه کردن گرون"
 msgid "add new group"
 msgstr "اضافه کردن گروه جدید"
 
-#: src/containers/KYC/index.tsx:218
+#: src/components/KYC-old/index.tsx:245 src/components/KYC/index.tsx:240
 msgid "Address"
 msgstr "آدرس پستی"
 
@@ -99,11 +103,12 @@ msgstr "بالانس"
 msgid "Balance"
 msgstr "بالانس"
 
-#: src/containers/KYC/index.tsx:210
+#: src/components/KYC-old/index.tsx:237 src/components/KYC/index.tsx:232
 msgid "Bank card number"
 msgstr "شماره کارت بانکی"
 
-#: src/components/Deposit/index.tsx:61 src/containers/KYC/index.tsx:123
+#: src/components/Deposit/index.tsx:61 src/components/KYC-old/index.tsx:150
+#: src/components/KYC/index.tsx:145
 msgid "Before you start"
 msgstr "قبل از اینکه شروع کنید"
 
@@ -168,6 +173,10 @@ msgstr "کپی کردن آدرس پرداخت"
 #: src/components/OrderBook/index.tsx:148 src/components/Unsettled/index.tsx:76
 msgid "Count"
 msgstr "تعداد"
+
+#: src/components/KYC-old/index.tsx:258
+msgid "cover"
+msgstr "تصویر کارت ملی"
 
 #: src/components/NewInvoice/index.tsx:152
 msgid "Create"
@@ -238,7 +247,11 @@ msgstr "ایمیل"
 msgid "Email:"
 msgstr "ایمیل:"
 
-#: src/containers/KYC/index.tsx:86
+#: src/components/KYC/index.tsx:127
+msgid "error in retrieving your status"
+msgstr "خطا در بازیابی اطلاعات مربوط به وضعیت شما"
+
+#: src/components/KYC-old/index.tsx:99 src/components/KYC/index.tsx:84
 msgid "Error in sending data"
 msgstr "خطا در ارسال اطلاعات"
 
@@ -250,7 +263,7 @@ msgstr "اتریوم"
 msgid "EUR"
 msgstr "یورو"
 
-#: src/components/Uploader/index.tsx:125
+#: src/components/Uploader/index.tsx:124
 msgid "Example Image"
 msgstr "عکس نمونه"
 
@@ -290,11 +303,11 @@ msgstr "عدم موفقیت در تسویه حساب فاکتورها"
 msgid "Fee Cash Desk"
 msgstr "میز حساب تعرفه ها"
 
-#: src/containers/KYC/index.tsx:162
+#: src/components/KYC-old/index.tsx:189 src/components/KYC/index.tsx:184
 msgid "Female"
 msgstr "زن"
 
-#: src/containers/KYC/index.tsx:134
+#: src/components/KYC-old/index.tsx:161 src/components/KYC/index.tsx:156
 msgid "First Name"
 msgstr "نام"
 
@@ -310,7 +323,7 @@ msgstr "برای دریافت اطلاعات بیشتر در مورد چگونگ
 msgid "Gateway information"
 msgstr "اطلاعات درگاه پرداخت"
 
-#: src/containers/KYC/index.tsx:154
+#: src/components/KYC-old/index.tsx:181 src/components/KYC/index.tsx:176
 msgid "Gender"
 msgstr "جنسیت"
 
@@ -347,7 +360,11 @@ msgstr "مخزن گرم"
 msgid "ID"
 msgstr "شناسه"
 
-#: src/containers/KYC/index.tsx:102
+#: src/components/Uploader/index.tsx:52
+msgid "Image must smaller than 10MB!"
+msgstr "تصویر ارسالی باید کوچک تر از ۱۰ مگابایت باشد"
+
+#: src/components/KYC-old/index.tsx:114
 msgid "Image uploaded successfully"
 msgstr "تصویر با موفقیت بارگذاری شد"
 
@@ -369,7 +386,7 @@ msgstr "ریال ایران"
 msgid "KYC"
 msgstr "اصالت مشتریان"
 
-#: src/containers/KYC/index.tsx:125
+#: src/components/KYC-old/index.tsx:152 src/components/KYC/index.tsx:147
 msgid "KYC stands for (Know Your Customer) it is the process of a business. <br> verifying and identifying the identity of its clients.It is required because the KYC its used to refer to the bank and anti-money laundering regulations."
 msgstr "تایید اصالت مشتری بخشی جدایی ناپذیر از روند ارائه این نوع خدمات است. <br> بررسی و تایید هویت مشتریان به دلیل وجود قوانین پولشویی و قوانین بانکی لازمهٔ استفاده از این وب سایت است."
 
@@ -377,7 +394,7 @@ msgstr "تایید اصالت مشتری بخشی جدایی ناپذیر از �
 msgid "Last login:"
 msgstr "آخرین ورود:"
 
-#: src/containers/KYC/index.tsx:143
+#: src/components/KYC-old/index.tsx:170 src/components/KYC/index.tsx:165
 msgid "Last Name"
 msgstr "نام خانوادگی"
 
@@ -419,7 +436,7 @@ msgstr "خروج"
 msgid "lorem ipsum"
 msgstr "متن تست"
 
-#: src/containers/KYC/index.tsx:161
+#: src/components/KYC-old/index.tsx:188 src/components/KYC/index.tsx:183
 msgid "Male"
 msgstr "مرد"
 
@@ -440,11 +457,12 @@ msgstr "موبایل"
 msgid "Mobile number"
 msgstr "شمارهٔ تلفن همراه"
 
-#: src/containers/KYC/index.tsx:202
+#: src/components/KYC-old/index.tsx:229 src/components/KYC/index.tsx:224
 msgid "National code"
 msgstr "کد ملی"
 
-#: src/containers/KYC/index.tsx:227
+#: src/components/KYC-old/index.tsx:254 src/components/KYC/index.tsx:249
+#: src/components/KYC/index.tsx:253
 msgid "National ID card"
 msgstr "کارت ملی"
 
@@ -520,11 +538,11 @@ msgstr "آدرس کیف پول {coin} ما:"
 msgid "Our {currency} deposit address copied to clipboard successfully"
 msgstr "آدرس پرداخت {currency} با موفقیت کپی شد"
 
-#: src/components/KYC/index.tsx:37
+#: src/containers/Admin/KYC/components/KYC/index.tsx:37
 msgid "Passport cover"
 msgstr "جلد گذرنامه"
 
-#: src/components/KYC/index.tsx:41
+#: src/containers/Admin/KYC/components/KYC/index.tsx:41
 msgid "Passport Personal Page"
 msgstr "صفحه مشخصات گذرنامه"
 
@@ -581,11 +599,11 @@ msgstr "لطفا کد پیگیری سیستم بانکی را وارد کنید 
 msgid "Please input your 10 digits mobile number like example"
 msgstr "لطفا شماره تلفن همراه تان را به شکل ۱۰ رقمی مطابق با نمونه وارد کنید"
 
-#: src/containers/KYC/index.tsx:212
+#: src/components/KYC-old/index.tsx:239 src/components/KYC/index.tsx:234
 msgid "Please input your 16 digits card number "
 msgstr "لطفا شماره کارت ۱۶ رقمی خودتان را وارد کنید "
 
-#: src/containers/KYC/index.tsx:220
+#: src/components/KYC-old/index.tsx:247 src/components/KYC/index.tsx:242
 msgid "Please input your address"
 msgstr "لطفا آدرس خود را وارد کنید"
 
@@ -593,15 +611,15 @@ msgstr "لطفا آدرس خود را وارد کنید"
 msgid "Please input your Email"
 msgstr "لطفا آدرس ایمیل تان را وارد کنید"
 
-#: src/containers/KYC/index.tsx:136
+#: src/components/KYC-old/index.tsx:163 src/components/KYC/index.tsx:158
 msgid "Please input your first name"
 msgstr "لطفا نام خود را وارد کنید"
 
-#: src/containers/KYC/index.tsx:145
+#: src/components/KYC-old/index.tsx:172 src/components/KYC/index.tsx:167
 msgid "Please input your last name"
 msgstr "لطفا نام خانوادگی خود را وارد کنید"
 
-#: src/containers/KYC/index.tsx:204
+#: src/components/KYC-old/index.tsx:231 src/components/KYC/index.tsx:226
 msgid "Please input your national code "
 msgstr "لطفا کد ملی خود را وارد کنید "
 
@@ -633,15 +651,15 @@ msgstr "لطفا مبلغ را وارد کنید"
 msgid "Please select payment date and time"
 msgstr "لطفا تاریخ و ساعت پرداخت را وارد کنید"
 
-#: src/containers/KYC/index.tsx:50
+#: src/components/KYC-old/index.tsx:50
 msgid "Please select your country"
 msgstr "لطفا کشور خود را انتخاب کنید"
 
-#: src/containers/KYC/index.tsx:158
+#: src/components/KYC-old/index.tsx:185 src/components/KYC/index.tsx:180
 msgid "Please select your gender"
 msgstr "لطفا جنسیت خود را مشخص کنید"
 
-#: src/containers/KYC/index.tsx:229
+#: src/components/KYC-old/index.tsx:256 src/components/KYC/index.tsx:251
 msgid "please upload your national id card"
 msgstr "لطفا تصویر کارت ملی خود را بارگذاری کنید"
 
@@ -690,7 +708,7 @@ msgstr "انتخاب فروشنده"
 msgid "Selected time is in the future"
 msgstr "زمان انتخاب شده مربوط به آینده است"
 
-#: src/components/KYC/index.tsx:45
+#: src/containers/Admin/KYC/components/KYC/index.tsx:45
 msgid "Selfie With ID And Note"
 msgstr "سلفی با شناسه و توضیحات"
 
@@ -745,7 +763,8 @@ msgstr "وضعیت"
 msgid "sth"
 msgstr "چیزی"
 
-#: src/components/PhoneValidate/index.tsx:96 src/containers/KYC/index.tsx:251
+#: src/components/KYC-old/index.tsx:278 src/components/KYC/index.tsx:273
+#: src/components/PhoneValidate/index.tsx:96
 msgid "Submit"
 msgstr "ارسال"
 
@@ -823,7 +842,7 @@ msgstr "تراکنش ها"
 msgid "unverified"
 msgstr "تایید نشده"
 
-#: src/components/Uploader/index.tsx:99
+#: src/components/Uploader/index.tsx:98
 #: src/components/UserStatusGuide/index.tsx:42
 msgid "Upload"
 msgstr "بارگذاری"
@@ -831,6 +850,14 @@ msgstr "بارگذاری"
 #: src/components/UserStatusGuide/index.tsx:42
 msgid "Upload your documents"
 msgstr "مستندات خود را بارگذاری کنید"
+
+#: src/components/KYC/index.tsx:97
+msgid "uploaded successfully"
+msgstr "با موفقیت بارگذاری شد"
+
+#: src/components/KYC/index.tsx:99
+msgid "uploaded to our servers, you can change it any time before our review"
+msgstr "با موفقیت به سرورهای ما ارسال شد، شما میتوانید پیش از بررسی ما آن را تغییر دهید"
 
 #: src/components/Transactions/index.tsx:22
 msgid "USD"
@@ -900,7 +927,12 @@ msgstr "مشاهده آدرس کیف پول"
 msgid "waiting"
 msgstr "در انتظار پرداخت"
 
-#: src/containers/KYC/index.tsx:260
+#: src/components/KYC/index.tsx:128
+msgid "we are unable to get your verification progress. please try again some time later"
+msgstr "ما در بارگذاری اطلاعات مربوط به تایید حساب کاربری شما به مشکل برخورده ایم. لطفا اندکی بعد مجددا تلاش کنید"
+
+#: src/components/KYC-old/index.tsx:133 src/components/KYC-old/index.tsx:286
+#: src/components/KYC/index.tsx:281
 msgid "we will inform you about the progress in your profile page"
 msgstr "ما وضعیت را در صفحهٔ کاربری تان به اطلاع خواهیم رساند‍"
 
@@ -912,11 +944,19 @@ msgstr "شما اکنون یک کاربر هستید"
 msgid "You can now create becopay invoices. but your account must be verified to withdraw your balance."
 msgstr "شما می توانید فاکتور پرداخت بکوپی ایجاد کنید ولی برای تسویه حساب باید اطلاعات خود را تکمیل کنید."
 
+#: src/components/Uploader/index.tsx:48
+msgid "You can only upload JPG or PNG file!"
+msgstr "شما تنها میتوانید تصاویر با فرمت JPG یا PNG را ارسال کنید"
+
 #: src/containers/Dashboard/index.tsx:254
 msgid "You don't have enough permission to view this area"
 msgstr "شما دسترسی کافی برای مشاهده این قسمت را ندارید"
 
-#: src/containers/KYC/index.tsx:104
+#: src/components/KYC/index.tsx:99
+msgid "Your  {describe} image"
+msgstr "تصویر {describe} شما"
+
+#: src/components/KYC-old/index.tsx:116
 msgid "Your  {type} image uploaded to our servers, you can change it any time before our review"
 msgstr "تصویر {type} شما با موفقیت به سرورهای ما ارسال شد، شما میتوانید پیش از بررسی ما آن را تغییر دهید"
 
@@ -937,9 +977,18 @@ msgstr "کلید API شما با موفقیت کپی شد"
 msgid "Your balance"
 msgstr "بالانس حساب شما"
 
-#: src/containers/KYC/index.tsx:259
+#: src/components/KYC/index.tsx:117
+msgid "your information already submitted"
+msgstr "اطلاعات شما پیش از این ارسال شده است"
+
+#: src/components/KYC-old/index.tsx:132 src/components/KYC-old/index.tsx:285
+#: src/components/KYC/index.tsx:280
 msgid "your information submitted successfully"
 msgstr "اطلاعات شما با موفقیت ارسال شد"
+
+#: src/components/KYC/index.tsx:118
+msgid "your varification is in progress and we will inform you about the progress in your profile page"
+msgstr "اطلاعات ارسالی شما در حال بررسی است. ما وضعیت را در صفحهٔ کاربری تان به اطلاع خواهیم رساند‍"
 
 #~ msgid " Please contact us to verify your accout"
 #~ msgstr " لطفا برای تایید حساب کاربری تان با ما تماس بگیرید"

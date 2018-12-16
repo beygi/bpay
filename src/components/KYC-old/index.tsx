@@ -4,7 +4,6 @@
 import { Alert, Button, Form, Icon, Input, notification, Radio, Spin } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import * as React from "react";
-import Block from "../../components/Holder";
 import Uploader from "../../components/Uploader";
 import config from "../../config";
 import API from "../../lib/api/kyc";
@@ -15,7 +14,11 @@ import "./style.less";
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
 
+// const coverImg = require("../../assets/images/cover.png");
+// const personalImg = require("../../assets/images/personal.png");
+// const selfieImg = require("../../assets/images/selfie.png");
 const nationalImg = require("../../assets/images/national.png");
+
 const { TextArea } = Input;
 
 interface IProps extends FormComponentProps {
@@ -23,9 +26,12 @@ interface IProps extends FormComponentProps {
 
 interface IState {
     cover: string;
+    passport: string;
+    passid: string;
     submited: boolean;
     loading: boolean;
     status: string;
+    countries?: [{ id: string, name: string }];
 }
 
 class KycComponent extends React.Component<IProps, IState> {
@@ -38,7 +44,10 @@ class KycComponent extends React.Component<IProps, IState> {
         this.setImage = this.setImage.bind(this);
         this.state = {
             cover: null,
+            passport: null,
+            passid: null,
             submited: false,
+            countries: [{ id: "none", name: t.t("Please select your country") }],
             loading: true,
             status: "unknown",
         };
@@ -50,15 +59,16 @@ class KycComponent extends React.Component<IProps, IState> {
         // this.getCountries();
         this.getStatus();
     }
+    public getCountries() {
+        this.api.allcountriesUsingGET({}).then((response) => {
+            console.log(response.body);
+            this.setState({ countries: response.body });
+        });
+    }
 
     public getStatus() {
         this.api.getStatusUsingGET({ $domain: config.apiUrl }).then((response) => {
-            console.log(response);
-            if (response.status === 204) {
-                this.setState({ loading: false, status: "unsubmitted" });
-            } else {
-                this.setState({ loading: false, status: response.body.status });
-            }
+            this.setState({ loading: false, status: response.body.status });
         }).catch((error) => {
             this.setState({ loading: false });
         });
@@ -71,13 +81,18 @@ class KycComponent extends React.Component<IProps, IState> {
             cover: {
                 value: this.state.cover,
             },
+            // passport: {
+            //     value: this.state.passport,
+            // },
+            // passid: {
+            //     value: this.state.passid,
+            // },
         });
-        this.setState({ loading: true });
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 console.log("Received values of form: ", values);
                 this.api.addMerchantKycUsingPOST({ input: values, $domain: config.apiUrl }).then((response) => {
-                    this.setState({ submited: true, loading: false });
+                    this.setState({ submited: true });
                     console.log(response.body);
                 }).catch((error) => {
                     notification.error({
@@ -92,11 +107,13 @@ class KycComponent extends React.Component<IProps, IState> {
     }
 
     public setImage(file, type, describe) {
+        // success info  warning error
+        // console.log(file);
         if (file[type] === true) {
             notification.success({
-                message: t.t("{describe} image").replace("{describe}", describe) + "  " + t.t("uploaded successfully"),
+                message: type + " " + t.t("Image uploaded successfully"),
                 placement: "bottomRight",
-                description: t.t("Your  {describe} image").replace("{describe}", describe) + "  " + t.t("uploaded to our servers, you can change it any time before our review"),
+                description: t.t("Your  {type} image uploaded to our servers, you can change it any time before our review").replace("{type}", type),
                 duration: 5,
             });
         }
@@ -106,27 +123,15 @@ class KycComponent extends React.Component<IProps, IState> {
     public render() {
         if (this.state.loading) {
             return (
-                <Block>
-                    <Spin spinning />
-                </Block>
+                <Spin spinning />
             );
         }
         if (this.state.status === "pending") {
             return (
                 <Alert
-                    message={t.t("your information already submitted")}
-                    description={t.t("your varification is in progress and we will inform you about the progress in your profile page")}
+                    message={t.t("your information submitted successfully")}
+                    description={t.t("we will inform you about the progress in your profile page")}
                     type="info"
-                    showIcon
-                />
-            );
-        }
-        if (this.state.status === "unknown") {
-            return (
-                <Alert
-                    message={t.t("error in retrieving your status")}
-                    description={t.t("we are unable to get your verification progress. please try again some time later")}
-                    type="error"
                     showIcon
                 />
             );
@@ -140,7 +145,7 @@ class KycComponent extends React.Component<IProps, IState> {
 
         let block = <div></div>;
         if (!this.state.submited) {
-            block = <Block>
+            block = <div>
                 <Alert className="kyc-info"
                     message={<h2>{t.t("Before you start")}</h2>}
                     description={<div dangerouslySetInnerHTML={{
@@ -250,7 +255,7 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                         {getFieldDecorator("cover", {
                             rules: [{ required: false, message: t.t("please upload your national id card") }],
                         })(
-                            <Uploader callback={this.setImage} example={nationalImg} action={`${config.apiUrl}/kyc/img`} describe={t.t("National ID card")} name="file" data={{ imgtype: "cover" }} />,
+                            <Uploader callback={this.setImage} describe="" example={nationalImg} action={`${config.apiUrl}/kyc/img`} name="file" data={{ imgtype: t.t("cover") }} />,
                         )}
                     </FormItem>
 
@@ -273,7 +278,7 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                         <Button type="primary" htmlType="submit" size="large">{t.t("Submit")}</Button>
                     </FormItem>
                 </Form>
-            </Block>;
+            </div>;
         } else {
             block =
                 <Alert
