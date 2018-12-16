@@ -1,11 +1,11 @@
 /**
  * @module Components/KycComponent
  */
-import { Button, Card, Col, Icon, List, notification, Row, Steps } from "antd";
+import { Button, Card, List, notification } from "antd";
 import * as React from "react";
-import config from "../../../../../config";
-import Api from "../../../../../lib/api/kyc";
-import t from "../../../../../services/trans/i18n";
+import config from "../../config";
+import Api from "../../lib/api/kyc";
+import t from "../../services/trans/i18n";
 import "./style.less";
 const api = Api.getInstance();
 

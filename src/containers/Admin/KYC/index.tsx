@@ -6,12 +6,14 @@ import { setUser } from "../../../redux/app/actions";
 import { IRootState } from "../../../redux/reducers";
 
 import { Button, Input, Popover, Table } from "antd";
+import KYC from "../../../components/Admin-KYC";
 import Api from "../../../lib/api/kyc";
-import KYC from "./components/KYC";
 
 import * as _ from "lodash";
 import t from "../../../services/trans/i18n";
 
+import config from "../../../config";
+import USER from "../../../lib/user";
 import "./style.less";
 
 interface IProps {
@@ -24,8 +26,6 @@ interface IState {
     countries: any[];
 }
 
-const api = Api.getInstance();
-
 const columns = [
     { title: "Name", dataIndex: "fname", key: "fname" },
     { title: "Family", dataIndex: "lname", key: "lname" },
@@ -37,6 +37,8 @@ const columns = [
 ];
 
 class KycAdminContainer extends React.Component<IProps, IState> {
+    public userObject = USER.getInstance();
+    public api = Api.getInstance();
     constructor(props: IProps) {
         super(props);
         this.state = {
@@ -46,6 +48,7 @@ class KycAdminContainer extends React.Component<IProps, IState> {
             countries: [],
         };
         this.changeStatus = this.changeStatus.bind(this);
+        this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
     }
 
     public componentDidMount() {
@@ -84,8 +87,8 @@ class KycAdminContainer extends React.Component<IProps, IState> {
             PS: "Passport",
             NI: "National ID Card",
         };
-        api.getAllKycesUsingGET({}).then((response) => {
-            api.allcountriesUsingGET({}).then((countries) => {
+        this.api.getAllMerchantKycesUsingGET({ $domain: config.apiUrl }).then((response) => {
+            this.api.allcountriesUsingGET({ $domain: config.apiUrl }).then((countries) => {
                 response.body.forEach((obj) => {
                     obj.country = _.find(countries.body, { id: obj.country });
                     obj.ltype = types[obj.ltype];

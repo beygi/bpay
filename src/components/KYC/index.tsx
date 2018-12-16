@@ -71,9 +71,9 @@ class KycComponent extends React.Component<IProps, IState> {
                 value: this.state.cover,
             },
         });
-        this.setState({ loading: true });
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
+                this.setState({ loading: true });
                 // console.log("Received values of form: ", values);
                 this.api.addMerchantKycUsingPOST({ input: values, $domain: config.apiUrl }).then((response) => {
                     this.setState({ submited: true, loading: false });
