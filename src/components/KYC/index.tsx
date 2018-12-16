@@ -53,7 +53,6 @@ class KycComponent extends React.Component<IProps, IState> {
 
     public getStatus() {
         this.api.getStatusUsingGET({ $domain: config.apiUrl }).then((response) => {
-            console.log(response);
             if (response.status === 204) {
                 this.setState({ loading: false, status: "unsubmitted" });
             } else {
@@ -75,10 +74,9 @@ class KycComponent extends React.Component<IProps, IState> {
         this.setState({ loading: true });
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
-                console.log("Received values of form: ", values);
+                // console.log("Received values of form: ", values);
                 this.api.addMerchantKycUsingPOST({ input: values, $domain: config.apiUrl }).then((response) => {
                     this.setState({ submited: true, loading: false });
-                    console.log(response.body);
                 }).catch((error) => {
                     this.setState({ loading: false });
                     let errorText = (error.response.body.message) ? error.response.body.message : error;
@@ -114,7 +112,7 @@ class KycComponent extends React.Component<IProps, IState> {
                 </Block>
             );
         }
-        if (this.state.status === "pending") {
+        if (this.state.status === "pending" || this.state.status === "checking") {
             return (
                 <Alert
                     message={t.t("your information already submitted")}
@@ -134,6 +132,18 @@ class KycComponent extends React.Component<IProps, IState> {
                 />
             );
         }
+
+        if (this.state.submited) {
+            return (
+                <Alert
+                    message={t.t("your information submitted successfully")}
+                    description={t.t("we will inform you about the progress in your profile page")}
+                    type="success"
+                    showIcon
+                />
+            );
+        }
+
         const formItemLayout = {
             labelCol: { lg: 4, md: 24 },
             wrapperCol: { lg: 12, md: 24 },
@@ -142,7 +152,7 @@ class KycComponent extends React.Component<IProps, IState> {
         const { getFieldDecorator } = this.props.form;
 
         let block = <div></div>;
-        if (!this.state.submited) {
+        if (true || this.state.status === "unsubmitted" || this.state.status === "rejected") {
             block = <Block>
                 <Alert className="kyc-info"
                     message={<h2>{t.t("Before you start")}</h2>}
@@ -153,6 +163,17 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                     type="info"
                     showIcon
                 />
+                {
+                    (this.state.status !== "rejected" ?
+                        <Alert
+                            className="kyc-info"
+                            message={t.t("your verification was failed before")}
+                            description={t.t("please send your correct information and documents based on our instructions")}
+                            type="warning"
+                            showIcon
+                        />
+                        : null)
+                }
                 <Form layout="horizontal" onSubmit={this.handleSubmit} className="kyc-form">
 
                     {/*  first name */}
@@ -277,14 +298,6 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                     </FormItem>
                 </Form>
             </Block>;
-        } else {
-            block =
-                <Alert
-                    message={t.t("your information submitted successfully")}
-                    description={t.t("we will inform you about the progress in your profile page")}
-                    type="success"
-                    showIcon
-                />;
         }
 
         return block;

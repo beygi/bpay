@@ -45,11 +45,11 @@ function getBase64(img, callback) {
 function beforeUpload(file) {
     const isValid = file.type === "image/jpeg" || file.type === "image/png";
     if (!isValid) {
-        message.error(t.t("You can only upload JPG or PNG file!"));
+        message.error(t.t("You can only upload JPG or PNG file"));
     }
     const isLt2M = file.size / 1024 / 1024 < 10;
     if (!isLt2M) {
-        message.error(t.t("Image must smaller than 10MB!"));
+        message.error(t.t("Image must smaller than 10MB"));
     }
     return isValid && isLt2M;
 }
