@@ -8,8 +8,6 @@ import t from "../../services/trans/i18n";
 
 import "./style.less";
 
-const user = USER.getInstance();
-
 interface IProps {
     /**  example image */
     example?: string;
@@ -17,10 +15,12 @@ interface IProps {
     action: string;
     /**  name of the image */
     name: string;
+    /**  full name of the image, will be used in UI */
+    describe: string;
     /** data object containing image type */
     data: { imgtype: string };
     /** callback function wich is call when upload is done */
-    callback: (state: any, type: any) => void;
+    callback: (state: any, type: any, describe: string) => void;
 }
 
 interface IState {
@@ -45,11 +45,11 @@ function getBase64(img, callback) {
 function beforeUpload(file) {
     const isValid = file.type === "image/jpeg" || file.type === "image/png";
     if (!isValid) {
-        message.error("You can only upload JPG or PNG file!");
+        message.error(t.t("You can only upload JPG or PNG file"));
     }
     const isLt2M = file.size / 1024 / 1024 < 10;
     if (!isLt2M) {
-        message.error("Image must smaller than 10MB!");
+        message.error(t.t("Image must smaller than 10MB"));
     }
     return isValid && isLt2M;
 }
@@ -58,15 +58,14 @@ function beforeUpload(file) {
  * image upload component with example and preview support
  */
 class UploaderComponent extends React.Component<IProps, IState> {
-
+    public userObject = USER.getInstance();
     constructor(props: IProps) {
         super(props);
-
         this.state = {
             previewVisible: false,
             previewImage: "",
             fileList: [],
-            headers: { Authorization: "Token " + JSON.stringify(user.keycloak.tokenParsed) },
+            headers: { Authorization: this.userObject.getToken().value },
         };
     }
 
@@ -80,11 +79,20 @@ class UploaderComponent extends React.Component<IProps, IState> {
     public handleChange = (fileList) => {
         const newState = {};
         newState[this.props.data.imgtype] = null;
+
         if (fileList.file.status === "done") {
             newState[this.props.data.imgtype] = true;
+            this.setState({ fileList: fileList.fileList });
+            this.props.callback(newState, this.props.data.imgtype, this.props.describe);
         }
-        this.props.callback(newState, this.props.data.imgtype);
-        this.setState({ fileList: fileList.fileList });
+
+        if (fileList.file.status === "uploading" || fileList.file.status === "removed") {
+            this.setState({ fileList: fileList.fileList });
+        }
+
+        // console.log(fileList.file.status);
+        // console.log({ fileList: fileList.fileList });
+
     }
 
     public render() {
