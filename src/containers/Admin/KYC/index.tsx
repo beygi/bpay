@@ -26,14 +26,24 @@ interface IState {
     countries: any[];
 }
 
+// const columns = [
+//     { title: "Name", dataIndex: "fname", key: "fname" },
+//     { title: "Family", dataIndex: "lname", key: "lname" },
+//     { title: "Gender", dataIndex: "gender", key: "gender" },
+//     { title: "Country", dataIndex: "country", key: "country", render: (record) => record.name },
+//     { title: "License type", dataIndex: "ltype", key: "ltype" },
+//     { title: "License id", dataIndex: "licenseid", key: "licenseid" },
+//     { dataIndex: "status", key: "status", render: (record) => <b>{record}</b>, title: "Status" },
+// ];
+
 const columns = [
     { title: "Name", dataIndex: "fname", key: "fname" },
     { title: "Family", dataIndex: "lname", key: "lname" },
     { title: "Gender", dataIndex: "gender", key: "gender" },
-    { title: "Country", dataIndex: "country", key: "country", render: (record) => record.name },
-    { title: "License type", dataIndex: "ltype", key: "ltype" },
-    { title: "License id", dataIndex: "licenseid", key: "licenseid" },
-    { dataIndex: "status", key: "status", render: (record) => <b>{record}</b>, title: "Status" },
+    { title: "Address", dataIndex: "address", key: "address" },
+    { title: "Card number", dataIndex: "card", key: "card" },
+    { title: "National Code", dataIndex: "nationalCode", key: "nationalCode" },
+    { title: "Status", dataIndex: "status", key: "status", render: (record) => <b>{record}</b> },
 ];
 
 class KycAdminContainer extends React.Component<IProps, IState> {
@@ -87,7 +97,7 @@ class KycAdminContainer extends React.Component<IProps, IState> {
             PS: "Passport",
             NI: "National ID Card",
         };
-        this.api.getAllMerchantKycesUsingGET({ $domain: config.apiUrl }).then((response) => {
+        this.api.getAllKycesUsingGET({ $domain: config.apiUrl }).then((response) => {
             this.api.allcountriesUsingGET({ $domain: config.apiUrl }).then((countries) => {
                 response.body.forEach((obj) => {
                     obj.country = _.find(countries.body, { id: obj.country });

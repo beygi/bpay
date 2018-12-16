@@ -35,15 +35,15 @@ class KycComponent extends React.Component<IProps, IState> {
             pictures: [
                 {
                     title: t.t("Passport cover"),
-                    image: config.apiUrl + "img/" + this.props.record.uid + "/cover",
+                    image: config.apiUrl + "/img/" + this.props.record.uid + "/cover",
                 },
                 {
                     title: t.t("Passport Personal Page"),
-                    image: config.apiUrl + "img/" + this.props.record.uid + "/passid",
+                    image: config.apiUrl + "/img/" + this.props.record.uid + "/passid",
                 },
                 {
                     title: t.t("Selfie With ID And Note"),
-                    image: config.apiUrl + "img/" + this.props.record.uid + "/passport",
+                    image: config.apiUrl + "/img/" + this.props.record.uid + "/passport",
                 },
             ],
         };

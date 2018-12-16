@@ -95,12 +95,12 @@ msgstr "کلید API"
 msgid "Available"
 msgstr "در دسترس"
 
-#: src/components/Unsettled/index.tsx:69
-msgid "‌Balance"
-msgstr "بالانس"
-
 #: src/components/Analysis/index.tsx:130
 msgid "Balance"
+msgstr "بالانس"
+
+#: src/components/Unsettled/index.tsx:69
+msgid "‌Balance"
 msgstr "بالانس"
 
 #: src/components/KYC-old/index.tsx:237 src/components/KYC/index.tsx:256
@@ -436,6 +436,10 @@ msgstr "خروج"
 msgid "lorem ipsum"
 msgstr "متن تست"
 
+#: src/components/KYC/index.tsx:274
+msgid "Make sure the letters on the national card are legible and your face is completely clear"
+msgstr "دقت کنید حروف روی کارت ملی خوانا و چهره شما کاملا واضح باشد"
+
 #: src/components/KYC-old/index.tsx:188 src/components/KYC/index.tsx:207
 msgid "Male"
 msgstr "مرد"
@@ -462,7 +466,7 @@ msgid "National code"
 msgstr "کد ملی"
 
 #: src/components/KYC-old/index.tsx:254 src/components/KYC/index.tsx:273
-#: src/components/KYC/index.tsx:277
+#: src/components/KYC/index.tsx:279
 msgid "National ID card"
 msgstr "کارت ملی"
 
@@ -538,11 +542,11 @@ msgstr "آدرس کیف پول {coin} ما:"
 msgid "Our {currency} deposit address copied to clipboard successfully"
 msgstr "آدرس پرداخت {currency} با موفقیت کپی شد"
 
-#: src/containers/Admin/KYC/components/KYC/index.tsx:37
+#: src/components/Admin-KYC/index.tsx:37
 msgid "Passport cover"
 msgstr "جلد گذرنامه"
 
-#: src/containers/Admin/KYC/components/KYC/index.tsx:41
+#: src/components/Admin-KYC/index.tsx:41
 msgid "Passport Personal Page"
 msgstr "صفحه مشخصات گذرنامه"
 
@@ -663,7 +667,7 @@ msgstr "لطفا جنسیت خود را مشخص کنید"
 msgid "please send your correct information and documents based on our instructions"
 msgstr "لطفا اطلاعات و مدارک را به طور صحیح و مطابق دستور العمل ها ارسال نمایید"
 
-#: src/components/KYC-old/index.tsx:256 src/components/KYC/index.tsx:275
+#: src/components/KYC-old/index.tsx:256 src/components/KYC/index.tsx:277
 msgid "please upload your national id card"
 msgstr "لطفا تصویر کارت ملی خود را بارگذاری کنید"
 
@@ -712,7 +716,7 @@ msgstr "انتخاب فروشنده"
 msgid "Selected time is in the future"
 msgstr "زمان انتخاب شده مربوط به آینده است"
 
-#: src/containers/Admin/KYC/components/KYC/index.tsx:45
+#: src/components/Admin-KYC/index.tsx:45
 msgid "Selfie With ID And Note"
 msgstr "سلفی با شناسه و توضیحات"
 
@@ -767,7 +771,7 @@ msgstr "وضعیت"
 msgid "sth"
 msgstr "چیزی"
 
-#: src/components/KYC-old/index.tsx:278 src/components/KYC/index.tsx:297
+#: src/components/KYC-old/index.tsx:278 src/components/KYC/index.tsx:299
 #: src/components/PhoneValidate/index.tsx:96
 msgid "Submit"
 msgstr "ارسال"
@@ -949,7 +953,6 @@ msgid "You can now create becopay invoices. but your account must be verified to
 msgstr "شما می توانید فاکتور پرداخت بکوپی ایجاد کنید ولی برای تسویه حساب باید اطلاعات خود را تکمیل کنید."
 
 #: src/components/Uploader/index.tsx:48
-#, fuzzy
 msgid "You can only upload JPG or PNG file"
 msgstr "شما تنها میتوانید تصاویر با فرمت JPG یا PNG را ارسال کنید"
 

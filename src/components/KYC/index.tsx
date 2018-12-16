@@ -152,7 +152,7 @@ class KycComponent extends React.Component<IProps, IState> {
         const { getFieldDecorator } = this.props.form;
 
         let block = <div></div>;
-        if (true || this.state.status === "unsubmitted" || this.state.status === "rejected") {
+        if (this.state.status === "unsubmitted" || this.state.status === "rejected") {
             block = <Block>
                 <Alert className="kyc-info"
                     message={<h2>{t.t("Before you start")}</h2>}
@@ -164,7 +164,7 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                     showIcon
                 />
                 {
-                    (this.state.status !== "rejected" ?
+                    (this.state.status === "rejected" ?
                         <Alert
                             className="kyc-info"
                             message={t.t("your verification was failed before")}
@@ -270,7 +270,9 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                     </FormItem>
 
                     {/*  Upload */}
-                    <FormItem label={t.t("National ID card")}  {...formItemLayout} >
+                    <FormItem label={t.t("National ID card")}
+                        extra={t.t("Make sure the letters on the national card are legible and your face is completely clear")}
+                        {...formItemLayout} >
                         {getFieldDecorator("cover", {
                             rules: [{ required: true, message: t.t("please upload your national id card") }],
                         })(

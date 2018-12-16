@@ -88,12 +88,12 @@ msgstr ""
 msgid "Available"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:69
-msgid "‌Balance"
-msgstr ""
-
 #: src/components/Analysis/index.tsx:130
 msgid "Balance"
+msgstr ""
+
+#: src/components/Unsettled/index.tsx:69
+msgid "‌Balance"
 msgstr ""
 
 #: src/components/KYC-old/index.tsx:237
@@ -445,6 +445,10 @@ msgstr ""
 msgid "lorem ipsum"
 msgstr ""
 
+#: src/components/KYC/index.tsx:274
+msgid "Make sure the letters on the national card are legible and your face is completely clear"
+msgstr ""
+
 #: src/components/KYC-old/index.tsx:188
 #: src/components/KYC/index.tsx:207
 msgid "Male"
@@ -474,7 +478,7 @@ msgstr ""
 
 #: src/components/KYC-old/index.tsx:254
 #: src/components/KYC/index.tsx:273
-#: src/components/KYC/index.tsx:277
+#: src/components/KYC/index.tsx:279
 msgid "National ID card"
 msgstr ""
 
@@ -550,11 +554,11 @@ msgstr ""
 msgid "Our {currency} deposit address copied to clipboard successfully"
 msgstr ""
 
-#: src/containers/Admin/KYC/components/KYC/index.tsx:37
+#: src/components/Admin-KYC/index.tsx:37
 msgid "Passport cover"
 msgstr ""
 
-#: src/containers/Admin/KYC/components/KYC/index.tsx:41
+#: src/components/Admin-KYC/index.tsx:41
 msgid "Passport Personal Page"
 msgstr ""
 
@@ -683,7 +687,7 @@ msgid "please send your correct information and documents based on our instructi
 msgstr ""
 
 #: src/components/KYC-old/index.tsx:256
-#: src/components/KYC/index.tsx:275
+#: src/components/KYC/index.tsx:277
 msgid "please upload your national id card"
 msgstr ""
 
@@ -732,7 +736,7 @@ msgstr ""
 msgid "Selected time is in the future"
 msgstr ""
 
-#: src/containers/Admin/KYC/components/KYC/index.tsx:45
+#: src/components/Admin-KYC/index.tsx:45
 msgid "Selfie With ID And Note"
 msgstr ""
 
@@ -790,7 +794,7 @@ msgid "sth"
 msgstr ""
 
 #: src/components/KYC-old/index.tsx:278
-#: src/components/KYC/index.tsx:297
+#: src/components/KYC/index.tsx:299
 #: src/components/PhoneValidate/index.tsx:96
 msgid "Submit"
 msgstr ""
