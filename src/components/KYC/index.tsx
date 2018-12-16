@@ -80,10 +80,13 @@ class KycComponent extends React.Component<IProps, IState> {
                     this.setState({ submited: true, loading: false });
                     console.log(response.body);
                 }).catch((error) => {
+                    this.setState({ loading: false });
+                    let errorText = (error.response.body.message) ? error.response.body.message : error;
+                    errorText = (error.response.body.description) ? error.response.body.description : errorText;
                     notification.error({
                         message: t.t("Error in sending data"),
                         placement: "bottomRight",
-                        description: error + "",
+                        description: errorText + "",
                         duration: 5,
                     });
                 });
@@ -248,7 +251,7 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                     {/*  Upload */}
                     <FormItem label={t.t("National ID card")}  {...formItemLayout} >
                         {getFieldDecorator("cover", {
-                            rules: [{ required: false, message: t.t("please upload your national id card") }],
+                            rules: [{ required: true, message: t.t("please upload your national id card") }],
                         })(
                             <Uploader callback={this.setImage} example={nationalImg} action={`${config.apiUrl}/kyc/img`} describe={t.t("National ID card")} name="file" data={{ imgtype: "cover" }} />,
                         )}
