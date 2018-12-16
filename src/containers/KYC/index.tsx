@@ -1,31 +1,25 @@
-import { Alert, Button, Col, Form, Icon, Input, Layout, message, Modal, notification, Radio, Row, Select, Upload } from "antd";
+import { Alert, Button, Col, Form, Icon, Input, notification, Radio, Row, Select } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import * as React from "react";
-import { connect } from "react-redux";
-import Profile from "../../components/DashboardHeaderProfile";
 import GatewayInformation from "../../components/GatewayInformation";
 import Block from "../../components/Holder";
 import Uploader from "../../components/Uploader";
 import config from "../../config";
-import Api from "../../lib/api/kyc";
-import { setUser } from "../../redux/app/actions";
-import { IRootState } from "../../redux/reducers";
+import API from "../../lib/api/kyc";
 import t from "../../services/trans/i18n";
+import USER from "./../../lib/user";
 import "./style.less";
 
 const FormItem = Form.Item;
 const Option = Select.Option;
-const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 
-const coverImg = require("../../assets/images/cover.png");
-const personalImg = require("../../assets/images/personal.png");
-const selfieImg = require("../../assets/images/selfie.png");
+// const coverImg = require("../../assets/images/cover.png");
+// const personalImg = require("../../assets/images/personal.png");
+// const selfieImg = require("../../assets/images/selfie.png");
 const nationalImg = require("../../assets/images/national.png");
 
 const { TextArea } = Input;
-
-const newApi = Api.getInstance();
 
 interface IUserFormProps extends FormComponentProps {
 }
@@ -35,10 +29,15 @@ interface IState {
     passport: string;
     passid: string;
     submited: boolean;
+    loading: boolean;
     countries?: [{ id: string, name: string }];
 }
 
 class KycContainer extends React.Component<IUserFormProps, IState> {
+    /**  holds api instance */
+    public api = API.getInstance();
+    /**  user object wich is represent current user */
+    public userObject = USER.getInstance();
     constructor(props: IUserFormProps) {
         super(props);
         this.setImage = this.setImage.bind(this);
@@ -48,14 +47,25 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
             passid: null,
             submited: false,
             countries: [{ id: "none", name: t.t("Please select your country") }],
+            loading: true,
         };
+        // send token with all api requests
+        this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
     }
 
     public componentDidMount() {
-        this.getCountries();
+        // this.getCountries();
+        // this.getStatus();
     }
     public getCountries() {
-        newApi.allcountriesUsingGET({}).then((response) => {
+        this.api.allcountriesUsingGET({}).then((response) => {
+            console.log(response.body);
+            this.setState({ countries: response.body });
+        });
+    }
+
+    public getStatus() {
+        this.api.allcountriesUsingGET({}).then((response) => {
             console.log(response.body);
             this.setState({ countries: response.body });
         });
@@ -78,7 +88,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 console.log("Received values of form: ", values);
-                newApi.addMerchantKycUsingPOST({ input: values }).then((response) => {
+                this.api.addMerchantKycUsingPOST({ input: values, $domain: config.apiUrl }).then((response) => {
                     this.setState({ submited: true });
                     console.log(response.body);
                 }).catch((error) => {
@@ -112,7 +122,7 @@ class KycContainer extends React.Component<IUserFormProps, IState> {
             labelCol: { lg: 4, md: 24 },
             wrapperCol: { lg: 12, md: 24 },
         };
-        const countries = this.state.countries.map((item, i) => <Option key={`${i}`} value={item.id}>{item.name}</Option>);
+        // const countries = this.state.countries.map((item, i) => <Option key={`${i}`} value={item.id}>{item.name}</Option>);
         const { getFieldDecorator } = this.props.form;
 
         let block = <div></div>;
@@ -199,7 +209,7 @@ of its clients.It is required because the KYC its used to refer to the bank and 
 
                     {/*  License ID */}
                     <FormItem label={t.t("National code")}  {...formItemLayout} >
-                        {getFieldDecorator("national-code", {
+                        {getFieldDecorator("nationalCode", {
                             rules: [{ required: true, pattern: /^\d{10}$/, message: t.t("Please input your national code ") }],
                         })(
                             <Input prefix={<Icon type="idcard" />} />,
@@ -225,9 +235,9 @@ of its clients.It is required because the KYC its used to refer to the bank and 
                     {/*  Upload */}
                     <FormItem label={t.t("National ID card")}  {...formItemLayout} >
                         {getFieldDecorator("cover", {
-                            rules: [{ required: true, message: t.t("please upload your national id card") }],
+                            rules: [{ required: false, message: t.t("please upload your national id card") }],
                         })(
-                            <Uploader callback={this.setImage} example={nationalImg} action={`https://87.98.188.77:9092/kyc/img`} name="file" data={{ imgtype: "cover" }} />,
+                            <Uploader callback={this.setImage} example={nationalImg} action={`${config.apiUrl}/kyc/img`} name="file" data={{ imgtype: t.t("cover") }} />,
                         )}
                     </FormItem>
 
@@ -254,7 +264,6 @@ of its clients.It is required because the KYC its used to refer to the bank and 
         } else {
             block =
                 <Alert
-                    className="kyc-submitte"
                     message={t.t("your information submitted successfully")}
                     description={t.t("we will inform you about the progress in your profile page")}
                     type="success"

@@ -112,7 +112,7 @@ export default class USER {
         if (this.user) {
             return {
                 name: "Authorization",
-                value: `Bearer ${this.user.token}`,
+                value: `Bearer ` + JSON.stringify(this.keycloak.tokenParsed),
             };
         }
 

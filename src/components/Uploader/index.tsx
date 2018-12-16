@@ -8,8 +8,6 @@ import t from "../../services/trans/i18n";
 
 import "./style.less";
 
-const user = USER.getInstance();
-
 interface IProps {
     /**  example image */
     example?: string;
@@ -58,15 +56,14 @@ function beforeUpload(file) {
  * image upload component with example and preview support
  */
 class UploaderComponent extends React.Component<IProps, IState> {
-
+    public userObject = USER.getInstance();
     constructor(props: IProps) {
         super(props);
-
         this.state = {
             previewVisible: false,
             previewImage: "",
             fileList: [],
-            headers: { Authorization: "Token " + JSON.stringify(user.keycloak.tokenParsed) },
+            headers: { Authorization: this.userObject.getToken().value },
         };
     }
 
