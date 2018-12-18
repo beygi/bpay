@@ -42,7 +42,7 @@ msgstr ""
 msgid "Accounting"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:82
+#: src/components/Unsettled/index.tsx:86
 msgid "Actions"
 msgstr ""
 
@@ -92,7 +92,7 @@ msgstr ""
 msgid "Balance"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:69
+#: src/components/Unsettled/index.tsx:73
 msgid "‌Balance"
 msgstr ""
 
@@ -166,7 +166,7 @@ msgid "Copy wallet address to clipboard"
 msgstr ""
 
 #: src/components/OrderBook/index.tsx:148
-#: src/components/Unsettled/index.tsx:76
+#: src/components/Unsettled/index.tsx:80
 msgid "Count"
 msgstr ""
 
@@ -468,6 +468,7 @@ msgid "Mobile"
 msgstr ""
 
 #: src/components/PhoneValidate/index.tsx:87
+#: src/components/Unsettled/index.tsx:69
 msgid "Mobile number"
 msgstr ""
 
@@ -753,7 +754,7 @@ msgstr ""
 msgid "Service URL"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:85
+#: src/components/Unsettled/index.tsx:89
 #: src/containers/Accounting/index.tsx:33
 #: src/containers/Dashboard/index.tsx:115
 msgid "Settle"
@@ -771,7 +772,7 @@ msgstr ""
 msgid "settled"
 msgstr ""
 
-#: src/components/Unsettled/index.tsx:106
+#: src/components/Unsettled/index.tsx:110
 msgid "Shop name"
 msgstr ""
 

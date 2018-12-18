@@ -66,6 +66,10 @@ class Unsettled extends React.Component<IProps, IState> {
                 dataIndex: "name",
             },
             {
+                title: t.t("Mobile number"),
+                dataIndex: "merMobile",
+            },
+            {
                 title: t.t("‌Balance"),
                 dataIndex: "balance",
                 render: (price) => (
