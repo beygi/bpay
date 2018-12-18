@@ -52,7 +52,7 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         // token is in user.keycloak.token, pick and other useful information for saving in store
         // get user profile
         console.log(user.keycloak);
-        user.keycloak.loadUserProfile().then(() => {
+        user.keycloak.loadUserProfile().success(() => {
             // set user in store
             store.dispatch(updateUser(getUserAttr()));
 
@@ -87,7 +87,7 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
                 if (refreshed) {
                     keyCloak.setAuthToken(user.keycloak.token);
                 }
-                user.keycloak.loadUserProfile().then(() => {
+                user.keycloak.loadUserProfile().success(() => {
                     store.dispatch(updateUser(getUserAttr()));
                     user.getCurrent();
                 });
