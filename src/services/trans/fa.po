@@ -52,7 +52,7 @@ msgstr "نیاز به تایید حساب کاربری"
 msgid "Accounting"
 msgstr "حسابداری"
 
-#: src/components/Unsettled/index.tsx:82
+#: src/components/Unsettled/index.tsx:86
 msgid "Actions"
 msgstr "عملیات"
 
@@ -99,7 +99,7 @@ msgstr "در دسترس"
 msgid "Balance"
 msgstr "بالانس"
 
-#: src/components/Unsettled/index.tsx:69
+#: src/components/Unsettled/index.tsx:73
 msgid "‌Balance"
 msgstr "بالانس"
 
@@ -170,7 +170,7 @@ msgstr "کپی کردن آدرس API"
 msgid "Copy wallet address to clipboard"
 msgstr "کپی کردن آدرس پرداخت"
 
-#: src/components/OrderBook/index.tsx:148 src/components/Unsettled/index.tsx:76
+#: src/components/OrderBook/index.tsx:148 src/components/Unsettled/index.tsx:80
 msgid "Count"
 msgstr "تعداد"
 
@@ -458,6 +458,7 @@ msgid "Mobile"
 msgstr "موبایل"
 
 #: src/components/PhoneValidate/index.tsx:87
+#: src/components/Unsettled/index.tsx:69
 msgid "Mobile number"
 msgstr "شمارهٔ تلفن همراه"
 
@@ -733,7 +734,7 @@ msgstr "تنها"
 msgid "Service URL"
 msgstr "آدرس سرویس"
 
-#: src/components/Unsettled/index.tsx:85 src/containers/Accounting/index.tsx:33
+#: src/components/Unsettled/index.tsx:89 src/containers/Accounting/index.tsx:33
 #: src/containers/Dashboard/index.tsx:115
 msgid "Settle"
 msgstr "تسویه"
@@ -750,7 +751,7 @@ msgstr "تسویه حساب ها"
 msgid "settled"
 msgstr "تسویه شده"
 
-#: src/components/Unsettled/index.tsx:106
+#: src/components/Unsettled/index.tsx:110
 msgid "Shop name"
 msgstr "نام فروشگاه"
 
