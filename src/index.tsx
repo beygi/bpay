@@ -8,6 +8,8 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { Route, Switch } from "react-router";
+import io from "socket.io-client";
+import config from "./config";
 import AppContainer from "./containers/app";
 import Seeder from "./lib/seeder";
 import USER from "./lib/user";
@@ -52,6 +54,17 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         // token is in user.keycloak.token, pick and other useful information for saving in store
         // get user profile
         console.log(user.keycloak);
+        const socket = io(config.webSocketUrl);
+        socket.on("connect", () => {
+            store.dispatch(updateUser({ socketStatus: "connected" }));
+        });
+        socket.on("disconnect", () => {
+            store.dispatch(updateUser({ socketStatus: "disconnected" }));
+        });
+        // socket.on("welcome", (data) => {
+        //     alert(data.message);
+        // });
+
         user.keycloak.loadUserProfile().success(() => {
             // set user in store
             store.dispatch(updateUser(getUserAttr()));

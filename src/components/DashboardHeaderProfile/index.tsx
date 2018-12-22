@@ -1,6 +1,7 @@
 /**
  * @module Components/DashboardHeaderProfileComponent
  */
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Icon, Tag } from "antd";
 import * as React from "react";
 import { connect } from "react-redux";
@@ -9,8 +10,8 @@ import Translate from "../../components/Translate";
 import config from "../../config";
 import { logOut } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
-import t from "../../services/trans/i18n";
 import { localDate } from "../../services/trans/i18n";
+import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
 
@@ -63,6 +64,10 @@ class DashboardHeaderProfileComponent extends React.Component<IProps, IState> {
                 <div className="line">
                     <span className="caption">{t.t("System language:")} </span>
                     <Translate />
+                </div>
+                <div className="line">
+                    <span className="caption">{t.t("Connection status:")} </span>
+                    <FontAwesomeIcon className={this.props.user.socketStatus} icon={["fas", "wifi"]} />
                 </div>
                 <div className="line">
 
