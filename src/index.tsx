@@ -57,9 +57,11 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         const socket = io(config.webSocketUrl);
         socket.on("connect", () => {
             store.dispatch(updateUser({ socketStatus: "connected" }));
+            socket.emit("authentication", user.keycloak.token);
         });
         socket.on("disconnect", () => {
             store.dispatch(updateUser({ socketStatus: "disconnected" }));
+            window.setTimeout(() => { socket.connect(); }, 5000);
         });
         // socket.on("welcome", (data) => {
         //     alert(data.message);
