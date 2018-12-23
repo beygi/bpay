@@ -21,6 +21,7 @@ import "./theme/application.less";
 
 require("./lib/icon");
 
+import { notification } from "antd";
 import { VERSION } from "./constants";
 import KeyCloacksApi from "./lib/keycloakApi";
 
@@ -63,9 +64,28 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
             store.dispatch(updateUser({ socketStatus: "disconnected" }));
             window.setTimeout(() => { socket.connect(); }, 5000);
         });
-        // socket.on("welcome", (data) => {
-        //     alert(data.message);
-        // });
+        socket.on("user", (data) => {
+            try {
+                const userData = JSON.parse(data);
+                store.dispatch(updateUser(userData));
+                user.getCurrent();
+            } catch {
+                console.log("can not parse socket data");
+            }
+        });
+        socket.on("message", (data) => {
+            try {
+                data = JSON.parse(data);
+                notification.info({
+                    duration: 10,
+                    message: t.t(data.title),
+                    description: t.t(data.body),
+                    placement: "bottomRight",
+                });
+            } catch {
+                console.log("can not parse socket data");
+            }
+        });
 
         user.keycloak.loadUserProfile().success(() => {
             // set user in store
@@ -101,6 +121,7 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
             user.keycloak.updateToken().success((refreshed) => {
                 if (refreshed) {
                     keyCloak.setAuthToken(user.keycloak.token);
+                    socket.emit("token", user.keycloak.token);
                 }
                 user.keycloak.loadUserProfile().success(() => {
                     store.dispatch(updateUser(getUserAttr()));
