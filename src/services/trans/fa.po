@@ -125,7 +125,7 @@ msgstr "خرید"
 msgid "Change"
 msgstr "تغییر"
 
-#: src/components/DashboardHeaderProfile/index.tsx:69
+#: src/components/DashboardHeaderProfile/index.tsx:74
 msgid "Change Password"
 msgstr "تغییر رمز عبور"
 
@@ -156,6 +156,10 @@ msgstr "سرد"
 #: src/containers/Admin/Dashboard/index.tsx:39
 msgid "Cold storage"
 msgstr "مخزن سرد"
+
+#: src/components/DashboardHeaderProfile/index.tsx:69
+msgid "Connection status:"
+msgstr "وضعیت اتصال:"
 
 #: src/components/Deposit/index.tsx:98
 #: src/components/GatewayInformation/index.tsx:76
@@ -243,7 +247,7 @@ msgstr "ویرایش گروه"
 msgid "Email"
 msgstr "ایمیل"
 
-#: src/components/DashboardHeaderProfile/index.tsx:54
+#: src/components/DashboardHeaderProfile/index.tsx:55
 msgid "Email:"
 msgstr "ایمیل:"
 
@@ -390,7 +394,7 @@ msgstr "اصالت مشتریان"
 msgid "KYC stands for (Know Your Customer) it is the process of a business. <br> verifying and identifying the identity of its clients.It is required because the KYC its used to refer to the bank and anti-money laundering regulations."
 msgstr "تایید اصالت مشتری بخشی جدایی ناپذیر از روند ارائه این نوع خدمات است. <br> بررسی و تایید هویت مشتریان به دلیل وجود قوانین پولشویی و قوانین بانکی لازمهٔ استفاده از این وب سایت است."
 
-#: src/components/DashboardHeaderProfile/index.tsx:61
+#: src/components/DashboardHeaderProfile/index.tsx:62
 msgid "Last login:"
 msgstr "آخرین ورود:"
 
@@ -427,7 +431,7 @@ msgid "Login Password"
 msgstr "رمز عبور"
 
 #: src/components/DashboardHeader/index.tsx:162
-#: src/components/DashboardHeaderProfile/index.tsx:70
+#: src/components/DashboardHeaderProfile/index.tsx:75
 msgid "Logout"
 msgstr "خروج"
 
@@ -797,7 +801,7 @@ msgstr "پشتیبانی"
 msgid "System Administration"
 msgstr "مدیریت سیستم"
 
-#: src/components/DashboardHeaderProfile/index.tsx:64
+#: src/components/DashboardHeaderProfile/index.tsx:65
 msgid "System language:"
 msgstr "زبان سیستم:"
 
@@ -876,7 +880,7 @@ msgstr "دلار آمریکا"
 msgid "User Dashboard"
 msgstr "داشبورد کاربر"
 
-#: src/components/DashboardHeaderProfile/index.tsx:57
+#: src/components/DashboardHeaderProfile/index.tsx:58
 msgid "User level:"
 msgstr "درجهٔ کاربری:"
 

@@ -96,6 +96,7 @@
     "echarts": "^4.2.0-rc.1",
     "git-revision-webpack-plugin": "^3.0.3",
     "react-share": "^2.4.0",
+    "socket.io-client": "^2.2.0",
     "strftime": "^0.10.0",
     "swagger-typescript-codegen": "https://github.com/beygi/swagger-typescript-axios-codegen"
   }

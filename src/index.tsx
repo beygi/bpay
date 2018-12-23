@@ -8,6 +8,8 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { Route, Switch } from "react-router";
+import io from "socket.io-client";
+import config from "./config";
 import AppContainer from "./containers/app";
 import Seeder from "./lib/seeder";
 import USER from "./lib/user";
@@ -19,6 +21,7 @@ import "./theme/application.less";
 
 require("./lib/icon");
 
+import { notification } from "antd";
 import { VERSION } from "./constants";
 import KeyCloacksApi from "./lib/keycloakApi";
 
@@ -52,6 +55,38 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         // token is in user.keycloak.token, pick and other useful information for saving in store
         // get user profile
         console.log(user.keycloak);
+        const socket = io(config.webSocketUrl);
+        socket.on("connect", () => {
+            store.dispatch(updateUser({ socketStatus: "connected" }));
+            socket.emit("authentication", user.keycloak.token);
+        });
+        socket.on("disconnect", () => {
+            store.dispatch(updateUser({ socketStatus: "disconnected" }));
+            window.setTimeout(() => { socket.connect(); }, 5000);
+        });
+        socket.on("user", (data) => {
+            try {
+                const userData = JSON.parse(data);
+                store.dispatch(updateUser(userData));
+                user.getCurrent();
+            } catch {
+                console.log("can not parse socket data");
+            }
+        });
+        socket.on("message", (data) => {
+            try {
+                data = JSON.parse(data);
+                notification.info({
+                    duration: 10,
+                    message: t.t(data.title),
+                    description: t.t(data.body),
+                    placement: "bottomRight",
+                });
+            } catch {
+                console.log("can not parse socket data");
+            }
+        });
+
         user.keycloak.loadUserProfile().success(() => {
             // set user in store
             store.dispatch(updateUser(getUserAttr()));
@@ -86,6 +121,7 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
             user.keycloak.updateToken().success((refreshed) => {
                 if (refreshed) {
                     keyCloak.setAuthToken(user.keycloak.token);
+                    socket.emit("token", user.keycloak.token);
                 }
                 user.keycloak.loadUserProfile().success(() => {
                     store.dispatch(updateUser(getUserAttr()));
