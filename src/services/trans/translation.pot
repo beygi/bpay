@@ -120,7 +120,7 @@ msgstr ""
 msgid "Change"
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:69
+#: src/components/DashboardHeaderProfile/index.tsx:74
 msgid "Change Password"
 msgstr ""
 
@@ -150,6 +150,10 @@ msgstr ""
 
 #: src/containers/Admin/Dashboard/index.tsx:39
 msgid "Cold storage"
+msgstr ""
+
+#: src/components/DashboardHeaderProfile/index.tsx:69
+msgid "Connection status:"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:98
@@ -242,7 +246,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:54
+#: src/components/DashboardHeaderProfile/index.tsx:55
 msgid "Email:"
 msgstr ""
 
@@ -396,7 +400,7 @@ msgstr ""
 msgid "KYC stands for (Know Your Customer) it is the process of a business. <br> verifying and identifying the identity of its clients.It is required because the KYC its used to refer to the bank and anti-money laundering regulations."
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:61
+#: src/components/DashboardHeaderProfile/index.tsx:62
 msgid "Last login:"
 msgstr ""
 
@@ -435,7 +439,7 @@ msgid "Login Password"
 msgstr ""
 
 #: src/components/DashboardHeader/index.tsx:162
-#: src/components/DashboardHeaderProfile/index.tsx:70
+#: src/components/DashboardHeaderProfile/index.tsx:75
 msgid "Logout"
 msgstr ""
 
@@ -820,7 +824,7 @@ msgstr ""
 msgid "System Administration"
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:64
+#: src/components/DashboardHeaderProfile/index.tsx:65
 msgid "System language:"
 msgstr ""
 
@@ -900,7 +904,7 @@ msgstr ""
 msgid "User Dashboard"
 msgstr ""
 
-#: src/components/DashboardHeaderProfile/index.tsx:57
+#: src/components/DashboardHeaderProfile/index.tsx:58
 msgid "User level:"
 msgstr ""
 
