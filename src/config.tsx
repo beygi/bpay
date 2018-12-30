@@ -10,7 +10,7 @@ import Languages from "./services/trans/languages";
 const config = {
     apiUrl: "https://api.becopay.com",
     gateWayUrl: "https://gateway.becopay.com",
-    webSocketUrl: "http://localhost:2000",
+    webSocketUrl: "https://socket.becopay.com",
     developersZone: "https://becopay.com/en/io/",
     language: Languages.fa,
     languages: Languages,
