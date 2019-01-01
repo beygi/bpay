@@ -152,7 +152,6 @@ class Transactions extends React.Component<IProps, IState> {
                     <FontAwesomeIcon icon={["fas", "money-check-alt"]} />
                     <span className="transaction-filters">{filters}</span>
                     <span className="merchant-filter">{merchantsSearch}</span>
-
                 </span>
             }>
 
