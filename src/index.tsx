@@ -22,7 +22,7 @@ import "./theme/application.less";
 require("./lib/icon");
 
 import { notification } from "antd";
-import { VERSION } from "./constants";
+import { DEPLOY_TYPE, VERSION } from "./constants";
 import KeyCloacksApi from "./lib/keycloakApi";
 
 // we need a history object to hold browsers history
@@ -54,7 +54,6 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
     if (authenticated) {
         // token is in user.keycloak.token, pick and other useful information for saving in store
         // get user profile
-        console.log(user.keycloak);
         const socket = io(config.webSocketUrl);
         socket.on("connect", () => {
             store.dispatch(updateUser({ socketStatus: "connected" }));
@@ -88,6 +87,11 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         });
 
         user.keycloak.loadUserProfile().success(() => {
+            // log user data
+            if (DEPLOY_TYPE === "development") {
+                console.log(user.keycloak);
+                console.log(user.keycloak.token);
+            }
             // set user in store
             store.dispatch(updateUser(getUserAttr()));
 
@@ -124,6 +128,11 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
                     socket.emit("token", user.keycloak.token);
                 }
                 user.keycloak.loadUserProfile().success(() => {
+                    // log user data
+                    if (DEPLOY_TYPE === "development") {
+                        console.log(user.keycloak);
+                        console.log(user.keycloak.token);
+                    }
                     store.dispatch(updateUser(getUserAttr()));
                     user.getCurrent();
                 });

@@ -79,7 +79,7 @@ msgstr ""
 #: src/components/LimitedPlaceOrder/index.tsx:181
 #: src/components/MarketTrades/index.tsx:77
 #: src/components/OrderBook/index.tsx:127 src/components/Settle/index.tsx:116
-#: src/components/Settle/index.tsx:137 src/components/SettleUps/index.tsx:98
+#: src/components/Settle/index.tsx:137 src/components/SettleUps/index.tsx:104
 msgid "Amount"
 msgstr ""
 
@@ -133,11 +133,11 @@ msgstr ""
 msgid "Checking"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:68
+#: src/components/Invoice/index.tsx:83
 msgid "Checkout Amount"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:64
+#: src/components/Invoice/index.tsx:79
 msgid "Checkout Symbol"
 msgstr ""
 
@@ -186,7 +186,7 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:72
+#: src/components/Invoice/index.tsx:87
 msgid "Create time"
 msgstr ""
 
@@ -203,7 +203,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: src/components/Settle/index.tsx:154 src/components/SettleUps/index.tsx:90
+#: src/components/Settle/index.tsx:154 src/components/SettleUps/index.tsx:96
 msgid "Date and time"
 msgstr ""
 
@@ -219,7 +219,7 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: src/components/SettleUps/index.tsx:113
+#: src/components/SettleUps/index.tsx:119
 msgid "Destination card"
 msgstr ""
 
@@ -323,6 +323,10 @@ msgstr ""
 msgid "for more information about integrating your system with our gateway please visit our developrs area"
 msgstr ""
 
+#: src/components/Invoice/index.tsx:186
+msgid "Gateway address"
+msgstr ""
+
 #: src/containers/Dashboard/index.tsx:128
 msgid "Gateway information"
 msgstr ""
@@ -360,7 +364,7 @@ msgstr ""
 msgid "Hot storage"
 msgstr ""
 
-#: src/components/Settle/index.tsx:112 src/components/SettleUps/index.tsx:86
+#: src/components/Settle/index.tsx:112 src/components/SettleUps/index.tsx:92
 msgid "ID"
 msgstr ""
 
@@ -515,6 +519,10 @@ msgstr ""
 msgid "Open gateway"
 msgstr ""
 
+#: src/components/Invoice/index.tsx:200
+msgid "Open in web browser"
+msgstr ""
+
 #: src/containers/Exchange/index.tsx:134
 msgid "Order book"
 msgstr ""
@@ -523,7 +531,7 @@ msgstr ""
 msgid "Order history"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:53
+#: src/components/Invoice/index.tsx:68
 msgid "Order id"
 msgstr ""
 
@@ -531,7 +539,7 @@ msgstr ""
 msgid "Orders"
 msgstr ""
 
-#: src/components/SettleUps/index.tsx:109
+#: src/components/SettleUps/index.tsx:115
 msgid "Origin card"
 msgstr ""
 
@@ -559,16 +567,16 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:60
+#: src/components/Invoice/index.tsx:75
 msgid "Payer Amount"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:57
+#: src/components/Invoice/index.tsx:72
 msgid "Payer Symbol"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:141 src/components/Invoice/index.tsx:146
-#: src/components/Invoice/index.tsx:151
+#: src/components/Invoice/index.tsx:157 src/components/Invoice/index.tsx:162
+#: src/components/Invoice/index.tsx:167
 #, fuzzy
 msgid "Payment URL"
 msgstr "New payment"
@@ -713,8 +721,8 @@ msgstr ""
 msgid "search"
 msgstr ""
 
-#: src/components/SettleUps/index.tsx:148
-#: src/components/Transactions/index.tsx:137
+#: src/components/SettleUps/index.tsx:154
+#: src/components/Transactions/index.tsx:143
 msgid "Select merchant"
 msgstr ""
 
@@ -744,11 +752,11 @@ msgstr ""
 msgid "Settle"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:90
+#: src/components/Invoice/index.tsx:105
 msgid "Settle detail"
 msgstr ""
 
-#: src/components/SettleUps/index.tsx:161
+#: src/components/SettleUps/index.tsx:167
 msgid "Settle Ups"
 msgstr ""
 
@@ -760,7 +768,7 @@ msgstr ""
 msgid "Shop name"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:49 src/components/SettleUps/index.tsx:105
+#: src/components/Invoice/index.tsx:64 src/components/SettleUps/index.tsx:111
 #: src/components/Unsettled/index.tsx:65
 msgid "Shop Name"
 msgstr ""
@@ -769,7 +777,7 @@ msgstr ""
 msgid "Show"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:75
+#: src/components/Invoice/index.tsx:90
 msgid "Status"
 msgstr ""
 
@@ -810,7 +818,7 @@ msgstr ""
 msgid "Tax Cash Desk"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:111
+#: src/components/Transactions/index.tsx:117
 msgid "There is no data to display"
 msgstr ""
 
@@ -840,7 +848,7 @@ msgstr ""
 msgid "Total:"
 msgstr ""
 
-#: src/components/Settle/index.tsx:197 src/components/SettleUps/index.tsx:117
+#: src/components/Settle/index.tsx:197 src/components/SettleUps/index.tsx:123
 msgid "Tracking code"
 msgstr ""
 
@@ -848,7 +856,7 @@ msgstr ""
 msgid "Trades"
 msgstr ""
 
-#: src/components/Transactions/index.tsx:150
+#: src/components/Transactions/index.tsx:156
 msgid "Transactions"
 msgstr ""
 

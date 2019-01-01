@@ -68,6 +68,8 @@ class Transactions extends React.Component<IProps, IState> {
     public userObject = USER.getInstance();
     /**  holds last fetched id for merchant's search field */
     public lastFetchId: number;
+    /**  timer interval id */
+    public intervalId: number;
 
     constructor(props: IProps) {
         super(props);
@@ -95,7 +97,11 @@ class Transactions extends React.Component<IProps, IState> {
     public componentDidMount() {
         this.getData();
         // we fetch data every 5 seconds until our websocket is available
-        const intervalId = setInterval(this.getData.bind(this), 5000);
+        this.intervalId = setInterval(this.getData.bind(this), 5000);
+    }
+
+    public componentWillUnmount() {
+        clearInterval(this.intervalId);
     }
 
     public render() {
@@ -152,7 +158,6 @@ class Transactions extends React.Component<IProps, IState> {
                     <FontAwesomeIcon icon={["fas", "money-check-alt"]} />
                     <span className="transaction-filters">{filters}</span>
                     <span className="merchant-filter">{merchantsSearch}</span>
-
                 </span>
             }>
 

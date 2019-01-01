@@ -89,7 +89,7 @@ class GatewayInformationComponent extends React.Component<IProps, IState> {
                     pagination={false}
                     showHeader={false}
                     columns={columns}
-                    rowKey="id" dataSource={data} size="small" />
+                    dataSource={data} size="small" />
                 <Alert className="developers" message={
                     <div>
                         {t.t("for more information about integrating your system with our gateway please visit our developrs area")}
