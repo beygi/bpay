@@ -25,31 +25,31 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
-        const AnalysisBlocks =  Object.keys(config.currencies).map((symbol) =>
-                    <Block key={symbol}>
-                        <Analysis symbol={symbol} />
-                    </Block>);
+        const AnalysisBlocks = Object.keys(config.currencies).map((symbol) =>
+            <Block key={symbol}>
+                <Analysis symbol={symbol} />
+            </Block>);
 
         return (
             <Row gutter={8}>
                 <Col md={6} >
                     <Block title={t.t("Hot storage")} icon={<FontAwesomeIcon className="hot-storage" icon={["fab", "gripfire"]} />} >
-                        <Balance />
+                        <Balance hideButton />
                     </Block>
                     <Block title={t.t("Cold storage")} icon={<FontAwesomeIcon className="cold-storage" icon={["fas", "snowflake"]} />} >
-                        <Balance />
+                        <Balance hideButton />
                     </Block>
-                    <Block title={t.t("Tax Cash Desk")} icon={<FontAwesomeIcon icon={["fas", "box"]} />} >
-                        <Balance />
+                    {/* <Block title={t.t("Tax Cash Desk")} icon={<FontAwesomeIcon icon={["fas", "box"]} />} >
+                        <Balance hideButton />
                     </Block>
                     <Block title={t.t("Fee Cash Desk")} icon={<FontAwesomeIcon icon={["fas", "box"]} />}  >
-                        <Balance />
-                    </Block>
+                        <Balance hideButton />
+                    </Block> */}
                 </Col>
                 <Col md={18} >
                     <Row gutter={8}>
                         <Col md={24}>
-                            {AnalysisBlocks}
+                            {/* {AnalysisBlocks} */}
                         </Col>
                     </Row>
                 </Col>
