@@ -30,22 +30,22 @@ class LineChartComponent extends React.Component<IProps, IState> {
         this.state = {
             series: [
                 {
-                    name: "A",
+                    name: "بیت کوین",
                     type: "line",
                     data: [["2017-08-15T10:04:01.339Z", 5], ["2017-08-18T10:14:13.914Z", 7]],
                 },
                 {
-                    name: "B",
+                    name: "اتریوم",
                     type: "line",
                     data: [["2017-09-16T10:04:01.339Z", 9], ["2017-09-17T10:14:13.914Z", 12]],
                 },
                 {
-                    name: "C",
+                    name: "لایت کوین",
                     type: "line",
                     data: [["2017-10-16T10:04:01.339Z", 9], ["2017-09-17T10:14:13.914Z", 12]],
                 },
                 {
-                    name: "D",
+                    name: "BTC",
                     type: "line",
                     data: [["2018-01-16T10:04:01.339Z", 9], ["2017-09-17T10:14:13.914Z", 12]],
                 },
@@ -56,10 +56,10 @@ class LineChartComponent extends React.Component<IProps, IState> {
     public render() {
         const options = {
             grid: {
-                top: 30,
-                bottom: 30,
-                left: 30,
-                right: 30,
+                top: 45,
+                bottom: 45,
+                left: 50,
+                right: 50,
                 show: false,
                 backgroundColor: "#000000",
             },
@@ -69,6 +69,14 @@ class LineChartComponent extends React.Component<IProps, IState> {
             legend:
             {
                 show: true,
+                top: 10,
+                height: 20,
+                textStyle:
+                {
+                    verticalAlign: "bottom",
+                    height: 50,
+                    fontFamily: "b2mark, Becopay",
+                },
             },
             calculable: true,
             xAxis: [
@@ -76,9 +84,13 @@ class LineChartComponent extends React.Component<IProps, IState> {
                     type: "time",
                     boundaryGap: false,
                     axisLabel: {
+                        margin: 20,
+                        align: "center",
+                        fontFamily: "b2mark, Becopay",
                         formatter: ((value) => {
                             return Moment(value).format("DD MMMM YY");
                         }),
+
                     },
                 },
             ],
@@ -86,7 +98,10 @@ class LineChartComponent extends React.Component<IProps, IState> {
                 {
                     type: "value",
                     axisLabel: {
-                        formatter: "{value}",
+                        margin: 20,
+                        align: "center",
+                        fontFamily: "b2mark, Becopay",
+                        formatter: ((value) => value),
                     },
                 },
             ],
@@ -99,7 +114,6 @@ class LineChartComponent extends React.Component<IProps, IState> {
                 <ReactEcharts
                     theme="light"
                     option={options}
-                    opts={{ renderer: "svg" }}
                 />
             </div>
         );
