@@ -52,7 +52,7 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
                         <Col md={24}>
                             {/* {AnalysisBlocks} */}
                             <Block noPadding className="line-chart">
-                                <Chart title="TEST" percent={95} />
+                                <Chart title="TEST" />
                             </Block>
                             <Block>
                                 {/* <Analysis symbol="BTC" /> */}
