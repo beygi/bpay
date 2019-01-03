@@ -6,6 +6,7 @@ import Analysis from "../../../components/Analysis";
 import Balance from "../../../components/Balance";
 import Profile from "../../../components/DashboardHeaderProfile";
 import Block from "../../../components/Holder";
+import Chart from "../../../components/LineChart";
 import Guide from "../../../components/UserStatusGuide";
 import config from "../../../config";
 import { setUser } from "../../../redux/app/actions";
@@ -50,6 +51,12 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
                     <Row gutter={8}>
                         <Col md={24}>
                             {/* {AnalysisBlocks} */}
+                            <Block noPadding className="line-chart">
+                                <Chart title="TEST" percent={95} />
+                            </Block>
+                            <Block>
+                                {/* <Analysis symbol="BTC" /> */}
+                            </Block>
                         </Col>
                     </Row>
                 </Col>
