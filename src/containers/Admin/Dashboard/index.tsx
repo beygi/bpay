@@ -37,7 +37,7 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
             },
             {
                 name: "ETH-USD",
-                type: "line",
+                type: "bar",
                 color: "#6B6D86",
                 data: this.props.trades["ETH-USD"].map((item) => [item.time, item.price]),
             },
