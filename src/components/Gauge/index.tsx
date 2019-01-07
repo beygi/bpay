@@ -75,7 +75,7 @@ class GaugeComponent extends React.Component<IProps, IState> {
                             fontSize: 13,
                         },
                         title: {
-                            fontWeight: "bolder",
+                            fontFamily: "b2mark, Becopay",
                             fontSize: 15,
                             offsetCenter: ["0%", "-25%"],
                             color: "white",
@@ -105,11 +105,11 @@ class GaugeComponent extends React.Component<IProps, IState> {
                 <ReactEcharts
                     style={{ height: 150 }}
                     option={options}
-                    opts={{ renderer: "svg" }}
                 />
             </div>
         );
     }
 }
+// opts={{ renderer: "svg" }}
 
 export default GaugeComponent;
