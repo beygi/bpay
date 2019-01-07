@@ -15,6 +15,8 @@ import t from "../../../services/trans/i18n";
 import "./style.less";
 
 interface IProps {
+    /** crypto currencies exchange data from redux store */
+    trades: [];
 }
 
 interface IState {
@@ -26,6 +28,32 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
+        const series =
+            [
+                {
+                    name: "Bitcoin",
+                    type: "line",
+                    data: [["2017-10-16T10:04:01.339Z", 9], ["2017-10-17T10:14:13.914Z", 12], ["2017-10-25T10:14:13.914Z", 22]],
+                },
+                {
+                    name: "Ethereum",
+                    type: "line",
+                    data: [["2017-10-16T10:04:01.339Z", 18], ["2017-10-17T10:14:13.914Z", 15], ["2017-10-25T10:14:13.914Z", 5]],
+                },
+                {
+                    name: "Litecoin",
+                    type: "line",
+                    data: [["2017-10-16T10:04:01.339Z", 14], ["2017-10-17T10:14:13.914Z", 29], ["2017-10-25T10:14:13.914Z", 12]],
+                },
+            ];
+
+        const trade = [
+            {
+                name: "BTC-USD",
+                type: "line",
+                data: this.props.trades["BTC-USD"].map((item) => [item.time, item.price]),
+            },
+        ];
         const AnalysisBlocks = Object.keys(config.currencies).map((symbol) =>
             <Block key={symbol}>
                 <Analysis symbol={symbol} />
@@ -40,23 +68,20 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
                     <Block title={t.t("Cold storage")} icon={<FontAwesomeIcon className="cold-storage" icon={["fas", "snowflake"]} />} >
                         <Balance hideButton />
                     </Block>
-                    {/* <Block title={t.t("Tax Cash Desk")} icon={<FontAwesomeIcon icon={["fas", "box"]} />} >
+                    <Block title={t.t("Tax Cash Desk")} icon={<FontAwesomeIcon icon={["fas", "box"]} />} >
                         <Balance hideButton />
                     </Block>
                     <Block title={t.t("Fee Cash Desk")} icon={<FontAwesomeIcon icon={["fas", "box"]} />}  >
                         <Balance hideButton />
-                    </Block> */}
+                    </Block>
                 </Col>
                 <Col md={18} >
                     <Row gutter={8}>
                         <Col md={24}>
-                            {/* {AnalysisBlocks} */}
                             <Block noPadding className="line-chart">
-                                <Chart title="TEST" />
+                                <Chart title="‌BTC/USD" series={trade} />
                             </Block>
-                            <Block>
-                                {/* <Analysis symbol="BTC" /> */}
-                            </Block>
+                            {AnalysisBlocks}
                         </Col>
                     </Row>
                 </Col>
@@ -65,4 +90,16 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
     }
 }
 
-export default AdminDashboardContainer;
+function mapStateToProps(state: IRootState) {
+    if (state.app.market && state.app.market.trades !== undefined) {
+        return {
+            trades: state.app.market.trades,
+        };
+    }
+    // there is no balance from redux, state must not be updated in getDerivedStateFromProps
+    return {
+        trades: null,
+    };
+}
+
+export default connect(mapStateToProps)(AdminDashboardContainer);

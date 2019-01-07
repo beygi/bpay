@@ -15,11 +15,11 @@ interface IProps {
     title: string;
     /** user selected theme */
     theme: string;
+    /** holds echart's series */
+    series: any[];
 }
 
 interface IState {
-    /** holds echart's options object */
-    series: any[];
 }
 
 /**
@@ -32,25 +32,25 @@ class LineChartComponent extends React.Component<IProps, IState> {
         super(props);
 
         // options for echart, you can find more on echart's website
-        this.state = {
-            series: [
-                {
-                    name: "Bitcoin",
-                    type: "line",
-                    data: [["2017-10-16T10:04:01.339Z", 9], ["2017-10-17T10:14:13.914Z", 12], ["2017-10-25T10:14:13.914Z", 22]],
-                },
-                {
-                    name: "Ethereum",
-                    type: "line",
-                    data: [["2017-10-16T10:04:01.339Z", 18], ["2017-10-17T10:14:13.914Z", 15], ["2017-10-25T10:14:13.914Z", 5]],
-                },
-                {
-                    name: "Litecoin",
-                    type: "line",
-                    data: [["2017-10-16T10:04:01.339Z", 14], ["2017-10-17T10:14:13.914Z", 29], ["2017-10-25T10:14:13.914Z", 12]],
-                },
-            ],
-        };
+        // this.state = {
+        //     series: [
+        //         {
+        //             name: "Bitcoin",
+        //             type: "line",
+        //             data: [["2017-10-16T10:04:01.339Z", 9], ["2017-10-17T10:14:13.914Z", 12], ["2017-10-25T10:14:13.914Z", 22]],
+        //         },
+        //         {
+        //             name: "Ethereum",
+        //             type: "line",
+        //             data: [["2017-10-16T10:04:01.339Z", 18], ["2017-10-17T10:14:13.914Z", 15], ["2017-10-25T10:14:13.914Z", 5]],
+        //         },
+        //         {
+        //             name: "Litecoin",
+        //             type: "line",
+        //             data: [["2017-10-16T10:04:01.339Z", 14], ["2017-10-17T10:14:13.914Z", 29], ["2017-10-25T10:14:13.914Z", 12]],
+        //         },
+        //     ],
+        // };
     }
 
     public render() {
@@ -58,10 +58,19 @@ class LineChartComponent extends React.Component<IProps, IState> {
             grid: {
                 top: 45,
                 bottom: 45,
-                left: 50,
-                right: 50,
+                left: 60,
+                right: 60,
                 show: false,
                 backgroundColor: "#000000",
+            },
+            title:
+            {
+                text: this.props.title,
+                textStyle:
+                {
+                    fontFamily: "b2mark, Becopay",
+                    verticalAlign: "bottom",
+                },
             },
             tooltip: {
                 trigger: "axis",
@@ -101,7 +110,7 @@ class LineChartComponent extends React.Component<IProps, IState> {
                         fontFamily: "b2mark, Becopay",
                         fontWeight: "bold",
                         formatter: ((value) => {
-                            return Moment(value).format("DD MMMM YY");
+                            return Moment(value).format("DD MMMM YY - HH:mm:ss");
                         }),
 
                     },
@@ -110,6 +119,7 @@ class LineChartComponent extends React.Component<IProps, IState> {
             yAxis: [
                 {
                     type: "value",
+                    min: "dataMin",
                     axisLabel: {
                         margin: 20,
                         align: "center",
@@ -119,7 +129,7 @@ class LineChartComponent extends React.Component<IProps, IState> {
                     },
                 },
             ],
-            series: this.state.series,
+            series: this.props.series,
         };
         // const options = _.cloneDeep(this.state.options);
         // options.series[0].data[0].value = this.props.percent;
