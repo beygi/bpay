@@ -35,24 +35,19 @@ class LineChartComponent extends React.Component<IProps, IState> {
         this.state = {
             series: [
                 {
-                    name: "بیت کوین",
+                    name: "Bitcoin",
                     type: "line",
-                    data: [["2017-08-15T10:04:01.339Z", 5], ["2017-08-18T10:14:13.914Z", 7]],
+                    data: [["2017-10-16T10:04:01.339Z", 9], ["2017-10-17T10:14:13.914Z", 12], ["2017-10-25T10:14:13.914Z", 22]],
                 },
                 {
-                    name: "اتریوم",
+                    name: "Ethereum",
                     type: "line",
-                    data: [["2017-09-16T10:04:01.339Z", 9], ["2017-09-17T10:14:13.914Z", 12]],
+                    data: [["2017-10-16T10:04:01.339Z", 18], ["2017-10-17T10:14:13.914Z", 15], ["2017-10-25T10:14:13.914Z", 5]],
                 },
                 {
-                    name: "لایت کوین",
+                    name: "Litecoin",
                     type: "line",
-                    data: [["2017-10-16T10:04:01.339Z", 9], ["2017-09-17T10:14:13.914Z", 12]],
-                },
-                {
-                    name: "BTC",
-                    type: "line",
-                    data: [["2018-01-16T10:04:01.339Z", 9], ["2017-09-17T10:14:13.914Z", 12]],
+                    data: [["2017-10-16T10:04:01.339Z", 14], ["2017-10-17T10:14:13.914Z", 29], ["2017-10-25T10:14:13.914Z", 12]],
                 },
             ],
         };
@@ -70,6 +65,16 @@ class LineChartComponent extends React.Component<IProps, IState> {
             },
             tooltip: {
                 trigger: "axis",
+                formatter: (params) => {
+                    console.log(params);
+                    let output = Moment(params[0].axisValue).format("dddd DD MMMM  YYYY");
+                    output += `<div>${Moment(params[0].axisValue).format("HH:mm:ss")}</div>`;
+                    params.map((item) => {
+                        output += `<br> <span style='color:${item.color}' class=''>◉</span> <span style='min-width:100px;display:inline-block'>${t.t(item.seriesName)}</span>
+                        : ${item.value[1].toLocaleString(t.default.language, { useGrouping: true })}`;
+                    });
+                    return output;
+                },
             },
             legend:
             {
