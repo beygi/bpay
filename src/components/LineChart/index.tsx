@@ -103,7 +103,7 @@ class LineChartComponent extends React.Component<IProps, IState> {
             xAxis: [
                 {
                     type: "time",
-                    boundaryGap: false,
+                    boundaryGap: true,
                     axisLabel: {
                         margin: 20,
                         align: "center",
@@ -120,6 +120,7 @@ class LineChartComponent extends React.Component<IProps, IState> {
                 {
                     type: "value",
                     min: "dataMin",
+                    boundaryGap: true,
                     axisLabel: {
                         margin: 20,
                         align: "center",
