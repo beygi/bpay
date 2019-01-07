@@ -28,30 +28,18 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
     }
 
     public render() {
-        const series =
-            [
-                {
-                    name: "Bitcoin",
-                    type: "line",
-                    data: [["2017-10-16T10:04:01.339Z", 9], ["2017-10-17T10:14:13.914Z", 12], ["2017-10-25T10:14:13.914Z", 22]],
-                },
-                {
-                    name: "Ethereum",
-                    type: "line",
-                    data: [["2017-10-16T10:04:01.339Z", 18], ["2017-10-17T10:14:13.914Z", 15], ["2017-10-25T10:14:13.914Z", 5]],
-                },
-                {
-                    name: "Litecoin",
-                    type: "line",
-                    data: [["2017-10-16T10:04:01.339Z", 14], ["2017-10-17T10:14:13.914Z", 29], ["2017-10-25T10:14:13.914Z", 12]],
-                },
-            ];
-
         const trade = [
             {
                 name: "BTC-USD",
                 type: "line",
+                color: "#FF9900",
                 data: this.props.trades["BTC-USD"].map((item) => [item.time, item.price]),
+            },
+            {
+                name: "ETH-USD",
+                type: "line",
+                color: "#6B6D86",
+                data: this.props.trades["ETH-USD"].map((item) => [item.time, item.price]),
             },
         ];
         const AnalysisBlocks = Object.keys(config.currencies).map((symbol) =>
@@ -78,9 +66,18 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
                 <Col md={18} >
                     <Row gutter={8}>
                         <Col md={24}>
-                            <Block noPadding className="line-chart">
-                                <Chart title="‌BTC/USD" series={trade} />
-                            </Block>
+                            <Row gutter={8}>
+                                <Col md={12}>
+                                    <Block noPadding className="line-chart">
+                                        <Chart title="‌BTC/USD" series={[trade[0]]} />
+                                    </Block>
+                                </Col>
+                                <Col md={12}>
+                                    <Block noPadding className="line-chart">
+                                        <Chart title="ETH/USD" series={[trade[1]]} />
+                                    </Block>
+                                </Col>
+                            </Row>
                             {AnalysisBlocks}
                         </Col>
                     </Row>
