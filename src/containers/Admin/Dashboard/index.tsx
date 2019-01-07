@@ -34,12 +34,14 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
                 type: "line",
                 color: "#FF9900",
                 data: this.props.trades["BTC-USD"].map((item) => [item.time, item.price]),
+                smooth: true,
             },
             {
                 name: "ETH-USD",
                 type: "bar",
                 color: "#6B6D86",
                 data: this.props.trades["ETH-USD"].map((item) => [item.time, item.price]),
+                smooth: true,
             },
         ];
         const AnalysisBlocks = Object.keys(config.currencies).map((symbol) =>
