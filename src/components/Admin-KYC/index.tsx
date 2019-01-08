@@ -59,9 +59,9 @@ class KycComponent extends React.Component<IProps, IState> {
     }
     public render() {
 
-        const AcceptButton = <Button onClick={(e) => this.changeStatus(this.state.record.uid, "accepted")} size="large" type="primary">Accept</Button>;
-        const RejectButton = <Button onClick={(e) => this.changeStatus(this.state.record.uid, "pending")} size="large" >Pending</Button>;
-        const PendingButton = <Button onClick={(e) => this.changeStatus(this.state.record.uid, "rejected")} size="large" type="danger">Reject</Button>;
+        const AcceptButton = <Button onClick={(e) => this.changeStatus(this.state.record.uid, "accepted")} size="large" type="primary">{t.t("Accept")}</Button>;
+        const RejectButton = <Button onClick={(e) => this.changeStatus(this.state.record.uid, "pending")} size="large" >{t.t("Pending")}</Button>;
+        const PendingButton = <Button onClick={(e) => this.changeStatus(this.state.record.uid, "rejected")} size="large" type="danger">{t.t("Reject")}</Button>;
 
         return (
             <div>
