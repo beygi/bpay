@@ -78,8 +78,8 @@ class LineChartComponent extends React.Component<IProps, IState> {
                     let output = Moment(params[0].axisValue).format("dddd DD MMMM  YYYY");
                     output += `<div>${Moment(params[0].axisValue).format("HH:mm:ss")}</div>`;
                     params.map((item) => {
-                        output += `<br> <span style='color:${item.color}' class=''>◉</span> <span style='min-width:100px;display:inline-block'>${t.t(item.seriesName)}</span>
-                        : ${item.value[1].toLocaleString(t.default.language, { useGrouping: true })}`;
+                        output += `<br> <span style='color:${item.color}' class=''>◉</span> <span style='min-width:100px;display:inline-block'>${t.t(item.seriesName)}:</span>
+                        ${item.value[1].toLocaleString(t.default.language, { useGrouping: true })}`;
                     });
                     return output;
                 },
@@ -101,7 +101,7 @@ class LineChartComponent extends React.Component<IProps, IState> {
             calculable: true,
             xAxis: [
                 {
-                    type: "time",
+                    type: "category",
                     boundaryGap: true,
                     axisLabel: {
                         margin: 20,
@@ -109,9 +109,8 @@ class LineChartComponent extends React.Component<IProps, IState> {
                         fontFamily: "b2mark, Becopay",
                         fontWeight: "bold",
                         formatter: ((value) => {
-                            return Moment(value).format("DD MMMM YY - HH:mm:ss");
+                            return Moment(value).format("DD MMM YY - HH:mm:ss");
                         }),
-
                     },
                 },
             ],
@@ -132,7 +131,6 @@ class LineChartComponent extends React.Component<IProps, IState> {
             series: this.props.series,
         };
         // const options = _.cloneDeep(this.state.options);
-        // options.series[0].data[0].value = this.props.percent;
         return (
             <div className="">
                 <ReactEcharts

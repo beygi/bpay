@@ -33,16 +33,14 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
                 name: "BTC-USD",
                 type: "line",
                 color: "#FF9900",
-                data: this.props.trades["BTC-USD"].map((item) => [item.time, item.price]),
+                data: this.props.trades["BTC-USD"].map((item) => [item.time, item.price]).reverse(),
                 smooth: true,
-                animation: false,
             },
             {
                 name: "ETH-USD",
                 type: "bar",
-                animation: false,
                 color: "#6B6D86",
-                data: this.props.trades["ETH-USD"].map((item) => [item.time, item.price]),
+                data: this.props.trades["ETH-USD"].map((item) => [item.time, item.price]).reverse(),
                 smooth: true,
             },
         ];
