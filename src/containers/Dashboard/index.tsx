@@ -16,7 +16,6 @@ import Transactions from "../../components/Transactions";
 import Unsettled from "../../components/Unsettled";
 import Guide from "../../components/UserStatusGuide";
 import { DEPLOY_TYPE } from "../../constants";
-import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 
 import * as _ from "lodash";

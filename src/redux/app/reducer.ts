@@ -10,12 +10,6 @@ const initialState: IAppStoreState = {
 };
 
 export default handleActions<IAppStoreState, any>({
-    [Actions.SET_USER]: (state, action: IAction<any>) => {
-        return {
-            ...state,
-            user: action.payload,
-        };
-    },
     [Actions.REMOVE_USER]: (state) => {
         return {
             ...state,
@@ -39,7 +33,9 @@ export default handleActions<IAppStoreState, any>({
         return {
             ...state,
             market: null,
-            user: null,
+            user: {
+                ...{}, ...{ theme: state.user.theme, language: state.user.language, realm_access: { roles: [] } },
+            },
             office: null,
         };
     },

@@ -10,7 +10,6 @@ import History from "../../components/DepositHistory";
 import Block from "../../components/Holder";
 import Live from "../../components/Live";
 import config from "../../config";
-import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 

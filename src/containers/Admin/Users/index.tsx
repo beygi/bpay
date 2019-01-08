@@ -6,7 +6,6 @@ import * as React from "react";
 import { JsonTable } from "react-json-to-html";
 import { connect } from "react-redux";
 import API from "../../../lib/keycloakApi";
-import { setUser } from "../../../redux/app/actions";
 import { IRootState } from "../../../redux/reducers";
 
 const Search = Input.Search;
