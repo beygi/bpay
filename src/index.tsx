@@ -14,6 +14,7 @@ import AppContainer from "./containers/app";
 import Seeder from "./lib/seeder";
 import USER from "./lib/user";
 import { updateUser } from "./redux/app/actions";
+import { logOut } from "./redux/app/actions";
 import { store } from "./redux/store";
 import t from "./services/trans/i18n";
 import "./theme/application.less";
@@ -139,21 +140,12 @@ user.keycloak.init({ onLoad: "check-sso" }).success((authenticated) => {
         }, 60000);
     } else {
         // user is not logged in
-        store.dispatch(setUser(null));
+        store.dispatch(updateUser(null));
         user.keycloak.login({ kcLocale: t.default.language });
     }
     user.keycloak.onAuthLogout = () => {
         // user is sso loged out
-        const cleanUser = user.getCurrent();
-        Object.keys(cleanUser).map((key) => {
-            if (key !== "theme" && key !== "language") {
-                cleanUser[key] = null;
-            }
-        },
-        );
-        store.dispatch(setUser(
-            { ...cleanUser },
-        ));
+        store.dispatch(logOut());
         user.keycloak.login({ kcLocale: t.default.language });
     };
 });
