@@ -30,7 +30,6 @@ class LineChartComponent extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
-
         // options for echart, you can find more on echart's website
         // this.state = {
         //     series: [

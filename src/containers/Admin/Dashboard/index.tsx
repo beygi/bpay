@@ -82,7 +82,7 @@ class AdminDashboardContainer extends React.Component<IProps, IState> {
                                     </Block>
                                 </Col>
                             </Row>
-                            {AnalysisBlocks}
+                            {/* {AnalysisBlocks} */}
                         </Col>
                     </Row>
                 </Col>
