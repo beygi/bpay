@@ -30,11 +30,11 @@ msgstr ""
 msgid "24h Low"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:158
+#: src/components/DashboardHeader/index.tsx:171
 msgid "Account information"
 msgstr ""
 
-#: src/containers/Exchange/index.tsx:168
+#: src/containers/Exchange/index.tsx:167
 msgid "Account verification"
 msgstr ""
 
@@ -50,11 +50,11 @@ msgstr ""
 msgid "Activate"
 msgstr ""
 
-#: src/containers/Groups/index.tsx:109
+#: src/containers/Groups/index.tsx:118
 msgid "add group"
 msgstr ""
 
-#: src/containers/Groups/index.tsx:100
+#: src/containers/Groups/index.tsx:109
 msgid "add new group"
 msgstr ""
 
@@ -112,7 +112,7 @@ msgid "Bitcoin"
 msgstr ""
 
 #: src/components/LimitedPlaceOrder/index.tsx:21
-#: src/containers/Exchange/index.tsx:142
+#: src/containers/Exchange/index.tsx:141
 msgid "buy"
 msgstr ""
 
@@ -148,7 +148,7 @@ msgstr ""
 msgid "Cold"
 msgstr ""
 
-#: src/containers/Admin/Dashboard/index.tsx:39
+#: src/containers/Admin/Dashboard/index.tsx:57
 msgid "Cold storage"
 msgstr ""
 
@@ -209,8 +209,8 @@ msgstr ""
 msgid "Deposit"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:180
-#: src/containers/Deposit/index.tsx:53
+#: src/containers/Dashboard/index.tsx:179
+#: src/containers/Deposit/index.tsx:52
 msgid "Deposit history"
 msgstr ""
 
@@ -234,16 +234,12 @@ msgstr ""
 msgid "Done"
 msgstr ""
 
-#: src/containers/Groups/index.tsx:37
+#: src/containers/Groups/index.tsx:39
 msgid "edit"
 msgstr ""
 
-#: src/containers/Groups/index.tsx:124
+#: src/containers/Groups/index.tsx:133
 msgid "edit group"
-msgstr ""
-
-#: src/containers/User/components/Login/index.tsx:105
-msgid "Email"
 msgstr ""
 
 #: src/components/DashboardHeaderProfile/index.tsx:55
@@ -303,7 +299,7 @@ msgstr ""
 msgid "Failed to settle invoices"
 msgstr ""
 
-#: src/containers/Admin/Dashboard/index.tsx:45
+#: src/containers/Admin/Dashboard/index.tsx:63
 msgid "Fee Cash Desk"
 msgstr ""
 
@@ -317,7 +313,7 @@ msgstr ""
 msgid "First Name"
 msgstr ""
 
-#: src/containers/Admin/Users/index.tsx:141
+#: src/containers/Admin/Users/index.tsx:140
 msgid "First Page"
 msgstr ""
 
@@ -329,7 +325,7 @@ msgstr ""
 msgid "Gateway address"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:128
+#: src/containers/Dashboard/index.tsx:127
 msgid "Gateway information"
 msgstr ""
 
@@ -346,9 +342,9 @@ msgstr ""
 msgid "Google Authenticator"
 msgstr ""
 
-#: src/containers/Groups/index.tsx:114
-#: src/containers/Groups/index.tsx:129
-#: src/containers/Groups/index.tsx:26
+#: src/containers/Groups/index.tsx:123
+#: src/containers/Groups/index.tsx:138
+#: src/containers/Groups/index.tsx:25
 msgid "Group Name"
 msgstr ""
 
@@ -364,7 +360,7 @@ msgstr ""
 msgid "Hot"
 msgstr ""
 
-#: src/containers/Admin/Dashboard/index.tsx:36
+#: src/containers/Admin/Dashboard/index.tsx:54
 msgid "Hot storage"
 msgstr ""
 
@@ -374,7 +370,7 @@ msgid "ID"
 msgstr ""
 
 #: src/components/Uploader/index.tsx:52
-msgid "Image must smaller than 10MB"
+msgid "Image must smaller than 1MB"
 msgstr ""
 
 #: src/components/KYC-old/index.tsx:114
@@ -425,8 +421,8 @@ msgstr ""
 msgid "Litecoin"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:175
-#: src/containers/Deposit/index.tsx:39
+#: src/containers/Dashboard/index.tsx:174
+#: src/containers/Deposit/index.tsx:38
 msgid "Live prices"
 msgstr ""
 
@@ -434,22 +430,18 @@ msgstr ""
 msgid "Loading ..."
 msgstr ""
 
-#: src/containers/User/components/Login/index.tsx:116
-msgid "login"
-msgstr ""
-
 #: src/components/ChangePassword/index.tsx:32
 msgid "Login Password"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:162
+#: src/components/DashboardHeader/index.tsx:157
 #: src/components/DashboardHeaderProfile/index.tsx:75
 msgid "Logout"
 msgstr ""
 
-#: src/containers/Groups/index.tsx:46
-#: src/containers/Groups/index.tsx:48
 #: src/containers/Groups/index.tsx:50
+#: src/containers/Groups/index.tsx:54
+#: src/containers/Groups/index.tsx:58
 msgid "lorem ipsum"
 msgstr ""
 
@@ -495,7 +487,7 @@ msgstr ""
 msgid "network confirmations"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:123
+#: src/containers/Dashboard/index.tsx:122
 msgid "New Invoice"
 msgstr ""
 
@@ -507,15 +499,15 @@ msgstr ""
 msgid "New version available , click for update"
 msgstr ""
 
-#: src/containers/Admin/Users/index.tsx:147
+#: src/containers/Admin/Users/index.tsx:146
 msgid "Next Page"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:165
+#: src/components/DashboardHeader/index.tsx:160
 msgid "Night mode: off"
 msgstr ""
 
-#: src/components/DashboardHeader/index.tsx:165
+#: src/components/DashboardHeader/index.tsx:160
 msgid "Night mode: on"
 msgstr ""
 
@@ -535,7 +527,7 @@ msgstr ""
 msgid "Open in web browser"
 msgstr ""
 
-#: src/containers/Exchange/index.tsx:134
+#: src/containers/Exchange/index.tsx:133
 msgid "Order book"
 msgstr ""
 
@@ -573,10 +565,6 @@ msgstr ""
 
 #: src/components/Admin-KYC/index.tsx:41
 msgid "Passport Personal Page"
-msgstr ""
-
-#: src/containers/User/components/Login/index.tsx:112
-msgid "Password"
 msgstr ""
 
 #: src/components/Invoice/index.tsx:75
@@ -639,10 +627,6 @@ msgstr ""
 msgid "Please input your address"
 msgstr ""
 
-#: src/containers/User/components/Login/index.tsx:103
-msgid "Please input your Email"
-msgstr ""
-
 #: src/components/KYC-old/index.tsx:163
 #: src/components/KYC/index.tsx:182
 msgid "Please input your first name"
@@ -656,10 +640,6 @@ msgstr ""
 #: src/components/KYC-old/index.tsx:231
 #: src/components/KYC/index.tsx:250
 msgid "Please input your national code "
-msgstr ""
-
-#: src/containers/User/components/Login/index.tsx:110
-msgid "Please input your Password"
 msgstr ""
 
 #: src/components/Deposit/index.tsx:121
@@ -704,7 +684,7 @@ msgstr ""
 msgid "please upload your national id card"
 msgstr ""
 
-#: src/containers/Admin/Users/index.tsx:144
+#: src/containers/Admin/Users/index.tsx:143
 msgid "Previous Page"
 msgstr ""
 
@@ -732,11 +712,7 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: src/containers/User/components/Login/index.tsx:123
-msgid "Remember Me"
-msgstr ""
-
-#: src/containers/Groups/index.tsx:92
+#: src/containers/Groups/index.tsx:101
 msgid "search"
 msgstr ""
 
@@ -754,7 +730,7 @@ msgid "Selfie With ID And Note"
 msgstr ""
 
 #: src/components/LimitedPlaceOrder/index.tsx:21
-#: src/containers/Exchange/index.tsx:144
+#: src/containers/Exchange/index.tsx:143
 msgid "sell"
 msgstr ""
 
@@ -768,7 +744,7 @@ msgstr ""
 
 #: src/components/Unsettled/index.tsx:89
 #: src/containers/Accounting/index.tsx:33
-#: src/containers/Dashboard/index.tsx:115
+#: src/containers/Dashboard/index.tsx:114
 msgid "Settle"
 msgstr ""
 
@@ -802,7 +778,7 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: src/containers/Groups/index.tsx:96
+#: src/containers/Groups/index.tsx:105
 msgid "sth"
 msgstr ""
 
@@ -836,7 +812,7 @@ msgstr ""
 msgid "System language:"
 msgstr ""
 
-#: src/containers/Admin/Dashboard/index.tsx:42
+#: src/containers/Admin/Dashboard/index.tsx:60
 msgid "Tax Cash Desk"
 msgstr ""
 
@@ -844,7 +820,7 @@ msgstr ""
 msgid "There is no data to display"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:51
+#: src/containers/Dashboard/index.tsx:50
 msgid "this is the sandbox enviroment , you can test your payments here, all transactions will be done using bitcoin test network not real network."
 msgstr ""
 
@@ -875,7 +851,7 @@ msgstr ""
 msgid "Tracking code"
 msgstr ""
 
-#: src/containers/Exchange/index.tsx:149
+#: src/containers/Exchange/index.tsx:148
 msgid "Trades"
 msgstr ""
 
@@ -920,7 +896,7 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:263
+#: src/containers/Dashboard/index.tsx:262
 msgid "Validate your phone number"
 msgstr ""
 
@@ -948,7 +924,7 @@ msgstr ""
 msgid "Verify"
 msgstr ""
 
-#: src/containers/Exchange/index.tsx:173
+#: src/containers/Exchange/index.tsx:172
 msgid "Verify Account"
 msgstr ""
 
@@ -956,7 +932,7 @@ msgstr ""
 msgid "Verify email"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:79
+#: src/containers/Dashboard/index.tsx:78
 msgid "Verify your account now"
 msgstr ""
 
@@ -964,7 +940,7 @@ msgstr ""
 msgid "Verify your email address"
 msgstr ""
 
-#: src/containers/Deposit/index.tsx:46
+#: src/containers/Deposit/index.tsx:45
 msgid "View wallet address"
 msgstr ""
 
@@ -986,7 +962,7 @@ msgstr ""
 msgid "You are a member"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:85
+#: src/containers/Dashboard/index.tsx:84
 msgid "You can now create becopay invoices. but your account must be verified to withdraw your balance."
 msgstr ""
 
@@ -994,7 +970,7 @@ msgstr ""
 msgid "You can only upload JPG or PNG file"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:254
+#: src/containers/Dashboard/index.tsx:253
 msgid "You don't have enough permission to view this area"
 msgstr ""
 
@@ -1010,7 +986,7 @@ msgstr ""
 msgid "your {coin} balance:"
 msgstr ""
 
-#: src/containers/Exchange/index.tsx:180
+#: src/containers/Exchange/index.tsx:179
 msgid "Your account is not verified. Only verified accounts can use exchange area. Please verify your account."
 msgstr ""
 
@@ -1018,9 +994,9 @@ msgstr ""
 msgid "Your API key copied to clipboard successfully"
 msgstr ""
 
-#: src/containers/Dashboard/index.tsx:170
-#: src/containers/Deposit/index.tsx:36
-#: src/containers/Exchange/index.tsx:123
+#: src/containers/Dashboard/index.tsx:169
+#: src/containers/Deposit/index.tsx:35
+#: src/containers/Exchange/index.tsx:122
 msgid "Your balance"
 msgstr ""
 
