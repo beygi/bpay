@@ -14,7 +14,6 @@ import AppContainer from "./containers/app";
 import Seeder from "./lib/seeder";
 import USER from "./lib/user";
 import { updateUser } from "./redux/app/actions";
-import { setUser } from "./redux/app/actions";
 import { store } from "./redux/store";
 import t from "./services/trans/i18n";
 import "./theme/application.less";

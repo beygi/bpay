@@ -33,7 +33,9 @@ export default handleActions<IAppStoreState, any>({
         return {
             ...state,
             market: null,
-            user: null,
+            user: {
+                ...{}, ...{ theme: state.user.theme, language: state.user.language },
+            },
             office: null,
         };
     },
