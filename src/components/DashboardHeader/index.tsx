@@ -154,11 +154,6 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                         </div> : null
                 }
                 <div className="header-icons" id="header-icons">
-                    {uiUpdateButton}
-                    <Popover getPopupContainer={() => document.getElementById("header-icons")} placement="bottom" title={t.t("Account information")} content={<HeaderProfile />} trigger="click">
-                        <Gravatar email={this.props.userEmail} default="retro"
-                            size={60} className={`ProfilePic${(this.state.uiUpdate ? " ui-update" : "")}`} />
-                    </Popover>
                     <Tooltip placement="bottom" title={t.t("Logout")}>
                         <Icon type="logout" onClick={this.logOut} />
                     </Tooltip>
@@ -172,6 +167,11 @@ class DashboardHeaderComponent extends React.Component<IProps, IState> {
                         </span>
                     </Tooltip>
                     {AdminButton}
+                    {uiUpdateButton}
+                    <Popover getPopupContainer={() => document.getElementById("header-icons")} placement="bottom" title={t.t("Account information")} content={<HeaderProfile />} trigger="click">
+                        <Gravatar email={this.props.userEmail} default="retro"
+                            size={60} className={`ProfilePic${(this.state.uiUpdate ? " ui-update" : "")}`} />
+                    </Popover>
                     {HeaderLogo}
                 </div>
             </div>);

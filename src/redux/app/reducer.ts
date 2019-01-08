@@ -34,7 +34,7 @@ export default handleActions<IAppStoreState, any>({
             ...state,
             market: null,
             user: {
-                ...{}, ...{ theme: state.user.theme, language: state.user.language },
+                ...{}, ...{ theme: state.user.theme, language: state.user.language, realm_access: { roles: [] } },
             },
             office: null,
         };
