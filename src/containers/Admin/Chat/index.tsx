@@ -2,7 +2,6 @@ import { Col, Layout, Row } from "antd";
 import * as React from "react";
 import { connect } from "react-redux";
 import Block from "../../../components/Holder";
-import { setUser } from "../../../redux/app/actions";
 import { IRootState } from "../../../redux/reducers";
 
 import { Button, Input, Popover, Table } from "antd";
@@ -25,7 +24,7 @@ class ChatAdminContainer extends React.Component<IProps, IState> {
     public render() {
         return (
             <div className="frame-container">
-                     <iframe className="frm" src="http://support.b2mark.com/" ></iframe>
+                <iframe className="frm" src="http://support.b2mark.com/" ></iframe>
             </div>
         );
     }

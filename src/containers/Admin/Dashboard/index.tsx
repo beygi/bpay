@@ -9,7 +9,6 @@ import Block from "../../../components/Holder";
 import Chart from "../../../components/LineChart";
 import Guide from "../../../components/UserStatusGuide";
 import config from "../../../config";
-import { setUser } from "../../../redux/app/actions";
 import { IRootState } from "../../../redux/reducers";
 import t from "../../../services/trans/i18n";
 import "./style.less";

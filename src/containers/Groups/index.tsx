@@ -1,8 +1,7 @@
-import {Button, Icon, Input, Modal, Select, Table, Tabs, Tag} from "antd";
+import { Button, Icon, Input, Modal, Select, Table, Tabs, Tag } from "antd";
 import * as React from "react";
-import {connect} from "react-redux";
-import {setUser} from "../../redux/app/actions";
-import {IRootState} from "../../redux/reducers";
+import { connect } from "react-redux";
+import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 
 const Option = Select.Option;
@@ -24,30 +23,40 @@ interface IState {
 // TODO: should move to State using apis
 const columns = [
     { title: t.t("Group Name"), dataIndex: "report", key: "report" },
-    { dataIndex: "status", key: "status", render : (record) => {
+    {
+        dataIndex: "status", key: "status", render: (record) => {
             return {
                 children: <div>{[1, 2, 3].map((item) => <span key={item}>title,</span>)}</div>,
                 props: {
                     className: record,
                 },
             };
-        }, title: t.t("Permission")},
-    { dataIndex: "", key: "x", render : () => {
+        }, title: t.t("Permission"),
+    },
+    {
+        dataIndex: "", key: "x", render: () => {
             return {
                 children: <span className={"anchor"} onClick={this.showEditModal}>{t.t("edit")}</span>,
                 props: {
                     className: "endText",
                 },
             };
-        }, title: "" },
+        }, title: "",
+    },
 ];
 const data = [
-    { description: "My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park.",
-        key: 1, report: t.t("lorem ipsum"),  status: "active"},
-    { description: "My name is Jim Green, I am 42 years old, living in London No. 1 Lake Park.",
-        key: 2, report: t.t("lorem ipsum"), status: "warning"},
-    { description: "My name is Joe Black, I am 32 years old, living in Sidney No. 1 Lake Park.",
-        key: 3, report: t.t("lorem ipsum"), status: "inactive"},
+    {
+        description: "My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park.",
+        key: 1, report: t.t("lorem ipsum"), status: "active",
+    },
+    {
+        description: "My name is Jim Green, I am 42 years old, living in London No. 1 Lake Park.",
+        key: 2, report: t.t("lorem ipsum"), status: "warning",
+    },
+    {
+        description: "My name is Joe Black, I am 32 years old, living in Sidney No. 1 Lake Park.",
+        key: 3, report: t.t("lorem ipsum"), status: "inactive",
+    },
 ];
 const children = [];
 for (let i = 10; i < 36; i++) {
@@ -96,9 +105,9 @@ class GroupsContainer extends React.Component<IProps, IState> {
                     <TabPane tab={t.t("sth")} key="1">
                         <div>
                             <Button type={"primary"}
-                                    size={"default"} className={"addMetricBtn"}
-                                    onClick={this.showModal}>{t.t("add new group")}
-                                    </Button>
+                                size={"default"} className={"addMetricBtn"}
+                                onClick={this.showModal}>{t.t("add new group")}
+                            </Button>
                             <Table
                                 columns={columns}
                                 expandedRowRender={(record) => <p style={{ margin: 0 }}>{record.description}</p>}

@@ -17,7 +17,6 @@ import PlaceOrder from "../../components/PlaceOrder";
 import ActieveSessions from "../../components/Sessions";
 import Stock from "../../components/Stock";
 import config from "../../config";
-import { setUser } from "../../redux/app/actions";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
