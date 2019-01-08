@@ -40,6 +40,10 @@ msgstr "بیشترین در ۲۴ ساعت"
 msgid "24h Low"
 msgstr "کمترین در ۲۴ ساعت"
 
+#: src/components/Admin-KYC/index.tsx:62
+msgid "Accept"
+msgstr "تایید"
+
 #: src/components/DashboardHeader/index.tsx:171
 msgid "Account information"
 msgstr "اطلاعات حساب"
@@ -69,6 +73,7 @@ msgid "add new group"
 msgstr "اضافه کردن گروه جدید"
 
 #: src/components/KYC-old/index.tsx:245 src/components/KYC/index.tsx:264
+#: src/containers/Admin/KYC/index.tsx:42
 msgid "Address"
 msgstr "آدرس پستی"
 
@@ -120,6 +125,10 @@ msgstr "بیت کوین"
 #: src/containers/Exchange/index.tsx:141
 msgid "buy"
 msgstr "خرید"
+
+#: src/containers/Admin/KYC/index.tsx:43
+msgid "Card number"
+msgstr "شماره کارت"
 
 #: src/components/ChangePassword/index.tsx:36
 msgid "Change"
@@ -299,6 +308,10 @@ msgstr "عدم موفقیت در ارسال شماره تلفن همراه"
 msgid "Failed to settle invoices"
 msgstr "عدم موفقیت در تسویه حساب فاکتورها"
 
+#: src/containers/Admin/KYC/index.tsx:40
+msgid "Family"
+msgstr "نام خانوادگی"
+
 #: src/containers/Admin/Dashboard/index.tsx:63
 msgid "Fee Cash Desk"
 msgstr "میز حساب تعرفه ها"
@@ -328,6 +341,7 @@ msgid "Gateway information"
 msgstr "اطلاعات درگاه پرداخت"
 
 #: src/components/KYC-old/index.tsx:181 src/components/KYC/index.tsx:200
+#: src/containers/Admin/KYC/index.tsx:41
 msgid "Gender"
 msgstr "جنسیت"
 
@@ -462,8 +476,16 @@ msgstr "موبایل"
 msgid "Mobile number"
 msgstr "شمارهٔ تلفن همراه"
 
+#: src/containers/Admin/KYC/index.tsx:39
+msgid "Name"
+msgstr "نام"
+
 #: src/components/KYC-old/index.tsx:229 src/components/KYC/index.tsx:248
 msgid "National code"
+msgstr "کد ملی"
+
+#: src/containers/Admin/KYC/index.tsx:44
+msgid "National Code"
 msgstr "کد ملی"
 
 #: src/components/KYC-old/index.tsx:254 src/components/KYC/index.tsx:273
@@ -567,6 +589,10 @@ msgstr "نماد پرداخت"
 #: src/components/Invoice/index.tsx:167
 msgid "Payment URL"
 msgstr "آدرس پرداخت"
+
+#: src/components/Admin-KYC/index.tsx:63
+msgid "Pending"
+msgstr "در حال بررسی"
 
 #: src/containers/Groups/index.tsx:34
 msgid "Permission"
@@ -692,6 +718,10 @@ msgstr "کد QR"
 msgid "Register"
 msgstr "ثبت نام"
 
+#: src/components/Admin-KYC/index.tsx:64
+msgid "Reject"
+msgstr "لغو کردن"
+
 #: src/containers/Groups/index.tsx:101
 msgid "search"
 msgstr "جستجو"
@@ -752,7 +782,7 @@ msgstr "نام فروشگاه"
 msgid "Show"
 msgstr "نمایش"
 
-#: src/components/Invoice/index.tsx:90
+#: src/components/Invoice/index.tsx:90 src/containers/Admin/KYC/index.tsx:45
 msgid "Status"
 msgstr "وضعیت"
 

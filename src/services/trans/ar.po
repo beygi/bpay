@@ -32,6 +32,10 @@ msgstr ""
 msgid "24h Low"
 msgstr ""
 
+#: src/components/Admin-KYC/index.tsx:62
+msgid "Accept"
+msgstr ""
+
 #: src/components/DashboardHeader/index.tsx:171
 msgid "Account information"
 msgstr ""
@@ -61,6 +65,7 @@ msgid "add new group"
 msgstr ""
 
 #: src/components/KYC-old/index.tsx:245 src/components/KYC/index.tsx:264
+#: src/containers/Admin/KYC/index.tsx:42
 msgid "Address"
 msgstr ""
 
@@ -111,6 +116,10 @@ msgstr ""
 #: src/components/LimitedPlaceOrder/index.tsx:21
 #: src/containers/Exchange/index.tsx:141
 msgid "buy"
+msgstr ""
+
+#: src/containers/Admin/KYC/index.tsx:43
+msgid "Card number"
 msgstr ""
 
 #: src/components/ChangePassword/index.tsx:36
@@ -293,6 +302,10 @@ msgstr ""
 msgid "Failed to settle invoices"
 msgstr ""
 
+#: src/containers/Admin/KYC/index.tsx:40
+msgid "Family"
+msgstr ""
+
 #: src/containers/Admin/Dashboard/index.tsx:63
 msgid "Fee Cash Desk"
 msgstr ""
@@ -322,6 +335,7 @@ msgid "Gateway information"
 msgstr ""
 
 #: src/components/KYC-old/index.tsx:181 src/components/KYC/index.tsx:200
+#: src/containers/Admin/KYC/index.tsx:41
 msgid "Gender"
 msgstr ""
 
@@ -457,8 +471,16 @@ msgstr ""
 msgid "Mobile number"
 msgstr ""
 
+#: src/containers/Admin/KYC/index.tsx:39
+msgid "Name"
+msgstr ""
+
 #: src/components/KYC-old/index.tsx:229 src/components/KYC/index.tsx:248
 msgid "National code"
+msgstr ""
+
+#: src/containers/Admin/KYC/index.tsx:44
+msgid "National Code"
 msgstr ""
 
 #: src/components/KYC-old/index.tsx:254 src/components/KYC/index.tsx:273
@@ -565,6 +587,10 @@ msgstr ""
 #, fuzzy
 msgid "Payment URL"
 msgstr "دفعة جديدة"
+
+#: src/components/Admin-KYC/index.tsx:63
+msgid "Pending"
+msgstr ""
 
 #: src/containers/Groups/index.tsx:34
 msgid "Permission"
@@ -706,6 +732,10 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
+#: src/components/Admin-KYC/index.tsx:64
+msgid "Reject"
+msgstr ""
+
 #: src/containers/Groups/index.tsx:101
 msgid "search"
 msgstr ""
@@ -766,7 +796,7 @@ msgstr ""
 msgid "Show"
 msgstr ""
 
-#: src/components/Invoice/index.tsx:90
+#: src/components/Invoice/index.tsx:90 src/containers/Admin/KYC/index.tsx:45
 msgid "Status"
 msgstr ""
 

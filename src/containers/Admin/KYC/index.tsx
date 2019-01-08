@@ -36,13 +36,13 @@ interface IState {
 // ];
 
 const columns = [
-    { title: "Name", dataIndex: "fname", key: "fname" },
-    { title: "Family", dataIndex: "lname", key: "lname" },
-    { title: "Gender", dataIndex: "gender", key: "gender" },
-    { title: "Address", dataIndex: "address", key: "address" },
-    { title: "Card number", dataIndex: "card", key: "card" },
-    { title: "National Code", dataIndex: "nationalCode", key: "nationalCode" },
-    { title: "Status", dataIndex: "status", key: "status", render: (record) => <b>{record}</b> },
+    { title: t.t("Name"), dataIndex: "fname", key: "fname" },
+    { title: t.t("Family"), dataIndex: "lname", key: "lname" },
+    { title: t.t("Gender"), dataIndex: "gender", key: "gender" },
+    { title: t.t("Address"), dataIndex: "address", key: "address" },
+    { title: t.t("Card number"), dataIndex: "card", key: "card" },
+    { title: t.t("National Code"), dataIndex: "licenseid", key: "licenseid" },
+    { title: t.t("Status"), dataIndex: "status", key: "status", render: (record) => <b>{record}</b> },
 ];
 
 class KycAdminContainer extends React.Component<IProps, IState> {
