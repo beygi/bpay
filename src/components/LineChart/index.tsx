@@ -74,7 +74,6 @@ class LineChartComponent extends React.Component<IProps, IState> {
             tooltip: {
                 trigger: "axis",
                 formatter: (params) => {
-                    console.log(params);
                     let output = Moment(params[0].axisValue).format("dddd DD MMMM  YYYY");
                     output += `<div>${Moment(params[0].axisValue).format("HH:mm:ss")}</div>`;
                     params.map((item) => {
