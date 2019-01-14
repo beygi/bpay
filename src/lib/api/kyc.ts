@@ -172,102 +172,209 @@ export class Test {
     }
 
 // -----------------------------------------------------
+public linksUsingGET(  params:
+{
+},
+): AxiosPromise<{ [key: string]: { [key: string]: Link } }> {
+    const body = null;
+    const path = "/actuator";
+    const query: {} = {};
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public linksUsingGET(
-        params: {
+}
 
-        },
-    ): AxiosPromise<{ [key: string]: { [key: string]: Link } }> {
-        const path = "/actuator";
-        return this.axios.get (path, {params});
-    }
-
-    public handleUsingGET(
-        params: {
-            body?: {[key: string]: string,
+public handleUsingGET(  params:
+{
+body?: {[key: string]: string,
 }
 ,
-        },
-    ): AxiosPromise<object> {
-        const path = "/actuator/health";
-        return this.axios.get (path, {params});
-    }
+},
+): AxiosPromise<object> {
+    let body = null;
+    const path = "/actuator/health";
+    const query: {} = {};
+    body = params.body;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public handleUsingGET_1(
-        params: {
-            body?: {[key: string]: string,
+}
+
+public handleUsingGET_1(  params:
+{
+body?: {[key: string]: string,
 }
 ,
-        },
-    ): AxiosPromise<object> {
-        const path = "/actuator/info";
-        return this.axios.get (path, {params});
-    }
+},
+): AxiosPromise<object> {
+    let body = null;
+    const path = "/actuator/info";
+    const query: {} = {};
+    body = params.body;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public allcountriesUsingGET(
-        params: {
+}
 
-        },
-    ): AxiosPromise<Country[]> {
-        const path = "/country";
-        return this.axios.get (path, {params});
-    }
+public allcountriesUsingGET(  params:
+{
+},
+): AxiosPromise<Country[]> {
+    const body = null;
+    const path = "/country";
+    const query: {} = {};
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public getCountryByCidUsingGET(
-        params: {
-            cid: string
+}
+
+public getCountryByCidUsingGET(  params:
+{
+cid: string
 ,
-        },
-    ): AxiosPromise<Country> {
-        let path = "/country/{cid}";
-        path = path.replace("{cid}", `${params.cid}`);
-        delete params.cid;
-        return this.axios.get (path, {params});
-    }
+},
+): AxiosPromise<Country> {
+    const body = null;
+    let path = "/country/{cid}";
+    const query: {} = {};
+    path = path.replace("{cid}", `${params.cid}`);
+    delete params.cid;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public getKycImageByUidAndImgTypeUsingGET(
-        params: {
-            imgtype: string
-, uid: string
+}
+
+public getKycImageByUidAndImgTypeUsingGET(  params:
+{
+imgtype: string
 ,
-        },
-    ): AxiosPromise<Resource> {
-        let path = "/img/{uid}/{imgtype}";
-        path = path.replace("{imgtype}", `${params.imgtype}`);
-        delete params.imgtype;
-        path = path.replace("{uid}", `${params.uid}`);
-        delete params.uid;
-        return this.axios.get (path, {params});
-    }
-
-    public getAllKycesUsingGET(
-        params: {
-            dir?: string
-, page?: number
-, size?: number
-, status?: string
+uid: string
 ,
-        },
-    ): AxiosPromise<Kycinfo[]> {
-        const path = "/kyc";
-        return this.axios.get (path, {params});
-    }
+},
+): AxiosPromise<Resource> {
+    const body = null;
+    let path = "/img/{uid}/{imgtype}";
+    const query: {} = {};
+    path = path.replace("{imgtype}", `${params.imgtype}`);
+    delete params.imgtype;
+    path = path.replace("{uid}", `${params.uid}`);
+    delete params.uid;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public addKycUsingPOST(  params:
-  {
-    input: Kycinfo
+}
+
+public getAllKycesUsingGET(  params:
+{
+dir?: string
 ,
-   },
-    ): AxiosPromise<Kycinfo> {
-        let body = null;
-        const path = "/kyc";
-        body = params.input;
-        return this.axios.post (path, (body) ? body : params);
-    }
+page?: number
+,
+size?: number
+,
+status?: string
+,
+},
+): AxiosPromise<Kycinfo[]> {
+    const body = null;
+    const path = "/kyc";
+    const query: {} = {};
+    query[`dir`] = params.dir;
+    query[`page`] = params.page;
+    query[`size`] = params.size;
+    query[`status`] = params.status;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public addKycImageUsingPOST(  params:
-  {
-    authenticated?: boolean
+}
+
+public addKycUsingPOST(  params:
+{
+input: Kycinfo
+,
+},
+): AxiosPromise<Kycinfo> {
+    let body = null;
+    const path = "/kyc";
+    const query: {} = {};
+    body = params.input;
+    return this.axios({
+      method: "POST",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
+
+}
+
+public updateKycUsingPUT(  params:
+{
+authenticated?: boolean
+,
+authorities0Authority?: string
+,
+credentials?: {
+}
+,
+details?: {
+}
+,
+kycInput: Kycinfo
+,
+principal?: {
+}
+,
+},
+): AxiosPromise<Kycinfo> {
+    let body = null;
+    const path = "/kyc";
+    const query: {} = {};
+    query[`authenticated`] = params.authenticated;
+    query[`authorities0Authority`] = params.authorities0Authority;
+    query[`credentials`] = params.credentials;
+    query[`details`] = params.details;
+    body = params.kycInput;
+    query[`principal`] = params.principal;
+    return this.axios({
+      method: "PUT",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
+
+}
+
+public addKycImageUsingPOST(  params:
+{
+authenticated?: boolean
 ,
 authorities0Authority?: string
 ,
@@ -288,94 +395,203 @@ imgtype: string
 principal?: {
 }
 ,
-   },
-    ): AxiosPromise<string> {
-        const body = null;
-        const path = "/kyc/img";
-        return this.axios.post (path, (body) ? body : params);
-    }
+},
+): AxiosPromise<string> {
+    const body = null;
+    const path = "/kyc/img";
+    const query: {} = {};
+    query[`authenticated`] = params.authenticated;
+    query[`authorities0Authority`] = params.authorities0Authority;
+    query[`credentials`] = params.credentials;
+    query[`details`] = params.details;
+    query[`flashAttributes`] = params.flashAttributes;
+    query[`imgtype`] = params.imgtype;
+    query[`principal`] = params.principal;
+    return this.axios({
+      method: "POST",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public getKycImageUsingGET(
-        params: {
-            authenticated?: boolean
-, authorities0Authority?: string
-, credentials?: {
 }
-, details?: {
+
+public getKycImageUsingGET(  params:
+{
+authenticated?: boolean
+,
+authorities0Authority?: string
+,
+credentials?: {
 }
-, imgtype: string
-, principal?: {
+,
+details?: {
 }
 ,
-        },
-    ): AxiosPromise<Resource> {
-        let path = "/kyc/img/{imgtype}";
-        path = path.replace("{imgtype}", `${params.imgtype}`);
-        delete params.imgtype;
-        return this.axios.get (path, {params});
-    }
-
-    public getAllMerchantKycesUsingGET(
-        params: {
-            dir?: string
-, page?: number
-, size?: number
-, status?: string
+imgtype: string
 ,
-        },
-    ): AxiosPromise<MerchantKyc[]> {
-        const path = "/kyc/merchant";
-        return this.axios.get (path, {params});
-    }
-
-    public addMerchantKycUsingPOST(  params:
-  {
-    input: MerchantKyc
+principal?: {
+}
 ,
-   },
-    ): AxiosPromise<MerchantKyc> {
-        let body = null;
-        const path = "/kyc/merchant";
-        body = params.input;
-        return this.axios.post (path, (body) ? body : params);
-    }
+},
+): AxiosPromise<Resource> {
+    const body = null;
+    let path = "/kyc/img/{imgtype}";
+    const query: {} = {};
+    query[`authenticated`] = params.authenticated;
+    query[`authorities0Authority`] = params.authorities0Authority;
+    query[`credentials`] = params.credentials;
+    query[`details`] = params.details;
+    path = path.replace("{imgtype}", `${params.imgtype}`);
+    delete params.imgtype;
+    query[`principal`] = params.principal;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public getAllKycStatusesUsingGET(
-        params: {
-            dir?: string
-, page?: number
-, size?: number
-, status?: string
-,
-        },
-    ): AxiosPromise<KycStatus[]> {
-        const path = "/kyc/status";
-        return this.axios.get (path, {params});
-    }
+}
 
-    public getKycStatusByUidUsingGET(
-        params: {
-            uid: string
+public getAllMerchantKycesUsingGET(  params:
+{
+dir?: string
 ,
-        },
-    ): AxiosPromise<KycStatus> {
-        let path = "/kyc/status/{uid}";
-        path = path.replace("{uid}", `${params.uid}`);
-        delete params.uid;
-        return this.axios.get (path, {params});
-    }
+page?: number
+,
+size?: number
+,
+status?: string
+,
+},
+): AxiosPromise<MerchantKyc[]> {
+    const body = null;
+    const path = "/kyc/merchant";
+    const query: {} = {};
+    query[`dir`] = params.dir;
+    query[`page`] = params.page;
+    query[`size`] = params.size;
+    query[`status`] = params.status;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public getKycByUidUsingGET(
-        params: {
-            uid: string
+}
+
+public addMerchantKycUsingPOST(  params:
+{
+input: MerchantKyc
 ,
-        },
-    ): AxiosPromise<Kycinfo> {
-        let path = "/kyc/{uid}";
-        path = path.replace("{uid}", `${params.uid}`);
-        delete params.uid;
-        return this.axios.get (path, {params});
-    }
+},
+): AxiosPromise<MerchantKyc> {
+    let body = null;
+    const path = "/kyc/merchant";
+    const query: {} = {};
+    body = params.input;
+    return this.axios({
+      method: "POST",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
+
+}
+
+public getAllKycStatusesUsingGET(  params:
+{
+dir?: string
+,
+page?: number
+,
+size?: number
+,
+status?: string
+,
+},
+): AxiosPromise<KycStatus[]> {
+    const body = null;
+    const path = "/kyc/status";
+    const query: {} = {};
+    query[`dir`] = params.dir;
+    query[`page`] = params.page;
+    query[`size`] = params.size;
+    query[`status`] = params.status;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
+
+}
+
+public getKycStatusByUidUsingGET(  params:
+{
+uid: string
+,
+},
+): AxiosPromise<KycStatus> {
+    const body = null;
+    let path = "/kyc/status/{uid}";
+    const query: {} = {};
+    path = path.replace("{uid}", `${params.uid}`);
+    delete params.uid;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
+
+}
+
+public getKycByUidUsingGET(  params:
+{
+uid: string
+,
+},
+): AxiosPromise<Kycinfo> {
+    const body = null;
+    let path = "/kyc/{uid}";
+    const query: {} = {};
+    path = path.replace("{uid}", `${params.uid}`);
+    delete params.uid;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
+
+}
+
+public updateKycStatusUsingPUT(  params:
+{
+status: string
+,
+uid: string
+,
+},
+): AxiosPromise<KycStatus> {
+    const body = null;
+    let path = "/kyc/{uid}/{status}";
+    const query: {} = {};
+    path = path.replace("{status}", `${params.status}`);
+    delete params.status;
+    path = path.replace("{uid}", `${params.uid}`);
+    delete params.uid;
+    return this.axios({
+      method: "PUT",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
+
+}
 
 }
 

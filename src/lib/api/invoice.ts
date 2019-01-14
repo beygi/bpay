@@ -243,197 +243,399 @@ export class Test {
     }
 
 // -----------------------------------------------------
+public linksUsingGET(  params:
+{
+},
+): AxiosPromise<{ [key: string]: { [key: string]: Link } }> {
+    const body = null;
+    const path = "/actuator";
+    const query: {} = {};
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public linksUsingGET(
-        params: {
+}
 
-        },
-    ): AxiosPromise<{ [key: string]: { [key: string]: Link } }> {
-        const path = "/actuator";
-        return this.axios.get (path, {params});
-    }
-
-    public handleUsingGET(
-        params: {
-            body?: {[key: string]: string,
+public handleUsingGET(  params:
+{
+body?: {[key: string]: string,
 }
 ,
-        },
-    ): AxiosPromise<object> {
-        const path = "/actuator/health";
-        return this.axios.get (path, {params});
-    }
+},
+): AxiosPromise<object> {
+    let body = null;
+    const path = "/actuator/health";
+    const query: {} = {};
+    body = params.body;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public handleUsingGET_1(
-        params: {
-            body?: {[key: string]: string,
+}
+
+public handleUsingGET_1(  params:
+{
+body?: {[key: string]: string,
 }
 ,
-        },
-    ): AxiosPromise<object> {
-        const path = "/actuator/info";
-        return this.axios.get (path, {params});
-    }
+},
+): AxiosPromise<object> {
+    let body = null;
+    const path = "/actuator/info";
+    const query: {} = {};
+    body = params.body;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public getByIdUsingGET(
-        params: {
-            apikey?: string
-, id: string
-, mob?: string
-,
-        },
-    ): AxiosPromise<InvoiceResponse> {
-        const path = "/invoice";
-        return this.axios.get (path, {params});
-    }
+}
 
-    public addInvoiceUsingPOST(  params:
-  {
-    invReq: InvRequest
+public getByIdUsingGET(  params:
+{
+apikey?: string
 ,
-   },
-    ): AxiosPromise<InvoiceResponse> {
-        let body = null;
-        const path = "/invoice";
-        body = params.invReq;
-        return this.axios.post (path, (body) ? body : params);
-    }
+id: string
+,
+mob?: string
+,
+},
+): AxiosPromise<InvoiceResponse> {
+    const body = null;
+    const path = "/invoice";
+    const query: {} = {};
+    query[`apikey`] = params.apikey;
+    query[`id`] = params.id;
+    query[`mob`] = params.mob;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public getAllInvoicev2UsingGET(
-        params: {
-            apikey: string
-, dir?: string
-, mob: string
-, page?: number
-, size?: number
-, status?: string
-,
-        },
-    ): AxiosPromise<PaginationInvoiceResponse> {
-        const path = "/invoice/all";
-        return this.axios.get (path, {params});
-    }
+}
 
-    public getByOrderIdUsingGET(
-        params: {
-            apikey: string
-, id: string
-, mob: string
+public addInvoiceUsingPOST(  params:
+{
+invReq: InvRequest
 ,
-        },
-    ): AxiosPromise<InvoiceResponse> {
-        const path = "/invoice/byorderid";
-        return this.axios.get (path, {params});
-    }
+},
+): AxiosPromise<InvoiceResponse> {
+    let body = null;
+    const path = "/invoice";
+    const query: {} = {};
+    body = params.invReq;
+    return this.axios({
+      method: "POST",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public getMerchantInfoUsingGET(
-        params: {
-            mob: string
-, token: string
-,
-        },
-    ): AxiosPromise<Merchant> {
-        const path = "/merchant";
-        return this.axios.get (path, {params});
-    }
+}
 
-    public addMerchantUsingPOST(  params:
-  {
-    merchantReq: MerchantRequest
+public getAllInvoicev2UsingGET(  params:
+{
+apikey: string
 ,
-   },
-    ): AxiosPromise<Merchant> {
-        let body = null;
-        const path = "/merchant";
-        body = params.merchantReq;
-        return this.axios.post (path, (body) ? body : params);
-    }
+dir?: string
+,
+mob: string
+,
+page?: number
+,
+size?: number
+,
+status?: string
+,
+},
+): AxiosPromise<PaginationInvoiceResponse> {
+    const body = null;
+    const path = "/invoice/all";
+    const query: {} = {};
+    query[`apikey`] = params.apikey;
+    query[`dir`] = params.dir;
+    query[`mob`] = params.mob;
+    query[`page`] = params.page;
+    query[`size`] = params.size;
+    query[`status`] = params.status;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public getMerchantDebtUsingGET(
-        params: {
-            apikey?: string
-, dir?: string
-, mob?: string
-, page?: number
-, size?: number
-,
-        },
-    ): AxiosPromise<PaginationVuMerchantdebt> {
-        const path = "/merchant/debt";
-        return this.axios.get (path, {params});
-    }
+}
 
-    public getTokenUsingGET(
-        params: {
-            mob: string
+public getByOrderIdUsingGET(  params:
+{
+apikey: string
 ,
-        },
-    ): AxiosPromise<Merchant> {
-        const path = "/merchant/token";
-        return this.axios.get (path, {params});
-    }
+id: string
+,
+mob: string
+,
+},
+): AxiosPromise<InvoiceResponse> {
+    const body = null;
+    const path = "/invoice/byorderid";
+    const query: {} = {};
+    query[`apikey`] = params.apikey;
+    query[`id`] = params.id;
+    query[`mob`] = params.mob;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public getAllUsingGET(
-        params: {
-            apikey: string
-, dir?: string
-, mob: string
-, page?: number
-, size?: number
-,
-        },
-    ): AxiosPromise<PaginationSettleUpResponse> {
-        const path = "/settleup";
-        return this.axios.get (path, {params});
-    }
+}
 
-    public settleUp1UsingPOST(  params:
-  {
-    requestSettle: RequestSettle
+public changeCoinUsingPUT(  params:
+{
+changeCode: ChangeCoinRequest
 ,
-   },
-    ): AxiosPromise<Settleup> {
-        let body = null;
-        const path = "/settleup/add";
-        body = params.requestSettle;
-        return this.axios.post (path, (body) ? body : params);
-    }
+},
+): AxiosPromise<InvoiceResponse> {
+    let body = null;
+    const path = "/invoice/coinselection";
+    const query: {} = {};
+    body = params.changeCode;
+    return this.axios({
+      method: "PUT",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public getPreSettleUsingGET(
-        params: {
-            apikey?: string
-, invoices?: string
-, mermob?: string
-, mob?: string
-,
-        },
-    ): AxiosPromise<Debt> {
-        const path = "/settleup/presettle";
-        return this.axios.get (path, {params});
-    }
+}
 
-    public resetTesthopUsingGET(
-        params: {
-            apikey?: string
-, mob?: string
+public getMerchantInfoUsingGET(  params:
+{
+mob: string
 ,
-        },
-    ): AxiosPromise<string> {
-        const path = "/settleup/testreset";
-        return this.axios.get (path, {params});
-    }
+token: string
+,
+},
+): AxiosPromise<Merchant> {
+    const body = null;
+    const path = "/merchant";
+    const query: {} = {};
+    query[`mob`] = params.mob;
+    query[`token`] = params.token;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
 
-    public successAllwaitongUsingGET(
-        params: {
-            apikey?: string
-, mermob?: string
-, mob?: string
+}
+
+public addMerchantUsingPOST(  params:
+{
+merchantReq: MerchantRequest
 ,
-        },
-    ): AxiosPromise<string> {
-        const path = "/settleup/testsuccess";
-        return this.axios.get (path, {params});
-    }
+},
+): AxiosPromise<Merchant> {
+    let body = null;
+    const path = "/merchant";
+    const query: {} = {};
+    body = params.merchantReq;
+    return this.axios({
+      method: "POST",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
+
+}
+
+public getMerchantDebtUsingGET(  params:
+{
+apikey?: string
+,
+dir?: string
+,
+mob?: string
+,
+page?: number
+,
+size?: number
+,
+},
+): AxiosPromise<PaginationVuMerchantdebt> {
+    const body = null;
+    const path = "/merchant/debt";
+    const query: {} = {};
+    query[`apikey`] = params.apikey;
+    query[`dir`] = params.dir;
+    query[`mob`] = params.mob;
+    query[`page`] = params.page;
+    query[`size`] = params.size;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
+
+}
+
+public getTokenUsingGET(  params:
+{
+mob: string
+,
+},
+): AxiosPromise<Merchant> {
+    const body = null;
+    const path = "/merchant/token";
+    const query: {} = {};
+    query[`mob`] = params.mob;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
+
+}
+
+public getAllUsingGET(  params:
+{
+apikey: string
+,
+dir?: string
+,
+mob: string
+,
+page?: number
+,
+size?: number
+,
+},
+): AxiosPromise<PaginationSettleUpResponse> {
+    const body = null;
+    const path = "/settleup";
+    const query: {} = {};
+    query[`apikey`] = params.apikey;
+    query[`dir`] = params.dir;
+    query[`mob`] = params.mob;
+    query[`page`] = params.page;
+    query[`size`] = params.size;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
+
+}
+
+public settleUp1UsingPOST(  params:
+{
+requestSettle: RequestSettle
+,
+},
+): AxiosPromise<Settleup> {
+    let body = null;
+    const path = "/settleup/add";
+    const query: {} = {};
+    body = params.requestSettle;
+    return this.axios({
+      method: "POST",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
+
+}
+
+public getPreSettleUsingGET(  params:
+{
+apikey?: string
+,
+invoices?: string
+,
+mermob?: string
+,
+mob?: string
+,
+},
+): AxiosPromise<Debt> {
+    const body = null;
+    const path = "/settleup/presettle";
+    const query: {} = {};
+    query[`apikey`] = params.apikey;
+    query[`invoices`] = params.invoices;
+    query[`mermob`] = params.mermob;
+    query[`mob`] = params.mob;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
+
+}
+
+public resetTesthopUsingGET(  params:
+{
+apikey?: string
+,
+mob?: string
+,
+},
+): AxiosPromise<string> {
+    const body = null;
+    const path = "/settleup/testreset";
+    const query: {} = {};
+    query[`apikey`] = params.apikey;
+    query[`mob`] = params.mob;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
+
+}
+
+public successAllwaitongUsingGET(  params:
+{
+apikey?: string
+,
+mermob?: string
+,
+mob?: string
+,
+},
+): AxiosPromise<string> {
+    const body = null;
+    const path = "/settleup/testsuccess";
+    const query: {} = {};
+    query[`apikey`] = params.apikey;
+    query[`mermob`] = params.mermob;
+    query[`mob`] = params.mob;
+    return this.axios({
+      method: "GET",
+      url: path,
+      params : query,
+      data: (body) ? body : params,
+    } );
+
+}
 
 }
 
