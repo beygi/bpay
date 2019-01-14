@@ -10,7 +10,6 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import config from "../../config";
 import API from "../../lib/api/invoice";
-import TESTPI from "../../lib/api/test";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
@@ -49,15 +48,15 @@ class NewInvoice extends React.Component<IProps, IState> {
         this.checkPrice = this.checkPrice.bind(this);
     }
 
-    public async testAxios() {
-        TESTPI.getInstance().postKYC({
-            apikey: "d089b7cad4b1f425b35ab943ac34c6e88514afeed56e13e161c4a521e9e50dc6",
-            description: "asdasd",
-            mobile: "09120453931",
-            orderId: "sdAAAASAS",
-            price: "2",
-        }).catch((err) => { console.log(err); });
-    }
+    // public async testAxios() {
+    //     TESTPI.getInstance().postKYC({
+    //         apikey: "d089b7cad4b1f425b35ab943ac34c6e88514afeed56e13e161c4a521e9e50dc6",
+    //         description: "asdasd",
+    //         mobile: "09120453931",
+    //         orderId: "sdAAAASAS",
+    //         price: "2",
+    //     }).catch((err) => { console.log(err); });
+    // }
 
     public handleSubmit = (e) => {
         e.preventDefault();
