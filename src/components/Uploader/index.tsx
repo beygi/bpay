@@ -65,7 +65,7 @@ class UploaderComponent extends React.Component<IProps, IState> {
             previewVisible: false,
             previewImage: "",
             fileList: [],
-            headers: { Authorization: this.userObject.getToken().value },
+            headers: { Authorization: this.userObject.getToken().mode + " " + this.userObject.getToken().value },
         };
     }
 
