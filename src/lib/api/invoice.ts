@@ -189,18 +189,18 @@ export interface SettleUpInvoices {
 
 /**
  * Invoice Service
- * @class Test
+ * @class InvoiceApi
  * @param {(string)} [domainOrOptions] - The project domain.
  */
-export class Test {
+export class InvoiceApi {
 
     public static getInstance() {
         if (!this.instance) {
-            this.instance = new Test();
+            this.instance = new InvoiceApi();
         }
         return this.instance;
     }
-    private static instance: Test;
+    private static instance: InvoiceApi;
     private baseURL: string = "https://87.98.188.77:9193";
     private AuthToken: string | null;
     private axios: AxiosInstance;
@@ -242,7 +242,6 @@ export class Test {
         return this.headers;
     }
 
-// -----------------------------------------------------
 public linksUsingGET(  params:
 {
 },
@@ -639,4 +638,4 @@ mob?: string
 
 }
 
-export default Test;
+export default InvoiceApi;
