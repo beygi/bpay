@@ -57,7 +57,8 @@ class KycAdminContainer extends React.Component<IProps, IState> {
             countries: [],
         };
         this.changeStatus = this.changeStatus.bind(this);
-        this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
+        this.api.setAuthToken(this.userObject.getToken().value);
+        this.api.setBaseURL(config.apiUrl);
     }
 
     public componentDidMount() {
@@ -96,13 +97,13 @@ class KycAdminContainer extends React.Component<IProps, IState> {
             PS: "Passport",
             NI: "National ID Card",
         };
-        this.api.getAllKycesUsingGET({ $domain: config.apiUrl }).then((response) => {
-            this.api.allcountriesUsingGET({ $domain: config.apiUrl }).then((countries) => {
-                response.body.forEach((obj) => {
-                    obj.country = _.find(countries.body, { id: obj.country });
-                    obj.ltype = types[obj.ltype];
+        this.api.getAllKycesUsingGET({}).then((response) => {
+            this.api.allcountriesUsingGET({}).then((countries) => {
+                response.data.forEach((obj) => {
+                    obj[`country`] = _.find(countries.data, { id: obj.country }).name;
+                    obj[`licensetype`] = types[obj.ltype];
                 });
-                this.setState({ countries: countries.body, dataSource: response.body, loading: false });
+                this.setState({ countries: countries.data, dataSource: response.data, loading: false });
             });
         },
         );

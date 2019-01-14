@@ -52,7 +52,7 @@ class KycComponent extends React.Component<IProps, IState> {
     public changeStatus(id, status) {
         api.updateKycStatusUsingPUT({ uid: id, status }).then((response) => {
             if (response.status === 200) {
-                this.setState({ record: response.body });
+                this.setState({ record: response.data });
                 this.props.changeRecord(this.state.record.uid, status);
             }
         });
