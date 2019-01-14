@@ -66,13 +66,15 @@ class NewInvoice extends React.Component<IProps, IState> {
                 this.setState({ loading: true });
 
                 this.api.addInvoiceUsingPOST({
-                    apikey: this.props.apiKey,
-                    description: values.description,
-                    price: values.price,
-                    mobile: this.props.mobile,
-                    orderId: this.uuid(),
-                    currency: values.fiat,
-                    merchantCur: "IRR",
+                    invReq: {
+                        apikey: this.props.apiKey,
+                        description: values.description,
+                        price: values.price,
+                        mobile: this.props.mobile,
+                        orderId: this.uuid(),
+                        currency: values.fiat,
+                        merchantCur: "IRR",
+                    },
                 }).then((response) => {
                     this.setState({ loading: false });
                     notification.success({
