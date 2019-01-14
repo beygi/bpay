@@ -97,7 +97,7 @@ class KycAdminContainer extends React.Component<IProps, IState> {
             PS: "Passport",
             NI: "National ID Card",
         };
-        this.api.getAllKycesUsingGET({}).then((response) => {
+        this.api.getAllKycesUsingGET({ size: 10000 , dir : "desc" }).then((response) => {
             this.api.allcountriesUsingGET({}).then((countries) => {
                 response.data.forEach((obj) => {
                     obj[`country`] = _.find(countries.data, { id: obj.country }).name;
