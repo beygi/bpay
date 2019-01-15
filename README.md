@@ -1,4 +1,4 @@
-# Web client
+# Web Client
 This is a guide to dev,build and deploy webapp
 
 
