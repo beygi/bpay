@@ -93,7 +93,7 @@ sandbox deploy:
 dev build:
     stage:  build
     only:
-        - develop 
+    - /^release/.*$/
     tags:
         - my          
     script: 
@@ -107,7 +107,7 @@ dev build:
 dev test:
     stage:      test
     only:
-        - develop 
+    - /^release/.*$/
     tags:
         - my          
     script:     
@@ -128,7 +128,7 @@ dev deploy:
     tags:
         - my           
     only:
-    - develop
+    - /^release/.*$/
     cache:
         key: development
         paths:
