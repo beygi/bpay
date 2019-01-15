@@ -43,7 +43,8 @@ class KycComponent extends React.Component<IProps, IState> {
             status: "unknown",
         };
         // send token with all api requests
-        this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
+        this.api.setAuthToken(this.userObject.getToken().value);
+        this.api.setBaseURL(config.apiUrl);
     }
 
     public componentDidMount() {
@@ -52,11 +53,11 @@ class KycComponent extends React.Component<IProps, IState> {
     }
 
     public getStatus() {
-        this.api.getStatusUsingGET({ $domain: config.apiUrl }).then((response) => {
+        this.api.getKycStatusByUidUsingGET({ uid: this.userObject.getCurrent().sub }).then((response) => {
             if (response.status === 204) {
                 this.setState({ loading: false, status: "unsubmitted" });
             } else {
-                this.setState({ loading: false, status: response.body.status });
+                this.setState({ loading: false, status: response.data.status });
             }
         }).catch((error) => {
             this.setState({ loading: false });
@@ -75,7 +76,7 @@ class KycComponent extends React.Component<IProps, IState> {
             if (!err) {
                 this.setState({ loading: true });
                 // console.log("Received values of form: ", values);
-                this.api.addMerchantKycUsingPOST({ input: values, $domain: config.apiUrl }).then((response) => {
+                this.api.addMerchantKycUsingPOST({ input: values }).then((response) => {
                     this.setState({ submited: true, loading: false });
                 }).catch((error) => {
                     this.setState({ loading: false });

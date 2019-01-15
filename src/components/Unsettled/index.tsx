@@ -6,6 +6,7 @@ import { Button, Modal, Spin, Table } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
+import config from "../../config";
 import API from "../../lib/api/invoice";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
@@ -48,7 +49,8 @@ class Unsettled extends React.Component<IProps, IState> {
             currentPage: 1, loading: true, merchants: null, showModal: false, selectedMerchant: {},
         };
         // send token with all api requests
-        this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
+        this.api.setAuthToken(this.userObject.getToken().value);
+        this.api.setBaseURL(config.apiUrl);
         // bind current object to api call function
         this.getUnsettledMerchants = this.getUnsettledMerchants.bind(this);
     }
@@ -128,9 +130,8 @@ class Unsettled extends React.Component<IProps, IState> {
             size: 10,
             page: this.state.currentPage - 1,
             dir: "desc",
-            $domain: "https://api.becopay.com",
         }).then((response) => {
-            this.setState({ merchants: response.body, loading: false });
+            this.setState({ merchants: response.data, loading: false });
         });
     }
 

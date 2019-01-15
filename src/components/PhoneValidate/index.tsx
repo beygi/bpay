@@ -7,6 +7,7 @@ import { FormComponentProps } from "antd/lib/form";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
+import config from "../../config";
 import API from "../../lib/api/invoice";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
@@ -43,7 +44,8 @@ class PhoneValidate extends React.Component<IProps, IState> {
         };
 
         // send token with all api requests
-        this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
+        this.api.setAuthToken(this.userObject.getToken().value);
+        this.api.setBaseURL(config.apiUrl);
     }
 
     public render() {
@@ -121,10 +123,7 @@ class PhoneValidate extends React.Component<IProps, IState> {
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 this.setState({ loading: true });
-                this.api.settleUp1UsingPOST({
-                    requestSettle: values,
-                    $domain: "https://api.becopay.com",
-                }).then(() => {
+                this.api.settleUp1UsingPOST(values).then(() => {
                     this.setState({ loading: false });
                     this.props.success();
                 }).catch((error) => {

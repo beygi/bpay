@@ -15,7 +15,7 @@
     "test": "jest --watch --coverage --config=configs/jest.json",
     "profile": "webpack -p --config=configs/webpack/prod.js --profile --json > webpack-stats.json",
     "extract": "nodejs bin/extract.js && ls -1 src/services/trans/*.po | xargs -i msgmerge -U --backup=off --no-wrap {} src/services/trans/translation.pot",
-    "apiGen": "ls swager-specs -1 | xargs -i node ./src/lib/api/generate.js {} && ls swager-specs -1",
+    "apiGen": "ls swager-specs -1 | xargs -i node ./src/lib/api/generate.js {} && tslint --fix --force src/lib/api/*.ts && tslint --fix --force src/lib/api/*.ts",
     "doc": "typedoc --tsconfig ./tsconfig.json --readme ./README.md --json docs/docs.json --out docs --mode modules ./src"
   },
   "devDependencies": {
@@ -75,7 +75,6 @@
     "style-loader": "^0.23.0",
     "superagent": "^4.0.0-beta.5",
     "tinycolor2": "^1.4.1",
-    "tslint": "^5.11.0",
     "tslint-loader": "^3.6.0",
     "typedoc": "^0.12.0",
     "typedoc-plugin-external-module-name": "^1.1.3",
@@ -98,6 +97,7 @@
     "react-share": "^2.4.0",
     "socket.io-client": "^2.2.0",
     "strftime": "^0.10.0",
-    "swagger-typescript-codegen": "https://github.com/beygi/swagger-typescript-axios-codegen"
+    "swagger-typescript-codegen": "https://github.com/beygi/swagger-typescript-axios-codegen",
+    "tslint": "^5.12.1"
   }
 }

@@ -112,7 +112,8 @@ export default class USER {
         if (this.user) {
             return {
                 name: "Authorization",
-                value: `Bearer ` + this.keycloak.token,
+                value: this.keycloak.token,
+                mode: "Bearer",
             };
         }
 

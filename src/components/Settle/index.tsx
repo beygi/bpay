@@ -8,6 +8,7 @@ import { FormComponentProps } from "antd/lib/form";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
+import config from "../../config";
 import API from "../../lib/api/invoice";
 import { IRootState } from "../../redux/reducers";
 import t from "../../services/trans/i18n";
@@ -65,7 +66,8 @@ class Settle extends React.Component<IProps, IState> {
         };
 
         // send token with all api requests
-        this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
+        this.api.setAuthToken(this.userObject.getToken().value);
+        this.api.setBaseURL(config.apiUrl);
         // bind getInvoices to current object
         this.getInvoices = this.getInvoices.bind(this);
     }
@@ -235,10 +237,7 @@ class Settle extends React.Component<IProps, IState> {
                 // notice: i don't set merMobile as a property name normally, i named it to match with our api schema
                 values.merMobile = this.props.merchantId;
                 values.invoiceIds = this.state.selectedInvoices;
-                this.api.settleUp1UsingPOST({
-                    requestSettle: values,
-                    $domain: "https://api.becopay.com",
-                }).then(() => {
+                this.api.settleUp1UsingPOST(values).then(() => {
                     this.setState({ loading: false });
                     // notify user about successfull event and call successfull callback (probably to close modal)
                     notification.success({
@@ -270,11 +269,10 @@ class Settle extends React.Component<IProps, IState> {
             apikey: this.props.apiKey,
             mob: this.props.mobile,
             mermob: this.props.merchantId,
-            $domain: "https://api.becopay.com",
         }).then((response) => {
             this.setState({ loading: false });
             this.setState({
-                invoices: response.body,
+                invoices: response.data,
             });
         });
     }
