@@ -3,7 +3,7 @@ prod build:
   script:
     - "export DEPLOY_TYPE=production && ./build.sh"
   only:
-    - /^(.+\.+)+.*$/
+    - /^(\d+\.+)+.*$/
   tags:
     - my      
   cache:
@@ -16,7 +16,7 @@ prod test:
   script:     
     - pwd && echo passed
   only:
-    - /^(.+\.+)+.*$/ 
+    - /^(\d+\.+)+.*$/ 
   tags:
     - my
 
@@ -35,7 +35,7 @@ prod deploy:
   tags:
     - my           
   only:
-    - /^(.+\.+)+.*$/ 
+    - /^(\d+\.+)+.*$/ 
   cache:
     key: production
     paths:
@@ -47,7 +47,7 @@ prod deploy:
 sandbox build:
   stage: build
   only:
-    - /^(.+\.+)+.*$/ 
+    - /^(\d+\.+)+.*$/ 
   tags:
     - my          
   script:   
@@ -61,7 +61,7 @@ sandbox build:
 sandbox test:
     stage:  test
     only:
-        - /^(.+\.+)+.*$/ 
+        - /^(\d+\.+)+.*$/ 
     tags:
         - my          
     script:     
@@ -81,7 +81,7 @@ sandbox deploy:
   tags:
     - my           
   only:
-    - /^(.+\.+)+.*$/
+    - /^(\d+\.+)+.*$/
   cache:
     key: sandbox
     paths:
