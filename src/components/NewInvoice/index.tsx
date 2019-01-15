@@ -43,15 +43,27 @@ class NewInvoice extends React.Component<IProps, IState> {
             invoiceId: null,
             loading: false,
         };
-        this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
+        this.api.setAuthToken(this.userObject.getToken().value);
+        this.api.setBaseURL(config.apiUrl);
         this.checkPrice = this.checkPrice.bind(this);
     }
+
+    // public async testAxios() {
+    //     TESTPI.getInstance().postKYC({
+    //         apikey: "d089b7cad4b1f425b35ab943ac34c6e88514afeed56e13e161c4a521e9e50dc6",
+    //         description: "asdasd",
+    //         mobile: "09120453931",
+    //         orderId: "sdAAAASAS",
+    //         price: "2",
+    //     }).catch((err) => { console.log(err); });
+    // }
 
     public handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 this.setState({ loading: true });
+
                 this.api.addInvoiceUsingPOST({
                     invReq: {
                         apikey: this.props.apiKey,
@@ -62,7 +74,6 @@ class NewInvoice extends React.Component<IProps, IState> {
                         currency: values.fiat,
                         merchantCur: "IRR",
                     },
-                    $domain: "https://api.becopay.com",
                 }).then((response) => {
                     this.setState({ loading: false });
                     notification.success({
@@ -71,7 +82,7 @@ class NewInvoice extends React.Component<IProps, IState> {
                         description: t.t("click to open gateway"),
                         placement: "bottomRight",
                         btn: <Button
-                            target="blank" href={`${config.gateWayUrl}/invoice/${response.body.id}`} size="small" type="primary">{t.t("Open gateway")}</Button>,
+                            target="blank" href={`${config.gateWayUrl}/invoice/${response.data.id}`} size="small" type="primary">{t.t("Open gateway")}</Button>,
                     });
                 }).catch((error) => {
                     // handle error

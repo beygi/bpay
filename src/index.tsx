@@ -36,7 +36,7 @@ console.log("becopay version: " + VERSION);
 
 // prepare user properties and set defaults from keycloak
 function getUserAttr() {
-    const userData = _.pick(user.keycloak.tokenParsed, ["email", "given_name", "family_name", "realm_access", "auth_time"]);
+    const userData = _.pick(user.keycloak.tokenParsed, ["email", "given_name", "family_name", "realm_access", "auth_time", "sub"]);
     return {
         ...userData,
         token: user.keycloak.token,

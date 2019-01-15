@@ -2,11 +2,12 @@
  * @module Components/SettleUps
  */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Pagination, Table } from "antd";
 import { Select, Spin } from "antd";
+import { Pagination, Table } from "antd";
 import * as _ from "lodash";
 import * as React from "react";
 import { connect } from "react-redux";
+import config from "../../config";
 import API from "../../lib/api/invoice";
 import { IRootState } from "../../redux/reducers";
 import t, { localDate } from "../../services/trans/i18n";
@@ -60,7 +61,8 @@ class SettleUps extends React.Component<IProps, IState> {
             , merchantsResult: [], merchantsLoading: false, merchantFilter: [],
         };
         // send token with all api requests
-        this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
+        this.api.setAuthToken(this.userObject.getToken().value);
+        this.api.setBaseURL(config.apiUrl);
 
         // bind this object's context to methods
         this.searchMerchants = this.searchMerchants.bind(this);
@@ -193,9 +195,8 @@ class SettleUps extends React.Component<IProps, IState> {
             size: 12,
             page: this.state.currentPage - 1,
             dir: "desc",
-            $domain: "https://api.becopay.com",
         }).then((response) => {
-            this.setState({ settles: { ...this.state.settles, ...{ count: response.body.count, content: response.body.content } }, loading: false });
+            this.setState({ settles: { ...this.state.settles, ...{ count: response.data.count, content: response.data.content } }, loading: false });
         }).catch(
             () => {
                 this.setState({ loading: false });

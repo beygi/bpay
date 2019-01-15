@@ -31,7 +31,7 @@ interface IState {
     submited: boolean;
     loading: boolean;
     status: string;
-    countries?: [{ id: string, name: string }];
+    countries?: Array<{ id?: string, name?: string }>;
 }
 
 class KycComponent extends React.Component<IProps, IState> {
@@ -52,7 +52,8 @@ class KycComponent extends React.Component<IProps, IState> {
             status: "unknown",
         };
         // send token with all api requests
-        this.api.SetHeader(this.userObject.getToken().name, this.userObject.getToken().value);
+        this.api.setAuthToken(this.userObject.getToken().value);
+        this.api.setBaseURL(config.apiUrl);
     }
 
     public componentDidMount() {
@@ -61,14 +62,18 @@ class KycComponent extends React.Component<IProps, IState> {
     }
     public getCountries() {
         this.api.allcountriesUsingGET({}).then((response) => {
-            console.log(response.body);
-            this.setState({ countries: response.body });
+            console.log(response.data);
+            this.setState({ countries: response.data });
         });
     }
 
     public getStatus() {
-        this.api.getStatusUsingGET({ $domain: config.apiUrl }).then((response) => {
-            this.setState({ loading: false, status: response.body.status });
+        this.api.getKycStatusByUidUsingGET({ uid: this.userObject.getCurrent().sub }).then((response) => {
+            if (response.status === 204) {
+                this.setState({ loading: false, status: "unsubmitted" });
+            } else {
+                this.setState({ loading: false, status: response.data.status });
+            }
         }).catch((error) => {
             this.setState({ loading: false });
         });
@@ -91,9 +96,9 @@ class KycComponent extends React.Component<IProps, IState> {
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 console.log("Received values of form: ", values);
-                this.api.addMerchantKycUsingPOST({ input: values, $domain: config.apiUrl }).then((response) => {
+                this.api.addMerchantKycUsingPOST({ input: values }).then((response) => {
                     this.setState({ submited: true });
-                    console.log(response.body);
+                    console.log(response.data);
                 }).catch((error) => {
                     notification.error({
                         message: t.t("Error in sending data"),
